@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>{% block title %}Leef Natuurlijk & Gezond{% endblock %}</title>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+   <meta name="description" content="Bezoek onze website voor ondersteuning bij het maken van weloverwogen en gezondere keuzes van niet-giftige, milieuvriendelijke producten voor elke hoek van je huis.">
+   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+   <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+</head>
+<body class="is-preload">
+
+   <!-- Wrapper -->
+   <div id="wrapper">
+
+      <!-- Main -->
+      <div id="main">
+         <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+               <a href="{% url 'homepage' %}" class="logo"><strong>Leef Natuurlijk & Gezond</strong></a>
+            </header>
+
+            <!-- Pagina-inhoud -->
+            {% block content %}{% endblock %}
+
+         </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div id="sidebar">
+         <div class="inner">
+
+            <!-- Menu -->
+            <nav id="menu">
+               <header class="major">
+                  <h2>Menu</h2>
+               </header>
+               <ul>
+                  <li><a href="{% url 'homepage' %}">Homepage</a></li>
+                  <li><a href="{% url 'snijplanken' %}">Snijplanken</a></li>
+                  <li><a href="{% url 'koekenpannen' %}">Koekenpannen</a></li>
+                  <li><a href="{% url 'hapjespannen' %}">Hapjespannen</a></li>
+                  <li><a href="{% url 'wokpannen' %}">Wokpannen</a></li>
+                  <li><a href="{% url 'airfryers' %}">Airfryers</a></li>
+                  <li><a href="{% url 'vershoudcontainers' %}">Vershoudbakjes</a></li>
+                  <li><a href="{% url 'blogs_overview' %}">Blogs</a></li>
+               </ul>
+            </nav>
+
+            <!-- Contact -->
+            <section>
+               <header class="major">
+                  <h2>Contact</h2>
+               </header>
+               <p>Heb je vragen, opmerkingen of tips? Stuur ons een mailtje naar onderstaand adres.</p>
+               <ul class="contact">
+                  <li class="icon solid fa-envelope">
+                     <a href="mailto:info@leefnatuurlijkengezond.nl">info@leefnatuurlijkengezond.nl</a>
+                  </li>
+               </ul>
+            </section>
+
+            <!-- Footer -->
+            <footer id="footer">
+               <p class="copyright">&copy; <span id="year"></span> Leef Natuurlijk & Gezond</p>
+            </footer>
+         </div>
+      </div>
+
+   </div>
+
+   <!-- Scripts -->
+   <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+   <script src="{% static 'assets/js/browser.min.js' %}"></script>
+   <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+   <script src="{% static 'assets/js/util.js' %}"></script>
+   <script src="{% static 'assets/js/main.js' %}"></script>
+
+   <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+   </script>
+</body>
+</html>

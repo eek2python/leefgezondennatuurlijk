@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Leef Natuurlijk & Gezond | Home{% endblock %}
+
+{% block content %}
+           <!-- HERO BANNER -->
+        <div class="hero-banner">
+        <img src="{% static 'images/keuken.jpg' %}"
+                alt="Natuurlijke en gifvrije keuken"
+                class="hero-image">
+        <div class="hero-overlay">
+        <h1>Leef Natuurlijk & Gezond</h1>
+        <p>Bewuste keuzes voor een veilig en gezond thuis</p>
+        </div>
+        </div>
+
+        <!-- WELKOM SECTIE -->
+        <section class="intro-section">
+        <div class="intro-container">
+        <h2>Welkom bij Leef Natuurlijk & Gezond</h2>
+        <p>
+                   Steeds meer onderzoeken tonen aan dat veel alledaagse huishoudelijke producten — vooral plastic
+                   of synthetische materialen — schadelijke stoffen kunnen bevatten. Deze stoffen kunnen zich
+                   ophopen in je leefomgeving en op de lange termijn je gezondheid beïnvloeden.
+        </p>
+        <p>
+                   Wij helpen je om bewuste, veilige keuzes te maken met zorgvuldig geselecteerde,
+                   niet-giftige en natuurlijke producten. Zo creëer je stap voor stap een gezond en aangenaam thuis.
+        </p>
+        </div>
+        </section>
+
+        <!-- CATEGORIE THUMBNAILS -->
+        <section class="category-section">
+        <h2>Ontdek onze categorieën</h2>
+        <div class="category-grid">
+
+                <a href="/snijplanken/" class="category-card">
+                <img src="{% static 'images/thumbnails/cutting_boards.jpg' %}" alt="Houten snijplanken">
+                <span>Houten Snijplanken</span>
+                </a>
+
+                <a href="/koekenpannen/" class="category-card">
+                <img src="{% static 'images/thumbnails/koekenpan.png' %}" alt="PFAS-vrije koekenpannen">
+                <span>PFAS-vrije Koekenpannen</span>
+                </a>
+
+                <a href="/hapjespannen/" class="category-card">
+                <img src="{% static 'images/thumbnails/hapjespan.jfif' %}" alt="PFAS-vrije hapjespannen">
+                <span>PFAS-vrije Hapjespannen</span>
+                </a>
+
+                 <a href="/wokpannen/" class="category-card">
+                <img src="{% static 'images/thumbnails/wokpan.jfif' %}" alt="PFAS-vrije wokpannen">
+                <span>PFAS-vrije Wokpannen</span>
+                </a>
+
+                <a href="/airfryers/" class="category-card">
+                <img src="{% static 'images/thumbnails/airfryer.jfif' %}" alt="PFAS-vrije airfryers">
+                <span>PFAS-vrije Airfryers</span>
+                </a>
+
+                <a href="/vershoudcontainers/" class="category-card">
+                <img src="{% static 'images/thumbnails/vershoudbakje.jfif' %}" alt="Glazen vershoudbakjes">
+                <span>Glazen Vershoudbakjes</span>
+                </a>
+
+<!--                <a href="/alternatieven-bakpapier/" class="category-card">-->
+<!--                <img src="{% static 'images/bakpapier.jfif' %}" alt="Alternatieven voor bakpapier">-->
+<!--                <span>Bakpapier Alternatieven</span>-->
+<!--                </a>-->
+
+                <a href="/blogs/" class="category-card">
+                <img src="{% static 'images/thumbnails/blog.jpg' %}" alt="Blogs">
+                <span>Blogs</span>
+                </a>
+        </div>
+        </section>
+
+{% endblock %}

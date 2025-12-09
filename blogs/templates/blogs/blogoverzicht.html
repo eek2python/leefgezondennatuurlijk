@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Leef Natuurlijk & Gezond | Blogs over Natuurlijk & Gezond Wonen{% endblock %}
+
+{% block content %}
+<section id="banner">
+    <div class="content">
+         <header class="main">
+          <h1>Blogs over Natuurlijk & Gezond Wonen</h1>
+         </header>
+          <p>
+          <strong>Welkom bij onze kennisbank over gezond, natuurlijk en gifvrij wonen.</strong>
+               In deze blogsectie vind je praktische artikelen, duidelijke uitleg en onafhankelijke
+               achtergrondinformatie over alles wat te maken heeft met een veilige en gezonde leefomgeving.
+          </p>
+          <p>
+          Van PFAS-vrije pannen tot natuurlijke schoonmaakmiddelen, van voedselveilig glas tot
+          cosmetica zonder schadelijke stoffen — wij helpen je door de bomen het bos weer te zien.
+          </p>
+          <p>
+          <strong>Ontdek, leer en laat je inspireren — stap voor stap naar een natuurlijker
+          en gezonder leven.</strong>
+          </p>
+     </div>
+</section>
+
+<!-- BLOG OVERVIEW GRID -->
+<section class="category-section">
+    <div class="blog-overview-wrapper">
+    <div class="blog-overview">
+     <!-- BLOG CARD 1 -->
+     <a href="{% url 'blogs_detail' slug='koken-zonder-schadelijke-stoffen' %}" class="blog-card blog-card-link">
+<img src="{% static 'images/blogs/blog-koken-zonder-schadelijke-stoffen-4x3.jpg' %}"
+        alt="Koken zonder schadelijke stoffen">
+<h2>Koken zonder Schadelijke Stoffen</h2>
+<p>
+       Een praktische gids over hoe je overstapt op veilig en natuurlijk kookgerei —
+       zonder PFAS, zonder coatings, zonder gedoe.
+</p>
+</a>
+
+     <!-- BLOG CARD 2 -->
+         <a href="{% url 'blogs_detail' slug='pfas-in-huis' %}" class="read-more">
+             <div class="blog-card">
+             <img src="{% static 'images/blogs/blog-pfas-in-huis.jpg' %}"
+                     alt="PFAS in huis">
+
+             <h2>PFAS in Huis: Wat je Moet Weten</h2>
+             <p>
+                  PFAS zitten in meer producten dan je denkt. Leer waar ze voorkomen en hoe je
+                  blootstelling eenvoudig kunt verminderen.
+             </p>
+                 </div>
+         </a>
+
+<!--         <a href="/blogs/pfas-in-huis/" class="read-more">Lees meer</a>-->
+
+<!--     &lt;!&ndash; BLOG CARD 3 &ndash;&gt;-->
+<!--     <article class="blog-card">-->
+<!--         <img src="{% static 'images/blog-voedselveilig-glas.jpg' %}"-->
+<!--                 alt="Voedselveilig glas">-->
+<!--         <h2>Waarom Voedselveilig Glas de Beste Keuze is</h2>-->
+<!--         <p>-->
+<!--              Glazen vershoudbakjes gemaakt van borosilicaatglas zijn veilig, duurzaam en-->
+<!--              vrij van schadelijke stoffen. Ontdek waarom.-->
+<!--         </p>-->
+<!--         <a href="/blogs/voedselveilig-glas/" class="read-more">Lees meer</a>-->
+<!--     </article>-->
+
+<!--     &lt;!&ndash; BLOG CARD 4 &ndash;&gt;-->
+<!--     <article class="blog-card">-->
+<!--         <img src="{% static 'images/blog-bakpapier-alternatieven.jpg' %}"-->
+<!--                 alt="Alternatieven voor bakpapier">-->
+<!--         <h2>De Beste PFAS-vrije Alternatieven voor Bakpapier</h2>-->
+<!--         <p>-->
+<!--              Bakpapier bevat vaak coatings. Bekijk natuurlijke, PFAS-vrije en herbruikbare-->
+<!--              alternatieven voor elke oven.-->
+<!--         </p>-->
+<!--         <a href="/blogs/bakpapier-alternatieven/" class="read-more">Lees meer</a>-->
+<!--     </article>-->
+
+<!--     &lt;!&ndash; BLOG CARD 5 &ndash;&gt;-->
+<!--     <article class="blog-card">-->
+<!--         <img src="{% static 'images/blog-natuurlijk-schoonmaken.jpg' %}"-->
+<!--                 alt="Natuurlijk schoonmaken">-->
+<!--         <h2>Natuurlijk Schoonmaken Zonder Chemicaliën</h2>-->
+<!--         <p>-->
+<!--              Met simpele ingrediënten maak je je huis fris en schoon — zonder agressieve-->
+<!--              chemische middelen.-->
+<!--         </p>-->
+<!--         <a href="/blogs/natuurlijk-schoonmaken/" class="read-more">Lees meer</a>-->
+     </article>
+    </div>
+    </div>
+</section>
+
+{% endblock %}
