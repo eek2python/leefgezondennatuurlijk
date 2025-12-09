@@ -1,0 +1,26 @@
+# -----------------------
+# Python / Django
+# -----------------------
+__pycache__/
+*.py[cod]
+*$py.class
+# Virtual environments
+.venv/
+venv/
+env/
+# SQLite database (NEGEREN omdat je geen db nodig hebt op Render)
+db.sqlite3
+db.sqlite3-journal
+# Django collectstatic output
+staticfiles/
+# Logs & runtime files
+*.log
+# Environment / secrets
+.env
+*.env
+# IDE settings
+.vscode/
+.idea/
+# OS files
+.DS_Store
+Thumbs.db
