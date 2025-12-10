@@ -20,6 +20,8 @@ from django.urls import path
 from django.contrib import admin
 from django.urls import path, include
 from products import views
+from .sitemap_views import sitemap_xml
+
 urlpatterns = [
    path("admin/", admin.site.urls),
    path("", views.homepage, name="homepage"),  # dit is je index
@@ -30,4 +32,5 @@ urlpatterns = [
    path("airfryers/", views.airfryers, name="airfryers"),
    path("vershoudcontainers/", views.vershoudcontainers, name="vershoudcontainers"),
    path("blogs/", include("blogs.urls")),
+   path("sitemap.xml", sitemap_xml, name="sitemap"),
 ]
