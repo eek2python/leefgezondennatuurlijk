@@ -12,3 +12,4 @@ def blogs_detail(request, slug):
        raise Http404("Pagina niet gevonden")
 
 # Create your views here.
+

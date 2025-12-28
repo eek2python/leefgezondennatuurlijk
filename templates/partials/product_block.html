@@ -1,0 +1,70 @@
+{% load static %}
+<div class="product-block">
+<img
+       src="{% static 'images/' %}{{ product.image }}"
+       alt="{{ product.name }}"
+       class="image right"
+       loading="lazy"
+>
+<div class="content">
+<h3>{{ forloop.counter }}. {{ product.name }}</h3>
+<p>{{ product.description }}</p>
+       {% if product.pros or product.cons %}
+<div class="pros-cons">
+           {% if product.pros %}
+<div class="pros">
+<strong>Voordelen</strong>
+<ul>
+                   {% for pro in product.pros %}
+<li>{{ pro }}</li>
+                   {% endfor %}
+</ul>
+</div>
+           {% endif %}
+           {% if product.cons %}
+<div class="cons">
+<strong>Nadelen</strong>
+<ul>
+                   {% for con in product.cons %}
+<li>{{ con }}</li>
+                   {% endfor %}
+</ul>
+</div>
+           {% endif %}
+</div>
+       {% endif %}
+<div class="verdict">
+<div class="verdict-stars">
+<span class="stars stars-{{ product.rating_class }}"></span>
+</div>
+           {% if product.verdict %}
+<div class="verdict-desc">
+               {{ product.verdict }}
+</div>
+           {% endif %}
+</div>
+<div class="meta">
+           {% if product.price_range %}
+<span class="price">{{ product.price_range }}</span>
+           {% endif %}
+           {% if product.award %}
+<span class="badge">
+{% if product.award %}
+<span class="product-badge {{ product.award_class }}">
+   {{ product.award }}
+</span>
+{% endif %}
+</span>
+</span>
+           {% endif %}
+</div>
+<a
+           href="{{ product.affiliate_url }}"
+           target="_blank"
+           rel="nofollow sponsored noopener"
+           class="button primary small"
+>
+           Bekijk product
+</a>
+</div>
+</div>

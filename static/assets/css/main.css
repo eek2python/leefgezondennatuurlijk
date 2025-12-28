@@ -2254,6 +2254,34 @@ input, select, textarea {
            }
         }
 
+/* Format Selector */
+ .format-selector {
+   display: flex;
+   gap: 10px;
+   flex-wrap: wrap;
+   align-items: center;
+   margin: 25px 0 20px 0;
+}
+/*
+.format-selector .label {
+   font-weight: 600;
+   margin-right: 10px;
+}
+*/
+.format-btn {
+   text-decoration: none;
+   border-radius: 6px;
+   font-size: 15px;
+   font-weight: 600;
+}
+
+.format-btn:hover {
+   background: #e6e6e6;
+}
+.format-btn.active {
+   pointer-events: none;
+}
+
 /* Intro Section */
 .blog-intro {
    padding: 60px 20px 40px;
@@ -2905,6 +2933,11 @@ padding: 20px;
 }
 .product-badge.premium-choice {
  background-color: #f2b632; /* goudgeel */
+}
+.product-badge.value-choice {
+   background-color: #2f7d4e; /*donker groen*/
+   color: #ffffff;
+   border: 1px solid #256a42;
 }
 /* Extra styling binnen tabellen */
 table.product-table .product-badge {
