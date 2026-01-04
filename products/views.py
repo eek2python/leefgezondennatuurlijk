@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, Click
 import json
-from .data_koekenpannen import TOP10_BY_SIZE
-from .data_conclusies_koekenpannen import CONCLUSIES_BY_SIZE
+from .data_koekenpannen import KOEKENPANNEN_TOP10_BY_SIZE
+from .data_conclusies_koekenpannen import KOEKENPANNEN_CONCLUSIES_BY_SIZE
+from .data_hapjespannen import HAPJESPANNEN_TOP10_BY_SIZE
+from .data_conclusies_hapjespannen import HAPJESPANNEN_CONCLUSIES_BY_SIZE
 
 
 def homepage(request):
@@ -14,17 +16,17 @@ def snijplanken(request):
 
 
 def koekenpannen(request):
-    available_sizes = sorted(TOP10_BY_SIZE.keys())
+    available_sizes = sorted(KOEKENPANNEN_TOP10_BY_SIZE.keys())
     size = request.GET.get("size")
     try:
         size = int(size)
     except (TypeError, ValueError):
         size = available_sizes[0]
 
-    products = TOP10_BY_SIZE.get(size, [])
-    product_count = len(products)
+    koekenpannen = KOEKENPANNEN_TOP10_BY_SIZE.get(size, [])
+    product_count = len(koekenpannen)
 
-    for p in products:
+    for p in koekenpannen:
         p["rating_class"] = str(p["rating"]).replace(".", "-")
         award = p.get("award", "").lower()
         if "beste keuze" in award:
@@ -38,7 +40,7 @@ def koekenpannen(request):
         else:
             p["award_class"] = ""
 
-    conclusie = CONCLUSIES_BY_SIZE.get(size)
+    conclusie = KOEKENPANNEN_CONCLUSIES_BY_SIZE.get(size)
 
     json_ld = json.dumps({
         "@context": "https://schema.org",
@@ -46,7 +48,7 @@ def koekenpannen(request):
         "name": f"Top 10 PFAS-vrije Koekenpannen {size} cm",
         "description": f"Top 10 PFAS-vrije koekenpannen van {size} cm – duurzaam, gezond en zonder schadelijke stoffen.",
         "itemListOrder": "ItemListOrderDescending",
-        "numberOfItems": len(products),
+        "numberOfItems": len(koekenpannen),
         "itemListElement": [
             {
                 "@type": "ListItem",
@@ -77,7 +79,7 @@ def koekenpannen(request):
                     }
                 }
             }
-            for i, p in enumerate(products)
+            for i, p in enumerate(koekenpannen)
         ]
     })
     return render(
@@ -86,7 +88,7 @@ def koekenpannen(request):
         {
             "available_sizes": available_sizes,
             "selected_size": size,
-            "products": products,
+            "koekenpannen": koekenpannen,
             "product_count": product_count,
             "conclusie": conclusie,
             "json_ld": json_ld,
@@ -95,8 +97,84 @@ def koekenpannen(request):
 
 
 def hapjespannen(request):
-    return render(request, "hapjespannen.html")
+    available_sizes = sorted(HAPJESPANNEN_TOP10_BY_SIZE.keys())
+    size = request.GET.get("size")
+    try:
+        size = int(size)
+    except (TypeError, ValueError):
+        size = available_sizes[0]
 
+    hapjespannen = HAPJESPANNEN_TOP10_BY_SIZE.get(size, [])
+    product_count = len(hapjespannen)
+
+    for p in hapjespannen:
+        p["rating_class"] = str(p["rating"]).replace(".", "-")
+        award = p.get("award", "").lower()
+        if "beste keuze" in award:
+            p["award_class"] = "best-choice"
+        elif "budget" in award:
+            p["award_class"] = "budget-choice"
+        elif "premium" in award:
+            p["award_class"] = "premium-choice"
+        elif "betaalbare" in award:
+            p["award_class"] = "value-choice"
+        else:
+            p["award_class"] = ""
+
+    conclusie = HAPJESPANNEN_CONCLUSIES_BY_SIZE.get(size)
+
+    json_ld = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": f"Top 10 PFAS-vrije Hapjespannen {size} cm",
+        "description": f"Top 10 PFAS-vrije hapjespannen van {size} cm – duurzaam, gezond en zonder schadelijke stoffen.",
+        "itemListOrder": "ItemListOrderDescending",
+        "numberOfItems": len(hapjespannen),
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": i + 1,
+                "item": {
+                    "@type": "Product",
+                    "name": p["name"],
+                    "description": p["description"],
+                    "image": request.build_absolute_uri(
+                        f"/static/images/hapjespannen/{p['image']}"
+                    ),
+                    "brand": {
+                        "@type": "Brand",
+                        "name": p["brand"]
+                    },
+                    "material": p["material"],
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": p["rating"],
+                        "reviewCount": p["rating_count"]
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "url": p["affiliate_url"],
+                        "price": p["price"],
+                        "priceCurrency": p["currency"],
+                        "availability": f"https://schema.org/{p['availability']}"
+                    }
+                }
+            }
+            for i, p in enumerate(hapjespannen)
+        ]
+    })
+    return render(
+        request,
+        "hapjespannen.html",
+        {
+            "available_sizes": available_sizes,
+            "selected_size": size,
+            "hapjespannen": hapjespannen,
+            "product_count": product_count,
+            "conclusie": conclusie,
+            "json_ld": json_ld,
+        }
+    )
 
 def wokpannen(request):
     return render(request, "wokpannen.html")

@@ -1,4 +1,4 @@
-CONCLUSIES_BY_SIZE = {
+KOEKENPANNEN_CONCLUSIES_BY_SIZE = {
    28: {
        "title": "Conclusie – Onze aanbeveling",
        "text": (

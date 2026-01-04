@@ -1,5 +1,5 @@
 from .products_koekenpannen import PRODUCTS
-TOP10_BY_SIZE = {
+KOEKENPANNEN_TOP10_BY_SIZE = {
     28: [
        PRODUCTS["greenpan_barcelona_pro_28"],
        PRODUCTS["kochstar_essenz_28"],
@@ -63,7 +63,7 @@ TOP10_BY_SIZE = {
         PRODUCTS["bk_easy_induction_32"],
         PRODUCTS["greenpan_torino_32"],
         PRODUCTS["tefal_renew_32"],
-        PRODUCTS["greenchef_diamond_30"],
+        PRODUCTS["blue_diamond_32"],
         PRODUCTS["ikea_hemlagad_keramisch_32"],
         PRODUCTS["scanpan_ceramic_32"],
     ]

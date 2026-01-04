@@ -1,7 +1,7 @@
 {% load static %}
 <div class="product-block">
 <img
-       src="{% static 'images/' %}{{ product.image }}"
+       src="{% static product.image_path|add:'/' %}{{ product.image }}"
        alt="{{ product.name }}"
        class="image right"
        loading="lazy"

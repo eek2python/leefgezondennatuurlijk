@@ -4,19 +4,19 @@
 {% block title %}Top {{ product_count }} Gezonde Koekenpannen zonder Giftige Coating | Leef Natuurlijk & Gezond{% endblock %}
 
 {% block meta %}
-<meta name="description" content="Ontdek de 10 beste PFAS-vrije koekenpannen van 2025 – gezond, duurzaam en zonder schadelijke stoffen. Vergelijk merken, prijzen en prestaties.">
+<meta name="description" content="Ontdek de 10 beste PFAS-vrije koekenpannen van 2026 – gezond, duurzaam en zonder schadelijke stoffen. Vergelijk merken, prijzen en prestaties.">
 
 <!-- 🔹 Open Graph -->
-<meta property="og:title" content="Top 10 PFAS-vrije Koekenpannen van 2025 – Gezond & Veilig Bakken">
-<meta property="og:description" content="Bekijk de beste PFAS-vrije koekenpannen van 2025 – vrij van schadelijke stoffen en duurzaam voor dagelijks gebruik.">
+<meta property="og:title" content="Top 10 PFAS-vrije Koekenpannen van 2026 – Gezond & Veilig Bakken">
+<meta property="og:description" content="Bekijk de beste PFAS-vrije koekenpannen van 2026 – vrij van schadelijke stoffen en duurzaam voor dagelijks gebruik.">
 <meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/pannen.jpg">
 <meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/koekenpannen">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
 <!-- 🔹 Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Top 10 PFAS-vrije Koekenpannen van 2025 – Gezond & Veilig Bakken">
-<meta name="twitter:description" content="Ontdek de beste PFAS-vrije koekenpannen van 2025 – duurzaam, gezond en stijlvol. Vergelijk direct prijzen en prestaties.">
+<meta name="twitter:title" content="Top 10 PFAS-vrije Koekenpannen van 2026 – Gezond & Veilig Bakken">
+<meta name="twitter:description" content="Ontdek de beste PFAS-vrije koekenpannen van 2026 – duurzaam, gezond en stijlvol. Vergelijk direct prijzen en prestaties.">
 <meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/pannen.jpg">
 <!-- 🔹 Structured Data – Product ItemList -->
 <script type="application/ld+json">
@@ -43,10 +43,10 @@
 <section id="banner">
     <div class="content">
         <header class="main">
-            <h1>Top {{ product_count }} PFAS-vrije Koekenpannen – Gezond, Veilig & Duurzaam Bakken (2025)</h1>
+            <h1>Top {{ product_count }} PFAS-vrije Koekenpannen – Gezond, Veilig & Duurzaam Bakken (2026)</h1>
         </header>
         <p>Gezond koken begint met de juiste pan. PFAS-vrije koekenpannen bevatten geen schadelijke stoffen en combineren
-        uitstekende antiaanbakprestaties met duurzaamheid en gebruiksgemak. Ontdek hier de {{ product_count }} beste PFAS-vrije koekenpannen in het formaat van {{ selected_size }}cm van 2025,
+        uitstekende antiaanbakprestaties met duurzaamheid en gebruiksgemak. Ontdek hier de {{ product_count }} beste PFAS-vrije koekenpannen in het formaat van {{ selected_size }}cm van 2026,
         zorgvuldig geselecteerd op warmteverdeling, duurzaamheid, onderhoud en prijs-kwaliteit.</p>
     </div>
 </section>
@@ -98,7 +98,7 @@
         <li>🍳 <b>Kook je vaak kleine porties?</b> Neem een extra 20 cm-pan erbij.</li>
         <li>🍲 <b>Veel saus- of wokgerechten?</b> Overweeg een hapjespan van 24–28 cm.</li>
         </ul>
-        <p><b>Kort gezegd:</b> 28 cm is het meestgekozen formaat in Nederland, maar 24 cm + 28 cm is voor de meeste keukens de ideale combinatie.</p>
+        <p><b>Kort gezegd:</b> 28 cm is het meest gekozen formaat in Nederland, maar 24 cm + 28 cm is voor de meeste keukens de ideale combinatie.</p>
 </section>
 <div id="productlijst"></div>
 <div class="format-selector">
@@ -113,10 +113,10 @@
 
     {% endfor %}
 </div>
-<h2 class="category-title">De {{ product_count }} beste koekenpannen van 2025 – {{ selected_size }} cm</h2>
+<h2 class="category-title">De {{ product_count }} beste koekenpannen van 2026 – {{ selected_size }} cm</h2>
 <div class="products-container">
 
-    {% for product in products %}
+    {% for product in koekenpannen %}
 
         {% include "partials/product_block.html" with product=product %}
 
@@ -126,7 +126,7 @@
 
 <!--<section id="producten" class="products">-->
 <!--        <header class="major">-->
-<!--        <h2>De 10 beste koekenpannen van 2025</h2>-->
+<!--        <h2>De 10 beste koekenpannen van 2026</h2>-->
 <!--        </header>-->
 <!--&lt;!&ndash;        <p></p>&ndash;&gt;-->
 <!--        <div class="product-list">-->
@@ -342,7 +342,7 @@
                 </tr>
             </thead>
             <tbody>
-               {% for product in products %}
+               {% for product in koekenpannen %}
             <tr>
             <td>
             <strong>{{ product.name|cut:" (" }}</strong>
