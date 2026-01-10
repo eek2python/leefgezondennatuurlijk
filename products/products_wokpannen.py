@@ -407,7 +407,6 @@ PRODUCTS = {
        "Minder duurzaam dan premium wokpannen",
    ],
    "verdict": "Een betrouwbare middenklasse wokpan van 30 cm voor wie PFAS-vrij wil wokken zonder het premiumsegment in te gaan.",
-   "award": "🟢 Value choice",
 },
 
 "greenpan_copenhagen_wok_30": {
