@@ -5,6 +5,8 @@ from .data_koekenpannen import KOEKENPANNEN_TOP10_BY_SIZE
 from .data_conclusies_koekenpannen import KOEKENPANNEN_CONCLUSIES_BY_SIZE
 from .data_hapjespannen import HAPJESPANNEN_TOP10_BY_SIZE
 from .data_conclusies_hapjespannen import HAPJESPANNEN_CONCLUSIES_BY_SIZE
+from .data_wokpannen import WOKPANNEN_TOP10_BY_SIZE
+from .data_conclusies_wokpannen import WOKPANNEN_CONCLUSIES_BY_SIZE
 
 
 def homepage(request):
@@ -177,7 +179,84 @@ def hapjespannen(request):
     )
 
 def wokpannen(request):
-    return render(request, "wokpannen.html")
+    available_sizes = sorted(WOKPANNEN_TOP10_BY_SIZE.keys())
+    size = request.GET.get("size")
+    try:
+        size = int(size)
+    except (TypeError, ValueError):
+        size = available_sizes[0]
+
+    wokpannen = WOKPANNEN_TOP10_BY_SIZE.get(size, [])
+    product_count = len(wokpannen)
+
+    for p in wokpannen:
+        p["rating_class"] = str(p["rating"]).replace(".", "-")
+        award = p.get("award", "").lower()
+        if "beste keuze" in award:
+            p["award_class"] = "best-choice"
+        elif "budget" in award:
+            p["award_class"] = "budget-choice"
+        elif "premium" in award:
+            p["award_class"] = "premium-choice"
+        elif "betaalbare" in award:
+            p["award_class"] = "value-choice"
+        else:
+            p["award_class"] = ""
+
+    conclusie = WOKPANNEN_CONCLUSIES_BY_SIZE.get(size)
+
+    json_ld = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": f"Top 10 PFAS-vrije Wokpannen {size} cm",
+        "description": f"Top 10 PFAS-vrije Wokpannen van {size} cm – duurzaam, gezond en zonder schadelijke stoffen.",
+        "itemListOrder": "ItemListOrderDescending",
+        "numberOfItems": len(wokpannen),
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": i + 1,
+                "item": {
+                    "@type": "Product",
+                    "name": p["name"],
+                    "description": p["description"],
+                    "image": request.build_absolute_uri(
+                        f"/static/images/wokpannen/{p['image']}"
+                    ),
+                    "brand": {
+                        "@type": "Brand",
+                        "name": p["brand"]
+                    },
+                    "material": p["material"],
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": p["rating"],
+                        "reviewCount": p["rating_count"]
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "url": p["affiliate_url"],
+                        "price": p["price"],
+                        "priceCurrency": p["currency"],
+                        "availability": f"https://schema.org/{p['availability']}"
+                    }
+                }
+            }
+            for i, p in enumerate(wokpannen)
+        ]
+    })
+    return render(
+        request,
+        "wokpannen.html",
+        {
+            "available_sizes": available_sizes,
+            "selected_size": size,
+            "wokpannen": wokpannen,
+            "product_count": product_count,
+            "conclusie": conclusie,
+            "json_ld": json_ld,
+        }
+    )
 
 
 def airfryers(request):
