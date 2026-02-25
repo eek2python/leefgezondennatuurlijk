@@ -9,7 +9,7 @@ KOEKENPANNEN_TOP10_BY_SIZE = {
        PRODUCTS["brabantia_dusk_28"],
        PRODUCTS["tefal_renew_28"],
        PRODUCTS["bk_enjoy_28"],
-       PRODUCTS["ibenzoa_rvs_28"],
+       PRODUCTS["demeyere_alu_pro_5_28"],
        PRODUCTS["debuyer_ceranoa_28"],
    ],
    24: [
