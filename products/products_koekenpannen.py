@@ -788,7 +788,7 @@ PRODUCTS = {
         ],
         "rating": 4,
         "rating_count": 130,
-        "price": 118.00,
+        "price": 93.99,
         "currency": "EUR",
         "availability": "InStock",
         "price_range": "€€€€",
