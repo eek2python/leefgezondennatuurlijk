@@ -113,7 +113,7 @@ PRODUCTS = {
         "affiliate_url": "https://www.wehkamp.nl/bormioli-rocco-frigoverre-vershoudbakjes-frigoverre-glas-blauw-3-stuks-16432465/",
         "price_range": "\u20ac\u20ac",
         "verdict": "Een betrouwbare glazen set voor dagelijks gebruik: duurzaam, veelzijdig en ideaal als je een praktische 3-delige glasoplossing zoekt voor bewaren en opwarmen.",
-        "award": "",
+        "award": "🥇 Meest gekozen",
     },
     "luminarc_purebox_3delig": {
         "slug": "luminarc_purebox_3delig",
@@ -142,6 +142,6 @@ PRODUCTS = {
         "affiliate_url": "https://www.bol.com/nl/nl/p/luminarc-pure-box-active-vershouddoos-rond-glas-set-3/9200000036318348/",
         "price_range": "\u20ac\u20ac",
         "verdict": "Een stevige en gebruiksvriendelijke set met uitstekend ventielsysteem voor dagelijks gebruik.",
-        "award": "",
+        "award": "♻️ Eco keuze",
     },
 }

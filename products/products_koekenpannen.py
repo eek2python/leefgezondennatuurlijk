@@ -133,6 +133,7 @@ PRODUCTS = {
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/bk-easy-induction-ceramic-koekenpan-28-cm-pfas-vrij-inductie/9300000032109237/",
+        "award": "🥇 Meest gekozen",
         "price_range": "€€",
         "image": "koekenpan05_bk_easy_induction.jpg",
         "image_path": "images/koekenpannen",
@@ -189,6 +190,7 @@ PRODUCTS = {
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/tefal-renew-koekenpan-o28-cm-keramisch-pfas-vrij-geschikt-voor-inductie/9300000118641472/",
+        "award": "♻️ Eco keuze",
         "price_range": "€€",
         "image": "koekenpan07_tefal_renew.jpg",
         "image_path": "images/koekenpannen",
@@ -427,6 +429,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/bk-easy-induction-ceramic-koekenpan-o24-cm-pfas-vrij/9300000032891762/?Referrer=NLGOOFS&utm_source=google&utm_medium=free_shopping",
         "price_range": "€€",
+        "award": "🥇 Meest gekozen",
         "image": "koekenpan05_bk_easy_induction_24cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [
@@ -484,6 +487,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/tefal-renew-keramische-koekenpan-o-24-cm/9300000118641479/?cid=1766058323820-2566325314987&bltgh=3d6aa0ff-bb29-48f6-b126-fd4c6a85820b.ProductList_Middle.0.ProductImage",
         "price_range": "€€",
+        "award": "♻️ Eco keuze",
         "image": "koekenpan07_tefal_renew_24cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [
@@ -697,6 +701,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/bk-easy-induction-ceramic-koekenpan-o26-cm-inductie-pfas-vrij/9300000032891766/?cid=1766176900717-8018805583756&bltgh=69454728-c866-471a-9628-a58300558e6c.ProductList_Middle.0.ProductImage",
         "price_range": "€€",
+        "award": "🥇 Meest gekozen",
         "image": "bk_easy_induction_26cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [
@@ -941,6 +946,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/bk-easy-induction-ceramic-koekenpan-o20-cm-pfas-vrij/9300000032891763/?cid=1766380483899-7763794392492&bltgh=721b099c-fcb4-4086-b787-280ca02ac2e5.ProductList_Middle.0.ProductImage",
         "price_range": "€€",
+        "award": "🥇 Meest gekozen",
         "image": "koekenpan05_bk_easy_induction_20cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [
@@ -1001,6 +1007,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/tefal-renew-keramische-koekenpan-o-20-cm/9300000120126719/?cid=1766380777710-2580610106203&bltgh=a24bc707-9434-45de-a969-58034170aee3.ProductList_Middle.0.ProductImage",
         "price_range": "€€",
+        "award": "♻️ Eco keuze",
         "image": "koekenpan07_tefal_renew_20cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [
@@ -1242,6 +1249,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/bk-easy-induction-ceramic-koekenpan-o30-cm-pfas-vrij/9300000032891768/?cid=1766555806050-3582054560194&bltgh=93cf7e04-5bca-4d0a-b78e-c9a9cee22cbc.ProductList_Middle.0.ProductImage",
         "price_range": "€€",
+        "award": "🥇 Meest gekozen",
         "image": "bk_easy_induction_30cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [
@@ -1299,6 +1307,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.coolblue.nl/product/913828/tefal-renew-keramische-koekenpan-30-cm.html?srsltid=AfmBOoqmDHo_7PbZ3Zoxhyk8WZXLgLI2HBWj0ZQg73mtxBChSc-HGxfM",
         "price_range": "€€",
+        "award": "♻️ Eco keuze",
         "image": "tefal_renew_30cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [
@@ -1483,6 +1492,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/bk-easy-induction-vispan-o-32-cm-inductie-pfas-vrij/9300000089414301/?cid=1766655064205-1733964093749&bltgh=b2689f89-faf1-468c-87cb-b989c8c4f351.ProductList_Middle.9.ProductTitle",
         "price_range": "€€",
+        "award": "🥇 Meest gekozen",
         "image": "bk_easy_induction_32cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [
@@ -1540,6 +1550,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/tefal-renew-on-keramische-koekenpan-o-32-cm/9300000117431080/?cid=1766655540107-9223038508418&bltgh=c1879416-2445-440e-bc08-1f53f5887c81.ProductList_Middle.0.ProductImage",
         "price_range": "€€",
+        "award": "♻️ Eco keuze",
         "image": "tefal_renew_32cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [

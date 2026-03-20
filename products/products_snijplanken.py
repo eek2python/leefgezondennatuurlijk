@@ -110,7 +110,7 @@ PRODUCTS = {
         "affiliate_url": "https://www.knivesandtools.nl/nl/pt/-zwilling-twin-snijplank-60x40x3-5-cm-beukenhout-35118-100.htm",
         "price_range": "\u20ac\u20ac\u20ac",
         "verdict": "Betrouwbare hardhouten plank met uitstekende snijstabiliteit.",
-        "award": "",
+        "award": "👨‍🍳 Chef's keuze",
     },
     "wmf_acacia_40x32": {
         "slug": "wmf_acacia_40x32",
@@ -278,6 +278,6 @@ PRODUCTS = {
         "affiliate_url": "https://www.bol.com/nl/nl/p/point-virgule-snijplank-bamboe-large-40x30x1cm/9300000056867854/",
         "price_range": "\u20ac\u20ac",
         "verdict": "Betaalbare, praktische snijplank van duurzaam bamboe voor dagelijks gebruik.",
-        "award": "",
+        "award": "🌿 Eco keuze",
     },
 }

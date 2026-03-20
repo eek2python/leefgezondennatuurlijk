@@ -62,6 +62,8 @@
                         </header>
                         <div class="product-list">
 
+{% include "partials/how_we_select.html" %}
+
                                 <section class="top10-section">
 {% for product in products %}
 {% include "partials/product_block.html" %}
@@ -100,7 +102,7 @@
                                         </td>
                                         <td>{{ product.price_range }}</td>
                                         <td><span class="stars stars-{{ product.rating_class }}"></span></td>
-                                        <td><a href="{{ product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk product</a></td>
+                                        <td><a href="{{ product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews →</a></td>
                                         </tr>
                                         {% endfor %}
                                         </tbody>

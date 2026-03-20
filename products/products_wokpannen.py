@@ -125,6 +125,7 @@ PRODUCTS = {
        "availability": "InStock",
        "affiliate_url": "https://www.bol.com/nl/nl/p/primecook-wok-o-28-cm-pfas-vrij-inductie-veilige-en-slijtvaste-antiaanbaklaag/9300000050781201/",
        "price_range": "€€€",
+       "award": "🥇 Meest gekozen",
        "image": "primecook-wok-28.jpg",
        "image_path": "images/wokpannen",
        "pros": [
@@ -203,6 +204,7 @@ PRODUCTS = {
        "availability": "InStock",
        "affiliate_url": "https://www.bol.com/nl/nl/p/greenpan-cambridge-wokpan-28cm-zwart-inductie-pfas-vrij/9200000083444325/",
        "price_range": "€€€",
+       "award": "♻️ Eco keuze",
        "image": "wokpan08.jpg",
        "image_path": "images/wokpannen",
        "pros": [

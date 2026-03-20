@@ -109,7 +109,7 @@ PRODUCTS = {
         "affiliate_url": "https://www.amazon.nl/-/en/MasterPRO-Cyclone-Capacity-Digital-Circulation/dp/B0F3P6FW2Y",
         "price_range": "\u20ac\u20ac",
         "verdict": "Een betrouwbare en krachtige PFAS-vrije airfryer met uitstekende luchtcirculatie en een duurzame keramische mand.",
-        "award": "",
+        "award": "🥇 Meest gekozen",
     },
     "wartmann_wm2312af_5l": {
         "slug": "wartmann_wm2312af_5l",
@@ -137,7 +137,7 @@ PRODUCTS = {
         "affiliate_url": "https://www.bol.com/nl/nl/p/wartmann-airfryer-pfas-vrije-heteluchtfriteuse-met-kijkvenster-nieuw-model-5-7-liter-10-programma-s-1700-watt-zwart/9300000180236809/",
         "price_range": "\u20ac\u20ac",
         "verdict": "Een solide en stille PFAS-vrije airfryer die overtuigt door zijn duurzame keramische binnenmand en consistente resultaten.",
-        "award": "",
+        "award": "🤫 Stilste model",
     },
     "maison_kitchen_5l": {
         "slug": "maison_kitchen_5l",

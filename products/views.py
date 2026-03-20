@@ -37,6 +37,16 @@ def _enrich_products(products):
             p["award_class"] = "premium-choice"
         elif "betaalbare" in award:
             p["award_class"] = "value-choice"
+        elif "meest gekozen" in award:
+            p["award_class"] = "popular-choice"
+        elif "eco keuze" in award:
+            p["award_class"] = "eco-choice"
+        elif "meest duurzaam" in award:
+            p["award_class"] = "eco-choice"
+        elif "chef" in award:
+            p["award_class"] = "chef-choice"
+        elif "stilste" in award:
+            p["award_class"] = "feature-choice"
         else:
             p["award_class"] = ""
 
