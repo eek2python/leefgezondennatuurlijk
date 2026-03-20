@@ -125,4 +125,16 @@ CONTENT = {
             },
         ],
     },
+"how_we_test": {
+    "title": "Hoe wij hapjespannen beoordelen",
+    "intro": "Bij hapjespannen letten we op de criteria die bepalend zijn voor gezond, duurzaam en veelzijdig koken in dagelijks gebruik.",
+    "bullets": [
+        "Materiaalveiligheid: geen PFAS of schadelijke coatings.",
+        "Warmteverdeling: gelijkmatig en geschikt voor inductie en andere warmtebronnen.",
+        "Veelzijdigheid: inzetbaar voor eenpansgerechten, sauzen, vlees, vis en roerbakgerechten.",
+        "Duurzaamheid: hoe goed houdt de coating stand bij intensief gebruik.",
+        "Prijs-kwaliteit: eerlijke vergelijking van budget tot premium.",
+    ],
+    "outro": None,
+},
 }

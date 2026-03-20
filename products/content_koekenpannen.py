@@ -213,4 +213,16 @@ CONTENT = {
             },
         ],
     },
+"how_we_test": {
+    "title": "Hoe wij koekenpannen beoordelen",
+    "intro": "Bij elk product op deze pagina kijken we naar de criteria die echt tellen voor veilig, duurzaam en prettig dagelijks koken.",
+    "bullets": [
+        "Materiaalveiligheid: geen PFAS of schadelijke coatings.",
+        "Warmteverdeling: gelijkmatig en geschikt voor alle warmtebronnen, inclusief inductie.",
+        "Gebruiksgemak: gewicht, greepcomfort, antiaanbaklaag en dagelijks onderhoud.",
+        "Duurzaamheid: hoe lang houdt de coating het vol bij normaal gebruik.",
+        "Prijs-kwaliteit: eerlijke vergelijking over alle prijsklassen heen.",
+    ],
+    "outro": None,
+},
 }

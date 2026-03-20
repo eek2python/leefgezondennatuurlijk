@@ -106,4 +106,16 @@ CONTENT = {
             },
         ],
     },
+"how_we_test": {
+    "title": "Hoe wij wokpannen beoordelen",
+    "intro": "Bij wokpannen selecteren we op criteria die tellen voor krachtig, veilig en duurzaam koken op hoge temperaturen.",
+    "bullets": [
+        "Materiaalveiligheid: geen PFAS of klassieke antiaanbakrisico\'s bij hoge temperatuur.",
+        "Bakprestaties op hoog vuur: geschikt voor snel en krachtig roerbakken.",
+        "Warmteverdeling: snelle en gelijkmatige hittespreiding over de wok.",
+        "Gebruiksgemak: gewicht, hendel en dagelijks onderhoud.",
+        "Prijs-kwaliteit: eerlijke vergelijking over alle prijsklassen heen.",
+    ],
+    "outro": None,
+},
 }

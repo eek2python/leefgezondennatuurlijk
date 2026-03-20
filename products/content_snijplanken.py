@@ -93,4 +93,16 @@ CONTENT = {
             },
         ],
     },
+"how_we_test": {
+    "title": "Hoe wij snijplanken beoordelen",
+    "intro": "Bij snijplanken selecteren we op criteria die bepalend zijn voor veiligheid, kwaliteit en dagelijks keukengebruik.",
+    "bullets": [
+        "Materiaalkeuze: houtsoort, hardheid en voedselveiligheid.",
+        "Duurzaamheid: weerstand tegen krassen, vocht en intensief gebruik.",
+        "Onderhoudsgemak: eenvoudig te reinigen en te onderhouden.",
+        "Formaat en stabiliteit: stevig werkoppervlak dat past bij dagelijkse bereidingen.",
+        "Prijs-kwaliteit: eerlijke vergelijking van budget tot premium segment.",
+    ],
+    "outro": None,
+},
 }

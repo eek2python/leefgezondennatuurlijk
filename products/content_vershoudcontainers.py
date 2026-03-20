@@ -81,4 +81,16 @@ CONTENT = {
             },
         ],
     },
+"how_we_test": {
+    "title": "Hoe wij vershoudcontainers beoordelen",
+    "intro": "Bij vershoudbakjes letten we op criteria die bepalen hoe veilig en praktisch je voedsel bewaard wordt voor dagelijks gebruik.",
+    "bullets": [
+        "Materiaal: glas scoort beter voor voedselveiligheid en duurzaamheid ten opzichte van kunststof.",
+        "Lekdichtheid: stevige afdichting voor veilig bewaren en meenemen.",
+        "Veelzijdigheid: geschiktheid voor oven, magnetron en vriezer.",
+        "Duurzaamheid: bestand tegen dagelijks gebruik, vaatwassen en temperatuurwisselingen.",
+        "Prijs-kwaliteit: eerlijke vergelijking per set.",
+    ],
+    "outro": None,
+},
 }

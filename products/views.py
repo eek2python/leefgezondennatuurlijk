@@ -19,6 +19,9 @@ from .content_airfryers import CONTENT as AIRFRYERS_CONTENT
 from .products_vershoudcontainers import PRODUCTS as VERSHOUDCONTAINERS_PRODUCTS
 from .rankings_vershoudcontainers import RANKINGS as VERSHOUDCONTAINERS_RANKINGS
 from .content_vershoudcontainers import CONTENT as VERSHOUDCONTAINERS_CONTENT
+from .products_rvs_koekenpannen import PRODUCTS as RVS_KOEKENPANNEN_PRODUCTS
+from .rankings_rvs_koekenpannen import RANKINGS as RVS_KOEKENPANNEN_RANKINGS
+from .content_rvs_koekenpannen import CONTENT as RVS_KOEKENPANNEN_CONTENT
 
 
 def homepage(request):
@@ -307,6 +310,42 @@ def vershoudcontainers(request):
         "conclusie": conclusie,
         "json_ld": json_ld,
         "faq_ld": faq_ld,
+    })
+
+
+def rvs_koekenpannen(request):
+    content = RVS_KOEKENPANNEN_CONTENT
+    products = [dict(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in RVS_KOEKENPANNEN_RANKINGS if k in RVS_KOEKENPANNEN_PRODUCTS]
+    product_count = len(products)
+    conclusie = content["conclusies"]["default"]
+    faq_ld = _build_faq_ld(content["faq"]["items"])
+    real_products = [p for p in products if not p["affiliate_url"].startswith("TODO")]
+    itemlist_ld = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": content["meta"]["title"],
+        "description": content["meta"]["description"],
+        "itemListOrder": "ItemListOrderDescending",
+        "numberOfItems": len(real_products),
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": i + 1,
+                "name": p["name"],
+                "url": p["affiliate_url"],
+            }
+            for i, p in enumerate(real_products)
+        ],
+    })
+    meta = content["meta"]
+    return render(request, "rvs-koekenpannen.html", {
+        "products": products,
+        "product_count": product_count,
+        "content": content,
+        "conclusie": conclusie,
+        "faq_ld": faq_ld,
+        "itemlist_ld": itemlist_ld,
+        "meta": meta,
     })
 
 

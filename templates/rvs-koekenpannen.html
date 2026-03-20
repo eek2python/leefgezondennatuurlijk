@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ meta.title }} | Leef Natuurlijk &amp; Gezond{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ meta.description }}">
+<!-- Open Graph -->
+<meta property="og:title" content="{{ meta.og_title }}">
+<meta property="og:description" content="{{ meta.og_description }}">
+<meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/rvs-koekenpannen.jpg">
+<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl{{ meta.canonical_path }}">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl{{ meta.canonical_path }}">
+<meta property="og:locale" content="nl_NL">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta.og_title }}">
+<meta name="twitter:description" content="{{ meta.og_description }}">
+<meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/rvs-koekenpannen.jpg">
+<!-- Structured Data – Product ItemList -->
+<script type="application/ld+json">
+{{ itemlist_ld|safe }}
+</script>
+<!-- Structured Data – FAQPage -->
+<script type="application/ld+json">
+{{ faq_ld|safe }}
+</script>
+{% endblock %}
+
+{% block content %}
+                <!-- Hero -->
+                <section id="banner">
+                <div class="content">
+                <header class="main">
+                <h1>{{ content.hero.h1 }}</h1>
+                </header>
+                {% for p in content.hero.paragraphs %}
+                <p>{{ p|safe }}</p>
+                {% endfor %}
+                </div>
+                </section>
+
+                <!-- Waarom RVS -->
+                <section>
+                <header class="major">
+                <h2>{{ content.why_choose.title }}</h2>
+                </header>
+                <p>{{ content.why_choose.intro|safe }}</p>
+                <ul>
+                {% for bullet in content.why_choose.bullets %}
+                <li>{{ bullet|safe }}</li>
+                {% endfor %}
+                </ul>
+                {% if content.why_choose.outro %}
+                <p>{{ content.why_choose.outro|safe }}</p>
+                {% endif %}
+                </section>
+
+                <!-- Producten -->
+                <section id="producten" class="products">
+                        <header class="major">
+                                <h2>{{ content.products_section.h2 }}</h2>
+                        </header>
+                        <div class="product-list">
+
+{% include "partials/how_we_select.html" %}
+
+                        <section class="top10-section">
+{% for product in products %}
+                        <div class="product-block">
+                        {% if product.award %}
+                        <span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
+                        {% endif %}
+                        <div class="product-inner">
+                        <div class="product-image-wrap">
+                        <img src="{% static product.image %}" alt="{{ product.name }}" loading="lazy" class="product-img">
+                        </div>
+                        <div class="product-info">
+                        <h3>{{ forloop.counter }}. {{ product.name }}</h3>
+                        <p class="product-meta">{{ product.material }} &middot; {{ product.construction }}</p>
+                        <ul class="product-features">
+                        {% for feat in product.key_features %}
+                        <li>{{ feat }}</li>
+                        {% endfor %}
+                        </ul>
+                        <div class="pros-cons">
+                        <div class="pros">
+                        <strong>Voordelen</strong>
+                        <ul>
+                        {% for pro in product.pros %}
+                        <li>{{ pro }}</li>
+                        {% endfor %}
+                        </ul>
+                        </div>
+                        <div class="cons">
+                        <strong>Nadelen</strong>
+                        <ul>
+                        {% for con in product.cons %}
+                        <li>{{ con }}</li>
+                        {% endfor %}
+                        </ul>
+                        </div>
+                        </div>
+                        <p class="product-verdict"><em>{{ product.verdict }}</em></p>
+                        <div class="product-rating">
+                        <span class="stars stars-{{ product.rating_class }}"></span>
+                        </div>
+                        <a href="{{ product.affiliate_url }}" class="button primary" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews &rarr;</a>
+                        </div>
+                        </div>
+                        </div>
+{% endfor %}
+                        </section>
+
+                        <!-- Vergelijkingstabel -->
+                        <section>
+                        <h2>{{ content.products_section.comparison_title }}</h2>
+                        <div class="table-wrapper">
+                        <table class="alt product-table">
+                        <thead>
+                        <tr>
+                        <th>Product</th>
+                        <th>Merk</th>
+                        <th>Constructie</th>
+                        <th>Inductie</th>
+                        <th>Oven</th>
+                        <th>Vaatwasser</th>
+                        <th>Prijsniveau</th>
+                        <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for product in products %}
+                        <tr>
+                        <td>
+                        <strong>{{ product.name }}</strong>
+                        {% if product.award %}
+                        <br><span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
+                        {% endif %}
+                        </td>
+                        <td>{{ product.brand }}</td>
+                        <td>{{ product.construction }}</td>
+                        <td>{% if product.induction %}Ja{% else %}Nee{% endif %}</td>
+                        <td>{% if product.oven_safe %}Ja{% else %}Nee{% endif %}</td>
+                        <td>{% if product.dishwasher_safe %}Ja{% else %}Nee{% endif %}</td>
+                        <td>{{ product.price_segment }}</td>
+                        <td><a href="{{ product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews &rarr;</a></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                        </table>
+                        </div>
+                        </section>
+                </div>
+                </section>
+
+                <!-- Tips voor bakken in RVS -->
+                <section>
+                <header class="major">
+                <h2>{{ content.tips.title }}</h2>
+                </header>
+                {% if content.tips.intro %}
+                <p>{{ content.tips.intro|safe }}</p>
+                {% endif %}
+                <ul>
+                {% for bullet in content.tips.bullets %}
+                <li>{{ bullet|safe }}</li>
+                {% endfor %}
+                </ul>
+                {% if content.tips.outro %}
+                <p>{{ content.tips.outro|safe }}</p>
+                {% endif %}
+                </section>
+
+                <!-- Conclusie -->
+                {% if conclusie %}
+                <section>
+                <header class="major">
+                <h2>{{ conclusie.title }}</h2>
+                </header>
+                <p>{{ conclusie.text|safe }}</p>
+                </section>
+                {% endif %}
+
+                <!-- FAQ -->
+                <section>
+                <header class="major">
+                <h2>{{ content.faq.title }}</h2>
+                </header>
+                {% for item in content.faq.items %}
+                <div class="faq-item">
+                        <h3>{{ forloop.counter }}. {{ item.q }}</h3>
+                        <p>{{ item.a|safe }}</p>
+                </div>
+                {% endfor %}
+                </section>
+
+{% include "partials/related_categories.html" %}
+{% endblock %}

@@ -1,0 +1,569 @@
+Implement the following content and category improvements for the Django affiliate site in a production-safe way.
+
+GOALS
+1. Add a complete new category page for RVS koekenpannen
+2. Make the “Hoe wij testen” / “Hoe wij beoordelen” block category-specific across the site
+3. Preserve the current architecture based on:
+   - products_<category>.py
+   - rankings_<category>.py
+   - content_<category>.py
+
+IMPORTANT RULES
+- Do not redesign the site
+- Do not migrate to database models
+- Do not change existing rankings unless explicitly required below
+- Keep URLs, styling, and existing reusable partials consistent with the current project
+- Keep implementation simple, explicit, and production-safe
+- Reuse the existing category rendering pattern as much as possible
+- Do not introduce unnecessary abstractions
+
+==================================================
+PART 1 — NEW CATEGORY: RVS KOEKENPANNEN
+==================================================
+
+Create a new category page for:
+- URL: /rvs-koekenpannen/
+- template: rvs-koekenpannen.html
+- page concept: a separate category for stainless steel frying pans, clearly distinct from ceramic/PFAS-free frying pans
+
+ARCHITECTURE TO CREATE
+Create these new files:
+- products_rvs_koekenpannen.py
+- rankings_rvs_koekenpannen.py
+- content_rvs_koekenpannen.py
+
+VIEW / URL
+- Add a new view function: rvs_koekenpannen
+- Add the matching URL pattern
+- Use the same project conventions as the other category pages
+- Pass these context variables:
+  - products
+  - product_count
+  - content
+  - conclusie
+  - faq_ld
+  - itemlist_ld
+  - meta
+
+JSON-LD
+- Generate FAQPage JSON-LD from content["faq"]["items"]
+- Generate ItemList JSON-LD from the ranked products
+- Only include product URLs in ItemList JSON-LD if affiliate_url is a real URL and not a placeholder
+
+META / SEO
+Use meta data from content_rvs_koekenpannen.py and render in {% block meta %}:
+- title
+- description
+- canonical
+- og:title
+- og:description
+- og:url
+- og:image
+- twitter title/description/image
+
+CONTENT REQUIREMENT
+This page must be clearly positioned as:
+- RVS koekenpannen
+- zonder coating / zonder klassieke antiaanbaklaag
+- not mixed together with ceramic pans
+
+Do not frame the page as a generic PFAS page.
+Make the distinction with ceramic pans clear in the editorial copy.
+
+USE THIS STARTER CONTENT STRUCTURE
+
+FILE: products_rvs_koekenpannen.py
+
+PRODUCTS = {
+    "demeyere_industry_5_28": {
+        "slug": "demeyere-industry-5-28",
+        "name": "Demeyere Industry 5 Koekenpan 28 cm",
+        "brand": "Demeyere",
+        "material": "RVS",
+        "construction": "5-lagenmateriaal tot aan de rand",
+        "diameter_cm": 28,
+        "coating": "geen coating",
+        "surface_type": "blank RVS",
+        "induction": True,
+        "oven_safe": True,
+        "dishwasher_safe": True,
+        "key_features": [
+            "5-lagenmateriaal",
+            "warmteverdeling tot aan de rand",
+            "geschikt voor inductie",
+            "ovenbestendig"
+        ],
+        "best_for": "beste allround keuze",
+        "award": "Beste keuze",
+        "award_class": "best-choice",
+        "price_segment": "premium",
+        "rating_class": "4-8",
+        "pros": [
+            "zeer gelijkmatige warmteverdeling",
+            "sterke reputatie voor serieus dagelijks gebruik",
+            "volledig RVS zonder antiaanbaklaag"
+        ],
+        "cons": [
+            "hogere instapprijs",
+            "heeft wat leercurve vergeleken met keramisch"
+        ],
+        "verdict": "Sterke allround RVS-koekenpan voor wie duurzaam en controlegericht wil bakken.",
+        "affiliate_url": "TODO_AFFILIATE_URL",
+        "image": "images/products/rvs-koekenpannen/demeyere-industry-5-28.jpg",
+    },
+    "demeyere_silverline_7_nanotouch_28": {
+        "slug": "demeyere-silverline-7-nanotouch-28",
+        "name": "Demeyere Silverline 7 Koekenpan NanoTouch 28 cm",
+        "brand": "Demeyere",
+        "material": "RVS",
+        "construction": "7-ply",
+        "diameter_cm": 28,
+        "coating": "geen PFAS-coating",
+        "surface_type": "NanoTouch RVS-oppervlak",
+        "induction": True,
+        "oven_safe": True,
+        "dishwasher_safe": True,
+        "key_features": [
+            "7-lagenmateriaal",
+            "NanoTouch-oppervlak",
+            "PFAS-vrij",
+            "zeer sterk op inductie"
+        ],
+        "best_for": "premium keuze",
+        "award": "Premium keuze",
+        "award_class": "premium-choice",
+        "price_segment": "premium-plus",
+        "rating_class": "4-9",
+        "pros": [
+            "uitstekende warmtespreiding",
+            "RVS-oppervlak met extra gebruiksgemak",
+            "sterke premium-positionering"
+        ],
+        "cons": [
+            "hoog geprijsd",
+            "voor veel thuiskoks meer dan nodig"
+        ],
+        "verdict": "Premium RVS-pan voor wie maximale prestaties en langdurige kwaliteit zoekt.",
+        "affiliate_url": "TODO_AFFILIATE_URL",
+        "image": "images/products/rvs-koekenpannen/demeyere-silverline-7-28.jpg",
+    },
+    "demeyere_multiline_7_28": {
+        "slug": "demeyere-multiline-7-28",
+        "name": "Demeyere Multiline 7 Koekenpan 28 cm",
+        "brand": "Demeyere",
+        "material": "RVS",
+        "construction": "meerlagen-RVS",
+        "diameter_cm": 28,
+        "coating": "geen coating",
+        "surface_type": "blank RVS",
+        "induction": True,
+        "oven_safe": True,
+        "dishwasher_safe": True,
+        "key_features": [
+            "sterk op inductie",
+            "geschikt voor hoge baktemperaturen",
+            "professionele positionering"
+        ],
+        "best_for": "beste voor inductie",
+        "award": "Beste voor inductie",
+        "award_class": "special-choice",
+        "price_segment": "premium",
+        "rating_class": "4-8",
+        "pros": [
+            "zeer sterke reputatie op inductie",
+            "geschikt voor aanbakken en bruinen",
+            "duurzame RVS-constructie"
+        ],
+        "cons": [
+            "duidelijk premium geprijsd",
+            "minder vergevingsgezind dan keramisch"
+        ],
+        "verdict": "Sterke keuze voor wie vooral op inductie kookt en maximale bakprestaties zoekt.",
+        "affiliate_url": "TODO_AFFILIATE_URL",
+        "image": "images/products/rvs-koekenpannen/demeyere-multiline-7-28.jpg",
+    },
+    "debuyer_affinity_28": {
+        "slug": "debuyer-affinity-28",
+        "name": "De Buyer Affinity Koekenpan 28 cm",
+        "brand": "De Buyer",
+        "material": "RVS 18/10",
+        "construction": "5-laags",
+        "diameter_cm": 28,
+        "coating": "geen coating",
+        "surface_type": "blank RVS",
+        "induction": True,
+        "oven_safe": True,
+        "dishwasher_safe": False,
+        "key_features": [
+            "18/10 RVS",
+            "5-laags",
+            "Franse premiumlijn",
+            "snelle temperatuurrespons"
+        ],
+        "best_for": "beste voor ervaren thuiskok",
+        "award": "Voor de liefhebber",
+        "award_class": "special-choice",
+        "price_segment": "premium",
+        "rating_class": "4-7",
+        "pros": [
+            "zeer responsieve pan",
+            "hoogwaardige 5-laags constructie",
+            "mooie optie voor serieus kookwerk"
+        ],
+        "cons": [
+            "duur",
+            "minder logisch voor de gemiddelde koper"
+        ],
+        "verdict": "Premium RVS-keuze voor wie bewust voor techniek, controle en bouwkwaliteit gaat.",
+        "affiliate_url": "TODO_AFFILIATE_URL",
+        "image": "images/products/rvs-koekenpannen/debuyer-affinity-28.jpg",
+    },
+    "wmf_profi_28": {
+        "slug": "wmf-profi-28",
+        "name": "WMF Profi Koekenpan 28 cm",
+        "brand": "WMF",
+        "material": "Cromargan RVS 18/10",
+        "construction": "TransTherm-bodem",
+        "diameter_cm": 28,
+        "coating": "geen coating",
+        "surface_type": "blank RVS",
+        "induction": True,
+        "oven_safe": True,
+        "dishwasher_safe": True,
+        "key_features": [
+            "Cromargan 18/10",
+            "TransTherm-bodem",
+            "geschikt voor alle warmtebronnen",
+            "robuust"
+        ],
+        "best_for": "beste middenklasse",
+        "award": "Sterke middenklasse",
+        "award_class": "special-choice",
+        "price_segment": "mid",
+        "rating_class": "4-6",
+        "pros": [
+            "degelijk merk met sterke RVS-basis",
+            "praktische keuze voor dagelijks gebruik",
+            "goede balans tussen kwaliteit en prijs"
+        ],
+        "cons": [
+            "minder exclusief dan de topmodellen van Demeyere",
+            "niet de meest verfijnde warmtespreiding in dit overzicht"
+        ],
+        "verdict": "Goede middenklasse RVS-koekenpan voor wie een degelijk merk zoekt zonder direct topsegmentprijzen.",
+        "affiliate_url": "TODO_AFFILIATE_URL",
+        "image": "images/products/rvs-koekenpannen/wmf-profi-28.jpg",
+    },
+    "bk_superior_tri_ply_28": {
+        "slug": "bk-superior-tri-ply-28",
+        "name": "BK Superior Tri-Ply Koekenpan 28 cm",
+        "brand": "BK",
+        "material": "RVS",
+        "construction": "3-ply",
+        "diameter_cm": 28,
+        "coating": "geen PFAS-coating",
+        "surface_type": "blank RVS / tri-ply",
+        "induction": True,
+        "oven_safe": True,
+        "dishwasher_safe": True,
+        "key_features": [
+            "3-ply constructie",
+            "snelle warmteverdeling",
+            "PFAS-vrij",
+            "geschikt voor aanbraden"
+        ],
+        "best_for": "beste prijs-kwaliteit",
+        "award": "Beste prijs-kwaliteit",
+        "award_class": "best-choice",
+        "price_segment": "mid",
+        "rating_class": "4-6",
+        "pros": [
+            "mooie balans tussen prijs en prestaties",
+            "volledige RVS-positionering",
+            "geschikt voor dagelijks gebruik"
+        ],
+        "cons": [
+            "minder premium afgewerkt dan Demeyere",
+            "kortere staat van dienst dan klassieke toplijnen"
+        ],
+        "verdict": "Waarschijnlijk de interessantste keuze voor de gemiddelde koper die bewust naar RVS wil overstappen.",
+        "affiliate_url": "TODO_AFFILIATE_URL",
+        "image": "images/products/rvs-koekenpannen/bk-superior-tri-ply-28.jpg",
+    },
+    "bk_bright_28": {
+        "slug": "bk-bright-28",
+        "name": "BK Bright Koekenpan 28 cm",
+        "brand": "BK",
+        "material": "RVS",
+        "construction": "RVS met gesatineerde binnenzijde",
+        "diameter_cm": 28,
+        "coating": "geen coating",
+        "surface_type": "blank RVS",
+        "induction": True,
+        "oven_safe": True,
+        "dishwasher_safe": True,
+        "key_features": [
+            "toegankelijke prijspositie",
+            "RVS greep",
+            "geschikt voor inductie",
+            "vaatwasserbestendig"
+        ],
+        "best_for": "budget keuze",
+        "award": "Budget keuze",
+        "award_class": "budget-choice",
+        "price_segment": "budget",
+        "rating_class": "4-4",
+        "pros": [
+            "toegankelijke instap in RVS",
+            "eenvoudig en praktisch",
+            "logische keuze voor wie wil testen of RVS bevalt"
+        ],
+        "cons": [
+            "minder verfijnde constructie dan tri-ply/topmodellen",
+            "niet de beste keuze voor maximale warmterespons"
+        ],
+        "verdict": "Goede budgetvriendelijke instapper voor wie een eenvoudige RVS-koekenpan zonder coating zoekt.",
+        "affiliate_url": "TODO_AFFILIATE_URL",
+        "image": "images/products/rvs-koekenpannen/bk-bright-28.jpg",
+    },
+}
+
+FILE: rankings_rvs_koekenpannen.py
+
+RANKINGS = [
+    "demeyere_industry_5_28",
+    "bk_superior_tri_ply_28",
+    "demeyere_silverline_7_nanotouch_28",
+    "wmf_profi_28",
+    "demeyere_multiline_7_28",
+    "debuyer_affinity_28",
+    "bk_bright_28",
+]
+
+FILE: content_rvs_koekenpannen.py
+
+CONTENT = {
+    "meta": {
+        "title": "Beste RVS koekenpannen van 2026 – gezond koken zonder coating",
+        "description": "Vergelijk de beste RVS koekenpannen van 2026. Ontdek sterke keuzes zonder coating, geschikt voor inductie en dagelijks gebruik.",
+        "og_title": "Beste RVS koekenpannen van 2026",
+        "og_description": "Onze selectie van sterke RVS koekenpannen zonder coating, van budget tot premium.",
+        "canonical_path": "/rvs-koekenpannen/",
+    },
+    "hero": {
+        "h1": "Beste RVS koekenpannen van 2026",
+        "paragraphs": [
+            "Wil je bakken zonder antiaanbaklaag, dan is een goede RVS koekenpan een logische stap. RVS pannen bevatten geen PFAS-coating en zijn vooral interessant voor wie duurzaam, heet en gecontroleerd wil bakken.",
+            "RVS vraagt iets meer techniek dan keramische pannen, maar biedt vaak een langere levensduur, sterke bakresultaten en veel controle bij aanbakken, afblussen en bruinen.",
+        ],
+    },
+    "how_we_test": {
+        "title": "Hoe wij RVS koekenpannen beoordelen",
+        "intro": "Bij RVS kijken we naar andere criteria dan bij keramische pannen. Niet PFAS is hier het hoofdthema, maar vooral bouwkwaliteit, bakgedrag en gebruiksgemak zonder coating.",
+        "bullets": [
+            "Materiaal en constructie: RVS-opbouw, 3-ply of 5-/7-laags waar relevant.",
+            "Bakprestaties: hoe geschikt is de pan voor aanbraden, bruinen en gecontroleerd bakken.",
+            "Warmteverdeling: vooral belangrijk op inductie en bij grotere diameters.",
+            "Gebruiksgemak: gewicht, greep, ovenbestendigheid en onderhoud.",
+            "Prijs-kwaliteit: is de meerprijs logisch voor de doelgroep.",
+        ],
+        "outro": "Voor deze pagina verkiezen we echte RVS-oplossingen zonder klassieke antiaanbaklaag.",
+    },
+    "why_choose": {
+        "title": "Waarom kiezen voor een RVS koekenpan?",
+        "intro": "Een RVS koekenpan is vooral interessant voor wie bewust zonder coating wil koken en waarde hecht aan duurzaamheid en hoge baktemperaturen.",
+        "bullets": [
+            "<strong>Geen klassieke antiaanbaklaag:</strong> aantrekkelijk voor wie bewust zonder coating wil bakken.",
+            "<strong>Geschikt voor hoge hitte:</strong> ideaal voor vlees, aardappelen en krachtig aanbakken.",
+            "<strong>Duurzaam:</strong> een goede RVS pan kan jarenlang meegaan.",
+            "<strong>Veel controle:</strong> sterk voor bakken, afblussen en het opbouwen van smaak in de pan.",
+        ],
+        "outro": "De keerzijde is dat RVS minder vergevingsgezind is dan keramisch. Goed voorverwarmen en de juiste baktechniek maken hier echt verschil.",
+    },
+    "products_section": {
+        "h2": "Onze selectie RVS koekenpannen",
+    },
+    "tips": {
+        "title": "Tips voor bakken in RVS",
+        "intro": "RVS werkt anders dan keramisch of klassiek antiaanbak. Met de juiste aanpak bakt het juist erg prettig.",
+        "bullets": [
+            "Verwarm de pan eerst rustig voor voordat je olie of boter toevoegt.",
+            "Gebruik iets meer vet dan bij keramisch, zeker in het begin.",
+            "Laat vlees of groenten eerst rustig bakken; draai pas als het vanzelf loslaat.",
+            "Blus aanbaksels af voor extra smaak in sauzen.",
+            "Gebruik geen extreem hoog vuur als de pan eenmaal op temperatuur is.",
+        ],
+        "outro": "Wie vooral eieren, pannenkoeken of zeer vetarm wil bakken, zal keramisch vaak makkelijker vinden. Voor schroeien, bruinen en duurzaamheid is RVS juist sterk.",
+    },
+    "conclusies": {
+        "default": {
+            "title": "Conclusie – welke RVS koekenpan past het best?",
+            "text": "Zoek je de beste allround keuze, dan is de Demeyere Industry 5 het meest complete totaalpakket. Wil je maximale prestaties en premium afwerking, dan springt de Silverline 7 NanoTouch eruit. Voor de meeste huishoudens is de BK Superior Tri-Ply waarschijnlijk de interessantste combinatie van prijs, materiaal en dagelijks gebruik."
+        }
+    },
+    "faq": {
+        "title": "Veelgestelde vragen over RVS koekenpannen",
+        "items": [
+            {
+                "q": "Is een RVS koekenpan volledig vrij van coating?",
+                "a": "Dat verschilt per model. Voor deze categorie selecteren we alleen modellen die duidelijk als RVS-oplossing zonder klassieke antiaanbaklaag zijn gepositioneerd."
+            },
+            {
+                "q": "Is RVS gezonder dan keramisch?",
+                "a": "Dat hangt af van je uitgangspunt. RVS is vooral interessant als je zonder coating wilt koken en maximale duurzaamheid zoekt. Keramisch is vaak gebruiksvriendelijker, vooral voor delicate bereidingen."
+            },
+            {
+                "q": "Waarom bakt eten sneller aan in RVS?",
+                "a": "RVS vraagt meer techniek. De pan moet goed op temperatuur zijn en ingrediënten moeten vaak eerst een korst vormen voordat ze vanzelf loslaten."
+            },
+            {
+                "q": "Is RVS geschikt voor inductie?",
+                "a": "Ja, de geselecteerde modellen op deze pagina zijn geschikt voor inductie."
+            },
+            {
+                "q": "Voor wie is RVS de beste keuze?",
+                "a": "Voor thuiskoks die graag vlees, aardappelen of groenten krachtig aanbakken, en voor wie een pan zonder klassieke antiaanbaklaag zoekt."
+            },
+        ],
+    },
+    "related_categories": {
+        "title": "Gerelateerde categorieën",
+        "items": [
+            {"label": "PFAS-vrije koekenpannen", "url": "/koekenpannen/"},
+            {"label": "PFAS-vrije hapjespannen", "url": "/hapjespannen/"},
+            {"label": "PFAS-vrije wokpannen", "url": "/wokpannen/"},
+        ],
+    },
+}
+
+TEMPLATE
+Create rvs-koekenpannen.html using the same visual pattern as the existing category pages.
+Render these sections from content:
+- hero
+- how_we_test
+- why_choose
+- products_section
+- product loop
+- comparison table
+- tips
+- conclusie
+- faq
+- related categories
+
+Use the existing shared partials and button styling where possible.
+
+==================================================
+PART 2 — FIX “HOE WIJ TESTEN” BLOCKS ACROSS EXISTING CATEGORIES
+==================================================
+
+Problem:
+The current “Hoe wij testen” or equivalent trust/evaluation block is too generic and mentions irrelevant criteria on some pages.
+Examples:
+- PFAS is not a relevant primary criterion for snijplanken
+- PFAS is not a relevant primary criterion for vershoudbakjes / vershoudcontainers
+- criteria should match the actual category
+
+TASK
+Refactor the current “Hoe wij testen” content so it becomes category-specific and lives inside each content_<category>.py file.
+
+APPLY THIS RULE
+Each category must have:
+content["how_we_test"] = {
+    "title": "...",
+    "intro": "...",
+    "bullets": [...],
+    "outro": "..." or None,
+}
+
+Then update the templates so they render this section from content instead of using generic shared hardcoded copy.
+
+CATEGORY-SPECIFIC DIRECTION
+
+1. KOEKENPANNEN / HAPJESPANNEN / WOKPANNEN
+Focus on:
+- materiaalveiligheid
+- afwezigheid van PFAS / klassieke coatingrisico’s where relevant
+- warmteverdeling
+- gebruiksgemak
+- duurzaamheid
+- prijs-kwaliteit
+
+2. RVS KOEKENPANNEN
+Use the provided RVS-specific block from content_rvs_koekenpannen.py
+
+3. SNIJPLANKEN
+Focus on:
+- materiaalkeuze (houtsoort, hardheid, voedselveiligheid)
+- duurzaamheid
+- onderhoudsgemak
+- bruikbaarheid in dagelijks gebruik
+- formaat / stabiliteit
+Do NOT frame this around PFAS.
+
+4. VERSHOUDCONTAINERS / VERSHOUDBAKJES
+Focus on:
+- materiaal (glas vs kunststof where relevant)
+- voedselveiligheid
+- lekdichtheid
+- oven / magnetron / vriezer geschiktheid where relevant
+- duurzaamheid
+Do NOT use PFAS as the main framing unless explicitly relevant for a specific product.
+
+5. AIRFRYERS
+Focus on:
+- materiaalveiligheid van mand / binnenwerk where relevant
+- gebruiksgemak
+- capaciteit
+- schoonmaakgemak
+- prijs-kwaliteit
+Only mention PFAS if truly relevant to the category logic and existing editorial positioning.
+
+IMPLEMENTATION RULES
+- Move any remaining hardcoded trust/evaluation/testing copy from templates into content_<category>.py
+- Keep templates render-focused only
+- Preserve existing wording where still relevant, but correct irrelevant claims
+- Do not change product rankings
+- Do not break existing SEO meta or structured data
+
+==================================================
+PART 3 — IMPLEMENTATION QUALITY RULES
+==================================================
+
+STRICT REQUIREMENTS
+1. Keep the same current architecture:
+   - products_<category>.py
+   - rankings_<category>.py
+   - content_<category>.py
+2. Use standard Django template logic only
+   - no custom enumerate filters if not necessary
+   - use forloop.counter where needed
+3. Resolve render-ready strings in the view if placeholders need formatting
+4. Keep affiliate links using:
+   rel="nofollow sponsored noopener"
+5. Keep existing JSON-LD working
+6. Generate FAQ JSON-LD from content["faq"]["items"] where appropriate
+7. Do not introduce regressions in:
+   - category rendering
+   - comparison tables
+   - conclusions
+   - FAQ sections
+   - canonical/meta tags
+   - affiliate buttons
+8. If an existing category does not yet have a proper content_<category>.py structure, align it to that structure as part of this task only where needed for “how_we_test” consistency
+
+==================================================
+PART 4 — REQUIRED OUTPUT
+==================================================
+
+After implementation, output:
+1. exact files created
+2. exact files modified
+3. exact URL/view additions
+4. summary of how “how_we_test” was made category-specific
+5. any placeholders still needing manual completion
+   - affiliate URLs
+   - image files
+   - optional final editorial checks
+6. manual regression test checklist for:
+   - /rvs-koekenpannen/
+   - existing category pages with updated “how_we_test” blocks

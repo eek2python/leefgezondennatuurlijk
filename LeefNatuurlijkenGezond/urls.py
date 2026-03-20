@@ -32,6 +32,7 @@ urlpatterns = [
    path("wokpannen/", views.wokpannen, name="wokpannen"),
    path("airfryers/", views.airfryers, name="airfryers"),
    path("vershoudcontainers/", views.vershoudcontainers, name="vershoudcontainers"),
+   path("rvs-koekenpannen/", views.rvs_koekenpannen, name="rvs_koekenpannen"),
    path("blogs/", include("blogs.urls")),
    path("sitemap.xml", sitemap_xml, name="sitemap"),
    path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),

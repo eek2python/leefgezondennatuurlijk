@@ -76,4 +76,16 @@ CONTENT = {
             },
         ],
     },
+"how_we_test": {
+    "title": "Hoe wij airfryers beoordelen",
+    "intro": "Bij airfryers selecteren we op de criteria die tellen voor veiligheid van het binnenwerk, gebruiksgemak en dagelijkse prestaties.",
+    "bullets": [
+        "Materiaalveiligheid van de binnenmand: keramisch scoort beter dan kunststof antiaanbaklagen.",
+        "Capaciteit: voldoende inhoud voor dagelijks gebruik.",
+        "Gebruiksgemak: overzichtelijke bediening en handige functies.",
+        "Schoonmaakgemak: makkelijk te reinigen mand en onderdelen.",
+        "Prijs-kwaliteit: eerlijke vergelijking over alle prijsklassen heen.",
+    ],
+    "outro": None,
+},
 }

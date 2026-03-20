@@ -1,12 +1,18 @@
+{% if content.how_we_test %}
 <section class="how-we-select">
     <header class="major">
-        <h2>Hoe wij producten selecteren</h2>
+        <h2>{{ content.how_we_test.title }}</h2>
     </header>
-    <p>Elk product op deze pagina is zorgvuldig geselecteerd op vier criteria die wij het belangrijkst vinden voor een gezonde en duurzame keuken. Geen gesponsorde plaatsingen — alleen onze eerlijke top.</p>
+    {% if content.how_we_test.intro %}
+    <p>{{ content.how_we_test.intro }}</p>
+    {% endif %}
     <ul class="selection-criteria">
-        <li>✅ <strong>PFAS-vrij getest</strong> — Alleen producten zonder schadelijke fluorchemicaliën.</li>
-        <li>⭐ <strong>Gebruikersbeoordelingen</strong> — Minimaal tientallen reviews met gemiddeld 4 sterren of hoger.</li>
-        <li>💶 <strong>Prijs-kwaliteit</strong> — Eerlijke vergelijking over alle prijsklassen heen.</li>
-        <li>🌿 <strong>Duurzaamheid</strong> — Voorkeur voor producten met een lange levensduur en milieuvriendelijke materialen.</li>
+        {% for bullet in content.how_we_test.bullets %}
+        <li>{{ bullet|safe }}</li>
+        {% endfor %}
     </ul>
+    {% if content.how_we_test.outro %}
+    <p class="how-we-outro">{{ content.how_we_test.outro }}</p>
+    {% endif %}
 </section>
+{% endif %}
