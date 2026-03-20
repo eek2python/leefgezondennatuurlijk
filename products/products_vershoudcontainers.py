@@ -1,9 +1,10 @@
-VERSHOUDCONTAINERS_PRODUCTS = [
-    {
+PRODUCTS = {
+    "mepal_easyclip_glass_3delig": {
         "slug": "mepal_easyclip_glass_3delig",
-        "name": "Mepal EasyClip Glass – 3-delige glazen vershoudbakjes",
+        "name": "Mepal EasyClip Glass \u2013 3-delige glazen vershoudbakjes",
         "brand": "Mepal",
         "material": "Borosilicaat glas",
+        "features": ["Lekvrij", "EasyClip-systeem"],
         "image": "mepal-easyclip-glass-3.jpg",
         "image_path": "images/vershoudbakjes",
         "description": "Een premium borosilicaat glazen set met lekvrije EasyClip-deksels. Geschikt voor oven, magnetron, koelkast en vriezer. Uitstekende duurzaamheid en gebruiksgemak.",
@@ -23,15 +24,16 @@ VERSHOUDCONTAINERS_PRODUCTS = [
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.etrias.nl/set-vershoudbakjes-mepal-glas-easyclip-2-x-700-ml-plus-1500-ml-nordic-sage-set-van-3.html",
-        "price_range": "€€€",
-        "verdict": "Totaalpakket van kwaliteit, veiligheid en gebruiksgemak — de beste glazen 3-delige set.",
+        "price_range": "\u20ac\u20ac\u20ac",
+        "verdict": "Totaalpakket van kwaliteit, veiligheid en gebruiksgemak \u2014 de beste glazen 3-delige set.",
         "award": "🏆 Beste keuze",
     },
-    {
+    "igluu_meal_prep_3delig": {
         "slug": "igluu_meal_prep_3delig",
-        "name": "Igluu Meal Prep – 3-delige glazen vershoudset",
+        "name": "Igluu Meal Prep \u2013 3-delige glazen vershoudset",
         "brand": "Igluu",
         "material": "Borosilicaat glas",
+        "features": ["Lekvrij", "Klikdeksel + silicone"],
         "image": "igluu-3delig.jpg",
         "image_path": "images/vershoudbakjes",
         "description": "Betaalbare en praktische 3-delige set van borosilicaat glas met lekvrije klikdeksels. Ideaal als instapset voor gezond bewaren en opwarmen.",
@@ -51,18 +53,19 @@ VERSHOUDCONTAINERS_PRODUCTS = [
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.amazon.nl/dp/B08DYF9GXP/?th=1",
-        "price_range": "€",
+        "price_range": "\u20ac",
         "verdict": "Een voordelige en complete glazen basisset voor iedereen die PFAS-vrij wil bewaren en opwarmen.",
         "award": "💰 Beste budgetoptie",
     },
-    {
+    "pyrex_cook_heat_3delig": {
         "slug": "pyrex_cook_heat_3delig",
-        "name": "Pyrex Cook & Heat – 3-delige glazen vershoudset",
+        "name": "Pyrex Cook & Heat \u2013 3-delige glazen vershoudset",
         "brand": "Pyrex",
         "material": "Borosilicaat glas",
+        "features": ["Clipdeksel", "Magnetronventiel"],
         "image": "pyrex-cookheat-3delig.jpg",
         "image_path": "images/vershoudbakjes",
-        "description": "Een hoogwaardige 3-delige set van borosilicaat glas met stevige klikdeksels en silicone afdichting. Ontworpen voor veilig bewaren én opwarmen in zowel oven als magnetron.",
+        "description": "Een hoogwaardige 3-delige set van borosilicaat glas met stevige klikdeksels en silicone afdichting. Ontworpen voor veilig bewaren \u00e9n opwarmen in zowel oven als magnetron.",
         "pros": [
             "Borosilicaat glas: ovenbestendig tot hoge temperaturen",
             "Stevige klikdeksels met silicone ring",
@@ -79,15 +82,16 @@ VERSHOUDCONTAINERS_PRODUCTS = [
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.amazon.nl/dp/B07TTCV55F?ref=emc_p_m_5_i_atc&th=1",
-        "price_range": "€€€",
+        "price_range": "\u20ac\u20ac\u20ac",
         "verdict": "De meest betrouwbare en complete premium glas-set voor veilig bewaren en opwarmen.",
         "award": "💎 Premium keuze",
     },
-    {
+    "bormioli_frigoverre_3delig": {
         "slug": "bormioli_frigoverre_3delig",
-        "name": "Bormioli Rocco Frigoverre – 3-delige glazen vershoudset",
+        "name": "Bormioli Rocco Frigoverre \u2013 3-delige glazen vershoudset",
         "brand": "Bormioli Rocco",
         "material": "Borosilicaat glas",
+        "features": ["Ovenbestendig"],
         "image": "vershoudbakjes_bormioli_frigoverre_set_3.jpg",
         "image_path": "images/vershoudbakjes",
         "description": "Duurzame set van glazen vershoudbakjes voor dagelijks bewaren en meenemen. Het glas is voedselveilig en geschikt voor oven, magnetron en vriezer (gebruik zonder deksel bij verhitting).",
@@ -107,15 +111,16 @@ VERSHOUDCONTAINERS_PRODUCTS = [
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.wehkamp.nl/bormioli-rocco-frigoverre-vershoudbakjes-frigoverre-glas-blauw-3-stuks-16432465/",
-        "price_range": "€€",
+        "price_range": "\u20ac\u20ac",
         "verdict": "Een betrouwbare glazen set voor dagelijks gebruik: duurzaam, veelzijdig en ideaal als je een praktische 3-delige glasoplossing zoekt voor bewaren en opwarmen.",
         "award": "",
     },
-    {
+    "luminarc_purebox_3delig": {
         "slug": "luminarc_purebox_3delig",
-        "name": "Luminarc Pure Box Active – 3-delige glazen vershoudset",
+        "name": "Luminarc Pure Box Active \u2013 3-delige glazen vershoudset",
         "brand": "Luminarc",
         "material": "Gehard glas",
+        "features": ["Ventieldeksel", "Lekvrij"],
         "image": "luminarc-purebox-3delig.jpg",
         "image_path": "images/vershoudbakjes",
         "description": "Een praktische en sterke 3-delige set van gehard glas met ventieldeksels. Ideaal voor dagelijks bewaren, opwarmen en meenemen dankzij de stevige 4-kliks sluiting.",
@@ -126,7 +131,7 @@ VERSHOUDCONTAINERS_PRODUCTS = [
             "Compacte ronde formaten, makkelijk stapelbaar",
         ],
         "cons": [
-            "Ronde vorm minder efficiënt voor mealprep-stapeling",
+            "Ronde vorm minder effici\u00ebnt voor mealprep-stapeling",
             "Deksels zijn niet ovenbestendig",
         ],
         "rating": 4,
@@ -135,8 +140,8 @@ VERSHOUDCONTAINERS_PRODUCTS = [
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/luminarc-pure-box-active-vershouddoos-rond-glas-set-3/9200000036318348/",
-        "price_range": "€€",
+        "price_range": "\u20ac\u20ac",
         "verdict": "Een stevige en gebruiksvriendelijke set met uitstekend ventielsysteem voor dagelijks gebruik.",
         "award": "",
     },
-]
+}

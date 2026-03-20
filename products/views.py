@@ -1,18 +1,24 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, Click
 import json
-from .data_koekenpannen import KOEKENPANNEN_TOP10_BY_SIZE
-from .data_conclusies_koekenpannen import KOEKENPANNEN_CONCLUSIES_BY_SIZE
-from .data_hapjespannen import HAPJESPANNEN_TOP10_BY_SIZE
-from .data_conclusies_hapjespannen import HAPJESPANNEN_CONCLUSIES_BY_SIZE
-from .data_wokpannen import WOKPANNEN_TOP10_BY_SIZE
-from .data_conclusies_wokpannen import WOKPANNEN_CONCLUSIES_BY_SIZE
-from .data_snijplanken import SNIJPLANKEN_PRODUCTS
-from .data_conclusies_snijplanken import SNIJPLANKEN_CONCLUSIE
-from .data_airfryers import AIRFRYERS_PRODUCTS
-from .data_conclusies_airfryers import AIRFRYERS_CONCLUSIE
-from .data_vershoudcontainers import VERSHOUDCONTAINERS_PRODUCTS
-from .data_conclusies_vershoudcontainers import VERSHOUDCONTAINERS_CONCLUSIE
+from .products_koekenpannen import PRODUCTS as KOEKENPANNEN_PRODUCTS
+from .rankings_koekenpannen import RANKINGS as KOEKENPANNEN_RANKINGS
+from .content_koekenpannen import CONTENT as KOEKENPANNEN_CONTENT
+from .products_hapjespannen import PRODUCTS as HAPJESPANNEN_PRODUCTS
+from .rankings_hapjespannen import RANKINGS as HAPJESPANNEN_RANKINGS
+from .content_hapjespannen import CONTENT as HAPJESPANNEN_CONTENT
+from .products_wokpannen import PRODUCTS as WOKPANNEN_PRODUCTS
+from .rankings_wokpannen import RANKINGS as WOKPANNEN_RANKINGS
+from .content_wokpannen import CONTENT as WOKPANNEN_CONTENT
+from .products_snijplanken import PRODUCTS as SNIJPLANKEN_PRODUCTS
+from .rankings_snijplanken import RANKINGS as SNIJPLANKEN_RANKINGS
+from .content_snijplanken import CONTENT as SNIJPLANKEN_CONTENT
+from .products_airfryers import PRODUCTS as AIRFRYERS_PRODUCTS
+from .rankings_airfryers import RANKINGS as AIRFRYERS_RANKINGS
+from .content_airfryers import CONTENT as AIRFRYERS_CONTENT
+from .products_vershoudcontainers import PRODUCTS as VERSHOUDCONTAINERS_PRODUCTS
+from .rankings_vershoudcontainers import RANKINGS as VERSHOUDCONTAINERS_RANKINGS
+from .content_vershoudcontainers import CONTENT as VERSHOUDCONTAINERS_CONTENT
 
 
 def homepage(request):
@@ -35,18 +41,32 @@ def _enrich_products(products):
             p["award_class"] = ""
 
 
-def snijplanken(request):
-    products = [dict(p) for p in SNIJPLANKEN_PRODUCTS]
-    _enrich_products(products)
-    product_count = len(products)
+def _build_faq_ld(faq_items):
+    return json.dumps({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": item["q"],
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item["a"],
+                },
+            }
+            for item in faq_items
+        ],
+    })
 
-    json_ld = json.dumps({
+
+def _build_itemlist_ld(request, name, description, products):
+    return json.dumps({
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Top 10 Houten Snijplanken zonder Plastic (PFAS-vrij)",
-        "description": "De 10 beste houten snijplanken van 2026 – duurzaam, voedselveilig en PFAS-vrij.",
+        "name": name,
+        "description": description,
         "itemListOrder": "ItemListOrderDescending",
-        "numberOfItems": product_count,
+        "numberOfItems": len(products),
         "itemListElement": [
             {
                 "@type": "ListItem",
@@ -77,353 +97,206 @@ def snijplanken(request):
             for i, p in enumerate(products)
         ],
     })
+
+
+def snijplanken(request):
+    products = [dict(SNIJPLANKEN_PRODUCTS[k]) for k in SNIJPLANKEN_RANKINGS]
+    _enrich_products(products)
+    product_count = len(products)
+    content = SNIJPLANKEN_CONTENT
+    conclusie = content["conclusies"]["default"]
+    faq_ld = _build_faq_ld(content["faq"]["items"])
+    json_ld = _build_itemlist_ld(
+        request,
+        "Top 10 Houten Snijplanken zonder Plastic (PFAS-vrij)",
+        "De 10 beste houten snijplanken van 2026 \u2013 duurzaam, voedselveilig en PFAS-vrij.",
+        products,
+    )
     return render(request, "snijplanken.html", {
         "products": products,
         "product_count": product_count,
-        "conclusie": SNIJPLANKEN_CONCLUSIE,
+        "content": content,
+        "conclusie": conclusie,
         "json_ld": json_ld,
+        "faq_ld": faq_ld,
     })
 
 
 def koekenpannen(request):
-    available_sizes = sorted(KOEKENPANNEN_TOP10_BY_SIZE.keys())
+    content = KOEKENPANNEN_CONTENT
+    available_sizes = sorted(KOEKENPANNEN_RANKINGS.keys())
     size = request.GET.get("size")
     try:
         size = int(size)
     except (TypeError, ValueError):
         size = available_sizes[0]
-
-    koekenpannen = KOEKENPANNEN_TOP10_BY_SIZE.get(size, [])
-    product_count = len(koekenpannen)
-
-    for p in koekenpannen:
-        p["rating_class"] = str(p["rating"]).replace(".", "-")
-        award = p.get("award", "").lower()
-        if "beste keuze" in award:
-            p["award_class"] = "best-choice"
-        elif "budget" in award:
-            p["award_class"] = "budget-choice"
-        elif "premium" in award:
-            p["award_class"] = "premium-choice"
-        elif "betaalbare" in award:
-            p["award_class"] = "value-choice"
-        else:
-            p["award_class"] = ""
-
-    conclusie = KOEKENPANNEN_CONCLUSIES_BY_SIZE.get(size)
-
-    json_ld = json.dumps({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": f"Top 10 PFAS-vrije Koekenpannen {size} cm",
-        "description": f"Top 10 PFAS-vrije koekenpannen van {size} cm – duurzaam, gezond en zonder schadelijke stoffen.",
-        "itemListOrder": "ItemListOrderDescending",
-        "numberOfItems": len(koekenpannen),
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": i + 1,
-                "item": {
-                    "@type": "Product",
-                    "name": p["name"],
-                    "description": p["description"],
-                    "image": request.build_absolute_uri(
-                        f"/static/images/{p['image']}"
-                    ),
-                    "brand": {
-                        "@type": "Brand",
-                        "name": p["brand"]
-                    },
-                    "material": p["material"],
-                    "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": p["rating"],
-                        "reviewCount": p["rating_count"]
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "url": p["affiliate_url"],
-                        "price": p["price"],
-                        "priceCurrency": p["currency"],
-                        "availability": f"https://schema.org/{p['availability']}"
-                    }
-                }
-            }
-            for i, p in enumerate(koekenpannen)
-        ]
-    })
-    return render(
-        request,
-        "koekenpannen.html",
-        {
-            "available_sizes": available_sizes,
-            "selected_size": size,
-            "koekenpannen": koekenpannen,
-            "product_count": product_count,
-            "conclusie": conclusie,
-            "json_ld": json_ld,
-        }
-    )
-
-
-def hapjespannen(request):
-    available_sizes = sorted(HAPJESPANNEN_TOP10_BY_SIZE.keys())
-    size = request.GET.get("size")
-    try:
-        size = int(size)
-    except (TypeError, ValueError):
+    if size not in KOEKENPANNEN_RANKINGS:
         size = available_sizes[0]
 
-    hapjespannen = HAPJESPANNEN_TOP10_BY_SIZE.get(size, [])
-    product_count = len(hapjespannen)
-
-    for p in hapjespannen:
-        p["rating_class"] = str(p["rating"]).replace(".", "-")
-        award = p.get("award", "").lower()
-        if "beste keuze" in award:
-            p["award_class"] = "best-choice"
-        elif "budget" in award:
-            p["award_class"] = "budget-choice"
-        elif "premium" in award:
-            p["award_class"] = "premium-choice"
-        elif "betaalbare" in award:
-            p["award_class"] = "value-choice"
-        else:
-            p["award_class"] = ""
-
-    conclusie = HAPJESPANNEN_CONCLUSIES_BY_SIZE.get(size)
-
-    json_ld = json.dumps({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": f"Top 10 PFAS-vrije Hapjespannen {size} cm",
-        "description": f"Top 10 PFAS-vrije hapjespannen van {size} cm – duurzaam, gezond en zonder schadelijke stoffen.",
-        "itemListOrder": "ItemListOrderDescending",
-        "numberOfItems": len(hapjespannen),
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": i + 1,
-                "item": {
-                    "@type": "Product",
-                    "name": p["name"],
-                    "description": p["description"],
-                    "image": request.build_absolute_uri(
-                        f"/static/images/hapjespannen/{p['image']}"
-                    ),
-                    "brand": {
-                        "@type": "Brand",
-                        "name": p["brand"]
-                    },
-                    "material": p["material"],
-                    "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": p["rating"],
-                        "reviewCount": p["rating_count"]
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "url": p["affiliate_url"],
-                        "price": p["price"],
-                        "priceCurrency": p["currency"],
-                        "availability": f"https://schema.org/{p['availability']}"
-                    }
-                }
-            }
-            for i, p in enumerate(hapjespannen)
-        ]
-    })
-    return render(
-        request,
-        "hapjespannen.html",
-        {
-            "available_sizes": available_sizes,
-            "selected_size": size,
-            "hapjespannen": hapjespannen,
-            "product_count": product_count,
-            "conclusie": conclusie,
-            "json_ld": json_ld,
-        }
-    )
-
-def wokpannen(request):
-    available_sizes = sorted(WOKPANNEN_TOP10_BY_SIZE.keys())
-    size = request.GET.get("size")
-    try:
-        size = int(size)
-    except (TypeError, ValueError):
-        size = available_sizes[0]
-
-    wokpannen = WOKPANNEN_TOP10_BY_SIZE.get(size, [])
-    product_count = len(wokpannen)
-
-    for p in wokpannen:
-        p["rating_class"] = str(p["rating"]).replace(".", "-")
-        award = p.get("award", "").lower()
-        if "beste keuze" in award:
-            p["award_class"] = "best-choice"
-        elif "budget" in award:
-            p["award_class"] = "budget-choice"
-        elif "premium" in award:
-            p["award_class"] = "premium-choice"
-        elif "betaalbare" in award:
-            p["award_class"] = "value-choice"
-        else:
-            p["award_class"] = ""
-
-    conclusie = WOKPANNEN_CONCLUSIES_BY_SIZE.get(size)
-
-    json_ld = json.dumps({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": f"Top 10 PFAS-vrije Wokpannen {size} cm",
-        "description": f"Top 10 PFAS-vrije Wokpannen van {size} cm – duurzaam, gezond en zonder schadelijke stoffen.",
-        "itemListOrder": "ItemListOrderDescending",
-        "numberOfItems": len(wokpannen),
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": i + 1,
-                "item": {
-                    "@type": "Product",
-                    "name": p["name"],
-                    "description": p["description"],
-                    "image": request.build_absolute_uri(
-                        f"/static/images/wokpannen/{p['image']}"
-                    ),
-                    "brand": {
-                        "@type": "Brand",
-                        "name": p["brand"]
-                    },
-                    "material": p["material"],
-                    "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": p["rating"],
-                        "reviewCount": p["rating_count"]
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "url": p["affiliate_url"],
-                        "price": p["price"],
-                        "priceCurrency": p["currency"],
-                        "availability": f"https://schema.org/{p['availability']}"
-                    }
-                }
-            }
-            for i, p in enumerate(wokpannen)
-        ]
-    })
-    return render(
-        request,
-        "wokpannen.html",
-        {
-            "available_sizes": available_sizes,
-            "selected_size": size,
-            "wokpannen": wokpannen,
-            "product_count": product_count,
-            "conclusie": conclusie,
-            "json_ld": json_ld,
-        }
-    )
-
-
-def airfryers(request):
-    products = [dict(p) for p in AIRFRYERS_PRODUCTS]
+    keys = KOEKENPANNEN_RANKINGS[size]
+    products = [dict(KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in KOEKENPANNEN_PRODUCTS]
     _enrich_products(products)
     product_count = len(products)
 
-    json_ld = json.dumps({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Top 6 PFAS-vrije Airfryers van 2026",
-        "description": "De 6 beste PFAS-vrije airfryers van 2026 – gezond, duurzaam en zonder schadelijke stoffen.",
-        "itemListOrder": "ItemListOrderDescending",
-        "numberOfItems": product_count,
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": i + 1,
-                "item": {
-                    "@type": "Product",
-                    "name": p["name"],
-                    "description": p["description"],
-                    "image": request.build_absolute_uri(
-                        f"/static/{p['image_path']}/{p['image']}"
-                    ),
-                    "brand": {"@type": "Brand", "name": p["brand"]},
-                    "material": p["material"],
-                    "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": p["rating"],
-                        "reviewCount": p["rating_count"],
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "url": p["affiliate_url"],
-                        "price": p["price"],
-                        "priceCurrency": p["currency"],
-                        "availability": f"https://schema.org/{p['availability']}",
-                    },
-                },
-            }
-            for i, p in enumerate(products)
-        ],
+    conclusie = content["conclusies"].get(size, {})
+    hero_h1 = content["hero"]["h1"].format(product_count=product_count, selected_size=size)
+    products_h2 = content["products_section"]["h2"].format(product_count=product_count, selected_size=size)
+    comparison_title = content["products_section"]["comparison_title"].format(
+        product_count=product_count, selected_size=size
+    )
+    faq_ld = _build_faq_ld(content["faq"]["items"])
+    json_ld = _build_itemlist_ld(
+        request,
+        f"Top {product_count} PFAS-vrije Koekenpannen {size} cm",
+        f"Top {product_count} PFAS-vrije koekenpannen van {size}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
+        products,
+    )
+    return render(request, "koekenpannen.html", {
+        "products": products,
+        "available_sizes": available_sizes,
+        "selected_size": size,
+        "product_count": product_count,
+        "content": content,
+        "hero_h1": hero_h1,
+        "products_h2": products_h2,
+        "comparison_title": comparison_title,
+        "conclusie": conclusie,
+        "json_ld": json_ld,
+        "faq_ld": faq_ld,
     })
+
+
+def hapjespannen(request):
+    content = HAPJESPANNEN_CONTENT
+    available_sizes = sorted(HAPJESPANNEN_RANKINGS.keys())
+    size = request.GET.get("size")
+    try:
+        size = int(size)
+    except (TypeError, ValueError):
+        size = available_sizes[0]
+    if size not in HAPJESPANNEN_RANKINGS:
+        size = available_sizes[0]
+
+    keys = HAPJESPANNEN_RANKINGS[size]
+    products = [dict(HAPJESPANNEN_PRODUCTS[k]) for k in keys if k in HAPJESPANNEN_PRODUCTS]
+    _enrich_products(products)
+    product_count = len(products)
+
+    conclusie = content["conclusies"].get(size, {})
+    hero_h1 = content["hero"]["h1"].format(product_count=product_count, selected_size=size)
+    products_h2 = content["products_section"]["h2"].format(product_count=product_count, selected_size=size)
+    comparison_title = content["products_section"]["comparison_title"].format(
+        product_count=product_count, selected_size=size
+    )
+    faq_ld = _build_faq_ld(content["faq"]["items"])
+    json_ld = _build_itemlist_ld(
+        request,
+        f"Top {product_count} PFAS-vrije Hapjespannen {size} cm",
+        f"Top {product_count} PFAS-vrije hapjespannen van {size}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
+        products,
+    )
+    return render(request, "hapjespannen.html", {
+        "products": products,
+        "available_sizes": available_sizes,
+        "selected_size": size,
+        "product_count": product_count,
+        "content": content,
+        "hero_h1": hero_h1,
+        "products_h2": products_h2,
+        "comparison_title": comparison_title,
+        "conclusie": conclusie,
+        "json_ld": json_ld,
+        "faq_ld": faq_ld,
+    })
+
+
+def wokpannen(request):
+    content = WOKPANNEN_CONTENT
+    available_sizes = sorted(WOKPANNEN_RANKINGS.keys())
+    size = request.GET.get("size")
+    try:
+        size = int(size)
+    except (TypeError, ValueError):
+        size = available_sizes[0]
+    if size not in WOKPANNEN_RANKINGS:
+        size = available_sizes[0]
+
+    keys = WOKPANNEN_RANKINGS[size]
+    products = [dict(WOKPANNEN_PRODUCTS[k]) for k in keys if k in WOKPANNEN_PRODUCTS]
+    _enrich_products(products)
+    product_count = len(products)
+
+    conclusie = content["conclusies"].get(size, {})
+    hero_h1 = content["hero"]["h1"].format(product_count=product_count, selected_size=size)
+    products_h2 = content["products_section"]["h2"].format(product_count=product_count, selected_size=size)
+    comparison_title = content["products_section"]["comparison_title"].format(
+        product_count=product_count, selected_size=size
+    )
+    faq_ld = _build_faq_ld(content["faq"]["items"])
+    json_ld = _build_itemlist_ld(
+        request,
+        f"Top {product_count} PFAS-vrije Wokpannen {size} cm",
+        f"Top {product_count} PFAS-vrije wokpannen van {size}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
+        products,
+    )
+    return render(request, "wokpannen.html", {
+        "products": products,
+        "available_sizes": available_sizes,
+        "selected_size": size,
+        "product_count": product_count,
+        "content": content,
+        "hero_h1": hero_h1,
+        "products_h2": products_h2,
+        "comparison_title": comparison_title,
+        "conclusie": conclusie,
+        "json_ld": json_ld,
+        "faq_ld": faq_ld,
+    })
+
+
+def airfryers(request):
+    content = AIRFRYERS_CONTENT
+    products = [dict(AIRFRYERS_PRODUCTS[k]) for k in AIRFRYERS_RANKINGS]
+    _enrich_products(products)
+    product_count = len(products)
+    conclusie = content["conclusies"]["default"]
+    faq_ld = _build_faq_ld(content["faq"]["items"])
+    json_ld = _build_itemlist_ld(
+        request,
+        "Top 6 PFAS-vrije Airfryers van 2026",
+        "De 6 beste PFAS-vrije airfryers van 2026 \u2013 gezond, duurzaam en zonder schadelijke stoffen.",
+        products,
+    )
     return render(request, "airfryers.html", {
         "products": products,
         "product_count": product_count,
-        "conclusie": AIRFRYERS_CONCLUSIE,
+        "content": content,
+        "conclusie": conclusie,
         "json_ld": json_ld,
+        "faq_ld": faq_ld,
     })
 
 
 def vershoudcontainers(request):
-    products = [dict(p) for p in VERSHOUDCONTAINERS_PRODUCTS]
+    content = VERSHOUDCONTAINERS_CONTENT
+    products = [dict(VERSHOUDCONTAINERS_PRODUCTS[k]) for k in VERSHOUDCONTAINERS_RANKINGS]
     _enrich_products(products)
     product_count = len(products)
-
-    json_ld = json.dumps({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Top 5 PFAS-vrije Vershoudcontainers van 2026",
-        "description": "De 5 beste glazen vershoudcontainers van 2026 – voedselveilig, duurzaam en PFAS-vrij.",
-        "itemListOrder": "ItemListOrderDescending",
-        "numberOfItems": product_count,
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": i + 1,
-                "item": {
-                    "@type": "Product",
-                    "name": p["name"],
-                    "description": p["description"],
-                    "image": request.build_absolute_uri(
-                        f"/static/{p['image_path']}/{p['image']}"
-                    ),
-                    "brand": {"@type": "Brand", "name": p["brand"]},
-                    "material": p["material"],
-                    "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": p["rating"],
-                        "reviewCount": p["rating_count"],
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "url": p["affiliate_url"],
-                        "price": p["price"],
-                        "priceCurrency": p["currency"],
-                        "availability": f"https://schema.org/{p['availability']}",
-                    },
-                },
-            }
-            for i, p in enumerate(products)
-        ],
-    })
+    conclusie = content["conclusies"]["default"]
+    faq_ld = _build_faq_ld(content["faq"]["items"])
+    json_ld = _build_itemlist_ld(
+        request,
+        "Top 5 PFAS-vrije Vershoudcontainers van 2026",
+        "De 5 beste glazen vershoudcontainers van 2026 \u2013 voedselveilig, duurzaam en PFAS-vrij.",
+        products,
+    )
     return render(request, "vershoudcontainers.html", {
         "products": products,
         "product_count": product_count,
-        "conclusie": VERSHOUDCONTAINERS_CONCLUSIE,
+        "content": content,
+        "conclusie": conclusie,
         "json_ld": json_ld,
+        "faq_ld": faq_ld,
     })
 
 

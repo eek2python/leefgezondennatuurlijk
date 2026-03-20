@@ -19,23 +19,24 @@ A Django-based website for natural and healthy living product comparisons (Dutch
 
 ## Data-driven Architecture
 
-All 6 category pages use the same pattern:
+All 6 category pages use a standardised three-file content architecture per category:
 
-1. **Data file** (`products/data_<category>.py`) — list of product dicts with: `slug`, `name`, `brand`, `material`, `image`, `image_path`, `description`, `pros`, `cons`, `rating`, `rating_count`, `price`, `currency`, `availability`, `affiliate_url`, `price_range`, `verdict`, `award`
-2. **Conclusie file** (`products/data_conclusies_<category>.py`) — a single `{title, text}` dict
-3. **View** (`products/views.py`) — enriches products with `rating_class` and `award_class`, generates `json_ld` (Schema.org ItemList), passes `products`, `product_count`, `conclusie`, `json_ld` to template
-4. **Template** (`templates/<category>.html`) — uses `{% for product in products %}{% include "partials/product_block.html" %}{% endfor %}` for product cards; `{{ json_ld|safe }}` for structured data
+1. **Products file** (`products/products_<category>.py`) — dict of product dicts keyed by slug. Each product has: `slug`, `name`, `brand`, `material`, `features` (list), `image`, `image_path`, `description`, `pros`, `cons`, `rating`, `rating_count`, `price`, `currency`, `availability`, `affiliate_url`, `price_range`, `verdict`, `award`
+2. **Rankings file** (`products/rankings_<category>.py`) — maps size (or `"default"`) → ordered list of product slugs
+3. **Content file** (`products/content_<category>.py`) — `CONTENT` dict with schema: `hero`, `why_choose`, `size_guide` (None for flat cats), `products_section`, `tips`, `conclusies`, `faq`
+4. **View** (`products/views.py`) — enriches products with `rating_class` and `award_class`; generates `json_ld` (Schema.org ItemList) and `faq_ld` (FAQPage); passes `products`, `product_count`, `content`, `faq_ld`, `hero_h1`, `products_h2`, `comparison_title`, `conclusie`, `json_ld` to template
+5. **Template** (`templates/<category>.html`) — data-driven via context vars; `{% for product in products %}{% include "partials/product_block.html" %}{% endfor %}`; `{{ faq_ld|safe }}` for FAQ structured data
 
 ### Categories
 
-| Category | Data file | Products | Notes |
+| Category | Type | Rankings key | image_path |
 |---|---|---|---|
-| koekenpannen | data_koekenpannen.py | 10 per size | Size-based (24/26/28 cm) |
-| hapjespannen | data_hapjespannen.py | 10 per size | Size-based (24/26/28 cm) |
-| wokpannen | data_wokpannen.py | 10 per size | Size-based (28/30/32 cm) |
-| snijplanken | data_snijplanken.py | 10 | image_path: "images" |
-| airfryers | data_airfryers.py | 6 | image_path: "images" |
-| vershoudcontainers | data_vershoudcontainers.py | 5 | image_path: "images/vershoudbakjes" |
+| koekenpannen | size-based | 24/26/28 cm | `images/koekenpannen` |
+| hapjespannen | size-based | 24/26/28 cm | `images/hapjespannen` |
+| wokpannen | size-based | 28/30/32 cm | `images/wokpannen` |
+| snijplanken | flat | `"default"` | `images` |
+| airfryers | flat | `"default"` | `images` |
+| vershoudcontainers | flat | `"default"` | `images/vershoudbakjes` |
 
 ### Key Partials
 - `templates/partials/product_block.html` — renders one product card

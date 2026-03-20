@@ -24,32 +24,7 @@
 </script>
 <!-- 🔹 Structured Data – FAQPage -->
 <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
-   {
-     "@type":"Question",
-     "name":"Zijn PFAS-vrije airfryers gezonder?",
-     "acceptedAnswer":{"@type":"Answer","text":"Ja, keramische PFAS-vrije coatings bevatten geen schadelijke stoffen en geven geen giftige dampen af bij hoge temperaturen."}
-   },
-   {
-     "@type":"Question",
-     "name":"Hoe lang gaat een PFAS-vrije airfryer mee?",
-     "acceptedAnswer":{"@type":"Answer","text":"Met goed onderhoud gaan PFAS-vrije airfryers lang mee door hun hittebestendige keramische coating."}
-   },
-   {
-     "@type":"Question",
-     "name":"Zijn keramische airfryers volledig PFAS-vrij?",
-     "acceptedAnswer":{"@type":"Answer","text":"Ja. Keramische coatings bestaan uit silica en bevatten geen PFAS of andere fluorkoolstoffen."}
-   },
-   {
-     "@type":"Question",
-     "name":"Mag ik een PFAS-vrije airfryer in de vaatwasser doen?",
-     "acceptedAnswer":{"@type":"Answer","text":"Nee, handwas wordt aanbevolen omdat dit de keramische laag beschermt en de levensduur verlengt."}
-   }
- ]
-}
+{{ faq_ld|safe }}
 </script>
 {% endblock %}
 
@@ -58,37 +33,31 @@
                 <section id="banner">
                 <div class="content">
                 <header class="main">
-                <h1>Top 6 PFAS-vrije Airfryers – Gezond, Veilig & Duurzaam</h1>
+                <h1>{{ content.hero.h1 }}</h1>
                 </header>
-                <p>Het gebruik van een PFAS-vrije airfryer is een bewuste keuze voor wie veilig en gezond wil koken. Traditionele antiaanbaklagen kunnen PFAS bevatten, een groep chemische stoffen die bij hoge temperaturen schadelijke dampen kunnen afgeven. Bovendien zijn PFAS slecht afbreekbaar, schadelijk voor het milieu en kunnen ze zich ophopen in het lichaam.</p>
-                <p>PFAS-vrije airfryers beschikken over veilige keramische coatings die hittebestendig, slijtvast en vrij van schadelijke chemicaliën zijn. Deze moderne alternatieven leveren uitstekende bakresultaten en maken het mogelijk om gezond en comfortabel te koken zonder risico’s.</p>
-                <p>Wij hebben tientallen PFAS-vrije airfryers beoordeeld op materiaal, duurzaamheid, bakprestaties, ontwerp en gebruiksgemak. Hieronder vind je de beste modellen van 2026.</p>
+                {% for p in content.hero.paragraphs %}
+                <p>{{ p|safe }}</p>
+                {% endfor %}
                 </div>
                 </section>
 
                 <section>
                 <header class="major">
-                <h2>Waarom kiezen voor een PFAS-vrije airfryer?</h2>
+                <h2>{{ content.why_choose.title }}</h2>
                 </header>
-                <p>Moderne airfryers werken op hoge temperaturen, waardoor traditionele antiaanbaklagen op basis van PFAS sneller kunnen slijten of dampen kunnen afgeven. Een PFAS-vrije airfryer voorkomt deze risico’s en biedt een veilige, duurzame oplossing voor dagelijks gebruik.</p>
+                <p>{{ content.why_choose.intro|safe }}</p>
                 <ul>
-                <li><strong>Gezonder koken:</strong> Geen PFAS, geen schadelijke dampen bij hoge temperatuur.</li>
-                <li><strong>Milieuvriendelijker:</strong> PFAS zijn chemisch zeer persistent; PFAS-vrije coatings zijn dat niet.</li>
-                <li><strong>Hogere hittebestendigheid:</strong> Keramische coatings blijven stabiel bij extreme temperaturen.</li>
-                <li><strong>Betere duurzaamheid:</strong> Keramische manden slijten minder snel dan traditionele anti-aanbaklagen.</li>
+                {% for bullet in content.why_choose.bullets %}
+                <li>{{ bullet|safe }}</li>
+                {% endfor %}
                 </ul>
                 </section>
 
                 <section id="producten" class="products">
                         <header class="major">
-                                <h2>De 6 beste PFAS-vrij airfryers van 2026</h2>
+                                <h2>{{ content.products_section.h2 }}</h2>
                         </header>
-                <!--    <p></p>-->
                         <div class="product-list">
-                   {% comment %}
-                         Elk productblok hieronder kan later vanuit de database worden geladen,
-                         maar voorlopig zijn dit handmatige voorbeelden.
-                   {% endcomment %}
 
                         <section class="top10-section">
 {% for product in products %}
@@ -98,7 +67,7 @@
 
                         <!-- Vergelijkingstabel -->
                         <section>
-                        <h2>Vergelijkingstabel – Top 6 PFAS-vrije Airfryers</h2>
+                        <h2>{{ content.products_section.comparison_title }}</h2>
                         <div class="table-wrapper">
                         <table class="alt product-table">
                         <thead>
@@ -111,63 +80,25 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <!-- 1: Beste keuze -->
+                        {% for product in products %}
                         <tr>
                         <td>
-                        <strong>Inventum GF500HLD</strong><br>
-                        <span class="product-badge best-choice">🏆 Beste keuze</span>
+                        <strong>{{ product.name }}</strong>
+                        {% if product.award %}
+                        <br><span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
+                        {% endif %}
                         </td>
-                        <td>5 L · Keramisch PFAS-vrij · Stil · 8 programma’s</td>
-                        <td>€€</td>
-                        <td><span class="stars stars-5"></span></td>
-                        <td><a href="https://www.bol.com/nl/nl/p/inventum-gf500hld-airfryer-heteluchtfriteuse-beste-koop-november-2022-inhoud-5-liter-zwart-rvs/9200000114032192/?s2a=#productTitle" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk product</a></td>
-                        </tr>
-                        <!-- 2: Budgetoptie -->
-                        <tr>
                         <td>
-                        <strong>Bourgini Slimfit Airfryer XL</strong><br>
-                        <span class="product-badge budget-choice">💰 Beste budgetoptie</span>
+                        {{ product.material }}
+                        {% if product.features %}
+                        · {{ product.features|join:" · " }}
+                        {% endif %}
                         </td>
-                        <td>5 L · Keramisch PFAS-vrij · Compact</td>
-                        <td>€</td>
-                        <td><span class="stars stars-4"></span></td>
-                        <td><a href="https://www.bol.com/nl/nl/p/bourgini-slimfit-airfryer-xl-hetelucht-friteuse-5-liter-1500w/9300000163583334/" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk product</a></td>
+                        <td>{{ product.price_range }}</td>
+                        <td><span class="stars stars-{{ product.rating_class }}"></span></td>
+                        <td><a href="{{ product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk product</a></td>
                         </tr>
-                        <!-- 3: Premium keuze -->
-                        <tr>
-                        <td>
-                                <strong>GreenPan Silhouette Airfryer XL</strong><br>
-                                <span class="product-badge premium-choice">💎 Premium keuze</span>
-                                </td>
-                        <td>5 L · Thermolon PFAS-vrij · 12 programma’s</td>
-                        <td>€€€</td>
-                        <td><span class="stars stars-4"></span></td>
-                        <td><a href="https://www.bol.com/nl/nl/p/greenpan-silhouette-air-fryer-xl-5l-enkele-mand-tot-4-personen-pfas-vrij-12-programma-s-automatisch-uitschakelen-met-timerfunctie-moroccan-green/9300000241640428/?cid=1765743017920-5776295599319&bltgh=0376d6e1-e1a8-4ee8-b632-2d4a5a82c0ed.ProductList_Middle.0.ProductTitle" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk product</a></td>
-                        </tr>
-                        <!-- 4 -->
-                        <tr>
-                        <td><strong>MasterPRO Rocket Cyclone 500</strong></td>
-                        <td>5 L · PFAS-vrij · Cyclone-luchtcirculatie</td>
-                        <td>€€</td>
-                        <td><span class="stars stars-4"></span></td>
-                        <td><a href="https://www.amazon.nl/-/en/MasterPRO-Cyclone-Capacity-Digital-Circulation/dp/B0F3P6FW2Y" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk product</a></td>
-                        </tr>
-                        <!-- 5 -->
-                        <tr>
-                        <td><strong>Wartmann WM-2312 AF</strong></td>
-                        <td>5 L · PFAS-vrije keramische mand · Stil</td>
-                        <td>€€</td>
-                        <td><span class="stars stars-4"></span></td>
-                        <td><a href="https://www.bol.com/nl/nl/p/wartmann-airfryer-pfas-vrije-heteluchtfriteuse-met-kijkvenster-nieuw-model-5-7-liter-10-programma-s-1700-watt-zwart/9300000180236809/" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk product</a></td>
-                        </tr>
-                        <!-- 6 -->
-                        <tr>
-                        <td><strong>Maison & Kitchen Airfryer</strong></td>
-                        <td>5 L · Keramisch PFAS-vrij · Compact</td>
-                        <td>€</td>
-                        <td><span class="stars stars-3-5"></span></td>
-                        <td><a href="https://www.bol.com/nl/nl/p/maison-kitchen-airfryer-heteluchtfriteuse-pfas-vrij-1500w-5l-inhoud-80-c-tot-200-c-zwart/9300000197704759/" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk product</a></td>
-                        </tr>
+                        {% endfor %}
                         </tbody>
                         </table>
                         </div>
@@ -176,45 +107,34 @@
 
                         <section>
                         <header class="major">
-                        <h2>Onderhoudstips voor PFAS-vrije airfryers</h2>
+                        <h2>{{ content.tips.title }}</h2>
                         </header>
                         <ul>
-                        <li>Reinig de mand altijd met de hand met warm water en milde zeep.</li>
-                        <li>Gebruik geen metalen spatels of schuurmateriaal om de keramische laag te beschermen.</li>
-                        <li>Laat de mand volledig drogen voordat je deze terugplaatst.</li>
-                        <li>Vermijd sprays met olie onder hoge druk: gebruik liever een bakkwast of een plantaardige olie met hoge rooktemperatuur.</li>
-                        <li>Ontkoppel de airfryer na gebruik en laat deze afkoelen voor reiniging.</li>
+                        {% for bullet in content.tips.bullets %}
+                        <li>{{ bullet|safe }}</li>
+                        {% endfor %}
                         </ul>
                         </section>
 
+                        {% if conclusie %}
                         <section>
                         <header class="major">
-                        <h2>Conclusie – Onze aanbeveling</h2>
+                        <h2>{{ conclusie.title }}</h2>
                         </header>
-                        <p>Wie op zoek is naar een veilige, duurzame en volledig PFAS-vrije airfryer heeft vandaag uitstekende keuzes. De <strong>Inventum GF500HLDB</strong> biedt de beste balans tussen prestaties, duurzaamheid en gebruiksgemak. Voor een budgetvriendelijke maar betrouwbare optie is de <strong>Bourgini Slimfit XL</strong> een uitstekende keuze.</p>
-                        <p>De premium <strong>Instant Vortex Plus 6-in-1</strong> blinkt uit in veelzijdigheid en bouwkwaliteit. Dankzij de moderne keramische coatings in alle tien de modellen kun je in alle gevallen rekenen op gezond en veilig koken zonder schadelijke stoffen.</p>
+                        <p>{{ conclusie.text|safe }}</p>
                         </section>
+                        {% endif %}
 
                         <section>
                         <header class="major">
-                        <h2>Veelgestelde vragen over PFAS-vrije airfryers</h2>
+                        <h2>{{ content.faq.title }}</h2>
                         </header>
+                        {% for item in content.faq.items %}
                         <div class="faq-item">
-                                <h3>1. Zijn alle airfryers PFAS-vrij?</h3>
-                                <p>Nee. Veel traditionele anti-aanbaklagen bevatten PFAS. Kies daarom specifiek voor een PFAS-vrije keramische coating.</p>
+                                <h3>{{ forloop.counter }}. {{ item.q }}</h3>
+                                <p>{{ item.a|safe }}</p>
                         </div>
-                        <div class="faq-item">
-                                <h3>Is keramisch altijd PFAS-vrij?</h3>
-                                <p>Ja. Keramische coatings op silica-basis bevatten geen PFAS en zijn veilig bij hoge temperaturen.</p>
-                        </div>
-                        <div class="faq-item">
-                                <h3>Welke airfryer is het meest duurzaam?</h3>
-                                <p>Modellen met keramische coatings hebben doorgaans een langere levensduur en behouden hun anti-aanbakprestaties beter.</p>
-                        </div>
-                        <div class="faq-item">
-                                <h3>Mag een PFAS-vrije mand van een airfryer in de vaatwasser?</h3>
-                                <p>Niet aanbevolen. Handwas verlengt de levensduur van de keramische laag aanzienlijk.</p>
-                        </div>
+                        {% endfor %}
                         </section>
 
 {% include "partials/related_categories.html" %}

@@ -23,44 +23,7 @@
 </script>
 <!-- FAQPage Structured Data -->
 <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
-   {
-     "@type": "Question",
-     "name": "Zijn keramische wokpannen volledig PFAS-vrij?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Ja. Keramische anti-aanbaklagen worden geproduceerd zonder PFAS, PFOA, PTFE of andere fluorverbindingen."
-     }
-   },
-   {
-     "@type": "Question",
-     "name": "Zijn PFAS-vrije wokpannen geschikt voor inductie?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Ja, de meeste moderne PFAS-vrije pannen hebben een inductiegeschikte bodem. Controleer wel altijd de productspecificaties."
-     }
-   },
-   {
-     "@type": "Question",
-     "name": "Wat is beter: keramisch of koolstofstaal?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Keramisch is gebruiksvriendelijk en PFAS-vrij. Koolstofstaal is duurzamer en ideaal voor hoge temperaturen, maar vraagt meer onderhoud."
-     }
-   },
-   {
-     "@type": "Question",
-     "name": "Hoe lang gaat een PFAS-vrije wokpan mee?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Keramische pannen gaan gemiddeld 2–5 jaar mee, afhankelijk van gebruik. Premium modellen gaan doorgaans langer mee."
-     }
-   }
- ]
-}
+{{ faq_ld|safe }}
 </script>
 {% endblock %}
 
@@ -68,7 +31,7 @@
 <section id="banner">
 <div class="content">
 <header class="main">
-<h1>Top 10 PFAS-vrije Wokpannen – Gezond, Duurzaam & Stijlvol</h1>
+<h1>{{ hero_h1 }}</h1>
 </header>
 <p>Een PFAS-vrije wokpan is de beste keuze voor wie gezond, veilig en bewust wil koken. Traditionele antiaanbaklagen bevatten vaak PFAS — stoffen die bij hoge temperaturen schadelijke dampen kunnen afgeven en nauwelijks afbreekbaar zijn in het milieu. Omdat wokken plaatsvindt op zeer hoge temperaturen, speelt veiligheid hier een extra grote rol.</p>
 <p>Gelukkig bestaan er uitstekende alternatieven die volledig vrij zijn van PFAS. Denk aan keramisch gecoate wokpannen, koolstofstaal of hoogwaardige roestvrijstalen modellen. Deze materialen zijn niet alleen veiliger, maar zorgen ook voor krachtige bakresultaten, een natuurlijke antiaanbakwerking en een authentieke wokervaring.</p>
@@ -81,7 +44,7 @@
 <header class="major">
 <h2>Waarom kiezen voor een PFAS-vrije wokpan?</h2>
 </header>
-<p>Steeds meer consumenten kiezen bewust voor PFAS-vrije pannen, en dat is niet zonder reden. Traditionele antiaanbaklagen bevatten fluorverbindingen die langdurig in het milieu achterblijven en in sommige gevallen gezondheidsrisico’s kunnen vormen. PFAS-vrije wokpannen bieden een veilig en duurzaam alternatief.</p>
+<p>Steeds meer consumenten kiezen bewust voor PFAS-vrije pannen, en dat is niet zonder reden. Traditionele antiaanbaklagen bevatten fluorverbindingen die langdurig in het milieu achterblijven en in sommige gevallen gezondheidsrisico's kunnen vormen. PFAS-vrije wokpannen bieden een veilig en duurzaam alternatief.</p>
 <ul>
 <li><strong>Veiliger voor je gezondheid:</strong> keramische coatings bevatten geen schadelijke stoffen en geven geen dampen af bij hoge temperaturen.</li>
 <li><strong>Milieuvriendelijker:</strong> PFAS-vrije pannen dragen niet bij aan de verspreiding van moeilijk afbreekbare chemicaliën.</li>
@@ -106,397 +69,18 @@
     {% endfor %}
 </div>
 
-<h2 class="category-title">De {{ product_count }} beste wokpannen van 2026 – {{ selected_size }} cm</h2>
+<h2 class="category-title">{{ products_h2 }}</h2>
 <div class="products-container">
 
-    {% for product in wokpannen %}
+    {% for product in products %}
 
         {% include "partials/product_block.html" with product=product %}
 
     {% endfor %}
 </div>
 
-<!--<section id="producten" class="products">-->
-<!--        <header class="major">-->
-<!--            <h2>De 10 beste PFAS-vrije wokpannen van 2025</h2>-->
-<!--        </header>-->
-<!--&lt;!&ndash;    <p>Van compacte <strong>bamboe snijplanken</strong> tot robuuste <strong>end-grain walnootplanken</strong>:&ndash;&gt;-->
-<!--&lt;!&ndash;        ontdek hieronder welke houten snijplank het beste bij jouw kookstijl past — getest op kwaliteit, duurzaamheid en gebruiksgemak.</p>&ndash;&gt;-->
-<!--        <div class="product-list">-->
-<!--       {% comment %}-->
-<!--         Elk productblok hieronder kan later vanuit de database worden geladen,-->
-<!--         maar voorlopig zijn dit handmatige voorbeelden.-->
-<!--       {% endcomment %}-->
-
-<!--<section class="top10-section">-->
-<!--&lt;!&ndash; Product 1 – GreenPan Torino (Beste keuze) &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--    <img src="{% static 'images/wokpan01.jpg' %}" alt="GreenPan Torino Keramische Wokpan 28 cm" class="image right">-->
-<!--    <div class="content">-->
-<!--    <h3>1. GreenPan Torino Keramische Wokpan – 28 cm</h3>-->
-<!--    <p>PFAS-vrije keramische wokpan met Thermolon-coating en snelle, gelijkmatige warmteverdeling – ideaal voor dagelijks roerbakken.</p>-->
-<!--    <div class="pros-cons">-->
-<!--    <div class="pros">-->
-<!--    <strong>Voordelen</strong>-->
-<!--    <ul>-->
-<!--    <li>PFAS-vrije Thermolon-keramische antiaanbaklaag</li>-->
-<!--    <li>Geschikt voor inductie en andere warmtebronnen</li>-->
-<!--    <li>Relatief licht in de hand voor een 28 cm wok</li>-->
-<!--    </ul>-->
-<!--    </div>-->
-<!--    <div class="cons">-->
-<!--    <strong>Nadelen</strong>-->
-<!--    <ul>-->
-<!--    <li>Niet geschikt voor metalen spatels</li>-->
-<!--    <li>Coating vraagt voorzichtig schoonmaken</li>-->
-<!--    </ul>-->
-<!--    </div>-->
-<!--    </div>-->
-<!--    <div class="verdict">-->
-<!--    <div class="verdict-stars"><span class="stars stars-5"></span></div>-->
-<!--    <div class="verdict-desc">De beste allround PFAS-vrije wokpan voor wie vaak roerbakt en een betrouwbare, toegankelijke pan zoekt.</div>-->
-<!--    </div>-->
-<!--    <div class="meta">-->
-<!--    <span class="price">€€</span>-->
-<!--    <span class="badge"><span class="product-badge best-choice">🏆 Beste keuze</span></span>-->
-<!--    </div>-->
-<!--    <a href="https://www.bol.com/nl/nl/p/greenpan-torino-keramische-wokpan-28-cm/9300000003247573/" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--    </div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product – HEMA Milano Keramische Wokpan (Beste budgetoptie) &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/wokpan02.jpg' %}" alt="HEMA Milano Keramische Wokpan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>2. HEMA Milano Keramische Wokpan – 28 cm</h3>-->
-<!--<p>Betaalbare keramische wokpan van HEMA met een PFAS-vrije antiaanbaklaag, ideaal als instapmodel voor dagelijks wokken.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Keramische, PFAS-vrije antiaanbaklaag</li>-->
-<!--<li>Zeer toegankelijk geprijsd</li>-->
-<!--<li>Geschikt voor meerdere warmtebronnen (incl. inductie, afhankelijk van variant)</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Minder duurzaam dan premium merken</li>-->
-<!--<li>Coating vraagt voorzichtig gebruik en schoonmaken</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-3-5"></span></div>-->
-<!--<div class="verdict-desc">-->
-<!--       Een zeer betaalbare keuze voor wie wil starten met PFAS-vrij wokken zonder direct in een duurdere pan te investeren.-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€</span>-->
-<!--<span class="badge"><span class="product-badge budget-choice">💰 Beste budgetoptie</span></span>-->
-<!--</div>-->
-<!--<a href="https://www.hema.nl/koken-tafelen/koken/pannen/wokpannen/wok-28cm-milano-80190043.html?gclsrc=aw.ds&gad_source=1&gad_campaignid=742717860&gclid=CjwKCAiAz_DIBhBJEiwAVH2XwC9UlGRndPOZGY72J8Nz-wWaFGzs632SyyefESaU7LbTq9asZghjaBoCL5kQAvD_BwE" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product – WMF Durado Keramische Wokpan (Premium keuze) &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/wokpan03.jpg' %}" alt="WMF Durado Keramische Wokpan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>3. WMF Durado Keramische Wokpan – 28 cm</h3>-->
-<!--<p>Hoogwaardige PFAS-vrije keramische wokpan van WMF met uitstekende warmteverdeling en duurzame afwerking — ideaal voor serieuze thuiskoks.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Keramische antiaanbaklaag zonder PFAS</li>-->
-<!--<li>Stevige constructie en premium afwerking</li>-->
-<!--<li>Gelijkmatige warmteverdeling dankzij TransTherm®-bodem</li>-->
-<!--<li>Geschikt voor alle warmtebronnen, inclusief inductie</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Iets zwaarder dan aluminium wokpannen</li>-->
-<!--<li>Keramische coating blijft gevoelig voor metalen spatels</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-5"></span></div>-->
-<!--<div class="verdict-desc">-->
-<!--       Een duurzame premium wokpan die uitblinkt in stabiliteit, warmteverdeling en veiligheid — perfect voor wie kwaliteit en prestaties vooropstelt.-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€€</span>-->
-<!--<span class="badge"><span class="product-badge premium-choice">💎 Premium keuze</span></span>-->
-<!--</div>-->
-<!--<a href="https://www.amazon.nl/WMF-748486021-Keramische-TransTherm-Warmtebronnen/dp/B0B799PK1X" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 4 – GreenChef Diamond Induction &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/wokpan04.jpg' %}" alt="GreenChef Diamond Induction Wokpan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>4. GreenChef Diamond Induction Wokpan – 28 cm</h3>-->
-<!--<p>PFAS-vrije keramische wokpan met diamantversterkte coating voor extra duurzaamheid en fijne bakresultaten.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Diamantversterkte keramische antiaanbaklaag</li>-->
-<!--<li>Geschikt voor inductie</li>-->
-<!--<li>Goede balans tussen gewicht en stabiliteit</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Niet geschikt voor extreem hoge temperaturen</li>-->
-<!--<li>Coating blijft gevoelig voor krassen bij hard schrobben</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-4"></span></div>-->
-<!--<div class="verdict-desc">Een sterke middenklasser voor dagelijks wokgebruik met een extra slijtvaste keramische laag.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€</span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/greenchef-diamond-wokpan-28cm-zwart-inductie-pfas-vrij/9200000130094509/?s2a=&bltgh=rkgYhAwFr08s-DcS271MBQ.4_55_56.57.FeatureOption#productTitle" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 5 – Primecook &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/wokpannen/primecook-wok-28.jpg' %}"-->
-<!--      alt="Primecook keramische wokpan 28 cm"-->
-<!--      title="Primecook Wokpan – 28 cm – PFAS-vrije keramische anti-aanbaklaag"-->
-<!--      class="image right">-->
-<!--<div class="content">-->
-<!--<h3>-->
-<!--     5. Primecook Keramische Wokpan - 28 cm-->
-<!--</h3>-->
-<!--<p>-->
-<!--     Een hoogwaardige PFAS-vrije keramische wokpan uit Italië, gemaakt met een extreem slijtvaste-->
-<!--<strong>ecosafe® keramische anti-aanbaklaag</strong> zonder PTFE of schadelijke chemicaliën.-->
-<!--     Ideaal voor roerbakken op hoge temperaturen, gezond koken en dagelijks gebruik.-->
-<!--</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Volledig PFAS-vrije ecosafe® keramische coating</li>-->
-<!--<li>Gelijkmatige warmteverdeling, ook op inductie</li>-->
-<!--<li>Zeer slijtvast en geschikt voor intensief gebruik</li>-->
-<!--<li>Italiaanse premium bouwkwaliteit</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Niet vaatwasserbestendig (aanbevolen: met de hand reinigen)</li>-->
-<!--<li>Hogere prijsklasse dan standaard keramische pannen</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-5"></span></div>-->
-<!--<div class="verdict-desc">-->
-<!--       Een duurzame, hoogwaardige PFAS-vrije wokpan met uitstekende prestaties op alle warmtebronnen.-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€€</span>-->
-<!--<span class="badge badge-premium-choice">Premium keuze</span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/primecook-wok-o-28-cm-pfas-vrij-inductie-veilige-en-slijtvaste-antiaanbaklaag/9300000050781201/"-->
-<!--      class="button primary small"-->
-<!--      target="_blank" rel="nofollow sponsored noopener">-->
-<!--     Bekijk product-->
-<!--</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 6 – BK Blue Label Granite &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/wokpan06.jpg' %}" alt="BK Blue Label Granite Wokpan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>6. BK Blue Label Granite Wokpan – 28 cm</h3>-->
-<!--<p>Robuuste PFAS-vrije wokpan met graniet-look keramische coating en stevige bodem.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Keramische PFAS-vrije laag met goede anti-aanbakeigenschappen</li>-->
-<!--<li>Stevige bodem voor gelijkmatige verhitting</li>-->
-<!--<li>Prettig geprijsd voor de geboden kwaliteit</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Iets zwaarder dan eenvoudige aluminium wokpannen</li>-->
-<!--<li>Geen deksel inbegrepen</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-4"></span></div>-->
-<!--<div class="verdict-desc">Een degelijke wokpan voor wie vaak roerbakt en een solide pan zoekt zonder direct naar premium te gaan.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€</span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/bk-blue-label-granite-wokpan-o-28-cm-keramisch/9300000073952667/" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 7 – Brabantia Futura Green &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/wokpan07.jpg' %}" alt="Brabantia Futura Green Wokpan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>7. Brabantia Futura Green Wokpan – 28 cm</h3>-->
-<!--<p>Moderne wokpan met 100% PFAS-vrije keramische antiaanbaklaag en eigentijds design.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>100% PFAS-vrije keramische coating</li>-->
-<!--<li>Strak, modern ontwerp</li>-->
-<!--<li>Geschikt voor inductie</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Coating gevoelig voor te hoge hitte</li>-->
-<!--<li>Geen deksel meegeleverd</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-4"></span></div>-->
-<!--<div class="verdict-desc">Een fraaie wokpan voor wie een gezonde, PFAS-vrije pan zoekt met een moderne uitstraling.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€</span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/brabantia-futura-green-wokpan-non-stick-o-28-cm-100-pfas-vrije-keramische-antiaanbaklaag-retro-design-geschikt-voor-inductie-100-recycled-aluminium-donker-groen/9300000186197427/" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 8 – GreenPan Cambridge Wok &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/wokpan08.jpg' %}" alt="GreenPan Cambridge Keramische Wokpan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>8. GreenPan Cambridge Keramische Wokpan – 28 cm</h3>-->
-<!--<p>PFAS-vrije wokpan met Thermolon-keramische laag, gericht op gelijkmatige verhitting en gebruiksgemak.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Thermolon-keramische antiaanbaklaag zonder PFAS</li>-->
-<!--<li>Goede warmteverdeling en controle</li>-->
-<!--<li>Geschikt voor inductie</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>In het hogere middensegment geprijsd</li>-->
-<!--<li>Niet geschikt voor metalen spatels</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-4-5"></span></div>-->
-<!--<div class="verdict-desc">Een serieuze wokpan voor wie vaak wokt en waarde hecht aan consistente prestaties.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€€</span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/greenpan-cambridge-wokpan-28cm-zwart-inductie-pfas-vrij/9200000083444325/" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 9 – BK Easy Induction Ceramic (Beste budgetoptie) &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/wokpan09.jpg' %}" alt="BK Easy Induction Ceramic Wokpan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>9. BK Easy Induction Ceramic Wokpan – 28 cm</h3>-->
-<!--<p>Betaalbare PFAS-vrije keramische wokpan met snelle opwarming en praktische antiaanbaklaag voor alledaags gebruik.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Scherpe prijs voor een PFAS-vrije wok</li>-->
-<!--<li>Keramische antiaanbaklaag voor gemakkelijk schoonmaken</li>-->
-<!--<li>Geschikt voor inductie en andere warmtebronnen</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Coating slijt sneller bij intensief gebruik op hoge temperatuur</li>-->
-<!--<li>Geen deksel meegeleverd</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-4"></span></div>-->
-<!--<div class="verdict-desc">Een uitstekende budgetkeuze voor wie PFAS-vrij wil wokken zonder veel uit te geven.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€</span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/bk-easy-basic-ceramic-wokpan-28-cm-4-2l-pfas-vrij/9300000179956149/?Referrer=ADVNLGOO002032-S&#45;&#45;9300000179956149-PMAX-C-22285073478&gad_source=1&gad_campaignid=22291735154&gclid=CjwKCAiAz_DIBhBJEiwAVH2XwB5CEBe_4bdcPy8yUT3udWUAZF-8Ui0y99nCCb7o6jey_eDZos7_WBoCTSIQAvD_BwE" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 10 – BergHOFF Leo Recycled / Balance &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/wokpan10.jpg' %}" alt="BergHOFF Leo Recycled Wokpan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>10. BergHOFF Leo Recycled Wokpan – 28 cm</h3>-->
-<!--<p>PFAS-vrije wokpan met CeraGreen-keramische coating en gerecyclede materialen, met premium afwerking.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>CeraGreen PFAS-vrije keramische antiaanbaklaag</li>-->
-<!--<li>Gerecyclede materialen en hoogwaardige afwerking</li>-->
-<!--<li>Geschikt voor inductie</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Hogere prijsklasse dan basiswokpannen</li>-->
-<!--<li>Coating niet geschikt voor metalen keukengerei</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-4-5"></span></div>-->
-<!--<div class="verdict-desc">Een fraaie, duurzame wokpan voor wie een gezonde coating wil combineren met een premium uitstraling.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€€</span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/phantom-wokpan-28-cm-4-4-l-gerecycled-aluminium-berghoff-leo-line/9300000160900449/?cid=1763497933872-3675031455226&bltgh=27a33dc4-81d7-47dd-ac11-d1d4a58df2d1.ProductList_Middle.1-0.RollupItem" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-<!--</section>-->
-
 <section id="vergelijking">
-<h2>Vergelijkingstabel – Top {{ product_count }} PFAS-vrije Wokpannen ({{ selected_size }} cm)</h2>
+<h2>{{ comparison_title }}</h2>
     <div class="table-wrapper">
         <table class="alt product-table">
             <thead>
@@ -509,7 +93,7 @@
                 </tr>
             </thead>
             <tbody>
-               {% for product in wokpannen %}
+               {% for product in products %}
             <tr>
             <td>
             <strong>{{ product.name|cut:" (" }}</strong>
@@ -547,116 +131,6 @@
     </div>
 </section>
 
-<!-- Vergelijkingstabel -->
-<!--<section>-->
-<!--    <h2>Vergelijkingstabel – Top 10 PFAS-vrije Wokpannen</h2>-->
-<!--    <div class="table-wrapper">-->
-<!--    <table class="alt product-table">-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--    <th>Product</th>-->
-<!--    <th>Belangrijkste eigenschappen</th>-->
-<!--    <th>Prijsniveau</th>-->
-<!--    <th>Eindoordeel</th>-->
-<!--    <th></th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    &lt;!&ndash; 1. GreenPan Torino &ndash;&gt;-->
-<!--    <tr>-->
-<!--    <td>-->
-<!--    <strong>GreenPan Torino Wokpan 28 cm</strong><br>-->
-<!--    <span class="product-badge best-choice">🏆 Beste keuze</span>-->
-<!--    </td>-->
-<!--    <td>Keramisch PFAS-vrij · Lichtgewicht · Inductiegeschikt</td>-->
-<!--    <td>€€</td>-->
-<!--    <td><span class="stars stars-5"></span></td>-->
-<!--    <td><a href="https://www.bol.com/nl/nl/p/greenpan-torino-keramische-wokpan-28-cm/9300000003247573/" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--    </tr>-->
-<!--    &lt;!&ndash; 2. HEMA Milano &ndash;&gt;-->
-<!--    <tr>-->
-<!--    <td>-->
-<!--    <strong>HEMA Milano Keramische Wokpan 28 cm</strong><br>-->
-<!--    <span class="product-badge budget-choice">💰 Beste budgetoptie</span>-->
-<!--    </td>-->
-<!--    <td>Keramisch PFAS-vrij · Betaalbaar · Inductiegeschikt</td>-->
-<!--    <td>€</td>-->
-<!--    <td><span class="stars stars-3-5"></span></td>-->
-<!--    <td><a href="https://www.hema.nl/koken-tafelen/koken/pannen/wokpannen/wok-28cm-milano-80190043.html?gclsrc=aw.ds&gad_source=1&gad_campaignid=742717860&gclid=CjwKCAiAz_DIBhBJEiwAVH2XwC9UlGRndPOZGY72J8Nz-wWaFGzs632SyyefESaU7LbTq9asZghjaBoCL5kQAvD_BwE" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--    </tr>-->
-<!--    &lt;!&ndash; 3. WMF Durado &ndash;&gt;-->
-<!--    <tr>-->
-<!--    <td>-->
-<!--    <strong>WMF Durado Keramische Wokpan 28 cm</strong><br>-->
-<!--    <span class="product-badge premium-choice">💎 Premium keuze</span>-->
-<!--    </td>-->
-<!--    <td>Keramisch PFAS-vrij · TransTherm® bodem · Zeer duurzaam</td>-->
-<!--    <td>€€€</td>-->
-<!--    <td><span class="stars stars-5"></span></td>-->
-<!--    <td><a href="https://www.amazon.nl/WMF-748486021-Keramische-TransTherm-Warmtebronnen/dp/B0B799PK1X" class="button primary small">Bekijk product</a></td>-->
-<!--    </tr>-->
-<!--    &lt;!&ndash; 4. GreenChef Diamond Induction &ndash;&gt;-->
-<!--    <tr>-->
-<!--    <td><strong>GreenChef Diamond Induction Wok 28 cm</strong></td>-->
-<!--    <td>PFAS-vrije diamant-keramische coating · Inductie</td>-->
-<!--    <td>€€</td>-->
-<!--    <td><span class="stars stars-4"></span></td>-->
-<!--    <td><a href="https://www.bol.com/nl/nl/p/greenchef-diamond-wokpan-28cm-zwart-inductie-pfas-vrij/9200000130094509/?s2a=&bltgh=rkgYhAwFr08s-DcS271MBQ.4_55_56.57.FeatureOption#productTitle" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--    </tr>-->
-<!--    &lt;!&ndash; 5. Primecook Keramische Wokpan 28 cm &ndash;&gt;-->
-<!--    <tr>-->
-<!--    <td><strong>Primecook Keramische Wokpan 28 cm</strong></td>-->
-<!--    <td>Aluminium · PFAS-vrije ecosafe® keramische coating</td>-->
-<!--    <td>€€€</td>-->
-<!--    <td><span class="stars stars-5"></span></td>-->
-<!--    <td><a href="https://www.bol.com/nl/nl/p/primecook-wok-o-28-cm-pfas-vrij-inductie-veilige-en-slijtvaste-antiaanbaklaag/9300000050781201/" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--    </tr>-->
-<!--    &lt;!&ndash; 6. BK Blue Label Granite &ndash;&gt;-->
-<!--    <tr>-->
-<!--    <td><strong>BK Blue Label Granite Wok 28 cm</strong></td>-->
-<!--    <td>Keramisch PFAS-vrij · Stevige bodem · Granietlook</td>-->
-<!--    <td>€€</td>-->
-<!--    <td><span class="stars stars-4"></span></td>-->
-<!--    <td><a href="https://www.bol.com/nl/nl/p/bk-blue-label-granite-wokpan-o-28-cm-keramisch/9300000073952667/" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--    </tr>-->
-<!--    &lt;!&ndash; 7. Brabantia Futura Green &ndash;&gt;-->
-<!--    <tr>-->
-<!--    <td><strong>Brabantia Futura Green Wok 28 cm</strong></td>-->
-<!--    <td>100% PFAS-vrij · Gerecycled materiaal · Modern ontwerp</td>-->
-<!--    <td>€€</td>-->
-<!--    <td><span class="stars stars-4"></span></td>-->
-<!--    <td><a href="https://www.bol.com/nl/nl/p/brabantia-futura-green-wokpan-non-stick-o-28-cm-100-pfas-vrije-keramische-antiaanbaklaag-retro-design-geschikt-voor-inductie-100-recycled-aluminium-donker-groen/9300000186197427/" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--    </tr>-->
-<!--    &lt;!&ndash; 8. GreenPan Cambridge / Geneva / Smartshape &ndash;&gt;-->
-<!--    <tr>-->
-<!--    <td><strong>GreenPan Cambridge/Geneva/Smartshape Wok 28 cm</strong></td>-->
-<!--    <td>Thermolon keramisch PFAS-vrij · Inductie</td>-->
-<!--    <td>€€€</td>-->
-<!--    <td><span class="stars stars-4-5"></span></td>-->
-<!--    <td><a href="https://www.bol.com/nl/nl/p/greenpan-cambridge-wokpan-28cm-zwart-inductie-pfas-vrij/9200000083444325/" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--    </tr>-->
-<!--    &lt;!&ndash; 9. BK Easy Induction Ceramic &ndash;&gt;-->
-<!--    <tr>-->
-<!--    <td><strong>BK Easy Induction Ceramic Wok 28 cm</strong></td>-->
-<!--    <td>Keramisch PFAS-vrij · Inductie · Budget/middenklasse</td>-->
-<!--    <td>€€</td>-->
-<!--    <td><span class="stars stars-4"></span></td>-->
-<!--    <td><a href="https://www.bol.com/nl/nl/p/bk-easy-basic-ceramic-wokpan-28-cm-4-2l-pfas-vrij/9300000179956149/?Referrer=ADVNLGOO002032-S&#45;&#45;9300000179956149-PMAX-C-22285073478&gad_source=1&gad_campaignid=22291735154&gclid=CjwKCAiAz_DIBhBJEiwAVH2XwB5CEBe_4bdcPy8yUT3udWUAZF-8Ui0y99nCCb7o6jey_eDZos7_WBoCTSIQAvD_BwE" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--    </tr>-->
-<!--    &lt;!&ndash; 10. BergHOFF Leo Recycled &ndash;&gt;-->
-<!--    <tr>-->
-<!--    <td><strong>BergHOFF Leo Recycled Wok 28 cm</strong></td>-->
-<!--    <td>CeraGreen PFAS-vrij · Duurzame materialen</td>-->
-<!--    <td>€€€</td>-->
-<!--    <td><span class="stars stars-4-5"></span></td>-->
-<!--    <td><a href="https://www.bol.com/nl/nl/p/phantom-wokpan-28-cm-4-4-l-gerecycled-aluminium-berghoff-leo-line/9300000160900449/?cid=1763497933872-3675031455226&bltgh=27a33dc4-81d7-47dd-ac11-d1d4a58df2d1.ProductList_Middle.1-0.RollupItem" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--    </table>-->
-<!--    </div>-->
-<!--</section>-->
-</section>
-
 <section>
 <header class="major">
 <h2>Onderhoudstips voor PFAS-vrije wokpannen</h2>
@@ -683,43 +157,17 @@
 
 {% endif %}
 
-<!--<section>-->
-<!--<header class="major">-->
-<!--<h2>Conclusie – Onze aanbeveling</h2>-->
-<!--</header>-->
-<!--<p>Voor wie een betrouwbare, duurzame en PFAS-vrije wokpan zoekt, is de-->
-<!--<strong>GreenPan Torino Wokpan 28 cm</strong> onze beste allround keuze.-->
-<!--   Deze pan combineert gebruiksgemak, veilige materialen en uitstekende prestaties voor dagelijks koken.</p>-->
-<!--<p>Wil je zo min mogelijk uitgeven maar toch veilig en gezond wokken? Dan is de-->
-<!--<strong>HEMA Milano Keramische Wokpan 28 cm</strong> een uitstekende budgetoptie: eenvoudig, betaalbaar en perfect geschikt als eerste PFAS-vrije wok.</p>-->
-<!--<p>Voor wie het beste van het beste zoekt, bevelen we de-->
-<!--<strong>WMF Durado Keramische Wokpan 28 cm</strong> aan. Deze premium pan biedt superieure warmteverdeling, een solide bouwkwaliteit en lange levensduur.</p>-->
-<!--<p>Welke wokpan je ook kiest, met een PFAS-vrij model kook je niet alleen gezonder, maar draag je ook bij aan een duurzamere keuken.</p>-->
-<!--</section>-->
-
 <section>
 <header class="major">
-<h2>Veelgestelde vragen over PFAS-vrije wokpannen</h2>
+<h2>{{ content.faq.title }}</h2>
 </header>
+{% for item in content.faq.items %}
         <div class="faq-item">
-<h3>1. Zijn keramische wokpannen volledig PFAS-vrij?</h3>
-<p>Ja. Keramische anti-aanbaklagen worden gemaakt zonder PFAS, PFOA, PTFE of andere schadelijke fluorverbindingen. Ze zijn daarom een veilig alternatief voor traditionele antiaanbakpannen.</p>
+<h3>{{ forloop.counter }}. {{ item.q }}</h3>
+<p>{{ item.a|safe }}</p>
         </div>
-        <div class="faq-item">
-<h3>2. Hoe lang gaat een PFAS-vrije wokpan mee?</h3>
-<p>Bij normaal gebruik gaan keramische wokpannen gemiddeld 2 tot 5 jaar mee. Premium modellen met dikkere coating en stevige bodem gaan vaak langer mee, vooral bij voorzichtig gebruik en regelmatig onderhoud.</p>
-        </div>
-        <div class="faq-item">
-<h3>3. Zijn PFAS-vrije wokpannen geschikt voor inductie?</h3>
-<p>Ja, de meeste moderne PFAS-vrije wokpannen zijn geschikt voor inductie. Let wel op dat de pan een magnetiseerbare bodem heeft; dit staat bijna altijd vermeld door de fabrikant.</p>
-        </div>
-        <div class="faq-item">
-<h3>4. Wat is beter: keramisch of koolstofstaal?</h3>
-<p>Dat hangt af van je kookstijl. Keramische pannen zijn gebruiksvriendelijk, licht en ideaal voor dagelijks koken. Koolstofstaal presteert geweldig op hoge temperaturen en gaat extreem lang mee, maar vraagt meer onderhoud.</p>
-        </div>
+{% endfor %}
 </section>
-
-                        </section>
 
 {% include "partials/related_categories.html" %}
 {% endblock %}

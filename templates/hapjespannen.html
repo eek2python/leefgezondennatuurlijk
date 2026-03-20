@@ -24,44 +24,7 @@
 </script>
 <!-- FAQPage Structured Data -->
 <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
-   {
-     "@type": "Question",
-     "name": "Zijn PFAS-vrije hapjespannen veilig om mee te koken?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Ja, PFAS-vrije hapjespannen zijn veilig doordat ze geen fluorchemicaliën bevatten. Ze maken gebruik van keramische coatings of natuurlijke materialen zoals koolstofstaal."
-     }
-   },
-   {
-     "@type": "Question",
-     "name": "Wat is beter: keramisch of staal bij PFAS-vrije pannen?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Keramische pannen bieden gebruiksgemak en snelle anti-aanbakprestaties. Koolstofstaal gaat langer mee en vormt een natuurlijke anti-aanbaklaag door inbranden."
-     }
-   },
-   {
-     "@type": "Question",
-     "name": "Welk formaat hapjespan heb ik nodig?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "28 cm is een ideale maat voor dagelijks gebruik: ruim genoeg voor éénpansgerechten, wokken, sauzen, vlees en groenten."
-     }
-   },
-   {
-     "@type": "Question",
-     "name": "Kan een PFAS-vrije hapjespan op inductie?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Ja, alle pannen in deze top 10 zijn inductiegeschikt. Controleer altijd of de bodem magnetisch is en stabiel contact maakt."
-     }
-   }
- ]
-}
+{{ faq_ld|safe }}
 </script>
 {% endblock %}
 
@@ -69,11 +32,11 @@
 <section id="banner">
         <div class="content">
         <header class="main">
-                <h1>Top {{ product_count }} PFAS-vrije Hapjespannen voor Gezond Koken</h1>
+                <h1>{{ hero_h1 }}</h1>
         </header>
-        <p>Een hapjespan is onmisbaar in iedere keuken: ideaal voor stoofgerechten, pasta’s, risotto’s en eenpansgerechten.
+        <p>Een hapjespan is onmisbaar in iedere keuken: ideaal voor stoofgerechten, pasta's, risotto's en eenpansgerechten.
                   Toch bevatten veel traditionele pannen schadelijke stoffen zoals <strong>PFAS</strong> of <strong>teflon</strong>.
-                  Deze stoffen kunnen bij verhitting vrijkomen en na verloop van tijd gezondheidsrisico’s opleveren.
+                  Deze stoffen kunnen bij verhitting vrijkomen en na verloop van tijd gezondheidsrisico's opleveren.
                   Gelukkig zijn er tegenwoordig uitstekende PFAS-vrije alternatieven die niet alleen veiliger zijn, maar ook duurzaam en gebruiksvriendelijk.</p>
         <p>In deze top 10 ontdek je de beste niet-giftige hapjespannen van dit moment — beoordeeld op
         <em>materiaal, gebruiksgemak, duurzaamheid en prijs-kwaliteitverhouding</em>.</p>
@@ -84,7 +47,7 @@
 <header class="major">
 <h2>Waarom kiezen voor een PFAS-vrije hapjespan?</h2>
 </header>
-<p>Een PFAS-vrije hapjespan is een bewuste keuze voor gezond koken en een veiligere keuken. Traditionele antiaanbaklagen kunnen fluorchemicaliën bevatten die bij hoge temperaturen of beschadiging ongewenste stoffen kunnen afgeven. PFAS-vrije alternatieven bieden dezelfde gebruiksvriendelijkheid, maar zonder deze risico’s.</p>
+<p>Een PFAS-vrije hapjespan is een bewuste keuze voor gezond koken en een veiligere keuken. Traditionele antiaanbaklagen kunnen fluorchemicaliën bevatten die bij hoge temperaturen of beschadiging ongewenste stoffen kunnen afgeven. PFAS-vrije alternatieven bieden dezelfde gebruiksvriendelijkheid, maar zonder deze risico's.</p>
 <ul>
 <li><strong>Gezonder koken:</strong> PFAS-vrije coatings geven geen schadelijke stoffen af, ook niet bij hoge temperaturen.</li>
 <li><strong>Milieuvriendelijker:</strong> PFAS-stoffen breken nauwelijks af in de natuur. PFAS-vrije pannen verminderen je ecologische footprint.</li>
@@ -108,398 +71,18 @@
     {% endfor %}
 </div>
 
-<h2 class="category-title">De {{ product_count }} beste hapjespannen van 2026 – {{ selected_size }} cm</h2>
+<h2 class="category-title">{{ products_h2 }}</h2>
 <div class="products-container">
 
-    {% for product in hapjespannen %}
+    {% for product in products %}
 
         {% include "partials/product_block.html" with product=product %}
 
     {% endfor %}
 </div>
 
-<!--<section id="producten" class="products">-->
-<!--        <header class="major">-->
-<!--            <h2>De 10 beste PFAS-vrije hapjespannen van 2026</h2>-->
-<!--        </header>-->
-<!--&lt;!&ndash;        <p></p>&ndash;&gt;-->
-<!--        <div class="product-list">-->
-<!--       {% comment %}-->
-<!--         Elk productblok hieronder kan later vanuit de database worden geladen,-->
-<!--         maar voorlopig zijn dit handmatige voorbeelden.-->
-<!--       {% endcomment %}-->
-
-<!--<section class="top10-section">-->
-<!--&lt;!&ndash; Product 1 &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/hapjespan01.jpg' %}" alt="GreenPan Barcelona Pro Hapjespan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>1. GreenPan Barcelona Pro Keramische Hapjespan – Ø28 cm</h3>-->
-<!--<p>Premium keramische hapjespan zonder PFAS met Thermolon™ Infinity Pro-coating en stevig glazen deksel.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Zeer duurzame keramische coating</li>-->
-<!--<li>Met glazen deksel</li>-->
-<!--<li>Inductie- en ovenbestendig</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Hogere prijsklasse</li>-->
-<!--<li>Iets zwaarder door RVS buitenwand</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-5"></span></div>-->
-<!--<div class="verdict-desc">De beste allround PFAS-vrije hapjespan dankzij de combinatie van duurzaamheid, bakresultaten en bouwkwaliteit.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€€</span>-->
-<!--<span class="badge"><span class="product-badge best-choice">🏆 Beste keuze</span></span>-->
-<!--</div>-->
-<!--<a href="https://www.greenpan.nl/products/barcelona-pro-hapjespan-met-deksel-28cm" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 2 &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/hapjespan02.jpg' %}" alt="BK Easy Induction Ceramic Hapjespan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>2. BK Easy Induction Ceramic Hapjespan – Ø28 cm</h3>-->
-<!--<p>Betaalbare PFAS-vrije hapjespan met keramische antiaanbaklaag en stevige koudgreep.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Scherpe prijs</li>-->
-<!--<li>Keramische PFAS-vrije laag</li>-->
-<!--<li>Met glazen deksel</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Niet ovenbestendig</li>-->
-<!--<li>Coating slijt sneller bij intensief gebruik</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-4"></span></div>-->
-<!--<div class="verdict-desc">Een uitstekende keuze voor dagelijks gebruik tegen een vriendelijke prijs.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€</span>-->
-<!--<span class="badge"><span class="product-badge budget-choice">💰 Beste budgetoptie</span></span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/bk-easy-induction-ceramic-hapjespan-met-deksel-o28cm-4-6l-inductie-pfas-vrij/9300000032891765/?Referrer=ADVNLGOO002032-S&#45;&#45;9300000032891765-PMAX-C-22285073511&gad_source=1&gad_campaignid=22291737752&gclid=CjwKCAiAoNbIBhB5EiwAZFbYGJlGpE1gOHGsmZltyW8y6IBKg6q0WO_5ws36S1OixxUOZKJqLI9f7BoCZtYQAvD_BwE" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 3 – Premium keuze &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/hapjespan03.jpg' %}" alt="WOLL Eco Lite QXR Hapjespan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>3. WOLL Eco Lite QXR Hapjespan – Ø28 cm</h3>-->
-<!--<p>Premium PFAS-vrije hapjespan met QXR-keramische antiaanbaklaag, lichtgewicht body en stevige inductiebodem.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>QXR-keramische coating zonder PFAS</li>-->
-<!--<li>Uitstekende warmteverdeling en temperatuurcontrole</li>-->
-<!--<li>Lichtgewicht voor een premium pan</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Hogere prijsklasse dan standaardmodellen</li>-->
-<!--<li>Handwas aanbevolen voor maximale levensduur</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-5"></span></div>-->
-<!--<div class="verdict-desc">Een hoogwaardige hapjespan met uitstekende antiaanbakprestaties en duurzame afwerking voor veeleisende thuiskoks.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€€</span>-->
-<!--<span class="badge"><span class="product-badge premium-choice">💎 Premium keuze</span></span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/hapjespan-o-28-cm-3-3-l-gerecycled-aluminium-qxr-non-stick-inductie-woll-ecolite-qxr/9300000180122490/?cid=1763065645826-8223234031135&bltgh=6da16a16-ca4a-4fbd-a582-2043a3c432c4.ProductList_Middle.0.ProductImage"-->
-<!--      class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 4 &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/hapjespan04.jpg' %}" alt="GreenChef Diamond Induction Hapjespan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>4. GreenChef Diamond Induction Hapjespan – Ø28 cm</h3>-->
-<!--<p>PFAS-vrije keramische Diamond-thermolaag met diamantdeeltjes voor extra duurzaamheid.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Zeer goede prijs-kwaliteitverhouding</li>-->
-<!--<li>Diamantversterkte coating</li>-->
-<!--<li>Inclusief deksel</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Niet ovenbestendig</li>-->
-<!--<li>Niet geschikt voor metalen spatels</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-4-5"></span></div>-->
-<!--<div class="verdict-desc">Een uitstekende middenklasser die verrassend goede prestaties levert voor zijn prijs.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€</span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/greenchef-diamond-inductie-hapjespan-o28-cm-keramisch-pfas-vrij/9200000131435585/" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--    &lt;!&ndash; Product 5 &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/hapjespan05.jpg' %}" alt="BK Magma Hapjespan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>5. BK Magma Hapjespan – 28 cm</h3>-->
-<!--<p>Degelijke PFAS-vrije hapjespan met stevige antiaanbaklaag, geschikt voor alle warmtebronnen inclusief inductie.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Stevige constructie en fijne warmteverdeling</li>-->
-<!--<li>PFAS-vrije keramische laag</li>-->
-<!--<li>Geschikt voor inductie en hoge temperaturen</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Coating vraagt voorzichtig schoonmaken</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-4"></span></div>-->
-<!--<div class="verdict-desc">Een solide middenklasse hapjespan die uitstekende prestaties levert voor dagelijks gebruik.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€€</span>-->
-<!--</div>-->
-<!--<a href="https://bk.nl/products/magma-hapjespan-28-cm?srsltid=AfmBOopfu24lbEbzpNt6rmeHfG49QbLpaPRijRc20qaUf3MODc0UjWku" class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 6 &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/hapjespan06.jpg' %}" alt="BE Living Hapjespan 28 cm PFAS-vrij" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>6. BE Living Hapjespan – 28 cm (PFAS-vrij)</h3>-->
-<!--<p>Toegankelijke PFAS-vrije hapjespan van 28 cm met glazen deksel en duurzame keramische coating.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Wordt geleverd met glazen deksel</li>-->
-<!--<li>PFAS-vrije keramische antiaanbaklaag</li>-->
-<!--<li>Vriendelijk geprijsd</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Coating minder duurzaam dan premium modellen</li>-->
-<!--<li>Niet geschikt voor metalen spatels</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-3-5"></span></div>-->
-<!--<div class="verdict-desc">Een voordelige keuze voor wie een complete en PFAS-vrije hapjespan zoekt voor dagelijks gebruik.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€</span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/be-living-hapjespan-met-deksel-o-28-cm-sauteerpan-keramisch-inductie-pfas-vrij-anti-aanbak-delight-series/9300000236794346/?cid=1763097167552-1496612212126&bltgh=78b143c4-727f-4365-ae6e-858a54eb2d92.ProductList_Middle.0.ProductTitle"-->
-<!--      class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 7 &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/hapjespan07.jpg' %}" alt="GreenPan Torino Hapjespan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>7. GreenPan Torino Keramische Hapjespan – 28 cm</h3>-->
-<!--<p>Solide PFAS-vrije hapjespan met Thermolon-keramische laag en gelijkmatige warmteverspreiding.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Degelijke prijs-kwaliteitverhouding</li>-->
-<!--<li>Fijne anti-aanbakeigenschappen</li>-->
-<!--<li>Lichter dan de meeste alternatieven</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Niet geschikt voor hoge temperaturen</li>-->
-<!--<li>Coating vraagt voorzichtig gebruik</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-4"></span></div>-->
-<!--<div class="verdict-desc">Een toegankelijke, PFAS-vrije hapjespan die ideaal is voor gezinnen en regelmatig gebruik.</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€</span>-->
-<!--</div>-->
-<!--<a href="https://www.coolblue.nl/product/819625/greenpan-torino-keramische-hapjespan-met-deksel-28-cm.html?srsltid=AfmBOoo8-hPkFDSH2KTRE9wD0ZQpFYVeN-Jfd4mNlMjRT6xRksLLwElDB7o"-->
-<!--      class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 8 &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/hapjespan08.jpg' %}" alt="Le Creuset Toughened Non-Stick PRO Hapjespan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>8. Le Creuset Toughened Non-Stick PRO Hapjespan – 28 cm</h3>-->
-<!--<p>Hoogwaardige PFAS-vrije hapjespan van Le Creuset met uitzonderlijke antiaanbakprestaties en een zeer duurzame constructie.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Nieuwe generatie PFAS-vrije TNS PRO coating</li>-->
-<!--<li>Uitstekende warmteverdeling en stabiliteit</li>-->
-<!--<li>Inductiegeschikt en ovenbestendig</li>-->
-<!--<li>Zeer duurzame premium constructie</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Hogere prijsklasse</li>-->
-<!--<li>Geen deksel meegeleverd</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars">-->
-<!--<span class="stars stars-5"></span>-->
-<!--</div>-->
-<!--<div class="verdict-desc">-->
-<!--       Een uitzonderlijk hoogwaardige PFAS-vrije hapjespan die uitblinkt in duurzaamheid,-->
-<!--       gebruiksgemak en bakprestaties.-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€€€</span>-->
-<!--</div>-->
-<!--<a href="https://www.knivesandtools.nl/nl/pt/-le-creuset-tns-sautee-pan-28-cm-3-2l.htm"-->
-<!--      class="button primary small"-->
-<!--      target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 9 &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/hapjespan09.jpg' %}" alt="De Buyer Mineral B Element Hapjespan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>9. De Buyer Mineral B Element Hapjespan – 28 cm</h3>-->
-<!--<p>Robuuste, PFAS-vrije hapjespan van koolstofstaal die na inbranden een natuurlijke antiaanbaklaag opbouwt.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>Volledig PFAS- en coatingvrij koolstofstaal</li>-->
-<!--<li>Vormt natuurlijke antiaanbaklaag (patina) bij gebruik</li>-->
-<!--<li>Zeer hoge hittebestendigheid, ideaal om te bakken en aan te braden</li>-->
-<!--<li>Geschikt voor alle warmtebronnen, inclusief inductie en oven</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Moet worden ingebrand en vraagt regelmatig onderhoud</li>-->
-<!--<li>Niet vaatwasserbestendig</li>-->
-<!--<li>Kan zwaarder aanvoelen dan aluminium pannen</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars">-->
-<!--<span class="stars stars-4-5"></span>-->
-<!--</div>-->
-<!--<div class="verdict-desc">-->
-<!--       Een duurzame en karaktervolle hapjespan voor wie graag op hoge temperatuur bakt-->
-<!--       en waarde hecht aan een volledig natuurlijke, PFAS-vrije oplossing.-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€€</span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/debuyer-mineral-b-element-hapjespan-o-28-cm/9200000002756866/"-->
-<!--      class="button primary small" target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Product 10 &ndash;&gt;-->
-<!--<div class="product-block">-->
-<!--<img src="{% static 'images/hapjespan10.jpg' %}" alt="Beka Cicla Hapjespan 28 cm" class="image right">-->
-<!--<div class="content">-->
-<!--<h3>10. Beka Cicla Hapjespan – 28 cm (PFAS-vrij)</h3>-->
-<!--<p>Moderne en PFAS-vrije hapjespan van gerecycled aluminium, voorzien van een sterke keramische coating en geleverd met een stevig glazen deksel.</p>-->
-<!--<div class="pros-cons">-->
-<!--<div class="pros">-->
-<!--<strong>Voordelen</strong>-->
-<!--<ul>-->
-<!--<li>PFAS-vrije keramische antiaanbaklaag</li>-->
-<!--<li>Inclusief glazen deksel</li>-->
-<!--<li>Gemaakt van gerecycled aluminium (duurzame keuze)</li>-->
-<!--<li>Geschikt voor alle warmtebronnen, inclusief inductie</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="cons">-->
-<!--<strong>Nadelen</strong>-->
-<!--<ul>-->
-<!--<li>Niet geschikt voor metalen spatels</li>-->
-<!--<li>Coating blijft gevoelig voor hoge schuurmiddelen</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="verdict">-->
-<!--<div class="verdict-stars"><span class="stars stars-4-5"></span></div>-->
-<!--<div class="verdict-desc">-->
-<!--       Een duurzame en complete hapjespan die uitblinkt in gebruiksgemak-->
-<!--       en een gezonde PFAS-vrije keramische laag biedt voor dagelijks koken.-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="meta">-->
-<!--<span class="price">€€</span>-->
-<!--</div>-->
-<!--<a href="https://www.bol.com/nl/nl/p/beka-cicla-sauteerpan-hapjespan-o-28cm-met-deksel-uit-glas-gerecycleerd-rvs-pfas-vrij-2-stevige-handvaten-geschikt-voor-inductie-vaatwasser/9300000226669764/?cid=1763153843836-7551318300145&bltgh=c0cb1a89-8534-4539-a57b-ecc93fe6f65e.ProductList_Middle.0.ProductImage"-->
-<!--      class="button primary small"-->
-<!--      target="_blank">Bekijk product</a>-->
-<!--</div>-->
-<!--</div>-->
-<!--</section>-->
-
             <section id="vergelijking">
-<h2>Vergelijkingstabel – Top {{ product_count }} PFAS-vrije Hapjespannen ({{ selected_size }} cm)</h2>
+<h2>{{ comparison_title }}</h2>
     <div class="table-wrapper">
         <table class="alt product-table">
             <thead>
@@ -512,7 +95,7 @@
                 </tr>
             </thead>
             <tbody>
-               {% for product in hapjespannen %}
+               {% for product in products %}
             <tr>
             <td>
             <strong>{{ product.name|cut:" (" }}</strong>
@@ -550,110 +133,6 @@
     </div>
 </section>
 
-<!-- Vergelijkingstabel -->
-<!--<section>-->
-<!--<h2>Vergelijkingstabel – Top 10 PFAS-vrije Hapjespannen (28 cm)</h2>-->
-<!--<div class="table-wrapper">-->
-<!--<table class="alt product-table">-->
-<!--<thead>-->
-<!--<tr>-->
-<!--<th>Product</th>-->
-<!--<th>Belangrijkste eigenschappen</th>-->
-<!--<th>Prijsniveau</th>-->
-<!--<th>Eindoordeel</th>-->
-<!--<th></th>-->
-<!--</tr>-->
-<!--</thead>-->
-<!--<tbody>-->
-<!--&lt;!&ndash; 1. GreenPan Barcelona Pro &ndash;&gt;-->
-<!--<tr>-->
-<!--<td><strong>GreenPan Barcelona Pro</strong><br>-->
-<!--<span class="product-badge best-choice">🏆 Beste keuze</span></td>-->
-<!--<td>Keramisch PFAS-vrij · Met deksel · Inductie · Premium Thermolon Infinity Pro</td>-->
-<!--<td>€€€€</td>-->
-<!--<td><span class="stars stars-5"></span></td>-->
-<!--<td><a href="https://greenpan.nl/products/barcelona-pro-hapjespan-met-deksel-28cm" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--</tr>-->
-<!--&lt;!&ndash; 2. BK Easy Induction Ceramic &ndash;&gt;-->
-<!--<tr>-->
-<!--<td><strong>BK Easy Induction Ceramic</strong><br>-->
-<!--<span class="product-badge budget-choice">💰 Beste budgetoptie</span></td>-->
-<!--<td>Keramisch PFAS-vrij · Met deksel · Lichtgewicht · Inductie</td>-->
-<!--<td>€</td>-->
-<!--<td><span class="stars stars-4"></span></td>-->
-<!--<td><a href="https://www.bol.com/nl/nl/p/bk-easy-induction-ceramic-hapjespan-met-deksel-o28cm-4-6l-inductie-pfas-vrij/9300000032891765/?Referrer=ADVNLGOO002032-S&#45;&#45;9300000032891765-PMAX-C-22285073511&gad_source=1&gad_campaignid=22291737752&gclid=CjwKCAiAoNbIBhB5EiwAZFbYGJlGpE1gOHGsmZltyW8y6IBKg6q0WO_5ws36S1OixxUOZKJqLI9f7BoCZtYQAvD_BwE" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--</tr>-->
-<!--&lt;!&ndash; 3. WOLL Eco Lite QXR &ndash;&gt;-->
-<!--<tr>-->
-<!--<td><strong>WOLL Eco Lite QXR</strong><br>-->
-<!--<span class="product-badge premium-choice">💎 Premium keuze</span></td>-->
-<!--<td>QXR-keramisch · PFAS-vrij · Lichtgewicht · Premium bouwkwaliteit</td>-->
-<!--<td>€€€</td>-->
-<!--<td><span class="stars stars-5"></span></td>-->
-<!--<td><a href="https://www.bol.com/nl/nl/p/hapjespan-o-28-cm-3-3-l-gerecycled-aluminium-qxr-non-stick-inductie-woll-ecolite-qxr/9300000180122490/?cid=1763065645826-8223234031135&bltgh=6da16a16-ca4a-4fbd-a582-2043a3c432c4.ProductList_Middle.0.ProductImage" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--</tr>-->
-<!--&lt;!&ndash; 4. GreenChef Diamond Induction &ndash;&gt;-->
-<!--<tr>-->
-<!--<td><strong>GreenChef Diamond Induction</strong></td>-->
-<!--<td>Keramisch PFAS-vrij · Diamond versterkte coating · Met deksel</td>-->
-<!--<td>€€</td>-->
-<!--<td><span class="stars stars-4"></span></td>-->
-<!--<td><a href="https://www.bol.com/nl/nl/p/greenchef-diamond-inductie-hapjespan-o28-cm-keramisch-pfas-vrij/9200000131435585/" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--</tr>-->
-<!--&lt;!&ndash; 5. BK Magma &ndash;&gt;-->
-<!--<tr>-->
-<!--<td><strong>BK Magma</strong></td>-->
-<!--<td>Keramisch PFAS-vrij · Met deksel · Stevige gesmede bodem</td>-->
-<!--<td>€€€</td>-->
-<!--<td><span class="stars stars-4"></span></td>-->
-<!--<td><a href="https://bk.nl/products/magma-hapjespan-28-cm?srsltid=AfmBOopfu24lbEbzpNt6rmeHfG49QbLpaPRijRc20qaUf3MODc0UjWku" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--</tr>-->
-<!--&lt;!&ndash; 6. BE Living &ndash;&gt;-->
-<!--<tr>-->
-<!--<td><strong>BE Living</strong></td>-->
-<!--<td>Keramisch PFAS-vrij · Met deksel · Toegankelijk geprijsd</td>-->
-<!--<td>€</td>-->
-<!--<td><span class="stars stars-3-5"></span></td>-->
-<!--<td><a href="https://www.bol.com/nl/nl/p/be-living-hapjespan-met-deksel-o-28-cm-sauteerpan-keramisch-inductie-pfas-vrij-anti-aanbak-delight-series/9300000236794346/?cid=1763097167552-1496612212126&bltgh=78b143c4-727f-4365-ae6e-858a54eb2d92.ProductList_Middle.0.ProductTitle" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--</tr>-->
-<!--&lt;!&ndash; 7. GreenPan Torino &ndash;&gt;-->
-<!--<tr>-->
-<!--<td><strong>GreenPan Torino</strong></td>-->
-<!--<td>Keramisch PFAS-vrij · Met deksel · Inductie · Comfortabele greep</td>-->
-<!--<td>€€</td>-->
-<!--<td><span class="stars stars-4"></span></td>-->
-<!--<td><a href="https://www.coolblue.nl/product/819625/greenpan-torino-keramische-hapjespan-met-deksel-28-cm.html?srsltid=AfmBOoo8-hPkFDSH2KTRE9wD0ZQpFYVeN-Jfd4mNlMjRT6xRksLLwElDB7o" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--</tr>-->
-<!--&lt;!&ndash; 8. Le Creuset Toughened Non-Stick PRO &ndash;&gt;-->
-<!--<tr>-->
-<!--<td><strong>Le Creuset TNS PRO</strong></td>-->
-<!--<td>PFAS-vrij · Premium kwaliteit · Zonder deksel · Zeer duurzaam</td>-->
-<!--<td>€€€€</td>-->
-<!--<td><span class="stars stars-5"></span></td>-->
-<!--<td><a href="https://www.knivesandtools.nl/nl/pt/-le-creuset-tns-sautee-pan-28-cm-3-2l.htm" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--</tr>-->
-<!--&lt;!&ndash; 9. De Buyer Mineral B Element &ndash;&gt;-->
-<!--<tr>-->
-<!--<td><strong>De Buyer Mineral B Element</strong></td>-->
-<!--<td>Koolstofstaal · 100% coatingvrij · Natuurlijke patina · Hittebestendig</td>-->
-<!--<td>€€€</td>-->
-<!--<td><span class="stars stars-4-5"></span></td>-->
-<!--<td><a href="https://www.bol.com/nl/nl/p/debuyer-mineral-b-element-hapjespan-o-28-cm/9200000002756866/" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--</tr>-->
-<!--&lt;!&ndash; 10. Beka Cicla &ndash;&gt;-->
-<!--<tr>-->
-<!--<td><strong>Beka Cicla</strong></td>-->
-<!--<td>Keramisch PFAS-vrij · Met deksel · Gerecycled aluminium</td>-->
-<!--<td>€€</td>-->
-<!--<td><span class="stars stars-4-5"></span></td>-->
-<!--<td><a href="https://www.bol.com/nl/nl/p/beka-cicla-sauteerpan-hapjespan-o-28cm-met-deksel-uit-glas-gerecycleerd-rvs-pfas-vrij-2-stevige-handvaten-geschikt-voor-inductie-vaatwasser/9300000226669764/?cid=1763153843836-7551318300145&bltgh=c0cb1a89-8534-4539-a57b-ecc93fe6f65e.ProductList_Middle.0.ProductImage" class="button primary small" target="_blank">Bekijk product</a></td>-->
-<!--</tr>-->
-<!--</tbody>-->
-<!--</table>-->
-<!--</div>-->
-<!--</section>-->
-</section>
-
 <section>
 <header class="major">
 <h2>Onderhoudstips voor PFAS-vrije hapjespannen</h2>
@@ -682,38 +161,17 @@
 
 {% endif %}
 
-<!--<section>-->
-<!--<header class="major">-->
-<!--<h2>Conclusie – Onze aanbeveling</h2>-->
-<!--</header>-->
-<!--<p>Een goede PFAS-vrije hapjespan is een waardevolle investering in gezond en bewust koken. Of je nu kiest voor de krachtige premiumprestaties van de GreenPan Barcelona Pro, de toegankelijke kwaliteit van de BK Easy Induction Ceramic of de duurzame samenstelling van de Beka Cicla – er is voor ieder type kok een ideale optie.</p>-->
-<!--<p>Keramische pannen bieden een fijne, directe anti-aanbakwerking en zijn gebruiksvriendelijk voor alledaagse maaltijden. Natuurlijke alternatieven zoals de De Buyer Mineral B Element ontwikkelen juist een steeds betere antiaanbaklaag naarmate je ze vaker gebruikt. Alle pannen in deze top 10 zijn PFAS-vrij en geschikt voor inductie, waardoor je met vertrouwen een gezonde keuze maakt.</p>-->
-<!--<p>Welke pan je ook kiest, een PFAS-vrije hapjespan maakt koken niet alleen veiliger, maar ook plezieriger. Met het juiste onderhoud gaan deze pannen jarenlang mee en blijven ze topprestaties leveren. Zo kook je elke dag duurzaam, gezond en met optimaal comfort.</p>-->
-<!--</section>-->
-
 <section>
         <header class="major">
-                <h2>Veelgestelde vragen over PFAS-vrije hapjespannen</h2>
+                <h2>{{ content.faq.title }}</h2>
         </header>
 
+{% for item in content.faq.items %}
 <div class="faq-item">
-<h3>1. Zijn PFAS-vrije hapjespannen veilig om mee te koken?</h3>
-<p>Ja. PFAS-vrije hapjespannen bevatten geen schadelijke fluorchemicaliën. Ze maken gebruik van keramische coatings of natuurlijke materialen zoals koolstofstaal. Hierdoor zijn ze veiliger bij verhitting en geven ze geen ongewenste stoffen af aan je eten.</p>
+<h3>{{ forloop.counter }}. {{ item.q }}</h3>
+<p>{{ item.a|safe }}</p>
 </div>
-<div class="faq-item">
-<h3>2. Wat is beter: keramisch of koolstofstaal?</h3>
-<p>Keramische pannen zijn gebruiksvriendelijk, licht en hebben direct een goede antiaanbaklaag. Koolstofstalen pannen zoals Mineral B gaan echter veel langer mee, zijn volledig coatingvrij en creëren een natuurlijke antiaanbaklaag door inbranden. Welke het beste is, hangt af van je kookstijl.</p>
-</div>
-<div class="faq-item">
-<h3>3. Kan een PFAS-vrije hapjespan op inductie gebruikt worden?</h3>
-<p>Ja, alle pannen in onze top 10 zijn geschikt voor inductie. Zorg wel voor goed contact tussen de panbodem en de kookplaat voor optimale warmtegeleiding.</p>
-</div>
-<div class="faq-item">
-<h3>4. Wat is het beste formaat hapjespan?</h3>
-<p>Het meest veelzijdige formaat is 28 cm. Dit biedt voldoende ruimte voor éénpansgerechten, sauzen, vlees, vis, groenten en roerbakgerechten. Voor kleinere huishoudens kan 24 cm ook geschikt zijn, maar 28 cm is de praktische allround keuze.</p>
-</div>
-</section>
-
+{% endfor %}
 </section>
 
 {% include "partials/related_categories.html" %}

@@ -25,16 +25,7 @@
 </script>
 <!-- 🔹 Structured Data – FAQPage -->
 <script type="application/ld+json">
- {
-   "@context": "https://schema.org",
-   "@type": "FAQPage",
-   "mainEntity": [
-     {"@type":"Question","name":"Hoe onderhoud ik mijn houten snijplank het best?","acceptedAnswer":{"@type":"Answer","text":"Was de plank met de hand in warm water en milde zeep. Droog hem rechtop en behandel het oppervlak regelmatig met minerale olie of bijenwas om het hout in goede conditie te houden. Vermijd de vaatwasser en langdurig contact met vocht."}},
-     {"@type":"Question","name":"Welke houtsoort is het meest geschikt voor een snijplank?","acceptedAnswer":{"@type":"Answer","text":"Esdoorn en walnoot zijn populair vanwege hun duurzaamheid en mesvriendelijkheid. Bamboe is een duurzaam alternatief, lichter van gewicht en milieuvriendelijk, terwijl beuken en acacia betaalbare opties bieden met een natuurlijke uitstraling."}},
-     {"@type":"Question","name":"Zijn houten snijplanken hygiënischer dan plastic?","acceptedAnswer":{"@type":"Answer","text":"Ja. Hout heeft van nature antibacteriële eigenschappen waardoor bacteriën minder snel overleven dan op plastic oppervlakken. Bij goed onderhoud is een houten snijplank een veilig en duurzaam alternatief voor plastic."}},
-     {"@type":"Question","name":"Hoe vaak moet ik mijn houten snijplank oliën?","acceptedAnswer":{"@type":"Answer","text":"Afhankelijk van gebruik is één keer per maand meestal voldoende. Als het oppervlak droog of ruw aanvoelt, is het tijd voor een nieuwe laag olie. Gebruik hiervoor voedselveilige minerale olie of een speciale snijplankolie."}}
-   ]
- }
+{{ faq_ld|safe }}
 </script>
 {% endblock %}
 
@@ -42,44 +33,32 @@
 <section id="banner">
     <div class="content">
     <header class="main">
-        <h1>Top 10 Houten Snijplanken – Gezond, Duurzaam & Stijlvol</h1>
+        <h1>{{ content.hero.h1 }}</h1>
     </header>
-    <p>Een goede snijplank is onmisbaar in elke keuken — maar niet alle planken zijn even gezond of duurzaam.
-        Plastic varianten kunnen schadelijke stoffen afgeven en slijten snel.
-        Daarom hebben wij de <strong>beste houten snijplanken</strong> van dit moment geselecteerd: gemaakt van natuurlijke materialen,
-        vrij van toxische coatings en geschikt voor jarenlang gebruik.</p>
-
-    <p>Of je nu dagelijks kookt of af en toe een maaltijd bereidt, de juiste houten snijplank maakt koken prettiger, veiliger en hygiënischer.
-        Wij hebben tientallen modellen getest op <strong>materiaal, duurzaamheid, gebruiksgemak</strong> en <strong>onderhoud</strong>.
-        Hieronder vind je de <strong>Top 10 houten snijplanken van 2026</strong> — zorgvuldig beoordeeld om gezond koken makkelijker te maken.</p>
+    {% for p in content.hero.paragraphs %}
+    <p>{{ p|safe }}</p>
+    {% endfor %}
     </div>
 </section>
 
 <section>
     <header class="major">
-        <h2>Waarom kiezen voor een houten snijplank?</h2>
+        <h2>{{ content.why_choose.title }}</h2>
     </header>
-    <p>Houten snijplanken zijn niet alleen mooi om te zien, maar ook een bewuste keuze voor je gezondheid én het milieu.
-        In tegenstelling tot plastic of glazen planken is hout een natuurlijk, mesvriendelijk materiaal dat geen microplastics afgeeft en hygiënischer is bij juist gebruik.</p>
+    <p>{{ content.why_choose.intro|safe }}</p>
     <ul>
-        <li><strong>Hygiënisch:</strong> Hout heeft van nature antibacteriële eigenschappen.</li>
-        <li><strong>Duurzaam:</strong> Gaat jarenlang mee bij goed onderhoud.</li>
-        <li><strong>Plasticvrij:</strong> Geen giftige stoffen of weekmakers.</li>
-        <li><strong>Esthetisch:</strong> Geeft je keuken een warme, natuurlijke uitstraling.</li>
+    {% for bullet in content.why_choose.bullets %}
+        <li>{{ bullet|safe }}</li>
+    {% endfor %}
     </ul>
 </section>
 
 <section id="producten" class="products">
         <header class="major">
-            <h2>De 10 beste houten snijplanken van 2026</h2>
+            <h2>{{ content.products_section.h2 }}</h2>
         </header>
-    <p>Van compacte <strong>bamboe snijplanken</strong> tot robuuste <strong>end-grain walnootplanken</strong>:
-        ontdek hieronder welke houten snijplank het beste bij jouw kookstijl past — getest op kwaliteit, duurzaamheid en gebruiksgemak.</p>
+    <p>{{ content.products_section.intro|safe }}</p>
         <div class="product-list">
-       {% comment %}
-         Elk productblok hieronder kan later vanuit de database worden geladen,
-         maar voorlopig zijn dit handmatige voorbeelden.
-       {% endcomment %}
 
     <section class="top10-section">
 {% for product in products %}
@@ -89,7 +68,7 @@
 
     <!-- Vergelijkingstabel -->
     <section>
-    <h2>Vergelijkingstabel – Top 10 Houten Snijplanken</h2>
+    <h2>{{ content.products_section.comparison_title }}</h2>
     <div class="table-wrapper">
     <table class="alt product-table">
     <thead>
@@ -102,90 +81,26 @@
     </tr>
     </thead>
     <tbody>
-
+    {% for product in products %}
     <tr>
-    <td><strong>BoosBlocks Pro Maple Series</strong><br>
-    <span class="product-badge best-choice">🏆 Beste keuze</span></td>
-    <td>Esdoornhout · End-grain · Omkeerbaar · Professioneel formaat (51×38×6 cm)</td>
-    <td>€€€</td>
-    <td><span class="stars stars-5"></span></td>
-    <td><a href="https://www.boosblocks.de/nl/product/boos-hard-maple-reversible-end-grain-chopping-with-grips-51x38x6cm/"
+    <td>
+    <strong>{{ product.name }}</strong>
+    {% if product.award %}
+    <br><span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
+    {% endif %}
+    </td>
+    <td>
+    {{ product.material }}
+    {% if product.features %}
+    · {{ product.features|join:" · " }}
+    {% endif %}
+    </td>
+    <td>{{ product.price_range }}</td>
+    <td><span class="stars stars-{{ product.rating_class }}"></span></td>
+    <td><a href="{{ product.affiliate_url }}"
                  target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk product</a></td>
     </tr>
-    <tr>
-    <td><strong>IKEA APTITLIG Bamboe Snijplank (45×28 cm)</strong><br>
-    <span class="product-badge budget-choice">💰 Beste budgetoptie</span></td>
-    <td>Bamboe · Lichtgewicht · Milieuvriendelijk · Eenvoudig onderhoud</td>
-    <td>€</td>
-    <td><span class="stars stars-3"></span></td>
-    <td><a href="https://www.ikea.com/nl/nl/p/aptitlig-snijplank-bamboe-80233430/"
-                 target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk product</a></td>
-    </tr>
-    <tr>
-    <td><strong>KAAMUT® Walnoot End-Grain Snijplank</strong><br>
-    <span class="product-badge premium-choice">💎 Premium keuze</span></td>
-    <td>Walnoot · End-grain · Antislip · Sapgeul · 40×27,5×3,5 cm</td>
-    <td>€€€€</td>
-    <td><span class="stars stars-5"></span></td>
-    <td><a href="https://www.bol.com/nl/nl/p/kaamut-professionele-snijplank-massief-kopshout-van-zwarte-walnoot-40x27-5x3-5-cm-extra-dik-duurzaam-sapgeul-en-handvaten-bijgeleverde-antislip-voetjes-luxe-geschenkdoos/9300000196972499/"
-                 target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk product</a></td>
-    </tr>
-    <tr>
-    <td><strong>Zwilling Houten Snijplank (60×40 cm)</strong></td>
-    <td>Beukenhout · Groot werkoppervlak · Professionele kwaliteit</td>
-    <td>€€€</td>
-    <td><span class="stars stars-4"></span></td>
-    <td><a href="https://www.knivesandtools.nl/nl/pt/-zwilling-twin-snijplank-60x40x3-5-cm-beukenhout-35118-100.htm"
-                 target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk product</a></td>
-    </tr>
-    <tr>
-    <td><strong>WMF Acacia Snijplank (40×32 cm)</strong></td>
-    <td>Acaciahout · Stevig en stijlvol · Geschikt voor dagelijks gebruik</td>
-    <td>€€€</td>
-    <td><span class="stars stars-4"></span></td>
-    <td><a href="https://www.amazon.nl/WMF-Snijplank-keukenmessen-anti-slip-1879984500/dp/B07TV8S14K/ref=sr_1_1?crid=2NV9WOJQNLBJD&dib=eyJ2IjoiMSJ9.8wFBxqSuc_yfH0QtNs93f9sQjIx_N5NlaKTQVZwsUyCpRyWhbsRJHNAM-vGlLohLULVBuToTIlykdThlx9qutb9iP1BsVcX866E_W4_5cKSnF-G0VfqfCO9-EjLMkEnWasO-Fz2q-jv2RYaVYUhIvWJPkVntiH-CyL-Ss81DKq5ybzg22phUIHXaofGRAYHVcQLFzA01nSUxCf-QkW5BtvEv6nkmNQZtsJUgdwshJhnkCTAYf8V77G84bbsBHt40fQEajUFCNaTP-tYrRlsgaWJh_Yes8FwOX2ZjbjECPDE.hWDfoKx38U5O7vWzfbePKMCyGmA-R_XR7Saxmfk9OGk&dib_tag=se&keywords=WMF+Acacia+Snijplank+%2840%C3%9732+cm%29&qid=1762371568&sprefix=wmf+acacia+snijplank+40+32+cm+%2Caps%2C176&sr=8-1"
-                 target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk product</a></td>
-    </tr>
-    <tr>
-    <td><strong>Namture Snijplank Hout Premium Olie (45×30×4 cm)</strong></td>
-    <td>Massief hout · Olieafwerking · Mesvriendelijk oppervlak</td>
-    <td>€€€</td>
-    <td><span class="stars stars-4"></span></td>
-    <td><a href="https://www.bol.com/nl/nl/p/namture-hakblok-acacia-classic-snijplank-hout-45x30-cm-extra-dik-4-cm-premium-acaciahout-antislip-snijplank-serveerplank-borrelplank-tapasplank-luxe-geschenkdoos/9300000236075401/?cid=1762924045977-4681012050212&bltgh=ocBSUiJ4hAw-0pUx8V1G-g.4_67.68.ProductImage"
-                 target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk product</a></td>
-    </tr>
-    <tr>
-    <td><strong>Wooden Amsterdam End-Grain Walnoot (40×30 cm)</strong></td>
-    <td>Walnoothout · Kopshout · Luxe afwerking · Design uit Amsterdam</td>
-    <td>€€€€</td>
-    <td><span class="stars stars-5"></span></td>
-    <td><a href="https://woodenamsterdam.com/nl/product/end-grain-cutting-board-walnut/"
-                 target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk product</a></td>
-    </tr>
-    <tr>
-    <td><strong>HEMA Beukenhouten Snijplank (24×35 cm)</strong></td>
-    <td>Beukenhout · Licht · Compact · Betaalbaar</td>
-    <td>€€</td>
-    <td><span class="stars stars-3"></span></td>
-    <td><a href="https://www.hema.nl/koken-tafelen/koken/snijplanken/snijplank-24x35x1.5-beukenhout-80850026.html"
-                 target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk product</a></td>
-    </tr>
-    <tr>
-    <td><strong>Continenta Rubberwood Snijplank (30×25 cm)</strong></td>
-    <td>Rubberwood · Compact formaat · Mesvriendelijk · Onderhoudsarm</td>
-    <td>€€</td>
-    <td><span class="stars stars-3"></span></td>
-    <td><a href="https://www.bol.com/nl/nl/p/continenta-snijplank-in-rubberhout-kopshout-35x25xh2cm/9300000021506007/?cid=1764618864675-1494667631591&bltgh=oDpP3v-a6DaGqWHTVuhOrg.4_14.15.ProductTitle"
-                 target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk product</a></td>
-    </tr>
-    <tr>
-    <td><strong>Point-Virgule Bamboe Snijplank (40×30×1 cm)</strong></td>
-    <td>Bamboe · Dun ontwerp · Lichtgewicht · Milieuvriendelijk</td>
-    <td>€€</td>
-    <td><span class="stars stars-4"></span></td>
-    <td><a href="https://www.bol.com/nl/nl/p/point-virgule-snijplank-bamboe-large-40x30x1cm/9300000056867854/?cid=1762492137184-5691065472416&bltgh=00883920-e674-44c9-a448-b50ec89177d0.ProductList_Middle.22.ProductImage"
-                 target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk product</a></td>
-    </tr>
+    {% endfor %}
     </tbody>
     </table>
     </div>
@@ -195,47 +110,34 @@
 
     <section>
     <header class="major">
-    <h2>Onderhoudstips voor houten snijplanken</h2>
+    <h2>{{ content.tips.title }}</h2>
     </header>
     <ul>
-    <li>Was de snijplank altijd met de hand in warm water en een milde zeep. Vermijd de vaatwasser om scheuren en kromtrekken te voorkomen.</li>
-    <li>Laat de plank na het wassen rechtop drogen, zodat beide zijden gelijkmatig ventileren.</li>
-    <li>Behandel het oppervlak regelmatig met <strong>natuurlijke minerale olie</strong> of <strong>bijenwas</strong> om uitdroging te voorkomen en het hout te voeden.</li>
-    <li>Vermijd langdurig contact met vocht, zuur voedsel of agressieve schoonmaakmiddelen.</li>
+    {% for bullet in content.tips.bullets %}
+    <li>{{ bullet|safe }}</li>
+    {% endfor %}
     </ul>
     </section>
 
+    {% if conclusie %}
     <section>
     <header class="major">
-    <h2>Conclusie – Onze aanbeveling</h2>
+    <h2>{{ conclusie.title }}</h2>
     </header>
-    <p>Een <strong>houten snijplank</strong> is een duurzame en gezonde keuze voor iedere keuken.
-        Wie op zoek is naar professionele kwaliteit kiest het best voor de <strong>BoosBlocks Pro Maple Series</strong>
-        – robuust, mesvriendelijk en gemaakt van hoogwaardig esdoornhout. Voor een milieuvriendelijke en betaalbare optie
-        is de <strong>IKEA APTITLIG Bamboe Snijplank</strong> een uitstekende keuze.
-        Welke je ook kiest, met een houten snijplank investeer je in een stijlvol, natuurlijk en langdurig alternatief voor plastic.</p>
+    <p>{{ conclusie.text|safe }}</p>
     </section>
+    {% endif %}
 
     <section>
         <header class="major">
-            <h2>Veelgestelde vragen over houten snijplanken</h2>
+            <h2>{{ content.faq.title }}</h2>
         </header>
+    {% for item in content.faq.items %}
     <div class="faq-item">
-    <h3>1. Hoe onderhoud ik mijn houten snijplank het best?</h3>
-    <p>Was de plank met de hand in warm water en milde zeep. Droog hem rechtop en behandel het oppervlak regelmatig met <strong>minerale olie</strong> of <strong>bijenwas</strong> om het hout in goede conditie te houden. Vermijd de vaatwasser en langdurig contact met vocht.</p>
+    <h3>{{ forloop.counter }}. {{ item.q }}</h3>
+    <p>{{ item.a|safe }}</p>
     </div>
-    <div class="faq-item">
-    <h3>2. Welke houtsoort is het meest geschikt voor een snijplank?</h3>
-    <p><strong>Esdoorn</strong> en <strong>walnoot</strong> zijn populair vanwege hun duurzaamheid en mesvriendelijkheid. <strong>Bamboe</strong> is een duurzaam alternatief, lichter van gewicht en milieuvriendelijk, terwijl <strong>beuken</strong> en <strong>acacia</strong> betaalbare opties bieden met een natuurlijke uitstraling.</p>
-    </div>
-    <div class="faq-item">
-    <h3>3. Zijn houten snijplanken hygiënischer dan plastic?</h3>
-    <p>Ja. Hout heeft van nature <strong>antibacteriële eigenschappen</strong> waardoor bacteriën minder snel overleven dan op plastic oppervlakken. Bij goed onderhoud is een houten snijplank een veilig en duurzaam alternatief voor plastic.</p>
-    </div>
-    <div class="faq-item">
-    <h3>4. Hoe vaak moet ik mijn houten snijplank oliën?</h3>
-    <p>Afhankelijk van gebruik is één keer per maand meestal voldoende. Als het oppervlak droog of ruw aanvoelt, is het tijd voor een nieuwe laag olie. Gebruik hiervoor <strong>voedselveilige minerale olie</strong> of een speciale snijplankolie.</p>
-    </div>
+    {% endfor %}
     </section>
 
 {% include "partials/related_categories.html" %}
