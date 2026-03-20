@@ -3,17 +3,21 @@
 
 {% block title %}Top 10 PFAS-vrije Hapjespannen– Gezond, Duurzame & Stijlvol | Leef Natuurlijk & Gezond{% endblock %}
 
+{% block meta %}
+<meta name="description" content="Ontdek de 10 beste PFAS-vrije hapjespannen van 2026 – gezond, duurzaam en zonder schadelijke stoffen. Vergelijk formaten, merken en prestaties.">
 <!-- Open Graph -->
 <meta property="og:title" content="Top 10 PFAS-vrije Hapjespannen – Beste Gezonde Keuzes van 2026">
 <meta property="og:description" content="Bekijk de beste 10 PFAS-vrije hapjespannen in diverse formaten. Vergelijk keramische en natuurlijke pannen, inclusief reviews, prijzen en onze topaanbevelingen.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/hapjespannen/">
 <meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/hapjespannen.jpg">
+<meta property="og:locale" content="nl_NL">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Top 10 PFAS-vrije Hapjespannen – Beste Gezonde Keuzes van 2026">
 <meta name="twitter:description" content="Ontdek onze top 10 PFAS-vrije hapjespannen voor gezond koken. Vergelijk coatings, warmtebronnen en prijsniveaus.">
 <meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/hapjespannen.jpg">
+<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/hapjespannen/">
 <!-- 🔹 Structured Data – Product ItemList -->
 <script type="application/ld+json">
     {{ json_ld|safe }}
@@ -59,20 +63,21 @@
  ]
 }
 </script>
+{% endblock %}
 
 {% block content %}
 <section id="banner">
-	<div class="content">
-	<header class="main">
-		<h1>Top {{ product_count }} PFAS-vrije Hapjespannen voor Gezond Koken</h1>
-	</header>
-	<p>Een hapjespan is onmisbaar in iedere keuken: ideaal voor stoofgerechten, pasta’s, risotto’s en eenpansgerechten.
-		  Toch bevatten veel traditionele pannen schadelijke stoffen zoals <strong>PFAS</strong> of <strong>teflon</strong>.
-		  Deze stoffen kunnen bij verhitting vrijkomen en na verloop van tijd gezondheidsrisico’s opleveren.
-		  Gelukkig zijn er tegenwoordig uitstekende PFAS-vrije alternatieven die niet alleen veiliger zijn, maar ook duurzaam en gebruiksvriendelijk.</p>
-	<p>In deze top 10 ontdek je de beste niet-giftige hapjespannen van dit moment — beoordeeld op
-	<em>materiaal, gebruiksgemak, duurzaamheid en prijs-kwaliteitverhouding</em>.</p>
-	</div>
+        <div class="content">
+        <header class="main">
+                <h1>Top {{ product_count }} PFAS-vrije Hapjespannen voor Gezond Koken</h1>
+        </header>
+        <p>Een hapjespan is onmisbaar in iedere keuken: ideaal voor stoofgerechten, pasta’s, risotto’s en eenpansgerechten.
+                  Toch bevatten veel traditionele pannen schadelijke stoffen zoals <strong>PFAS</strong> of <strong>teflon</strong>.
+                  Deze stoffen kunnen bij verhitting vrijkomen en na verloop van tijd gezondheidsrisico’s opleveren.
+                  Gelukkig zijn er tegenwoordig uitstekende PFAS-vrije alternatieven die niet alleen veiliger zijn, maar ook duurzaam en gebruiksvriendelijk.</p>
+        <p>In deze top 10 ontdek je de beste niet-giftige hapjespannen van dit moment — beoordeeld op
+        <em>materiaal, gebruiksgemak, duurzaamheid en prijs-kwaliteitverhouding</em>.</p>
+        </div>
 </section>
 
 <section>
@@ -265,7 +270,7 @@
 <!--</div>-->
 <!--</div>-->
 
-<!--	&lt;!&ndash; Product 5 &ndash;&gt;-->
+<!--    &lt;!&ndash; Product 5 &ndash;&gt;-->
 <!--<div class="product-block">-->
 <!--<img src="{% static 'images/hapjespan05.jpg' %}" alt="BK Magma Hapjespan 28 cm" class="image right">-->
 <!--<div class="content">-->
@@ -687,9 +692,9 @@
 <!--</section>-->
 
 <section>
-	<header class="major">
-		<h2>Veelgestelde vragen over PFAS-vrije hapjespannen</h2>
-	</header>
+        <header class="major">
+                <h2>Veelgestelde vragen over PFAS-vrije hapjespannen</h2>
+        </header>
 
 <div class="faq-item">
 <h3>1. Zijn PFAS-vrije hapjespannen veilig om mee te koken?</h3>
