@@ -51,6 +51,7 @@
 <span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
            {% endif %}
 </div>
+       {% if product.affiliate_url %}
 <a
            href="{{ product.affiliate_url }}"
            target="_blank"
@@ -59,5 +60,8 @@
 >
            Bekijk prijs &amp; reviews →
 </a>
+       {% else %}
+<span class="button small disabled" aria-disabled="true">Binnenkort beschikbaar</span>
+       {% endif %}
 </div>
 </div>

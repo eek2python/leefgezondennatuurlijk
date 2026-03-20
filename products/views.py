@@ -313,13 +313,33 @@ def vershoudcontainers(request):
     })
 
 
+_RVS_PRICE_RANGE = {
+    "budget": "€",
+    "mid": "€€",
+    "premium": "€€€",
+    "premium-plus": "€€€€",
+}
+
+
+def _enrich_rvs_products(products):
+    for p in products:
+        p["image_path"] = "images/rvs-koekenpannen"
+        p["image"] = p["image"].split("/")[-1]
+        p["features"] = p.get("key_features", [])
+        p["description"] = p.get("verdict", "")
+        p["price_range"] = _RVS_PRICE_RANGE.get(p.get("price_segment", ""), "")
+        if p.get("affiliate_url", "").startswith("TODO"):
+            p["affiliate_url"] = None
+
+
 def rvs_koekenpannen(request):
     content = RVS_KOEKENPANNEN_CONTENT
     products = [dict(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in RVS_KOEKENPANNEN_RANKINGS if k in RVS_KOEKENPANNEN_PRODUCTS]
+    _enrich_rvs_products(products)
     product_count = len(products)
     conclusie = content["conclusies"]["default"]
     faq_ld = _build_faq_ld(content["faq"]["items"])
-    real_products = [p for p in products if not p["affiliate_url"].startswith("TODO")]
+    real_products = [p for p in products if p["affiliate_url"]]
     itemlist_ld = json.dumps({
         "@context": "https://schema.org",
         "@type": "ItemList",

@@ -68,48 +68,7 @@
 
                         <section class="top10-section">
 {% for product in products %}
-                        <div class="product-block">
-                        {% if product.award %}
-                        <span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
-                        {% endif %}
-                        <div class="product-inner">
-                        <div class="product-image-wrap">
-                        <img src="{% static product.image %}" alt="{{ product.name }}" loading="lazy" class="product-img">
-                        </div>
-                        <div class="product-info">
-                        <h3>{{ forloop.counter }}. {{ product.name }}</h3>
-                        <p class="product-meta">{{ product.material }} &middot; {{ product.construction }}</p>
-                        <ul class="product-features">
-                        {% for feat in product.key_features %}
-                        <li>{{ feat }}</li>
-                        {% endfor %}
-                        </ul>
-                        <div class="pros-cons">
-                        <div class="pros">
-                        <strong>Voordelen</strong>
-                        <ul>
-                        {% for pro in product.pros %}
-                        <li>{{ pro }}</li>
-                        {% endfor %}
-                        </ul>
-                        </div>
-                        <div class="cons">
-                        <strong>Nadelen</strong>
-                        <ul>
-                        {% for con in product.cons %}
-                        <li>{{ con }}</li>
-                        {% endfor %}
-                        </ul>
-                        </div>
-                        </div>
-                        <p class="product-verdict"><em>{{ product.verdict }}</em></p>
-                        <div class="product-rating">
-                        <span class="stars stars-{{ product.rating_class }}"></span>
-                        </div>
-                        <a href="{{ product.affiliate_url }}" class="button primary" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews &rarr;</a>
-                        </div>
-                        </div>
-                        </div>
+{% include "partials/product_block.html" %}
 {% endfor %}
                         </section>
 
@@ -126,7 +85,7 @@
                         <th>Inductie</th>
                         <th>Oven</th>
                         <th>Vaatwasser</th>
-                        <th>Prijsniveau</th>
+                        <th>Prijs</th>
                         <th></th>
                         </tr>
                         </thead>
@@ -144,8 +103,14 @@
                         <td>{% if product.induction %}Ja{% else %}Nee{% endif %}</td>
                         <td>{% if product.oven_safe %}Ja{% else %}Nee{% endif %}</td>
                         <td>{% if product.dishwasher_safe %}Ja{% else %}Nee{% endif %}</td>
-                        <td>{{ product.price_segment }}</td>
-                        <td><a href="{{ product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews &rarr;</a></td>
+                        <td>{{ product.price_range }}</td>
+                        <td>
+                        {% if product.affiliate_url %}
+                        <a href="{{ product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews →</a>
+                        {% else %}
+                        <span class="button small disabled" aria-disabled="true">Binnenkort beschikbaar</span>
+                        {% endif %}
+                        </td>
                         </tr>
                         {% endfor %}
                         </tbody>
