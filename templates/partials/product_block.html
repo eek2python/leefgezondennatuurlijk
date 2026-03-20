@@ -48,14 +48,7 @@
 <span class="price">{{ product.price_range }}</span>
            {% endif %}
            {% if product.award %}
-<span class="badge">
-{% if product.award %}
-<span class="product-badge {{ product.award_class }}">
-   {{ product.award }}
-</span>
-{% endif %}
-</span>
-</span>
+<span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
            {% endif %}
 </div>
 <a
