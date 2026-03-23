@@ -626,6 +626,36 @@ PRODUCTS = {
 
     },
 
+    "greenpan_cambridge_24": {
+        "slug": "greenpan-cambridge-24",
+        "name": "GreenPan Cambridge",
+        "description": "Klassieke PFAS-vrije keramische koekenpan met Thermolon Infinite coating en inductiebodem.",
+        "brand": "GreenPan",
+        "diameter": 24,
+        "material": "Keramisch",
+        "features": ["Thermolon Infinite", "Inductie", "Ovenbestendig"],
+        "rating": 4.5,
+        "rating_count": 380,
+        "price": 42.99,
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "https://www.bol.com/nl/nl/p/greenpan-cambridge-koekenpan-24-cm/9200000054874176/",
+        "award": "",
+        "price_range": "€€",
+        "image": "greenpan-cambridge-24cm.jpg",
+        "image_path": "images/koekenpannen",
+        "pros": [
+            "PFAS-vrije Thermolon-coating",
+            "Inductiegeschikt",
+            "Ovenbestendig tot 160 °C",
+        ],
+        "cons": [
+            "Geen koele greep",
+            "Minder duurzaam dan premium lijnen",
+        ],
+        "verdict": "Betrouwbare alledaagse keramische pan voor wie PFAS-vrij wil koken zonder hoge prijs.",
+    },
+
     # 26CM KOEKENPANNEN
     "greenpan_barcelona_pro_26": {
         "slug": "greenpan-barcelona-pro-26",
