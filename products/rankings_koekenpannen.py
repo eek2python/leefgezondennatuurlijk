@@ -1,15 +1,15 @@
 RANKINGS = {
     20: [
         "greenpan_barcelona_pro_20",
-        "kochstar_essenz_20",
         "demeyere_alu_pro_5_ceraforce_20",
-        "greenchef_diamond_20",
+        "kochstar_essenz_20",
         "bk_easy_induction_20",
-        "greenpan_mayflower_20",
+        "greenchef_diamond_20",
         "tefal_renew_20",
+        "greenpan_mayflower_20",
         "bk_enjoy_20",
         "hema_milano_20",
-        "habonne_hybrid_20",
+        "greenpan_cambridge_20",
     ],
     24: [
         "greenpan_barcelona_pro_24",
