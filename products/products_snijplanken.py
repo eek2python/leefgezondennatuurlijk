@@ -110,7 +110,7 @@ PRODUCTS = {
         "affiliate_url": "https://www.knivesandtools.nl/nl/pt/-zwilling-twin-snijplank-60x40x3-5-cm-beukenhout-35118-100.htm",
         "price_range": "\u20ac\u20ac\u20ac",
         "verdict": "Betrouwbare hardhouten plank met uitstekende snijstabiliteit.",
-        "award": "👨‍🍳 Chef's keuze",
+        "award": "",
     },
     "wmf_acacia_40x32": {
         "slug": "wmf_acacia_40x32",
