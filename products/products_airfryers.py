@@ -53,7 +53,7 @@ PRODUCTS = {
         "affiliate_url": "https://www.bol.com/nl/nl/p/bourgini-slimfit-airfryer-xl-hetelucht-friteuse-5-liter-1500w/9300000163583334/",
         "price_range": "\u20ac",
         "verdict": "De beste budgetvriendelijke PFAS-vrije keuze dankzij de ruime inhoud, de keramische coating en de solide prestaties.",
-        "award": "💰 Beste budgetoptie",
+        "award": "💰 Budget keuze",
     },
     "greenpan_silhouette_xl_5l": {
         "slug": "greenpan_silhouette_xl_5l",

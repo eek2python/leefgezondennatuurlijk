@@ -55,7 +55,7 @@ PRODUCTS = {
         "affiliate_url": "https://www.amazon.nl/dp/B08DYF9GXP/?th=1",
         "price_range": "\u20ac",
         "verdict": "Een voordelige en complete glazen basisset voor iedereen die PFAS-vrij wil bewaren en opwarmen.",
-        "award": "💰 Beste budgetoptie",
+        "award": "💰 Budget keuze",
     },
     "pyrex_cook_heat_3delig": {
         "slug": "pyrex_cook_heat_3delig",

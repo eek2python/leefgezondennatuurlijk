@@ -125,8 +125,8 @@ PRODUCTS = {
             "snelle temperatuurrespons",
         ],
         "best_for": "beste voor ervaren thuiskok",
-        "award": "Voor de liefhebber",
-        "award_class": "special-choice",
+        "award": "",
+        "award_class": "",
         "price_segment": "premium",
         "rating_class": "4-7",
         "pros": [
@@ -161,8 +161,8 @@ PRODUCTS = {
             "robuust",
         ],
         "best_for": "beste middenklasse",
-        "award": "Sterke middenklasse",
-        "award_class": "special-choice",
+        "award": "",
+        "award_class": "",
         "price_segment": "mid",
         "rating_class": "4-6",
         "pros": [
@@ -198,7 +198,7 @@ PRODUCTS = {
         ],
         "best_for": "beste prijs-kwaliteit",
         "award": "Beste prijs-kwaliteit",
-        "award_class": "best-choice",
+        "award_class": "value-choice",
         "price_segment": "mid",
         "rating_class": "4-6",
         "pros": [

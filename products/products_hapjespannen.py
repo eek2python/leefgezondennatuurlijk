@@ -63,7 +63,7 @@ PRODUCTS = {
             "Niet bedoeld voor intensief of professioneel gebruik",
         ],
         "verdict": "Een toegankelijke en betaalbare PFAS-vrije hapjespan van 28 cm, ideaal voor wie gezond wil koken zonder veel uit te geven.",
-        "award": "💰 Beste budgetoptie",
+        "award": "💰 Budget keuze",
     },
     "woll_ecolite_qxr_28": {
         "slug": "woll-ecolite-qxr-28",
@@ -391,7 +391,7 @@ PRODUCTS = {
        "Niet bedoeld voor zeer hoge temperaturen",
    ],
    "verdict": "Een uitstekende keuze voor dagelijks gebruik tegen een vriendelijke prijs.",
-   "award": "💰 Beste budgetoptie",
+   "award": "💰 Budget keuze",
 },
 
 "woll_ecolite_qxr_24": {

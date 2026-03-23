@@ -53,7 +53,7 @@ PRODUCTS = {
         "affiliate_url": "https://www.ikea.com/nl/nl/p/aptitlig-snijplank-bamboe-80233430/",
         "price_range": "\u20ac",
         "verdict": "Duurzame en voordelige keuze voor de dagelijkse keukenroutine.",
-        "award": "💰 Beste budgetoptie",
+        "award": "💰 Budget keuze",
     },
     "kaamut_walnoot_endgrain": {
         "slug": "kaamut_walnoot_endgrain",

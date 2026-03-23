@@ -55,7 +55,7 @@ PRODUCTS = {
            "Coating gevoelig voor slijtage",
        ],
        "verdict": "Een toegankelijke instapwok voor wie PFAS-vrij wil koken met een klein budget.",
-       "award": "💰 Beste budgetoptie",
+       "award": "💰 Budget keuze",
    },
    "wmf_durado_wok_28": {
        "slug": "wmf_durado_wok_28",
@@ -340,7 +340,7 @@ PRODUCTS = {
        "Minder duurzaam dan premium wokpannen",
    ],
    "verdict": "Een toegankelijke en betaalbare 30 cm wokpan voor wie PFAS-vrij wil wokken zonder veel uit te geven.",
-   "award": "💰 Beste budgetoptie",
+   "award": "💰 Budget keuze",
 },
 
 "scanpan_techniq_wok_30": {
