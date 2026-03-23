@@ -142,6 +142,6 @@ PRODUCTS = {
         "affiliate_url": "https://www.bol.com/nl/nl/p/luminarc-pure-box-active-vershouddoos-rond-glas-set-3/9200000036318348/",
         "price_range": "\u20ac\u20ac",
         "verdict": "Een stevige en gebruiksvriendelijke set met uitstekend ventielsysteem voor dagelijks gebruik.",
-        "award": "♻️ Eco keuze",
+        "award": "",
     },
 }

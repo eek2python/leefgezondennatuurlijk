@@ -278,7 +278,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/debuyer-mineral-b-black-hapjespan-staal-o-28cm/9300000013627556/?cid=1767589614793-2639539760505&bltgh=8c226bd5-9cdc-477e-9b82-0946f98e9286.ProductList_Middle.0.ProductImage",
         "price_range": "€€€",
-        "award": "🥇 Meest duurzaam",
+        "award": "",
         "image": "hapjespan09.jpg",
         "image_path": "images/hapjespannen",
         "pros": [
@@ -612,7 +612,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/debuyer-mineral-b-element-hapjespan-o-24-cm/9200000002756864/?s2a=#productTitle",
         "price_range": "€€€",
-        "award": "🥇 Meest duurzaam",
+        "award": "",
         "image": "de_buyer_mineral_b_24cm.jpg",
         "image_path": "images/hapjespannen",
         "pros": [

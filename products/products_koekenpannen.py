@@ -190,7 +190,7 @@ PRODUCTS = {
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/tefal-renew-koekenpan-o28-cm-keramisch-pfas-vrij-geschikt-voor-inductie/9300000118641472/",
-        "award": "♻️ Eco keuze",
+        "award": "",
         "price_range": "€€",
         "image": "koekenpan07_tefal_renew.jpg",
         "image_path": "images/koekenpannen",
@@ -487,7 +487,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/tefal-renew-keramische-koekenpan-o-24-cm/9300000118641479/?cid=1766058323820-2566325314987&bltgh=3d6aa0ff-bb29-48f6-b126-fd4c6a85820b.ProductList_Middle.0.ProductImage",
         "price_range": "€€",
-        "award": "♻️ Eco keuze",
+        "award": "",
         "image": "koekenpan07_tefal_renew_24cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [
@@ -1007,7 +1007,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/tefal-renew-keramische-koekenpan-o-20-cm/9300000120126719/?cid=1766380777710-2580610106203&bltgh=a24bc707-9434-45de-a969-58034170aee3.ProductList_Middle.0.ProductImage",
         "price_range": "€€",
-        "award": "♻️ Eco keuze",
+        "award": "",
         "image": "koekenpan07_tefal_renew_20cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [
@@ -1307,7 +1307,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.coolblue.nl/product/913828/tefal-renew-keramische-koekenpan-30-cm.html?srsltid=AfmBOoqmDHo_7PbZ3Zoxhyk8WZXLgLI2HBWj0ZQg73mtxBChSc-HGxfM",
         "price_range": "€€",
-        "award": "♻️ Eco keuze",
+        "award": "",
         "image": "tefal_renew_30cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [
@@ -1550,7 +1550,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/tefal-renew-on-keramische-koekenpan-o-32-cm/9300000117431080/?cid=1766655540107-9223038508418&bltgh=c1879416-2445-440e-bc08-1f53f5887c81.ProductList_Middle.0.ProductImage",
         "price_range": "€€",
-        "award": "♻️ Eco keuze",
+        "award": "",
         "image": "tefal_renew_32cm.jpg",
         "image_path": "images/koekenpannen",
         "pros": [

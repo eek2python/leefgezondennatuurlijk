@@ -109,7 +109,7 @@ PRODUCTS = {
         "affiliate_url": "https://www.amazon.nl/-/en/MasterPRO-Cyclone-Capacity-Digital-Circulation/dp/B0F3P6FW2Y",
         "price_range": "\u20ac\u20ac",
         "verdict": "Een betrouwbare en krachtige PFAS-vrije airfryer met uitstekende luchtcirculatie en een duurzame keramische mand.",
-        "award": "🥇 Meest gekozen",
+        "award": "",
     },
     "wartmann_wm2312af_5l": {
         "slug": "wartmann_wm2312af_5l",

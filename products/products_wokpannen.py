@@ -204,7 +204,7 @@ PRODUCTS = {
        "availability": "InStock",
        "affiliate_url": "https://www.bol.com/nl/nl/p/greenpan-cambridge-wokpan-28cm-zwart-inductie-pfas-vrij/9200000083444325/",
        "price_range": "€€€",
-       "award": "♻️ Eco keuze",
+       "award": "",
        "image": "wokpan08.jpg",
        "image_path": "images/wokpannen",
        "pros": [

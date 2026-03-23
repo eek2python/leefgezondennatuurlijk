@@ -278,6 +278,6 @@ PRODUCTS = {
         "affiliate_url": "https://www.bol.com/nl/nl/p/point-virgule-snijplank-bamboe-large-40x30x1cm/9300000056867854/",
         "price_range": "\u20ac\u20ac",
         "verdict": "Betaalbare, praktische snijplank van duurzaam bamboe voor dagelijks gebruik.",
-        "award": "🌿 Eco keuze",
+        "award": "",
     },
 }
