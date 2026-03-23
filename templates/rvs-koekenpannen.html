@@ -80,12 +80,9 @@
                         <thead>
                         <tr>
                         <th>Product</th>
-                        <th>Merk</th>
-                        <th>Constructie</th>
-                        <th>Inductie</th>
-                        <th>Oven</th>
-                        <th>Vaatwasser</th>
-                        <th>Prijs</th>
+                        <th>Belangrijkste eigenschappen</th>
+                        <th>Prijsniveau</th>
+                        <th>Eindoordeel</th>
                         <th></th>
                         </tr>
                         </thead>
@@ -98,12 +95,14 @@
                         <br><span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
                         {% endif %}
                         </td>
-                        <td>{{ product.brand }}</td>
-                        <td>{{ product.construction }}</td>
-                        <td>{% if product.induction %}Ja{% else %}Nee{% endif %}</td>
-                        <td>{% if product.oven_safe %}Ja{% else %}Nee{% endif %}</td>
-                        <td>{% if product.dishwasher_safe %}Ja{% else %}Nee{% endif %}</td>
+                        <td>
+                        {{ product.material }}
+                        {% if product.features %}
+                        · {{ product.features|join:" · " }}
+                        {% endif %}
+                        </td>
                         <td>{{ product.price_range }}</td>
+                        <td><span class="stars stars-{{ product.rating_class }}"></span></td>
                         <td>
                         {% if product.affiliate_url %}
                         <a href="{{ product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews →</a>
