@@ -656,36 +656,6 @@ PRODUCTS = {
         "verdict": "Betrouwbare alledaagse keramische pan voor wie PFAS-vrij wil koken zonder hoge prijs.",
     },
 
-
-    "tefal_expertise_24": {
-        "slug": "tefal-expertise-24",
-        "name": "Tefal Expertise",
-        "description": "Betaalbare PFAS-vrije koekenpan met titanium keramische coating voor dagelijks gebruik.",
-        "brand": "Tefal",
-        "diameter": 24,
-        "material": "Keramisch",
-        "features": ["Titanium coating", "PFAS-vrij", "Inductie"],
-        "rating": 4.0,
-        "rating_count": 490,
-        "price": 27.99,
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://www.bol.com/nl/nl/p/tefal-expertise-koekenpan-24-cm-pfas-vrij/9200000114894202/",
-        "award": "",
-        "price_range": "€",
-        "image": "tefal-expertise-24cm.jpg",
-        "image_path": "images/koekenpannen",
-        "pros": [
-            "Zeer betaalbaar",
-            "PFAS-vrije titanium coating",
-            "Inductiegeschikt",
-        ],
-        "cons": [
-            "Minder duurzaam op lange termijn",
-            "Eenvoudige afwerking",
-        ],
-        "verdict": "Praktische instapper voor wie PFAS-vrij wil koken zonder hoge investering.",
-    },
     # 26CM KOEKENPANNEN
     "greenpan_barcelona_pro_26": {
         "slug": "greenpan-barcelona-pro-26",
@@ -1206,36 +1176,6 @@ PRODUCTS = {
         "verdict": "Betrouwbare alledaagse keramische pan voor wie PFAS-vrij wil koken zonder hoge prijs.",
     },
 
-
-    "tefal_expertise_20": {
-        "slug": "tefal-expertise-20",
-        "name": "Tefal Expertise",
-        "description": "Betaalbare PFAS-vrije koekenpan met titanium keramische coating voor dagelijks gebruik.",
-        "brand": "Tefal",
-        "diameter": 20,
-        "material": "Keramisch",
-        "features": ["Titanium coating", "PFAS-vrij", "Inductie"],
-        "rating": 4.0,
-        "rating_count": 520,
-        "price": 22.99,
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://www.bol.com/nl/nl/p/tefal-expertise-koekenpan-20-cm-pfas-vrij/9200000114894201/",
-        "award": "",
-        "price_range": "€",
-        "image": "tefal-expertise-20cm.jpg",
-        "image_path": "images/koekenpannen",
-        "pros": [
-            "Zeer betaalbaar",
-            "PFAS-vrije titanium coating",
-            "Inductiegeschikt",
-        ],
-        "cons": [
-            "Minder duurzaam op lange termijn",
-            "Eenvoudige afwerking",
-        ],
-        "verdict": "Praktische instapper voor wie PFAS-vrij wil koken zonder hoge investering.",
-    },
     # 30CM KOEKENPANNEN
 
     "greenpan_barcelona_pro_30": {
