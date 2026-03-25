@@ -32,7 +32,10 @@ def _check_url(url) -> tuple[bool, str]:
         return False, "Affiliate-URL ontbreekt of is leeg."
     url_str = str(url)
     for indicator in GLOBAL_RULES["placeholder_url_indicators"]:
-        if indicator in url_str:
+        if indicator == "#":
+            if url_str.strip() == "#":
+                return False, f"Affiliate-URL lijkt een placeholder te bevatten: '{indicator}'."
+        elif indicator in url_str:
             return False, f"Affiliate-URL lijkt een placeholder te bevatten: '{indicator}'."
     if not url_str.startswith("http"):
         return False, "Affiliate-URL begint niet met http/https."

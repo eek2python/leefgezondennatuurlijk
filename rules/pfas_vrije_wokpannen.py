@@ -2,7 +2,7 @@ RULES = {
     "category_key": "pfas_vrije_wokpannen",
     "description": "PFAS-vrije wokpannen voor dagelijks gebruik bij hoge temperaturen. Geen gewone koekenpannen of hapjespannen.",
 
-    "allowed_material_keywords": ["keramisch", "ceramic", "thermolon", "ceraforce", "greblon"],
+    "allowed_material_keywords": ["keramisch", "ceramic", "thermolon", "ceraforce", "greblon", "stratanium"],
     "forbidden_material_keywords": ["ptfe", "teflon"],
 
     "pfas_free_required": True,

@@ -258,6 +258,15 @@ PRODUCTS = {
             "Hoge prijs",
         ],
         "verdict": "Een uitzonderlijk hoogwaardige hapjespan voor wie duurzaamheid en prestaties zoekt.",
+        "editorial_status": "review_required",
+        "editorial_notes": (
+            "Materiaal 'Non-stick (PFAS-vrij)' voldoet niet aan allowed_material_keywords voor hapjespannen "
+            "(keramisch, ceramic, thermolon, ceraforce, greblon, siliconenhars). Le Creuset TNS PRO gebruikt een "
+            "proprietary PFAS-vrije non-stick coating — niet keramisch. Beslissing vereist: "
+            "(A) verwijder dit product uit de hapjespannen ranking, of "
+            "(B) voeg 'non-stick (pfas-vrij)' toe als toegestaan materiaal in de regelset. "
+            "Niet automatisch aanpassen."
+        ),
     },
     "de_buyer_mineral_b_28": {
         "slug": "de-buyer-mineral-b-28",
@@ -291,6 +300,16 @@ PRODUCTS = {
             "Niet vaatwasserbestendig",
         ],
         "verdict": "Een natuurlijke en duurzame hapjespan voor liefhebbers van traditioneel bakken.",
+        "editorial_status": "review_required",
+        "editorial_notes": (
+            "Materiaal 'Koolstofstaal' voldoet niet aan allowed_material_keywords voor hapjespannen "
+            "(keramisch, ceramic, thermolon, ceraforce, greblon, siliconenhars). De Buyer Mineral B is een "
+            "koolstofstalen pan zonder coating — volledig PFAS-vrij maar fundamenteel anders dan keramisch-gecoate "
+            "hapjespannen. Beslissing vereist: "
+            "(A) verwijder dit product uit de hapjespannen ranking, of "
+            "(B) creëer een aparte 'Koolstofstaal' categorie of subcategorie. "
+            "Niet automatisch aanpassen."
+        ),
     },
     "beka_cicla_28": {
         "slug": "beka-cicla-28",
@@ -542,7 +561,7 @@ PRODUCTS = {
    "rating_count": 80,
    "price": 19.99,
    "currency": "EUR",
-   "availability": "OutStock",
+   "availability": "OutOfStock",
    "affiliate_url": "https://www.bol.com/nl/nl/p/kochstar-essenz-keramische-inductie-kookpan-met-deksel-24cm-3-5l-pfas-vrij-inductie-kookpan-keramische-anti-aanbaklaag-koelgreep-zwart/9300000231848098/?Referrer=ADVNLGOO002032-S--9300000231848098-PMAX-C-22285073469&gad_source=1&gad_campaignid=22295458996&gclid=CjwKCAiAmePKBhAfEiwAU3Ko3PbjtpCOVAExYnEfH75G497ZL-kFq6FUyGkc8QtiFHiOEEpN8nh23BoCUUcQAvD_BwE",
    "price_range": "€",
    "image": "hapjespan_kochstar_essenz_24cm.jpg",
@@ -591,6 +610,15 @@ PRODUCTS = {
             "Hoge prijs",
         ],
         "verdict": "Een uitzonderlijk hoogwaardige hapjespan voor wie duurzaamheid en prestaties zoekt.",
+        "editorial_status": "review_required",
+        "editorial_notes": (
+            "Materiaal 'Non-stick (PFAS-vrij)' voldoet niet aan allowed_material_keywords voor hapjespannen "
+            "(keramisch, ceramic, thermolon, ceraforce, greblon, siliconenhars). Le Creuset TNS PRO gebruikt een "
+            "proprietary PFAS-vrije non-stick coating — niet keramisch. Beslissing vereist: "
+            "(A) verwijder dit product uit de hapjespannen ranking, of "
+            "(B) voeg 'non-stick (pfas-vrij)' toe als toegestaan materiaal in de regelset. "
+            "Niet automatisch aanpassen."
+        ),
     },
 
 "de_buyer_mineral_b_24": {
@@ -625,6 +653,16 @@ PRODUCTS = {
             "Niet vaatwasserbestendig",
         ],
         "verdict": "Een natuurlijke en duurzame hapjespan voor liefhebbers van traditioneel bakken.",
+        "editorial_status": "review_required",
+        "editorial_notes": (
+            "Materiaal 'Koolstofstaal' voldoet niet aan allowed_material_keywords voor hapjespannen "
+            "(keramisch, ceramic, thermolon, ceraforce, greblon, siliconenhars). De Buyer Mineral B is een "
+            "koolstofstalen pan zonder coating — volledig PFAS-vrij maar fundamenteel anders dan keramisch-gecoate "
+            "hapjespannen. Beslissing vereist: "
+            "(A) verwijder dit product uit de hapjespannen ranking, of "
+            "(B) creëer een aparte 'Koolstofstaal' categorie of subcategorie. "
+            "Niet automatisch aanpassen."
+        ),
     },
 
 "beka_cicla_24": {
@@ -728,5 +766,14 @@ PRODUCTS = {
             "Hoge prijs",
         ],
         "verdict": "Een uitzonderlijk hoogwaardige hapjespan voor wie duurzaamheid en prestaties zoekt.",
+        "editorial_status": "review_required",
+        "editorial_notes": (
+            "Materiaal 'Non-stick (PFAS-vrij)' voldoet niet aan allowed_material_keywords voor hapjespannen "
+            "(keramisch, ceramic, thermolon, ceraforce, greblon, siliconenhars). Le Creuset TNS PRO gebruikt een "
+            "proprietary PFAS-vrije non-stick coating — niet keramisch. Beslissing vereist: "
+            "(A) verwijder dit product uit de hapjespannen ranking, of "
+            "(B) voeg 'non-stick (pfas-vrij)' toe als toegestaan materiaal in de regelset. "
+            "Niet automatisch aanpassen."
+        ),
     },
 }

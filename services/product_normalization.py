@@ -128,7 +128,11 @@ def _check_affiliate_url(product: dict) -> list[str]:
     if not url_str.startswith("http"):
         issues.append(f"Affiliate-URL begint niet met http(s): '{url_str[:80]}'.")
     for indicator in PLACEHOLDER_URL_INDICATORS:
-        if indicator in url_str:
+        if indicator == "#":
+            if url_str.strip() == "#":
+                issues.append(f"Affiliate-URL lijkt een placeholder te zijn (bevat '{indicator}').")
+                break
+        elif indicator in url_str:
             issues.append(f"Affiliate-URL lijkt een placeholder te zijn (bevat '{indicator}').")
             break
     return issues

@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-03-25T07:50:50",
+  "generated_at": "2026-03-25T16:30:48",
   "live_checks": false,
   "summary": {
     "categories_checked": 7,
     "total_products": 119,
-    "total_valid": 102,
-    "total_flagged": 17,
-    "total_manual_review": 5,
+    "total_valid": 103,
+    "total_flagged": 16,
+    "total_manual_review": 4,
     "total_broken_urls": 0,
     "total_avail_mismatches": 0,
     "total_price_alerts": 0,
     "total_missing_metadata": 7,
     "total_brand_violations": 2,
-    "total_replacements": 12
+    "total_replacements": 11
   },
   "categories": [
     {
@@ -84,7 +84,6 @@
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/demeyere-alu-pro-5-ceraforce-20cm.jpg",
           "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#').",
             "Prijs €74.81 past niet bij price_range '€€€€' (verwacht: €80.0–€9999.0)."
           ],
           "consistency_warnings": [],
@@ -500,9 +499,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/koekenpan02_kochstar_essenz_24cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -648,9 +645,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/greenpan-torino-24cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -675,7 +670,7 @@
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": "OutStock",
+          "stored_availability": "OutOfStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
@@ -686,9 +681,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/koekenpan08_bk_enjoy_24cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -878,9 +871,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/demeyere-alu-pro-5-ceraforce-26cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -1510,9 +1501,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/demeyere-alu-pro-5-ceraforce-30cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -1622,9 +1611,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/greenpan-torino-30cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -1812,9 +1799,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/demeyere-alu-pro-5-ceraforce-32cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -1924,9 +1909,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/greenpan-torino-32cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -1989,7 +1972,7 @@
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": "OutStock",
+          "stored_availability": "OutOfStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
@@ -2040,9 +2023,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/ikea-hemlagad-keramisch-32cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -2919,9 +2900,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/hapjespannen/hapjespan_greenpan_cambridge_24cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -2948,7 +2927,7 @@
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": "OutStock",
+          "stored_availability": "OutOfStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
@@ -3113,9 +3092,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/hapjespannen/de_buyer_mineral_b_24cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": false,
@@ -3304,7 +3281,6 @@
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/hapjespannen/hapjespan_bk_enjoy_28cm.jpg",
           "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#').",
             "Prijs €41.93 past niet bij price_range '€' (verwacht: €0.01–€30.0)."
           ],
           "consistency_warnings": [],
@@ -4142,7 +4118,7 @@
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": "OutStock",
+          "stored_availability": "OutOfStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
@@ -4312,91 +4288,15 @@
           "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
-          "validation_valid": false,
-          "validation_errors": [
-            "Materiaal 'Gerecycled aluminium' bevat geen van de toegestane keywords: ['keramisch', 'ceramic', 'thermolon', 'ceraforce', 'greblon']."
-          ],
+          "validation_valid": true,
+          "validation_errors": [],
           "validation_warnings": [],
           "validation_rule_flags": [],
           "inferred_price_segment": "premium",
-          "overall_status": "REPLACE",
-          "manual_review_required": true,
-          "replacement_needed": true,
-          "replacement_suggestion": {
-            "product_name": "Scanpan TechnIQ Wokpan",
-            "slug": "scanpan_techniq_wok_30",
-            "category_key": "pfas_vrije_wokpannen",
-            "candidates": [
-              {
-                "candidate_name": "Primecook Keramische Wokpan",
-                "slug": "primecook_wok_28",
-                "brand": "Primecook",
-                "score": 4.0,
-                "reasons": [
-                  "Categorie: geldig voor de categorie-regels.",
-                  "Beoordelingsscore: 5 (origineel: 5).",
-                  "Voldoende reviews: 254.",
-                  "Beschikbaarheid: in voorraad.",
-                  "Merkdiversiteit: merk 'primecook' heeft 1 product(en) in de lijst."
-                ],
-                "flags": [
-                  "Materiaaltype komt niet volledig overeen.",
-                  "Formaatverschil: origineel 30 cm, kandidaat 28 cm.",
-                  "Prijssegment verschilt: origineel 'premium', kandidaat 'middenklasse'."
-                ],
-                "partial_match": true,
-                "inferred_price_segment": "middenklasse",
-                "requires_manual_review": true,
-                "warning": "Dit is een kandidaatsuggestie. NOOIT automatisch publiceren. Altijd handmatig beoordelen."
-              },
-              {
-                "candidate_name": "GreenPan Barcelona Evershine Wokpan",
-                "slug": "greenpan_barcelona_evershine_wok_30",
-                "brand": "GreenPan",
-                "score": 4.0,
-                "reasons": [
-                  "Categorie: geldig voor de categorie-regels.",
-                  "Formaat: vergelijkbaar (30 cm).",
-                  "Voldoende reviews: 180.",
-                  "Beschikbaarheid: in voorraad."
-                ],
-                "flags": [
-                  "Materiaaltype komt niet volledig overeen.",
-                  "Prijssegment verschilt: origineel 'premium', kandidaat 'middenklasse'.",
-                  "Beoordelingsscore iets lager: 4.5 vs 5.",
-                  "Merkdiversiteitswaarschuwing: 'greenpan' heeft al 4 producten in de lijst (max 2)."
-                ],
-                "partial_match": true,
-                "inferred_price_segment": "middenklasse",
-                "requires_manual_review": true,
-                "warning": "Dit is een kandidaatsuggestie. NOOIT automatisch publiceren. Altijd handmatig beoordelen."
-              },
-              {
-                "candidate_name": "GreenPan Copenhagen Keramische Wokpan",
-                "slug": "greenpan_copenhagen_wok_30",
-                "brand": "GreenPan",
-                "score": 4.0,
-                "reasons": [
-                  "Categorie: geldig voor de categorie-regels.",
-                  "Formaat: vergelijkbaar (30 cm).",
-                  "Voldoende reviews: 95.",
-                  "Beschikbaarheid: in voorraad."
-                ],
-                "flags": [
-                  "Materiaaltype komt niet volledig overeen.",
-                  "Prijssegment verschilt: origineel 'premium', kandidaat 'middenklasse'.",
-                  "Beoordelingsscore iets lager: 4.5 vs 5.",
-                  "Merkdiversiteitswaarschuwing: 'greenpan' heeft al 4 producten in de lijst (max 2)."
-                ],
-                "partial_match": true,
-                "inferred_price_segment": "middenklasse",
-                "requires_manual_review": true,
-                "warning": "Dit is een kandidaatsuggestie. NOOIT automatisch publiceren. Altijd handmatig beoordelen."
-              }
-            ],
-            "manual_review_required": true,
-            "notes": "Alle suggesties vereisen handmatige redactionele beoordeling. Dit systeem publiceert nooit automatisch wijzigingen in productrankings."
-          }
+          "overall_status": "OK",
+          "manual_review_required": false,
+          "replacement_needed": false,
+          "replacement_suggestion": null
         },
         {
           "product_name": "BK Balans+ Keramische Wokpan",
@@ -4412,7 +4312,7 @@
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": "OutStock",
+          "stored_availability": "OutOfStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
@@ -4423,9 +4323,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/wokpannen/wokpan_bk_balans_30cm.jpg",
-          "consistency_issues": [
-            "Prijs €99.95 past niet bij price_range '€€' (verwacht: €10.0–€80.0)."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -4503,9 +4401,7 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/wokpannen/wokpan_berghoff_phantom_30cm.jpg",
-          "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
@@ -4553,14 +4449,14 @@
       },
       "summary": {
         "total": 16,
-        "valid": 13,
-        "flagged": 3,
-        "manual_review": 1,
+        "valid": 14,
+        "flagged": 2,
+        "manual_review": 0,
         "broken_urls": 0,
         "availability_mismatches": 0,
         "price_alerts": 0,
         "missing_metadata": 0,
-        "replacement_needed": 1,
+        "replacement_needed": 0,
         "brand_diversity_violations": 0
       }
     },
@@ -4994,7 +4890,6 @@
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/airfryer-inventum-gf500hld-5l-pfasvrij-keramisch.jpg",
           "consistency_issues": [
-            "Affiliate-URL lijkt een placeholder te zijn (bevat '#').",
             "Prijs €109.99 past niet bij price_range '€€' (verwacht: €10.0–€80.0)."
           ],
           "consistency_warnings": [],

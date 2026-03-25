@@ -32,7 +32,12 @@ PRODUCTS = {
             "heeft wat leercurve vergeleken met keramisch",
         ],
         "verdict": "Sterke allround RVS-koekenpan voor wie duurzaam en controlegericht wil bakken.",
-        "affiliate_url": "TODO_AFFILIATE_URL",
+        "affiliate_url": "TODO_AFFILIATE_URL",  # TODO: voeg echte affiliate URL toe
+        "rating": None,           # TODO: beoordelingsscore invullen zodra product live gaat (bijv. 4.5)
+        "rating_count": None,     # TODO: aantal beoordelingen invullen zodra product live gaat (bijv. 120)
+        "availability": None,     # TODO: bijwerken naar "InStock" of "OutOfStock" zodra URL beschikbaar is
+        "price": None,            # TODO: actuele verkoopprijs controleren en invoegen (bijv. 89.95)
+        "description": None,      # TODO: redactionele productomschrijving schrijven
         "image": "images/products/rvs-koekenpannen/demeyere-industry-5-28.jpg",
     },
     "demeyere_silverline_7_nanotouch_28": {
@@ -68,7 +73,12 @@ PRODUCTS = {
             "voor veel thuiskoks meer dan nodig",
         ],
         "verdict": "Premium RVS-pan voor wie maximale prestaties en langdurige kwaliteit zoekt.",
-        "affiliate_url": "TODO_AFFILIATE_URL",
+        "affiliate_url": "TODO_AFFILIATE_URL",  # TODO: voeg echte affiliate URL toe
+        "rating": None,           # TODO: beoordelingsscore invullen zodra product live gaat (bijv. 4.9)
+        "rating_count": None,     # TODO: aantal beoordelingen invullen zodra product live gaat
+        "availability": None,     # TODO: bijwerken naar "InStock" of "OutOfStock" zodra URL beschikbaar is
+        "price": None,            # TODO: actuele verkoopprijs controleren en invoegen
+        "description": None,      # TODO: redactionele productomschrijving schrijven
         "image": "images/products/rvs-koekenpannen/demeyere-silverline-7-28.jpg",
     },
     "demeyere_multiline_7_28": {
@@ -103,7 +113,12 @@ PRODUCTS = {
             "minder vergevingsgezind dan keramisch",
         ],
         "verdict": "Sterke keuze voor wie vooral op inductie kookt en maximale bakprestaties zoekt.",
-        "affiliate_url": "TODO_AFFILIATE_URL",
+        "affiliate_url": "TODO_AFFILIATE_URL",  # TODO: voeg echte affiliate URL toe
+        "rating": None,           # TODO: beoordelingsscore invullen zodra product live gaat
+        "rating_count": None,     # TODO: aantal beoordelingen invullen zodra product live gaat
+        "availability": None,     # TODO: bijwerken naar "InStock" of "OutOfStock" zodra URL beschikbaar is
+        "price": None,            # TODO: actuele verkoopprijs controleren en invoegen
+        "description": None,      # TODO: redactionele productomschrijving schrijven
         "image": "images/products/rvs-koekenpannen/demeyere-multiline-7-28.jpg",
     },
     "debuyer_affinity_28": {
@@ -139,7 +154,12 @@ PRODUCTS = {
             "minder logisch voor de gemiddelde koper",
         ],
         "verdict": "Premium RVS-keuze voor wie bewust voor techniek, controle en bouwkwaliteit gaat.",
-        "affiliate_url": "TODO_AFFILIATE_URL",
+        "affiliate_url": "TODO_AFFILIATE_URL",  # TODO: voeg echte affiliate URL toe
+        "rating": None,           # TODO: beoordelingsscore invullen zodra product live gaat
+        "rating_count": None,     # TODO: aantal beoordelingen invullen zodra product live gaat
+        "availability": None,     # TODO: bijwerken naar "InStock" of "OutOfStock" zodra URL beschikbaar is
+        "price": None,            # TODO: actuele verkoopprijs controleren en invoegen
+        "description": None,      # TODO: redactionele productomschrijving schrijven
         "image": "images/products/rvs-koekenpannen/debuyer-affinity-28.jpg",
     },
     "wmf_profi_28": {
@@ -175,7 +195,12 @@ PRODUCTS = {
             "niet de meest verfijnde warmtespreiding in dit overzicht",
         ],
         "verdict": "Goede middenklasse RVS-koekenpan voor wie een degelijk merk zoekt zonder direct topsegmentprijzen.",
-        "affiliate_url": "TODO_AFFILIATE_URL",
+        "affiliate_url": "TODO_AFFILIATE_URL",  # TODO: voeg echte affiliate URL toe
+        "rating": None,           # TODO: beoordelingsscore invullen zodra product live gaat
+        "rating_count": None,     # TODO: aantal beoordelingen invullen zodra product live gaat
+        "availability": None,     # TODO: bijwerken naar "InStock" of "OutOfStock" zodra URL beschikbaar is
+        "price": None,            # TODO: actuele verkoopprijs controleren en invoegen
+        "description": None,      # TODO: redactionele productomschrijving schrijven
         "image": "images/products/rvs-koekenpannen/wmf-profi-28.jpg",
     },
     "bk_superior_tri_ply_28": {
@@ -211,7 +236,12 @@ PRODUCTS = {
             "kortere staat van dienst dan klassieke toplijnen",
         ],
         "verdict": "Waarschijnlijk de interessantste keuze voor de gemiddelde koper die bewust naar RVS wil overstappen.",
-        "affiliate_url": "TODO_AFFILIATE_URL",
+        "affiliate_url": "TODO_AFFILIATE_URL",  # TODO: voeg echte affiliate URL toe
+        "rating": None,           # TODO: beoordelingsscore invullen zodra product live gaat
+        "rating_count": None,     # TODO: aantal beoordelingen invullen zodra product live gaat
+        "availability": None,     # TODO: bijwerken naar "InStock" of "OutOfStock" zodra URL beschikbaar is
+        "price": None,            # TODO: actuele verkoopprijs controleren en invoegen
+        "description": None,      # TODO: redactionele productomschrijving schrijven
         "image": "images/products/rvs-koekenpannen/bk-superior-tri-ply-28.jpg",
     },
     "bk_bright_28": {
@@ -247,7 +277,12 @@ PRODUCTS = {
             "niet de beste keuze voor maximale warmterespons",
         ],
         "verdict": "Goede budgetvriendelijke instapper voor wie een eenvoudige RVS-koekenpan zonder coating zoekt.",
-        "affiliate_url": "TODO_AFFILIATE_URL",
+        "affiliate_url": "TODO_AFFILIATE_URL",  # TODO: voeg echte affiliate URL toe
+        "rating": None,           # TODO: beoordelingsscore invullen zodra product live gaat
+        "rating_count": None,     # TODO: aantal beoordelingen invullen zodra product live gaat
+        "availability": None,     # TODO: bijwerken naar "InStock" of "OutOfStock" zodra URL beschikbaar is
+        "price": None,            # TODO: actuele verkoopprijs controleren en invoegen
+        "description": None,      # TODO: redactionele productomschrijving schrijven
         "image": "images/products/rvs-koekenpannen/bk-bright-28.jpg",
     },
 }

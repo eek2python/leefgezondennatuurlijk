@@ -1,5 +1,5 @@
 # Product Monitor Report — Fase 2
-**Gegenereerd op:** 2026-03-25T07:50:50  
+**Gegenereerd op:** 2026-03-25T16:30:48  
 **Modus:** zonder live HTTP-checks (--no-live)
 
 > ⚠️ Dit rapport is uitsluitend ter informatie.
@@ -11,15 +11,15 @@
 |--------|--------|
 | Categorieën gecontroleerd | **7** |
 | Totaal gecontroleerde producten | **119** |
-| Geldige producten (status OK) | **102** |
-| Gemarkeerde producten | **17** |
-| Handmatige beoordeling vereist | **5** |
+| Geldige producten (status OK) | **103** |
+| Gemarkeerde producten | **16** |
+| Handmatige beoordeling vereist | **4** |
 | Gebroken URL's | **0** |
 | Beschikbaarheidsmismatches | **0** |
 | Prijsalerts | **0** |
 | Ontbrekende metadata | **7** |
 | Merkdiversiteitsovertredingen | **2** |
-| Vervangingsbehoeften | **12** |
+| Vervangingsbehoeften | **11** |
 
 ## B. koekenpannen — Keramische PFAS-vrije koekenpannen
 **URL:** `/koekenpannen/` | **Gerankt:** 55 | ✅ 53 OK | ⚠️ 2 gemarkeerd
@@ -54,7 +54,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€74.81` | gedetecteerd `n.v.t.` | segment: `premium`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 - ❌ Consistentieprobleem: Prijs €74.81 past niet bij price_range '€€€€' (verwacht: €80.0–€9999.0).
 
 #### ✅ Kochstar Essenz
@@ -146,7 +145,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€11.99` | gedetecteerd `n.v.t.` | segment: `budget`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 
 #### ✅ BK Easy Induction Ceramic
 - **Merk:** BK | **Slug:** `bk-easy-induction-24`
@@ -179,16 +177,14 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€43.0` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 
 #### ⚠️ BK Enjoy
 - **Merk:** BK | **Slug:** `bk-enjoy-24`
 - **Status:** `FLAG`
 - **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/bk-enjoy-aluminium-koekenpan-o-24cm-deksel...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `OutStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Beschikbaarheid:** opgeslagen `OutOfStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€29.9` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 - ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid.
 
 #### ✅ IKEA HEMLAGAD
@@ -231,7 +227,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€84.95` | gedetecteerd `n.v.t.` | segment: `premium`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 
 #### ✅ BK Easy Induction Ceramic
 - **Merk:** BK | **Slug:** `bk_easy_induction_26`
@@ -370,7 +365,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€95.88` | gedetecteerd `n.v.t.` | segment: `premium`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 
 #### ✅ GreenChef Diamond Induction
 - **Merk:** GreenChef | **Slug:** `greenchef-diamond-30`
@@ -395,7 +389,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€55.95` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 
 #### ✅ Tefal Renew+
 - **Merk:** Tefal | **Slug:** `tefal-renew-30`
@@ -437,7 +430,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€101.8` | gedetecteerd `n.v.t.` | segment: `premium`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 
 #### ✅ Combekk Ceramic Pro
 - **Merk:** Combekk | **Slug:** `bk-easy-induction-32`
@@ -462,7 +454,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€49.99` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 
 #### ✅ Tefal Renew+
 - **Merk:** Tefal | **Slug:** `tefal-renew-32`
@@ -477,7 +468,7 @@
 - **Status:** `FLAG`
 - **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/blue-diamond-koekenpan-o32cm-blauw-inducti...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `OutStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Beschikbaarheid:** opgeslagen `OutOfStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€52.9` | gedetecteerd `n.v.t.` | segment: `middenklasse`
 - ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid.
 
@@ -488,7 +479,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€17.99` | gedetecteerd `n.v.t.` | segment: `budget`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 
 #### ✅ Scanpan HaptIQ
 - **Merk:** Scanpan | **Slug:** `scanpan_ceramic_32`
@@ -709,14 +699,13 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€69.9` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 
 #### ⚠️ Kochstar Essenz Keramische Hapjespan
 - **Merk:** Kochstar | **Slug:** `kochstar_essenz_24`
 - **Status:** `FLAG`
 - **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/kochstar-essenz-keramische-inductie-kookpa...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `OutStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Beschikbaarheid:** opgeslagen `OutOfStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€19.99` | gedetecteerd `n.v.t.` | segment: `budget`
 - ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid.
 
@@ -741,7 +730,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€46.79` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 - ❌ Regelovertreding: Materiaal 'Koolstofstaal' bevat geen van de toegestane keywords: ['keramisch', 'ceramic', 'thermolon', 'ceraforce', 'greblon', 'siliconenhars'].
 - 🔍 **Handmatige beoordeling vereist.**
 - 🔄 **Vervanging nodig.** Alle suggesties vereisen handmatige redactionele beoordeling. Dit systeem publiceert nooit automatisch wijzigingen in productrankings.
@@ -772,7 +760,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€41.93` | gedetecteerd `n.v.t.` | segment: `budget`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 - ❌ Consistentieprobleem: Prijs €41.93 past niet bij price_range '€' (verwacht: €0.01–€30.0).
 
 #### ✅ WOLL Eco Lite QXR
@@ -857,7 +844,7 @@
 ---
 
 ## B. wokpannen — PFAS-vrije wokpannen
-**URL:** `/wokpannen/` | **Gerankt:** 16 | ✅ 13 OK | ⚠️ 3 gemarkeerd
+**URL:** `/wokpannen/` | **Gerankt:** 16 | ✅ 14 OK | ⚠️ 2 gemarkeerd
 
 | Check | Resultaat |
 |-------|-----------|
@@ -866,8 +853,8 @@
 | Prijsalerts | 0 |
 | Ontbrekende metadata | 0 |
 | Merkdiversiteitsovertredingen | 0 |
-| Handmatige beoordeling | 1 |
-| Vervangingsbehoeften | 1 |
+| Handmatige beoordeling | 0 |
+| Vervangingsbehoeften | 0 |
 
 ### C. Per-product detail
 
@@ -941,7 +928,7 @@
 - **Status:** `FLAG`
 - **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/bk-easy-basic-ceramic-wokpan-28-cm/9300000...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `OutStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Beschikbaarheid:** opgeslagen `OutOfStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€49.9` | gedetecteerd `n.v.t.` | segment: `middenklasse`
 - ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid.
 
@@ -970,28 +957,21 @@
 - **Prijs:** opgeslagen `€57.42` | gedetecteerd `n.v.t.` | segment: `budget`
 - ❌ Consistentieprobleem: Prijs €57.42 past niet bij price_range '€' (verwacht: €0.01–€30.0).
 
-#### ❌ Scanpan TechnIQ Wokpan
+#### ✅ Scanpan TechnIQ Wokpan
 - **Merk:** Scanpan | **Slug:** `scanpan_techniq_wok_30`
-- **Status:** `REPLACE`
+- **Status:** `OK`
 - **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/scanpan-techniq-wok-30-cm/9300000003116871...`
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€276.95` | gedetecteerd `n.v.t.` | segment: `premium`
-- ❌ Regelovertreding: Materiaal 'Gerecycled aluminium' bevat geen van de toegestane keywords: ['keramisch', 'ceramic', 'thermolon', 'ceraforce', 'greblon'].
-- 🔍 **Handmatige beoordeling vereist.**
-- 🔄 **Vervanging nodig.** Alle suggesties vereisen handmatige redactionele beoordeling. Dit systeem publiceert nooit automatisch wijzigingen in productrankings.
-  - Kandidaat: **Primecook Keramische Wokpan** (score 4.0/7) ⚠️
-  - Kandidaat: **GreenPan Barcelona Evershine Wokpan** (score 4.0/7) ⚠️
-  - Kandidaat: **GreenPan Copenhagen Keramische Wokpan** (score 4.0/7) ⚠️
 
 #### ⚠️ BK Balans+ Keramische Wokpan
 - **Merk:** BK | **Slug:** `bk_balans_wok_30`
 - **Status:** `FLAG`
 - **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.kitchenandmore.nl/BK-Balans-Steelwok-30-cm?gad_source=1&ga...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `OutStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Beschikbaarheid:** opgeslagen `OutOfStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€99.95` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Prijs €99.95 past niet bij price_range '€€' (verwacht: €10.0–€80.0).
 - ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid.
 
 #### ✅ GreenPan Copenhagen Keramische Wokpan
@@ -1009,7 +989,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€74.0` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 
 ---
 
@@ -1132,7 +1111,6 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€109.99` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
 - ❌ Consistentieprobleem: Prijs €109.99 past niet bij price_range '€€' (verwacht: €10.0–€80.0).
 
 #### ✅ Bourgini Slimfit Airfryer XL – 5 L
