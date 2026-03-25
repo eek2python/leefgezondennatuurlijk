@@ -1,5 +1,5 @@
 # Product Monitor Report — Fase 2
-**Gegenereerd op:** 2026-03-25T05:56:28  
+**Gegenereerd op:** 2026-03-25T06:43:12  
 **Modus:** zonder live HTTP-checks (--no-live)
 
 > ⚠️ Dit rapport is uitsluitend ter informatie.
@@ -533,7 +533,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `premium`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
+- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -551,7 +551,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
+- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -569,7 +569,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `onbekend`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
+- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -587,7 +587,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
+- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -605,7 +605,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `premium`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
+- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -623,7 +623,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `premium`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
+- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -641,7 +641,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `budget`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
+- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.

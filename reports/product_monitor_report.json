@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-25T05:56:28",
+  "generated_at": "2026-03-25T06:43:12",
   "live_checks": false,
   "summary": {
     "categories_checked": 7,
@@ -2154,8 +2154,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "availability",
             "rating_count",
+            "availability",
             "rating"
           ],
           "validation_valid": false,
@@ -2212,8 +2212,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "availability",
             "rating_count",
+            "availability",
             "rating"
           ],
           "validation_valid": false,
@@ -2270,8 +2270,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "availability",
             "rating_count",
+            "availability",
             "rating"
           ],
           "validation_valid": false,
@@ -2328,8 +2328,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "availability",
             "rating_count",
+            "availability",
             "rating"
           ],
           "validation_valid": false,
@@ -2386,8 +2386,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "availability",
             "rating_count",
+            "availability",
             "rating"
           ],
           "validation_valid": false,
@@ -2444,8 +2444,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "availability",
             "rating_count",
+            "availability",
             "rating"
           ],
           "validation_valid": false,
@@ -2502,8 +2502,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "availability",
             "rating_count",
+            "availability",
             "rating"
           ],
           "validation_valid": false,
