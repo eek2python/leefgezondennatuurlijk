@@ -1,0 +1,446 @@
+Implement Phase 2 of the product monitoring system for the Django affiliate website.
+
+IMPORTANT INTENT
+Use the existing product data files as the source of truth.
+Do NOT invent a new product architecture.
+Do NOT auto-publish changes.
+Do NOT auto-modify live rankings or content.
+This phase should build real monitoring and reporting on top of the current products_<category>.py files.
+
+==================================================
+PROJECT CONTEXT
+==================================================
+
+The website already stores product metadata inside category product files such as:
+- products_koekenpannen.py
+- products_hapjespannen.py
+- products_wokpannen.py
+- products_snijplanken.py
+- products_airfryers.py
+- products_vershoudcontainers.py
+- products_rvs_koekenpannen.py
+
+Example product structure already includes fields like:
+- slug
+- name
+- description
+- brand
+- diameter
+- material
+- features
+- rating
+- rating_count
+- price
+- currency
+- availability
+- affiliate_url
+- award
+- price_range
+- image
+- image_path
+- pros
+- cons
+- verdict
+
+Example:
+{
+    "slug": "greenpan-barcelona-pro-28",
+    "name": "GreenPan Barcelona Pro",
+    "description": "Hoogwaardige keramische PFAS-vrije pan met Thermolon Infinity Pro-coating en inductiebodem.",
+    "brand": "GreenPan",
+    "diameter": 28,
+    "material": "Keramisch",
+    "features": ["Inductie", "Ovenbestendig"],
+    "rating": 5,
+    "rating_count": 230,
+    "price": 88.09,
+    "currency": "EUR",
+    "availability": "InStock",
+    "affiliate_url": "https://www.bol.com/...",
+    "award": "🏆 Beste keuze",
+    "price_range": "€€€",
+    "image": "koekenpan01_greenpan_barcelona_pro.jpg",
+    "image_path": "images/koekenpannen",
+    "pros": [...],
+    "cons": [...],
+    "verdict": "..."
+}
+
+==================================================
+GOALS OF THIS PHASE
+==================================================
+
+Build a practical monitoring layer that:
+
+1. loads all current products from the existing products_<category>.py files
+2. validates them against the rule system from Phase 1
+3. checks data completeness and consistency
+4. compares stored availability/price fields against current reachable product page conditions where possible
+5. reports products that may need editorial review
+6. proposes replacement candidates only as suggestions, never auto-applies them
+
+==================================================
+STRICT GUARDRAILS
+==================================================
+
+- Do NOT auto-edit any products_<category>.py file
+- Do NOT auto-edit rankings_<category>.py
+- Do NOT auto-edit content_<category>.py
+- Do NOT auto-publish any replacements
+- Do NOT weaken the category rules
+- Do NOT infer PFAS-free or safety claims if unclear
+- If uncertain, flag for manual review
+- Preserve the current website rendering and architecture
+
+==================================================
+PHASE 2 IMPLEMENTATION TASKS
+==================================================
+
+Build the following:
+
+1. Product source loader
+2. Field normalization / consistency checks
+3. Stored-data validation
+4. Product page reachability check
+5. Availability consistency check
+6. Price consistency / change detection
+7. Replacement candidate suggestion support
+8. Human-readable reports
+
+==================================================
+1. PRODUCT SOURCE LOADER
+==================================================
+
+Create a loader that imports and reads all current product dictionaries from the existing category files.
+
+It should support these categories explicitly:
+- koekenpannen -> products_koekenpannen.py
+- rvs-koekenpannen -> products_rvs_koekenpannen.py
+- hapjespannen -> products_hapjespannen.py
+- wokpannen -> products_wokpannen.py
+- snijplanken -> products_snijplanken.py
+- airfryers -> products_airfryers.py
+- vershoudcontainers -> products_vershoudcontainers.py
+
+Requirements:
+- build an explicit category source registry
+- load product dicts safely
+- fail gracefully if a category file or variable is missing
+- report missing categories instead of crashing
+
+==================================================
+2. FIELD NORMALIZATION / CONSISTENCY CHECKS
+==================================================
+
+Create a normalization and consistency layer for currently stored fields.
+
+Check and normalize where possible:
+- brand
+- material
+- diameter
+- capacity
+- price
+- currency
+- availability
+- affiliate_url
+- image
+- image_path
+- rating
+- rating_count
+- price_range
+
+Important:
+- do not overwrite source files
+- only normalize in-memory for validation/reporting purposes
+- flag suspicious or missing values
+
+Examples of checks:
+- price should be numeric if present
+- currency should normally be EUR
+- availability should be one of a controlled list like:
+  - InStock
+  - OutOfStock
+  - PreOrder
+  - LimitedAvailability
+  - Unknown
+- affiliate_url should be a non-placeholder URL
+- image + image_path together should form a plausible static asset path
+- rating should be numeric and within expected range
+- price_range should match the stored price approximately if possible
+
+==================================================
+3. STORED-DATA VALIDATION
+==================================================
+
+Extend the Phase 1 rule engine so it now validates the actual stored product objects.
+
+Per product, validate:
+- category fit
+- material fit
+- rule compliance
+- missing required metadata
+- brand diversity risk
+- suspicious values
+- mismatch between product name/description/material/features and category expectations
+
+Examples:
+- RVS product in keramische koekenpannen -> flag
+- unclear PFAS positioning in PFAS-vrije category -> manual review
+- snijplank with glass/plastic signals -> invalid
+- vershoudbakje that is not glass -> invalid
+- broken or placeholder affiliate_url -> flag
+
+==================================================
+4. PRODUCT PAGE REACHABILITY CHECK
+==================================================
+
+Implement a safe HTTP product-page check for affiliate_url / product page URLs.
+
+Requirements:
+- perform lightweight HEAD or GET checks
+- follow redirects safely
+- time out safely
+- do not hammer websites
+- use respectful request behavior
+- classify page status:
+  - OK
+  - REDIRECTED
+  - BROKEN
+  - BLOCKED
+  - UNKNOWN
+
+If live checks are restricted in the current runtime, create the implementation structure and provide a testable fallback mode.
+But prefer real checks if technically possible within the environment.
+
+Store report info such as:
+- final URL if redirected
+- HTTP status code
+- page reachable yes/no
+- notes
+
+==================================================
+5. AVAILABILITY CONSISTENCY CHECK
+==================================================
+
+Use the stored field `availability` as the current site value.
+Then compare it, where possible, with signals from the product page.
+
+Important:
+- do not try to do fragile deep scraping unless simple availability signals are feasible
+- if the page cannot be reliably interpreted, classify as Unknown and flag for manual review
+- if stored availability is InStock but page is clearly unavailable or broken, flag it
+- if stored availability is OutOfStock but page appears active and available, flag for editorial check
+
+Output values:
+- stored_availability
+- detected_availability
+- availability_consistency: MATCH / MISMATCH / UNKNOWN
+
+==================================================
+6. PRICE CONSISTENCY / CHANGE DETECTION
+==================================================
+
+Use the stored field `price` as the website’s current recorded price.
+Then compare it, where possible, with a newly detected live price.
+
+Requirements:
+- if live price cannot be reliably extracted, do not invent it
+- if a live price is found:
+  - compare against stored price
+  - compute price_change_pct
+- flag if:
+  - price missing
+  - price invalid
+  - large change threshold exceeded (configurable, e.g. 10%)
+- keep this report-only, never auto-update product files
+
+Output values:
+- stored_price
+- detected_price
+- currency
+- price_change_pct
+- price_alert: True/False
+
+==================================================
+7. REPLACEMENT CANDIDATE SUGGESTION SUPPORT
+==================================================
+
+Build on the Phase 1 candidate suggestion logic.
+
+If a product is flagged for replacement because of:
+- invalid category fit
+- unavailable / broken page
+- severe rule mismatch
+- clearly outdated status
+
+Then suggest replacement candidates from a candidate pool.
+
+Requirements:
+- do not auto-search the full internet unless current project infrastructure already supports it
+- first support replacement suggestions from an internal candidate pool if available
+- if no candidate pool exists yet, structure the code so a future candidate source can be plugged in
+- output suggestions based on:
+  1. category match
+  2. material/safety fit
+  3. size/capacity match
+  4. price segment
+  5. rating strength
+  6. availability
+  7. brand diversity
+
+Very important:
+- suggestions only
+- no automatic insertion into rankings
+- if no safe suggestion exists, manual review required
+
+==================================================
+8. REPORTING
+==================================================
+
+Generate clear reports in:
+- reports/product_monitor_report.json
+- reports/product_monitor_report.md
+
+The report should contain:
+
+A. Summary
+- categories checked
+- total products checked
+- valid products
+- flagged products
+- manual review count
+- broken URL count
+- availability mismatches
+- price alerts
+- brand diversity warnings
+
+B. Per-category section
+For each category:
+- total products
+- valid
+- flagged
+- missing metadata
+- broken URLs
+- price alerts
+- availability mismatches
+- replacement-needed items
+
+C. Per-product detail
+Include fields like:
+- category
+- product name
+- slug
+- brand
+- stored price
+- detected price
+- price change
+- stored availability
+- detected availability
+- URL status
+- validation result
+- warnings
+- errors
+- manual review required
+- replacement suggestions if any
+
+==================================================
+TECHNICAL FILES TO CREATE / MODIFY
+==================================================
+
+Use this approximate structure:
+
+services/
+- product_sources.py
+- product_normalization.py
+- product_validation.py        (extend if already exists)
+- product_monitoring.py
+- replacement_candidates.py    (extend if already exists)
+
+scripts/
+- check_products.py
+- monitor_products.py
+
+reports/
+- product_monitor_report.json
+- product_monitor_report.md
+
+If some files already exist from Phase 1, extend them rather than duplicating logic.
+
+==================================================
+CATEGORY SOURCE REGISTRY
+==================================================
+
+Create an explicit registry such as:
+CATEGORY_PRODUCT_SOURCES = {
+    "koekenpannen": {
+        "module": "...products_koekenpannen",
+        "variable": "PRODUCTS",
+        "rule_key": "keramische_koekenpannen",
+    },
+    "rvs-koekenpannen": {
+        "module": "...products_rvs_koekenpannen",
+        "variable": "PRODUCTS",
+        "rule_key": "rvs_koekenpannen",
+    },
+    ...
+}
+
+Keep this explicit and readable.
+
+==================================================
+MANUAL REVIEW FIRST PRINCIPLE
+==================================================
+
+Whenever uncertainty exists, prefer:
+- FLAG
+- MANUAL_REVIEW
+
+instead of:
+- permissive acceptance
+- replacement approval
+- data mutation
+
+==================================================
+OPTIONAL IMPROVEMENTS IF LOW-RISK
+==================================================
+
+If feasible and low-risk, also add:
+- a small config file for thresholds such as:
+  - large price change percentage
+  - request timeout
+  - max redirects
+- a helper that derives a full static image path from image_path + image
+- a helper that approximates whether price_range fits the numeric price
+- a helper that checks award consistency against allowed badge policy
+
+Do not over-engineer.
+
+==================================================
+DO NOT DO THESE THINGS
+==================================================
+
+- do not redesign templates
+- do not rewrite website pages
+- do not auto-update schema.org output
+- do not auto-edit prices in product files
+- do not auto-remove products from rankings
+- do not auto-insert replacement products
+- do not invent live price/availability if extraction fails
+
+==================================================
+EXPECTED OUTPUT AFTER IMPLEMENTATION
+==================================================
+
+After implementation, output:
+
+1. exact files created
+2. exact files modified
+3. registry of category product sources
+4. example validation result for at least 2 real products
+5. example monitoring result for at least 2 real products
+6. example report summary
+7. list of missing fields or blockers for fuller automation
+8. confirmation that:
+   - no live rankings were changed
+   - no source product files were auto-modified
+   - uncertain cases are flagged for manual review
