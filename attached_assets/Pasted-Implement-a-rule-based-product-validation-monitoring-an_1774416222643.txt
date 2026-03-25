@@ -1,0 +1,668 @@
+Implement a rule-based product validation, monitoring, and replacement-support system for the Django affiliate website.
+
+IMPORTANT INTENT
+This task is NOT to invent category rules.
+This task IS to encode and enforce the exact rules provided below.
+
+The system must help maintain and optimize the product lists over time while protecting editorial quality and safety requirements.
+
+==================================================
+PROJECT GOAL
+==================================================
+
+Build a maintainable rule engine and monitoring layer for these product categories:
+
+1. houten snijplanken
+2. keramische koekenpannen
+3. rvs koekenpannen
+4. PFAS-vrije hapjespannen
+5. PFAS-vrije wokpannen
+6. PFAS-vrije airfryers
+7. glazen vershoudbakjes
+
+The system must:
+- validate whether current listed products still fit the category rules
+- support weekly checks for availability, price changes, product-page validity, and rule compliance
+- suggest replacement candidates when a product becomes invalid or unavailable
+- NEVER auto-publish changes
+- NEVER auto-change live rankings
+- flag unclear or unsafe cases for manual review
+
+This is a support and monitoring system only.
+
+==================================================
+IMPLEMENTATION SCOPE
+==================================================
+
+Build the following:
+
+1. Rule files per category
+2. A shared validation engine
+3. A weekly product-check script
+4. Replacement-candidate selection logic
+5. A human-readable report output
+6. Clear separation between:
+   - validation
+   - monitoring
+   - candidate suggestion
+   - manual review cases
+
+Do NOT redesign the website.
+Do NOT migrate to database models.
+Do NOT rewrite the category architecture.
+Do NOT modify current live product rankings automatically.
+Do NOT modify templates unless absolutely necessary for exposing reporting/debug info.
+Keep implementation explicit, maintainable, and production-safe.
+
+==================================================
+CURRENT CATEGORY MODEL CONTEXT
+==================================================
+
+The site already uses category data files in this general structure:
+- products_<category>.py
+- rankings_<category>.py
+- content_<category>.py
+
+Use and support this structure.
+Do not break existing imports or page rendering.
+
+The new monitoring system should sit alongside the current content architecture.
+
+==================================================
+GLOBAL RULES (APPLY TO ALL CATEGORIES)
+==================================================
+
+Encode these global rules exactly:
+
+GLOBAL RULES:
+- max 2 products per brand per list
+- products must be available in the Netherlands or via a logical NL webshop
+- products with unclear material or safety claims must be flagged
+- replacements must match:
+  - category
+  - material
+  - size or capacity where relevant
+  - price segment
+  - review strength
+  - availability
+  - brand diversity
+- if no safe replacement is found:
+  - do NOT auto-replace
+  - flag for manual review
+
+GLOBAL PRODUCT QUALITY RULES:
+- product must have a valid, non-placeholder product page URL
+- product must have a clear product title and category fit
+- product must not conflict with its own material/coating claims
+- product must not be accepted if core category safety/material requirements are uncertain
+
+GLOBAL MAINTENANCE RULES:
+- weekly checks should evaluate:
+  - availability
+  - price change
+  - broken/missing product page
+  - rule compliance
+- significant issues should be reported, not auto-applied
+- if a product becomes invalid or unavailable, the system may suggest replacements, but never auto-publish them
+
+==================================================
+CATEGORY RULES TO ENCODE
+==================================================
+
+Use these rules exactly as the source of truth.
+
+--------------------------------------------------
+1. HOUTEN SNIJPLANKEN
+--------------------------------------------------
+
+CATEGORY_KEY: houten_snijplanken
+
+Harde toelatingseisen:
+- hoofdmateriaal moet hout of bamboe zijn
+- product moet duidelijk als snijplank bedoeld zijn
+- geen volledige kunststof snijplanken in deze categorie
+- product moet voedselveilig zijn gepositioneerd
+- formaat moet bruikbaar zijn voor dagelijks gebruik
+
+Voorkeurscriteria:
+- hardhout of kwalitatief degelijk hout
+- end-grain of stevige massieve opbouw is pluspunt
+- goede dikte/stabiliteit is pluspunt
+- praktisch formaat voor thuisgebruik is pluspunt
+- aantoonbaar geschikt voor dagelijks gebruik
+
+Uitsluitingscriteria:
+- glas, kunststof, marmer of composiet uitsluiten
+- te kleine decoratieve plankjes uitsluiten
+- zeer dunne planken met lage duurzaamheid uitsluiten
+- producten met onduidelijke houtsoort of twijfelachtige afwerking kritisch behandelen
+
+Prijssegmenten:
+- budget: lage instap, functioneel
+- middenklasse: degelijk dagelijks gebruik
+- premium: massief, end-grain, hoogwaardige houtsoort
+
+Badges:
+- Beste keuze
+- Budget keuze
+- Premium keuze
+- optioneel: Beste houtsoort
+
+Vervangingslogica:
+- vervang alleen door houten of bamboe snijplank
+- vergelijkbaar formaat
+- vergelijkbare kwaliteit of segment
+- voorkeur voor degelijk merk of duidelijke materiaalclaim
+
+--------------------------------------------------
+2. KERAMISCHE KOEKENPANNEN
+--------------------------------------------------
+
+CATEGORY_KEY: keramische_koekenpannen
+
+Harde toelatingseisen:
+- pan moet duidelijk keramisch of keramisch-gecoat zijn
+- product moet expliciet PFAS-vrij gepositioneerd zijn, of de coating moet dat duidelijk ondersteunen
+- geen PTFE/Teflon-producten
+- geen pure RVS-pannen in deze categorie
+- geschikt voor dagelijks kookgebruik
+
+Voorkeurscriteria:
+- geschikt voor inductie is sterke voorkeur
+- ovenbestendig is pluspunt
+- goede reputatie qua coating en gebruiksgemak
+- goede balans tussen gewicht, warmteverdeling en onderhoud
+- beschikbaar in relevante maat
+
+Uitsluitingscriteria:
+- onzeker PFAS-profiel
+- PTFE / Teflon / klassieke antiaanbaklaag
+- RVS zonder keramische laag
+- hybride of materiaalclaims die niet helder zijn, tenzij echt passend
+
+Prijssegmenten:
+- budget: instapmodel
+- middenklasse: beste prijs-kwaliteit
+- premium: topafwerking / premium coating / merksterkte
+
+Badges:
+- Beste keuze
+- Budget keuze
+- Premium keuze
+- optioneel: Meest gekozen
+
+Vervangingslogica:
+- vervang alleen door keramische koekenpan
+- PFAS-vrije positionering
+- zelfde formaat
+- vergelijkbare prijsklasse
+- vergelijkbaar gebruiksprofiel
+
+--------------------------------------------------
+3. RVS KOEKENPANNEN
+--------------------------------------------------
+
+CATEGORY_KEY: rvs_koekenpannen
+
+Harde toelatingseisen:
+- pan moet hoofdzakelijk RVS zijn
+- geen klassieke antiaanbaklaag
+- geen keramische pan in deze categorie
+- duidelijke RVS-positionering
+- geschikt voor serieus bakgebruik
+
+Voorkeurscriteria:
+- meerlagenbodem of meerlagenconstructie is pluspunt
+- geschikt voor inductie is sterke voorkeur
+- ovenbestendig is pluspunt
+- goede warmteverdeling en bouwkwaliteit
+- reputatie voor duurzaamheid
+
+Uitsluitingscriteria:
+- PTFE / Teflon / klassieke coating
+- keramische pannen
+- onduidelijke hybride claims die niet helder RVS zijn
+- zeer lichte budget-RVS-pannen zonder duidelijke kwaliteitsbasis kritisch behandelen
+
+Prijssegmenten:
+- budget: eenvoudige instap-RVS
+- middenklasse: degelijke RVS-pan
+- premium: tri-ply / 5-ply / 7-ply / sterke premiumlijnen
+
+Badges:
+- Beste keuze
+- Budget keuze
+- Premium keuze
+- optioneel: Beste voor inductie
+
+Vervangingslogica:
+- vervang alleen door echte RVS koekenpan
+- geen klassieke antiaanbaklaag
+- zelfde formaat
+- vergelijkbaar prijssegment
+- vergelijkbare constructiekwaliteit
+
+--------------------------------------------------
+4. PFAS-VRIJE HAPJESPANNEN
+--------------------------------------------------
+
+CATEGORY_KEY: pfas_vrije_hapjespannen
+
+Harde toelatingseisen:
+- product moet een hapjespan / sautépan-achtig model zijn
+- PFAS-vrije positionering moet duidelijk zijn
+- geen twijfel over coating of materiaal
+- geen gewone koekenpan als vervanger
+
+Voorkeurscriteria:
+- deksel is pluspunt als relevant
+- geschikt voor inductie
+- ovenbestendig is pluspunt
+- goede diepte en bruikbaarheid voor dagelijks koken
+- goede balans tussen gewicht en warmteverdeling
+
+Uitsluitingscriteria:
+- PTFE / Teflon / onduidelijke coating
+- verkeerd producttype
+- alleen wokachtige vorm zonder hapjespanfunctie
+
+Prijssegmenten:
+- budget
+- middenklasse
+- premium
+
+Badges:
+- Beste keuze
+- Budget keuze
+- Premium keuze
+- optioneel: Beste voor ovengebruik
+
+Vervangingslogica:
+- vervang alleen door PFAS-vrije hapjespan
+- zelfde diameter indien lijst formaatgebonden is
+- vergelijkbare prijsklasse
+- vergelijkbare functionaliteit
+
+--------------------------------------------------
+5. PFAS-VRIJE WOKPANNEN
+--------------------------------------------------
+
+CATEGORY_KEY: pfas_vrije_wokpannen
+
+Harde toelatingseisen:
+- product moet duidelijk wokpan zijn
+- PFAS-vrije positionering moet duidelijk zijn
+- geen gewone koekenpan of hapjespan als vervanger
+
+Voorkeurscriteria:
+- geschikt voor hoge hitte
+- geschikt voor inductie als relevant
+- goede vorm en diepte
+- goede handgreep / hulpgreep is pluspunt
+- dagelijks gebruik en robuustheid
+
+Uitsluitingscriteria:
+- PTFE / Teflon / onduidelijke coating
+- te vlak model dat feitelijk geen wok is
+- verkeerd formaat voor de lijst
+
+Prijssegmenten:
+- budget
+- middenklasse
+- premium
+
+Badges:
+- Beste keuze
+- Budget keuze
+- Premium keuze
+- optioneel: Beste voor hoge temperatuur
+
+Vervangingslogica:
+- vervang alleen door PFAS-vrije wokpan
+- vergelijkbare diameter
+- vergelijkbaar gebruiksprofiel
+- vergelijkbare prijsklasse
+
+--------------------------------------------------
+6. PFAS-VRIJE AIRFRYERS
+--------------------------------------------------
+
+CATEGORY_KEY: pfas_vrije_airfryers
+
+Harde toelatingseisen:
+- product moet airfryer zijn
+- PFAS-vrije claim of duidelijke coating-/materiaalinformatie moet aanwezig zijn
+- geen onduidelijkheid over mand / binnenwerk bij opname in lijst
+
+Voorkeurscriteria:
+- capaciteit passend bij de lijst
+- makkelijk schoon te maken
+- praktische bediening
+- betrouwbare mand / binnenwerk-materialen
+- goede prijs-kwaliteit
+
+Uitsluitingscriteria:
+- onduidelijke of tegenstrijdige materiaalclaims
+- geen duidelijke basis voor PFAS-vrije positionering
+- zeer generieke private-label producten zonder betrouwbare onderbouwing kritisch behandelen
+
+Prijssegmenten:
+- budget
+- middenklasse
+- premium
+
+Badges:
+- Beste keuze
+- Budget keuze
+- Premium keuze
+- optioneel: PFAS-vrije keuze of Beste gebruiksgemak
+
+Vervangingslogica:
+- vervang alleen door airfryer met voldoende duidelijke PFAS-vrije of materiaalveilige positionering
+- vergelijkbare inhoud
+- vergelijkbare prijsklasse
+- vergelijkbare doelgroep
+
+--------------------------------------------------
+7. GLAZEN VERSHOUDBAKJES
+--------------------------------------------------
+
+CATEGORY_KEY: glazen_vershoudbakjes
+
+Harde toelatingseisen:
+- hoofdmateriaal van de bak moet glas zijn
+- bij voorkeur voedselveilig borosilicaatglas als dat beschikbaar is
+- product moet duidelijk vershoudbakje / bewaarbakje zijn
+- geen volledige kunststof sets in deze categorie
+
+Voorkeurscriteria:
+- lekdicht is pluspunt
+- geschikt voor oven / magnetron / vriezer waar relevant
+- praktisch dekselsysteem
+- goede set-opbouw voor dagelijks gebruik
+- duidelijke voedselveilige positionering
+
+Uitsluitingscriteria:
+- volledig kunststof vershoudbakjes
+- zeer dun glas zonder duidelijke kwaliteit
+- decoratieve glazen schaaltjes zonder echte vershoudfunctie
+- onheldere materiaalmix
+
+Prijssegmenten:
+- budget
+- middenklasse
+- premium
+
+Badges:
+- Beste keuze
+- Budget keuze
+- Premium keuze
+- optioneel: Beste lekdicht
+
+Vervangingslogica:
+- vervang alleen door glazen vershoudbakjes
+- vergelijkbare setgrootte
+- vergelijkbaar gebruiksprofiel
+- vergelijkbare prijsklasse
+
+==================================================
+TECHNICAL IMPLEMENTATION REQUIREMENTS
+==================================================
+
+Create a maintainable structure for these rules.
+
+Preferred output structure:
+- rules/
+    - __init__.py
+    - base_rules.py
+    - houten_snijplanken.py
+    - keramische_koekenpannen.py
+    - rvs_koekenpannen.py
+    - pfas_vrije_hapjespannen.py
+    - pfas_vrije_wokpannen.py
+    - pfas_vrije_airfryers.py
+    - glazen_vershoudbakjes.py
+- services/
+    - product_validation.py
+    - product_monitoring.py
+    - replacement_candidates.py
+- scripts/
+    - check_products.py
+
+Use explicit Python structures. Do not over-engineer.
+
+==================================================
+RULE FILE DESIGN
+==================================================
+
+Implement rule files in a structured Python format.
+
+Each category rule file should expose a single RULES dict with fields such as:
+- category_key
+- hard_requirements
+- preferred_criteria
+- exclusions
+- replacement_rules
+- price_segments
+- badge_policy
+- size_sensitive (bool)
+- size_field if relevant
+- capacity_sensitive (bool) if relevant
+- allowed_materials if applicable
+- excluded_keywords if applicable
+- notes
+
+The implementation does NOT need to solve natural language reasoning perfectly.
+It should create a practical rule layer that can validate available product metadata and flag uncertainty.
+
+If some current product fields do not yet exist, handle that gracefully:
+- flag missing required fields
+- do not crash
+- include them in the report as missing metadata
+
+==================================================
+VALIDATION ENGINE REQUIREMENTS
+==================================================
+
+Create a shared validation engine.
+
+Implement functions such as:
+- validate_product(product: dict, rules: dict) -> dict
+- validate_category_products(products: list[dict], rules: dict) -> list[dict]
+- check_brand_diversity(products: list[dict], max_per_brand: int = 2) -> dict
+- classify_price_segment(product: dict, rules: dict) -> str | None
+
+Validation result should include:
+- product name
+- category key
+- valid: True/False
+- errors: []
+- warnings: []
+- missing_fields: []
+- inferred_price_segment if possible
+- rule_flags: []
+- manual_review_required: True/False
+
+Validation must support:
+- missing metadata
+- uncertain safety/material fit
+- category mismatch
+- brand diversity warnings
+
+If a field is not available in the product data, do not invent it.
+Flag it.
+
+==================================================
+MONITORING ENGINE REQUIREMENTS
+==================================================
+
+Create monitoring logic for weekly checks.
+
+Implement support for:
+- availability check
+- product-page validity check
+- price change detection
+- rule compliance check
+
+Use safe, modular architecture.
+
+Expected monitor result per product:
+- product name
+- category
+- product URL
+- status: OK / FLAG / REPLACE / MANUAL_REVIEW
+- availability_status
+- page_status
+- current_price if available
+- previous_price if available
+- price_change_pct if available
+- validation_summary
+- replacement_needed: True/False
+
+IMPORTANT:
+Do not assume live scraping or APIs are already available.
+If some live checks cannot be fully implemented yet, create a clean placeholder adapter structure and a mock/example path.
+For example:
+- fetch_product_page_status(...)
+- fetch_product_availability(...)
+- fetch_product_price(...)
+
+If the current project does not yet have live source integrations, build the monitoring framework so it is ready for later integration.
+
+==================================================
+REPLACEMENT CANDIDATE LOGIC
+==================================================
+
+Create replacement candidate support logic.
+
+Implement a function such as:
+- suggest_replacement_candidates(product, category_rules, candidate_pool) -> list[dict]
+
+Logic must prioritize:
+1. category fit
+2. safety/material fit
+3. size/capacity match where relevant
+4. price segment match
+5. review strength
+6. availability
+7. brand diversity
+
+Very important:
+- do NOT auto-approve replacements
+- do NOT auto-write into rankings files
+- if no safe replacement is found, output manual review required
+
+If a candidate only partially matches, flag it instead of silently accepting it.
+
+==================================================
+CATEGORY MAPPING REQUIREMENTS
+==================================================
+
+Create a clear mapping from website categories to rule files.
+
+Example mapping:
+- snijplanken -> houten_snijplanken
+- koekenpannen -> keramische_koekenpannen
+- rvs-koekenpannen -> rvs_koekenpannen
+- hapjespannen -> pfas_vrije_hapjespannen
+- wokpannen -> pfas_vrije_wokpannen
+- airfryers -> pfas_vrije_airfryers
+- vershoudcontainers or vershoudbakjes -> glazen_vershoudbakjes
+
+Make this mapping explicit in code.
+
+==================================================
+REPORTING REQUIREMENTS
+==================================================
+
+The script must produce a human-readable report.
+
+Create output such as:
+- reports/product_check_report.json
+- reports/product_check_report.md
+
+The report should contain sections:
+1. valid products
+2. flagged products
+3. missing metadata
+4. products violating category rules
+5. products violating brand diversity
+6. products with broken or missing URLs
+7. products potentially needing replacement
+8. replacement candidates
+9. manual review required cases
+
+Make the report readable and useful for editorial review.
+
+==================================================
+SAFETY / QUALITY GUARDRAILS
+==================================================
+
+Strictly follow these guardrails:
+- never invent safety claims
+- never infer PFAS-free with certainty if the metadata is unclear
+- never auto-replace a product if category fit is uncertain
+- never mix RVS and ceramic categories improperly
+- never add plastic/glass/marble boards to houten snijplanken
+- never add fully plastic storage sets to glazen vershoudbakjes
+- never accept placeholder URLs as valid product pages
+- never auto-publish changes to live website data
+
+==================================================
+INTEGRATION REQUIREMENTS
+==================================================
+
+Integrate the new system without breaking the live site.
+
+Tasks:
+1. Add the new rule and service files
+2. Add the reporting script
+3. If useful, add a simple README or inline documentation explaining:
+   - how to run the checks
+   - where reports are generated
+   - which fields are still needed for fuller automation
+4. Do not refactor unrelated website code
+5. Do not change templates or rankings automatically
+
+==================================================
+OPTIONAL BUT USEFUL
+==================================================
+
+If possible, also add:
+- a central config file listing all category data sources
+- a basic field-normalization helper to normalize:
+  - brand
+  - material
+  - diameter
+  - capacity
+  - price_range
+  - affiliate_url / product_url
+
+But keep this simple and explicit.
+
+==================================================
+EXPECTED OUTPUT AFTER IMPLEMENTATION
+==================================================
+
+After implementation, output:
+
+1. exact files created
+2. exact files modified
+3. final rule structure used
+4. category-to-rule mapping used
+5. example validation result for at least 2 products
+6. example report summary
+7. list of current missing metadata fields that prevent fuller automation
+8. confirmation that:
+   - nothing was auto-published
+   - nothing in live rankings was auto-changed
+   - uncertain cases are flagged for manual review
+
+==================================================
+IMPORTANT FINAL INSTRUCTION
+==================================================
+
+Do not improvise new category rules.
+Do not weaken the rules.
+Implement the rules above as the source of truth.
+When uncertainty exists, prefer flagging for manual review over permissive acceptance.
