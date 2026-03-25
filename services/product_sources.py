@@ -152,6 +152,9 @@ def load_category(slug: str) -> dict:
         "description": "",
         "rule_key": "",
         "url_path": "",
+        "rankings_type": "list",
+        "rankings_raw": None,
+        "slug_to_sizes": {},
         "products_dict": {},
         "ranked_keys": [],
         "ranked_products": [],
@@ -167,6 +170,7 @@ def load_category(slug: str) -> dict:
     result["description"] = source.get("description", "")
     result["rule_key"] = source.get("rule_key", "")
     result["url_path"] = source.get("url_path", "")
+    result["rankings_type"] = source.get("rankings_type", "list")
 
     products_dict, err = _import_attr(source["module"], source["variable"])
     if err:
@@ -186,8 +190,19 @@ def load_category(slug: str) -> dict:
         result["ranked_products"] = list(products_dict.values())
         return result
 
-    ranked_keys = _flatten_rankings(rankings, source.get("rankings_type", "list"))
+    rankings_type = source.get("rankings_type", "list")
+    ranked_keys = _flatten_rankings(rankings, rankings_type)
     result["ranked_keys"] = ranked_keys
+    result["rankings_raw"] = rankings
+
+    slug_to_sizes: dict[str, list[str]] = {}
+    if rankings_type == "dict_by_size" and isinstance(rankings, dict):
+        for size_key, size_product_keys in rankings.items():
+            for k in size_product_keys:
+                if k not in slug_to_sizes:
+                    slug_to_sizes[k] = []
+                slug_to_sizes[k].append(str(size_key))
+    result["slug_to_sizes"] = slug_to_sizes
 
     ranked_products = []
     for key in ranked_keys:

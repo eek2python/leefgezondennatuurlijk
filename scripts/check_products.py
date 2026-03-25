@@ -37,6 +37,7 @@ import rules.glazen_vershoudbakjes as r_vershoudbakjes
 from services.product_validation import (
     validate_category_products,
     check_brand_diversity,
+    check_brand_diversity_scoped,
     classify_price_segment,
 )
 from services.product_monitoring import monitor_category
@@ -188,7 +189,21 @@ def run_category_check(category_key: str, config: dict) -> dict:
 
     validation_results = validate_category_products(ranked_products, rules)
     monitor_results = monitor_category(ranked_products, rules)
-    brand_check = check_brand_diversity(ranked_products, GLOBAL_RULES["max_products_per_brand"])
+
+    rankings_type = config.get("rankings_type", "list")
+    rankings_raw = _load_module_attr(config["rankings_module"], "RANKINGS")
+    products_dict_full = _load_module_attr(config["products_module"], "PRODUCTS") or {}
+
+    if rankings_type == "dict_by_size" and isinstance(rankings_raw, dict):
+        products_by_size = {
+            str(size_key): [
+                products_dict_full[k] for k in size_keys if k in products_dict_full
+            ]
+            for size_key, size_keys in rankings_raw.items()
+        }
+        brand_check = check_brand_diversity_scoped(products_by_size, max_per_brand=GLOBAL_RULES["max_products_per_brand"])
+    else:
+        brand_check = check_brand_diversity(ranked_products, GLOBAL_RULES["max_products_per_brand"])
 
     valid_products = []
     flagged_products = []

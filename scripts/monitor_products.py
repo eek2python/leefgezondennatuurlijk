@@ -32,7 +32,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from services.product_sources import load_all_categories, CATEGORY_PRODUCT_SOURCES
 from services.product_normalization import check_field_consistency, derive_full_image_path
-from services.product_validation import validate_product, check_brand_diversity
+from services.product_validation import validate_product, check_brand_diversity, check_brand_diversity_scoped
 from services.product_monitoring import monitor_product
 from services.replacement_candidates import suggest_replacement_candidates
 from services.monitoring_config import MONITORING_CONFIG
@@ -75,6 +75,10 @@ def run_category(slug: str, cat_data: dict, live_check: bool) -> dict:
     ranked = cat_data.get("ranked_products", [])
     all_products = cat_data.get("all_products", [])
     load_errors = cat_data.get("load_errors", [])
+    rankings_type = cat_data.get("rankings_type", "list")
+    rankings_raw = cat_data.get("rankings_raw")
+    products_dict = cat_data.get("products_dict", {})
+    slug_to_sizes = cat_data.get("slug_to_sizes", {})
 
     if not ranked:
         return {
@@ -89,7 +93,16 @@ def run_category(slug: str, cat_data: dict, live_check: bool) -> dict:
 
     print(f"  Gerankt: {len(ranked)}  |  Pool: {len(all_products)}")
 
-    brand_check = check_brand_diversity(ranked, max_per_brand=2)
+    if rankings_type == "dict_by_size" and isinstance(rankings_raw, dict):
+        products_by_size = {
+            str(size_key): [
+                products_dict[k] for k in size_keys if k in products_dict
+            ]
+            for size_key, size_keys in rankings_raw.items()
+        }
+        brand_check = check_brand_diversity_scoped(products_by_size, max_per_brand=2)
+    else:
+        brand_check = check_brand_diversity(ranked, max_per_brand=2)
 
     product_results = []
     for product in ranked:
@@ -106,12 +119,16 @@ def run_category(slug: str, cat_data: dict, live_check: bool) -> dict:
 
         image_path = derive_full_image_path(product)
 
+        product_slug = product.get("slug", "")
+        appears_in_sizes = slug_to_sizes.get(product_slug, [])
+
         product_results.append({
             "product_name": product.get("name", ""),
-            "slug": product.get("slug", ""),
+            "slug": product_slug,
             "brand": product.get("brand", ""),
             "category": slug,
             "rule_key": rule_key,
+            "appears_in_sizes": appears_in_sizes,
             "stored_price": product.get("price"),
             "detected_price": monitor_result["price"]["detected"],
             "price_change_pct": monitor_result["price"]["change_pct"],

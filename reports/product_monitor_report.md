@@ -1,5 +1,5 @@
 # Product Monitor Report — Fase 2
-**Gegenereerd op:** 2026-03-25T06:43:12  
+**Gegenereerd op:** 2026-03-25T07:50:50  
 **Modus:** zonder live HTTP-checks (--no-live)
 
 > ⚠️ Dit rapport is uitsluitend ter informatie.
@@ -11,14 +11,14 @@
 |--------|--------|
 | Categorieën gecontroleerd | **7** |
 | Totaal gecontroleerde producten | **119** |
-| Geldige producten (status OK) | **101** |
-| Gemarkeerde producten | **18** |
+| Geldige producten (status OK) | **102** |
+| Gemarkeerde producten | **17** |
 | Handmatige beoordeling vereist | **5** |
 | Gebroken URL's | **0** |
 | Beschikbaarheidsmismatches | **0** |
 | Prijsalerts | **0** |
 | Ontbrekende metadata | **7** |
-| Merkdiversiteitsovertredingen | **12** |
+| Merkdiversiteitsovertredingen | **2** |
 | Vervangingsbehoeften | **12** |
 
 ## B. koekenpannen — Keramische PFAS-vrije koekenpannen
@@ -30,18 +30,12 @@
 | Beschikbaarheidsmismatches | 0 |
 | Prijsalerts | 0 |
 | Ontbrekende metadata | 0 |
-| Merkdiversiteitsovertredingen | 7 |
+| Merkdiversiteitsovertredingen | 1 |
 | Handmatige beoordeling | 0 |
 | Vervangingsbehoeften | 0 |
 
 ### 🏷️ Merkdiversiteitsovertredingen
-- Merk 'greenpan' heeft 14 producten in de lijst (max 2 toegestaan): ['GreenPan Barcelona Pro', 'GreenPan Mayflower', 'GreenPan Cambridge', 'GreenPan Barcelona Pro', 'GreenPan Torino', 'GreenPan Cambridge', 'GreenPan Barcelona Pro', 'GreenPan Venice Pro Ceramic', 'GreenPan Barcelona Pro', 'GreenPan Mayflower', 'GreenPan Barcelona Pro', 'GreenPan Torino', 'GreenPan Barcelona Pro', 'GreenPan Torino']
-- Merk 'demeyere' heeft 6 producten in de lijst (max 2 toegestaan): ['Demeyere Alu Pro 5 Ceraforce', 'Demeyere Alu Pro 5 Ceraforce', 'Demeyere Alu Pro 5 Ceraforce', 'Demeyere Alu Pro 5 Ceraforce', 'Demeyere Alu Pro 5 Ceraforce', 'Demeyere Alu Pro 5 Ceraforce']
-- Merk 'kochstar' heeft 4 producten in de lijst (max 2 toegestaan): ['Kochstar Essenz', 'Kochstar Essenz', 'Kochstar Essenz', 'Kochstar Stein']
-- Merk 'bk' heeft 9 producten in de lijst (max 2 toegestaan): ['BK Easy Induction Ceramic', 'BK Enjoy', 'BK Easy Induction Ceramic', 'BK Enjoy', 'BK Easy Induction Ceramic', 'BK Easy Induction Ceramic', 'BK Enjoy', 'BK Easy Induction Ceramic', 'BK Easy Induction Ceramic']
-- Merk 'greenchef' heeft 5 producten in de lijst (max 2 toegestaan): ['GreenChef Diamond Induction', 'GreenChef Diamond Induction', 'GreenChef Vintage', 'GreenChef Diamond Induction', 'GreenChef Diamond Induction']
-- Merk 'tefal' heeft 5 producten in de lijst (max 2 toegestaan): ['Tefal Renew+', 'Tefal Renew+', 'Tefal Renew+', 'Tefal Renew+', 'Tefal Renew+']
-- Merk 'scanpan' heeft 3 producten in de lijst (max 2 toegestaan): ['Scanpan HaptIQ', 'Scanpan TechnIQ', 'Scanpan HaptIQ']
+- Merk 'greenpan' overschrijdt max 2 producten in minstens één maatlijst.
 
 ### C. Per-product detail
 
@@ -194,9 +188,8 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `OutStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€29.9` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Beschikbaarheidsstatus 'OutStock' is niet één van de verwachte waarden: ['InStock', 'LimitedAvailability', 'OutOfStock', 'PreOrder', 'Unknown'].
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat '#').
-- ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutStock' is niet 'InStock'.
+- ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid.
 
 #### ✅ IKEA HEMLAGAD
 - **Merk:** IKEA | **Slug:** `ikea_hemlagad_keramisch_24`
@@ -486,8 +479,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `OutStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€52.9` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Beschikbaarheidsstatus 'OutStock' is niet één van de verwachte waarden: ['InStock', 'LimitedAvailability', 'OutOfStock', 'PreOrder', 'Unknown'].
-- ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutStock' is niet 'InStock'.
+- ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid.
 
 #### ✅ IKEA HEMLAGAD
 - **Merk:** IKEA | **Slug:** `ikea_hemlagad_keramisch_32`
@@ -533,7 +525,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `premium`
-- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
+- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -551,7 +543,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
+- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -569,7 +561,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `onbekend`
-- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
+- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -587,7 +579,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
+- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -605,7 +597,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `premium`
-- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
+- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -623,7 +615,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `premium`
-- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
+- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -641,7 +633,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `budget`
-- **Ontbrekende velden:** `rating_count`, `availability`, `rating`
+- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
 - ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
 - ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
 - ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
@@ -663,13 +655,9 @@
 | Beschikbaarheidsmismatches | 0 |
 | Prijsalerts | 0 |
 | Ontbrekende metadata | 0 |
-| Merkdiversiteitsovertredingen | 2 |
+| Merkdiversiteitsovertredingen | 0 |
 | Handmatige beoordeling | 4 |
 | Vervangingsbehoeften | 4 |
-
-### 🏷️ Merkdiversiteitsovertredingen
-- Merk 'greenpan' heeft 4 producten in de lijst (max 2 toegestaan): ['GreenPan Barcelona Pro', 'GreenPan Cambridge Keramische Hapjespan', 'GreenPan Barcelona Pro', 'GreenPan Torino']
-- Merk 'bk' heeft 4 producten in de lijst (max 2 toegestaan): ['BK Brilliant Keramische Hapjespan', 'BK Easy Induction Ceramic', 'BK Enjoy Keramische Hapjespan', 'BK Easy Induction Ceramic']
 
 ### C. Per-product detail
 
@@ -730,8 +718,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `OutStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€19.99` | gedetecteerd `n.v.t.` | segment: `budget`
-- ❌ Consistentieprobleem: Beschikbaarheidsstatus 'OutStock' is niet één van de verwachte waarden: ['InStock', 'LimitedAvailability', 'OutOfStock', 'PreOrder', 'Unknown'].
-- ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutStock' is niet 'InStock'.
+- ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid.
 
 #### ❌ Le Creuset Toughened Non-Stick PRO
 - **Merk:** Le Creuset | **Slug:** `le_creuset_tns_pro_24`
@@ -741,8 +728,6 @@
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€117.99` | gedetecteerd `n.v.t.` | segment: `premium`
 - ❌ Regelovertreding: Materiaal 'Non-stick (PFAS-vrij)' bevat geen van de toegestane keywords: ['keramisch', 'ceramic', 'thermolon', 'ceraforce', 'greblon', 'siliconenhars'].
-- ❌ Regelovertreding: Materiaal bevat verboden keyword 'pfas'. Product past niet in deze categorie.
-- ❌ Regelovertreding: Product bevat PFAS-claim die strijdig is met categorie-eis.
 - 🔍 **Handmatige beoordeling vereist.**
 - 🔄 **Vervanging nodig.** Alle suggesties vereisen handmatige redactionele beoordeling. Dit systeem publiceert nooit automatisch wijzigingen in productrankings.
   - Kandidaat: **GreenPan Barcelona Pro** (score 5.5/7) ⚠️
@@ -840,8 +825,6 @@
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€135.0` | gedetecteerd `n.v.t.` | segment: `premium`
 - ❌ Regelovertreding: Materiaal 'Non-stick (PFAS-vrij)' bevat geen van de toegestane keywords: ['keramisch', 'ceramic', 'thermolon', 'ceraforce', 'greblon', 'siliconenhars'].
-- ❌ Regelovertreding: Materiaal bevat verboden keyword 'pfas'. Product past niet in deze categorie.
-- ❌ Regelovertreding: Product bevat PFAS-claim die strijdig is met categorie-eis.
 - 🔍 **Handmatige beoordeling vereist.**
 - 🔄 **Vervanging nodig.** Alle suggesties vereisen handmatige redactionele beoordeling. Dit systeem publiceert nooit automatisch wijzigingen in productrankings.
   - Kandidaat: **GreenPan Barcelona Pro** (score 5.5/7) ⚠️
@@ -882,13 +865,9 @@
 | Beschikbaarheidsmismatches | 0 |
 | Prijsalerts | 0 |
 | Ontbrekende metadata | 0 |
-| Merkdiversiteitsovertredingen | 2 |
+| Merkdiversiteitsovertredingen | 0 |
 | Handmatige beoordeling | 1 |
 | Vervangingsbehoeften | 1 |
-
-### 🏷️ Merkdiversiteitsovertredingen
-- Merk 'greenpan' heeft 4 producten in de lijst (max 2 toegestaan): ['GreenPan Torino Keramische Wokpan', 'GreenPan Cambridge Keramische Wokpan', 'GreenPan Barcelona Evershine Wokpan', 'GreenPan Copenhagen Keramische Wokpan']
-- Merk 'bk' heeft 4 producten in de lijst (max 2 toegestaan): ['BK Blue Label Granite Wokpan', 'BK Easy Induction Ceramic Wokpan', 'BK Easy Induction Ceramic Wokpan', 'BK Balans+ Keramische Wokpan']
 
 ### C. Per-product detail
 
@@ -964,8 +943,7 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `OutStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€49.9` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Beschikbaarheidsstatus 'OutStock' is niet één van de verwachte waarden: ['InStock', 'LimitedAvailability', 'OutOfStock', 'PreOrder', 'Unknown'].
-- ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutStock' is niet 'InStock'.
+- ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid.
 
 #### ✅ BergHOFF Leo Recycled Wokpan
 - **Merk:** BergHOFF | **Slug:** `berghoff_leo_recycled_wok_28`
@@ -1013,9 +991,8 @@
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `OutStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€99.95` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ❌ Consistentieprobleem: Beschikbaarheidsstatus 'OutStock' is niet één van de verwachte waarden: ['InStock', 'LimitedAvailability', 'OutOfStock', 'PreOrder', 'Unknown'].
 - ❌ Consistentieprobleem: Prijs €99.95 past niet bij price_range '€€' (verwacht: €10.0–€80.0).
-- ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutStock' is niet 'InStock'.
+- ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid.
 
 #### ✅ GreenPan Copenhagen Keramische Wokpan
 - **Merk:** GreenPan | **Slug:** `greenpan_copenhagen_wok_30`
@@ -1037,7 +1014,7 @@
 ---
 
 ## B. snijplanken — Houten en bamboe snijplanken
-**URL:** `/snijplanken/` | **Gerankt:** 10 | ✅ 9 OK | ⚠️ 1 gemarkeerd
+**URL:** `/snijplanken/` | **Gerankt:** 10 | ✅ 10 OK | ⚠️ 0 gemarkeerd
 
 | Check | Resultaat |
 |-------|-----------|
@@ -1091,14 +1068,13 @@
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€41.18` | gedetecteerd `n.v.t.` | segment: `middenklasse`
 
-#### ⚠️ Wooden Amsterdam End-Grain Snijplank Walnoot (40×30 cm)
+#### ✅ Wooden Amsterdam End-Grain Snijplank Walnoot (40×30 cm)
 - **Merk:** Wooden Amsterdam | **Slug:** `wooden_amsterdam_walnoot_40x30`
-- **Status:** `FLAG`
+- **Status:** `OK`
 - **Pagina:** UNKNOWN (HTTP —)
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `LimitedAvailability` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€219.00` | gedetecteerd `n.v.t.` | segment: `premium`
-- ⚠️ Regelwaarschuwing: Beschikbaarheidsstatus 'LimitedAvailability' is niet 'InStock'.
 
 #### ✅ Namture Snijplank Hout Premium Olie – 45×30×4 cm
 - **Merk:** Namture | **Slug:** `namture_premium_olie_45x30`

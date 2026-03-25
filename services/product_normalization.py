@@ -12,6 +12,7 @@ from services.monitoring_config import (
     PRICE_RANGE_THRESHOLDS,
     PLACEHOLDER_URL_INDICATORS,
     MONITORING_CONFIG,
+    AVAILABILITY_TYPO_MAP,
 )
 
 
@@ -243,6 +244,10 @@ def normalize_product(product: dict) -> dict:
             normalized[key] = value.strip()
         else:
             normalized[key] = value
+
+    if "availability" in normalized and normalized["availability"] is not None:
+        avail = str(normalized["availability"])
+        normalized["availability"] = AVAILABILITY_TYPO_MAP.get(avail, avail)
 
     if "price" in normalized and normalized["price"] is not None:
         try:

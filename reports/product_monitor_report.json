@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-03-25T06:43:12",
+  "generated_at": "2026-03-25T07:50:50",
   "live_checks": false,
   "summary": {
     "categories_checked": 7,
     "total_products": 119,
-    "total_valid": 101,
-    "total_flagged": 18,
+    "total_valid": 102,
+    "total_flagged": 17,
     "total_manual_review": 5,
     "total_broken_urls": 0,
     "total_avail_mismatches": 0,
     "total_price_alerts": 0,
     "total_missing_metadata": 7,
-    "total_brand_violations": 12,
+    "total_brand_violations": 2,
     "total_replacements": 12
   },
   "categories": [
@@ -28,6 +28,7 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 73.19,
           "detected_price": null,
           "price_change_pct": null,
@@ -63,6 +64,9 @@
           "brand": "Demeyere",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "20"
+          ],
           "stored_price": 74.81,
           "detected_price": null,
           "price_change_pct": null,
@@ -101,6 +105,7 @@
           "brand": "Kochstar",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 8.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -136,6 +141,9 @@
           "brand": "BK",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "20"
+          ],
           "stored_price": 32.49,
           "detected_price": null,
           "price_change_pct": null,
@@ -171,6 +179,9 @@
           "brand": "GreenChef",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "20"
+          ],
           "stored_price": 29.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -206,6 +217,9 @@
           "brand": "Tefal",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "20"
+          ],
           "stored_price": 32.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -241,6 +255,9 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "20"
+          ],
           "stored_price": 32.05,
           "detected_price": null,
           "price_change_pct": null,
@@ -276,6 +293,9 @@
           "brand": "BK",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "20"
+          ],
           "stored_price": 32.49,
           "detected_price": null,
           "price_change_pct": null,
@@ -311,6 +331,9 @@
           "brand": "HEMA",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "20"
+          ],
           "stored_price": 26.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -346,6 +369,7 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 36.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -383,6 +407,7 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 84.95,
           "detected_price": null,
           "price_change_pct": null,
@@ -418,6 +443,9 @@
           "brand": "Demeyere",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 79.23,
           "detected_price": null,
           "price_change_pct": null,
@@ -455,6 +483,7 @@
           "brand": "Kochstar",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 11.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -492,6 +521,7 @@
           "brand": "BK",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 37.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -527,6 +557,7 @@
           "brand": "GreenChef",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 26.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -562,6 +593,7 @@
           "brand": "Tefal",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 29.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -597,6 +629,9 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 43.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -634,6 +669,7 @@
           "brand": "BK",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 29.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -651,7 +687,6 @@
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/koekenpan08_bk_enjoy_24cm.jpg",
           "consistency_issues": [
-            "Beschikbaarheidsstatus 'OutStock' is niet één van de verwachte waarden: ['InStock', 'LimitedAvailability', 'OutOfStock', 'PreOrder', 'Unknown'].",
             "Affiliate-URL lijkt een placeholder te zijn (bevat '#')."
           ],
           "consistency_warnings": [],
@@ -659,7 +694,7 @@
           "validation_valid": true,
           "validation_errors": [],
           "validation_warnings": [
-            "Beschikbaarheidsstatus 'OutStock' is niet 'InStock'."
+            "Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid."
           ],
           "validation_rule_flags": [],
           "inferred_price_segment": "middenklasse",
@@ -674,6 +709,9 @@
           "brand": "IKEA",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 9.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -709,6 +747,7 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 42.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -746,6 +785,7 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 88.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -781,6 +821,9 @@
           "brand": "GreenChef",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "26"
+          ],
           "stored_price": 34.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -816,6 +859,9 @@
           "brand": "Demeyere",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "26"
+          ],
           "stored_price": 84.95,
           "detected_price": null,
           "price_change_pct": null,
@@ -853,6 +899,9 @@
           "brand": "BK",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "26"
+          ],
           "stored_price": 38.49,
           "detected_price": null,
           "price_change_pct": null,
@@ -888,6 +937,9 @@
           "brand": "Fissler",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "26"
+          ],
           "stored_price": 39.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -925,6 +977,9 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "26"
+          ],
           "stored_price": 67.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -960,6 +1015,9 @@
           "brand": "Scanpan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "26"
+          ],
           "stored_price": 117.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -995,6 +1053,7 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 88.09,
           "detected_price": null,
           "price_change_pct": null,
@@ -1030,6 +1089,9 @@
           "brand": "Demeyere",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 92.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -1065,6 +1127,7 @@
           "brand": "Kochstar",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 13.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -1100,6 +1163,7 @@
           "brand": "BK",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 40.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -1135,6 +1199,7 @@
           "brand": "GreenChef",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 27.89,
           "detected_price": null,
           "price_change_pct": null,
@@ -1170,6 +1235,7 @@
           "brand": "Tefal",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 55.78,
           "detected_price": null,
           "price_change_pct": null,
@@ -1205,6 +1271,7 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 39.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -1242,6 +1309,7 @@
           "brand": "Brabantia",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 44.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -1277,6 +1345,7 @@
           "brand": "BK",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 34.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -1312,6 +1381,7 @@
           "brand": "De Buyer",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 100.83,
           "detected_price": null,
           "price_change_pct": null,
@@ -1347,6 +1417,7 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 79.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -1382,6 +1453,9 @@
           "brand": "Kochstar",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "30"
+          ],
           "stored_price": 18.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -1417,6 +1491,9 @@
           "brand": "Demeyere",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "30"
+          ],
           "stored_price": 95.88,
           "detected_price": null,
           "price_change_pct": null,
@@ -1454,6 +1531,7 @@
           "brand": "GreenChef",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 39.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -1489,6 +1567,7 @@
           "brand": "BK",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 41.5,
           "detected_price": null,
           "price_change_pct": null,
@@ -1524,6 +1603,9 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "30"
+          ],
           "stored_price": 55.95,
           "detected_price": null,
           "price_change_pct": null,
@@ -1561,6 +1643,7 @@
           "brand": "Tefal",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 39.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -1596,6 +1679,9 @@
           "brand": "Brabantia",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "30"
+          ],
           "stored_price": 30.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -1633,6 +1719,9 @@
           "brand": "Scanpan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "32"
+          ],
           "stored_price": 185.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -1668,6 +1757,7 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 62.95,
           "detected_price": null,
           "price_change_pct": null,
@@ -1703,6 +1793,9 @@
           "brand": "Demeyere",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "32"
+          ],
           "stored_price": 101.8,
           "detected_price": null,
           "price_change_pct": null,
@@ -1740,6 +1833,7 @@
           "brand": "Combekk",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 58.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -1775,6 +1869,7 @@
           "brand": "BK",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 50.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -1810,6 +1905,9 @@
           "brand": "GreenPan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "32"
+          ],
           "stored_price": 49.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -1847,6 +1945,7 @@
           "brand": "Tefal",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": 36.74,
           "detected_price": null,
           "price_change_pct": null,
@@ -1882,6 +1981,9 @@
           "brand": "Blue Diamond",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "32"
+          ],
           "stored_price": 52.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -1898,15 +2000,13 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/koekenpannen/blue-diamond-32cm.jpg",
-          "consistency_issues": [
-            "Beschikbaarheidsstatus 'OutStock' is niet één van de verwachte waarden: ['InStock', 'LimitedAvailability', 'OutOfStock', 'PreOrder', 'Unknown']."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
           "validation_errors": [],
           "validation_warnings": [
-            "Beschikbaarheidsstatus 'OutStock' is niet 'InStock'."
+            "Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid."
           ],
           "validation_rule_flags": [],
           "inferred_price_segment": "middenklasse",
@@ -1921,6 +2021,9 @@
           "brand": "IKEA",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "32"
+          ],
           "stored_price": 17.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -1958,6 +2061,9 @@
           "brand": "Scanpan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
+          "appears_in_sizes": [
+            "32"
+          ],
           "stored_price": 180.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -1989,120 +2095,139 @@
         }
       ],
       "brand_diversity": {
-        "brand_counts": {
-          "greenpan": 14,
-          "demeyere": 6,
-          "kochstar": 4,
-          "bk": 9,
-          "greenchef": 5,
-          "tefal": 5,
-          "hema": 1,
-          "ikea": 2,
-          "fissler": 1,
-          "scanpan": 3,
-          "brabantia": 2,
-          "de buyer": 1,
-          "combekk": 1,
-          "blue diamond": 1
-        },
         "violations": {
           "greenpan": {
-            "count": 14,
-            "products": [
-              "GreenPan Barcelona Pro",
-              "GreenPan Mayflower",
-              "GreenPan Cambridge",
-              "GreenPan Barcelona Pro",
-              "GreenPan Torino",
-              "GreenPan Cambridge",
-              "GreenPan Barcelona Pro",
-              "GreenPan Venice Pro Ceramic",
-              "GreenPan Barcelona Pro",
-              "GreenPan Mayflower",
-              "GreenPan Barcelona Pro",
-              "GreenPan Torino",
-              "GreenPan Barcelona Pro",
-              "GreenPan Torino"
+            "brand": "greenpan",
+            "violations_in_sizes": [
+              {
+                "size": "20",
+                "count": 3,
+                "products": [
+                  "GreenPan Barcelona Pro",
+                  "GreenPan Mayflower",
+                  "GreenPan Cambridge"
+                ]
+              },
+              {
+                "size": "24",
+                "count": 3,
+                "products": [
+                  "GreenPan Barcelona Pro",
+                  "GreenPan Torino",
+                  "GreenPan Cambridge"
+                ]
+              }
             ],
-            "max_allowed": 2,
-            "message": "Merk 'greenpan' heeft 14 producten in de lijst (max 2 toegestaan): ['GreenPan Barcelona Pro', 'GreenPan Mayflower', 'GreenPan Cambridge', 'GreenPan Barcelona Pro', 'GreenPan Torino', 'GreenPan Cambridge', 'GreenPan Barcelona Pro', 'GreenPan Venice Pro Ceramic', 'GreenPan Barcelona Pro', 'GreenPan Mayflower', 'GreenPan Barcelona Pro', 'GreenPan Torino', 'GreenPan Barcelona Pro', 'GreenPan Torino']"
-          },
-          "demeyere": {
-            "count": 6,
-            "products": [
-              "Demeyere Alu Pro 5 Ceraforce",
-              "Demeyere Alu Pro 5 Ceraforce",
-              "Demeyere Alu Pro 5 Ceraforce",
-              "Demeyere Alu Pro 5 Ceraforce",
-              "Demeyere Alu Pro 5 Ceraforce",
-              "Demeyere Alu Pro 5 Ceraforce"
-            ],
-            "max_allowed": 2,
-            "message": "Merk 'demeyere' heeft 6 producten in de lijst (max 2 toegestaan): ['Demeyere Alu Pro 5 Ceraforce', 'Demeyere Alu Pro 5 Ceraforce', 'Demeyere Alu Pro 5 Ceraforce', 'Demeyere Alu Pro 5 Ceraforce', 'Demeyere Alu Pro 5 Ceraforce', 'Demeyere Alu Pro 5 Ceraforce']"
-          },
-          "kochstar": {
-            "count": 4,
-            "products": [
-              "Kochstar Essenz",
-              "Kochstar Essenz",
-              "Kochstar Essenz",
-              "Kochstar Stein"
-            ],
-            "max_allowed": 2,
-            "message": "Merk 'kochstar' heeft 4 producten in de lijst (max 2 toegestaan): ['Kochstar Essenz', 'Kochstar Essenz', 'Kochstar Essenz', 'Kochstar Stein']"
-          },
-          "bk": {
-            "count": 9,
-            "products": [
-              "BK Easy Induction Ceramic",
-              "BK Enjoy",
-              "BK Easy Induction Ceramic",
-              "BK Enjoy",
-              "BK Easy Induction Ceramic",
-              "BK Easy Induction Ceramic",
-              "BK Enjoy",
-              "BK Easy Induction Ceramic",
-              "BK Easy Induction Ceramic"
-            ],
-            "max_allowed": 2,
-            "message": "Merk 'bk' heeft 9 producten in de lijst (max 2 toegestaan): ['BK Easy Induction Ceramic', 'BK Enjoy', 'BK Easy Induction Ceramic', 'BK Enjoy', 'BK Easy Induction Ceramic', 'BK Easy Induction Ceramic', 'BK Enjoy', 'BK Easy Induction Ceramic', 'BK Easy Induction Ceramic']"
-          },
-          "greenchef": {
-            "count": 5,
-            "products": [
-              "GreenChef Diamond Induction",
-              "GreenChef Diamond Induction",
-              "GreenChef Vintage",
-              "GreenChef Diamond Induction",
-              "GreenChef Diamond Induction"
-            ],
-            "max_allowed": 2,
-            "message": "Merk 'greenchef' heeft 5 producten in de lijst (max 2 toegestaan): ['GreenChef Diamond Induction', 'GreenChef Diamond Induction', 'GreenChef Vintage', 'GreenChef Diamond Induction', 'GreenChef Diamond Induction']"
-          },
-          "tefal": {
-            "count": 5,
-            "products": [
-              "Tefal Renew+",
-              "Tefal Renew+",
-              "Tefal Renew+",
-              "Tefal Renew+",
-              "Tefal Renew+"
-            ],
-            "max_allowed": 2,
-            "message": "Merk 'tefal' heeft 5 producten in de lijst (max 2 toegestaan): ['Tefal Renew+', 'Tefal Renew+', 'Tefal Renew+', 'Tefal Renew+', 'Tefal Renew+']"
-          },
-          "scanpan": {
-            "count": 3,
-            "products": [
-              "Scanpan HaptIQ",
-              "Scanpan TechnIQ",
-              "Scanpan HaptIQ"
-            ],
-            "max_allowed": 2,
-            "message": "Merk 'scanpan' heeft 3 producten in de lijst (max 2 toegestaan): ['Scanpan HaptIQ', 'Scanpan TechnIQ', 'Scanpan HaptIQ']"
+            "message": "Merk 'greenpan' overschrijdt max 2 producten in minstens één maatlijst."
           }
         },
-        "has_violations": true
+        "has_violations": true,
+        "size_details": {
+          "20": {
+            "brand_counts": {
+              "greenpan": 3,
+              "demeyere": 1,
+              "kochstar": 1,
+              "bk": 2,
+              "greenchef": 1,
+              "tefal": 1,
+              "hema": 1
+            },
+            "violations": {
+              "greenpan": {
+                "count": 3,
+                "products": [
+                  "GreenPan Barcelona Pro",
+                  "GreenPan Mayflower",
+                  "GreenPan Cambridge"
+                ],
+                "max_allowed": 2,
+                "message": "Merk 'greenpan' heeft 3 producten in de lijst (max 2 toegestaan): ['GreenPan Barcelona Pro', 'GreenPan Mayflower', 'GreenPan Cambridge']"
+              }
+            },
+            "has_violations": true
+          },
+          "24": {
+            "brand_counts": {
+              "greenpan": 3,
+              "demeyere": 1,
+              "kochstar": 1,
+              "bk": 2,
+              "greenchef": 1,
+              "tefal": 1,
+              "ikea": 1
+            },
+            "violations": {
+              "greenpan": {
+                "count": 3,
+                "products": [
+                  "GreenPan Barcelona Pro",
+                  "GreenPan Torino",
+                  "GreenPan Cambridge"
+                ],
+                "max_allowed": 2,
+                "message": "Merk 'greenpan' heeft 3 producten in de lijst (max 2 toegestaan): ['GreenPan Barcelona Pro', 'GreenPan Torino', 'GreenPan Cambridge']"
+              }
+            },
+            "has_violations": true
+          },
+          "26": {
+            "brand_counts": {
+              "greenpan": 2,
+              "greenchef": 1,
+              "demeyere": 1,
+              "bk": 1,
+              "fissler": 1,
+              "scanpan": 1
+            },
+            "violations": {},
+            "has_violations": false
+          },
+          "28": {
+            "brand_counts": {
+              "greenpan": 2,
+              "demeyere": 1,
+              "kochstar": 1,
+              "bk": 2,
+              "greenchef": 1,
+              "tefal": 1,
+              "brabantia": 1,
+              "de buyer": 1
+            },
+            "violations": {},
+            "has_violations": false
+          },
+          "30": {
+            "brand_counts": {
+              "greenpan": 2,
+              "kochstar": 1,
+              "demeyere": 1,
+              "greenchef": 1,
+              "bk": 1,
+              "tefal": 1,
+              "brabantia": 1,
+              "scanpan": 1
+            },
+            "violations": {},
+            "has_violations": false
+          },
+          "32": {
+            "brand_counts": {
+              "greenpan": 2,
+              "demeyere": 1,
+              "combekk": 1,
+              "bk": 1,
+              "tefal": 1,
+              "blue diamond": 1,
+              "ikea": 1,
+              "scanpan": 1
+            },
+            "violations": {},
+            "has_violations": false
+          }
+        },
+        "scoped": true,
+        "note": "Merkdiversiteit beoordeeld per maatlijst (niet over alle maten gecombineerd)."
       },
       "summary": {
         "total": 55,
@@ -2114,7 +2239,7 @@
         "price_alerts": 0,
         "missing_metadata": 0,
         "replacement_needed": 0,
-        "brand_diversity_violations": 7
+        "brand_diversity_violations": 1
       }
     },
     {
@@ -2130,6 +2255,7 @@
           "brand": "Demeyere",
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": null,
           "detected_price": null,
           "price_change_pct": null,
@@ -2154,8 +2280,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "rating_count",
             "availability",
+            "rating_count",
             "rating"
           ],
           "validation_valid": false,
@@ -2188,6 +2314,7 @@
           "brand": "BK",
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": null,
           "detected_price": null,
           "price_change_pct": null,
@@ -2212,8 +2339,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "rating_count",
             "availability",
+            "rating_count",
             "rating"
           ],
           "validation_valid": false,
@@ -2246,6 +2373,7 @@
           "brand": "Demeyere",
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": null,
           "detected_price": null,
           "price_change_pct": null,
@@ -2270,8 +2398,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "rating_count",
             "availability",
+            "rating_count",
             "rating"
           ],
           "validation_valid": false,
@@ -2304,6 +2432,7 @@
           "brand": "WMF",
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": null,
           "detected_price": null,
           "price_change_pct": null,
@@ -2328,8 +2457,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "rating_count",
             "availability",
+            "rating_count",
             "rating"
           ],
           "validation_valid": false,
@@ -2362,6 +2491,7 @@
           "brand": "Demeyere",
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": null,
           "detected_price": null,
           "price_change_pct": null,
@@ -2386,8 +2516,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "rating_count",
             "availability",
+            "rating_count",
             "rating"
           ],
           "validation_valid": false,
@@ -2420,6 +2550,7 @@
           "brand": "De Buyer",
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": null,
           "detected_price": null,
           "price_change_pct": null,
@@ -2444,8 +2575,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "rating_count",
             "availability",
+            "rating_count",
             "rating"
           ],
           "validation_valid": false,
@@ -2478,6 +2609,7 @@
           "brand": "BK",
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
+          "appears_in_sizes": [],
           "stored_price": null,
           "detected_price": null,
           "price_change_pct": null,
@@ -2502,8 +2634,8 @@
             "Veld 'image_path' ontbreekt."
           ],
           "missing_fields": [
-            "rating_count",
             "availability",
+            "rating_count",
             "rating"
           ],
           "validation_valid": false,
@@ -2578,6 +2710,7 @@
           "brand": "GreenPan",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [],
           "stored_price": 149.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -2613,6 +2746,9 @@
           "brand": "BK",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 54.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -2648,6 +2784,9 @@
           "brand": "WOLL",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 94.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -2683,6 +2822,9 @@
           "brand": "GreenChef",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 49.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -2718,6 +2860,9 @@
           "brand": "BK",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 54.15,
           "detected_price": null,
           "price_change_pct": null,
@@ -2755,6 +2900,9 @@
           "brand": "GreenPan",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 69.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -2792,6 +2940,9 @@
           "brand": "Kochstar",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 19.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -2808,15 +2959,13 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/hapjespannen/hapjespan_kochstar_essenz_24cm.jpg",
-          "consistency_issues": [
-            "Beschikbaarheidsstatus 'OutStock' is niet één van de verwachte waarden: ['InStock', 'LimitedAvailability', 'OutOfStock', 'PreOrder', 'Unknown']."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
           "validation_errors": [],
           "validation_warnings": [
-            "Beschikbaarheidsstatus 'OutStock' is niet 'InStock'."
+            "Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid."
           ],
           "validation_rule_flags": [],
           "inferred_price_segment": "budget",
@@ -2831,6 +2980,9 @@
           "brand": "Le Creuset",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 117.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -2852,9 +3004,7 @@
           "missing_fields": [],
           "validation_valid": false,
           "validation_errors": [
-            "Materiaal 'Non-stick (PFAS-vrij)' bevat geen van de toegestane keywords: ['keramisch', 'ceramic', 'thermolon', 'ceraforce', 'greblon', 'siliconenhars'].",
-            "Materiaal bevat verboden keyword 'pfas'. Product past niet in deze categorie.",
-            "Product bevat PFAS-claim die strijdig is met categorie-eis."
+            "Materiaal 'Non-stick (PFAS-vrij)' bevat geen van de toegestane keywords: ['keramisch', 'ceramic', 'thermolon', 'ceraforce', 'greblon', 'siliconenhars']."
           ],
           "validation_warnings": [],
           "validation_rule_flags": [],
@@ -2944,6 +3094,9 @@
           "brand": "De Buyer",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 46.79,
           "detected_price": null,
           "price_change_pct": null,
@@ -3057,6 +3210,9 @@
           "brand": "Beka",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [
+            "24"
+          ],
           "stored_price": 74.95,
           "detected_price": null,
           "price_change_pct": null,
@@ -3092,6 +3248,7 @@
           "brand": "GreenPan",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [],
           "stored_price": 159.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -3127,6 +3284,9 @@
           "brand": "BK",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 41.93,
           "detected_price": null,
           "price_change_pct": null,
@@ -3165,6 +3325,7 @@
           "brand": "WOLL",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [],
           "stored_price": 104.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -3200,6 +3361,7 @@
           "brand": "GreenChef",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [],
           "stored_price": 40.57,
           "detected_price": null,
           "price_change_pct": null,
@@ -3237,6 +3399,7 @@
           "brand": "BK",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [],
           "stored_price": 59.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -3274,6 +3437,7 @@
           "brand": "BE Living",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [],
           "stored_price": 46.95,
           "detected_price": null,
           "price_change_pct": null,
@@ -3309,6 +3473,7 @@
           "brand": "GreenPan",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [],
           "stored_price": 64.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -3344,6 +3509,7 @@
           "brand": "Le Creuset",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [],
           "stored_price": 135.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -3365,9 +3531,7 @@
           "missing_fields": [],
           "validation_valid": false,
           "validation_errors": [
-            "Materiaal 'Non-stick (PFAS-vrij)' bevat geen van de toegestane keywords: ['keramisch', 'ceramic', 'thermolon', 'ceraforce', 'greblon', 'siliconenhars'].",
-            "Materiaal bevat verboden keyword 'pfas'. Product past niet in deze categorie.",
-            "Product bevat PFAS-claim die strijdig is met categorie-eis."
+            "Materiaal 'Non-stick (PFAS-vrij)' bevat geen van de toegestane keywords: ['keramisch', 'ceramic', 'thermolon', 'ceraforce', 'greblon', 'siliconenhars']."
           ],
           "validation_warnings": [],
           "validation_rule_flags": [],
@@ -3457,6 +3621,7 @@
           "brand": "De Buyer",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [],
           "stored_price": 93.95,
           "detected_price": null,
           "price_change_pct": null,
@@ -3568,6 +3733,7 @@
           "brand": "Beka",
           "category": "hapjespannen",
           "rule_key": "pfas_vrije_hapjespannen",
+          "appears_in_sizes": [],
           "stored_price": 85.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -3601,42 +3767,40 @@
         }
       ],
       "brand_diversity": {
-        "brand_counts": {
-          "greenpan": 4,
-          "bk": 4,
-          "woll": 2,
-          "greenchef": 2,
-          "kochstar": 1,
-          "le creuset": 2,
-          "de buyer": 2,
-          "beka": 2,
-          "be living": 1
-        },
-        "violations": {
-          "greenpan": {
-            "count": 4,
-            "products": [
-              "GreenPan Barcelona Pro",
-              "GreenPan Cambridge Keramische Hapjespan",
-              "GreenPan Barcelona Pro",
-              "GreenPan Torino"
-            ],
-            "max_allowed": 2,
-            "message": "Merk 'greenpan' heeft 4 producten in de lijst (max 2 toegestaan): ['GreenPan Barcelona Pro', 'GreenPan Cambridge Keramische Hapjespan', 'GreenPan Barcelona Pro', 'GreenPan Torino']"
+        "violations": {},
+        "has_violations": false,
+        "size_details": {
+          "24": {
+            "brand_counts": {
+              "greenpan": 2,
+              "bk": 2,
+              "woll": 1,
+              "greenchef": 1,
+              "kochstar": 1,
+              "le creuset": 1,
+              "de buyer": 1,
+              "beka": 1
+            },
+            "violations": {},
+            "has_violations": false
           },
-          "bk": {
-            "count": 4,
-            "products": [
-              "BK Brilliant Keramische Hapjespan",
-              "BK Easy Induction Ceramic",
-              "BK Enjoy Keramische Hapjespan",
-              "BK Easy Induction Ceramic"
-            ],
-            "max_allowed": 2,
-            "message": "Merk 'bk' heeft 4 producten in de lijst (max 2 toegestaan): ['BK Brilliant Keramische Hapjespan', 'BK Easy Induction Ceramic', 'BK Enjoy Keramische Hapjespan', 'BK Easy Induction Ceramic']"
+          "28": {
+            "brand_counts": {
+              "greenpan": 2,
+              "bk": 2,
+              "woll": 1,
+              "greenchef": 1,
+              "be living": 1,
+              "le creuset": 1,
+              "de buyer": 1,
+              "beka": 1
+            },
+            "violations": {},
+            "has_violations": false
           }
         },
-        "has_violations": true
+        "scoped": true,
+        "note": "Merkdiversiteit beoordeeld per maatlijst (niet over alle maten gecombineerd)."
       },
       "summary": {
         "total": 20,
@@ -3648,7 +3812,7 @@
         "price_alerts": 0,
         "missing_metadata": 0,
         "replacement_needed": 4,
-        "brand_diversity_violations": 2
+        "brand_diversity_violations": 0
       }
     },
     {
@@ -3664,6 +3828,9 @@
           "brand": "GreenPan",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 44.49,
           "detected_price": null,
           "price_change_pct": null,
@@ -3699,6 +3866,9 @@
           "brand": "HEMA",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 24.69,
           "detected_price": null,
           "price_change_pct": null,
@@ -3734,6 +3904,9 @@
           "brand": "WMF",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 42.59,
           "detected_price": null,
           "price_change_pct": null,
@@ -3769,6 +3942,9 @@
           "brand": "GreenChef",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 36.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -3804,6 +3980,9 @@
           "brand": "Primecook",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 69.6,
           "detected_price": null,
           "price_change_pct": null,
@@ -3841,6 +4020,9 @@
           "brand": "BK",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 34.99,
           "detected_price": null,
           "price_change_pct": null,
@@ -3876,6 +4058,9 @@
           "brand": "Brabantia",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 54.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -3911,6 +4096,9 @@
           "brand": "GreenPan",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 54.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -3946,6 +4134,9 @@
           "brand": "BK",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 49.9,
           "detected_price": null,
           "price_change_pct": null,
@@ -3962,15 +4153,13 @@
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/wokpannen/wokpan09.jpg",
-          "consistency_issues": [
-            "Beschikbaarheidsstatus 'OutStock' is niet één van de verwachte waarden: ['InStock', 'LimitedAvailability', 'OutOfStock', 'PreOrder', 'Unknown']."
-          ],
+          "consistency_issues": [],
           "consistency_warnings": [],
           "missing_fields": [],
           "validation_valid": true,
           "validation_errors": [],
           "validation_warnings": [
-            "Beschikbaarheidsstatus 'OutStock' is niet 'InStock'."
+            "Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid."
           ],
           "validation_rule_flags": [],
           "inferred_price_segment": "middenklasse",
@@ -3985,6 +4174,9 @@
           "brand": "BergHOFF",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "28"
+          ],
           "stored_price": 69.95,
           "detected_price": null,
           "price_change_pct": null,
@@ -4020,6 +4212,9 @@
           "brand": "GreenPan",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "30"
+          ],
           "stored_price": 87.45,
           "detected_price": null,
           "price_change_pct": null,
@@ -4055,6 +4250,9 @@
           "brand": "BK",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "30"
+          ],
           "stored_price": 57.42,
           "detected_price": null,
           "price_change_pct": null,
@@ -4092,6 +4290,9 @@
           "brand": "Scanpan",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "30"
+          ],
           "stored_price": 276.95,
           "detected_price": null,
           "price_change_pct": null,
@@ -4203,6 +4404,9 @@
           "brand": "BK",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "30"
+          ],
           "stored_price": 99.95,
           "detected_price": null,
           "price_change_pct": null,
@@ -4220,7 +4424,6 @@
           "page_error": "Live check uitgeschakeld.",
           "image_path": "static/images/wokpannen/wokpan_bk_balans_30cm.jpg",
           "consistency_issues": [
-            "Beschikbaarheidsstatus 'OutStock' is niet één van de verwachte waarden: ['InStock', 'LimitedAvailability', 'OutOfStock', 'PreOrder', 'Unknown'].",
             "Prijs €99.95 past niet bij price_range '€€' (verwacht: €10.0–€80.0)."
           ],
           "consistency_warnings": [],
@@ -4228,7 +4431,7 @@
           "validation_valid": true,
           "validation_errors": [],
           "validation_warnings": [
-            "Beschikbaarheidsstatus 'OutStock' is niet 'InStock'."
+            "Beschikbaarheidsstatus 'OutOfStock' is niet 'InStock'. Controleer beschikbaarheid."
           ],
           "validation_rule_flags": [],
           "inferred_price_segment": "middenklasse",
@@ -4243,6 +4446,9 @@
           "brand": "GreenPan",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "30"
+          ],
           "stored_price": 67.29,
           "detected_price": null,
           "price_change_pct": null,
@@ -4278,6 +4484,9 @@
           "brand": "BergHOFF",
           "category": "wokpannen",
           "rule_key": "pfas_vrije_wokpannen",
+          "appears_in_sizes": [
+            "30"
+          ],
           "stored_price": 74.0,
           "detected_price": null,
           "price_change_pct": null,
@@ -4311,42 +4520,36 @@
         }
       ],
       "brand_diversity": {
-        "brand_counts": {
-          "greenpan": 4,
-          "hema": 1,
-          "wmf": 1,
-          "greenchef": 1,
-          "primecook": 1,
-          "bk": 4,
-          "brabantia": 1,
-          "berghoff": 2,
-          "scanpan": 1
-        },
-        "violations": {
-          "greenpan": {
-            "count": 4,
-            "products": [
-              "GreenPan Torino Keramische Wokpan",
-              "GreenPan Cambridge Keramische Wokpan",
-              "GreenPan Barcelona Evershine Wokpan",
-              "GreenPan Copenhagen Keramische Wokpan"
-            ],
-            "max_allowed": 2,
-            "message": "Merk 'greenpan' heeft 4 producten in de lijst (max 2 toegestaan): ['GreenPan Torino Keramische Wokpan', 'GreenPan Cambridge Keramische Wokpan', 'GreenPan Barcelona Evershine Wokpan', 'GreenPan Copenhagen Keramische Wokpan']"
+        "violations": {},
+        "has_violations": false,
+        "size_details": {
+          "28": {
+            "brand_counts": {
+              "greenpan": 2,
+              "hema": 1,
+              "wmf": 1,
+              "greenchef": 1,
+              "primecook": 1,
+              "bk": 2,
+              "brabantia": 1,
+              "berghoff": 1
+            },
+            "violations": {},
+            "has_violations": false
           },
-          "bk": {
-            "count": 4,
-            "products": [
-              "BK Blue Label Granite Wokpan",
-              "BK Easy Induction Ceramic Wokpan",
-              "BK Easy Induction Ceramic Wokpan",
-              "BK Balans+ Keramische Wokpan"
-            ],
-            "max_allowed": 2,
-            "message": "Merk 'bk' heeft 4 producten in de lijst (max 2 toegestaan): ['BK Blue Label Granite Wokpan', 'BK Easy Induction Ceramic Wokpan', 'BK Easy Induction Ceramic Wokpan', 'BK Balans+ Keramische Wokpan']"
+          "30": {
+            "brand_counts": {
+              "greenpan": 2,
+              "bk": 2,
+              "scanpan": 1,
+              "berghoff": 1
+            },
+            "violations": {},
+            "has_violations": false
           }
         },
-        "has_violations": true
+        "scoped": true,
+        "note": "Merkdiversiteit beoordeeld per maatlijst (niet over alle maten gecombineerd)."
       },
       "summary": {
         "total": 16,
@@ -4358,7 +4561,7 @@
         "price_alerts": 0,
         "missing_metadata": 0,
         "replacement_needed": 1,
-        "brand_diversity_violations": 2
+        "brand_diversity_violations": 0
       }
     },
     {
@@ -4374,6 +4577,7 @@
           "brand": "BoosBlocks",
           "category": "snijplanken",
           "rule_key": "houten_snijplanken",
+          "appears_in_sizes": [],
           "stored_price": "323.64",
           "detected_price": null,
           "price_change_pct": null,
@@ -4409,6 +4613,7 @@
           "brand": "KAAMUT",
           "category": "snijplanken",
           "rule_key": "houten_snijplanken",
+          "appears_in_sizes": [],
           "stored_price": "129.00",
           "detected_price": null,
           "price_change_pct": null,
@@ -4444,6 +4649,7 @@
           "brand": "IKEA",
           "category": "snijplanken",
           "rule_key": "houten_snijplanken",
+          "appears_in_sizes": [],
           "stored_price": "6.99",
           "detected_price": null,
           "price_change_pct": null,
@@ -4479,6 +4685,7 @@
           "brand": "Zwilling",
           "category": "snijplanken",
           "rule_key": "houten_snijplanken",
+          "appears_in_sizes": [],
           "stored_price": "48.49",
           "detected_price": null,
           "price_change_pct": null,
@@ -4514,6 +4721,7 @@
           "brand": "WMF",
           "category": "snijplanken",
           "rule_key": "houten_snijplanken",
+          "appears_in_sizes": [],
           "stored_price": "41.18",
           "detected_price": null,
           "price_change_pct": null,
@@ -4549,6 +4757,7 @@
           "brand": "Wooden Amsterdam",
           "category": "snijplanken",
           "rule_key": "houten_snijplanken",
+          "appears_in_sizes": [],
           "stored_price": "219.00",
           "detected_price": null,
           "price_change_pct": null,
@@ -4570,12 +4779,12 @@
           "missing_fields": [],
           "validation_valid": true,
           "validation_errors": [],
-          "validation_warnings": [
-            "Beschikbaarheidsstatus 'LimitedAvailability' is niet 'InStock'."
+          "validation_warnings": [],
+          "validation_rule_flags": [
+            "availability_note:LimitedAvailability"
           ],
-          "validation_rule_flags": [],
           "inferred_price_segment": "premium",
-          "overall_status": "FLAG",
+          "overall_status": "OK",
           "manual_review_required": false,
           "replacement_needed": false,
           "replacement_suggestion": null
@@ -4586,6 +4795,7 @@
           "brand": "Namture",
           "category": "snijplanken",
           "rule_key": "houten_snijplanken",
+          "appears_in_sizes": [],
           "stored_price": "69.99",
           "detected_price": null,
           "price_change_pct": null,
@@ -4621,6 +4831,7 @@
           "brand": "Continenta",
           "category": "snijplanken",
           "rule_key": "houten_snijplanken",
+          "appears_in_sizes": [],
           "stored_price": "29.95",
           "detected_price": null,
           "price_change_pct": null,
@@ -4656,6 +4867,7 @@
           "brand": "HEMA",
           "category": "snijplanken",
           "rule_key": "houten_snijplanken",
+          "appears_in_sizes": [],
           "stored_price": "9.99",
           "detected_price": null,
           "price_change_pct": null,
@@ -4691,6 +4903,7 @@
           "brand": "Point-Virgule",
           "category": "snijplanken",
           "rule_key": "houten_snijplanken",
+          "appears_in_sizes": [],
           "stored_price": "17.95",
           "detected_price": null,
           "price_change_pct": null,
@@ -4739,8 +4952,8 @@
       },
       "summary": {
         "total": 10,
-        "valid": 9,
-        "flagged": 1,
+        "valid": 10,
+        "flagged": 0,
         "manual_review": 0,
         "broken_urls": 0,
         "availability_mismatches": 0,
@@ -4763,6 +4976,7 @@
           "brand": "Inventum",
           "category": "airfryers",
           "rule_key": "pfas_vrije_airfryers",
+          "appears_in_sizes": [],
           "stored_price": "109.99",
           "detected_price": null,
           "price_change_pct": null,
@@ -4801,6 +5015,7 @@
           "brand": "Bourgini",
           "category": "airfryers",
           "rule_key": "pfas_vrije_airfryers",
+          "appears_in_sizes": [],
           "stored_price": "79.70",
           "detected_price": null,
           "price_change_pct": null,
@@ -4838,6 +5053,7 @@
           "brand": "GreenPan",
           "category": "airfryers",
           "rule_key": "pfas_vrije_airfryers",
+          "appears_in_sizes": [],
           "stored_price": "109.00",
           "detected_price": null,
           "price_change_pct": null,
@@ -4873,6 +5089,7 @@
           "brand": "MasterPRO",
           "category": "airfryers",
           "rule_key": "pfas_vrije_airfryers",
+          "appears_in_sizes": [],
           "stored_price": "125.99",
           "detected_price": null,
           "price_change_pct": null,
@@ -4910,6 +5127,7 @@
           "brand": "Wartmann",
           "category": "airfryers",
           "rule_key": "pfas_vrije_airfryers",
+          "appears_in_sizes": [],
           "stored_price": "115.00",
           "detected_price": null,
           "price_change_pct": null,
@@ -4947,6 +5165,7 @@
           "brand": "Maison & Kitchen",
           "category": "airfryers",
           "rule_key": "pfas_vrije_airfryers",
+          "appears_in_sizes": [],
           "stored_price": "59.00",
           "detected_price": null,
           "price_change_pct": null,
@@ -5017,6 +5236,7 @@
           "brand": "Mepal",
           "category": "vershoudcontainers",
           "rule_key": "glazen_vershoudbakjes",
+          "appears_in_sizes": [],
           "stored_price": "39.95",
           "detected_price": null,
           "price_change_pct": null,
@@ -5054,6 +5274,7 @@
           "brand": "Igluu",
           "category": "vershoudcontainers",
           "rule_key": "glazen_vershoudbakjes",
+          "appears_in_sizes": [],
           "stored_price": "23.95",
           "detected_price": null,
           "price_change_pct": null,
@@ -5089,6 +5310,7 @@
           "brand": "Pyrex",
           "category": "vershoudcontainers",
           "rule_key": "glazen_vershoudbakjes",
+          "appears_in_sizes": [],
           "stored_price": "39.87",
           "detected_price": null,
           "price_change_pct": null,
@@ -5126,6 +5348,7 @@
           "brand": "Bormioli Rocco",
           "category": "vershoudcontainers",
           "rule_key": "glazen_vershoudbakjes",
+          "appears_in_sizes": [],
           "stored_price": "30.95",
           "detected_price": null,
           "price_change_pct": null,
@@ -5163,6 +5386,7 @@
           "brand": "Luminarc",
           "category": "vershoudcontainers",
           "rule_key": "glazen_vershoudbakjes",
+          "appears_in_sizes": [],
           "stored_price": "29.57",
           "detected_price": null,
           "price_change_pct": null,

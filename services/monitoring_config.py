@@ -36,6 +36,15 @@ PRICE_RANGE_THRESHOLDS = {
     "€€€€": (80.0, 9_999.0),
 }
 
+AVAILABILITY_TYPO_MAP: dict[str, str] = {
+    "OutStock": "OutOfStock",
+    "outstock": "OutOfStock",
+    "OutofStock": "OutOfStock",
+    "out_of_stock": "OutOfStock",
+    "in_stock": "InStock",
+    "instock": "InStock",
+}
+
 PLACEHOLDER_URL_INDICATORS = frozenset([
     "TODO", "todo", "example.com", "placeholder", "#",
 ])

@@ -6,6 +6,13 @@ Never modifies live data. Never auto-publishes.
 """
 
 from rules.base_rules import GLOBAL_RULES
+from services.monitoring_config import AVAILABILITY_TYPO_MAP
+
+_AVAILABILITY_NOTE_VALUES = frozenset([
+    "limitedavailability", "limited_availability", "preorder",
+])
+
+_AVAILABILITY_VALID = frozenset([v.lower() for v in GLOBAL_RULES["valid_availability_values"]])
 
 
 def _get_field(product: dict, field: str, rules: dict) -> str | None:
@@ -97,12 +104,19 @@ def validate_product(product: dict, rules: dict) -> dict:
     if not url_ok:
         errors.append(url_msg)
 
-    availability = product.get("availability", "")
-    valid_avail = GLOBAL_RULES["valid_availability_values"]
-    if availability and str(availability).strip().lower() not in [v.lower() for v in valid_avail]:
-        warnings.append(f"Beschikbaarheidsstatus '{availability}' is niet 'InStock'.")
-    elif not availability:
+    availability_raw = product.get("availability", "")
+    availability = AVAILABILITY_TYPO_MAP.get(str(availability_raw), str(availability_raw))
+    avail_lower = availability.strip().lower()
+    if not availability_raw:
         missing_fields.append("availability")
+    elif avail_lower in _AVAILABILITY_VALID:
+        pass
+    elif avail_lower in _AVAILABILITY_NOTE_VALUES:
+        rule_flags.append(f"availability_note:{availability}")
+    else:
+        warnings.append(
+            f"Beschikbaarheidsstatus '{availability}' is niet 'InStock'. Controleer beschikbaarheid."
+        )
 
     material = _normalize(_get_field(product, "material", rules))
 
@@ -191,6 +205,51 @@ def validate_product(product: dict, rules: dict) -> dict:
 
 def validate_category_products(products: list[dict], rules: dict) -> list[dict]:
     return [validate_product(p, rules) for p in products]
+
+
+def check_brand_diversity_scoped(
+    products_by_size: dict[str, list[dict]],
+    max_per_brand: int = 2,
+) -> dict:
+    """
+    Brand diversity check for dict_by_size categories.
+
+    Evaluates brand diversity per individual size-list rather than
+    across all sizes combined. A brand appearing in multiple size-lists
+    does not constitute a violation — only exceeding max_per_brand
+    within a single size-list does.
+
+    Returns a merged view of violations across all size-lists.
+    """
+    all_violations: dict[str, dict] = {}
+    size_details: dict[str, dict] = {}
+
+    for size_key, size_products in products_by_size.items():
+        result = check_brand_diversity(size_products, max_per_brand)
+        size_details[str(size_key)] = result
+        for brand, info in result["violations"].items():
+            if brand not in all_violations:
+                all_violations[brand] = {
+                    "brand": brand,
+                    "violations_in_sizes": [],
+                    "message": (
+                        f"Merk '{brand}' overschrijdt max {max_per_brand} producten "
+                        f"in minstens één maatlijst."
+                    ),
+                }
+            all_violations[brand]["violations_in_sizes"].append({
+                "size": str(size_key),
+                "count": info["count"],
+                "products": info["products"],
+            })
+
+    return {
+        "violations": all_violations,
+        "has_violations": len(all_violations) > 0,
+        "size_details": size_details,
+        "scoped": True,
+        "note": "Merkdiversiteit beoordeeld per maatlijst (niet over alle maten gecombineerd).",
+    }
 
 
 def check_brand_diversity(products: list[dict], max_per_brand: int = 2) -> dict:

@@ -3,7 +3,7 @@ RULES = {
     "description": "Keramisch gecoate, PFAS-vrije koekenpannen voor dagelijks gebruik. Geen PTFE/Teflon, geen pure RVS.",
 
     "allowed_material_keywords": ["keramisch", "ceramic", "ceraforce", "thermolon", "greblon"],
-    "forbidden_material_keywords": ["rvs", "stainless", "ptfe", "teflon", "pfas"],
+    "forbidden_material_keywords": ["rvs", "stainless", "ptfe", "teflon"],
 
     "pfas_free_required": True,
     "pfas_free_keywords": [
@@ -45,7 +45,7 @@ RULES = {
     "exclusion_criteria": [
         {"field": "material", "keyword": "ptfe", "severity": "error", "message": "PTFE-coating is niet toegestaan in de keramische koekenpannen categorie."},
         {"field": "material", "keyword": "teflon", "severity": "error", "message": "Teflon-coating is niet toegestaan in de keramische koekenpannen categorie."},
-        {"field": "material", "keyword": "pfas", "severity": "error", "message": "Product bevat PFAS-claim die strijdig is met categorie-eis."},
+        {"field": "material", "keyword": "bevat pfas", "severity": "error", "message": "Product bevat PFAS-claim die strijdig is met categorie-eis."},
         {"field": "material", "keyword": "rvs", "severity": "error", "message": "Pure RVS-pannen zijn uitgesloten van de keramische koekenpannen categorie."},
         {"field": "material", "keyword": "stainless", "severity": "error", "message": "Pure RVS/stainless steel pannen zijn uitgesloten van de keramische koekenpannen categorie."},
         {"field": "name", "keyword": "triply", "severity": "warning", "message": "Triply-constructie zonder keramische laag past mogelijk niet in deze categorie. Controleer materiaalclaim."},

@@ -3,7 +3,7 @@ RULES = {
     "description": "PFAS-vrije hapjespannen / sautépannen voor dagelijks gebruik. Geen gewone koekenpannen als vervanger.",
 
     "allowed_material_keywords": ["keramisch", "ceramic", "thermolon", "ceraforce", "greblon", "siliconenhars"],
-    "forbidden_material_keywords": ["ptfe", "teflon", "pfas", "rvs", "stainless"],
+    "forbidden_material_keywords": ["ptfe", "teflon", "rvs", "stainless"],
 
     "pfas_free_required": True,
     "pfas_free_keywords": [
@@ -44,7 +44,7 @@ RULES = {
     "exclusion_criteria": [
         {"field": "material", "keyword": "ptfe", "severity": "error", "message": "PTFE-coating is niet toegestaan in de PFAS-vrije hapjespannen categorie."},
         {"field": "material", "keyword": "teflon", "severity": "error", "message": "Teflon is niet toegestaan in de PFAS-vrije hapjespannen categorie."},
-        {"field": "material", "keyword": "pfas", "severity": "error", "message": "Product bevat PFAS-claim die strijdig is met categorie-eis."},
+        {"field": "material", "keyword": "bevat pfas", "severity": "error", "message": "Product bevat PFAS-claim die strijdig is met categorie-eis."},
         {"field": "name", "keyword": "koekenpan", "severity": "warning", "message": "Product is mogelijk een gewone koekenpan in plaats van hapjespan. Controleer producttype."},
         {"field": "name", "keyword": "wokpan", "severity": "warning", "message": "Wokpan is geen hapjespan. Controleer producttype."},
     ],
