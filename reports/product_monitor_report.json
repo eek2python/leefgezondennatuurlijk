@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-25T16:30:48",
+  "generated_at": "2026-04-13T04:38:05",
   "live_checks": false,
   "summary": {
     "categories_checked": 7,
@@ -12,7 +12,7 @@
     "total_price_alerts": 0,
     "total_missing_metadata": 7,
     "total_brand_violations": 2,
-    "total_replacements": 11
+    "total_replacements": 4
   },
   "categories": [
     {
@@ -2237,57 +2237,41 @@
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
           "appears_in_sizes": [],
-          "stored_price": null,
+          "stored_price": 152.9,
           "detected_price": null,
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": null,
+          "stored_availability": "InStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
-          "page_url": "TODO_AFFILIATE_URL",
+          "page_url": "https://www.bol.com/nl/nl/p/demeyere-industry-5-koekenpan-28-cm/9300000187019367/?cid=1774512436375-2916899089457&bltgh=54946127-268a-4fe8-9339-6820156ce580.ProductList_Middle.8.ProductTitle",
           "page_status": "UNKNOWN",
           "page_reachable": null,
           "page_http_code": null,
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
-          "image_path": null,
-          "consistency_issues": [
-            "Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.",
-            "Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO')."
-          ],
+          "image_path": "static/images/products/rvs-koekenpannen/demeyere-industry-5-28.jpg",
+          "consistency_issues": [],
           "consistency_warnings": [
-            "Veld 'image_path' ontbreekt."
+            "Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/demeyere-industry-5-28.jpg'."
           ],
           "missing_fields": [
-            "availability",
-            "rating_count",
-            "rating"
+            "price_segment"
           ],
-          "validation_valid": false,
-          "validation_errors": [
-            "Affiliate-URL lijkt een placeholder te bevatten: 'TODO'."
-          ],
+          "validation_valid": true,
+          "validation_errors": [],
           "validation_warnings": [
-            "Aanbevolen veld 'price' ontbreekt.",
-            "Aanbevolen veld 'description' ontbreekt.",
-            "Aanbevolen veld 'rating' ontbreekt.",
-            "Aanbevolen veld 'rating_count' ontbreekt."
+            "Aanbevolen veld 'price_segment' ontbreekt.",
+            "Aanbevolen veld 'key_features' ontbreekt."
           ],
           "validation_rule_flags": [],
           "inferred_price_segment": "premium",
-          "overall_status": "REPLACE",
+          "overall_status": "FLAG",
           "manual_review_required": false,
-          "replacement_needed": true,
-          "replacement_suggestion": {
-            "product_name": "Demeyere Industry 5 Koekenpan 28 cm",
-            "slug": "demeyere-industry-5-28",
-            "category_key": "rvs_koekenpannen",
-            "candidates": [],
-            "manual_review_required": true,
-            "notes": "Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking."
-          }
+          "replacement_needed": false,
+          "replacement_suggestion": null
         },
         {
           "product_name": "BK Superior Tri-Ply Koekenpan 28 cm",
@@ -2296,57 +2280,41 @@
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
           "appears_in_sizes": [],
-          "stored_price": null,
+          "stored_price": 73.09,
           "detected_price": null,
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": null,
+          "stored_availability": "InStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
-          "page_url": "TODO_AFFILIATE_URL",
+          "page_url": "https://www.bol.com/nl/nl/p/bk-superior-triply-koekenpan-o-28-cm-rvs-inductie/9300000022010168/",
           "page_status": "UNKNOWN",
           "page_reachable": null,
           "page_http_code": null,
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
-          "image_path": null,
-          "consistency_issues": [
-            "Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.",
-            "Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO')."
-          ],
+          "image_path": "static/images/products/rvs-koekenpannen/bk-superior-tri-ply-28.jpg",
+          "consistency_issues": [],
           "consistency_warnings": [
-            "Veld 'image_path' ontbreekt."
+            "Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/bk-superior-tri-ply-28.jpg'."
           ],
           "missing_fields": [
-            "availability",
-            "rating_count",
-            "rating"
+            "price_segment"
           ],
-          "validation_valid": false,
-          "validation_errors": [
-            "Affiliate-URL lijkt een placeholder te bevatten: 'TODO'."
-          ],
+          "validation_valid": true,
+          "validation_errors": [],
           "validation_warnings": [
-            "Aanbevolen veld 'price' ontbreekt.",
-            "Aanbevolen veld 'description' ontbreekt.",
-            "Aanbevolen veld 'rating' ontbreekt.",
-            "Aanbevolen veld 'rating_count' ontbreekt."
+            "Aanbevolen veld 'price_segment' ontbreekt.",
+            "Aanbevolen veld 'key_features' ontbreekt."
           ],
           "validation_rule_flags": [],
           "inferred_price_segment": "middenklasse",
-          "overall_status": "REPLACE",
+          "overall_status": "FLAG",
           "manual_review_required": false,
-          "replacement_needed": true,
-          "replacement_suggestion": {
-            "product_name": "BK Superior Tri-Ply Koekenpan 28 cm",
-            "slug": "bk-superior-tri-ply-28",
-            "category_key": "rvs_koekenpannen",
-            "candidates": [],
-            "manual_review_required": true,
-            "notes": "Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking."
-          }
+          "replacement_needed": false,
+          "replacement_suggestion": null
         },
         {
           "product_name": "Demeyere Silverline 7 Koekenpan NanoTouch 28 cm",
@@ -2355,57 +2323,41 @@
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
           "appears_in_sizes": [],
-          "stored_price": null,
+          "stored_price": 229.0,
           "detected_price": null,
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": null,
+          "stored_availability": "InStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
-          "page_url": "TODO_AFFILIATE_URL",
+          "page_url": "https://www.pannenhuis.nl/products/demeyere-silverline-7-nano-touch-koekenpan?gad_source=1&gad_campaignid=21432908150&gclid=CjwKCAjwspPOBhB9EiwATFbi5A149zJ9c_Phs3IG8xeBNJyBZPYjZpzkri4Xk1KJh0Hcd3arhLzlfBoCoEEQAvD_BwE",
           "page_status": "UNKNOWN",
           "page_reachable": null,
           "page_http_code": null,
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
-          "image_path": null,
-          "consistency_issues": [
-            "Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.",
-            "Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO')."
-          ],
+          "image_path": "static/images/products/rvs-koekenpannen/demeyere-silverline-7-28.jpg",
+          "consistency_issues": [],
           "consistency_warnings": [
-            "Veld 'image_path' ontbreekt."
+            "Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/demeyere-silverline-7-28.jpg'."
           ],
           "missing_fields": [
-            "availability",
-            "rating_count",
-            "rating"
+            "price_segment"
           ],
-          "validation_valid": false,
-          "validation_errors": [
-            "Affiliate-URL lijkt een placeholder te bevatten: 'TODO'."
-          ],
+          "validation_valid": true,
+          "validation_errors": [],
           "validation_warnings": [
-            "Aanbevolen veld 'price' ontbreekt.",
-            "Aanbevolen veld 'description' ontbreekt.",
-            "Aanbevolen veld 'rating' ontbreekt.",
-            "Aanbevolen veld 'rating_count' ontbreekt."
+            "Aanbevolen veld 'price_segment' ontbreekt.",
+            "Aanbevolen veld 'key_features' ontbreekt."
           ],
           "validation_rule_flags": [],
-          "inferred_price_segment": null,
-          "overall_status": "REPLACE",
+          "inferred_price_segment": "premium",
+          "overall_status": "FLAG",
           "manual_review_required": false,
-          "replacement_needed": true,
-          "replacement_suggestion": {
-            "product_name": "Demeyere Silverline 7 Koekenpan NanoTouch 28 cm",
-            "slug": "demeyere-silverline-7-nanotouch-28",
-            "category_key": "rvs_koekenpannen",
-            "candidates": [],
-            "manual_review_required": true,
-            "notes": "Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking."
-          }
+          "replacement_needed": false,
+          "replacement_suggestion": null
         },
         {
           "product_name": "WMF Profi Koekenpan 28 cm",
@@ -2414,57 +2366,41 @@
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
           "appears_in_sizes": [],
-          "stored_price": null,
+          "stored_price": 65.99,
           "detected_price": null,
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": null,
+          "stored_availability": "InStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
-          "page_url": "TODO_AFFILIATE_URL",
+          "page_url": "https://www.bol.com/nl/nl/p/wmf-profi-koekenpan-o-28-cm/9200000055361082/?Referrer=ADVNLGOO002032-S--9200000055361082-PMAX-C-22285073469&gad_source=1&gad_campaignid=22295458996&gclid=CjwKCAjwhe3OBhABEiwA6392zC5p2lPz8Rjt14ZCaPm5caMM71Jns_9Fke0sQM60fTzjsfXQVleqJhoCGrsQAvD_BwE",
           "page_status": "UNKNOWN",
           "page_reachable": null,
           "page_http_code": null,
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
-          "image_path": null,
-          "consistency_issues": [
-            "Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.",
-            "Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO')."
-          ],
+          "image_path": "static/images/products/rvs-koekenpannen/wmf-profi-28.jpg",
+          "consistency_issues": [],
           "consistency_warnings": [
-            "Veld 'image_path' ontbreekt."
+            "Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/wmf-profi-28.jpg'."
           ],
           "missing_fields": [
-            "availability",
-            "rating_count",
-            "rating"
+            "price_segment"
           ],
-          "validation_valid": false,
-          "validation_errors": [
-            "Affiliate-URL lijkt een placeholder te bevatten: 'TODO'."
-          ],
+          "validation_valid": true,
+          "validation_errors": [],
           "validation_warnings": [
-            "Aanbevolen veld 'price' ontbreekt.",
-            "Aanbevolen veld 'description' ontbreekt.",
-            "Aanbevolen veld 'rating' ontbreekt.",
-            "Aanbevolen veld 'rating_count' ontbreekt."
+            "Aanbevolen veld 'price_segment' ontbreekt.",
+            "Aanbevolen veld 'key_features' ontbreekt."
           ],
           "validation_rule_flags": [],
           "inferred_price_segment": "middenklasse",
-          "overall_status": "REPLACE",
+          "overall_status": "FLAG",
           "manual_review_required": false,
-          "replacement_needed": true,
-          "replacement_suggestion": {
-            "product_name": "WMF Profi Koekenpan 28 cm",
-            "slug": "wmf-profi-28",
-            "category_key": "rvs_koekenpannen",
-            "candidates": [],
-            "manual_review_required": true,
-            "notes": "Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking."
-          }
+          "replacement_needed": false,
+          "replacement_suggestion": null
         },
         {
           "product_name": "Demeyere Multiline 7 Koekenpan 28 cm",
@@ -2473,57 +2409,41 @@
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
           "appears_in_sizes": [],
-          "stored_price": null,
+          "stored_price": 169.0,
           "detected_price": null,
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": null,
+          "stored_availability": "InStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
-          "page_url": "TODO_AFFILIATE_URL",
+          "page_url": "https://www.bol.com/nl/nl/p/demeyere-multiline-7-koekenpan-28-cm/9300000192368989/?cid=1774512903816-6709989288509&bltgh=3100e097-0d5a-4cd0-a57b-a1a975111d65.ProductList_Middle.0.ProductTitle",
           "page_status": "UNKNOWN",
           "page_reachable": null,
           "page_http_code": null,
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
-          "image_path": null,
-          "consistency_issues": [
-            "Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.",
-            "Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO')."
-          ],
+          "image_path": "static/images/products/rvs-koekenpannen/demeyere-multiline-7-28.jpg",
+          "consistency_issues": [],
           "consistency_warnings": [
-            "Veld 'image_path' ontbreekt."
+            "Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/demeyere-multiline-7-28.jpg'."
           ],
           "missing_fields": [
-            "availability",
-            "rating_count",
-            "rating"
+            "price_segment"
           ],
-          "validation_valid": false,
-          "validation_errors": [
-            "Affiliate-URL lijkt een placeholder te bevatten: 'TODO'."
-          ],
+          "validation_valid": true,
+          "validation_errors": [],
           "validation_warnings": [
-            "Aanbevolen veld 'price' ontbreekt.",
-            "Aanbevolen veld 'description' ontbreekt.",
-            "Aanbevolen veld 'rating' ontbreekt.",
-            "Aanbevolen veld 'rating_count' ontbreekt."
+            "Aanbevolen veld 'price_segment' ontbreekt.",
+            "Aanbevolen veld 'key_features' ontbreekt."
           ],
           "validation_rule_flags": [],
           "inferred_price_segment": "premium",
-          "overall_status": "REPLACE",
+          "overall_status": "FLAG",
           "manual_review_required": false,
-          "replacement_needed": true,
-          "replacement_suggestion": {
-            "product_name": "Demeyere Multiline 7 Koekenpan 28 cm",
-            "slug": "demeyere-multiline-7-28",
-            "category_key": "rvs_koekenpannen",
-            "candidates": [],
-            "manual_review_required": true,
-            "notes": "Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking."
-          }
+          "replacement_needed": false,
+          "replacement_suggestion": null
         },
         {
           "product_name": "De Buyer Affinity Koekenpan 28 cm",
@@ -2532,57 +2452,41 @@
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
           "appears_in_sizes": [],
-          "stored_price": null,
+          "stored_price": 132.58,
           "detected_price": null,
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": null,
+          "stored_availability": "InStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
-          "page_url": "TODO_AFFILIATE_URL",
+          "page_url": "https://www.bol.com/nl/nl/p/debuyer-affinity-koekenpan-o-28-cm/9200000015324060/?Referrer=ADVNLGOO002032-S--9200000015324060-PMAX-C-22285073469&gad_source=1&gad_campaignid=22295458996&gclid=CjwKCAjwhe3OBhABEiwA6392zKCzcUihW8X9OC1FqLrn1fWuyrjHmltZHAIzxaaczsQRdP6yxy0QRRoCWIoQAvD_BwE",
           "page_status": "UNKNOWN",
           "page_reachable": null,
           "page_http_code": null,
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
-          "image_path": null,
-          "consistency_issues": [
-            "Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.",
-            "Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO')."
-          ],
+          "image_path": "static/images/products/rvs-koekenpannen/debuyer-affinity-28.jpg",
+          "consistency_issues": [],
           "consistency_warnings": [
-            "Veld 'image_path' ontbreekt."
+            "Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/debuyer-affinity-28.jpg'."
           ],
           "missing_fields": [
-            "availability",
-            "rating_count",
-            "rating"
+            "price_segment"
           ],
-          "validation_valid": false,
-          "validation_errors": [
-            "Affiliate-URL lijkt een placeholder te bevatten: 'TODO'."
-          ],
+          "validation_valid": true,
+          "validation_errors": [],
           "validation_warnings": [
-            "Aanbevolen veld 'price' ontbreekt.",
-            "Aanbevolen veld 'description' ontbreekt.",
-            "Aanbevolen veld 'rating' ontbreekt.",
-            "Aanbevolen veld 'rating_count' ontbreekt."
+            "Aanbevolen veld 'price_segment' ontbreekt.",
+            "Aanbevolen veld 'key_features' ontbreekt."
           ],
           "validation_rule_flags": [],
           "inferred_price_segment": "premium",
-          "overall_status": "REPLACE",
+          "overall_status": "FLAG",
           "manual_review_required": false,
-          "replacement_needed": true,
-          "replacement_suggestion": {
-            "product_name": "De Buyer Affinity Koekenpan 28 cm",
-            "slug": "debuyer-affinity-28",
-            "category_key": "rvs_koekenpannen",
-            "candidates": [],
-            "manual_review_required": true,
-            "notes": "Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking."
-          }
+          "replacement_needed": false,
+          "replacement_suggestion": null
         },
         {
           "product_name": "BK Bright Koekenpan 28 cm",
@@ -2591,57 +2495,43 @@
           "category": "rvs-koekenpannen",
           "rule_key": "rvs_koekenpannen",
           "appears_in_sizes": [],
-          "stored_price": null,
+          "stored_price": 33.9,
           "detected_price": null,
           "price_change_pct": null,
           "price_alert": false,
           "price_notes": "Geen live prijs gedetecteerd. Opgeslagen prijs kan niet worden vergeleken.",
-          "stored_availability": null,
+          "stored_availability": "InStock",
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
-          "page_url": "TODO_AFFILIATE_URL",
+          "page_url": "https://www.bol.com/nl/nl/p/bk-bright-koekenpan-28-cm-rvs/9300000111596418/",
           "page_status": "UNKNOWN",
           "page_reachable": null,
           "page_http_code": null,
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
-          "image_path": null,
+          "image_path": "static/images/products/rvs-koekenpannen/bk-bright-28.jpg",
           "consistency_issues": [
-            "Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.",
-            "Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO')."
+            "Prijs €33.90 past niet bij price_range '€' (verwacht: €0.01–€30.0)."
           ],
           "consistency_warnings": [
-            "Veld 'image_path' ontbreekt."
+            "Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/bk-bright-28.jpg'."
           ],
           "missing_fields": [
-            "availability",
-            "rating_count",
-            "rating"
+            "price_segment"
           ],
-          "validation_valid": false,
-          "validation_errors": [
-            "Affiliate-URL lijkt een placeholder te bevatten: 'TODO'."
-          ],
+          "validation_valid": true,
+          "validation_errors": [],
           "validation_warnings": [
-            "Aanbevolen veld 'price' ontbreekt.",
-            "Aanbevolen veld 'description' ontbreekt.",
-            "Aanbevolen veld 'rating' ontbreekt.",
-            "Aanbevolen veld 'rating_count' ontbreekt."
+            "Aanbevolen veld 'price_segment' ontbreekt.",
+            "Aanbevolen veld 'key_features' ontbreekt."
           ],
           "validation_rule_flags": [],
           "inferred_price_segment": "budget",
-          "overall_status": "REPLACE",
+          "overall_status": "FLAG",
           "manual_review_required": false,
-          "replacement_needed": true,
-          "replacement_suggestion": {
-            "product_name": "BK Bright Koekenpan 28 cm",
-            "slug": "bk-bright-28",
-            "category_key": "rvs_koekenpannen",
-            "candidates": [],
-            "manual_review_required": true,
-            "notes": "Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking."
-          }
+          "replacement_needed": false,
+          "replacement_suggestion": null
         }
       ],
       "brand_diversity": {
@@ -2674,7 +2564,7 @@
         "availability_mismatches": 0,
         "price_alerts": 0,
         "missing_metadata": 7,
-        "replacement_needed": 7,
+        "replacement_needed": 0,
         "brand_diversity_violations": 1
       }
     },

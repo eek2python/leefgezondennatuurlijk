@@ -1,5 +1,5 @@
 # Product Monitor Report — Fase 2
-**Gegenereerd op:** 2026-03-25T16:30:48  
+**Gegenereerd op:** 2026-04-13T04:38:05  
 **Modus:** zonder live HTTP-checks (--no-live)
 
 > ⚠️ Dit rapport is uitsluitend ter informatie.
@@ -19,7 +19,7 @@
 | Prijsalerts | **0** |
 | Ontbrekende metadata | **7** |
 | Merkdiversiteitsovertredingen | **2** |
-| Vervangingsbehoeften | **11** |
+| Vervangingsbehoeften | **4** |
 
 ## B. koekenpannen — Keramische PFAS-vrije koekenpannen
 **URL:** `/koekenpannen/` | **Gerankt:** 55 | ✅ 53 OK | ⚠️ 2 gemarkeerd
@@ -501,138 +501,97 @@
 | Ontbrekende metadata | 7 |
 | Merkdiversiteitsovertredingen | 1 |
 | Handmatige beoordeling | 0 |
-| Vervangingsbehoeften | 7 |
+| Vervangingsbehoeften | 0 |
 
 ### 🏷️ Merkdiversiteitsovertredingen
 - Merk 'demeyere' heeft 3 producten in de lijst (max 2 toegestaan): ['Demeyere Industry 5 Koekenpan 28 cm', 'Demeyere Silverline 7 Koekenpan NanoTouch 28 cm', 'Demeyere Multiline 7 Koekenpan 28 cm']
 
 ### C. Per-product detail
 
-#### ❌ Demeyere Industry 5 Koekenpan 28 cm
+#### ⚠️ Demeyere Industry 5 Koekenpan 28 cm
 - **Merk:** Demeyere | **Slug:** `demeyere-industry-5-28`
-- **Status:** `REPLACE`
-- **Pagina:** UNKNOWN (HTTP —)
+- **Status:** `FLAG`
+- **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/demeyere-industry-5-koekenpan-28-cm/930000...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
-- **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `premium`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
-- ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
-- ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
-- ❌ Regelovertreding: Affiliate-URL lijkt een placeholder te bevatten: 'TODO'.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'description' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating_count' ontbreekt.
-- 🔄 **Vervanging nodig.** Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking.
+- **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Prijs:** opgeslagen `€152.9` | gedetecteerd `n.v.t.` | segment: `premium`
+- **Ontbrekende velden:** `price_segment`
+- ⚠️ Waarschuwing: Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/demeyere-industry-5-28.jpg'.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price_segment' ontbreekt.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'key_features' ontbreekt.
 
-#### ❌ BK Superior Tri-Ply Koekenpan 28 cm
+#### ⚠️ BK Superior Tri-Ply Koekenpan 28 cm
 - **Merk:** BK | **Slug:** `bk-superior-tri-ply-28`
-- **Status:** `REPLACE`
-- **Pagina:** UNKNOWN (HTTP —)
+- **Status:** `FLAG`
+- **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/bk-superior-triply-koekenpan-o-28-cm-rvs-i...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
-- **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
-- ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
-- ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
-- ❌ Regelovertreding: Affiliate-URL lijkt een placeholder te bevatten: 'TODO'.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'description' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating_count' ontbreekt.
-- 🔄 **Vervanging nodig.** Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking.
+- **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Prijs:** opgeslagen `€73.09` | gedetecteerd `n.v.t.` | segment: `middenklasse`
+- **Ontbrekende velden:** `price_segment`
+- ⚠️ Waarschuwing: Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/bk-superior-tri-ply-28.jpg'.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price_segment' ontbreekt.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'key_features' ontbreekt.
 
-#### ❌ Demeyere Silverline 7 Koekenpan NanoTouch 28 cm
+#### ⚠️ Demeyere Silverline 7 Koekenpan NanoTouch 28 cm
 - **Merk:** Demeyere | **Slug:** `demeyere-silverline-7-nanotouch-28`
-- **Status:** `REPLACE`
-- **Pagina:** UNKNOWN (HTTP —)
+- **Status:** `FLAG`
+- **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.pannenhuis.nl/products/demeyere-silverline-7-nano-touch-ko...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
-- **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `onbekend`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
-- ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
-- ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
-- ❌ Regelovertreding: Affiliate-URL lijkt een placeholder te bevatten: 'TODO'.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'description' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating_count' ontbreekt.
-- 🔄 **Vervanging nodig.** Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking.
+- **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Prijs:** opgeslagen `€229.0` | gedetecteerd `n.v.t.` | segment: `premium`
+- **Ontbrekende velden:** `price_segment`
+- ⚠️ Waarschuwing: Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/demeyere-silverline-7-28.jpg'.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price_segment' ontbreekt.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'key_features' ontbreekt.
 
-#### ❌ WMF Profi Koekenpan 28 cm
+#### ⚠️ WMF Profi Koekenpan 28 cm
 - **Merk:** WMF | **Slug:** `wmf-profi-28`
-- **Status:** `REPLACE`
-- **Pagina:** UNKNOWN (HTTP —)
+- **Status:** `FLAG`
+- **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/wmf-profi-koekenpan-o-28-cm/92000000553610...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
-- **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
-- ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
-- ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
-- ❌ Regelovertreding: Affiliate-URL lijkt een placeholder te bevatten: 'TODO'.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'description' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating_count' ontbreekt.
-- 🔄 **Vervanging nodig.** Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking.
+- **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Prijs:** opgeslagen `€65.99` | gedetecteerd `n.v.t.` | segment: `middenklasse`
+- **Ontbrekende velden:** `price_segment`
+- ⚠️ Waarschuwing: Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/wmf-profi-28.jpg'.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price_segment' ontbreekt.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'key_features' ontbreekt.
 
-#### ❌ Demeyere Multiline 7 Koekenpan 28 cm
+#### ⚠️ Demeyere Multiline 7 Koekenpan 28 cm
 - **Merk:** Demeyere | **Slug:** `demeyere-multiline-7-28`
-- **Status:** `REPLACE`
-- **Pagina:** UNKNOWN (HTTP —)
+- **Status:** `FLAG`
+- **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/demeyere-multiline-7-koekenpan-28-cm/93000...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
-- **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `premium`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
-- ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
-- ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
-- ❌ Regelovertreding: Affiliate-URL lijkt een placeholder te bevatten: 'TODO'.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'description' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating_count' ontbreekt.
-- 🔄 **Vervanging nodig.** Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking.
+- **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Prijs:** opgeslagen `€169.0` | gedetecteerd `n.v.t.` | segment: `premium`
+- **Ontbrekende velden:** `price_segment`
+- ⚠️ Waarschuwing: Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/demeyere-multiline-7-28.jpg'.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price_segment' ontbreekt.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'key_features' ontbreekt.
 
-#### ❌ De Buyer Affinity Koekenpan 28 cm
+#### ⚠️ De Buyer Affinity Koekenpan 28 cm
 - **Merk:** De Buyer | **Slug:** `debuyer-affinity-28`
-- **Status:** `REPLACE`
-- **Pagina:** UNKNOWN (HTTP —)
+- **Status:** `FLAG`
+- **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/debuyer-affinity-koekenpan-o-28-cm/9200000...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
-- **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `premium`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
-- ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
-- ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
-- ❌ Regelovertreding: Affiliate-URL lijkt een placeholder te bevatten: 'TODO'.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'description' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating_count' ontbreekt.
-- 🔄 **Vervanging nodig.** Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking.
+- **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Prijs:** opgeslagen `€132.58` | gedetecteerd `n.v.t.` | segment: `premium`
+- **Ontbrekende velden:** `price_segment`
+- ⚠️ Waarschuwing: Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/debuyer-affinity-28.jpg'.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price_segment' ontbreekt.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'key_features' ontbreekt.
 
-#### ❌ BK Bright Koekenpan 28 cm
+#### ⚠️ BK Bright Koekenpan 28 cm
 - **Merk:** BK | **Slug:** `bk-bright-28`
-- **Status:** `REPLACE`
-- **Pagina:** UNKNOWN (HTTP —)
+- **Status:** `FLAG`
+- **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/bk-bright-koekenpan-28-cm-rvs/930000011159...`
 - **Pagina-fout:** Live check uitgeschakeld.
-- **Beschikbaarheid:** opgeslagen `None` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
-- **Prijs:** opgeslagen `€—` | gedetecteerd `n.v.t.` | segment: `budget`
-- **Ontbrekende velden:** `availability`, `rating_count`, `rating`
-- ❌ Consistentieprobleem: Affiliate-URL begint niet met http(s): 'TODO_AFFILIATE_URL'.
-- ❌ Consistentieprobleem: Affiliate-URL lijkt een placeholder te zijn (bevat 'TODO').
-- ⚠️ Waarschuwing: Veld 'image_path' ontbreekt.
-- ❌ Regelovertreding: Affiliate-URL lijkt een placeholder te bevatten: 'TODO'.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'description' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating' ontbreekt.
-- ⚠️ Regelwaarschuwing: Aanbevolen veld 'rating_count' ontbreekt.
-- 🔄 **Vervanging nodig.** Geen geschikte vervangingskandidaten gevonden. Handmatige beoordeling en selectie vereist. Verwijder het product niet automatisch uit de ranking.
+- **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
+- **Prijs:** opgeslagen `€33.9` | gedetecteerd `n.v.t.` | segment: `budget`
+- **Ontbrekende velden:** `price_segment`
+- ❌ Consistentieprobleem: Prijs €33.90 past niet bij price_range '€' (verwacht: €0.01–€30.0).
+- ⚠️ Waarschuwing: Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/products/rvs-koekenpannen/bk-bright-28.jpg'.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'price_segment' ontbreekt.
+- ⚠️ Regelwaarschuwing: Aanbevolen veld 'key_features' ontbreekt.
 
 ---
 
