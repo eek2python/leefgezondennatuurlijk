@@ -1,5 +1,5 @@
 # Product Monitor Report — Fase 2
-**Gegenereerd op:** 2026-04-15T04:03:19  
+**Gegenereerd op:** 2026-04-15T04:15:59  
 **Modus:** zonder live HTTP-checks (--no-live)
 
 > ⚠️ Dit rapport is uitsluitend ter informatie.
@@ -112,14 +112,14 @@
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€26.99` | gedetecteerd `n.v.t.` | segment: `budget`
 
-#### ✅ Scanpan Classic Induction
-- **Merk:** Scanpan | **Slug:** `scanpan-classic-induction-20`
+#### ✅ Berndes B.Green
+- **Merk:** Berndes | **Slug:** `berndes-b-green-20`
 - **Status:** `OK`
-- **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/scanpan-classic-induction-koekenpan-20-cm/...`
+- **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/berndes-b-green-koekenpan-20-cm-gerecycled...`
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
-- **Prijs:** opgeslagen `€75.95` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ⚠️ Waarschuwing: Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/koekenpannen/scanpan-classic-induction-20cm.jpg'.
+- **Prijs:** opgeslagen `€41.95` | gedetecteerd `n.v.t.` | segment: `middenklasse`
+- ⚠️ Waarschuwing: Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/koekenpannen/berndes-b-green-20cm.jpg'.
 
 #### ✅ GreenPan Barcelona Pro
 - **Merk:** GreenPan | **Slug:** `greenpan-barcelona-pro-24`

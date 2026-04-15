@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T04:03:19",
+  "generated_at": "2026-04-15T04:15:59",
   "live_checks": false,
   "summary": {
     "categories_checked": 7,
@@ -363,13 +363,13 @@
           "replacement_suggestion": null
         },
         {
-          "product_name": "Scanpan Classic Induction",
-          "slug": "scanpan-classic-induction-20",
-          "brand": "Scanpan",
+          "product_name": "Berndes B.Green",
+          "slug": "berndes-b-green-20",
+          "brand": "Berndes",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
           "appears_in_sizes": [],
-          "stored_price": 75.95,
+          "stored_price": 41.95,
           "detected_price": null,
           "price_change_pct": null,
           "price_alert": false,
@@ -378,16 +378,16 @@
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
-          "page_url": "https://www.bol.com/nl/nl/p/scanpan-classic-induction-koekenpan-20-cm/9200000126145767/",
+          "page_url": "https://www.bol.com/nl/nl/p/berndes-b-green-koekenpan-20-cm-gerecycled-aluminium-zilver/9300000006419831/",
           "page_status": "UNKNOWN",
           "page_reachable": null,
           "page_http_code": null,
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
-          "image_path": "static/images/koekenpannen/scanpan-classic-induction-20cm.jpg",
+          "image_path": "static/images/koekenpannen/berndes-b-green-20cm.jpg",
           "consistency_issues": [],
           "consistency_warnings": [
-            "Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/koekenpannen/scanpan-classic-induction-20cm.jpg'."
+            "Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/koekenpannen/berndes-b-green-20cm.jpg'."
           ],
           "missing_fields": [],
           "validation_valid": true,
@@ -2104,7 +2104,7 @@
               "greenchef": 1,
               "tefal": 1,
               "hema": 1,
-              "scanpan": 1
+              "berndes": 1
             },
             "violations": {},
             "has_violations": false
