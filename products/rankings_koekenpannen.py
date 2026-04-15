@@ -21,7 +21,7 @@ RANKINGS = {
         "greenpan_torino_24",
         "bk_enjoy_24",
         "ikea_hemlagad_keramisch_24",
-        "greenpan_cambridge_24",
+        "berndes_b_green_24",
     ],
     26: [
         "greenpan_barcelona_pro_26",
