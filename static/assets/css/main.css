@@ -3059,8 +3059,27 @@ table.product-table .product-badge {
 .stars-3::after   { width: 60%; }
 .stars-3-5::after { width: 70%; }
 .stars-4::after   { width: 80%; }
+.stars-4-0::after { width: 80%; }
+.stars-4-1::after { width: 82%; }
+.stars-4-2::after { width: 84%; }
+.stars-4-3::after { width: 86%; }
+.stars-4-4::after { width: 88%; }
 .stars-4-5::after { width: 90%; }
+.stars-4-6::after { width: 92%; }
+.stars-4-7::after { width: 94%; }
+.stars-4-8::after { width: 96%; }
+.stars-4-9::after { width: 98%; }
 .stars-5::after   { width: 100%; }
+.stars-5-0::after { width: 100%; }
+.stars-3-0::after { width: 60%; }
+.stars-3-1::after { width: 62%; }
+.stars-3-2::after { width: 64%; }
+.stars-3-3::after { width: 66%; }
+.stars-3-4::after { width: 68%; }
+.stars-3-6::after { width: 72%; }
+.stars-3-7::after { width: 74%; }
+.stars-3-8::after { width: 76%; }
+.stars-3-9::after { width: 78%; }
 
 /* Mini Posts */
 
