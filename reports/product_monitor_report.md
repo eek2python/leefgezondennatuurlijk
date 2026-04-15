@@ -1,5 +1,5 @@
 # Product Monitor Report — Fase 2
-**Gegenereerd op:** 2026-04-13T04:38:05  
+**Gegenereerd op:** 2026-04-15T04:03:19  
 **Modus:** zonder live HTTP-checks (--no-live)
 
 > ⚠️ Dit rapport is uitsluitend ter informatie.
@@ -112,14 +112,14 @@
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
 - **Prijs:** opgeslagen `€26.99` | gedetecteerd `n.v.t.` | segment: `budget`
 
-#### ✅ GreenPan Cambridge
-- **Merk:** GreenPan | **Slug:** `greenpan-cambridge-20`
+#### ✅ Scanpan Classic Induction
+- **Merk:** Scanpan | **Slug:** `scanpan-classic-induction-20`
 - **Status:** `OK`
-- **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/greenpan-cambridge-koekenpan-20-cm/9200000...`
+- **Pagina:** UNKNOWN (HTTP —) | URL: `https://www.bol.com/nl/nl/p/scanpan-classic-induction-koekenpan-20-cm/...`
 - **Pagina-fout:** Live check uitgeschakeld.
 - **Beschikbaarheid:** opgeslagen `InStock` → gedetecteerd `onbekend` | Consistentie: `UNKNOWN`
-- **Prijs:** opgeslagen `€36.99` | gedetecteerd `n.v.t.` | segment: `middenklasse`
-- ⚠️ Waarschuwing: Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/koekenpannen/greenpan-cambridge-20cm.jpg'.
+- **Prijs:** opgeslagen `€75.95` | gedetecteerd `n.v.t.` | segment: `middenklasse`
+- ⚠️ Waarschuwing: Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/koekenpannen/scanpan-classic-induction-20cm.jpg'.
 
 #### ✅ GreenPan Barcelona Pro
 - **Merk:** GreenPan | **Slug:** `greenpan-barcelona-pro-24`

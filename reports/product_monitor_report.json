@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-13T04:38:05",
+  "generated_at": "2026-04-15T04:03:19",
   "live_checks": false,
   "summary": {
     "categories_checked": 7,
@@ -363,13 +363,13 @@
           "replacement_suggestion": null
         },
         {
-          "product_name": "GreenPan Cambridge",
-          "slug": "greenpan-cambridge-20",
-          "brand": "GreenPan",
+          "product_name": "Scanpan Classic Induction",
+          "slug": "scanpan-classic-induction-20",
+          "brand": "Scanpan",
           "category": "koekenpannen",
           "rule_key": "keramische_koekenpannen",
           "appears_in_sizes": [],
-          "stored_price": 36.99,
+          "stored_price": 75.95,
           "detected_price": null,
           "price_change_pct": null,
           "price_alert": false,
@@ -378,16 +378,16 @@
           "detected_availability": null,
           "availability_consistency": "UNKNOWN",
           "availability_notes": "Paginastatus is 'UNKNOWN' — beschikbaarheidsconsistentie kan niet worden bepaald. Handmatige controle aanbevolen.",
-          "page_url": "https://www.bol.com/nl/nl/p/greenpan-cambridge-koekenpan-20-cm/9200000054874175/",
+          "page_url": "https://www.bol.com/nl/nl/p/scanpan-classic-induction-koekenpan-20-cm/9200000126145767/",
           "page_status": "UNKNOWN",
           "page_reachable": null,
           "page_http_code": null,
           "page_final_url": null,
           "page_error": "Live check uitgeschakeld.",
-          "image_path": "static/images/koekenpannen/greenpan-cambridge-20cm.jpg",
+          "image_path": "static/images/koekenpannen/scanpan-classic-induction-20cm.jpg",
           "consistency_issues": [],
           "consistency_warnings": [
-            "Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/koekenpannen/greenpan-cambridge-20cm.jpg'."
+            "Afbeeldingsbestand niet gevonden op verwacht pad: 'static/images/koekenpannen/scanpan-classic-induction-20cm.jpg'."
           ],
           "missing_fields": [],
           "validation_valid": true,
@@ -2081,15 +2081,6 @@
             "brand": "greenpan",
             "violations_in_sizes": [
               {
-                "size": "20",
-                "count": 3,
-                "products": [
-                  "GreenPan Barcelona Pro",
-                  "GreenPan Mayflower",
-                  "GreenPan Cambridge"
-                ]
-              },
-              {
                 "size": "24",
                 "count": 3,
                 "products": [
@@ -2106,27 +2097,17 @@
         "size_details": {
           "20": {
             "brand_counts": {
-              "greenpan": 3,
+              "greenpan": 2,
               "demeyere": 1,
               "kochstar": 1,
               "bk": 2,
               "greenchef": 1,
               "tefal": 1,
-              "hema": 1
+              "hema": 1,
+              "scanpan": 1
             },
-            "violations": {
-              "greenpan": {
-                "count": 3,
-                "products": [
-                  "GreenPan Barcelona Pro",
-                  "GreenPan Mayflower",
-                  "GreenPan Cambridge"
-                ],
-                "max_allowed": 2,
-                "message": "Merk 'greenpan' heeft 3 producten in de lijst (max 2 toegestaan): ['GreenPan Barcelona Pro', 'GreenPan Mayflower', 'GreenPan Cambridge']"
-              }
-            },
-            "has_violations": true
+            "violations": {},
+            "has_violations": false
           },
           "24": {
             "brand_counts": {
