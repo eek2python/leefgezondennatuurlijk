@@ -31,7 +31,7 @@ def homepage(request):
 def _enrich_products(products):
     for p in products:
         p["rating_class"] = str(p["rating"]).replace(".", "-")
-        award = p.get("award", "").lower()
+        award = (p.get("award") or "").lower()
         if "beste keuze" in award:
             p["award_class"] = "best-choice"
         elif "budget" in award:
