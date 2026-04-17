@@ -50,6 +50,8 @@ def _enrich_products(products):
             p["award_class"] = "chef-choice"
         elif "stilste" in award:
             p["award_class"] = "feature-choice"
+        elif "inductie" in award:
+            p["award_class"] = "feature-choice"
         else:
             p["award_class"] = ""
 
@@ -324,12 +326,13 @@ _RVS_PRICE_RANGE = {
 def _enrich_rvs_products(products):
     for p in products:
         p["image_path"] = "images/rvs-koekenpannen"
-        p["image"] = p["image"].split("/")[-1]
+        p["image"] = (p.get("image") or "").split("/")[-1]
         p["features"] = p.get("key_features", [])
         p["description"] = p.get("verdict", "")
         p["price_range"] = _RVS_PRICE_RANGE.get(p.get("price_segment", ""), "")
-        if p.get("affiliate_url", "").startswith("TODO"):
+        if (p.get("affiliate_url") or "").startswith("TODO"):
             p["affiliate_url"] = None
+    _enrich_products(products)
 
 
 def rvs_koekenpannen(request):
