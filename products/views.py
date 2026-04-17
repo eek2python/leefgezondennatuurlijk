@@ -315,21 +315,10 @@ def vershoudcontainers(request):
     })
 
 
-_RVS_PRICE_RANGE = {
-    "budget": "€",
-    "mid": "€€",
-    "premium": "€€€",
-    "premium-plus": "€€€€",
-}
-
-
 def _enrich_rvs_products(products):
     for p in products:
         p["image_path"] = "images/rvs-koekenpannen"
         p["image"] = (p.get("image") or "").split("/")[-1]
-        p["features"] = p.get("key_features", [])
-        p["description"] = p.get("verdict", "")
-        p["price_range"] = _RVS_PRICE_RANGE.get(p.get("price_segment", ""), "")
         if (p.get("affiliate_url") or "").startswith("TODO"):
             p["affiliate_url"] = None
     _enrich_products(products)
