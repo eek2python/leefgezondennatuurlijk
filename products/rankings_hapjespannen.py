@@ -7,8 +7,6 @@ RANKINGS = {
         "bk_easy_induction_24",
         "greenpan_cambridge_24",
         "kochstar_essenz_24",
-        "le_creuset_tns_pro_24",
-        "de_buyer_mineral_b_24",
         "beka_cicla_24",
     ],
     28: [
@@ -19,8 +17,6 @@ RANKINGS = {
         "bk_easy_induction_28",
         "be_living_28",
         "greenpan_torino_28",
-        "le_creuset_tns_pro_28",
-        "de_buyer_mineral_b_28",
         "beka_cicla_28",
     ],
 }
