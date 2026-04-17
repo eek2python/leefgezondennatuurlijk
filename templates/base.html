@@ -41,8 +41,13 @@
                <ul>
                   <li><a href="{% url 'homepage' %}">Homepage</a></li>
                   <li><a href="{% url 'snijplanken' %}">Snijplanken</a></li>
-                  <li><a href="{% url 'koekenpannen' %}">Koekenpannen (keramisch)</a></li>
-                  <li><a href="{% url 'rvs_koekenpannen' %}">Koekenpannen (RVS)</a></li>
+                  <li>
+                     <span class="opener">Koekenpannen</span>
+                     <ul>
+                        <li><a href="{% url 'koekenpannen' %}">Keramisch</a></li>
+                        <li><a href="{% url 'rvs_koekenpannen' %}">RVS</a></li>
+                     </ul>
+                  </li>
                   <li><a href="{% url 'hapjespannen' %}">Hapjespannen</a></li>
                   <li><a href="{% url 'wokpannen' %}">Wokpannen</a></li>
                   <li><a href="{% url 'airfryers' %}">Airfryers</a></li>
