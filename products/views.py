@@ -326,7 +326,7 @@ def _enrich_rvs_products(products):
 
 def rvs_koekenpannen(request):
     content = RVS_KOEKENPANNEN_CONTENT
-    products = [dict(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in RVS_KOEKENPANNEN_RANKINGS if k in RVS_KOEKENPANNEN_PRODUCTS]
+    products = [dict(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in RVS_KOEKENPANNEN_RANKINGS[28] if k in RVS_KOEKENPANNEN_PRODUCTS]
     _enrich_rvs_products(products)
     product_count = len(products)
     conclusie = content["conclusies"]["default"]
