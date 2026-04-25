@@ -326,7 +326,17 @@ def _enrich_rvs_products(products):
 
 def rvs_koekenpannen(request):
     content = RVS_KOEKENPANNEN_CONTENT
-    products = [dict(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in RVS_KOEKENPANNEN_RANKINGS[28] if k in RVS_KOEKENPANNEN_PRODUCTS]
+    available_sizes = sorted(RVS_KOEKENPANNEN_RANKINGS.keys())
+    size = request.GET.get("size")
+    try:
+        size = int(size)
+    except (TypeError, ValueError):
+        size = 28 if 28 in available_sizes else available_sizes[0]
+    if size not in RVS_KOEKENPANNEN_RANKINGS:
+        size = 28 if 28 in available_sizes else available_sizes[0]
+
+    keys = RVS_KOEKENPANNEN_RANKINGS[size]
+    products = [dict(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in RVS_KOEKENPANNEN_PRODUCTS]
     _enrich_rvs_products(products)
     product_count = len(products)
     conclusie = content["conclusies"]["default"]
@@ -352,6 +362,8 @@ def rvs_koekenpannen(request):
     meta = content["meta"]
     return render(request, "rvs-koekenpannen.html", {
         "products": products,
+        "available_sizes": available_sizes,
+        "selected_size": size,
         "product_count": product_count,
         "content": content,
         "conclusie": conclusie,
