@@ -25,7 +25,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
    path("admin/", admin.site.urls),
-   path("", views.homepage, name="homepage"),  # dit is je index
+   path("", views.homepage, name="homepage"),
    path("snijplanken/", views.snijplanken, name="snijplanken"),
    path("koekenpannen/", views.koekenpannen, name="koekenpannen"),
    path("hapjespannen/", views.hapjespannen, name="hapjespannen"),
@@ -33,6 +33,10 @@ urlpatterns = [
    path("airfryers/", views.airfryers, name="airfryers"),
    path("vershoudcontainers/", views.vershoudcontainers, name="vershoudcontainers"),
    path("rvs-koekenpannen/", views.rvs_koekenpannen, name="rvs_koekenpannen"),
+   path("over-ons/", views.over_ons, name="over_ons"),
+   path("hoe-wij-beoordelen/", views.hoe_wij_beoordelen, name="hoe_wij_beoordelen"),
+   path("privacy/", views.privacy, name="privacy"),
+   path("product/<slug:slug>/", views.product_detail, name="product_detail"),
    path("blogs/", include("blogs.urls")),
    path("sitemap.xml", sitemap_xml, name="sitemap"),
    path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),

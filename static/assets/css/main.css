@@ -4200,3 +4200,131 @@ table.product-table .product-badge {
                         margin-top: 0;
                         padding-top: 0;
                 }
+
+/* Breadcrumbs */
+.breadcrumbs {
+    margin-bottom: 1.5em;
+}
+.breadcrumb-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.85em;
+    color: #7f888f;
+}
+.breadcrumb-list li {
+    padding: 0;
+}
+.breadcrumb-list li + li::before {
+    content: "›";
+    margin: 0 0.5em;
+    color: #9fa3a6;
+}
+.breadcrumb-list li a {
+    text-decoration: none;
+    border-bottom: none;
+}
+.breadcrumb-list li.active {
+    color: #3d4449;
+    font-weight: 600;
+}
+
+/* Affiliate Disclosure */
+.affiliate-disclosure {
+    background: #f7f7f0;
+    border-left: 3px solid #b4c7a5;
+    padding: 0.75em 1em;
+    margin-bottom: 1.5em;
+    border-radius: 3px;
+}
+.affiliate-disclosure p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Author Byline */
+.author-byline {
+    border-top: 1px solid #dee1e3;
+    padding-top: 1.5em;
+    margin-top: 2em;
+}
+.author-info strong {
+    display: block;
+    margin-bottom: 0.25em;
+    font-size: 0.95em;
+}
+.author-info p {
+    font-size: 0.85em;
+    color: #7f888f;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Newsletter Signup */
+.newsletter-signup .newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    align-items: flex-start;
+}
+.newsletter-signup .newsletter-form input[type="email"] {
+    flex: 1 1 auto;
+    min-width: 150px;
+}
+.newsletter-signup .newsletter-form button {
+    flex: 0 0 auto;
+}
+.newsletter-thanks {
+    flex-basis: 100%;
+    color: #4a7c3f;
+    font-size: 0.9em;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1em 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em 1em;
+    font-size: 0.85em;
+}
+.footer-links li {
+    padding: 0;
+}
+.footer-links a {
+    text-decoration: none;
+    border-bottom: none;
+}
+.footer-disclosure {
+    font-size: 0.8em;
+    color: #9fa3a6;
+    margin-bottom: 0.75em;
+    line-height: 1.5;
+}
+
+/* Product Detail */
+.product-detail-layout {
+    max-width: 400px;
+    margin-bottom: 1.5em;
+}
+.verdict {
+    margin-bottom: 1em;
+}
+.verdict-stars {
+    margin-bottom: 0.5em;
+}
+
+/* Comparison Table */
+.product-table th,
+.product-table td {
+    vertical-align: middle;
+    white-space: normal;
+}
+.product-comparison-detail {
+    border-top: 1px solid #dee1e3;
+    padding-top: 1.5em;
+}

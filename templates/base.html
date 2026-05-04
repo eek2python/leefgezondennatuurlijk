@@ -1,13 +1,22 @@
 {% load static %}
 <!DOCTYPE HTML>
-<html>
+<html lang="nl">
 <head>
    <title>{% block title %}Leef Natuurlijk & Gezond{% endblock %}</title>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
    {% block meta %}<meta name="description" content="Bezoek onze website voor ondersteuning bij het maken van weloverwogen en gezondere keuzes van niet-giftige, milieuvriendelijke producten voor elke hoek van je huis.">{% endblock %}
-   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}?v=2" />
+   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}?v=3" />
    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+   {% if GA_MEASUREMENT_ID %}
+   <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_MEASUREMENT_ID }}"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ GA_MEASUREMENT_ID }}', { anonymize_ip: true });
+   </script>
+   {% endif %}
 </head>
 <body class="is-preload">
 
@@ -56,6 +65,8 @@
                </ul>
             </nav>
 
+            {% include "partials/newsletter_signup.html" %}
+
             <!-- Contact -->
             <section>
                <header class="major">
@@ -71,6 +82,12 @@
 
             <!-- Footer -->
             <footer id="footer">
+               <ul class="footer-links">
+                  <li><a href="{% url 'over_ons' %}">Over ons</a></li>
+                  <li><a href="{% url 'hoe_wij_beoordelen' %}">Hoe wij beoordelen</a></li>
+                  <li><a href="{% url 'privacy' %}">Privacyverklaring</a></li>
+               </ul>
+               <p class="footer-disclosure"><small>Deze website bevat affiliate links. Als je via deze links een aankoop doet, ontvangen wij mogelijk een commissie zonder extra kosten voor jou.</small></p>
                <p class="copyright">&copy; <span id="year"></span> Leef Natuurlijk & Gezond</p>
             </footer>
          </div>

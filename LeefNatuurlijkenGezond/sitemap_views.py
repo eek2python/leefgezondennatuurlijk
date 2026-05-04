@@ -15,6 +15,9 @@ STATIC_URLS = [
     {"name": "airfryers",          "loc_name": "airfryers",         "changefreq": "monthly", "priority": "0.9"},
     {"name": "vershoudcontainers", "loc_name": "vershoudcontainers","changefreq": "monthly", "priority": "0.9"},
     {"name": "blogs_overview",     "loc_name": "blogs_overview",    "changefreq": "weekly",  "priority": "0.8"},
+    {"name": "over_ons",           "loc_name": "over_ons",          "changefreq": "yearly",  "priority": "0.5"},
+    {"name": "hoe_wij_beoordelen", "loc_name": "hoe_wij_beoordelen","changefreq": "yearly",  "priority": "0.5"},
+    {"name": "privacy",            "loc_name": "privacy",           "changefreq": "yearly",  "priority": "0.3"},
 ]
 
 BASE_URL = "https://leefnatuurlijkengezond.nl"

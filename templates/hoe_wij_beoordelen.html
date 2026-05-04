@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Hoe Wij Beoordelen | Leef Natuurlijk & Gezond{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Ontdek hoe Leef Natuurlijk & Gezond producten selecteert en beoordeelt. Onze criteria: materiaalveiligheid, gebruiksgemak, duurzaamheid, reviews en prijs-kwaliteit.">
+<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/hoe-wij-beoordelen/">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/breadcrumbs.html" %}
+
+<section id="banner">
+    <div class="content">
+        <header class="main">
+            <h1>Hoe wij producten beoordelen</h1>
+        </header>
+        <p>Transparantie is belangrijk voor ons. Op deze pagina leggen we uit hoe wij producten selecteren, vergelijken en beoordelen — en wat onze beperkingen zijn.</p>
+    </div>
+</section>
+
+<section>
+    <header class="major">
+        <h2>Onze selectiecriteria</h2>
+    </header>
+    <p>Elk product dat wij opnemen in onze vergelijkingen wordt beoordeeld op de volgende criteria:</p>
+
+    <h3>1. Materiaalveiligheid</h3>
+    <p>Het belangrijkste criterium. Wij selecteren uitsluitend producten die vrij zijn van bekende schadelijke stoffen zoals PFAS, PTFE en PFOA. Voor elke categorie gelden specifieke materiaaleisen — bij koekenpannen kijken we bijvoorbeeld naar keramische coatings of ongecoat RVS, bij snijplanken naar massief hout zonder plastic coatings.</p>
+
+    <h3>2. Gebruiksgemak</h3>
+    <p>Een product moet praktisch en prettig in gebruik zijn. We beoordelen onder meer warmteverdeling, gewicht, handgreepcomfort, geschiktheid voor verschillende warmtebronnen (waaronder inductie) en ovenbestendigheid.</p>
+
+    <h3>3. Consumentenreviews</h3>
+    <p>Wij analyseren beoordelingen van echte kopers op platforms zoals bol.com, Amazon en gespecialiseerde webshops. Dit geeft ons inzicht in de dagelijkse gebruikservaring, duurzaamheid op de lange termijn en veelvoorkomende problemen.</p>
+
+    <h3>4. Prijs-kwaliteitverhouding</h3>
+    <p>We vergelijken producten binnen vergelijkbare prijsklassen en beoordelen of de geboden kwaliteit de prijs rechtvaardigt. Onze ranglijsten bevatten bewust zowel budget- als premiumopties, zodat er voor elk budget een verantwoorde keuze is.</p>
+
+    <h3>5. Beschikbaarheid</h3>
+    <p>Wij nemen alleen producten op die daadwerkelijk verkrijgbaar zijn voor Nederlandse consumenten. Producten die langdurig niet leverbaar zijn, worden gemarkeerd of verwijderd uit onze overzichten.</p>
+</section>
+
+<section>
+    <header class="major">
+        <h2>Wat wij niet doen</h2>
+    </header>
+    <p>Eerlijkheid is belangrijk. Daarom zijn wij transparant over onze beperkingen:</p>
+    <ul>
+        <li><strong>Wij testen niet fysiek in een laboratorium.</strong> Onze beoordelingen zijn gebaseerd op fabrikantspecificaties, onafhankelijke bronnen en consumentenreviews — niet op eigen laboratoriumtests.</li>
+        <li><strong>Wij zijn geen gecertificeerde voedselveiligheidsinstantie.</strong> Onze informatie is zorgvuldig samengesteld, maar vervangt geen professioneel advies.</li>
+        <li><strong>Wij ontvangen geen producten van fabrikanten.</strong> Onze selectie is volledig onafhankelijk van merken en fabrikanten.</li>
+    </ul>
+</section>
+
+<section>
+    <header class="major">
+        <h2>Hoe onze ranglijsten tot stand komen</h2>
+    </header>
+    <p>Voor elke productcategorie stellen wij een ranglijst samen op basis van de bovenstaande criteria. De weging verschilt per categorie:</p>
+    <ul>
+        <li>Bij <strong>koekenpannen</strong> weegt materiaalveiligheid het zwaarst, gevolgd door warmteverdeling en duurzaamheid.</li>
+        <li>Bij <strong>airfryers</strong> kijken we extra naar capaciteit, energieverbruik en gebruiksgemak.</li>
+        <li>Bij <strong>snijplanken</strong> staan houtsoort, mesbesparendheid en onderhoud centraal.</li>
+        <li>Bij <strong>vershoudbakjes</strong> beoordelen we het type glas, lekdichtheid en geschiktheid voor oven en magnetron.</li>
+    </ul>
+    <p>Producten die niet voldoen aan onze materiaalveiligheidseisen worden niet opgenomen, ongeacht hun populariteit of prijs.</p>
+</section>
+
+<section>
+    <header class="major">
+        <h2>Affiliate links</h2>
+    </header>
+    <p>Onze website bevat affiliate links naar webshops zoals bol.com. Als je via een van deze links een product koopt, ontvangen wij mogelijk een kleine commissie. Dit heeft <strong>geen invloed</strong> op onze selectie, rangorde of beoordeling. Producten worden nooit hoger geplaatst omdat een webshop een hogere commissie biedt.</p>
+    <p>Lees meer over ons team en onze missie op de pagina <a href="{% url 'over_ons' %}">Over ons</a>.</p>
+</section>
+
+{% endblock %}

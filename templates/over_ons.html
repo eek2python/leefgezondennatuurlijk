@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Over Ons | Leef Natuurlijk & Gezond{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Leer meer over Leef Natuurlijk & Gezond — wie wij zijn, onze missie en waarom wij onafhankelijk keukenproducten vergelijken op veiligheid en duurzaamheid.">
+<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/over-ons/">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/breadcrumbs.html" %}
+
+<section id="banner">
+    <div class="content">
+        <header class="main">
+            <h1>Over Leef Natuurlijk & Gezond</h1>
+        </header>
+    </div>
+</section>
+
+<section>
+    <header class="major">
+        <h2>Wie zijn wij?</h2>
+    </header>
+    <p>Leef Natuurlijk & Gezond is een onafhankelijke vergelijkingswebsite gericht op veilige, duurzame en niet-giftige keukenproducten. Wij helpen consumenten bij het maken van bewuste keuzes voor een gezonder thuis.</p>
+    <p>Ons team bestaat uit betrokken onderzoekers en redacteuren die dagelijks keukenproducten analyseren op materiaalveiligheid, gebruiksgemak, duurzaamheid en prijs-kwaliteitverhouding.</p>
+</section>
+
+<section>
+    <header class="major">
+        <h2>Onze missie</h2>
+    </header>
+    <p>Steeds meer consumenten maken zich zorgen over schadelijke stoffen in alledaagse producten. PFAS, PTFE en andere synthetische chemicali&euml;n komen voor in pannen, bakvormen, airfryers en voedselverpakkingen. Wij geloven dat iedereen toegang verdient tot betrouwbare, onafhankelijke informatie om gezondere keuzes te kunnen maken.</p>
+    <p>Daarom onderzoeken wij elke productcategorie grondig en presenteren wij onze bevindingen op een eerlijke, transparante manier — zonder belangen van fabrikanten of merken.</p>
+</section>
+
+<section>
+    <header class="major">
+        <h2>Onafhankelijkheid</h2>
+    </header>
+    <p>Onze aanbevelingen zijn gebaseerd op eigen onderzoek en openbaar beschikbare productinformatie. Wij worden niet betaald door merken om producten te promoten. Wanneer je via onze website een product aanschaft, ontvangen wij mogelijk een kleine commissie via affiliate links. Dit heeft geen invloed op onze selectie of beoordeling.</p>
+    <p>Lees meer over onze werkwijze op de pagina <a href="{% url 'hoe_wij_beoordelen' %}">Hoe wij beoordelen</a>.</p>
+</section>
+
+<section>
+    <header class="major">
+        <h2>Contact</h2>
+    </header>
+    <p>Heb je vragen, suggesties of opmerkingen? Neem gerust contact met ons op via <a href="mailto:info@leefnatuurlijkengezond.nl">info@leefnatuurlijkengezond.nl</a>.</p>
+</section>
+
+{% endblock %}

@@ -1,0 +1,251 @@
+Implement Tier 0 and Tier 1 improvements for the Django affiliate website.
+
+IMPORTANT INTENT
+This task focuses on:
+- legal compliance
+- trust (EEAT)
+- analytics
+- SEO structure
+- conversion flow
+
+Do NOT redesign the website.
+Do NOT change URLs.
+Do NOT break existing templates or data structures.
+
+==================================================
+TIER 0 — LEGAL + TRUST (MANDATORY)
+==================================================
+
+1. Affiliate disclosure
+
+Tasks:
+- Add a clear affiliate disclosure:
+  - in the footer (global)
+  - at the top of every product/category page (visible, not hidden)
+- Text should be neutral and compliant (Dutch):
+
+Example:
+"Deze website bevat affiliate links. Als je via deze links een aankoop doet, ontvangen wij mogelijk een commissie zonder extra kosten voor jou."
+
+Rules:
+- must be visible without scrolling too far
+- must not be hidden in small print only
+- must not disrupt UX
+
+--------------------------------------------------
+
+2. About / “Wie zijn wij” page
+
+Create:
+- URL: /over-ons/
+- Template: over_ons.html
+
+Content:
+- who runs the site (can be generic but human)
+- mission: focus on safe / PFAS-free / non-toxic kitchen products
+- independence statement
+- short credibility explanation
+
+Add link:
+- in navigation OR footer
+
+--------------------------------------------------
+
+3. Methodology page (“Hoe wij beoordelen”)
+
+Create:
+- URL: /hoe-wij-beoordelen/
+- reuse and expand existing partial (how_we_select.html)
+
+Include:
+- how products are selected
+- criteria:
+  - material safety
+  - usability
+  - reviews
+  - price/quality
+  - availability
+- explain no direct testing if applicable (be transparent)
+
+Add:
+- internal links from all category pages to this page
+
+--------------------------------------------------
+
+4. Author / byline
+
+Tasks:
+- Add a simple author block on:
+  - blog pages
+  - category pages
+
+Fields:
+- name (e.g. "Redactie Leef Natuurlijk & Gezond")
+- short bio (2–3 lines)
+- optional image placeholder
+
+Do NOT build complex user system — static is fine.
+
+--------------------------------------------------
+
+5. Privacy & cookie page
+
+Create:
+- URL: /privacy/
+- simple template
+
+Include:
+- use of analytics (GA4)
+- affiliate tracking
+- no sensitive data collection
+- contact reference
+
+Add:
+- link in footer
+
+==================================================
+TIER 1 — SEO + CONVERSION FOUNDATION
+==================================================
+
+6. Google Analytics 4 + Search Console preparation
+
+Tasks:
+- add GA4 script placeholder in base.html
+- use environment variable:
+  - GA_MEASUREMENT_ID
+
+- ensure script loads only if variable exists
+
+- prepare site for Search Console:
+  - ensure sitemap.xml exists and works
+  - ensure robots.txt references sitemap
+
+Do NOT hardcode IDs.
+
+--------------------------------------------------
+
+7. Breadcrumbs (UX + schema)
+
+Tasks:
+- add visible breadcrumbs on:
+  - category pages
+  - product detail pages
+
+Example:
+Home > Koekenpannen > RVS > Demeyere Industry 5
+
+- add BreadcrumbList JSON-LD
+
+Rules:
+- must reflect actual URL structure
+- must not break layout
+
+--------------------------------------------------
+
+8. Product detail page linking (critical)
+
+Current problem:
+Category pages link directly to affiliate URLs.
+
+Tasks:
+- change category pages so:
+  - product title OR image links to internal product detail page
+  - affiliate button remains external
+
+Result:
+User flow becomes:
+Category → Product page → Affiliate click
+
+Do NOT remove affiliate links.
+
+--------------------------------------------------
+
+9. Ensure product detail pages are complete
+
+Verify:
+- each product page includes:
+  - description
+  - pros/cons
+  - verdict
+  - affiliate button
+
+- add internal links:
+  - "Bekijk alternatieven"
+  - link to category page
+
+--------------------------------------------------
+
+10. Comparison page support (basic structure)
+
+Do NOT generate content yet.
+
+Create:
+- template: comparison.html
+
+Support:
+- title
+- intro
+- comparison table
+- pros/cons per product
+- CTA buttons
+
+Ensure:
+- reusable for future pages
+
+--------------------------------------------------
+
+11. Newsletter placeholder (lightweight)
+
+Tasks:
+- add simple newsletter block in sidebar or footer
+
+Content:
+- short text
+- email input (no backend needed yet)
+
+Example:
+"Ontvang tips over gezond koken en de beste PFAS-vrije producten"
+
+No integration required yet.
+
+==================================================
+GENERAL RULES
+==================================================
+
+- Do NOT change existing URLs
+- Do NOT refactor product data structure
+- Do NOT modify ranking logic
+- Keep styling consistent with current theme
+- Keep implementation simple and maintainable
+
+==================================================
+OUTPUT REQUIRED
+==================================================
+
+After implementation, provide:
+
+1. exact files created
+2. exact files modified
+3. list of new URLs:
+   - /over-ons/
+   - /hoe-wij-beoordelen/
+   - /privacy/
+
+4. confirmation:
+   - affiliate disclosure visible
+   - breadcrumbs working
+   - product detail flow updated
+   - GA4 placeholder implemented
+
+5. any manual steps still required:
+   - adding GA ID
+   - adding real author name
+   - optional content improvements
+
+==================================================
+IMPORTANT FINAL INSTRUCTION
+==================================================
+
+Do not over-engineer.
+Do not introduce new frameworks.
+Focus on clean, minimal, production-safe improvements.

@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ product.name }} | Leef Natuurlijk & Gezond{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ product.description }}">
+<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/product/{{ product.slug }}/">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/breadcrumbs.html" %}
+{% include "partials/affiliate_disclosure.html" %}
+
+<section>
+    <header class="main">
+        <h1>{{ product.name }}</h1>
+    </header>
+
+    <div class="product-detail-layout">
+        <img
+            src="{% static product.image_path|add:'/' %}{{ product.image }}"
+            alt="{{ product.name }}"
+            class="image fit"
+            loading="lazy"
+        >
+    </div>
+
+    <p>{{ product.description }}</p>
+
+    {% if product.features %}
+    <h3>Kenmerken</h3>
+    <ul>
+        {% for feature in product.features %}
+        <li>{{ feature }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</section>
+
+{% if product.pros or product.cons %}
+<section>
+    <div class="pros-cons">
+        {% if product.pros %}
+        <div class="pros">
+            <strong>Voordelen</strong>
+            <ul>
+                {% for pro in product.pros %}
+                <li>{{ pro }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% if product.cons %}
+        <div class="cons">
+            <strong>Nadelen</strong>
+            <ul>
+                {% for con in product.cons %}
+                <li>{{ con }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endif %}
+
+{% if product.verdict %}
+<section>
+    <header class="major">
+        <h2>Eindoordeel</h2>
+    </header>
+    <div class="verdict">
+        <div class="verdict-stars">
+            <span class="stars stars-{{ product.rating_class }}"></span>
+        </div>
+        <p>{{ product.verdict }}</p>
+    </div>
+    {% if product.price_range %}
+    <p><strong>Prijsniveau:</strong> {{ product.price_range }}</p>
+    {% endif %}
+    {% if product.award %}
+    <span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
+    {% endif %}
+</section>
+{% endif %}
+
+<section>
+    {% if product.affiliate_url %}
+    <a href="{{ product.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary">Bekijk prijs &amp; reviews →</a>
+    {% else %}
+    <span class="button disabled" aria-disabled="true">Binnenkort beschikbaar</span>
+    {% endif %}
+    <a href="{{ category_url }}" class="button">← Bekijk alle {{ category_label }}</a>
+</section>
+
+{% include "partials/author_byline.html" %}
+
+{% endblock %}

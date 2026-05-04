@@ -31,6 +31,9 @@
 
 {% block content %}
 
+{% include "partials/breadcrumbs.html" %}
+{% include "partials/affiliate_disclosure.html" %}
+
 <section id="banner">
     <div class="content">
         <header class="main">
@@ -206,4 +209,5 @@
 </section>
 
 {% include "partials/related_categories.html" %}
+{% include "partials/author_byline.html" %}
 {% endblock %}

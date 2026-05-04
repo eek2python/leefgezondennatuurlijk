@@ -39,13 +39,47 @@ All 6 category pages use a standardised three-file content architecture per cate
 | vershoudcontainers | flat | `"default"` | `images/vershoudbakjes` |
 
 ### Key Partials
-- `templates/partials/product_block.html` — renders one product card
+- `templates/partials/product_block.html` — renders one product card; image and title link to `/product/<slug>/` detail page
 - `templates/partials/related_categories.html` — "Ontdek andere categorieën" section, included at bottom of all 6 category pages
+- `templates/partials/breadcrumbs.html` — breadcrumb navigation with JSON-LD BreadcrumbList structured data
+- `templates/partials/affiliate_disclosure.html` — transparency disclosure for affiliate links
+- `templates/partials/author_byline.html` — author/editorial team byline
+- `templates/partials/newsletter_signup.html` — newsletter signup placeholder (sidebar, no backend integration yet)
+
+### Product Detail Pages
+- URL: `/product/<slug>/` — dict-based product detail view
+- View: `products/views.py::product_detail` — looks up product by slug from `ALL_PRODUCTS_BY_SLUG` dict, falls back to DB model
+- Template: `templates/product_detail.html` — breadcrumbs, disclosure, image, description, features, pros/cons, verdict, affiliate CTA, back-to-category link
+- `CATEGORY_MAP` in views.py maps category keys → (label, url) for breadcrumb generation
+
+### Trust & Legal Pages
+- `/over-ons/` — About page (templates/over_ons.html)
+- `/hoe-wij-beoordelen/` — Methodology page (templates/hoe_wij_beoordelen.html)
+- `/privacy/` — Privacy policy (templates/privacy.html)
+- Views in `products/views.py` (over_ons, hoe_wij_beoordelen, privacy)
+
+### Comparison Template
+- `templates/comparison.html` — reusable comparison table template (not yet wired to a URL)
+
+### SEO & Trust Features
+- Breadcrumbs with JSON-LD on all category, blog, product detail, and info pages
+- Affiliate disclosure on all category and product pages
+- Author byline at bottom of all category and blog pages
+- GA4 analytics placeholder: renders `<script>` tag when `GA_MEASUREMENT_ID` env var is set
+- Context processor: `LeefNatuurlijkenGezond/context_processors.py` passes `GA_MEASUREMENT_ID` to all templates
+- Footer links to Over ons, Hoe wij beoordelen, Privacyverklaring
+- Footer-level affiliate disclosure
+- `lang="nl"` on `<html>` tag
+
+### RVS Koekenpannen (sub-category)
+- URL: `/rvs-koekenpannen/` — stainless steel frying pans
+- Breadcrumbs: Home › Koekenpannen › RVS
 
 ### Sitemap
 `LeefNatuurlijkenGezond/sitemap_views.py` generates sitemap.xml dynamically:
 - Static URLs: 8 pages using `reverse()` (homepage, 6 categories, blogs overview)
 - Dynamic blog URLs: filesystem scan of `blogs/templates/blogs/*.html` (excludes `blogoverzicht.html`)
+- Note: New pages (/over-ons/, /hoe-wij-beoordelen/, /privacy/) not yet added to sitemap
 
 ## Running the App
 

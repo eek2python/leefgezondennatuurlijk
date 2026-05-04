@@ -1,4 +1,6 @@
+import os
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import Http404
 from .models import Product, Click
 import json
 from .products_koekenpannen import PRODUCTS as KOEKENPANNEN_PRODUCTS
@@ -24,8 +26,61 @@ from .rankings_rvs_koekenpannen import RANKINGS as RVS_KOEKENPANNEN_RANKINGS
 from .content_rvs_koekenpannen import CONTENT as RVS_KOEKENPANNEN_CONTENT
 
 
+CATEGORY_MAP = {
+    "koekenpannen": {"products": KOEKENPANNEN_PRODUCTS, "label": "Koekenpannen", "url_name": "koekenpannen"},
+    "rvs-koekenpannen": {"products": RVS_KOEKENPANNEN_PRODUCTS, "label": "RVS Koekenpannen", "url_name": "rvs_koekenpannen"},
+    "hapjespannen": {"products": HAPJESPANNEN_PRODUCTS, "label": "Hapjespannen", "url_name": "hapjespannen"},
+    "wokpannen": {"products": WOKPANNEN_PRODUCTS, "label": "Wokpannen", "url_name": "wokpannen"},
+    "snijplanken": {"products": SNIJPLANKEN_PRODUCTS, "label": "Snijplanken", "url_name": "snijplanken"},
+    "airfryers": {"products": AIRFRYERS_PRODUCTS, "label": "Airfryers", "url_name": "airfryers"},
+    "vershoudcontainers": {"products": VERSHOUDCONTAINERS_PRODUCTS, "label": "Vershoudbakjes", "url_name": "vershoudcontainers"},
+}
+
+ALL_PRODUCTS_BY_SLUG = {}
+for cat_key, cat_info in CATEGORY_MAP.items():
+    for prod_key, prod_data in cat_info["products"].items():
+        slug = prod_data.get("slug", prod_key)
+        if slug not in ALL_PRODUCTS_BY_SLUG:
+            ALL_PRODUCTS_BY_SLUG[slug] = []
+        ALL_PRODUCTS_BY_SLUG[slug].append({"data": prod_data, "category": cat_key})
+
+
+def _build_breadcrumb_ld(breadcrumbs):
+    items = [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.leefnatuurlijkengezond.nl/"}]
+    for i, crumb in enumerate(breadcrumbs, start=2):
+        entry = {"@type": "ListItem", "position": i, "name": crumb["label"]}
+        if crumb.get("url"):
+            entry["item"] = f"https://www.leefnatuurlijkengezond.nl{crumb['url']}"
+        items.append(entry)
+    return json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items})
+
+
 def homepage(request):
     return render(request, "index.html")
+
+
+def over_ons(request):
+    breadcrumbs = [{"label": "Over ons", "url": "/over-ons/"}]
+    return render(request, "over_ons.html", {
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+    })
+
+
+def hoe_wij_beoordelen(request):
+    breadcrumbs = [{"label": "Hoe wij beoordelen", "url": "/hoe-wij-beoordelen/"}]
+    return render(request, "hoe_wij_beoordelen.html", {
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+    })
+
+
+def privacy(request):
+    breadcrumbs = [{"label": "Privacyverklaring", "url": "/privacy/"}]
+    return render(request, "privacy.html", {
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+    })
 
 
 def _enrich_products(products):
@@ -127,6 +182,7 @@ def snijplanken(request):
         "De 10 beste houten snijplanken van 2026 \u2013 duurzaam, voedselveilig en PFAS-vrij.",
         products,
     )
+    breadcrumbs = [{"label": "Snijplanken", "url": "/snijplanken/"}]
     return render(request, "snijplanken.html", {
         "products": products,
         "product_count": product_count,
@@ -134,6 +190,9 @@ def snijplanken(request):
         "conclusie": conclusie,
         "json_ld": json_ld,
         "faq_ld": faq_ld,
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+        "current_category": "snijplanken",
     })
 
 
@@ -166,6 +225,7 @@ def koekenpannen(request):
         f"Top {product_count} PFAS-vrije koekenpannen van {size}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
         products,
     )
+    breadcrumbs = [{"label": "Koekenpannen", "url": "/koekenpannen/"}]
     return render(request, "koekenpannen.html", {
         "products": products,
         "available_sizes": available_sizes,
@@ -178,6 +238,9 @@ def koekenpannen(request):
         "conclusie": conclusie,
         "json_ld": json_ld,
         "faq_ld": faq_ld,
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+        "current_category": "koekenpannen",
     })
 
 
@@ -210,6 +273,7 @@ def hapjespannen(request):
         f"Top {product_count} PFAS-vrije hapjespannen van {size}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
         products,
     )
+    breadcrumbs = [{"label": "Hapjespannen", "url": "/hapjespannen/"}]
     return render(request, "hapjespannen.html", {
         "products": products,
         "available_sizes": available_sizes,
@@ -222,6 +286,9 @@ def hapjespannen(request):
         "conclusie": conclusie,
         "json_ld": json_ld,
         "faq_ld": faq_ld,
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+        "current_category": "hapjespannen",
     })
 
 
@@ -254,6 +321,7 @@ def wokpannen(request):
         f"Top {product_count} PFAS-vrije wokpannen van {size}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
         products,
     )
+    breadcrumbs = [{"label": "Wokpannen", "url": "/wokpannen/"}]
     return render(request, "wokpannen.html", {
         "products": products,
         "available_sizes": available_sizes,
@@ -266,6 +334,9 @@ def wokpannen(request):
         "conclusie": conclusie,
         "json_ld": json_ld,
         "faq_ld": faq_ld,
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+        "current_category": "wokpannen",
     })
 
 
@@ -282,6 +353,7 @@ def airfryers(request):
         "De 6 beste PFAS-vrije airfryers van 2026 \u2013 gezond, duurzaam en zonder schadelijke stoffen.",
         products,
     )
+    breadcrumbs = [{"label": "Airfryers", "url": "/airfryers/"}]
     return render(request, "airfryers.html", {
         "products": products,
         "product_count": product_count,
@@ -289,6 +361,9 @@ def airfryers(request):
         "conclusie": conclusie,
         "json_ld": json_ld,
         "faq_ld": faq_ld,
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+        "current_category": "airfryers",
     })
 
 
@@ -305,6 +380,7 @@ def vershoudcontainers(request):
         "De 5 beste glazen vershoudcontainers van 2026 \u2013 voedselveilig, duurzaam en PFAS-vrij.",
         products,
     )
+    breadcrumbs = [{"label": "Vershoudbakjes", "url": "/vershoudcontainers/"}]
     return render(request, "vershoudcontainers.html", {
         "products": products,
         "product_count": product_count,
@@ -312,6 +388,9 @@ def vershoudcontainers(request):
         "conclusie": conclusie,
         "json_ld": json_ld,
         "faq_ld": faq_ld,
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+        "current_category": "vershoudcontainers",
     })
 
 
@@ -360,6 +439,7 @@ def rvs_koekenpannen(request):
         ],
     })
     meta = content["meta"]
+    breadcrumbs = [{"label": "Koekenpannen", "url": "/koekenpannen/"}, {"label": "RVS", "url": "/rvs-koekenpannen/"}]
     return render(request, "rvs-koekenpannen.html", {
         "products": products,
         "available_sizes": available_sizes,
@@ -370,6 +450,9 @@ def rvs_koekenpannen(request):
         "faq_ld": faq_ld,
         "itemlist_ld": itemlist_ld,
         "meta": meta,
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+        "current_category": "rvs-koekenpannen",
     })
 
 
@@ -387,6 +470,36 @@ def product_list(request):
 
 
 def product_detail(request, slug):
+    entries = ALL_PRODUCTS_BY_SLUG.get(slug)
+    if entries:
+        cat_param = request.GET.get("cat")
+        entry = None
+        if cat_param:
+            entry = next((e for e in entries if e["category"] == cat_param), None)
+        if not entry:
+            entry = entries[0]
+        product = dict(entry["data"])
+        cat_key = entry["category"]
+        cat_info = CATEGORY_MAP[cat_key]
+        _enrich_products([product])
+        if cat_key == "rvs-koekenpannen":
+            product["image_path"] = "images/rvs-koekenpannen"
+            product["image"] = (product.get("image") or "").split("/")[-1]
+            if (product.get("affiliate_url") or "").startswith("TODO"):
+                product["affiliate_url"] = None
+        from django.urls import reverse
+        category_url = reverse(cat_info["url_name"])
+        breadcrumbs = [
+            {"label": cat_info["label"], "url": category_url},
+            {"label": product["name"], "url": None},
+        ]
+        return render(request, "product_detail.html", {
+            "product": product,
+            "category_label": cat_info["label"],
+            "category_url": category_url,
+            "breadcrumbs": breadcrumbs,
+            "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+        })
     product = get_object_or_404(Product, slug=slug, is_active=True)
     return render(request, "products/product_detail.html", {"product": product})
 

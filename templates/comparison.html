@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ comparison_title }} | Leef Natuurlijk & Gezond{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ comparison_description }}">
+<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl{{ request.path }}">
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/breadcrumbs.html" %}
+
+<section id="banner">
+    <div class="content">
+        <header class="main">
+            <h1>{{ comparison_title }}</h1>
+        </header>
+        {% if comparison_intro %}
+        <p>{{ comparison_intro|safe }}</p>
+        {% endif %}
+    </div>
+</section>
+
+{% include "partials/affiliate_disclosure.html" %}
+
+{% if products %}
+<section>
+    <header class="major">
+        <h2>Vergelijkingstabel</h2>
+    </header>
+    <div class="table-wrapper">
+        <table class="alt product-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Materiaal</th>
+                    <th>Belangrijkste eigenschappen</th>
+                    <th>Prijsniveau</th>
+                    <th>Beoordeling</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>
+                        <strong>{{ product.name }}</strong>
+                        {% if product.award %}
+                        <br><span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ product.material }}</td>
+                    <td>
+                        {% if product.features %}
+                        {{ product.features|join:" · " }}
+                        {% endif %}
+                    </td>
+                    <td>{{ product.price_range }}</td>
+                    <td><span class="stars stars-{{ product.rating_class }}"></span></td>
+                    <td>
+                        {% if product.affiliate_url %}
+                        <a href="{{ product.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk prijs →</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% for product in products %}
+<section class="product-comparison-detail">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    {% if product.pros or product.cons %}
+    <div class="pros-cons">
+        {% if product.pros %}
+        <div class="pros">
+            <strong>Voordelen</strong>
+            <ul>
+                {% for pro in product.pros %}
+                <li>{{ pro }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% if product.cons %}
+        <div class="cons">
+            <strong>Nadelen</strong>
+            <ul>
+                {% for con in product.cons %}
+                <li>{{ con }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% if product.verdict %}
+    <p><strong>Eindoordeel:</strong> {{ product.verdict }}</p>
+    {% endif %}
+    {% if product.affiliate_url %}
+    <a href="{{ product.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk prijs &amp; reviews →</a>
+    {% endif %}
+</section>
+{% endfor %}
+
+{% endif %}
+
+{% include "partials/related_categories.html" %}
+{% include "partials/author_byline.html" %}
+
+{% endblock %}
