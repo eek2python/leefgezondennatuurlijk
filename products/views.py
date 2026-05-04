@@ -40,9 +40,9 @@ ALL_PRODUCTS_BY_SLUG = {}
 for cat_key, cat_info in CATEGORY_MAP.items():
     for prod_key, prod_data in cat_info["products"].items():
         slug = prod_data.get("slug", prod_key)
-        if slug not in ALL_PRODUCTS_BY_SLUG:
-            ALL_PRODUCTS_BY_SLUG[slug] = []
-        ALL_PRODUCTS_BY_SLUG[slug].append({"data": prod_data, "category": cat_key})
+        if slug in ALL_PRODUCTS_BY_SLUG:
+            raise ValueError(f"Duplicate product slug '{slug}' in category '{cat_key}' — slugs must be globally unique")
+        ALL_PRODUCTS_BY_SLUG[slug] = {"data": prod_data, "category": cat_key}
 
 
 def _build_breadcrumb_ld(breadcrumbs):
@@ -192,7 +192,6 @@ def snijplanken(request):
         "faq_ld": faq_ld,
         "breadcrumbs": breadcrumbs,
         "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
-        "current_category": "snijplanken",
     })
 
 
@@ -240,7 +239,6 @@ def koekenpannen(request):
         "faq_ld": faq_ld,
         "breadcrumbs": breadcrumbs,
         "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
-        "current_category": "koekenpannen",
     })
 
 
@@ -288,7 +286,6 @@ def hapjespannen(request):
         "faq_ld": faq_ld,
         "breadcrumbs": breadcrumbs,
         "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
-        "current_category": "hapjespannen",
     })
 
 
@@ -336,7 +333,6 @@ def wokpannen(request):
         "faq_ld": faq_ld,
         "breadcrumbs": breadcrumbs,
         "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
-        "current_category": "wokpannen",
     })
 
 
@@ -363,7 +359,6 @@ def airfryers(request):
         "faq_ld": faq_ld,
         "breadcrumbs": breadcrumbs,
         "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
-        "current_category": "airfryers",
     })
 
 
@@ -390,7 +385,6 @@ def vershoudcontainers(request):
         "faq_ld": faq_ld,
         "breadcrumbs": breadcrumbs,
         "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
-        "current_category": "vershoudcontainers",
     })
 
 
@@ -452,7 +446,6 @@ def rvs_koekenpannen(request):
         "meta": meta,
         "breadcrumbs": breadcrumbs,
         "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
-        "current_category": "rvs-koekenpannen",
     })
 
 
@@ -470,14 +463,8 @@ def product_list(request):
 
 
 def product_detail(request, slug):
-    entries = ALL_PRODUCTS_BY_SLUG.get(slug)
-    if entries:
-        cat_param = request.GET.get("cat")
-        entry = None
-        if cat_param:
-            entry = next((e for e in entries if e["category"] == cat_param), None)
-        if not entry:
-            entry = entries[0]
+    entry = ALL_PRODUCTS_BY_SLUG.get(slug)
+    if entry:
         product = dict(entry["data"])
         cat_key = entry["category"]
         cat_info = CATEGORY_MAP[cat_key]

@@ -48,9 +48,10 @@ All 6 category pages use a standardised three-file content architecture per cate
 
 ### Product Detail Pages
 - URL: `/product/<slug>/` — dict-based product detail view
-- View: `products/views.py::product_detail` — looks up product by slug from `ALL_PRODUCTS_BY_SLUG` dict, falls back to DB model
+- View: `products/views.py::product_detail` — looks up product by slug from `ALL_PRODUCTS_BY_SLUG` dict (simple 1:1 mapping, enforced unique at startup), falls back to DB model
 - Template: `templates/product_detail.html` — breadcrumbs, disclosure, image, description, features, pros/cons, verdict, affiliate CTA, back-to-category link
 - `CATEGORY_MAP` in views.py maps category keys → (label, url) for breadcrumb generation
+- All product slugs are globally unique across categories; duplicate slugs raise `ValueError` at startup
 
 ### Trust & Legal Pages
 - `/over-ons/` — About page (templates/over_ons.html)
@@ -77,9 +78,10 @@ All 6 category pages use a standardised three-file content architecture per cate
 
 ### Sitemap
 `LeefNatuurlijkenGezond/sitemap_views.py` generates sitemap.xml dynamically:
-- Static URLs: 8 pages using `reverse()` (homepage, 6 categories, blogs overview)
+- Static URLs: 11 pages using `reverse()` (homepage, 6 categories, blogs overview, over-ons, hoe-wij-beoordelen, privacy)
 - Dynamic blog URLs: filesystem scan of `blogs/templates/blogs/*.html` (excludes `blogoverzicht.html`)
-- Note: New pages (/over-ons/, /hoe-wij-beoordelen/, /privacy/) not yet added to sitemap
+- Product detail URLs: all 125 products from `ALL_PRODUCTS_BY_SLUG` (priority 0.6, monthly changefreq)
+- Total: 138 URLs (0 duplicates)
 
 ## Running the App
 

@@ -1,6 +1,6 @@
 PRODUCTS = {
     "greenpan_barcelona_pro_28": {
-        "slug": "greenpan-barcelona-pro-28",
+        "slug": "greenpan-barcelona-pro-hapjespan-28",
         "name": "GreenPan Barcelona Pro",
         "description": "Premium keramische hapjespan zonder PFAS met Thermolon™ Infinity Pro-coating en stevig glazen deksel.",
         "brand": "GreenPan",
@@ -99,7 +99,7 @@ PRODUCTS = {
         "award": "💎 Premium keuze",
     },
     "greenchef_diamond_28": {
-        "slug": "greenchef-diamond-28",
+        "slug": "greenchef-diamond-hapjespan-28",
         "name": "GreenChef Diamond Induction",
         "description": "PFAS-vrije keramische hapjespan met diamantversterkte coating en deksel.",
         "brand": "GreenChef",
@@ -132,7 +132,7 @@ PRODUCTS = {
         "verdict": "Een uitstekende middenklasser die verrassend goede prestaties levert voor zijn prijs.",
     },
     "bk_easy_induction_28": {
-        "slug": "bk-easy-induction-28",
+        "slug": "bk-easy-induction-hapjespan-28",
         "name": "BK Easy Induction Ceramic",
         "description": "Betaalbare PFAS-vrije hapjespan met keramische antiaanbaklaag en stevige koudgreep.",
         "brand": "BK",
@@ -262,7 +262,7 @@ PRODUCTS = {
 
 # 24 CM HAPJESPANNEN
     "greenpan_barcelona_pro_24": {
-        "slug": "greenpan-barcelona-pro-24",
+        "slug": "greenpan-barcelona-pro-hapjespan-24",
         "name": "GreenPan Barcelona Pro",
         "description": "Premium keramische hapjespan zonder PFAS met Thermolon™ Infinity Pro-coating en stevig glazen deksel.",
         "brand": "GreenPan",

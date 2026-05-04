@@ -1,6 +1,6 @@
 {% load static %}
 <div class="product-block">
-<a href="{% url 'product_detail' slug=product.slug %}{% if current_category %}?cat={{ current_category }}{% endif %}">
+<a href="{% url 'product_detail' slug=product.slug %}">
 <img
        src="{% static product.image_path|add:'/' %}{{ product.image }}"
        alt="{{ product.name }}"
@@ -9,7 +9,7 @@
 >
 </a>
 <div class="content">
-<h3><a href="{% url 'product_detail' slug=product.slug %}{% if current_category %}?cat={{ current_category }}{% endif %}">{{ forloop.counter }}. {{ product.name }}</a></h3>
+<h3><a href="{% url 'product_detail' slug=product.slug %}">{{ forloop.counter }}. {{ product.name }}</a></h3>
 <p>{{ product.description }}</p>
        {% if product.pros or product.cons %}
 <div class="pros-cons">

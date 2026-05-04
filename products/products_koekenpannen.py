@@ -1420,7 +1420,7 @@ PRODUCTS = {
     },
 
     "scanpan_techniq_30": {
-        "slug": "ikea_hemlagad_keramisch_32",
+        "slug": "scanpan-techniq-30",
         "name": "Scanpan TechnIQ",
         "description": "Professionele keramische koekenpan uit de TechnIQ-lijn, ontwikkeld in samenwerking met chefs.",
         "brand": "Scanpan",
@@ -1513,7 +1513,7 @@ PRODUCTS = {
     },
 
     "combekk_ceramic_pro_32": {
-        "slug": "bk-easy-induction-32",
+        "slug": "combekk-ceramic-pro-32",
         "name": "Combekk Ceramic Pro",
         "description": "Duurzame keramische koekenpan van Nederlands ontwerp, ontwikkeld met focus op gezond koken en een lange levensduur.",
         "brand": "Combekk",

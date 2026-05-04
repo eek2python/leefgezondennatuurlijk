@@ -46,8 +46,18 @@ def sitemap_xml(request):
                     ).strftime("%Y-%m-%d"),
                 })
 
+    from products.views import ALL_PRODUCTS_BY_SLUG
+    product_urls = []
+    for slug in sorted(ALL_PRODUCTS_BY_SLUG):
+        product_urls.append({
+            "loc": BASE_URL + reverse("product_detail", kwargs={"slug": slug}),
+            "changefreq": "monthly",
+            "priority": "0.6",
+        })
+
     xml = render_to_string("sitemap_template.xml", {
         "static_urls": static_urls,
         "blog_urls": blog_urls,
+        "product_urls": product_urls,
     })
     return HttpResponse(xml, content_type="application/xml")

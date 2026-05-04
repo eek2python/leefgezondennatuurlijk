@@ -15,4 +15,11 @@
 <priority>0.7</priority>
 </url>
 {% endfor %}
+{% for url in product_urls %}
+<url>
+<loc>{{ url.loc }}</loc>
+<changefreq>{{ url.changefreq }}</changefreq>
+<priority>{{ url.priority }}</priority>
+</url>
+{% endfor %}
 </urlset>
