@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "zCa6k9oM0lN4Qibwuq2QS"
+uri = "file://.local/url-structure-audit.md"
+type = "text"
+title = "URL Structure Audit & Migration Proposal"
