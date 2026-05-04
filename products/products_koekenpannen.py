@@ -234,7 +234,7 @@ PRODUCTS = {
     },
 
     "demeyere_alu_pro_5_28": {
-        "slug": "demeyere_alu_pro_5_28",
+        "slug": "demeyere-alu-pro-5-28",
         "name": "Demeyere Alu Pro 5 Ceraforce",
         "description": "Hoogwaardige koekenpan van Demeyere met PFAS-vrije Ceraforce® keramische coating en uitstekende warmteverdeling, ideaal voor intensief gebruik.",
         "brand": "Demeyere",
@@ -392,7 +392,7 @@ PRODUCTS = {
     },
 
     "demeyere_alu_pro_5_ceraforce_24": {
-        "slug": "demeyere_alu_pro_5_ceraforce_24",
+        "slug": "demeyere-alu-pro-5-ceraforce-24",
         "name": "Demeyere Alu Pro 5 Ceraforce",
         "description": "Hoogwaardige premium koekenpan met PFAS-vrije Ceraforce® keramische coating.",
         "brand": "Demeyere",
@@ -479,7 +479,7 @@ PRODUCTS = {
     },
 
     "greenpan_torino_24": {
-        "slug": "greenpan_torino_24",
+        "slug": "greenpan-torino-24",
         "name": "GreenPan Torino",
         "description": "Betrouwbare PFAS-vrije keramische koekenpan voor dagelijks gebruik.",
         "brand": "GreenPan",
@@ -565,7 +565,7 @@ PRODUCTS = {
     },
 
     "ikea_hemlagad_keramisch_24": {
-        "slug": "ikea_hemlagad_keramisch_24",
+        "slug": "ikea-hemlagad-keramisch-24",
         "name": "IKEA HEMLAGAD",
         "description": " Betaalbare en toegankelijke keramische koekenpan van IKEA met een PTFE- en PFAS-vrije antiaanbaklaag.",
         "brand": "IKEA",
@@ -689,7 +689,7 @@ PRODUCTS = {
     },
 
     "greenchef_vintage_26": {
-        "slug": "greenchef_vintage_26",
+        "slug": "greenchef-vintage-26",
         "name": "GreenChef Vintage",
         "description": "Stijlvolle en betaalbare keramische koekenpan met een PFAS-vrije antiaanbaklaag.",
         "brand": "GreenChef",
@@ -723,7 +723,7 @@ PRODUCTS = {
     },
 
     "demeyere_alu_pro_5_ceraforce_26": {
-        "slug": "demeyere_alu_pro_5_ceraforce_26",
+        "slug": "demeyere-alu-pro-5-ceraforce-26",
         "name": "Demeyere Alu Pro 5 Ceraforce",
         "description": "Hoogwaardige premium koekenpan met PFAS-vrije Ceraforce® keramische coating.",
         "brand": "Demeyere",
@@ -753,7 +753,7 @@ PRODUCTS = {
     },
 
     "bk_easy_induction_26": {
-        "slug": "bk_easy_induction_26",
+        "slug": "bk-easy-induction-26",
         "name": "BK Easy Induction Ceramic",
         "description": "PFAS-vrije keramische pan met koele greep en stevige bodem.",
         "brand": "BK",
@@ -782,7 +782,7 @@ PRODUCTS = {
     },
 
     "fissler_cenit_ceramic_26": {
-        "slug": "fissler_cenit_ceramic_26",
+        "slug": "fissler-cenit-ceramic-26",
         "name": "Fissler Cenit Ceramic",
         "description": "Hoogwaardige keramische koekenpan van Duitse makelij met een PFAS-vrije coating en robuuste bouwkwaliteit.",
         "brand": "Fissler",
@@ -814,7 +814,7 @@ PRODUCTS = {
         "verdict": "Een sterke middenklasse keuze voor wie duurzaamheid belangrijk vindt.",
     },
     "greenpan_venice_pro_26": {
-        "slug": "greenpan_venice_pro_26",
+        "slug": "greenpan-venice-pro-26",
         "name": "GreenPan Venice Pro Ceramic",
         "description": "Robuuste keramische koekenpan met PFAS-vrije Thermolon™ coating en roestvrijstalen handgreep, geschikt voor intensief gebruik.",
         "brand": "GreenPan",
@@ -847,7 +847,7 @@ PRODUCTS = {
     },
     "scanpan_ceramic_26": {
         "name": "Scanpan HaptIQ",
-        "slug": "scanpan_ceramic_26",
+        "slug": "scanpan-ceramic-26",
         "description": " Hoogwaardige Scandinavische koekenpan met keramische, PFAS-vrije coating en een focus op duurzaamheid.",
         "brand": "Scanpan",
         "diameter": 26,
@@ -940,7 +940,7 @@ PRODUCTS = {
     },
 
     "demeyere_alu_pro_5_ceraforce_20": {
-        "slug": "demeyere_alu_pro_5_ceraforce_20",
+        "slug": "demeyere-alu-pro-5-ceraforce-20",
         "name": "Demeyere Alu Pro 5 Ceraforce",
         "description": "Hoogwaardige premium koekenpan met PFAS-vrije Ceraforce® keramische coating.",
         "brand": "Demeyere",
@@ -970,7 +970,7 @@ PRODUCTS = {
     },
 
     "greenchef_diamond_20": {
-        "slug": "greenchef_diamond_20",
+        "slug": "greenchef-diamond-20",
         "name": "GreenChef Diamond Induction",
         "description": "PFAS-vrije keramische pan met diamantdeeltjes en hoge slijtvastheid.",
         "brand": "GreenChef",
@@ -998,7 +998,7 @@ PRODUCTS = {
     },
 
     "bk_easy_induction_20": {
-        "slug": "bk_easy_induction_20",
+        "slug": "bk-easy-induction-20",
         "name": "BK Easy Induction Ceramic",
         "description": "PFAS-vrije keramische pan met koele greep en stevige bodem.",
         "brand": "BK",
@@ -1027,7 +1027,7 @@ PRODUCTS = {
     },
 
     "greenpan_mayflower_20": {
-        "slug": "greenpan_mayflower_20",
+        "slug": "greenpan-mayflower-20",
         "name": "GreenPan Mayflower",
         "description": "Stijlvolle keramische koekenpan met PFAS-vrije Thermolon™ coating.",
         "brand": "GreenPan",
@@ -1059,7 +1059,7 @@ PRODUCTS = {
     },
 
     "tefal_renew_20": {
-        "slug": "tefal_renew_20",
+        "slug": "tefal-renew-20",
         "name": "Tefal Renew+",
         "description": "Gemaakt van gerecycled aluminium met PFAS-vrije laag.",
         "brand": "Tefal",
@@ -1088,7 +1088,7 @@ PRODUCTS = {
     },
 
     "bk_enjoy_20": {
-        "slug": "bk_enjoy_20",
+        "slug": "bk-enjoy-20",
         "name": "BK Enjoy",
         "description": "Betaalbare keramische pan met natuurlijke PFAS-vrije coating.",
         "brand": "BK",
@@ -1116,7 +1116,7 @@ PRODUCTS = {
     },
 
     "hema_milano_20": {
-        "slug": "hema_milano_20",
+        "slug": "hema-milano-20",
         "name": "HEMA Milano",
         "description": "Compacte en betaalbare keramische koekenpan voor dagelijks gebruik.",
         "brand": "HEMA",
@@ -1211,7 +1211,7 @@ PRODUCTS = {
     },
 
     "kochstar_stein_30": {
-        "slug": "kochstar_stein_30",
+        "slug": "kochstar-stein-30",
         "name": "Kochstar Stein",
         "description": "Ruime keramische koekenpan met een PFAS-vrije coating, ontworpen voor grotere bereidingen.",
         "brand": "Kochstar",
@@ -1244,7 +1244,7 @@ PRODUCTS = {
     },
 
     "demeyere_alu_pro_5_ceraforce_30": {
-        "slug": "demeyere_alu_pro_5_ceraforce_30",
+        "slug": "demeyere-alu-pro-5-ceraforce-30",
         "name": "Demeyere Alu Pro 5 Ceraforce",
         "description": "Hoogwaardige premium koekenpan met PFAS-vrije Ceraforce® keramische coating.",
         "brand": "Demeyere",
@@ -1331,7 +1331,7 @@ PRODUCTS = {
     },
 
     "greenpan_torino_30": {
-        "slug": "greenpan_torino_30",
+        "slug": "greenpan-torino-30",
         "name": "GreenPan Torino",
         "description": "Betrouwbare PFAS-vrije keramische koekenpan voor dagelijks gebruik.",
         "brand": "GreenPan",
@@ -1389,7 +1389,7 @@ PRODUCTS = {
     },
 
     "brabantia_indu_plus_r_30": {
-        "slug": "brabantia_indu_plus_r_30",
+        "slug": "brabantia-indu-plus-r-30",
         "name": "Brabantia Indu+ R Keramische Koekenpan (30 cm)",
         "description": "Ruime en stabiele keramische koekenpan, speciaal ontwikkeld voor inductie.",
         "brand": "Brabantia",
@@ -1483,7 +1483,7 @@ PRODUCTS = {
     },
 
     "demeyere_alu_pro_5_ceraforce_32": {
-        "slug": "demeyere_alu_pro_5_ceraforce_32",
+        "slug": "demeyere-alu-pro-5-ceraforce-32",
         "name": "Demeyere Alu Pro 5 Ceraforce",
         "description": "Hoogwaardige premium koekenpan met PFAS-vrije Ceraforce® keramische coating.",
         "brand": "Demeyere",
@@ -1574,7 +1574,7 @@ PRODUCTS = {
     },
 
     "greenpan_torino_32": {
-        "slug": "greenpan_torino_32",
+        "slug": "greenpan-torino-32",
         "name": "GreenPan Torino",
         "description": "Betrouwbare PFAS-vrije keramische koekenpan voor dagelijks gebruik.",
         "brand": "GreenPan",
@@ -1632,7 +1632,7 @@ PRODUCTS = {
     },
 
     "blue_diamond_32": {
-        "slug": "blue_diamond_32",
+        "slug": "blue-diamond-32",
         "description": "Grote keramische koekenpan met diamantversterkte coating, gericht op betaalbaar gebruik in een ruim formaat.",
         "name": "Blue Diamond",
         "brand": "Blue Diamond",
@@ -1664,7 +1664,7 @@ PRODUCTS = {
     },
 
     "ikea_hemlagad_keramisch_32": {
-        "slug": "ikea_hemlagad_keramisch_32",
+        "slug": "ikea-hemlagad-keramisch-32",
         "name": "IKEA HEMLAGAD",
         "description": " Betaalbare en toegankelijke keramische koekenpan van IKEA met een PTFE- en PFAS-vrije antiaanbaklaag.",
         "brand": "IKEA",
@@ -1697,7 +1697,7 @@ PRODUCTS = {
 
     "scanpan_ceramic_32": {
         "name": "Scanpan HaptIQ",
-        "slug": "scanpan_ceramic_32",
+        "slug": "scanpan-ceramic-32",
         "description": " Hoogwaardige Scandinavische koekenpan met keramische, PFAS-vrije coating en een focus op duurzaamheid.",
         "brand": "Scanpan",
         "diameter": 32,

@@ -24,6 +24,7 @@ from .content_vershoudcontainers import CONTENT as VERSHOUDCONTAINERS_CONTENT
 from .products_rvs_koekenpannen import PRODUCTS as RVS_KOEKENPANNEN_PRODUCTS
 from .rankings_rvs_koekenpannen import RANKINGS as RVS_KOEKENPANNEN_RANKINGS
 from .content_rvs_koekenpannen import CONTENT as RVS_KOEKENPANNEN_CONTENT
+from .slug_redirects import SLUG_REDIRECTS
 
 
 CATEGORY_MAP = {
@@ -463,6 +464,10 @@ def product_list(request):
 
 
 def product_detail(request, slug):
+    if slug in SLUG_REDIRECTS:
+        new_slug = SLUG_REDIRECTS[slug]
+        if new_slug != slug and new_slug in ALL_PRODUCTS_BY_SLUG:
+            return redirect("product_detail", slug=new_slug, permanent=True)
     entry = ALL_PRODUCTS_BY_SLUG.get(slug)
     if entry:
         product = dict(entry["data"])

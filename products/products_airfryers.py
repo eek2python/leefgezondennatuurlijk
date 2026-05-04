@@ -1,6 +1,6 @@
 PRODUCTS = {
     "inventum_gf500hld_5l": {
-        "slug": "inventum_gf500hld_5l",
+        "slug": "inventum-gf500hld-5l",
         "name": "Inventum GF500HLD Airfryer \u2013 5 L",
         "brand": "Inventum",
         "material": "Keramisch",
@@ -28,7 +28,7 @@ PRODUCTS = {
         "award": "🏆 Beste keuze",
     },
     "bourgini_slimfit_xl_5l": {
-        "slug": "bourgini_slimfit_xl_5l",
+        "slug": "bourgini-slimfit-xl-5l",
         "name": "Bourgini Slimfit Airfryer XL \u2013 5 L",
         "brand": "Bourgini",
         "material": "Keramisch",
@@ -56,7 +56,7 @@ PRODUCTS = {
         "award": "💰 Budget keuze",
     },
     "greenpan_silhouette_xl_5l": {
-        "slug": "greenpan_silhouette_xl_5l",
+        "slug": "greenpan-silhouette-xl-5l",
         "name": "GreenPan Silhouette Airfryer XL \u2013 5 L",
         "brand": "GreenPan",
         "material": "Keramisch",
@@ -84,7 +84,7 @@ PRODUCTS = {
         "award": "💎 Premium keuze",
     },
     "masterpro_rocket_cyclone_5l": {
-        "slug": "masterpro_rocket_cyclone_5l",
+        "slug": "masterpro-rocket-cyclone-5l",
         "name": "MasterPRO Rocket Cyclone 500 Airfryer \u2013 5 L",
         "brand": "MasterPRO",
         "material": "Keramisch",
@@ -112,7 +112,7 @@ PRODUCTS = {
         "award": "",
     },
     "wartmann_wm2312af_5l": {
-        "slug": "wartmann_wm2312af_5l",
+        "slug": "wartmann-wm2312af-5l",
         "name": "Wartmann WM-2312 AF \u2013 5 L",
         "brand": "Wartmann",
         "material": "Keramisch",
@@ -140,7 +140,7 @@ PRODUCTS = {
         "award": "🤫 Stilste model",
     },
     "maison_kitchen_5l": {
-        "slug": "maison_kitchen_5l",
+        "slug": "maison-kitchen-5l",
         "name": "Maison & Kitchen Airfryer \u2013 5 L",
         "brand": "Maison & Kitchen",
         "material": "Keramisch",

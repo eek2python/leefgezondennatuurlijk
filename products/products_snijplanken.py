@@ -1,6 +1,6 @@
 PRODUCTS = {
     "boosblocks_pro_maple": {
-        "slug": "boosblocks_pro_maple",
+        "slug": "boosblocks-pro-maple",
         "name": "BoosBlocks Pro Maple Series \u2013 End-grain Esdoorn (51\u00d738\u00d76 cm)",
         "brand": "BoosBlocks",
         "material": "Esdoornhout",
@@ -28,7 +28,7 @@ PRODUCTS = {
         "award": "🏆 Beste keuze",
     },
     "ikea_aptitlig_bamboe": {
-        "slug": "ikea_aptitlig_bamboe",
+        "slug": "ikea-aptitlig-bamboe",
         "name": "IKEA APTITLIG Bamboe Snijplank (45\u00d728 cm)",
         "brand": "IKEA",
         "material": "Bamboe",
@@ -56,7 +56,7 @@ PRODUCTS = {
         "award": "💰 Budget keuze",
     },
     "kaamut_walnoot_endgrain": {
-        "slug": "kaamut_walnoot_endgrain",
+        "slug": "kaamut-walnoot-endgrain",
         "name": "KAAMUT\u00ae Professionele Snijplank Walnoot \u2013 End-Grain 40\u00d727,5\u00d73,5 cm",
         "brand": "KAAMUT",
         "material": "Walnoothout",
@@ -85,7 +85,7 @@ PRODUCTS = {
         "award": "💎 Premium keuze",
     },
     "zwilling_beukenhout_60x40": {
-        "slug": "zwilling_beukenhout_60x40",
+        "slug": "zwilling-beukenhout-60x40",
         "name": "Zwilling Houten Snijplank (60\u00d740 cm)",
         "brand": "Zwilling",
         "material": "Beukenhout",
@@ -113,7 +113,7 @@ PRODUCTS = {
         "award": "",
     },
     "wmf_acacia_40x32": {
-        "slug": "wmf_acacia_40x32",
+        "slug": "wmf-acacia-40x32",
         "name": "WMF Acacia Snijplank (40\u00d732 cm)",
         "brand": "WMF",
         "material": "Acaciahout",
@@ -141,7 +141,7 @@ PRODUCTS = {
         "award": "",
     },
     "namture_premium_olie_45x30": {
-        "slug": "namture_premium_olie_45x30",
+        "slug": "namture-premium-olie-45x30",
         "name": "Namture Snijplank Hout Premium Olie \u2013 45\u00d730\u00d74 cm",
         "brand": "Namture",
         "material": "Massief acaciahout",
@@ -169,7 +169,7 @@ PRODUCTS = {
         "award": "",
     },
     "wooden_amsterdam_walnoot_40x30": {
-        "slug": "wooden_amsterdam_walnoot_40x30",
+        "slug": "wooden-amsterdam-walnoot-40x30",
         "name": "Wooden Amsterdam End-Grain Snijplank Walnoot (40\u00d730 cm)",
         "brand": "Wooden Amsterdam",
         "material": "Walnoothout",
@@ -197,7 +197,7 @@ PRODUCTS = {
         "award": "",
     },
     "hema_beukenhout_24x35": {
-        "slug": "hema_beukenhout_24x35",
+        "slug": "hema-beukenhout-24x35",
         "name": "HEMA Snijplank Beukenhout (24\u00d735 cm)",
         "brand": "HEMA",
         "material": "Beukenhout",
@@ -225,7 +225,7 @@ PRODUCTS = {
         "award": "",
     },
     "continenta_rubberwood_30x25": {
-        "slug": "continenta_rubberwood_30x25",
+        "slug": "continenta-rubberwood-30x25",
         "name": "Continenta Snijplank Rubberwood \u2013 30\u00d725 cm",
         "brand": "Continenta",
         "material": "Rubberwood",
@@ -253,7 +253,7 @@ PRODUCTS = {
         "award": "",
     },
     "pointvirgule_bamboe_40x30": {
-        "slug": "pointvirgule_bamboe_40x30",
+        "slug": "pointvirgule-bamboe-40x30",
         "name": "Point-Virgule Bamboe Snijplank \u2013 40\u00d730\u00d71 cm",
         "brand": "Point-Virgule",
         "material": "Bamboe",

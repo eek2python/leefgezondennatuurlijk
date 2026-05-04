@@ -1,7 +1,7 @@
 PRODUCTS = {
     # 28CM WOKPANNEN
    "greenpan_torino_wok_28": {
-       "slug": "greenpan_torino_wok_28",
+       "slug": "greenpan-torino-wok-28",
        "name": "GreenPan Torino Keramische Wokpan",
        "brand": "GreenPan",
        "diameter": 28,
@@ -30,7 +30,7 @@ PRODUCTS = {
        "award": "🏆 Beste keuze",
    },
    "hema_milano_wok_28": {
-       "slug": "hema_milano_wok_28",
+       "slug": "hema-milano-wok-28",
        "name": "HEMA Milano Keramische Wokpan",
        "brand": "HEMA",
        "diameter": 28,
@@ -58,7 +58,7 @@ PRODUCTS = {
        "award": "💰 Budget keuze",
    },
    "wmf_durado_wok_28": {
-       "slug": "wmf_durado_wok_28",
+       "slug": "wmf-durado-wok-28",
        "name": "WMF Durado Keramische Wokpan",
        "brand": "WMF",
        "diameter": 28,
@@ -85,7 +85,7 @@ PRODUCTS = {
        "award": "💎 Premium keuze",
    },
    "greenchef_diamond_wok_28": {
-       "slug": "greenchef_diamond_wok_28",
+       "slug": "greenchef-diamond-wok-28",
        "name": "GreenChef Diamond Induction Wokpan",
        "brand": "GreenChef",
        "diameter": 28,
@@ -111,7 +111,7 @@ PRODUCTS = {
        "verdict": "Een sterke middenklasser met extra duurzame keramische coating.",
    },
    "primecook_wok_28": {
-       "slug": "primecook_wok_28",
+       "slug": "primecook-wok-28",
        "name": "Primecook Keramische Wokpan",
        "brand": "Primecook",
        "diameter": 28,
@@ -138,7 +138,7 @@ PRODUCTS = {
        "verdict": "Een duurzame, hoogwaardige wokpan voor intensief en gezond koken.",
    },
    "bk_blue_label_granite_wok_28": {
-       "slug": "bk_blue_label_granite_wok_28",
+       "slug": "bk-blue-label-granite-wok-28",
        "name": "BK Blue Label Granite Wokpan",
        "brand": "BK",
        "diameter": 28,
@@ -164,7 +164,7 @@ PRODUCTS = {
        "verdict": "Een degelijke wokpan voor regelmatig gebruik zonder premiumprijs.",
    },
    "brabantia_futura_green_wok_28": {
-       "slug": "brabantia_futura_green_wok_28",
+       "slug": "brabantia-futura-green-wok-28",
        "name": "Brabantia Futura Green Wokpan",
        "brand": "Brabantia",
        "diameter": 28,
@@ -190,7 +190,7 @@ PRODUCTS = {
        "verdict": "Een stijlvolle wokpan voor wie duurzaamheid belangrijk vindt.",
    },
    "greenpan_cambridge_wok_28": {
-       "slug": "greenpan_cambridge_wok_28",
+       "slug": "greenpan-cambridge-wok-28",
        "name": "GreenPan Cambridge Keramische Wokpan",
        "brand": "GreenPan",
        "diameter": 28,
@@ -217,7 +217,7 @@ PRODUCTS = {
        "verdict": "Een solide wokpan voor frequente thuiskoks.",
    },
    "bk_easy_induction_wok_28": {
-       "slug": "bk_easy_induction_wok_28",
+       "slug": "bk-easy-induction-wok-28",
        "name": "BK Easy Induction Ceramic Wokpan",
        "brand": "BK",
        "diameter": 28,
@@ -243,7 +243,7 @@ PRODUCTS = {
        "verdict": "Een praktische wokpan voor dagelijks koken.",
    },
    "berghoff_leo_recycled_wok_28": {
-       "slug": "berghoff_leo_recycled_wok_28",
+       "slug": "berghoff-leo-recycled-wok-28",
        "name": "BergHOFF Leo Recycled Wokpan",
        "brand": "BergHOFF",
        "diameter": 28,
@@ -273,7 +273,7 @@ PRODUCTS = {
 # 30CM WOKPANNEN
 
 "greenpan_barcelona_evershine_wok_30": {
-   "slug": "greenpan_barcelona_evershine_wok_30",
+   "slug": "greenpan-barcelona-evershine-wok-30",
    "name": "GreenPan Barcelona Evershine Wokpan",
    "description": "PFAS-vrije keramische wokpan met RVS buitenzijde (Evershine) en ruim 30 cm bakoppervlak, ideaal voor dagelijks roerbakken op inductie.",
    "brand": "GreenPan",
@@ -309,7 +309,7 @@ PRODUCTS = {
 },
 
 "bk_easy_induction_wok_30": {
-   "slug": "bk_easy_induction_wok_30",
+   "slug": "bk-easy-induction-wok-30",
    "name": "BK Easy Induction Ceramic Wokpan",
    "brand": "BK",
    "diameter": 30,
@@ -344,7 +344,7 @@ PRODUCTS = {
 },
 
 "scanpan_techniq_wok_30": {
-   "slug": "scanpan_techniq_wok_30",
+   "slug": "scanpan-techniq-wok-30",
    "name": "Scanpan TechnIQ Wokpan",
    "brand": "Scanpan",
    "diameter": 30,
@@ -379,7 +379,7 @@ PRODUCTS = {
 },
 
 "bk_balans_wok_30": {
-   "slug": "bk_balans_wok_30",
+   "slug": "bk-balans-wok-30",
    "name": "BK Balans+ Keramische Wokpan",
    "brand": "BK",
    "diameter": 30,
@@ -412,7 +412,7 @@ PRODUCTS = {
 },
 
 "greenpan_copenhagen_wok_30": {
-   "slug": "greenpan_copenhagen_wok_30",
+   "slug": "greenpan-copenhagen-wok-30",
    "name": "GreenPan Copenhagen Keramische Wokpan",
    "brand": "GreenPan",
    "diameter": 30,
@@ -446,7 +446,7 @@ PRODUCTS = {
 },
 
 "berghoff_phantom_wok_30": {
-   "slug": "berghoff_phantom_wok_30",
+   "slug": "berghoff-phantom-wok-30",
    "name": "BergHOFF Phantom Wokpan",
    "brand": "BergHOFF",
    "diameter": 30,

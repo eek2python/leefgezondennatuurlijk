@@ -1,6 +1,6 @@
 PRODUCTS = {
     "mepal_easyclip_glass_3delig": {
-        "slug": "mepal_easyclip_glass_3delig",
+        "slug": "mepal-easyclip-glass-3delig",
         "name": "Mepal EasyClip Glass \u2013 3-delige glazen vershoudbakjes",
         "brand": "Mepal",
         "material": "Borosilicaat glas",
@@ -29,7 +29,7 @@ PRODUCTS = {
         "award": "🏆 Beste keuze",
     },
     "igluu_meal_prep_3delig": {
-        "slug": "igluu_meal_prep_3delig",
+        "slug": "igluu-meal-prep-3delig",
         "name": "Igluu Meal Prep \u2013 3-delige glazen vershoudset",
         "brand": "Igluu",
         "material": "Borosilicaat glas",
@@ -58,7 +58,7 @@ PRODUCTS = {
         "award": "💰 Budget keuze",
     },
     "pyrex_cook_heat_3delig": {
-        "slug": "pyrex_cook_heat_3delig",
+        "slug": "pyrex-cook-heat-3delig",
         "name": "Pyrex Cook & Heat \u2013 3-delige glazen vershoudset",
         "brand": "Pyrex",
         "material": "Borosilicaat glas",
@@ -87,7 +87,7 @@ PRODUCTS = {
         "award": "💎 Premium keuze",
     },
     "bormioli_frigoverre_3delig": {
-        "slug": "bormioli_frigoverre_3delig",
+        "slug": "bormioli-frigoverre-3delig",
         "name": "Bormioli Rocco Frigoverre \u2013 3-delige glazen vershoudset",
         "brand": "Bormioli Rocco",
         "material": "Borosilicaat glas",
@@ -116,7 +116,7 @@ PRODUCTS = {
         "award": "🥇 Meest gekozen",
     },
     "luminarc_purebox_3delig": {
-        "slug": "luminarc_purebox_3delig",
+        "slug": "luminarc-purebox-3delig",
         "name": "Luminarc Pure Box Active \u2013 3-delige glazen vershoudset",
         "brand": "Luminarc",
         "material": "Gehard glas",

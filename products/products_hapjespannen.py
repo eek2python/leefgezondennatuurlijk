@@ -34,7 +34,7 @@ PRODUCTS = {
         "award": "🏆 Beste keuze",
     },
     "bk_enjoy_28": {
-        "slug": "bk_enjoy_28",
+        "slug": "bk-enjoy-hapjespan-28",
         "name": "BK Enjoy Keramische Hapjespan",
         "description": "Betaalbare PFAS-vrije keramische hapjespan in 28 cm, ontworpen als instapmodel voor dagelijks gebruik.",
         "brand": "BK",
@@ -297,7 +297,7 @@ PRODUCTS = {
     },
 
 "bk_brilliant_24": {
-   "slug": "bk_brilliant_24",
+   "slug": "bk-brilliant-24",
    "name": "BK Brilliant Keramische Hapjespan",
    "description": "PFAS-vrije keramische hapjespan met moderne afwerking en solide bouwkwaliteit, geschikt voor dagelijks gebruik in het 24 cm formaat.",
    "brand": "BK",
@@ -330,7 +330,7 @@ PRODUCTS = {
 },
 
 "woll_ecolite_qxr_24": {
-        "slug": "woll_ecolite_qxr_24",
+        "slug": "woll-ecolite-qxr-24",
         "name": "WOLL Eco Lite QXR",
         "description": "Premium PFAS-vrije hapjespan met QXR-keramische antiaanbaklaag, lichtgewicht body en stevige inductiebodem.",
         "brand": "WOLL",
@@ -364,7 +364,7 @@ PRODUCTS = {
     },
 
     "greenchef_prime_24": {
-        "slug": "greenchef_prime_24",
+        "slug": "greenchef-prime-24",
         "name": "GreenChef Prime Keramische Hapjespan",
         "description": "Hoogwaardige PFAS-vrije keramische hapjespan met duurzame Thermolon™-coating, ontworpen voor dagelijks gebruik met betere slijtvastheid dan instapmodellen.",
         "brand": "GreenChef",
@@ -396,7 +396,7 @@ PRODUCTS = {
     },
 
     "bk_easy_induction_24": {
-        "slug": "bk_easy_induction_24",
+        "slug": "bk-easy-induction-hapjespan-24",
         "name": "BK Easy Induction Ceramic",
         "description": "Betaalbare PFAS-vrije hapjespan met keramische antiaanbaklaag en stevige koudgreep.",
         "brand": "BK",
@@ -431,7 +431,7 @@ PRODUCTS = {
     },
 
 "greenpan_cambridge_24": {
-   "slug": "greenpan_cambridge_24",
+   "slug": "greenpan-cambridge-24",
    "name": "GreenPan Cambridge Keramische Hapjespan",
    "description": "PFAS-vrije keramische hapjespan met klassieke vormgeving en Thermolon™-coating, geschikt voor dagelijks koken in het 24 cm formaat.",
    "brand": "GreenPan",
@@ -463,7 +463,7 @@ PRODUCTS = {
 },
 
 "kochstar_essenz_24": {
-   "slug": "kochstar_essenz_24",
+   "slug": "kochstar-essenz-hapjespan-24",
    "name": "Kochstar Essenz Keramische Hapjespan",
    "description": "Betaalbare PFAS-vrije keramische hapjespan in 24 cm, geschikt voor dagelijks gebruik en kleinere huishoudens.",
    "brand": "Kochstar",
@@ -496,7 +496,7 @@ PRODUCTS = {
 
 
 "beka_cicla_24": {
-        "slug": "beka_cicla_24",
+        "slug": "beka-cicla-24",
         "name": "Beka Cicla",
         "description": "PFAS-vrije hapjespan van gerecycled aluminium met keramische coating en glazen deksel.",
         "brand": "Beka",
@@ -531,7 +531,7 @@ PRODUCTS = {
 
 # 30 CM HAPJESPANNEN
     "greenpan_barcelona_pro_30": {
-        "slug": "greenpan_barcelona_pro_30",
+        "slug": "greenpan-barcelona-pro-hapjespan-30",
         "name": "GreenPan Barcelona Pro",
         "description": "Premium keramische hapjespan zonder PFAS met Thermolon™ Infinity Pro-coating en stevig glazen deksel.",
         "brand": "GreenPan",

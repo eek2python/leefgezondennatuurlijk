@@ -52,6 +52,7 @@ All 6 category pages use a standardised three-file content architecture per cate
 - Template: `templates/product_detail.html` — breadcrumbs, disclosure, image, description, features, pros/cons, verdict, affiliate CTA, back-to-category link
 - `CATEGORY_MAP` in views.py maps category keys → (label, url) for breadcrumb generation
 - All product slugs are globally unique across categories; duplicate slugs raise `ValueError` at startup
+- All product slugs use hyphens (no underscores). Old underscore slugs are 301-redirected to the new hyphen versions via `products/slug_redirects.py` (`SLUG_REDIRECTS` map)
 
 ### Trust & Legal Pages
 - `/over-ons/` — About page (templates/over_ons.html)
