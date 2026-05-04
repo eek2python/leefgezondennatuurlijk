@@ -9,6 +9,7 @@ from datetime import datetime
 STATIC_URLS = [
     {"name": "homepage",           "loc_name": "homepage",          "changefreq": "weekly",  "priority": "1.0"},
     {"name": "koekenpannen",       "loc_name": "koekenpannen",      "changefreq": "monthly", "priority": "0.9"},
+    {"name": "rvs_koekenpannen",   "loc_name": "rvs_koekenpannen",  "changefreq": "monthly", "priority": "0.9"},
     {"name": "hapjespannen",       "loc_name": "hapjespannen",      "changefreq": "monthly", "priority": "0.9"},
     {"name": "wokpannen",          "loc_name": "wokpannen",         "changefreq": "monthly", "priority": "0.9"},
     {"name": "snijplanken",        "loc_name": "snijplanken",       "changefreq": "monthly", "priority": "0.9"},
@@ -20,7 +21,7 @@ STATIC_URLS = [
     {"name": "privacy",            "loc_name": "privacy",           "changefreq": "yearly",  "priority": "0.3"},
 ]
 
-BASE_URL = "https://leefnatuurlijkengezond.nl"
+BASE_URL = "https://www.leefnatuurlijkengezond.nl"
 
 
 def sitemap_xml(request):

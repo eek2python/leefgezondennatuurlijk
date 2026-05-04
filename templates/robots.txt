@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://leefnatuurlijkengezond.nl/sitemap.xml
+Sitemap: https://www.leefnatuurlijkengezond.nl/sitemap.xml

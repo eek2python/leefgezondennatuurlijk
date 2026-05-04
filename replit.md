@@ -79,10 +79,36 @@ All 6 category pages use a standardised three-file content architecture per cate
 
 ### Sitemap
 `LeefNatuurlijkenGezond/sitemap_views.py` generates sitemap.xml dynamically:
-- Static URLs: 11 pages using `reverse()` (homepage, 6 categories, blogs overview, over-ons, hoe-wij-beoordelen, privacy)
+- Static URLs: 12 pages using `reverse()` (homepage, 6 categories, rvs-koekenpannen sub-category, blogs overview, over-ons, hoe-wij-beoordelen, privacy)
 - Dynamic blog URLs: filesystem scan of `blogs/templates/blogs/*.html` (excludes `blogoverzicht.html`)
 - Product detail URLs: all 125 products from `ALL_PRODUCTS_BY_SLUG` (priority 0.6, monthly changefreq)
-- Total: 138 URLs (0 duplicates)
+- Total: 139 URLs (0 duplicates)
+
+### Canonical Host
+- Single canonical host: `https://www.leefnatuurlijkengezond.nl` (with `www.`)
+- Used consistently in: all `<link rel="canonical">` tags, all `og:url` meta tags, sitemap.xml (`BASE_URL`), and robots.txt (`Sitemap:` directive)
+- Non-www → www redirect should be configured at the web server / deployment level
+
+### URL Routing
+- All public routes are defined in `LeefNatuurlijkenGezond/urls.py` (project-level URLconf)
+- `products/urls.py` is intentionally empty and **not** included anywhere — kept only to avoid accidental re-inclusion
+- Blog routes live in `blogs/urls.py` (included at `/blogs/`)
+
+### Future URL Structure (planned, NOT yet implemented)
+The current flat `/product/<slug>/` namespace will eventually move to a categorised structure for better SEO. See `.local/url-structure-audit.md` for the full audit and 10-step migration plan. Target structure:
+
+```
+/<category>/                        # category landing (unchanged)
+/<category>/<product-slug>/         # categorised product detail (new)
+/koekenpannen/rvs/                  # RVS moves under koekenpannen
+/koekenpannen/rvs/<product-slug>/
+/vershoudbakjes/                    # rename of /vershoudcontainers/ (Dutch consistency)
+/blog/<slug>/                       # optional: singular blog path
+/gids/<slug>/                       # RESERVED for future buyers' guides
+/vergelijk/<slug>/                  # RESERVED for future head-to-head comparisons
+```
+
+Reserved namespaces `/gids/` and `/vergelijk/` must NOT be used for anything else. Disambiguator suffixes in current slugs (`-hapjespan-`, `-wok-`) will be dropped once the category is in the URL path. All migrations will use HTTP 301 redirects with no chains.
 
 ## Running the App
 
