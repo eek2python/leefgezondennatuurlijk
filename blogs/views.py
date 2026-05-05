@@ -19,6 +19,7 @@ BLOG_TITLES = {
     "keramische-vs-rvs-koekenpan": "Keramische vs RVS koekenpan",
     "greenpan-barcelona-vs-demeyere-industry-5": "GreenPan Barcelona vs Demeyere Industry 5",
     "welke-maat-koekenpan": "Welke maat koekenpan",
+    "is-keramische-coating-veilig": "Is keramische coating veilig?",
 }
 
 

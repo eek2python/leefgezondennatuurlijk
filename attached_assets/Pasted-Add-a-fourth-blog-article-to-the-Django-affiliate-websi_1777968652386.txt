@@ -1,0 +1,129 @@
+Add a fourth blog article to the Django affiliate website.
+
+ARTICLE TITLE
+Is keramische coating veilig? Dit moet je weten
+
+GOAL
+Create an authority article that explains the safety of ceramic coatings, builds trust, and supports SEO around PFAS-related searches.
+
+IMPORTANT RULES
+- Follow existing blog structure
+- Do not change existing URLs or templates
+- Add SEO meta tags, canonical, Open Graph and Twitter tags
+- Add FAQPage JSON-LD if supported
+- Include breadcrumbs and author block
+- Ensure mobile readability
+
+URL / SLUG
+/blogs/is-keramische-coating-veilig/
+
+INTERNAL LINKS
+Link to:
+- /koekenpannen/
+- /rvs-koekenpannen/
+- /hoe-wij-beoordelen/
+- keramische koekenpannen category
+
+SEO META
+
+Title:
+Is keramische coating veilig? Alles over PFAS en antiaanbaklagen
+
+Meta description:
+Is een keramische koekenpan echt veilig? Ontdek hoe keramische coatings werken en hoe ze zich verhouden tot PFAS en traditionele antiaanbaklagen.
+
+ARTICLE CONTENT
+
+# Is keramische coating veilig? Dit moet je weten
+
+Keramische koekenpannen worden vaak gepresenteerd als een veilig alternatief voor traditionele antiaanbakpannen. Maar hoe veilig is een keramische coating eigenlijk?
+
+In dit artikel leggen we uit wat keramische coatings zijn, hoe ze zich verhouden tot PFAS en waar je op moet letten.
+
+## Wat is een keramische coating?
+
+Een keramische coating is een antiaanbaklaag die wordt gemaakt op basis van minerale materialen, zoals silicium.
+
+In tegenstelling tot traditionele coatings bevat deze geen PFAS zoals Teflon.
+
+## Bevat keramische coating PFAS?
+
+Nee, een echte keramische coating bevat geen PFAS.
+
+Dat is precies de reden waarom deze pannen populair zijn geworden bij mensen die bewuster willen koken.
+
+## Is keramisch automatisch veilig?
+
+Over het algemeen wel, maar er zijn nuances:
+
+- de kwaliteit van de coating verschilt per merk  
+- bij extreem hoge temperaturen kan elke pan slijten  
+- goedkoop kan sneller kwaliteit verliezen  
+
+Daarom is het belangrijk om te kiezen voor betrouwbare merken.
+
+## Verschil met traditionele antiaanbaklagen
+
+Traditionele pannen gebruiken vaak PTFE (bekend als Teflon).
+
+Belangrijk verschil:
+
+- PTFE → synthetische coating  
+- keramisch → minerale coating  
+
+Keramisch wordt daarom vaak gezien als een natuurlijker alternatief.
+
+## Nadelen van keramische coating
+
+Hoewel veilig, zijn er ook aandachtspunten:
+
+- slijt sneller dan RVS  
+- kan na verloop van tijd minder goed werken  
+- gevoelig voor verkeerd gebruik  
+
+## Wanneer is keramisch een goede keuze?
+
+Keramisch is ideaal als je:
+
+- PFAS wilt vermijden  
+- een gebruiksvriendelijke pan zoekt  
+- dagelijks lichte gerechten maakt  
+
+Bekijk onze selectie keramische koekenpannen voor goede opties.
+
+## Alternatief: RVS zonder coating
+
+Wil je helemaal geen coating?
+
+Dan is een RVS koekenpan een sterk alternatief. Deze bevat geen antiaanbaklaag en gaat vaak langer mee.
+
+Bekijk ook onze RVS koekenpannen.
+
+## Conclusie
+
+Keramische coatings zijn over het algemeen veilig en bevatten geen PFAS.
+
+Ze zijn een goede keuze voor wie gemak wil combineren met bewuster koken, zolang je kiest voor kwaliteit en de pan goed gebruikt.
+
+## Veelgestelde vragen
+
+### Bevat keramische coating PFAS?
+Nee, een echte keramische coating is PFAS-vrij.
+
+### Is keramisch beter dan Teflon?
+Voor wie PFAS wil vermijden, is keramisch een logische keuze.
+
+### Gaat keramisch lang mee?
+Minder lang dan RVS, maar bij goed gebruik nog steeds meerdere jaren.
+
+### Is RVS veiliger dan keramisch?
+Beide zijn veilig, maar RVS bevat helemaal geen coating.
+
+Generate FAQPage JSON-LD from the FAQ section if supported.
+
+OUTPUT
+- files created
+- files modified
+- final URL
+- confirmation blog overview updated
+- confirmation meta tags added
