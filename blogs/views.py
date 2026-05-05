@@ -16,6 +16,7 @@ def _build_breadcrumb_ld(breadcrumbs):
 BLOG_TITLES = {
     "koken-zonder-schadelijke-stoffen": "Koken zonder Schadelijke Stoffen",
     "pfas-in-huis": "PFAS in Huis",
+    "keramische-vs-rvs-koekenpan": "Keramische vs RVS koekenpan",
 }
 
 

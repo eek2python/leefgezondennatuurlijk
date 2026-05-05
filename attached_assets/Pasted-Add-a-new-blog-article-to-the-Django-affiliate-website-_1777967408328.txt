@@ -1,0 +1,218 @@
+Add a new blog article to the Django affiliate website.
+
+ARTICLE TITLE
+Keramische vs RVS koekenpan: welke past het beste bij jou?
+
+GOAL
+Create a clean, SEO-friendly blog post that fits the existing site style and links internally to the relevant category pages.
+
+IMPORTANT RULES
+- Do not redesign the website
+- Do not change existing URLs
+- Do not change existing product/category data
+- Keep styling consistent with the current blog templates
+- Add the article to the blog overview page if this is not automatic
+- Add SEO meta tags, canonical, Open Graph and Twitter tags
+- Add FAQPage JSON-LD if the blog template supports it
+- Use the existing author/byline pattern if available
+- Add breadcrumbs if the site now supports them
+
+URL / SLUG
+Use:
+- /blogs/keramische-vs-rvs-koekenpan/
+
+If the project uses another blog URL convention, follow the existing convention but keep the slug:
+- keramische-vs-rvs-koekenpan
+
+INTERNAL LINKS
+Add internal links to:
+- Keramische koekenpannen: /koekenpannen/
+- RVS koekenpannen: /rvs-koekenpannen/
+- Hoe wij beoordelen: /hoe-wij-beoordelen/
+
+SEO META
+Title:
+Keramische vs RVS koekenpan: welke past bij jou?
+
+Meta description:
+Twijfel je tussen een keramische en RVS koekenpan? Ontdek de verschillen in gebruiksgemak, duurzaamheid, bakresultaat en PFAS-vrij koken.
+
+OG title:
+Keramische vs RVS koekenpan
+
+OG description:
+Lees welke koekenpan het beste bij jouw manier van koken past: keramisch voor gemak of RVS voor controle en duurzaamheid.
+
+ARTICLE CONTENT
+
+# Keramische vs RVS koekenpan: welke past het beste bij jou?
+
+Een nieuwe koekenpan kopen lijkt simpel, maar de keuze tussen keramisch en roestvrij staal (RVS) zorgt vaak voor twijfel. Beide opties kunnen goed passen bij gezond koken zonder PFAS, maar ze verschillen duidelijk in gebruik, prestaties en levensduur.
+
+In dit artikel leggen we uit wat het verschil is, voor wie welke pan geschikt is en welke keuze het beste past bij jouw manier van koken.
+
+Wil je direct de beste opties bekijken? Bekijk dan onze selectie keramische koekenpannen of onze selectie RVS koekenpannen.
+
+## Wat is een keramische koekenpan?
+
+Een keramische koekenpan heeft een antiaanbaklaag op basis van keramisch materiaal. Deze pannen zijn populair omdat ze makkelijk bakken en vaak expliciet als PFAS-vrij worden verkocht.
+
+### Voordelen van keramisch
+
+- Bakt makkelijk, ook met weinig olie
+- Ideaal voor dagelijks gebruik
+- Toegankelijk voor beginners
+- Vaak licht en snel warm
+- Minder kans op aanbakken dan bij RVS
+
+### Nadelen van keramisch
+
+- De keramische laag kan na verloop van tijd slijten
+- Minder geschikt voor extreem hoge temperaturen
+- Gevoeliger voor beschadiging door metalen keukengerei
+- Vaak kortere levensduur dan een goede RVS pan
+
+Keramisch is vooral geschikt als je een gebruiksvriendelijke pan zoekt voor eieren, groenten, pannenkoeken of snelle dagelijkse gerechten.
+
+## Wat is een RVS koekenpan?
+
+Een RVS koekenpan heeft geen klassieke antiaanbaklaag. De pan bestaat uit roestvrij staal, vaak met een meerlagenbodem of meerlagenconstructie voor betere warmteverdeling.
+
+### Voordelen van RVS
+
+- Geen coating die kan slijten
+- Zeer duurzaam
+- Geschikt voor hogere temperaturen
+- Sterk voor vlees, aardappelen en krachtig aanbakken
+- Goede keuze voor wie controle en lange levensduur belangrijk vindt
+
+### Nadelen van RVS
+
+- Heeft meer baktechniek nodig
+- Kan sneller aanbakken als de pan niet goed wordt gebruikt
+- Vaak wat zwaarder
+- Meestal duurder bij premium modellen
+
+RVS is vooral geschikt als je graag vlees, vis of groenten goed wilt aanbraden en bereid bent om iets bewuster met temperatuur en vetstof te werken.
+
+## Belangrijk verschil: gemak versus controle
+
+Keramisch en RVS zijn allebei logische keuzes, maar ze lossen een ander probleem op.
+
+| Kenmerk | Keramisch | RVS |
+|---|---|---|
+| Gebruiksgemak | Zeer hoog | Gemiddeld |
+| Antiaanbakgedrag | Sterk | Afhankelijk van techniek |
+| Levensduur | Gemiddeld | Zeer hoog |
+| Hoge temperaturen | Beperkt | Sterk |
+| Onderhoud | Eenvoudig | Iets meer aandacht |
+| Beste voor | Dagelijks gemak | Controle en duurzaamheid |
+
+Kort gezegd:
+
+- Keramisch is de beste keuze voor gemak.
+- RVS is de beste keuze voor controle en lange levensduur.
+
+## Wanneer kies je voor keramisch?
+
+Kies keramisch als je vooral makkelijk en snel wilt koken. Een keramische koekenpan is handig als je weinig olie wilt gebruiken en niet te veel wilt nadenken over baktechniek.
+
+Keramisch past goed bij:
+
+- eieren
+- pannenkoeken
+- groenten
+- lichte maaltijden
+- dagelijks gebruik
+
+Bekijk onze selectie keramische koekenpannen voor modellen die passen bij verschillende formaten en prijsklassen.
+
+## Wanneer kies je voor RVS?
+
+Kies RVS als je een pan zoekt die lang meegaat en goed presteert bij hogere temperaturen. RVS is minder vergevingsgezind dan keramisch, maar geeft veel controle zodra je ermee leert werken.
+
+RVS past goed bij:
+
+- vlees aanbraden
+- aardappelen bakken
+- groenten roosteren
+- sauzen maken na het afblussen
+- koken zonder coating
+
+Bekijk onze selectie RVS koekenpannen als je een duurzame pan zonder coating zoekt.
+
+## Is keramisch gezonder dan RVS?
+
+Niet automatisch. Beide kunnen een goede keuze zijn voor wie PFAS wil vermijden.
+
+Het verschil zit vooral in de constructie:
+
+- Keramisch gebruikt een coating zonder PFAS.
+- RVS heeft helemaal geen antiaanbakcoating.
+
+Daarom is RVS interessant voor wie liever volledig zonder coating kookt. Keramisch is juist aantrekkelijk voor wie het gemak van een antiaanbaklaag wil behouden.
+
+## Welke pan past het beste bij jou?
+
+De beste keuze hangt af van je kookstijl.
+
+Kies keramisch als je:
+
+- gemak belangrijk vindt
+- vaak lichte gerechten maakt
+- weinig olie wilt gebruiken
+- een pan zoekt die direct prettig werkt
+
+Kies RVS als je:
+
+- een pan zoekt die lang meegaat
+- graag op hogere temperatuur bakt
+- vlees of groenten goed wilt aanbraden
+- liever zonder coating kookt
+
+Twijfel je? Dan is een combinatie vaak ideaal: een keramische pan voor dagelijks gemak en een RVS pan voor krachtig aanbakken.
+
+## Conclusie
+
+Keramische en RVS koekenpannen kunnen allebei goed passen binnen een bewuste, PFAS-vrije keuken. De keuze draait vooral om gebruiksgemak versus duurzaamheid en controle.
+
+Voor de meeste huishoudens is keramisch de makkelijkste start. Voor wie meer controle wil en een pan zoekt die jarenlang meegaat, is RVS vaak de sterkere keuze.
+
+Bekijk ook:
+- onze keramische koekenpannen
+- onze RVS koekenpannen
+- hoe wij producten beoordelen
+
+## Veelgestelde vragen
+
+### Is een keramische koekenpan PFAS-vrij?
+
+Keramische pannen worden vaak verkocht als PFAS-vrij alternatief voor traditionele antiaanbakpannen. Controleer wel altijd de productinformatie per model.
+
+### Is een RVS koekenpan PFAS-vrij?
+
+Ja, een RVS pan zonder antiaanbaklaag bevat geen PFAS-coating. Daarom is RVS een goede keuze voor wie zonder coating wil koken.
+
+### Waarom bakt eten sneller aan in RVS?
+
+RVS heeft geen antiaanbaklaag. De pan moet goed worden voorverwarmd en ingrediënten moeten soms eerst een korst vormen voordat ze vanzelf loslaten.
+
+### Wat gaat langer mee: keramisch of RVS?
+
+Een goede RVS pan gaat meestal langer mee, omdat er geen coating is die kan slijten. Keramische pannen zijn gebruiksvriendelijker, maar de laag kan na verloop van tijd minder goed werken.
+
+### Welke pan is beter voor beginners?
+
+Voor beginners is keramisch meestal makkelijker. RVS vraagt meer techniek, maar biedt meer controle en duurzaamheid.
+
+FAQ JSON-LD
+If the project supports FAQPage JSON-LD for blogs, generate it from the FAQ section above.
+
+OUTPUT
+After implementation, report:
+1. file(s) created
+2. file(s) modified
+3. final URL
+4. whether the post appears in the blog overview
+5. whether meta tags and FAQPage JSON-LD were added
+6. any manual follow-up needed
