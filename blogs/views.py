@@ -21,6 +21,7 @@ BLOG_TITLES = {
     "welke-maat-koekenpan": "Welke maat koekenpan",
     "is-keramische-coating-veilig": "Is keramische coating veilig?",
     "beste-koekenpan-inductie-pfas-vrij": "Beste koekenpan voor inductie (PFAS-vrij)",
+    "rvs-pan-bakken-zonder-aanbakken": "Hoe bak je met een RVS pan zonder dat het aanbakt?",
 }
 
 
