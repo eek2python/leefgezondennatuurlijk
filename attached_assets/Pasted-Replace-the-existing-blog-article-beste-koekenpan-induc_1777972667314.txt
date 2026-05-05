@@ -1,0 +1,153 @@
+Replace the existing blog article “beste-koekenpan-inductie-pfas-vrij” with a sharper high-intent version that reduces overlap with the “keramische-vs-rvs-koekenpan” article.
+
+GOAL
+Turn this article into a selection-focused article, not another material-comparison article.
+
+IMPORTANT RULES
+- Do not change the URL
+- Do not change the slug
+- Keep existing blog template, styling, breadcrumbs, author block and meta setup
+- Keep or regenerate FAQPage JSON-LD based on the updated FAQ
+- Ensure all internal links use the correct existing URLs
+- Do not modify other articles
+
+URL TO UPDATE
+/blogs/beste-koekenpan-inductie-pfas-vrij/
+
+SEO META
+Keep current SEO meta if already present, but ensure it still fits the revised article.
+
+Suggested title:
+Beste koekenpan voor inductie (PFAS-vrij) — top keuzes
+
+Suggested meta description:
+Op zoek naar de beste koekenpan voor inductie? Bekijk onze beste PFAS-vrije keuzes voor dagelijks koken, budget en premium gebruik.
+
+UPDATED ARTICLE CONTENT
+
+# Beste koekenpan voor inductie (PFAS-vrij) — dit zijn de beste keuzes
+
+Zoek je een goede koekenpan voor inductie en wil je PFAS vermijden? Dan kom je al snel uit bij twee opties: keramisch met antiaanbaklaag of RVS zonder coating.
+
+In dit artikel helpen we je snel kiezen met onze beste aanbevelingen — zonder lange uitleg.
+
+## Onze top 3 inductie koekenpannen
+
+### Beste keuze — Keramische koekenpan
+
+- Zeer gebruiksvriendelijk
+- Weinig olie nodig
+- Ideaal voor dagelijks koken
+
+Link CTA:
+Bekijk de beste keramische koekenpannen →
+URL: /koekenpannen/
+
+### Budget keuze — Keramisch instapmodel
+
+- Betaalbaar
+- Makkelijk in gebruik
+- Goede basis voor dagelijks koken
+
+Link CTA:
+Bekijk budget opties →
+URL: /koekenpannen/
+
+### Premium keuze — RVS koekenpan
+
+- Zeer duurzaam
+- Perfect voor vlees en hogere temperaturen
+- Geen coating
+
+Link CTA:
+Bekijk RVS koekenpannen →
+URL: /rvs-koekenpannen/
+
+## Welke koekenpan past bij jou?
+
+### Kies keramisch als je:
+
+- makkelijk wilt koken
+- weinig ervaring hebt
+- dagelijks lichte gerechten maakt
+
+Interne link:
+Bekijk alle keramische koekenpannen
+URL: /koekenpannen/
+
+### Kies RVS als je:
+
+- maximale controle wilt
+- vlees goed wilt bakken
+- een pan zoekt die jarenlang meegaat
+
+Interne link:
+Bekijk alle RVS koekenpannen
+URL: /rvs-koekenpannen/
+
+## Waar moet je op letten bij inductie?
+
+Een goede inductiepan heeft:
+
+- een magnetische bodem
+- een vlakke onderkant
+- voldoende gewicht voor goede warmteverdeling
+
+Twijfel je tussen materialen? Lees ook:
+Keramische vs RVS koekenpan
+URL: /blogs/keramische-vs-rvs-koekenpan/
+
+## Beste keuze per situatie
+
+- Beste allround: keramisch
+- Beste voor vlees: RVS
+- Beste voor beginners: keramisch
+- Beste lange termijn: RVS
+
+## Conclusie
+
+De beste koekenpan voor inductie hangt vooral af van hoe je kookt.
+
+- Keramisch: gemak en snelheid
+- RVS: controle en duurzaamheid
+
+Voor de meeste huishoudens is een combinatie van beide ideaal.
+
+CTA links:
+Keramische koekenpannen →
+URL: /koekenpannen/
+
+RVS koekenpannen →
+URL: /rvs-koekenpannen/
+
+## Veelgestelde vragen
+
+### Werkt elke pan op inductie?
+Nee, alleen pannen met een magnetische bodem werken op inductie.
+
+### Wat is beter voor inductie: keramisch of RVS?
+Beide werken goed. Keramisch is makkelijker in gebruik, terwijl RVS meer controle en duurzaamheid biedt.
+
+### Wat is de beste maat voor inductie?
+Meestal 24 of 28 cm, afhankelijk van je huishouden en kookstijl.
+
+### Heb je meerdere pannen nodig?
+Voor veel huishoudens is een combinatie van 24 en 28 cm het meest praktisch.
+
+IMPLEMENTATION REQUIREMENTS
+1. Replace the old article body with the updated content above
+2. Keep the article shorter and more action-oriented
+3. Ensure the article links to:
+   - /koekenpannen/
+   - /rvs-koekenpannen/
+   - /blogs/keramische-vs-rvs-koekenpan/
+4. Regenerate FAQPage JSON-LD from the updated FAQ if supported
+5. Keep the article listed in the blog overview
+6. Do not modify other blog posts
+
+OUTPUT
+After implementation, report:
+- files modified
+- final URL
+- whether FAQPage JSON-LD was updated
+- whether internal links were added correctly
