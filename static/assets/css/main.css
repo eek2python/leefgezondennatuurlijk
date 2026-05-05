@@ -2261,6 +2261,19 @@ input, select, textarea {
         .blog-card img {
            aspect-ratio: 16 / 9;
         }
+        .affiliate-notice {
+           font-size: 0.9em;
+           color: #666;
+           margin: 0 0 14px 0;
+           line-height: 1.4;
+        }
+        .affiliate-notice a {
+           color: #666;
+           text-decoration: underline;
+        }
+        .affiliate-notice a:hover {
+           color: #3d4449;
+        }
         .category-card span {
            padding: 12px 8px;
            font-size: 1.15rem;
