@@ -1,5 +1,40 @@
 uploads = []
-generated = []
+
+[[generated]]
+id = "As7PSfnBBGWLdiaD6JqDP"
+uri = "file://attached_assets/generated_images/keramische-vs-rvs-koekenpan.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "IWrGflkiFFwALK-PwvicB"
+uri = "file://attached_assets/generated_images/greenpan-barcelona-vs-demeyere-industry-5.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "vbwv2qDy3Hgv2QUKlq1_x"
+uri = "file://attached_assets/generated_images/welke-maat-koekenpan.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Rj66hbQ_R8ld4i3_E2GVK"
+uri = "file://attached_assets/generated_images/is-keramische-coating-veilig.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "P01KEFSSdkDL7BTvl7oB-"
+uri = "file://attached_assets/generated_images/beste-koekenpan-inductie-pfas-vrij.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "uHcezRe-fX7vWvwhEKSh6"
+uri = "file://attached_assets/generated_images/rvs-pan-bakken-zonder-aanbakken.png"
+type = "image"
+title = "generated_image"
 
 [[outputs]]
 id = "zCa6k9oM0lN4Qibwuq2QS"

@@ -2258,6 +2258,9 @@ input, select, textarea {
            transition: transform 0.3s ease;
            background-color: #f4f4f4;
         }
+        .blog-card img {
+           aspect-ratio: 16 / 9;
+        }
         .category-card span {
            padding: 12px 8px;
            font-size: 1.15rem;
