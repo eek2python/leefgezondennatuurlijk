@@ -2224,14 +2224,18 @@ input, select, textarea {
            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        .category-card img {
+        .category-card img,
+        .blog-card img,
+        .thumb-img {
+           display: block;
            width: 100%;
+           height: auto;
            aspect-ratio: 4 / 3;
            object-fit: cover;
-           object-position: center;
+           object-position: center center;
            border-radius: 10px;
            transition: transform 0.3s ease;
-        }
+           background-color: #f4f4f4;
         }
         .category-card span {
            padding: 12px 8px;
@@ -2242,13 +2246,11 @@ input, select, textarea {
         .category-card:hover img {
            transform: translateY(-4px);
         }
+        .category-card:hover {
            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
         }
         /* Mobile styles */
         @media (max-width: 480px) {
-           .category-card img {
-               height: 100px;
-           }
            .category-card span {
                font-size: 1rem;
            }
@@ -2332,11 +2334,7 @@ padding: 20px;
    transform: translateY(-4px);
    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
 }
-.blog-card img {
-   width: 100%;
-   aspect-ratio: 4/3;
-   object-fit: cover;
-}
+/* .blog-card img — consolidated into .category-card img, .blog-card img, .thumb-img rule above */
 .blog-card h2 {
    font-size: 1.25rem;
    margin: 16px 20px 8px;
