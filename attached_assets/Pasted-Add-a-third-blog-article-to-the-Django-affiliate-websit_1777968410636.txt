@@ -1,0 +1,152 @@
+Add a third blog article to the Django affiliate website.
+
+ARTICLE TITLE
+Welke maat koekenpan heb je nodig? (20, 24 of 28 cm uitgelegd)
+
+GOAL
+Create a high-SEO article targeting users searching for the right pan size, with strong internal linking to category pages and product listings.
+
+IMPORTANT RULES
+- Follow existing blog structure and styling
+- Do not change existing URLs or templates
+- Add SEO meta tags, canonical, Open Graph and Twitter tags
+- Add FAQPage JSON-LD if supported
+- Include breadcrumbs and author block
+- Ensure mobile readability
+
+URL / SLUG
+/blogs/welke-maat-koekenpan/
+
+INTERNAL LINKS
+Link to:
+- /koekenpannen/ (keramisch)
+- /rvs-koekenpannen/
+- category pages with sizes if available
+- /hoe-wij-beoordelen/
+
+SEO META
+
+Title:
+Welke maat koekenpan heb je nodig? 20, 24 of 28 cm
+
+Meta description:
+Twijfel je tussen een koekenpan van 20, 24 of 28 cm? Ontdek welke maat het beste past bij jouw huishouden en kookstijl.
+
+ARTICLE CONTENT
+
+# Welke maat koekenpan heb je nodig? (20, 24 of 28 cm uitgelegd)
+
+Een van de meest gemaakte fouten bij het kopen van een koekenpan is het kiezen van de verkeerde maat. Een te kleine pan is onpraktisch, terwijl een te grote pan onnodig veel ruimte en energie kost.
+
+In dit artikel leggen we uit welke maat koekenpan het beste bij jou past en wanneer je kiest voor 20, 24 of 28 cm.
+
+## De drie meest gebruikte maten
+
+### 20 cm — voor kleine porties
+
+Een pan van 20 cm is ideaal voor:
+- 1 persoon  
+- eieren of kleine gerechten  
+- snelle bereidingen  
+
+👉 Voordelen:
+- compact  
+- snel warm  
+- makkelijk op te bergen  
+
+👉 Nadelen:
+- te klein voor meerdere personen  
+
+### 24 cm — de allrounder
+
+De 24 cm pan is de meest veelzijdige keuze.
+
+Geschikt voor:
+- 1–2 personen  
+- dagelijkse maaltijden  
+- groenten, eieren, kleine vleesgerechten  
+
+👉 Dit is de beste keuze als je één pan wilt.
+
+### 28 cm — voor gezinnen
+
+De 28 cm pan is het meest gekozen formaat.
+
+Geschikt voor:
+- 2–4 personen  
+- grotere maaltijden  
+- vlees, aardappelen en eenpansgerechten  
+
+👉 Voordelen:
+- veel ruimte  
+- veelzijdig  
+
+👉 Nadelen:
+- groter en zwaarder  
+
+## Welke maat past bij jouw situatie?
+
+| Situatie | Aanbevolen maat |
+|---------|----------------|
+| Alleenstaand | 20–24 cm |
+| 2 personen | 24 cm |
+| Gezin | 28 cm |
+| Veel koken | 24 + 28 cm |
+
+## Beste combinatie (aanrader)
+
+Voor de meeste huishoudens:
+
+👉 1x 24 cm  
+👉 1x 28 cm  
+
+Zo heb je altijd de juiste maat bij de hand.
+
+## Veelgemaakte fouten
+
+- Te klein kopen → pan raakt snel vol  
+- Alleen grote pan kopen → onhandig voor kleine gerechten  
+- Geen rekening houden met kookplaatgrootte  
+
+## Keramisch of RVS per formaat?
+
+- 20 cm → meestal keramisch (gemak)  
+- 24 cm → beide geschikt  
+- 28 cm → RVS ideaal voor bakken  
+
+👉 Bekijk:
+- keramische koekenpannen
+- RVS koekenpannen
+
+## Conclusie
+
+De juiste maat hangt af van je huishouden en kookstijl.
+
+- 20 cm → klein en snel  
+- 24 cm → beste allround keuze  
+- 28 cm → ideaal voor grotere maaltijden  
+
+Twijfel je? Kies dan voor een combinatie van 24 en 28 cm.
+
+## Veelgestelde vragen
+
+### Wat is de meest gebruikte maat koekenpan?
+28 cm is het populairste formaat.
+
+### Is 24 cm groot genoeg?
+Ja, voor 1–2 personen is dit meestal perfect.
+
+### Heb je meerdere pannen nodig?
+Voor optimaal gebruik is een combinatie van 24 en 28 cm ideaal.
+
+### Welke maat gebruikt een professional?
+Vaak 24 en 28 cm, afhankelijk van het gerecht.
+
+Generate FAQPage JSON-LD from the FAQ section if supported.
+
+OUTPUT
+- files created
+- files modified
+- final URL
+- confirmation blog overview updated
+- confirmation meta tags added
