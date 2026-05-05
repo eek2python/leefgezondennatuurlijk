@@ -20,6 +20,7 @@ BLOG_TITLES = {
     "greenpan-barcelona-vs-demeyere-industry-5": "GreenPan Barcelona vs Demeyere Industry 5",
     "welke-maat-koekenpan": "Welke maat koekenpan",
     "is-keramische-coating-veilig": "Is keramische coating veilig?",
+    "beste-koekenpan-inductie-pfas-vrij": "Beste koekenpan voor inductie (PFAS-vrij)",
 }
 
 

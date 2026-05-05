@@ -1,0 +1,147 @@
+Add a new blog article to the Django affiliate website.
+
+ARTICLE TITLE
+Beste koekenpan voor inductie (PFAS-vrij) — dit zijn de beste keuzes
+
+GOAL
+Create a high-traffic, high-intent SEO article targeting users searching for the best induction pans, with strong internal linking to category and product pages.
+
+IMPORTANT RULES
+- Follow existing blog structure and styling
+- Do not change existing URLs or templates
+- Add SEO meta tags, canonical, Open Graph and Twitter tags
+- Add FAQPage JSON-LD if supported
+- Include breadcrumbs and author block
+- Ensure mobile readability
+- Add clear internal links to category and product pages
+
+URL / SLUG
+/blogs/beste-koekenpan-inductie-pfas-vrij/
+
+INTERNAL LINKS
+Link to:
+- /koekenpannen/
+- /rvs-koekenpannen/
+- /hoe-wij-beoordelen/
+- relevant product pages if available
+
+SEO META
+
+Title:
+Beste koekenpan voor inductie (PFAS-vrij) — top keuzes
+
+Meta description:
+Op zoek naar de beste koekenpan voor inductie? Ontdek de beste PFAS-vrije pannen en waar je op moet letten bij je keuze.
+
+ARTICLE CONTENT
+
+# Beste koekenpan voor inductie (PFAS-vrij) — dit zijn de beste keuzes
+
+Zoek je een goede koekenpan voor inductie, maar wil je ook PFAS vermijden? Dan is het belangrijk om te weten waar je op moet letten. Niet elke pan werkt goed op inductie en niet elke antiaanbaklaag is even veilig.
+
+In dit artikel ontdek je welke koekenpannen geschikt zijn voor inductie, wat de beste PFAS-vrije opties zijn en welke keuze het beste past bij jouw manier van koken.
+
+## Waar moet een goede inductiepan aan voldoen?
+
+Een inductiekookplaat werkt anders dan gas. De pan wordt verwarmd via magnetische energie. Daarom moet een pan:
+
+- een magnetische bodem hebben  
+- vlak op de kookplaat liggen  
+- goede warmtegeleiding hebben  
+
+👉 Niet elke pan werkt dus op inductie.
+
+## Beste keuzes: keramisch of RVS
+
+Voor PFAS-vrij koken zijn er twee sterke opties:
+
+### Keramische koekenpannen (meest gebruiksvriendelijk)
+
+Keramische pannen hebben een antiaanbaklaag zonder PFAS en zijn ideaal voor dagelijks gebruik.
+
+Voordelen:
+- makkelijk bakken  
+- weinig olie nodig  
+- ideaal voor beginners  
+
+👉 Bekijk onze keramische koekenpannen
+
+---
+
+### RVS koekenpannen (duurzaam en krachtig)
+
+RVS pannen hebben geen coating en gaan vaak veel langer mee. Ze zijn perfect voor bakken op hogere temperatuur.
+
+Voordelen:
+- zeer duurzaam  
+- geschikt voor vlees en krokant bakken  
+- geen coating  
+
+👉 Bekijk onze RVS koekenpannen
+
+---
+
+## Welke pan past het beste bij jou?
+
+Kies keramisch als je:
+- makkelijk wilt koken  
+- weinig ervaring hebt  
+- dagelijks lichte gerechten maakt  
+
+Kies RVS als je:
+- maximale controle wilt  
+- vaker vlees bakt  
+- een pan zoekt die jarenlang meegaat  
+
+---
+
+## Veelgemaakte fouten bij inductiepannen
+
+- Pan zonder magnetische bodem kopen  
+- Te lichte pan kiezen (slechte warmteverdeling)  
+- Alleen letten op prijs en niet op materiaal  
+
+---
+
+## Beste keuze per situatie
+
+- Beste allround: keramische koekenpan  
+- Beste voor vlees: RVS koekenpan  
+- Beste voor beginners: keramisch  
+- Beste lange termijn: RVS  
+
+---
+
+## Conclusie
+
+De beste koekenpan voor inductie hangt af van je voorkeur.
+
+- Keramisch → gebruiksgemak  
+- RVS → duurzaamheid en controle  
+
+Wil je de beste opties bekijken? Bekijk dan:
+- keramische koekenpannen  
+- RVS koekenpannen  
+
+## Veelgestelde vragen
+
+### Werkt elke pan op inductie?
+Nee, alleen pannen met een magnetische bodem.
+
+### Is keramisch geschikt voor inductie?
+Ja, als de pan een geschikte bodem heeft.
+
+### Wat is beter voor inductie: RVS of keramisch?
+Beide werken goed, maar RVS is beter voor hoge temperaturen en keramisch voor gemak.
+
+### Wat is de beste maat voor inductie?
+Meestal 24 of 28 cm, afhankelijk van je huishouden.
+
+Generate FAQPage JSON-LD from the FAQ section if supported.
+
+OUTPUT
+- files created
+- files modified
+- final URL
+- confirmation blog overview updated
+- confirmation meta tags added
