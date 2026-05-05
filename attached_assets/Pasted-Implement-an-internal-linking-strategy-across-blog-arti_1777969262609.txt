@@ -1,0 +1,94 @@
+Implement an internal linking strategy across blog articles, category pages, and product detail pages.
+
+GOAL
+Strengthen SEO and topical authority by linking all relevant content together in a structured way.
+
+==================================================
+STEP 1 — Link blog articles to each other
+==================================================
+
+Update blog articles to include contextual internal links.
+
+Article: keramische-vs-rvs-koekenpan
+Add links to:
+- /blogs/greenpan-barcelona-vs-demeyere-industry-5/
+- /blogs/welke-maat-koekenpan/
+- /blogs/is-keramische-coating-veilig/
+
+Article: greenpan-barcelona-vs-demeyere-industry-5
+Add links to:
+- /blogs/keramische-vs-rvs-koekenpan/
+- /blogs/welke-maat-koekenpan/
+
+Article: welke-maat-koekenpan
+Add links to:
+- /blogs/keramische-vs-rvs-koekenpan/
+
+Article: is-keramische-coating-veilig
+Add links to:
+- /blogs/keramische-vs-rvs-koekenpan/
+
+Ensure links are:
+- placed naturally in text
+- not forced or spammy
+
+==================================================
+STEP 2 — Link articles to category pages
+==================================================
+
+Ensure every blog article links to:
+- /koekenpannen/
+- /rvs-koekenpannen/
+
+Use natural anchor text:
+- "keramische koekenpannen"
+- "RVS koekenpannen"
+
+==================================================
+STEP 3 — Add “Handige artikelen” section to category pages
+==================================================
+
+At the bottom of each category page, add a section:
+
+Title:
+"Handige artikelen"
+
+Include links to:
+- Keramisch vs RVS
+- Welke maat koekenpan
+- Is keramische coating veilig
+
+Keep styling consistent with existing theme.
+
+==================================================
+STEP 4 — Add “Twijfel je nog?” section to product pages
+==================================================
+
+On product detail pages, add a block:
+
+Title:
+"Twijfel je nog?"
+
+Include links to:
+- comparison article
+- size guide article
+
+==================================================
+RULES
+==================================================
+
+- Do NOT change URLs
+- Do NOT change layout structure drastically
+- Keep styling consistent
+- Keep links relevant and minimal (no overlinking)
+
+==================================================
+OUTPUT
+==================================================
+
+Provide:
+1. files modified
+2. where links were added
+3. confirmation all articles interlinked
+4. confirmation category pages updated
+5. confirmation product pages updated
