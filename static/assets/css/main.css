@@ -4338,3 +4338,61 @@ table.product-table .product-badge {
     border-top: 1px solid #dee1e3;
     padding-top: 1.5em;
 }
+/* ---------------------------------------------------------
+  TOP 3 PICKS — above-the-fold conversion section
+  --------------------------------------------------------- */
+.top-picks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2em;
+    margin: 1em 0 0;
+}
+.top-pick-card {
+    background: #ffffff;
+    border: 1px solid #e3e6ea;
+    border-top: 4px solid #c8cdd3;
+    border-radius: 0.5em;
+    padding: 1.2em 1.2em 1.4em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.top-pick-best { border-top-color: #2f7d4e; }
+.top-pick-budget { border-top-color: #d4a017; }
+.top-pick-premium { border-top-color: #6c4ab6; }
+.top-pick-label {
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #555;
+}
+.top-pick-best .top-pick-label { color: #2f7d4e; }
+.top-pick-budget .top-pick-label { color: #b08512; }
+.top-pick-premium .top-pick-label { color: #5a3ea0; }
+.top-pick-name {
+    font-size: 1.05em;
+    line-height: 1.3;
+    margin: 0;
+}
+.top-pick-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.9em;
+}
+.top-pick-rating .rating-value { color: #555; }
+.top-pick-blurb {
+    font-size: 0.9em;
+    color: #444;
+    margin: 0;
+    flex-grow: 1;
+}
+.top-pick-card .button { margin-top: auto; text-align: center; }
+.how-we-link { margin-top: 0.8em; font-size: 0.9em; }
+.how-we-link a { color: #2f7d4e; font-weight: 600; }
+@media (max-width: 480px) {
+    .top-picks-grid { gap: 0.9em; }
+    .top-pick-card { padding: 1em; }
+}

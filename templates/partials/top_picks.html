@@ -1,0 +1,45 @@
+{% if top_picks %}
+<section class="category-section top-picks">
+    <header class="major">
+        <h2>Onze Top 3 in een oogopslag</h2>
+    </header>
+    <div class="top-picks-grid">
+        {% if top_picks.beste %}
+        <div class="top-pick-card top-pick-best">
+            <div class="top-pick-label">Beste keuze</div>
+            <h3 class="top-pick-name">{{ top_picks.beste.name|cut:" (" }}</h3>
+            <div class="top-pick-rating">
+                <span class="stars stars-{{ top_picks.beste.rating_class }}"></span>
+                <span class="rating-value">{{ top_picks.beste.rating }}/5</span>
+            </div>
+            <p class="top-pick-blurb">Onze allround topkeuze met de beste balans tussen kwaliteit, prestaties en prijs.</p>
+            <a href="{{ top_picks.beste.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary">Bekijk prijs &amp; reviews →</a>
+        </div>
+        {% endif %}
+        {% if top_picks.budget %}
+        <div class="top-pick-card top-pick-budget">
+            <div class="top-pick-label">Budget keuze</div>
+            <h3 class="top-pick-name">{{ top_picks.budget.name|cut:" (" }}</h3>
+            <div class="top-pick-rating">
+                <span class="stars stars-{{ top_picks.budget.rating_class }}"></span>
+                <span class="rating-value">{{ top_picks.budget.rating }}/5</span>
+            </div>
+            <p class="top-pick-blurb">Slimme keuze voor wie kwaliteit zoekt zonder te veel uit te geven.</p>
+            <a href="{{ top_picks.budget.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary">Bekijk prijs &amp; reviews →</a>
+        </div>
+        {% endif %}
+        {% if top_picks.premium %}
+        <div class="top-pick-card top-pick-premium">
+            <div class="top-pick-label">Premium keuze</div>
+            <h3 class="top-pick-name">{{ top_picks.premium.name|cut:" (" }}</h3>
+            <div class="top-pick-rating">
+                <span class="stars stars-{{ top_picks.premium.rating_class }}"></span>
+                <span class="rating-value">{{ top_picks.premium.rating }}/5</span>
+            </div>
+            <p class="top-pick-blurb">Voor wie geen compromissen sluit: topkwaliteit, professionele afwerking en maximale levensduur.</p>
+            <a href="{{ top_picks.premium.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary">Bekijk prijs &amp; reviews →</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endif %}

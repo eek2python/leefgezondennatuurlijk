@@ -1,0 +1,100 @@
+Refactor category pages to a high-conversion structure inspired by top affiliate sites.
+
+GOAL
+Improve conversion, readability, and SEO without changing core data structures.
+
+==================================================
+STEP 1 — Add Top 3 section (above the fold)
+==================================================
+
+Add a “Top 3” section at the top of each category page.
+
+Include:
+- Beste keuze
+- Budget keuze
+- Premium keuze
+
+Each item must include:
+- product name
+- rating
+- short label
+- CTA button linking to product detail or affiliate
+
+==================================================
+STEP 2 — Short intro
+==================================================
+
+Replace long intro text with:
+- 2–3 sentence summary
+- clear value proposition
+
+==================================================
+STEP 3 — Keep existing product blocks
+==================================================
+
+Do not remove current product blocks.
+
+Ensure:
+- consistent structure
+- consistent CTA text: "Bekijk prijs & reviews →"
+
+==================================================
+STEP 4 — Standardize comparison table
+==================================================
+
+Ensure all category pages use same columns:
+- Product
+- Belangrijkste eigenschappen
+- Prijs
+- Beoordeling
+- Actie
+
+==================================================
+STEP 5 — Add “Waarom deze selectie?”
+==================================================
+
+Add a short section explaining:
+- selection criteria
+
+Include link to:
+- /hoe-wij-beoordelen/
+
+==================================================
+STEP 6 — Add “Handige artikelen” section
+==================================================
+
+Add links to:
+- keramisch vs rvs
+- welke maat koekenpan
+- keramische coating veilig
+
+==================================================
+STEP 7 — Expand FAQ section
+==================================================
+
+Increase FAQ items:
+- minimum 8 questions
+
+Ensure:
+- FAQPage JSON-LD updated
+
+==================================================
+RULES
+==================================================
+
+- Do NOT change URLs
+- Do NOT change product data
+- Do NOT redesign layout
+- Keep styling consistent with theme
+- Ensure mobile friendliness
+
+==================================================
+OUTPUT
+==================================================
+
+Provide:
+1. files modified
+2. sections added
+3. confirmation Top 3 visible above fold
+4. confirmation CTA updated
+5. confirmation FAQ expanded

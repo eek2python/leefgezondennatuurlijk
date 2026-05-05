@@ -104,6 +104,23 @@ CONTENT = {
                 "q": "Wat is beter: keramisch of koolstofstaal?",
                 "a": "Dat hangt af van je kookstijl. Keramische pannen zijn gebruiksvriendelijk, licht en ideaal voor dagelijks koken. Koolstofstaal presteert geweldig op hoge temperaturen en gaat extreem lang mee, maar vraagt meer onderhoud.",
             },
+            {
+                "q": "Wat is het beste formaat voor een wokpan?",
+                "a": "Voor 1–2 personen volstaat een wok van 28\u00a0cm. Voor gezinnen of grotere porties is 30–32\u00a0cm de ideale maat. Houd rekening met de afmeting van je inductiezone.",
+            },
+            {
+                "q": "Mag een PFAS-vrije wokpan in de vaatwasser?",
+                "a": "Het wordt afgeraden. Handwas met warm water en milde zeep verlengt de levensduur van de coating en voorkomt verkleuring of dofheid van het oppervlak.",
+            },
+            {
+                "q": "Hoe brand ik een koolstofstalen wok in?",
+                "a": "Verwarm de wok op hoog vuur tot er een blauwgele kleurverandering optreedt, smeer dun in met olie met een hoog rookpunt en herhaal dit 3–4 keer. "
+                     "Dit creëert een natuurlijke, glanzende antiaanbaklaag (patina) die met elke kookbeurt beter wordt.",
+            },
+            {
+                "q": "Welke spatels gebruik ik in een PFAS-vrije wokpan?",
+                "a": "Gebruik bij keramische coatings altijd houten of siliconen spatels om krassen te voorkomen. Bij koolstofstaal of RVS mag ook metalen wokgerei gebruikt worden.",
+            },
         ],
     },
 "how_we_test": {

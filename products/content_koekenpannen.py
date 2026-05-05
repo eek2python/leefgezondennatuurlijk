@@ -211,6 +211,27 @@ CONTENT = {
                     "om de levensduur van de keramische laag te verlengen."
                 ),
             },
+            {
+                "q": "Mag een PFAS-vrije koekenpan in de vaatwasser?",
+                "a": (
+                    "Veel modellen zijn officieel vaatwasserbestendig, maar handwas verlengt de levensduur van de keramische coating aanzienlijk. "
+                    "Vaatwastabletten zijn agressief en kunnen de bovenste laag op termijn aantasten."
+                ),
+            },
+            {
+                "q": "Welke maat koekenpan heb ik nodig?",
+                "a": (
+                    "Voor één persoon volstaat 20–24\u00a0cm; voor stellen is 24\u00a0cm + 28\u00a0cm de ideale combinatie. Gezinnen kiezen meestal 28\u00a0cm of 30\u00a0cm. "
+                    "Bekijk onze gids <a href=\"/blogs/welke-maat-koekenpan/\">welke maat koekenpan past bij jou</a> voor meer details."
+                ),
+            },
+            {
+                "q": "Wat is het verschil tussen keramische en RVS pannen?",
+                "a": (
+                    "Keramische pannen hebben een gladde antiaanbaklaag en zijn ideaal voor delicate gerechten zoals eieren of vis. "
+                    "RVS pannen zijn coatingvrij en uitstekend voor krachtig aanbakken van vlees. Lees ons <a href=\"/blogs/keramische-vs-rvs-koekenpan/\">vergelijkingsartikel</a> voor een volledige analyse."
+                ),
+            },
         ],
     },
 "how_we_test": {

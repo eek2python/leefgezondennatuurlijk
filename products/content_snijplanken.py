@@ -91,6 +91,34 @@ CONTENT = {
                     "is het tijd voor een nieuwe laag olie. Gebruik hiervoor <strong>voedselveilige minerale olie</strong> of een speciale snijplankolie."
                 ),
             },
+            {
+                "q": "Hoe verwijder ik vlekken of geur uit een houten snijplank?",
+                "a": (
+                    "Strooi grof zout op de plank, snij een citroen doormidden en wrijf de plank in. Laat 5 minuten inwerken en spoel af. "
+                    "Dit verwijdert kleur- en geurresten op natuurlijke wijze zonder de houtvezels te beschadigen."
+                ),
+            },
+            {
+                "q": "Welk formaat snijplank heb ik nodig?",
+                "a": (
+                    "Voor dagelijks gebruik is 30×20\u00a0cm een praktische maat. Voor grotere bereidingen of bij het snijden van vlees of brood is 40×30\u00a0cm of groter aan te raden. "
+                    "Houd rekening met je werkbladruimte en opbergmogelijkheden."
+                ),
+            },
+            {
+                "q": "Wanneer moet ik mijn snijplank vervangen?",
+                "a": (
+                    "Vervang de plank wanneer er diepe groeven, scheuren of donkere vlekken zijn die niet meer weggaan. Diepe inkepingen kunnen bacteriën vasthouden. "
+                    "Bij goed onderhoud gaat een kwaliteits houten snijplank echter 5 tot 10 jaar of langer mee."
+                ),
+            },
+            {
+                "q": "Mag een houten snijplank in de vaatwasser?",
+                "a": (
+                    "Nee, absoluut niet. De combinatie van hitte en water laat hout zwellen, krimpen en uiteindelijk barsten. Was houten snijplanken altijd met de hand "
+                    "in warm water met milde zeep en droog ze rechtop voor goede ventilatie."
+                ),
+            },
         ],
     },
 "how_we_test": {

@@ -95,6 +95,25 @@ CONTENT = {
                 "a": "Voor thuiskoks die graag vlees, aardappelen of groenten krachtig aanbakken, "
                      "en voor wie een pan zonder klassieke antiaanbaklaag zoekt.",
             },
+            {
+                "q": "Hoe voorkom ik dat eten aanbakt in een RVS pan?",
+                "a": "Verwarm de pan eerst goed voor (de waterdruppeltest werkt: een druppel moet als balletje rollen), voeg dan pas olie toe en wacht tot deze warm is. "
+                     "Geef het ingrediënt rust — een korst maakt dat het vanzelf loslaat.",
+            },
+            {
+                "q": "Mag een RVS koekenpan in de vaatwasser?",
+                "a": "Ja, RVS is volledig vaatwasserbestendig. Voor een glanzend resultaat en het voorkomen van witte vlekken bevelen we wel handwas met warm water aan.",
+            },
+            {
+                "q": "Hoe verwijder ik aangekoekte resten of verkleuringen?",
+                "a": "Week de pan met warm water en een scheutje azijn of gebruik een speciaal RVS-reinigingsmiddel zoals Bar Keepers Friend. "
+                     "Schuren met staalwol mag bij RVS — iets dat bij keramische pannen absoluut niet kan.",
+            },
+            {
+                "q": "Wat is het verschil tussen RVS en keramisch?",
+                "a": "RVS is coatingvrij en gaat decennia mee, maar vraagt techniek. Keramisch heeft een natuurlijke antiaanbaklaag en is gebruiksvriendelijker, "
+                     "maar gaat gemiddeld 3–5 jaar mee. Lees onze <a href=\"/blogs/keramische-vs-rvs-koekenpan/\">volledige vergelijking</a>.",
+            },
         ],
     },
     "related_categories": {

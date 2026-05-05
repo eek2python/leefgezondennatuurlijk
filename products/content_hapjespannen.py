@@ -123,6 +123,34 @@ CONTENT = {
                     "Voor kleinere huishoudens kan 24\u00a0cm ook geschikt zijn, maar 28\u00a0cm is de praktische allround keuze."
                 ),
             },
+            {
+                "q": "Wat is het verschil tussen een hapjespan en een koekenpan?",
+                "a": (
+                    "Een hapjespan heeft hogere randen (4–8\u00a0cm) waardoor je sauzen, stoofschotels en eenpansgerechten kunt bereiden zonder te knoeien. "
+                    "Een koekenpan heeft lagere randen, ideaal voor bakken en wenden van eieren of pannenkoeken."
+                ),
+            },
+            {
+                "q": "Hoe lang gaat een PFAS-vrije hapjespan mee?",
+                "a": (
+                    "Bij zorgvuldig gebruik gaat een keramische hapjespan gemiddeld 3 tot 5 jaar mee. Premium modellen met dikkere coating en RVS bodem gaan vaak langer mee. "
+                    "Vermijd oververhitting en gebruik houten of siliconen keukengerei."
+                ),
+            },
+            {
+                "q": "Mag een PFAS-vrije hapjespan in de vaatwasser?",
+                "a": (
+                    "De meeste modellen zijn vaatwasserbestendig, maar handwas verlengt de levensduur van de keramische coating aanzienlijk. "
+                    "Agressieve vaatwastabletten kunnen de bovenste laag na verloop van tijd dof maken."
+                ),
+            },
+            {
+                "q": "Is een hapjespan met deksel handig?",
+                "a": (
+                    "Zeker. Een glazen deksel met stoomgaatje helpt bij het stoven van vlees, sudderen van sauzen en het sneller op temperatuur brengen van gerechten. "
+                    "Het bespaart energie en versnelt de bereidingstijd."
+                ),
+            },
         ],
     },
 "how_we_test": {

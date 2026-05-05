@@ -74,6 +74,22 @@ CONTENT = {
                 "q": "Mag een PFAS-vrije mand van een airfryer in de vaatwasser?",
                 "a": "Niet aanbevolen. Handwas verlengt de levensduur van de keramische laag aanzienlijk.",
             },
+            {
+                "q": "Welke capaciteit airfryer heb ik nodig?",
+                "a": "Voor 1–2 personen volstaat 3–4 liter. Voor gezinnen van 3–4 personen is 5–6 liter ideaal, en voor grotere huishoudens of dual-zone bereidingen is 7+ liter aan te raden.",
+            },
+            {
+                "q": "Is een airfryer zuiniger dan een oven?",
+                "a": "Ja, een airfryer verbruikt gemiddeld 50–70% minder energie dan een traditionele oven, doordat hij sneller op temperatuur is en een kleiner volume verwarmt.",
+            },
+            {
+                "q": "Hoe maak ik een keramische airfryer-mand goed schoon?",
+                "a": "Laat de mand afkoelen, week hem in warm water met afwasmiddel en gebruik een zachte spons. Vermijd schuursponsjes of metalen borstels die de coating beschadigen.",
+            },
+            {
+                "q": "Maakt een airfryer veel geluid?",
+                "a": "De meeste airfryers produceren 50–65 dB tijdens het bakken, vergelijkbaar met een afzuigkap op stand 1. Premium modellen met betere ventilatoren zijn merkbaar stiller.",
+            },
         ],
     },
 "how_we_test": {

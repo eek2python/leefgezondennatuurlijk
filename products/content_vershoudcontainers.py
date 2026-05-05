@@ -79,6 +79,22 @@ CONTENT = {
                 "q": "Zijn glazen vershoudbakjes geschikt voor de vriezer?",
                 "a": "Ja. Borosilicaat glas is geschikt voor de vriezer. Laat wel wat ruimte vrij om drukopbouw te voorkomen bij bevriezing.",
             },
+            {
+                "q": "Mogen glazen vershoudbakjes in de magnetron?",
+                "a": "Ja, het glazen bakje wel. Verwijder altijd het kunststof of bamboe deksel voordat je het opwarmt — die zijn vaak niet magnetronbestendig.",
+            },
+            {
+                "q": "Hoe voorkom ik dat het deksel verkleurt of stinkt?",
+                "a": "Was het deksel direct na gebruik en laat het rechtop drogen. Hardnekkige geuren verdwijnen door het deksel een nacht in een mengsel van water en azijn (1:1) te leggen.",
+            },
+            {
+                "q": "Wat is het verschil tussen borosilicaat en gewoon glas?",
+                "a": "Borosilicaat is hittebestendig en bestand tegen plotselinge temperatuurverschillen — ideaal voor oven, magnetron en vriezer. Gewoon natronkalkglas kan barsten bij snelle temperatuurwisselingen.",
+            },
+            {
+                "q": "Welke maten heb ik nodig voor meal prep?",
+                "a": "Een set met 3 maten (350\u00a0ml, 700\u00a0ml en 1\u00a0l) dekt 90% van het thuisgebruik: kleine porties saus of dressing, lunchgerechten en hoofdmaaltijden of restjes.",
+            },
         ],
     },
 "how_we_test": {

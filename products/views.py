@@ -112,6 +112,21 @@ def _enrich_products(products):
             p["award_class"] = ""
 
 
+def _build_top_picks(products):
+    picks = {"beste": None, "budget": None, "premium": None}
+    for p in products:
+        award = (p.get("award") or "").lower()
+        if "beste keuze" in award and not picks["beste"]:
+            picks["beste"] = p
+        elif "budget" in award and not picks["budget"]:
+            picks["budget"] = p
+        elif "premium" in award and not picks["premium"]:
+            picks["premium"] = p
+    if not picks["beste"] and products:
+        picks["beste"] = products[0]
+    return picks
+
+
 def _build_faq_ld(faq_items):
     return json.dumps({
         "@context": "https://schema.org",
@@ -186,6 +201,7 @@ def snijplanken(request):
     breadcrumbs = [{"label": "Snijplanken", "url": "/snijplanken/"}]
     return render(request, "snijplanken.html", {
         "products": products,
+        "top_picks": _build_top_picks(products),
         "product_count": product_count,
         "content": content,
         "conclusie": conclusie,
@@ -228,6 +244,7 @@ def koekenpannen(request):
     breadcrumbs = [{"label": "Koekenpannen", "url": "/koekenpannen/"}]
     return render(request, "koekenpannen.html", {
         "products": products,
+        "top_picks": _build_top_picks(products),
         "available_sizes": available_sizes,
         "selected_size": size,
         "product_count": product_count,
@@ -275,6 +292,7 @@ def hapjespannen(request):
     breadcrumbs = [{"label": "Hapjespannen", "url": "/hapjespannen/"}]
     return render(request, "hapjespannen.html", {
         "products": products,
+        "top_picks": _build_top_picks(products),
         "available_sizes": available_sizes,
         "selected_size": size,
         "product_count": product_count,
@@ -322,6 +340,7 @@ def wokpannen(request):
     breadcrumbs = [{"label": "Wokpannen", "url": "/wokpannen/"}]
     return render(request, "wokpannen.html", {
         "products": products,
+        "top_picks": _build_top_picks(products),
         "available_sizes": available_sizes,
         "selected_size": size,
         "product_count": product_count,
@@ -353,6 +372,7 @@ def airfryers(request):
     breadcrumbs = [{"label": "Airfryers", "url": "/airfryers/"}]
     return render(request, "airfryers.html", {
         "products": products,
+        "top_picks": _build_top_picks(products),
         "product_count": product_count,
         "content": content,
         "conclusie": conclusie,
@@ -379,6 +399,7 @@ def vershoudcontainers(request):
     breadcrumbs = [{"label": "Vershoudbakjes", "url": "/vershoudcontainers/"}]
     return render(request, "vershoudcontainers.html", {
         "products": products,
+        "top_picks": _build_top_picks(products),
         "product_count": product_count,
         "content": content,
         "conclusie": conclusie,
@@ -437,6 +458,7 @@ def rvs_koekenpannen(request):
     breadcrumbs = [{"label": "Koekenpannen", "url": "/koekenpannen/"}, {"label": "RVS", "url": "/rvs-koekenpannen/"}]
     return render(request, "rvs-koekenpannen.html", {
         "products": products,
+        "top_picks": _build_top_picks(products),
         "available_sizes": available_sizes,
         "selected_size": size,
         "product_count": product_count,
