@@ -1,0 +1,130 @@
+Add a second blog article to the Django affiliate website.
+
+ARTICLE TITLE
+GreenPan Barcelona vs Demeyere Industry 5: welke koekenpan is beter?
+
+GOAL
+Create a high-conversion comparison article that helps users choose between two popular products and drives clicks to product pages.
+
+IMPORTANT RULES
+- Do not change existing URLs or templates
+- Follow the same blog structure as the previous article
+- Add SEO meta tags, canonical, Open Graph and Twitter tags
+- Add FAQPage JSON-LD if supported
+- Use breadcrumbs and author block
+- Ensure mobile readability
+
+URL / SLUG
+/blogs/greenpan-barcelona-vs-demeyere-industry-5/
+
+INTERNAL LINKS
+Link to:
+- GreenPan Barcelona product page
+- Demeyere Industry 5 product page
+- /koekenpannen/
+- /rvs-koekenpannen/
+- /hoe-wij-beoordelen/
+
+SEO META
+
+Title:
+GreenPan Barcelona vs Demeyere Industry 5: welke is beter?
+
+Meta description:
+Twijfel je tussen GreenPan Barcelona en Demeyere Industry 5? Ontdek de verschillen in gebruiksgemak, bakresultaat en duurzaamheid.
+
+ARTICLE CONTENT
+
+# GreenPan Barcelona vs Demeyere Industry 5: welke koekenpan is beter?
+
+Twijfel je tussen de GreenPan Barcelona en de Demeyere Industry 5? Dan zit je precies in de meest gemaakte keuze binnen PFAS-vrije koekenpannen.
+
+Beide pannen behoren tot de top, maar verschillen sterk in gebruik, materiaal en prestaties.
+
+In dit artikel vergelijken we ze op:
+- gebruiksgemak  
+- bakresultaat  
+- duurzaamheid  
+- prijs-kwaliteit  
+
+## Korte conclusie (voor snelle beslissers)
+
+- Kies **GreenPan Barcelona** als je gemak en een antiaanbaklaag wilt  
+- Kies **Demeyere Industry 5** als je maximale controle en duurzaamheid zoekt  
+
+## Overzicht van de verschillen
+
+| Kenmerk | GreenPan Barcelona | Demeyere Industry 5 |
+|--------|------------------|--------------------|
+| Type | Keramisch | RVS |
+| Antiaanbak | Ja | Nee |
+| Gebruiksgemak | Zeer hoog | Gemiddeld |
+| Levensduur | Gemiddeld | Zeer hoog |
+| Beste voor | Dagelijks gemak | Krachtig bakken |
+
+## GreenPan Barcelona — voordelen en nadelen
+
+### Voordelen
+- Zeer gebruiksvriendelijk  
+- Goede antiaanbaklaag  
+- Minder olie nodig  
+- Ideaal voor dagelijks gebruik  
+
+### Nadelen
+- Slijt sneller  
+- Minder geschikt voor hoge temperaturen  
+
+👉 Bekijk GreenPan Barcelona
+
+## Demeyere Industry 5 — voordelen en nadelen
+
+### Voordelen
+- Zeer duurzaam  
+- Uitstekende warmteverdeling  
+- Perfect voor vlees en bakken op hoge temperatuur  
+- Geen coating  
+
+### Nadelen
+- Meer techniek nodig  
+- Kan aanbakken bij verkeerd gebruik  
+
+👉 Bekijk Demeyere Industry 5
+
+## Welke past het beste bij jou?
+
+Kies GreenPan als je:
+- gemak wilt  
+- weinig ervaring hebt  
+- snel wilt koken  
+
+Kies Demeyere als je:
+- controle wilt  
+- vaker vlees bakt  
+- een pan zoekt die lang meegaat  
+
+## Conclusie
+
+Beide pannen zijn uitstekende keuzes, maar bedienen een andere doelgroep.
+
+Voor de meeste huishoudens is GreenPan de makkelijkste keuze.  
+Voor liefhebbers van koken en duurzaamheid is Demeyere vaak de betere investering.
+
+## Veelgestelde vragen
+
+### Welke pan is beter voor beginners?
+GreenPan Barcelona is makkelijker in gebruik.
+
+### Welke pan gaat langer mee?
+Demeyere Industry 5 gaat doorgaans veel langer mee.
+
+### Is Demeyere beter dan GreenPan?
+Niet per se — het hangt af van je kookstijl.
+
+Generate FAQPage JSON-LD from the FAQ section if supported.
+
+OUTPUT
+- files created
+- files modified
+- final URL
+- confirmation blog overview updated
+- confirmation meta tags added
