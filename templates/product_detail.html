@@ -6,6 +6,18 @@
 {% block meta %}
 <meta name="description" content="{{ product.description }}">
 <link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/product/{{ product.slug }}/">
+
+<meta property="og:type" content="product">
+<meta property="og:title" content="{{ product.name }}">
+<meta property="og:description" content="{{ product.description }}">
+<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/product/{{ product.slug }}/">
+<meta property="og:image" content="https://www.leefnatuurlijkengezond.nl{% static product.image_path|add:'/' %}{{ product.image }}">
+<meta property="og:locale" content="nl_NL">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ product.name }}">
+<meta name="twitter:description" content="{{ product.description }}">
+<meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl{% static product.image_path|add:'/' %}{{ product.image }}">
 {% endblock %}
 
 {% block content %}

@@ -1,0 +1,102 @@
+Implement high-impact SEO and performance improvements based on audit findings.
+
+GOAL
+Improve page speed, CTR, and SEO completeness without changing site structure.
+
+==================================================
+STEP 1 — Optimize images (HIGH PRIORITY)
+==================================================
+
+- Convert all images in:
+  static/images/thumbnails/
+
+to WebP format
+
+Requirements:
+- max width ~600px
+- target size ≤ 80KB
+- replace all .png/.jfif references with .webp
+- remove .jfif usage entirely
+
+==================================================
+STEP 2 — Add lazy loading and dimensions
+==================================================
+
+For all <img> tags:
+- add loading="lazy"
+- add explicit width and height attributes
+
+Apply to:
+- category pages
+- blog overview
+- product pages
+
+==================================================
+STEP 3 — Fix blog overview SEO
+==================================================
+
+File:
+blogs/templates/blogs/blogoverzicht.html
+
+Add:
+{% block meta %}
+
+Include:
+- unique meta description
+- canonical: /blogs/
+- og:title
+- og:description
+- og:type=website
+- og:image
+- og:url
+- twitter:card
+
+{% endblock %}
+
+==================================================
+STEP 4 — Add OG + Twitter to product pages
+==================================================
+
+File:
+templates/product_detail.html
+
+Add:
+- og:type=product
+- og:title
+- og:description
+- og:image
+- og:url
+- twitter:card
+
+Use product data where possible.
+
+==================================================
+STEP 5 — Add OG image to info pages
+==================================================
+
+Files:
+- over_ons.html
+- hoe_wij_beoordelen.html
+- privacy.html
+
+Add:
+- og:image (use standard image like keuken.jpg)
+
+==================================================
+RULES
+==================================================
+
+- Do NOT change URLs
+- Do NOT change layout structure
+- Keep styling consistent
+- Do NOT modify content logic
+
+==================================================
+OUTPUT
+==================================================
+
+Provide:
+- files modified
+- images converted
+- confirmation lazy loading added
+- confirmation meta blocks added
