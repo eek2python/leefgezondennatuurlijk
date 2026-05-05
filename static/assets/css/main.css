@@ -1848,6 +1848,27 @@ input, select, textarea {
                 padding: 0 0.75em 0.5em 0;
         }
 
+        .top-picks header.major h2 {
+                border-bottom: solid 3px #62d4e5;
+                display: inline-block;
+                margin: 0 0 0.6em 0;
+                padding: 0 0.75em 0.5em 0;
+        }
+        .top-picks header.major .top-picks-intro {
+                font-family: inherit;
+                font-size: 1.05rem;
+                font-weight: 400;
+                letter-spacing: 0;
+                text-transform: none;
+                margin: 0 auto 1.5em;
+                max-width: 720px;
+                color: #555;
+                line-height: 1.5;
+                border-bottom: none;
+                display: block;
+                padding: 0;
+        }
+
         header.main > :last-child {
                 margin: 0 0 1em 0;
         }
