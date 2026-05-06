@@ -177,6 +177,15 @@ def _build_itemlist_ld(request, name, description, products):
                         "price": p["price"],
                         "priceCurrency": p["currency"],
                         "availability": f"https://schema.org/{p['availability']}",
+                        "hasMerchantReturnPolicy": {
+                            "@type": "MerchantReturnPolicy",
+                            "applicableCountry": "NL",
+                            "returnPolicyCountry": "NL",
+                            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                            "merchantReturnDays": 14,
+                            "returnMethod": "https://schema.org/ReturnByMail",
+                            "returnFees": "https://schema.org/FreeReturn",
+                        },
                     },
                 },
             }
