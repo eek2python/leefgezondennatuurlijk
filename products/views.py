@@ -186,6 +186,33 @@ def _build_itemlist_ld(request, name, description, products):
                             "returnMethod": "https://schema.org/ReturnByMail",
                             "returnFees": "https://schema.org/FreeReturn",
                         },
+                        "shippingDetails": {
+                            "@type": "OfferShippingDetails",
+                            "shippingDestination": {
+                                "@type": "DefinedRegion",
+                                "addressCountry": "NL",
+                            },
+                            "shippingRate": {
+                                "@type": "MonetaryAmount",
+                                "value": "0.00",
+                                "currency": p["currency"],
+                            },
+                            "deliveryTime": {
+                                "@type": "ShippingDeliveryTime",
+                                "handlingTime": {
+                                    "@type": "QuantitativeValue",
+                                    "minValue": 0,
+                                    "maxValue": 1,
+                                    "unitCode": "DAY",
+                                },
+                                "transitTime": {
+                                    "@type": "QuantitativeValue",
+                                    "minValue": 1,
+                                    "maxValue": 2,
+                                    "unitCode": "DAY",
+                                },
+                            },
+                        },
                     },
                 },
             }
