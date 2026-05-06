@@ -2320,6 +2320,15 @@ input, select, textarea {
 .format-btn.active {
    pointer-events: none;
 }
+.format-active {
+   width: 100%;
+   margin: 6px 0 0 0;
+   font-size: 0.9em;
+   color: #666;
+}
+.format-active strong {
+   color: #3d4449;
+}
 
 /* Intro Section */
 .blog-intro {

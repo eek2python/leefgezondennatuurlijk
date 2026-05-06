@@ -42,6 +42,7 @@
         <p>Gezond koken begint met de juiste pan. Onze PFAS-vrije koekenpannen zijn geselecteerd op veiligheid, prestaties en duurzaamheid — zodat je elke dag bewust kookt zonder concessies.</p>
     </div>
 </section>
+{% include "partials/format_selector.html" %}
 {% include "partials/top_picks.html" %}
 
 <section>
@@ -93,21 +94,9 @@
         </ul>
         <p><b>Kort gezegd:</b> 28 cm is het meest gekozen formaat in Nederland, maar 24 cm + 28 cm is voor de meeste keukens de ideale combinatie.</p>
 </section>
-<div id="productlijst"></div>
-<div class="format-selector">
-    <span class="label">Kies jouw formaat:</span>
-
-    {% for f in available_sizes %}
-    <a href="?size={{ f }}#productlijst"
-    class="button small format-btn {% if f == selected_size %}primary{% endif %}">
-            {{ f }} cm
-</a>
-
-    {% endfor %}
-</div>
 {% include "partials/how_we_select.html" %}
 
-<h2 class="category-title">{{ products_h2 }}</h2>
+<h2 class="category-title" id="productlijst">{{ products_h2 }}</h2>
 <div class="products-container">
 
     {% for product in products %}

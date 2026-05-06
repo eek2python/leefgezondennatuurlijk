@@ -219,9 +219,9 @@ def koekenpannen(request):
     try:
         size = int(size)
     except (TypeError, ValueError):
-        size = available_sizes[0]
+        size = 28 if 28 in available_sizes else available_sizes[0]
     if size not in KOEKENPANNEN_RANKINGS:
-        size = available_sizes[0]
+        size = 28 if 28 in available_sizes else available_sizes[0]
 
     keys = KOEKENPANNEN_RANKINGS[size]
     products = [dict(KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in KOEKENPANNEN_PRODUCTS]
@@ -267,9 +267,9 @@ def hapjespannen(request):
     try:
         size = int(size)
     except (TypeError, ValueError):
-        size = available_sizes[0]
+        size = 28 if 28 in available_sizes else available_sizes[0]
     if size not in HAPJESPANNEN_RANKINGS:
-        size = available_sizes[0]
+        size = 28 if 28 in available_sizes else available_sizes[0]
 
     keys = HAPJESPANNEN_RANKINGS[size]
     products = [dict(HAPJESPANNEN_PRODUCTS[k]) for k in keys if k in HAPJESPANNEN_PRODUCTS]
@@ -315,9 +315,9 @@ def wokpannen(request):
     try:
         size = int(size)
     except (TypeError, ValueError):
-        size = available_sizes[0]
+        size = 28 if 28 in available_sizes else available_sizes[0]
     if size not in WOKPANNEN_RANKINGS:
-        size = available_sizes[0]
+        size = 28 if 28 in available_sizes else available_sizes[0]
 
     keys = WOKPANNEN_RANKINGS[size]
     products = [dict(WOKPANNEN_PRODUCTS[k]) for k in keys if k in WOKPANNEN_PRODUCTS]

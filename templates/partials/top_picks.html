@@ -1,8 +1,13 @@
 {% if top_picks %}
 <section class="category-section top-picks">
     <header class="major">
+        {% if selected_size %}
+        <h2>Snel kiezen: onze favoriete {{ selected_size }} cm aanbevelingen</h2>
+        <p class="top-picks-intro">Geen tijd om alles te vergelijken? Dit zijn onze drie favorieten uit de {{ selected_size }} cm-lijst.</p>
+        {% else %}
         <h2>Snel kiezen: onze 3 aanbevelingen</h2>
         <p class="top-picks-intro">Geen tijd om alles te vergelijken? Dit zijn onze drie belangrijkste aanbevelingen uit de volledige lijst.</p>
+        {% endif %}
     </header>
     <div class="top-picks-grid">
         {% if top_picks.beste %}

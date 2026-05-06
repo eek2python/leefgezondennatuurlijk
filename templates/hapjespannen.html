@@ -41,6 +41,7 @@
         <p>Een hapjespan is onmisbaar in iedere keuken — ideaal voor stoofgerechten, pasta's en eenpansgerechten. Onze PFAS-vrije selectie combineert veilige materialen met uitstekende bakprestaties, zodat je gezond en zonder zorgen kookt.</p>
         </div>
 </section>
+{% include "partials/format_selector.html" %}
 {% include "partials/top_picks.html" %}
 
 <section>
@@ -57,23 +58,9 @@
 </ul>
 <p>Of je nu kiest voor een keramische hapjespan met directe antiaanbakwerking of een natuurlijke stalen pan die zichzelf verbetert door gebruik: een PFAS-vrije hapjespan is een veilige, toekomstbestendige en duurzame keuze voor elke keuken.</p>
 </section>
-<div id="productlijst"></div>
-<div class="format-selector">
-    <span class="label">Kies jouw formaat:</span>
-
-    {% for f in available_sizes %}
-    <a href="?size={{ f }}#productlijst"
-    class="button small format-btn {% if f == selected_size %}primary{% endif %}">
-
-            {{ f }} cm
-</a>
-
-    {% endfor %}
-</div>
-
 {% include "partials/how_we_select.html" %}
 
-<h2 class="category-title">{{ products_h2 }}</h2>
+<h2 class="category-title" id="productlijst">{{ products_h2 }}</h2>
 <div class="products-container">
 
     {% for product in products %}
