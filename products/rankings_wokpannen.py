@@ -15,7 +15,7 @@ RANKINGS = {
         "greenpan_barcelona_evershine_wok_30",
         "bk_easy_induction_wok_30",
         # "scanpan_techniq_wok_30",
-        "bk_balans_wok_30",
+        # "bk_balans_wok_30",
         "greenpan_copenhagen_wok_30",
         "berghoff_phantom_wok_30",
     ],
