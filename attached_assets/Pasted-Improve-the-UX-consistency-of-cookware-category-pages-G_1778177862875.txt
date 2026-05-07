@@ -1,0 +1,88 @@
+Improve the UX consistency of cookware category pages.
+
+GOAL
+Create a cleaner, more modern size-selection experience across ceramic and RVS cookware pages.
+
+==================================================
+1. FIX BREADCRUMBS
+==================================================
+
+Ceramic cookware page:
+Home > Koekenpannen > Keramisch
+
+RVS cookware page:
+Home > Koekenpannen > RVS
+
+Apply consistent breadcrumb structure.
+
+==================================================
+2. MOVE RVS SIZE SELECTOR
+==================================================
+
+On the RVS cookware page:
+- move the size selector ABOVE the Top 3 section
+- match the ceramic cookware layout
+
+==================================================
+3. REMOVE REDUNDANT ACTIVE SIZE TEXT
+==================================================
+
+Remove:
+“Je bekijkt momenteel: 28 cm”
+
+Reason:
+the active highlighted selector already communicates this.
+
+==================================================
+4. ADD STICKY SIZE SELECTOR
+==================================================
+
+For:
+- koekenpannen
+- rvs-koekenpannen
+- hapjespannen
+- wokpannen
+
+Create a compact sticky size selector that appears during scroll.
+
+Requirements:
+- subtle styling
+- compact horizontal pill/chip layout
+- mobile-friendly
+- not intrusive
+- keep active size highlighted
+- horizontal scroll allowed on small screens if needed
+
+Behavior:
+- normal selector remains near top
+- sticky selector appears after scrolling past intro
+
+==================================================
+5. STYLING
+==================================================
+
+Preferred style:
+- modern pill/chip selector
+- rounded corners
+- subtle shadow
+- clean spacing
+- consistent with existing turquoise accent color
+
+==================================================
+RULES
+==================================================
+
+- Do not change URLs
+- Do not change ranking logic
+- Do not change badges/products
+- Keep existing size functionality
+
+==================================================
+OUTPUT
+==================================================
+
+Provide:
+- files modified
+- breadcrumb updates
+- confirmation sticky selector added
+- screenshots or description of mobile behavior

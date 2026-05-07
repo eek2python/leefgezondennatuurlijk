@@ -277,7 +277,10 @@ def koekenpannen(request):
         f"Top {product_count} PFAS-vrije koekenpannen van {size}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
         products,
     )
-    breadcrumbs = [{"label": "Koekenpannen", "url": "/koekenpannen/"}]
+    breadcrumbs = [
+        {"label": "Koekenpannen", "url": "/koekenpannen/"},
+        {"label": "Keramisch", "url": None},
+    ]
     return render(request, "koekenpannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),

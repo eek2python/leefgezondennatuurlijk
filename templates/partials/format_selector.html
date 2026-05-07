@@ -1,14 +1,47 @@
 {% if available_sizes %}
-<div class="format-selector">
+<div class="format-selector" data-size-selector>
     <span class="label">Kies jouw formaat:</span>
     {% for f in available_sizes %}
     <a href="?size={{ f }}"
-       class="button small format-btn {% if f == selected_size %}primary{% endif %}">
+       class="format-pill {% if f == selected_size %}is-active{% endif %}"
+       {% if f == selected_size %}aria-current="page"{% endif %}>
         {{ f }} cm
     </a>
     {% endfor %}
-    {% if selected_size %}
-    <p class="format-active">Je bekijkt momenteel: <strong>{{ selected_size }} cm</strong></p>
-    {% endif %}
 </div>
+
+<nav class="format-sticky" data-size-sticky aria-label="Maatselector" inert>
+    <div class="format-sticky-inner">
+        <span class="format-sticky-label">Maat:</span>
+        <div class="format-sticky-chips">
+            {% for f in available_sizes %}
+            <a href="?size={{ f }}"
+               class="format-pill format-pill-sm {% if f == selected_size %}is-active{% endif %}"
+               {% if f == selected_size %}aria-current="page"{% endif %}>
+                {{ f }} cm
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</nav>
+
+<script>
+(function () {
+    var ref = document.querySelector('[data-size-selector]');
+    var sticky = document.querySelector('[data-size-sticky]');
+    if (!ref || !sticky || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            var aboveViewport = !e.isIntersecting && e.boundingClientRect.top < 0;
+            sticky.classList.toggle('is-visible', aboveViewport);
+            if (aboveViewport) {
+                sticky.removeAttribute('inert');
+            } else {
+                sticky.setAttribute('inert', '');
+            }
+        });
+    }, { threshold: 0 });
+    io.observe(ref);
+})();
+</script>
 {% endif %}

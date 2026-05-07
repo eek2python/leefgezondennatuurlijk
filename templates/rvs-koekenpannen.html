@@ -44,6 +44,7 @@
                 {% endfor %}
                 </div>
                 </section>
+                {% include "partials/format_selector.html" %}
                 {% include "partials/top_picks.html" %}
 
                 <!-- Waarom RVS -->
@@ -70,18 +71,6 @@
                         <div class="product-list">
 
 <div id="productlijst"></div>
-<div class="format-selector">
-    <span class="label">Kies jouw formaat:</span>
-
-    {% for f in available_sizes %}
-    <a href="?size={{ f }}#productlijst"
-    class="button small format-btn {% if f == selected_size %}primary{% endif %}">
-            {{ f }} cm
-</a>
-
-    {% endfor %}
-</div>
-
 {% include "partials/how_we_select.html" %}
 
                         <section class="top10-section">
