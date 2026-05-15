@@ -377,6 +377,42 @@ PRODUCTS = {
    "award": "💎 Premium keuze",
 },
 
+"bk_superior_ceramic_wok_30": {
+   "slug": "bk-superior-ceramic-wok-30",
+   "name": "BK Superior Ceramic Wokpan",
+   "brand": "BK",
+   "diameter": 30,
+   "material": "Keramisch",
+   "features": [
+       "PFAS-vrije keramische antiaanbaklaag",
+       "Geschikt voor inductie",
+       "Stevige sandwichbodem voor gelijkmatige warmteverdeling",
+       "Hittebestendige steel",
+   ],
+   "description": "PFAS-vrije keramische wokpan van 30 cm uit de BK Superior-lijn — BK's premium consumentenreeks. Combineert een stevige inductiebodem met een duurzame keramische coating, ideaal voor wie dagelijks gezond wil wokken zonder coatingzorgen.",
+   "rating": 4,
+   "rating_count": 40,
+   "price": 77.00,
+   "currency": "EUR",
+   "availability": "InStock",
+   "affiliate_url": "https://www.bol.com/nl/nl/p/bk-superior-wok-o-30-cm-keramisch-inductie/9300000022010093/?Referrer=ADVNLGOO002032-S--9300000022010093-PMAX-C-23795220672&gad_source=1&gad_campaignid=23800643987&gbraid=0AAAAAD5OnmPKxB8vpFRk6XVnhkntvHtpx&gclid=Cj0KCQjwiJvQBhCYARIsAMjts3L0bd85i-pPfBYOqYjADzvJc-iUNGSv7pz4wzTztRq6yGY4Aon7tmwaAv2OEALw_wcB",
+   "price_range": "€€",
+   "image": "wokpan02.jpg",
+   "image_path": "images/wokpannen",
+   "pros": [
+       "PFAS-vrije keramische coating",
+       "Sterke prijs-kwaliteitverhouding voor BK's premium ceramische lijn",
+       "Stevige inductiebodem, weinig kans op vervorming",
+       "Goede vervanger voor de BK Balans+ met betere afwerking",
+   ],
+   "cons": [
+       "Net als alle keramische wokpannen niet bedoeld voor extreem hoge searing-temperaturen",
+       "Geen krasvaste topcoating — gebruik silicone of houten gerei",
+   ],
+   "verdict": "Een sterke prijs-kwaliteitkeuze: BK's premium keramische wokpan op 30 cm voor onder de €80. Een logische upgrade voor wie de BK Balans+ goed beviel.",
+   "award": "💰 Beste prijs-kwaliteit",
+},
+
 "bk_balans_wok_30": {
    "slug": "bk-balans-wok-30",
    "name": "BK Balans+ Keramische Wokpan",

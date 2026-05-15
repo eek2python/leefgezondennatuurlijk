@@ -13,6 +13,7 @@ RANKINGS = {
     ],
     30: [
         "greenpan_barcelona_evershine_wok_30",
+        "bk_superior_ceramic_wok_30",
         "bk_easy_induction_wok_30",
         # "scanpan_techniq_wok_30",
         # "bk_balans_wok_30",
