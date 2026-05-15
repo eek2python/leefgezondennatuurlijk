@@ -409,8 +409,8 @@ PRODUCTS = {
        "Net als alle keramische wokpannen niet bedoeld voor extreem hoge searing-temperaturen",
        "Geen krasvaste topcoating — gebruik silicone of houten gerei",
    ],
-   "verdict": "Een sterke prijs-kwaliteitkeuze: BK's premium keramische wokpan op 30 cm voor onder de €80. Een logische upgrade voor wie de BK Balans+ goed beviel.",
-   "award": "💰 Beste prijs-kwaliteit",
+   "verdict": "BK's premium keramische wokpan op 30 cm: stevige inductiebodem, duurzame PFAS-vrije coating en uitstekende afwerking — een logische upgrade voor wie de BK Balans+ goed beviel.",
+   "award": "💎 Premium keuze",
 },
 
 "bk_balans_wok_30": {
