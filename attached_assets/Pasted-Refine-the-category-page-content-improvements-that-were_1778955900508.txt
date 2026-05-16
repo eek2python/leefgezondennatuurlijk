@@ -1,0 +1,128 @@
+Refine the category page content improvements that were just implemented.
+
+GOAL
+Remove duplication between the new “In het kort” section and the existing Top 3 recommendation section, while keeping the useful improvements:
+- improved Top 3
+- “Geschikt voor” in product blocks
+- expanded FAQs
+- blog internal links
+- category-specific evaluation blocks
+
+==================================================
+1. REMOVE SEPARATE “IN HET KORT” BLOCKS
+==================================================
+
+Remove the newly added separate “In het kort” summary blocks from category pages.
+
+Reason:
+They overlap too much with the Top 3 recommendation section.
+
+Do NOT remove:
+- Top 3 recommendation section
+- product blocks
+- FAQ expansions
+- “Geschikt voor”
+- internal links
+
+==================================================
+2. ENHANCE TOP 3 SECTION INSTEAD
+==================================================
+
+The Top 3 section should now function as the quick summary.
+
+Update heading and intro text to avoid feeling like a second ranking.
+
+Recommended heading:
+“Snel kiezen: onze 3 aanbevelingen”
+
+Recommended intro:
+“Geen tijd om alles te vergelijken? Dit zijn onze drie belangrijkste keuzes uit de volledige lijst.”
+
+For size-based categories, include the selected size naturally:
+
+Example:
+“Geen tijd om alles te vergelijken? Dit zijn onze drie belangrijkste keuzes uit de volledige 28 cm lijst.”
+
+==================================================
+3. KEEP TOP 3 DYNAMIC
+==================================================
+
+For size-based categories:
+- koekenpannen
+- rvs-koekenpannen
+- hapjespannen
+- wokpannen
+
+Ensure Top 3 follows the selected size and is derived from the active ranking list.
+
+Do not hardcode Top 3 products.
+
+==================================================
+4. KEEP “GESCHIKT VOOR”
+==================================================
+
+Keep the newly added “Geschikt voor” section in product cards.
+
+Check that it does not duplicate pros/cons too heavily.
+
+If needed, keep it concise:
+- max 3 bullets per product
+- practical user fit only
+
+Examples:
+- dagelijks gebruik
+- inductie
+- gezin van 2–4 personen
+- kleine keuken
+- hoge temperaturen
+- lekvrij bewaren
+
+==================================================
+5. KEEP FAQ EXPANSIONS
+==================================================
+
+Keep expanded FAQs if they are category-specific and useful.
+
+Remove only obvious filler or duplicate questions if added.
+
+Target:
+- 8–12 good FAQs per category
+
+==================================================
+6. KEEP BLOG INTERNAL LINKS
+==================================================
+
+Keep “Lees ook” blocks on blog pages.
+
+Ensure:
+- links are relevant
+- no duplicate links
+- max 3–4 links per article
+
+==================================================
+7. DO NOT CHANGE THESE
+==================================================
+
+Do NOT:
+- change URLs
+- change rankings
+- change badges
+- change product order
+- redesign the layout
+- remove affiliate disclosure
+- change sitemap or routing
+
+==================================================
+OUTPUT REQUIRED
+==================================================
+
+After implementation, provide:
+1. files modified
+2. confirmation that separate “In het kort” blocks were removed
+3. confirmation that Top 3 now serves as the quick summary
+4. confirmation “Geschikt voor” remains
+5. FAQ counts after cleanup
+6. examples of updated Top 3 text on:
+   - koekenpannen
+   - rvs-koekenpannen
+   - snijplanken

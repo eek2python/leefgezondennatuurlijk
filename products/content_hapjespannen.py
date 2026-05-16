@@ -2,7 +2,7 @@ CONTENT = {
       "in_het_kort": {
           "use_cases": ["1-pansmaaltijden", "stoven en sudderen", "sauzen en risotto", "ruimere porties"],
       },
-      "default_geschikt_voor": ["1-pansgerechten en stoofschotels", "sauzen en risotto", "gezin van 2-4 personen", "geschikt voor inductie"],
+      "default_geschikt_voor": ["1-pansgerechten en stoofschotels", "sauzen en risotto", "geschikt voor inductie"],
       "hero": {
         "h1": "Top {product_count} PFAS-vrije Hapjespannen voor Gezond Koken",
         "paragraphs": [

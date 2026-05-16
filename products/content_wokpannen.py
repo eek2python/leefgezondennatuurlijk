@@ -2,7 +2,7 @@ CONTENT = {
       "in_het_kort": {
           "use_cases": ["roerbakken", "hoge temperaturen", "Aziatisch koken", "grote porties tegelijk"],
       },
-      "default_geschikt_voor": ["roerbakgerechten", "snel koken op hoge hitte", "gevarieerde porties", "geschikt voor inductie"],
+      "default_geschikt_voor": ["roerbakgerechten", "snel koken op hoge hitte", "geschikt voor inductie"],
       "hero": {
         "h1": "Top {product_count} PFAS-vrije Wokpannen \u2013 Gezond, Duurzaam & Stijlvol",
         "paragraphs": [
