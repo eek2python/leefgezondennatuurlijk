@@ -6,7 +6,7 @@
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
    {% block meta %}<meta name="description" content="Bezoek onze website voor ondersteuning bij het maken van weloverwogen en gezondere keuzes van niet-giftige, milieuvriendelijke producten voor elke hoek van je huis.">{% endblock %}
-   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}?v=4" />
+   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}?v=3" />
    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
    {% if GA_MEASUREMENT_ID %}
    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_MEASUREMENT_ID }}"></script>
@@ -49,22 +49,19 @@
                </header>
                <ul>
                   <li><a href="{% url 'homepage' %}">Homepage</a></li>
-
-                  <li class="menu-group-label">Koekenpannen</li>
-                  <li><a href="{% url 'koekenpannen' %}">Keramisch</a></li>
-                  <li><a href="{% url 'rvs_koekenpannen' %}">RVS</a></li>
-
-                  <li class="menu-group-label">Overige</li>
+                  <li><a href="{% url 'snijplanken' %}">Snijplanken</a></li>
+                  <li>
+                     <span class="opener">Koekenpannen</span>
+                     <ul>
+                        <li><a href="{% url 'koekenpannen' %}">Keramisch</a></li>
+                        <li><a href="{% url 'rvs_koekenpannen' %}">RVS</a></li>
+                     </ul>
+                  </li>
                   <li><a href="{% url 'hapjespannen' %}">Hapjespannen</a></li>
                   <li><a href="{% url 'wokpannen' %}">Wokpannen</a></li>
                   <li><a href="{% url 'airfryers' %}">Airfryers</a></li>
                   <li><a href="{% url 'vershoudcontainers' %}">Vershoudbakjes</a></li>
-                  <li><a href="{% url 'snijplanken' %}">Snijplanken</a></li>
-
-                  <li class="menu-group-label">Informatie</li>
                   <li><a href="{% url 'blogs_overview' %}">Blogs</a></li>
-                  <li><a href="{% url 'hoe_wij_beoordelen' %}">Hoe wij beoordelen</a></li>
-                  <li><a href="{% url 'over_ons' %}">Over ons</a></li>
                </ul>
             </nav>
 

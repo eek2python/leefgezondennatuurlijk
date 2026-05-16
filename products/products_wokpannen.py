@@ -405,8 +405,10 @@ PRODUCTS = {
        "Stevige inductiebodem, weinig kans op vervorming",
     ],
    "cons": [
-       "Steel wordt bij langer wokken merkbaar warm — pannenlap aanbevolen bij volle hitte",
        "Geen meegeleverd deksel — apart aan te schaffen",
+       "Steel wordt bij langer wokken merkbaar warm — pannenlap aanbevolen bij volle hitte",
+       "Vlakkere bodemvorm dan een traditionele Aziatische wok — minder geschikt voor klassieke 'toss'-techniek met smalle bovenrand",
+       "30 cm zit aan de kleine kant voor grote roerbakporties (4+ personen); voor maximale ruimte is 32-34 cm comfortabeler",
    ],
    "verdict": "BK's premium keramische wokpan op 30 cm: stevige inductiebodem, duurzame PFAS-vrije coating en uitstekende afwerking — een logische upgrade voor wie de BK Balans+ goed beviel.",
    "award": "💎 Premium keuze",
