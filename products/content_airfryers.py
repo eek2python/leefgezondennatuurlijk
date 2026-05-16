@@ -1,5 +1,9 @@
 CONTENT = {
-    "hero": {
+      "in_het_kort": {
+          "use_cases": ["snelle maaltijden", "gezinnen", "kleine huishoudens", "gezonder bereiden"],
+      },
+      "default_geschikt_voor": ["snelle maaltijden", "gezin van 2-4 personen", "gezonder bereiden met minder olie"],
+      "hero": {
         "h1": "Top 6 PFAS-vrije Airfryers \u2013 Gezond, Veilig & Duurzaam",
         "paragraphs": [
             "Het gebruik van een PFAS-vrije airfryer is een bewuste keuze voor wie veilig en gezond wil koken. "
@@ -89,6 +93,18 @@ CONTENT = {
             {
                 "q": "Maakt een airfryer veel geluid?",
                 "a": "De meeste airfryers produceren 50–65 dB tijdens het bakken, vergelijkbaar met een afzuigkap op stand 1. Premium modellen met betere ventilatoren zijn merkbaar stiller.",
+            },
+            {
+                "q": "Is een keramische coating in een airfryer veilig?",
+                "a": "Ja, hoogwaardige keramische coatings zijn voedselveilig en bevatten geen PFAS of PTFE. Ze geven bij de gebruikelijke airfryer-temperaturen (160-200&nbsp;°C) geen schadelijke dampen af. Wel belangrijk: gebruik geen metalen gerei om de coating intact te houden.",
+            },
+            {
+                "q": "Hoeveel energie verbruikt een airfryer ten opzichte van een oven?",
+                "a": "Een airfryer verbruikt gemiddeld 50-70% minder energie dan een conventionele oven voor dezelfde bereiding. Door de kleinere ruimte en directe luchtcirculatie is de opwarmtijd korter (1-3 minuten vs. 10-15 minuten) en is de effectieve baktijd vaak ook korter.",
+            },
+            {
+                "q": "Hoe maak ik de mand van een airfryer het beste schoon?",
+                "a": "Laat de mand altijd eerst afkoelen. Week hem 10-15 minuten in warm sop, gebruik dan een zachte spons of borstel — nooit staalwol of schuurmiddelen die de coating beschadigen. Hardnekkige resten week je los met een beetje baking soda; de meeste manden zijn vaatwasbestendig maar handwas verlengt de levensduur.",
             },
         ],
     },

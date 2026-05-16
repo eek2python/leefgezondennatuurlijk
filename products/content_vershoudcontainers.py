@@ -1,5 +1,9 @@
 CONTENT = {
-    "hero": {
+      "in_het_kort": {
+          "use_cases": ["meal prep", "voedsel bewaren", "vriezen en opwarmen", "lunch meenemen"],
+      },
+      "default_geschikt_voor": ["meal prep en bewaren", "magnetron, vriezer en oven", "lunch en restjes"],
+      "hero": {
         "h1": "Top 5 Voedselveilige Glazen Vershoudbakjes \u2013 Gezond, Duurzaam & Stijlvol",
         "paragraphs": [
             "Op zoek naar de beste glazen vershoudbakjes van 2026? Met borosilicaatglas kies je voor een voedselveilige, duurzame en "
@@ -94,6 +98,18 @@ CONTENT = {
             {
                 "q": "Welke maten heb ik nodig voor meal prep?",
                 "a": "Een set met 3 maten (350\u00a0ml, 700\u00a0ml en 1\u00a0l) dekt 90% van het thuisgebruik: kleine porties saus of dressing, lunchgerechten en hoofdmaaltijden of restjes.",
+            },
+            {
+                "q": "Is borosilicaatglas veilig voor voedsel?",
+                "a": "Ja, borosilicaatglas is een van de veiligste materialen voor voedsel­contact. Het bevat geen BPA, PFAS of andere chemische uitlogers, geeft geen smaak of geur af, en is volledig inert — het reageert niet met zure of vette ingrediënten. Daarnaast is het hittebestendig tot 400&nbsp;°C.",
+            },
+            {
+                "q": "Kunnen glazen vershoudbakjes in de vriezer?",
+                "a": "Ja, mits van borosilicaat­glas en met voldoende ruimte voor uitzetting (vul maximaal 80%). Vermijd thermische schokken: laat hete inhoud eerst afkoelen tot kamertemperatuur vóór je invriest, en plaats bevroren bakjes nooit direct in een hete oven — eerst ontdooien of via stappen opwarmen.",
+            },
+            {
+                "q": "Wat is het verschil tussen borosilicaatglas en gewoon (kalknatron-) glas?",
+                "a": "Borosilicaatglas bevat boriumoxide, waardoor het bestand is tegen grote temperatuur­verschillen (tot Δ150&nbsp;°C) en chemisch zeer inert is. Gewoon kalknatron­glas (zoals in jampotten) breekt bij plotselinge temperatuur­wisselingen. Premium merken zoals Pyrex Original, Simax en Glasslock gebruiken borosilicaat.",
             },
         ],
     },

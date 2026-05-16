@@ -4531,3 +4531,60 @@ table.product-table .product-badge {
     .top-picks-grid { gap: 0.9em; }
     .top-pick-card { padding: 1em; }
 }
+
+/* In het kort summary block */
+.in-het-kort {
+    background: #f5f9fa;
+    border: 1px solid #d8e6e9;
+    border-left: 4px solid #62d4e5;
+    border-radius: 6px;
+    padding: 1.5em 1.8em;
+    margin: 2em 0;
+}
+.in-het-kort header.major { margin-bottom: 0.8em; }
+.in-het-kort header.major h2 { font-size: 1.2em; margin: 0; }
+.in-het-kort-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+}
+@media (max-width: 736px) {
+    .in-het-kort-grid { grid-template-columns: 1fr; gap: 1em; }
+    .in-het-kort { padding: 1.2em 1.3em; }
+}
+.in-het-kort-row { margin: 0.3em 0; font-size: 0.95em; }
+.in-het-kort-row .ihk-label { font-weight: 600; margin-right: 0.3em; }
+.in-het-kort-row a { color: #2f7d4e; font-weight: 600; }
+.in-het-kort-uses strong { display: block; margin-bottom: 0.3em; font-size: 0.95em; }
+.in-het-kort-uses ul { margin: 0; padding-left: 1.2em; font-size: 0.92em; }
+.in-het-kort-uses li { margin: 0.15em 0; }
+
+/* Geschikt voor block in product cards */
+.geschikt-voor {
+    background: #fafbfc;
+    border-left: 3px solid #62d4e5;
+    padding: 0.7em 1em;
+    margin: 0.8em 0;
+    border-radius: 4px;
+}
+.geschikt-voor strong {
+    display: block;
+    font-size: 0.92em;
+    margin-bottom: 0.3em;
+    color: #2f7d4e;
+}
+.geschikt-voor ul { margin: 0; padding-left: 1.2em; font-size: 0.9em; }
+.geschikt-voor li { margin: 0.1em 0; }
+
+/* Lees ook block at end of blog articles */
+.lees-ook {
+    background: #f5f9fa;
+    border-top: 3px solid #62d4e5;
+    padding: 1.5em 1.8em;
+    margin: 2.5em 0 1em 0;
+    border-radius: 4px;
+}
+.lees-ook h3 { margin: 0 0 0.6em 0; font-size: 1.1em; }
+.lees-ook ul { margin: 0; padding-left: 1.2em; }
+.lees-ook li { margin: 0.3em 0; }
+.lees-ook a { color: #2f7d4e; font-weight: 600; }

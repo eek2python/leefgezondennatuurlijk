@@ -1,5 +1,9 @@
 CONTENT = {
-    "hero": {
+      "in_het_kort": {
+          "use_cases": ["1-pansmaaltijden", "stoven en sudderen", "sauzen en risotto", "ruimere porties"],
+      },
+      "default_geschikt_voor": ["1-pansgerechten en stoofschotels", "sauzen en risotto", "gezin van 2-4 personen", "geschikt voor inductie"],
+      "hero": {
         "h1": "Top {product_count} PFAS-vrije Hapjespannen voor Gezond Koken",
         "paragraphs": [
             "Een hapjespan is onmisbaar in iedere keuken: ideaal voor stoofgerechten, pasta\u2019s, risotto\u2019s en eenpansgerechten. "
@@ -150,6 +154,18 @@ CONTENT = {
                     "Zeker. Een glazen deksel met stoomgaatje helpt bij het stoven van vlees, sudderen van sauzen en het sneller op temperatuur brengen van gerechten. "
                     "Het bespaart energie en versnelt de bereidingstijd."
                 ),
+            },
+            {
+                "q": "Wat is het verschil tussen een hapjespan en een sauteuse?",
+                "a": "Een hapjespan heeft hoge, rechte randen en een vlakke bodem — ideaal voor stoven, sudderen en éénpansgerechten. Een sauteuse is iets dieper en heeft vaak schuine wanden voor het zwenken van sauzen. In de praktijk dekt een goede hapjespan de meeste gebruiks­scenario's.",
+            },
+            {
+                "q": "Kan een keramische hapjespan in de oven?",
+                "a": "Veel modellen zijn oven­bestendig tot 180-200&nbsp;°C, mits de steel hittebestendig is. Controleer altijd de fabrikant­specificaties — pannen met soft-touch of kunststof handgrepen zijn dat meestal niet.",
+            },
+            {
+                "q": "Welke maat hapjespan past bij mijn huishouden?",
+                "a": "24&nbsp;cm is comfortabel voor 1-2 personen, 26&nbsp;cm voor 2-3 personen en 28&nbsp;cm is de meest gekozen maat voor gezinnen tot 4 personen. Voor grotere porties of meal prep is 28&nbsp;cm met een hoogte van 6-7&nbsp;cm de gulden middenweg.",
             },
         ],
     },

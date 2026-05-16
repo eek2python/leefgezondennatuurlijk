@@ -1,5 +1,9 @@
 CONTENT = {
-    "meta": {
+      "in_het_kort": {
+          "use_cases": ["hoge temperaturen", "lange levensduur", "maximale controle", "krachtig aanbakken", "professioneel koken"],
+      },
+      "default_geschikt_voor": ["hoge temperaturen en searing", "krachtig aanbakken van vlees en vis", "lange levensduur (decennia)"],
+      "meta": {
         "title": "Beste RVS koekenpannen van 2026 \u2013 gezond koken zonder coating",
         "description": "Vergelijk de beste RVS koekenpannen van 2026. Ontdek sterke keuzes zonder coating, geschikt voor inductie en dagelijks gebruik.",
         "og_title": "Beste RVS koekenpannen van 2026",
@@ -113,6 +117,18 @@ CONTENT = {
                 "q": "Wat is het verschil tussen RVS en keramisch?",
                 "a": "RVS is coatingvrij en gaat decennia mee, maar vraagt techniek. Keramisch heeft een natuurlijke antiaanbaklaag en is gebruiksvriendelijker, "
                      "maar gaat gemiddeld 3–5 jaar mee. Lees onze <a href=\"/blogs/keramische-vs-rvs-koekenpan/\">volledige vergelijking</a>.",
+            },
+            {
+                "q": "Waarom bakt eten aan in een RVS pan?",
+                "a": "Aanbakken komt bijna altijd door een te koude pan of te weinig vet. De gouden regel: verhit de pan eerst leeg op middelhoog vuur tot een druppel water rond­danst (Leidenfrost-effect), voeg dan olie toe en pas daarna het ingrediënt. Laat vlees ook altijd kort wachten vóór je het probeert te keren — het laat dan vanzelf los.",
+            },
+            {
+                "q": "Moet je een RVS koekenpan inbranden?",
+                "a": "Nee, RVS hoeft niet ingebrand te worden zoals gietijzer of koolstofstaal. Een goede RVS pan presteert direct na het uitpakken. Een grondige eerste reiniging met heet sop is voldoende voor je hem in gebruik neemt.",
+            },
+            {
+                "q": "Welke olie werkt het best in een RVS pan?",
+                "a": "Voor hoge temperaturen kies je oliën met een hoog rookpunt: zonnebloemolie, druivenpitolie, geraffineerde olijfolie of ghee. Extra vierge olijfolie en boter zijn minder geschikt voor krachtig aanbraden — die gebruik je beter voor zachter bakken op middelhoog vuur.",
             },
         ],
     },

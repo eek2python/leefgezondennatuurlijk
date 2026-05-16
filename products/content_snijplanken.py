@@ -1,5 +1,9 @@
 CONTENT = {
-    "hero": {
+      "in_het_kort": {
+          "use_cases": ["dagelijks snijden", "mesvriendelijk", "duurzaam gebruik", "vlees en groente"],
+      },
+      "default_geschikt_voor": ["dagelijks koken", "behoud van scherpe messen", "vlees, vis en groente", "lange levensduur bij goed onderhoud"],
+      "hero": {
         "h1": "Top 10 Houten Snijplanken \u2013 Gezond, Duurzaam & Stijlvol",
         "paragraphs": [
             "Een goede snijplank is onmisbaar in elke keuken \u2014 maar niet alle planken zijn even gezond of duurzaam. "
@@ -118,6 +122,18 @@ CONTENT = {
                     "Nee, absoluut niet. De combinatie van hitte en water laat hout zwellen, krimpen en uiteindelijk barsten. Was houten snijplanken altijd met de hand "
                     "in warm water met milde zeep en droog ze rechtop voor goede ventilatie."
                 ),
+            },
+            {
+                "q": "Welk hout is het meest hygiënisch voor een snijplank?",
+                "a": "Hardhout met fijne porieën zoals beuken, esdoorn en kersen­hout zijn van nature antibacterieel: de poriesluiting trekt vocht en bacteriën in, waar ze afsterven door uitdroging. Studies tonen aan dat hardhout hygiënischer is dan plastic, dat juist krassen ontwikkelt waarin bacteriën zich nestelen.",
+            },
+            {
+                "q": "Waarom zijn houten snijplanken mesvriendelijker dan plastic?",
+                "a": "Hout heeft een zachtere vezelstructuur die meegeeft onder de snede, waardoor het mes zijn scherpte langer behoudt. Plastic en bamboe zijn harder en stomper messen sneller af. Een investering in goede houten snijplanken betaalt zich vaak terug in minder vaak slijpen.",
+            },
+            {
+                "q": "Hoe vaak moet ik mijn houten snijplank oliën?",
+                "a": "Bij nieuwe planken: de eerste maand wekelijks, daarna 1× per maand bij intensief gebruik of 1× per kwartaal bij normaal gebruik. Gebruik voedselveilige minerale olie of speciale snij­plank­olie — nooit olijfolie of plantaardige olie (die wordt ranzig).",
             },
         ],
     },

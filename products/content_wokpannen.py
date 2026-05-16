@@ -1,5 +1,9 @@
 CONTENT = {
-    "hero": {
+      "in_het_kort": {
+          "use_cases": ["roerbakken", "hoge temperaturen", "Aziatisch koken", "grote porties tegelijk"],
+      },
+      "default_geschikt_voor": ["roerbakgerechten", "snel koken op hoge hitte", "gevarieerde porties", "geschikt voor inductie"],
+      "hero": {
         "h1": "Top {product_count} PFAS-vrije Wokpannen \u2013 Gezond, Duurzaam & Stijlvol",
         "paragraphs": [
             "Een PFAS-vrije wokpan is de beste keuze voor wie gezond, veilig en bewust wil koken. Traditionele antiaanbaklagen bevatten vaak PFAS \u2014 stoffen "
@@ -120,6 +124,18 @@ CONTENT = {
             {
                 "q": "Welke spatels gebruik ik in een PFAS-vrije wokpan?",
                 "a": "Gebruik bij keramische coatings altijd houten of siliconen spatels om krassen te voorkomen. Bij koolstofstaal of RVS mag ook metalen wokgerei gebruikt worden.",
+            },
+            {
+                "q": "Wat is het verschil tussen een traditionele wok en een wokpan?",
+                "a": "Een traditionele Aziatische wok heeft een ronde bodem en hoge, schuin oplopende wanden — ideaal voor het 'tossen' van ingrediënten op een gasbrander. Een wokpan heeft een platte bodem en is daardoor wel geschikt voor inductie en moderne kookplaten, maar minder geschikt voor de klassieke wok­techniek.",
+            },
+            {
+                "q": "Moet je een keramische wokpan voorverwarmen?",
+                "a": "Ja, maar voorzichtig. Verhit de wok op laag tot middelhoog vuur gedurende 1-2 minuten vóór je olie toevoegt. Te snel op hoog vuur kan de coating beschadigen en thermische schokken veroorzaken — anders dan bij koolstofstalen woks, die juist tegen extreme hitte kunnen.",
+            },
+            {
+                "q": "Welke wokpan is geschikt voor inductie?",
+                "a": "Alleen wokpannen met een platte, magnetische bodem werken op inductie. De meeste moderne PFAS-vrije keramische wokpannen (BK, GreenPan, BergHOFF) hebben standaard een induc­tiebodem. Traditionele rondbodem-woks werken niet op inductie zonder speciale wokring.",
             },
         ],
     },

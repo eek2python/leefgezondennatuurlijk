@@ -1,0 +1,197 @@
+Implement content UX and conversion improvements across the website.
+
+GOAL
+Improve readability, decision-making, internal linking, and SEO depth without changing URLs or overall site structure.
+
+==================================================
+1. ADD "IN HET KORT" SUMMARY BLOCKS
+==================================================
+
+Add a reusable summary block near the top of all category pages.
+
+Placement:
+- after intro text
+- before Top 3 recommendations
+
+Structure:
+
+"In het kort"
+
+🏆 Beste keuze: {{ best_choice }}
+💰 Budget keuze: {{ budget_choice }}
+💎 Premium keuze: {{ premium_choice }}
+
+Ideaal voor:
+• {{ use_case_1 }}
+• {{ use_case_2 }}
+• {{ use_case_3 }}
+
+Rules:
+- dynamically pull from product/ranking data
+- use category-specific wording
+- no hardcoded product names
+
+Examples:
+
+Keramische koekenpannen:
+• dagelijks koken
+• gebruiksgemak
+• weinig olie
+
+RVS:
+• hoge temperaturen
+• lange levensduur
+• maximale controle
+
+Snijplanken:
+• dagelijks snijden
+• mesvriendelijk
+• duurzaam gebruik
+
+==================================================
+2. ADD "GESCHIKT VOOR" TO PRODUCT BLOCKS
+==================================================
+
+Extend all product blocks with:
+
+"Geschikt voor"
+
+Examples:
+
+Koekenpannen:
+• gezin van 3–5 personen
+• dagelijks gebruik
+• inductie
+
+Airfryers:
+• kleine huishoudens
+• gezinnen
+• snelle maaltijden
+
+Snijplanken:
+• dagelijks koken
+• grote ingrediënten
+• professioneel gebruik
+
+Requirements:
+- use product properties where possible
+- otherwise infer from existing fields
+- keep style consistent with pros/cons/verdict
+
+New product block order:
+
+- Pros
+- Cons
+- Geschikt voor
+- Verdict
+
+==================================================
+3. EXPAND FAQ CONTENT
+==================================================
+
+Increase FAQ depth on category pages.
+
+Rules:
+- target 8–12 FAQs per category
+- avoid generic filler
+- category-specific only
+- avoid duplicate questions across categories where possible
+
+Examples:
+
+Keramische koekenpannen:
+- Hoe lang gaat een keramische coating mee?
+- Kan een keramische pan in de oven?
+- Waarom verliest een coating zijn antiaanbakeffect?
+
+RVS:
+- Waarom bakt eten aan?
+- Moet je RVS inbranden?
+- Welke olie werkt het best?
+
+Snijplanken:
+- Welk hout is het meest hygiënisch?
+- Waarom zijn houten snijplanken mesvriendelijk?
+
+Vershoudbakjes:
+- Is borosilicaatglas veilig?
+- Kunnen glazen bakjes in de vriezer?
+
+==================================================
+4. STRENGTHEN BLOG INTERNAL LINKING
+==================================================
+
+At the end of every blog article add:
+
+"Lees ook"
+
+Show 3–4 relevant internal articles.
+
+Rules:
+- use category/topic relevance
+- avoid random links
+- keep existing links
+
+==================================================
+5. CATEGORY-SPECIFIC "HOE WIJ BEOORDELEN"
+==================================================
+
+Review all category-specific selection methodology blocks.
+
+Ensure evaluation criteria match category:
+
+Koekenpannen:
+- materiaal
+- warmteverdeling
+- duurzaamheid
+- gebruiksgemak
+
+RVS:
+- meerlagenconstructie
+- warmtecontrole
+- duurzaamheid
+
+Snijplanken:
+- houtsoort
+- vochtbestendigheid
+- mesvriendelijkheid
+
+Airfryers:
+- coatingveiligheid
+- capaciteit
+- energieverbruik
+- schoonmaak
+
+Vershoudbakjes:
+- voedselveilig borosilicaatglas
+- lekdichtheid
+- magnetron/vriezer/oven
+
+==================================================
+RULES
+==================================================
+
+DO NOT:
+- change URLs
+- change rankings
+- modify badges
+- modify product ordering
+- redesign page structure
+
+KEEP:
+- existing styling
+- existing templates
+- existing schema setup
+
+==================================================
+OUTPUT
+==================================================
+
+Provide:
+
+- files modified
+- templates updated
+- FAQ count before/after
+- examples of generated "Geschikt voor"
+- examples of "In het kort" blocks
+- examples of added blog internal links

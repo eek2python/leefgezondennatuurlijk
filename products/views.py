@@ -127,6 +127,25 @@ def _build_top_picks(products):
     return picks
 
 
+def _build_in_het_kort(products, content):
+    picks = _build_top_picks(products)
+    return {
+        "beste": picks.get("beste"),
+        "budget": picks.get("budget"),
+        "premium": picks.get("premium"),
+        "use_cases": content.get("in_het_kort", {}).get("use_cases", []),
+    }
+
+
+def _apply_geschikt_voor(products, content):
+    default = content.get("default_geschikt_voor")
+    if not default:
+        return
+    for p in products:
+        if not p.get("geschikt_voor"):
+            p["geschikt_voor"] = list(default)
+
+
 def _build_faq_ld(faq_items):
     return json.dumps({
         "@context": "https://schema.org",
@@ -223,9 +242,10 @@ def _build_itemlist_ld(request, name, description, products):
 
 def snijplanken(request):
     products = [dict(SNIJPLANKEN_PRODUCTS[k]) for k in SNIJPLANKEN_RANKINGS]
-    _enrich_products(products)
-    product_count = len(products)
     content = SNIJPLANKEN_CONTENT
+    _enrich_products(products)
+    _apply_geschikt_voor(products, content)
+    product_count = len(products)
     conclusie = content["conclusies"]["default"]
     faq_ld = _build_faq_ld(content["faq"]["items"])
     json_ld = _build_itemlist_ld(
@@ -238,6 +258,7 @@ def snijplanken(request):
     return render(request, "snijplanken.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
+        "in_het_kort": _build_in_het_kort(products, content),
         "product_count": product_count,
         "content": content,
         "conclusie": conclusie,
@@ -262,6 +283,7 @@ def koekenpannen(request):
     keys = KOEKENPANNEN_RANKINGS[size]
     products = [dict(KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in KOEKENPANNEN_PRODUCTS]
     _enrich_products(products)
+    _apply_geschikt_voor(products, content)
     product_count = len(products)
 
     conclusie = content["conclusies"].get(size, {})
@@ -284,6 +306,7 @@ def koekenpannen(request):
     return render(request, "koekenpannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
+        "in_het_kort": _build_in_het_kort(products, content),
         "available_sizes": available_sizes,
         "selected_size": size,
         "product_count": product_count,
@@ -313,6 +336,7 @@ def hapjespannen(request):
     keys = HAPJESPANNEN_RANKINGS[size]
     products = [dict(HAPJESPANNEN_PRODUCTS[k]) for k in keys if k in HAPJESPANNEN_PRODUCTS]
     _enrich_products(products)
+    _apply_geschikt_voor(products, content)
     product_count = len(products)
 
     conclusie = content["conclusies"].get(size, {})
@@ -332,6 +356,7 @@ def hapjespannen(request):
     return render(request, "hapjespannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
+        "in_het_kort": _build_in_het_kort(products, content),
         "available_sizes": available_sizes,
         "selected_size": size,
         "product_count": product_count,
@@ -361,6 +386,7 @@ def wokpannen(request):
     keys = WOKPANNEN_RANKINGS[size]
     products = [dict(WOKPANNEN_PRODUCTS[k]) for k in keys if k in WOKPANNEN_PRODUCTS]
     _enrich_products(products)
+    _apply_geschikt_voor(products, content)
     product_count = len(products)
 
     conclusie = content["conclusies"].get(size, {})
@@ -380,6 +406,7 @@ def wokpannen(request):
     return render(request, "wokpannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
+        "in_het_kort": _build_in_het_kort(products, content),
         "available_sizes": available_sizes,
         "selected_size": size,
         "product_count": product_count,
@@ -399,6 +426,7 @@ def airfryers(request):
     content = AIRFRYERS_CONTENT
     products = [dict(AIRFRYERS_PRODUCTS[k]) for k in AIRFRYERS_RANKINGS]
     _enrich_products(products)
+    _apply_geschikt_voor(products, content)
     product_count = len(products)
     conclusie = content["conclusies"]["default"]
     faq_ld = _build_faq_ld(content["faq"]["items"])
@@ -412,6 +440,7 @@ def airfryers(request):
     return render(request, "airfryers.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
+        "in_het_kort": _build_in_het_kort(products, content),
         "product_count": product_count,
         "content": content,
         "conclusie": conclusie,
@@ -426,6 +455,7 @@ def vershoudcontainers(request):
     content = VERSHOUDCONTAINERS_CONTENT
     products = [dict(VERSHOUDCONTAINERS_PRODUCTS[k]) for k in VERSHOUDCONTAINERS_RANKINGS]
     _enrich_products(products)
+    _apply_geschikt_voor(products, content)
     product_count = len(products)
     conclusie = content["conclusies"]["default"]
     faq_ld = _build_faq_ld(content["faq"]["items"])
@@ -439,6 +469,7 @@ def vershoudcontainers(request):
     return render(request, "vershoudcontainers.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
+        "in_het_kort": _build_in_het_kort(products, content),
         "product_count": product_count,
         "content": content,
         "conclusie": conclusie,
@@ -472,6 +503,7 @@ def rvs_koekenpannen(request):
     keys = RVS_KOEKENPANNEN_RANKINGS[size]
     products = [dict(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in RVS_KOEKENPANNEN_PRODUCTS]
     _enrich_rvs_products(products)
+    _apply_geschikt_voor(products, content)
     product_count = len(products)
     conclusie = content["conclusies"]["default"]
     faq_ld = _build_faq_ld(content["faq"]["items"])
@@ -498,6 +530,7 @@ def rvs_koekenpannen(request):
     return render(request, "rvs-koekenpannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
+        "in_het_kort": _build_in_het_kort(products, content),
         "available_sizes": available_sizes,
         "selected_size": size,
         "product_count": product_count,

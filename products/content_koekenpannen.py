@@ -1,5 +1,9 @@
 CONTENT = {
-    "hero": {
+      "in_het_kort": {
+          "use_cases": ["dagelijks koken", "gebruiksgemak", "weinig olie", "gezinsmaaltijden", "inductie-koken"],
+      },
+      "default_geschikt_voor": ["gezin van 2-4 personen", "dagelijks koken", "geschikt voor inductie"],
+      "hero": {
         "h1": "Top {product_count} PFAS-vrije Koekenpannen \u2013 Gezond, Veilig & Duurzaam Bakken (2026)",
         "paragraphs": [
             "Gezond koken begint met de juiste pan. PFAS-vrije koekenpannen bevatten geen schadelijke stoffen en combineren "
@@ -231,6 +235,18 @@ CONTENT = {
                     "Keramische pannen hebben een gladde antiaanbaklaag en zijn ideaal voor delicate gerechten zoals eieren of vis. "
                     "RVS pannen zijn coatingvrij en uitstekend voor krachtig aanbakken van vlees. Lees ons <a href=\"/blogs/keramische-vs-rvs-koekenpan/\">vergelijkingsartikel</a> voor een volledige analyse."
                 ),
+            },
+            {
+                "q": "Hoe lang gaat een keramische coating mee?",
+                "a": "Een hoogwaardige keramische coating gaat bij normaal gebruik 3 tot 5 jaar mee. Voorzichtig voorverwarmen op lage tot middelhoge stand, alleen houten of siliconen gerei gebruiken en handmatig afwassen verlengen de levensduur aanzienlijk.",
+            },
+            {
+                "q": "Kan een keramische koekenpan in de oven?",
+                "a": "Veel keramische pannen zijn oven­bestendig tot 150-200&nbsp;°C, sommige premium modellen tot 260&nbsp;°C. Controleer altijd de specificaties van de fabrikant en let op of de steel hittebestendig is (bakeliet of metaal mogen niet door elkaar gebruikt worden).",
+            },
+            {
+                "q": "Waarom verliest een keramische coating na verloop van tijd zijn antiaanbak­effect?",
+                "a": "De belangrijkste oorzaken zijn: koken op te hoge temperatuur (boven 230&nbsp;°C), gebruik van metalen gerei dat de coating bekrast, agressieve schoonmaakmiddelen of schuursponsjes, en thermische schokken (koude pan op heet vuur of andersom). Bij correct gebruik blijft de coating veel langer effectief.",
             },
         ],
     },
