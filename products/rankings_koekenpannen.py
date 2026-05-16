@@ -62,7 +62,8 @@ RANKINGS = {
         "bk_easy_induction_32",
         "greenpan_torino_32",
         "tefal_renew_32",
-        "blue_diamond_32",
+        "primecook_32",
+        # "blue_diamond_32",  # vervangen door primecook_32 (Blue Diamond niet leverbaar)
         "ikea_hemlagad_keramisch_32",
         "scanpan_ceramic_32",
     ],

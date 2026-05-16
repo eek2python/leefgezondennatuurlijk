@@ -1631,6 +1631,41 @@ PRODUCTS = {
         "verdict": "Betrouwbare keuze voor milieubewuste gebruiker met modern comfort.",
     },
 
+    "primecook_32": {
+        "slug": "primecook-32",
+        "name": "Primecook Keramische Koekenpan",
+        "brand": "Primecook",
+        "diameter": 32,
+        "material": "Keramisch",
+        "description": "Italiaanse PFAS-vrije keramische koekenpan van 32 cm met een stevige aluminium body en inductiebodem. Primecook richt zich op duurzame, gezonde antiaanbakpannen met een onderscheidend Italiaans design.",
+        "features": [
+            "PFAS-vrije keramische antiaanbaklaag",
+            "Geschikt voor inductie",
+            "Groot bakoppervlak van 32 cm",
+            "Italiaans design en productie",
+        ],
+        "rating": 4,
+        "rating_count": 85,
+        "price": 81.90,
+        "currency": "EUR",
+        "availability": "InStock",
+        "price_range": "€€€",
+        "image": "blue-diamond-32cm.jpg",
+        "image_path": "images/koekenpannen",
+        "affiliate_url": "https://www.primecook.nl/1903-primecook-koekenpan-32-cm-pfas-vrij",
+        "pros": [
+            "Volledig PFAS-vrije keramische coating",
+            "Stevige inductiebodem, weinig kans op vervorming",
+            "Onderscheidend Italiaans merk met sterk duurzaamheidsverhaal",
+            "Optioneel verkrijgbaar met deksel of personalisatie",
+        ],
+        "cons": [
+            "Minder bekend bij gemiddelde NL-consument dan GreenPan of Tefal",
+            "Alleen rechtstreeks bij Primecook verkrijgbaar (geen bol.com)",
+        ],
+        "verdict": "Een onderscheidende, eerlijk gepositioneerde Italiaanse PFAS-vrije koekenpan van 32 cm — ideaal voor wie kwaliteit en design boven merkbekendheid stelt.",
+    },
+
     "blue_diamond_32": {
         "slug": "blue-diamond-32",
         "description": "Grote keramische koekenpan met diamantversterkte coating, gericht op betaalbaar gebruik in een ruim formaat.",
