@@ -3924,6 +3924,27 @@ table.product-table .product-badge {
                                 }
                 }
 
+                /* Desktop sticky sidebar (boven mobiele overlay-breakpoint) */
+                @media screen and (min-width: 1281px) {
+
+                        #sidebar {
+                                position: -webkit-sticky;
+                                position: sticky;
+                                top: 0;
+                                -webkit-align-self: flex-start;
+                                -ms-flex-item-align: start;
+                                align-self: flex-start;
+                                max-height: 100vh;
+                                overflow-y: auto;
+                                overscroll-behavior: contain;
+                        }
+
+                                #sidebar > .inner {
+                                        min-height: 0;
+                                }
+
+                }
+
 
 /* Header */
 
