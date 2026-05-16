@@ -30,6 +30,7 @@ PRODUCTS = {
             "Hogere prijsklasse",
             "Iets zwaarder door RVS buitenwand",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "professioneel niveau thuis", "éénpansgerechten met weinig olie"],
         "verdict": "De beste allround PFAS-vrije hapjespan dankzij de combinatie van duurzaamheid, bakresultaten en bouwkwaliteit.",
         "award": "🏆 Beste keuze",
     },
@@ -62,6 +63,7 @@ PRODUCTS = {
             "Minder duurzaam dan midden- en premiumklasse",
             "Niet bedoeld voor intensief of professioneel gebruik",
         ],
+        "suitable_for": ["ruime porties voor het hele gezin", "wie waarde voor geld zoekt", "wie veelzijdig wil koken in één pan"],
         "verdict": "Een toegankelijke en betaalbare PFAS-vrije hapjespan van 28 cm, ideaal voor wie gezond wil koken zonder veel uit te geven.",
         "award": "💰 Budget keuze",
     },
@@ -95,6 +97,7 @@ PRODUCTS = {
             "Hogere prijsklasse",
             "Handwas aanbevolen",
         ],
+        "suitable_for": ["dagelijks gezinskoken", "een aankoop voor de lange termijn", "risotto, paella en stoofschotels"],
         "verdict": "Een hoogwaardige hapjespan met uitstekende antiaanbakprestaties en duurzame afwerking.",
         "award": "💎 Premium keuze",
     },
@@ -129,6 +132,7 @@ PRODUCTS = {
             "Niet ovenbestendig",
             "Niet geschikt voor metalen spatels",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "regelmatig gezinskoken", "risotto, paella en stoofschotels"],
         "verdict": "Een uitstekende middenklasser die verrassend goede prestaties levert voor zijn prijs.",
     },
     "bk_easy_induction_28": {
@@ -161,6 +165,7 @@ PRODUCTS = {
             "Niet ovenbestendig",
             "Coating slijt sneller bij intensief gebruik",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "een upgrade van budget naar premium", "éénpansgerechten met weinig olie"],
         "verdict": "Een uitstekende keuze voor dagelijks gebruik tegen een vriendelijke prijs.",
     },
     "be_living_28": {
@@ -193,6 +198,7 @@ PRODUCTS = {
             "Coating minder duurzaam",
             "Niet geschikt voor metalen spatels",
         ],
+        "suitable_for": ["ruime porties voor het hele gezin", "dagelijks koken", "sauzen rustig laten indikken"],
         "verdict": "Een voordelige keuze voor wie een complete PFAS-vrije hapjespan zoekt.",
     },
     "greenpan_torino_28": {
@@ -225,6 +231,7 @@ PRODUCTS = {
             "Niet geschikt voor hoge temperaturen",
             "Coating vraagt voorzichtig gebruik",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "regelmatig gezinskoken", "wie veelzijdig wil koken in één pan"],
         "verdict": "Een toegankelijke PFAS-vrije hapjespan voor regelmatig gebruik.",
     },
     "beka_cicla_28": {
@@ -257,6 +264,7 @@ PRODUCTS = {
             "Niet geschikt voor metalen spatels",
             "Gevoelig voor schuurmiddelen",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "een upgrade van budget naar premium", "risotto, paella en stoofschotels"],
         "verdict": "Een duurzame en complete hapjespan met focus op gezond koken.",
     },
 
@@ -292,6 +300,7 @@ PRODUCTS = {
             "Hogere prijsklasse",
             "Iets zwaarder door RVS buitenwand",
         ],
+        "suitable_for": ["1–2 personen", "een aankoop voor de lange termijn", "wie veelzijdig wil koken in één pan"],
         "verdict": "De beste allround PFAS-vrije hapjespan dankzij de combinatie van duurzaamheid, bakresultaten en bouwkwaliteit.",
         "award": "🏆 Beste keuze",
     },
@@ -325,6 +334,7 @@ PRODUCTS = {
        "Duurder dan instapmodellen",
        "Niet bedoeld voor zeer hoge temperaturen",
    ],
+        "suitable_for": ["kleine huishoudens", "dagelijks koken", "risotto, paella en stoofschotels"],
    "verdict": "Een uitstekende keuze voor dagelijks gebruik tegen een vriendelijke prijs.",
    "award": "💰 Budget keuze",
 },
@@ -359,6 +369,7 @@ PRODUCTS = {
             "Hogere prijsklasse",
             "Handwas aanbevolen",
         ],
+        "suitable_for": ["lunchgerechten en kleine porties", "intensief dagelijks gebruik", "wie veelzijdig wil koken in één pan"],
         "verdict": "Een hoogwaardige hapjespan met uitstekende antiaanbakprestaties en duurzame afwerking.",
         "award": "💎 Premium keuze",
     },
@@ -392,6 +403,7 @@ PRODUCTS = {
             "Hoger geprijsd dan budgetalternatieven",
             "Niet bedoeld voor extreem hoge temperaturen",
         ],
+        "suitable_for": ["lunchgerechten en kleine porties", "regelmatig gezinskoken", "wie veelzijdig wil koken in één pan"],
         "verdict": "Een solide en betrouwbare keuze voor wie in het 24 cm formaat net wat meer kwaliteit zoekt dan een budget hapjespan, zonder direct naar het premiumsegment te gaan.",
     },
 
@@ -425,6 +437,7 @@ PRODUCTS = {
             "Niet ovenbestendig",
             "Coating slijt sneller bij intensief gebruik",
         ],
+        "suitable_for": ["kleine huishoudens", "wie waarde voor geld zoekt", "wie veelzijdig wil koken in één pan"],
         "verdict": "Een sterke middenklasse hapjespan voor wie in het 24 cm formaat een duurzame, PFAS-vrije keuze "
                    "zoekt zonder naar het premiumsegment te gaan.",
 
@@ -459,6 +472,7 @@ PRODUCTS = {
        "Minder robuust dan premium modellen",
        "Niet bedoeld voor extreem hoge temperaturen",
    ],
+        "suitable_for": ["lunchgerechten en kleine porties", "wie waarde voor geld zoekt", "sauzen rustig laten indikken"],
    "verdict": "Een solide en toegankelijke PFAS-vrije hapjespan in 24 cm, ideaal voor dagelijks koken zonder naar het premiumsegment te hoeven uitwijken.",
 },
 
@@ -491,6 +505,7 @@ PRODUCTS = {
        "Minder duurzaam dan midden- en premiumklasse",
        "Niet bedoeld voor intensief of professioneel gebruik",
    ],
+        "suitable_for": ["kleine huishoudens", "incidenteel gebruik", "wie veelzijdig wil koken in één pan"],
    "verdict": "Een eenvoudige maar functionele PFAS-vrije hapjespan in 24 cm, ideaal voor wie betaalbaar en gezond wil koken zonder extra luxe.",
 },
 
@@ -525,6 +540,7 @@ PRODUCTS = {
             "Niet geschikt voor metalen spatels",
             "Gevoelig voor schuurmiddelen",
         ],
+        "suitable_for": ["kleine huishoudens", "wie geen concessies wil sluiten", "sauzen rustig laten indikken"],
         "verdict": "Een duurzame en complete hapjespan met focus op gezond koken.",
     },
 
@@ -561,6 +577,7 @@ PRODUCTS = {
             "Hogere prijsklasse",
             "Iets zwaarder door RVS buitenwand",
         ],
+        "suitable_for": ["wie graag in één keer voor iedereen kookt", "een upgrade van budget naar premium", "risotto, paella en stoofschotels"],
         "verdict": "De beste allround PFAS-vrije hapjespan dankzij de combinatie van duurzaamheid, bakresultaten en bouwkwaliteit.",
         "award": "🏆 Beste keuze",
     },

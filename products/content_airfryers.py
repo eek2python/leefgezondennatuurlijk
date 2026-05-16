@@ -1,9 +1,5 @@
 CONTENT = {
-      "in_het_kort": {
-          "use_cases": ["snelle maaltijden", "gezinnen", "kleine huishoudens", "gezonder bereiden"],
-      },
-      "default_geschikt_voor": ["snelle maaltijden", "gezin van 2-4 personen", "gezonder bereiden met minder olie"],
-      "hero": {
+        "hero": {
         "h1": "Top 6 PFAS-vrije Airfryers \u2013 Gezond, Veilig & Duurzaam",
         "paragraphs": [
             "Het gebruik van een PFAS-vrije airfryer is een bewuste keuze voor wie veilig en gezond wil koken. "

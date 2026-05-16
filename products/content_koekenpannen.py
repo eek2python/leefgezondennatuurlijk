@@ -1,9 +1,5 @@
 CONTENT = {
-      "in_het_kort": {
-          "use_cases": ["dagelijks koken", "gebruiksgemak", "weinig olie", "gezinsmaaltijden", "inductie-koken"],
-      },
-      "default_geschikt_voor": ["gezin van 2-4 personen", "dagelijks koken", "geschikt voor inductie"],
-      "hero": {
+        "hero": {
         "h1": "Top {product_count} PFAS-vrije Koekenpannen \u2013 Gezond, Veilig & Duurzaam Bakken (2026)",
         "paragraphs": [
             "Gezond koken begint met de juiste pan. PFAS-vrije koekenpannen bevatten geen schadelijke stoffen en combineren "

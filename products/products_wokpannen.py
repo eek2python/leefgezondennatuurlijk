@@ -26,6 +26,7 @@ PRODUCTS = {
            "Niet geschikt voor metalen spatels",
            "Voorzichtig schoonmaken vereist",
        ],
+        "suitable_for": ["ruime porties voor het hele gezin", "wie van Aziatische keuken houdt", "groente en noedels op hoog vuur"],
        "verdict": "De beste allround PFAS-vrije wokpan voor dagelijks gebruik.",
        "award": "🏆 Beste keuze",
    },
@@ -54,6 +55,7 @@ PRODUCTS = {
            "Minder duurzaam",
            "Coating gevoelig voor slijtage",
        ],
+        "suitable_for": ["dagelijks gezinskoken", "regelmatig roerbakken", "wie van gebruiksgemak houdt"],
        "verdict": "Een toegankelijke instapwok voor wie PFAS-vrij wil koken met een klein budget.",
        "award": "💰 Budget keuze",
    },
@@ -81,6 +83,7 @@ PRODUCTS = {
        "cons": [
            "Zwaarder dan aluminium wokpannen",
        ],
+        "suitable_for": ["ruime porties voor het hele gezin", "wie van Aziatische keuken houdt", "lange levensduur boven gemak"],
        "verdict": "Een premium wokpan voor wie maximale stabiliteit en controle zoekt.",
        "award": "💎 Premium keuze",
    },
@@ -108,6 +111,7 @@ PRODUCTS = {
        "cons": [
            "Niet geschikt voor extreem hoge hitte",
        ],
+        "suitable_for": ["ruime porties voor het hele gezin", "wie van Aziatische keuken houdt", "Aziatisch koken zonder gedoe"],
        "verdict": "Een sterke middenklasser met extra duurzame keramische coating.",
    },
    "primecook_wok_28": {
@@ -134,6 +138,7 @@ PRODUCTS = {
        "cons": [
            "Niet vaatwasserbestendig",
        ],
+        "suitable_for": ["ruime porties voor het hele gezin", "wie van krachtige roerbakgerechten houdt", "wie van gebruiksgemak houdt"],
        "verdict": "Een duurzame, hoogwaardige wokpan voor intensief en gezond koken.",
    },
    "bk_blue_label_granite_wok_28": {
@@ -160,6 +165,7 @@ PRODUCTS = {
        "cons": [
            "Iets zwaarder",
        ],
+        "suitable_for": ["ruime porties voor het hele gezin", "regelmatig roerbakken", "Aziatisch koken zonder gedoe"],
        "verdict": "Een degelijke wokpan voor regelmatig gebruik zonder premiumprijs.",
    },
    "brabantia_futura_green_wok_28": {
@@ -186,6 +192,7 @@ PRODUCTS = {
        "cons": [
            "Coating gevoelig voor hoge hitte",
        ],
+        "suitable_for": ["dagelijks gezinskoken", "wie van Aziatische keuken houdt", "wie van gebruiksgemak houdt"],
        "verdict": "Een stijlvolle wokpan voor wie duurzaamheid belangrijk vindt.",
    },
    "greenpan_cambridge_wok_28": {
@@ -213,6 +220,7 @@ PRODUCTS = {
        "cons": [
            "Hoger geprijsd dan instapmodellen",
        ],
+        "suitable_for": ["ruime porties voor het hele gezin", "wie van Aziatische keuken houdt", "wie van gebruiksgemak houdt"],
        "verdict": "Een solide wokpan voor frequente thuiskoks.",
    },
    "bk_easy_induction_wok_28": {
@@ -239,6 +247,7 @@ PRODUCTS = {
        "cons": [
            "Coating slijt sneller bij intensief gebruik",
        ],
+        "suitable_for": ["ruime porties voor het hele gezin", "regelmatig roerbakken", "groente en noedels op hoog vuur"],
        "verdict": "Een praktische wokpan voor dagelijks koken.",
    },
    "berghoff_leo_recycled_wok_28": {
@@ -265,6 +274,7 @@ PRODUCTS = {
        "cons": [
            "Hogere prijsklasse",
        ],
+        "suitable_for": ["ruime porties voor het hele gezin", "intensief gebruik op hoge temperaturen", "snelle roerbakgerechten"],
        "verdict": "Een duurzame wokpan voor wie design en milieubewust koken wil combineren.",
    },
 
@@ -303,6 +313,7 @@ PRODUCTS = {
        "Minder geschikt voor extreem hoge woktemperaturen dan staal",
        "Coating vraagt voorzichtig gebruik (geen metalen spatels)",
    ],
+        "suitable_for": ["grotere gezinnen", "fanatieke wokkers", "snelle roerbakgerechten"],
    "verdict": "Een uitstekende allround 30 cm wokpan voor dagelijks roerbakken: ruim, PFAS-vrij en zeer geschikt voor inductie.",
    "award": "🏆 Beste keuze",
 },
@@ -338,6 +349,7 @@ PRODUCTS = {
        "Coating minder geschikt voor extreem hoge hitte",
        "Minder duurzaam dan premium wokpannen",
    ],
+        "suitable_for": ["gezinnen van 3–5 personen", "wie van krachtige roerbakgerechten houdt", "wie van gebruiksgemak houdt"],
    "verdict": "Een toegankelijke en betaalbare 30 cm wokpan voor wie PFAS-vrij wil wokken zonder veel uit te geven.",
    "award": "💰 Budget keuze",
 },
@@ -373,6 +385,7 @@ PRODUCTS = {
        "Hogere prijsklasse",
        "Relatief zwaar door massieve constructie",
    ],
+        "suitable_for": ["gezinnen van 3–5 personen", "liefhebbers van authentieke Aziatische keuken", "snelle roerbakgerechten"],
    "verdict": "Een compromisloze premium wokpan voor wie het maximale uit PFAS-vrij wokken wil halen, met prestaties op professioneel niveau.",
    "award": "💎 Premium keuze",
 },
@@ -410,6 +423,7 @@ PRODUCTS = {
        "Vlakkere bodemvorm dan een traditionele Aziatische wok — minder geschikt voor klassieke 'toss'-techniek met smalle bovenrand",
        "30 cm zit aan de kleine kant voor grote roerbakporties (4+ personen); voor maximale ruimte is 32-34 cm comfortabeler",
    ],
+        "suitable_for": ["wie graag in één keer voor iedereen kookt", "intensief gebruik op hoge temperaturen", "wie van gebruiksgemak houdt"],
    "verdict": "BK's premium keramische wokpan op 30 cm: stevige inductiebodem, duurzame PFAS-vrije coating en uitstekende afwerking — een logische upgrade voor wie de BK Balans+ goed beviel.",
    "award": "💎 Premium keuze",
 },
@@ -444,6 +458,7 @@ PRODUCTS = {
        "Niet bedoeld voor extreem hoge woktemperaturen",
        "Minder duurzaam dan premium wokpannen",
    ],
+        "suitable_for": ["gezinnen van 3–5 personen", "wie het beste resultaat zoekt", "snelle roerbakgerechten"],
    "verdict": "Een betrouwbare middenklasse wokpan van 30 cm voor wie PFAS-vrij wil wokken zonder het premiumsegment in te gaan.",
 },
 
@@ -478,6 +493,7 @@ PRODUCTS = {
        "Minder duurzaam dan premium wokpannen",
        "Niet geschikt voor extreem hoge woktemperaturen",
    ],
+        "suitable_for": ["grotere gezinnen", "wie van krachtige roerbakgerechten houdt", "groente en noedels op hoog vuur"],
    "verdict": "Een sterke middenklasse wokpan van 30 cm voor wie PFAS-vrij wil koken met meer ruimte, zonder naar het premiumsegment te gaan.",
 },
 
@@ -512,6 +528,7 @@ PRODUCTS = {
        "Niet bedoeld voor extreem hoge woktemperaturen",
        "Coating vraagt zorgvuldig gebruik (geen metalen spatels)",
    ],
+        "suitable_for": ["gezinnen van 3–5 personen", "intensief gebruik op hoge temperaturen", "wie van gebruiksgemak houdt"],
    "verdict": "Een duurzame en stijlvol afgewerkte 30 cm wokpan voor wie PFAS-vrij wil wokken met oog voor milieu en design.",
 }
 }

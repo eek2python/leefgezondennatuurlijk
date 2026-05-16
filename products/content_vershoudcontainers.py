@@ -1,9 +1,5 @@
 CONTENT = {
-      "in_het_kort": {
-          "use_cases": ["meal prep", "voedsel bewaren", "vriezen en opwarmen", "lunch meenemen"],
-      },
-      "default_geschikt_voor": ["meal prep en bewaren", "magnetron, vriezer en oven", "lunch en restjes"],
-      "hero": {
+        "hero": {
         "h1": "Top 5 Voedselveilige Glazen Vershoudbakjes \u2013 Gezond, Duurzaam & Stijlvol",
         "paragraphs": [
             "Op zoek naar de beste glazen vershoudbakjes van 2026? Met borosilicaatglas kies je voor een voedselveilige, duurzame en "

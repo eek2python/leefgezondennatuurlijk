@@ -27,6 +27,7 @@ PRODUCTS = {
             "Vrij zwaar",
             "Hogere prijs",
         ],
+        "suitable_for": ["dagelijks gezinskoken", "een upgrade van budget naar premium", "wie zonder coating-zorgen wil koken"],
         "verdict": "De ultieme keuze voor wie dagelijks gezond en PFAS-vrij wil koken.",
     },
 
@@ -57,6 +58,7 @@ PRODUCTS = {
             "Niet ovenbestendig",
             "Kortere levensduur",
         ],
+        "suitable_for": ["dagelijks gezinskoken", "studenten en starters", "wie een lichte pan zoekt"],
         "verdict": "Een uitstekende keuze voor wie betaalbaar PFAS-vrij wil koken.",
     },
 
@@ -87,6 +89,7 @@ PRODUCTS = {
             "Relatief zwaar",
             "Hogere prijs",
         ],
+        "suitable_for": ["ruime porties voor het hele gezin", "een upgrade van budget naar premium", "krachtig aanbakken van vlees en vis"],
         "verdict": "Een hoogwaardige pan voor wie topprestaties en lange levensduur wil.",
 
     },
@@ -116,6 +119,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "thuiskoks die kwaliteit zoeken", "weinig olie willen gebruiken"],
         "verdict": "Solide keuze voor wie een betrouwbare en duurzame keramische pan zoekt.",
     },
 
@@ -145,6 +149,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["dagelijks gezinskoken", "regelmatig gezinskoken", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Praktische pan voor dagelijks gebruik met betrouwbare antiaanbaklaag.",
     },
 
@@ -173,6 +178,7 @@ PRODUCTS = {
         "cons": [
             "Niet vaatwasserbestendig",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "dagelijks koken", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Een stijlvolle keuze voor wie gezond koken combineert met design.",
     },
 
@@ -202,6 +208,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "wie waarde voor geld zoekt", "weinig olie willen gebruiken"],
         "verdict": "Betrouwbare keuze voor milieubewuste gebruiker met modern comfort.",
     },
 
@@ -230,6 +237,7 @@ PRODUCTS = {
         "cons": [
             "Niet geschikt voor oven",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "regelmatig gezinskoken", "wie een lichte pan zoekt"],
         "verdict": "Een lichte en praktische pan voor dagelijks gezond koken.",
     },
 
@@ -265,6 +273,7 @@ PRODUCTS = {
             "Hogere prijsklasse",
             "Relatief zwaar",
         ],
+        "suitable_for": ["dagelijks gezinskoken", "fanatieke thuiskoks", "wie zonder coating-zorgen wil koken"],
         "verdict": "Een premium koekenpan voor wie maximale prestaties en duurzaamheid zoekt.",
     },
 
@@ -293,6 +302,7 @@ PRODUCTS = {
         "cons": [
             "Niet vaatwasserbestendig",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "een aankoop voor de lange termijn", "gezond koken met antiaanbak"],
         "verdict": "Een verfijnde keramische pan voor wie comfort en prestaties zoekt.",
     },
 
@@ -327,6 +337,7 @@ PRODUCTS = {
             "Minder robuust dan premium GreenPan-lijnen",
             "Geen ovenbestendige greep",
         ],
+        "suitable_for": ["ruime porties voor het hele gezin", "dagelijks koken", "wie zonder coating-zorgen wil koken"],
         "verdict": "Betrouwbare keuze voor milieubewuste gebruiker die stijl en gezond koken combineert.",
     },
 
@@ -358,6 +369,7 @@ PRODUCTS = {
             "Vrij zwaar",
             "Hogere prijs",
         ],
+        "suitable_for": ["kleine huishoudens", "een upgrade van budget naar premium", "wie zonder coating-zorgen wil koken"],
         "verdict": "De ultieme keuze voor wie dagelijks gezond en PFAS-vrij wil koken.",
     },
 
@@ -388,6 +400,7 @@ PRODUCTS = {
             "Niet ovenbestendig",
             "Kortere levensduur",
         ],
+        "suitable_for": ["lunchgerechten en kleine porties", "studenten en starters", "ouderen of zwakkere polsen"],
         "verdict": "Een uitstekende keuze voor wie betaalbaar PFAS-vrij wil koken.",
     },
 
@@ -418,6 +431,7 @@ PRODUCTS = {
             "Zwaarder dan gemiddelde keramische pannen",
             "Hoger prijsniveau",
         ],
+        "suitable_for": ["1–2 personen", "fanatieke thuiskoks", "gezond koken met antiaanbak"],
         "verdict": "De beste premium keuze voor wie een duurzame, PFAS-vrije keramische koekenpan van 24 cm zoekt met professionele prestaties.",
     },
 
@@ -446,6 +460,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["1–2 personen", "thuiskoks die kwaliteit zoeken", "gezond koken met antiaanbak"],
         "verdict": "Solide keuze voor wie een betrouwbare en duurzame keramische pan zoekt.",
     },
 
@@ -475,6 +490,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["lunchgerechten en kleine porties", "wie waarde voor geld zoekt", "wie zonder coating-zorgen wil koken"],
         "verdict": "Praktische pan voor dagelijks gebruik met betrouwbare antiaanbaklaag.",
     },
 
@@ -504,6 +520,7 @@ PRODUCTS = {
             "Minder robuust dan premium GreenPan-series",
             "Niet geschikt voor zeer hoge temperaturen",
         ],
+        "suitable_for": ["kleine huishoudens", "thuiskoks die kwaliteit zoeken", "ouderen of zwakkere polsen"],
         "verdict": "Een uitstekende, betaalbare keuze voor wie een gezonde PFAS-vrije koekenpan van 24 cm zoekt voor dagelijks koken.",
     },
 
@@ -533,6 +550,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["kleine huishoudens", "regelmatig gezinskoken", "weinig olie willen gebruiken"],
         "verdict": "Betrouwbare keuze voor milieubewuste gebruiker met modern comfort.",
     },
 
@@ -561,6 +579,7 @@ PRODUCTS = {
         "cons": [
             "Niet geschikt voor oven",
         ],
+        "suitable_for": ["1–2 personen", "thuiskoks die kwaliteit zoeken", "wie een lichte pan zoekt"],
         "verdict": "Een lichte en praktische pan voor dagelijks gezond koken.",
     },
 
@@ -593,6 +612,7 @@ PRODUCTS = {
             "Minder duurzaam dan midden- en premium pannen",
             "Warmteverdeling is eenvoudiger",
         ],
+        "suitable_for": ["lunchgerechten en kleine porties", "studenten en starters", "wie zonder coating-zorgen wil koken"],
         "verdict": "Een goede keuze voor wie een goedkope, PFAS-vrije koekenpan van 24 cm zoekt voor licht en dagelijks gebruik, zonder concessies te doen aan basisveiligheid.",
     },
 
@@ -622,6 +642,7 @@ PRODUCTS = {
             "Relatief zwaar",
             "Hogere prijs",
         ],
+        "suitable_for": ["lunchgerechten en kleine porties", "een upgrade van budget naar premium", "liefhebbers van searing en aanbraden"],
         "verdict": "Een hoogwaardige pan voor wie topprestaties en lange levensduur wil.",
 
     },
@@ -654,6 +675,7 @@ PRODUCTS = {
             "Minder glanzend bakoppervlak dan sommige keramische alternatieven",
             "Zachte greep minder geschikt voor hoge oventemperaturen",
         ],
+        "suitable_for": ["kleine huishoudens", "intensief dagelijks gebruik", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Milieuvriendelijke keuze voor wie echt PFAS-vrij wil koken met een coating van volledig natuurlijke grondstoffen.",
     },
 
@@ -685,6 +707,7 @@ PRODUCTS = {
             "Vrij zwaar",
             "Hogere prijs",
         ],
+        "suitable_for": ["tweepersoonshuishouden", "een upgrade van budget naar premium", "wie zonder coating-zorgen wil koken"],
         "verdict": "De ultieme keuze voor wie dagelijks gezond en PFAS-vrij wil koken.",
     },
 
@@ -719,6 +742,7 @@ PRODUCTS = {
             "Minder duurzaam dan premium keramische pannen",
             "Afwerking eenvoudiger dan bij hogere prijsklassen",
         ],
+        "suitable_for": ["tweepersoonshuishouden", "regelmatig gezinskoken", "wie zonder coating-zorgen wil koken"],
         "verdict": "De beste betaalbare keuze voor wie een PFAS-vrije keramische koekenpan van 26 cm zoekt met een goede balans tussen prijs, prestaties en uitstraling.",
     },
 
@@ -749,6 +773,7 @@ PRODUCTS = {
             "Zwaarder dan gemiddelde keramische pannen",
             "Hoger prijsniveau",
         ],
+        "suitable_for": ["regelmatig koken voor twee", "een upgrade van budget naar premium", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "De beste premium keuze voor wie een duurzame, PFAS-vrije keramische koekenpan van 26 cm zoekt met professionele prestaties.",
     },
 
@@ -778,6 +803,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["regelmatig koken voor twee", "regelmatig gezinskoken", "wie zonder coating-zorgen wil koken"],
         "verdict": "Praktische pan voor dagelijks gebruik met betrouwbare antiaanbaklaag.",
     },
 
@@ -811,6 +837,7 @@ PRODUCTS = {
             "Hoger prijsniveau dan instapmodellen",
             "Iets zwaarder",
         ],
+        "suitable_for": ["tweepersoonshuishouden", "wie waarde voor geld zoekt", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Een sterke middenklasse keuze voor wie duurzaamheid belangrijk vindt.",
     },
     "greenpan_venice_pro_26": {
@@ -843,6 +870,7 @@ PRODUCTS = {
             "Relatief zwaar",
             "IHoger geprijsd dan instapmodellen",
         ],
+        "suitable_for": ["regelmatig koken voor twee", "wie geen concessies wil sluiten", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Een duurzaam alternatief binnen het GreenPan-assortiment zonder concessies aan veiligheid.",
     },
     "scanpan_ceramic_26": {
@@ -874,6 +902,7 @@ PRODUCTS = {
         "cons": [
             "Prijs hoger dan gemiddelde middenklasse",
         ],
+        "suitable_for": ["2–3 personen", "professioneel niveau thuis", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Een interessante keuze voor wie Scandinavische kwaliteit waardeert.",
     },
 
@@ -906,6 +935,7 @@ PRODUCTS = {
             "Vrij zwaar",
             "Hogere prijs",
         ],
+        "suitable_for": ["singles", "intensief dagelijks gebruik", "gezond koken met antiaanbak"],
         "verdict": "De ultieme keuze voor wie dagelijks gezond en PFAS-vrij wil koken.",
     },
 
@@ -936,6 +966,7 @@ PRODUCTS = {
             "Niet ovenbestendig",
             "Kortere levensduur",
         ],
+        "suitable_for": ["kookbeginners", "budgetbewuste koks", "dagelijks comfortabel manoeuvreren"],
         "verdict": "Een uitstekende keuze voor wie betaalbaar PFAS-vrij wil koken.",
     },
 
@@ -966,6 +997,7 @@ PRODUCTS = {
             "Zwaarder dan gemiddelde keramische pannen",
             "Hoger prijsniveau",
         ],
+        "suitable_for": ["1–2 personen", "fanatieke thuiskoks", "weinig olie willen gebruiken"],
         "verdict": "De beste premium keuze voor wie een duurzame, PFAS-vrije keramische koekenpan van 24 cm zoekt met professionele prestaties.",
     },
 
@@ -994,6 +1026,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["kookbeginners", "budgetbewuste koks", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Solide keuze voor wie een betrouwbare en duurzame keramische pan zoekt.",
     },
 
@@ -1023,6 +1056,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["singles", "thuiskoks die kwaliteit zoeken", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Praktische pan voor dagelijks gebruik met betrouwbare antiaanbaklaag.",
     },
 
@@ -1055,6 +1089,7 @@ PRODUCTS = {
             "Minder robuust dan premium GreenPan-lijnen",
             "Geen ovenbestendige greep",
         ],
+        "suitable_for": ["kleine porties", "wie waarde voor geld zoekt", "gezond koken met antiaanbak"],
         "verdict": "Betrouwbare keuze voor milieubewuste gebruiker met modern comfort.",
     },
 
@@ -1084,6 +1119,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["kleine porties", "thuiskoks die kwaliteit zoeken", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Betrouwbare keuze voor milieubewuste gebruiker met modern comfort.",
     },
 
@@ -1112,6 +1148,7 @@ PRODUCTS = {
         "cons": [
             "Niet geschikt voor oven",
         ],
+        "suitable_for": ["kookbeginners", "dagelijks koken", "dagelijks comfortabel manoeuvreren"],
         "verdict": "Een lichte en praktische pan voor dagelijks gezond koken.",
     },
 
@@ -1144,6 +1181,7 @@ PRODUCTS = {
             "Minder duurzaam bij intensief gebruik",
             "Eenvoudige afwerking",
         ],
+        "suitable_for": ["kleine porties", "regelmatig gezinskoken", "wie een lichte pan zoekt"],
         "verdict": "Een toegankelijke en betaalbare instappan voor wie veilig en PFAS-vrij wil koken in een compact formaat.",
     },
 
@@ -1175,6 +1213,7 @@ PRODUCTS = {
             "Minder glanzend bakoppervlak dan sommige keramische alternatieven",
             "Zachte greep minder geschikt voor hoge oventemperaturen",
         ],
+        "suitable_for": ["1–2 personen", "dagelijks koken", "wie zonder coating-zorgen wil koken"],
         "verdict": "Milieuvriendelijke keuze voor wie echt PFAS-vrij wil koken met een coating van volledig natuurlijke grondstoffen.",
     },
 
@@ -1207,6 +1246,7 @@ PRODUCTS = {
             "Vrij zwaar",
             "Hogere prijs",
         ],
+        "suitable_for": ["grotere gezinnen", "fanatieke thuiskoks", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "De ultieme keuze voor wie dagelijks gezond en PFAS-vrij wil koken.",
     },
 
@@ -1240,6 +1280,7 @@ PRODUCTS = {
             "Minder verfijnde afwerking",
             "Niet bedoeld voor professioneel gebruik",
         ],
+        "suitable_for": ["grotere gezinnen", "incidenteel gebruik", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Een toegankelijke en betrouwbare keuze voor wie een grote, PFAS-vrije koekenpan zoekt zonder direct naar het premiumsegment te gaan.",
     },
 
@@ -1270,6 +1311,7 @@ PRODUCTS = {
             "Zwaarder dan gemiddelde keramische pannen",
             "Hoger prijsniveau",
         ],
+        "suitable_for": ["wie graag in één keer voor iedereen kookt", "veeleisende thuiskoks", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "De beste premium keuze voor wie een duurzame, PFAS-vrije keramische koekenpan van 30 cm zoekt met professionele prestaties.",
     },
 
@@ -1298,6 +1340,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["grotere gezinnen", "thuiskoks die kwaliteit zoeken", "wie zonder coating-zorgen wil koken"],
         "verdict": "Solide keuze voor wie een betrouwbare en duurzame keramische pan zoekt.",
     },
 
@@ -1327,6 +1370,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["wie graag in één keer voor iedereen kookt", "dagelijks koken", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Praktische pan voor dagelijks gebruik met betrouwbare antiaanbaklaag.",
     },
 
@@ -1356,6 +1400,7 @@ PRODUCTS = {
             "Minder robuust dan premium GreenPan-series",
             "Niet geschikt voor zeer hoge temperaturen",
         ],
+        "suitable_for": ["grotere gezinnen", "dagelijks koken", "dagelijks comfortabel manoeuvreren"],
         "verdict": "Een uitstekende, betaalbare keuze voor wie een gezonde PFAS-vrije koekenpan van 30 cm zoekt voor dagelijks koken.",
     },
 
@@ -1385,6 +1430,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["grotere gezinnen", "regelmatig gezinskoken", "weinig olie willen gebruiken"],
         "verdict": "Betrouwbare keuze voor milieubewuste gebruiker met modern comfort.",
     },
 
@@ -1416,6 +1462,7 @@ PRODUCTS = {
         "cons": [
             "Geen premium afwerking",
         ],
+        "suitable_for": ["gezinnen van 3–5 personen", "regelmatig gezinskoken", "wie zonder coating-zorgen wil koken"],
         "verdict": "Een betrouwbare middenklasse keuze voor wie een grote, PFAS-vrije koekenpan zoekt met focus op inductie en gebruiksgemak.",
     },
 
@@ -1448,6 +1495,7 @@ PRODUCTS = {
             "Hoger prijsniveau",
             "Relatief zwaar",
         ],
+        "suitable_for": ["gezinnen van 3–5 personen", "veeleisende thuiskoks", "wie zonder coating-zorgen wil koken"],
         "verdict": "Een uitstekende keuze voor wie in het 30 cm-formaat maximale prestaties en duurzaamheid zoekt.",
     },
 
@@ -1479,6 +1527,7 @@ PRODUCTS = {
             "Vrij zwaar",
             "Hogere prijs",
         ],
+        "suitable_for": ["uitgebreide éénpansmaaltijden", "wie geen concessies wil sluiten", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "De ultieme keuze voor wie dagelijks gezond en PFAS-vrij wil koken.",
     },
 
@@ -1509,6 +1558,7 @@ PRODUCTS = {
             "Zwaarder dan gemiddelde keramische pannen",
             "Hoger prijsniveau",
         ],
+        "suitable_for": ["wie veel tegelijk wil bereiden", "professioneel niveau thuis", "weinig olie willen gebruiken"],
         "verdict": "De beste premium keuze voor wie een duurzame, PFAS-vrije keramische koekenpan van 32 cm zoekt met professionele prestaties.",
     },
 
@@ -1541,6 +1591,7 @@ PRODUCTS = {
             "Hoger gewicht door robuuste bouw",
             "Hoger prijsniveau dan instapmodellen",
         ],
+        "suitable_for": ["grote gezinnen (4–6 personen)", "intensief dagelijks gebruik", "weinig olie willen gebruiken"],
         "verdict": "Een sterke middenklasse keuze voor wie in het 32 cm-formaat duurzaam, PFAS-vrij en met vertrouwen wil koken.",
     },
 
@@ -1570,6 +1621,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["grote gezinnen (4–6 personen)", "thuiskoks die kwaliteit zoeken", "weinig olie willen gebruiken"],
         "verdict": "Praktische pan voor dagelijks gebruik met betrouwbare antiaanbaklaag.",
     },
 
@@ -1599,6 +1651,7 @@ PRODUCTS = {
             "Minder robuust dan premium GreenPan-series",
             "Niet geschikt voor zeer hoge temperaturen",
         ],
+        "suitable_for": ["grote gezinnen (4–6 personen)", "thuiskoks die kwaliteit zoeken", "dagelijks comfortabel manoeuvreren"],
         "verdict": "Een uitstekende, betaalbare keuze voor wie een gezonde PFAS-vrije koekenpan van 30 cm zoekt voor dagelijks koken.",
     },
 
@@ -1628,6 +1681,7 @@ PRODUCTS = {
         "cons": [
             "Niet ovenbestendig",
         ],
+        "suitable_for": ["uitgebreide éénpansmaaltijden", "wie waarde voor geld zoekt", "wie zonder coating-zorgen wil koken"],
         "verdict": "Betrouwbare keuze voor milieubewuste gebruiker met modern comfort.",
     },
 
@@ -1663,6 +1717,7 @@ PRODUCTS = {
             "Minder bekend bij gemiddelde NL-consument dan GreenPan of Tefal",
             "Alleen rechtstreeks bij Primecook verkrijgbaar (geen bol.com)",
         ],
+        "suitable_for": ["uitgebreide éénpansmaaltijden", "fanatieke thuiskoks", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Een onderscheidende, eerlijk gepositioneerde Italiaanse PFAS-vrije koekenpan van 32 cm — ideaal voor wie kwaliteit en design boven merkbekendheid stelt.",
     },
 
@@ -1695,6 +1750,7 @@ PRODUCTS = {
             "Minder duurzame coating bij intensief gebruik",
             "Marketingclaim (“diamond”) belangrijker dan techniek",
         ],
+        "suitable_for": ["wie veel tegelijk wil bereiden", "wie waarde voor geld zoekt", "delicaat bakken (eieren, vis, pannenkoeken)"],
         "verdict": "Een toegankelijke instapoptie voor wie een grote, PFAS-vrije koekenpan zoekt zonder hoge investering.",
     },
 
@@ -1727,6 +1783,7 @@ PRODUCTS = {
             "Minder duurzaam dan midden- en premium pannen",
             "Warmteverdeling is eenvoudiger",
         ],
+        "suitable_for": ["grote gezinnen (4–6 personen)", "studenten en starters", "gezond koken met antiaanbak"],
         "verdict": "Een goede keuze voor wie een goedkope, PFAS-vrije koekenpan van 30 cm zoekt voor licht en dagelijks gebruik, zonder concessies te doen aan basisveiligheid.",
     },
 
@@ -1759,6 +1816,7 @@ PRODUCTS = {
         "cons": [
             "Prijs hoger dan gemiddelde middenklasse",
         ],
+        "suitable_for": ["uitgebreide éénpansmaaltijden", "professioneel niveau thuis", "weinig olie willen gebruiken"],
         "verdict": "Een interessante keuze voor wie Scandinavische kwaliteit waardeert.",
     },
 }

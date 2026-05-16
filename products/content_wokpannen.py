@@ -1,9 +1,5 @@
 CONTENT = {
-      "in_het_kort": {
-          "use_cases": ["roerbakken", "hoge temperaturen", "Aziatisch koken", "grote porties tegelijk"],
-      },
-      "default_geschikt_voor": ["roerbakgerechten", "snel koken op hoge hitte", "geschikt voor inductie"],
-      "hero": {
+        "hero": {
         "h1": "Top {product_count} PFAS-vrije Wokpannen \u2013 Gezond, Duurzaam & Stijlvol",
         "paragraphs": [
             "Een PFAS-vrije wokpan is de beste keuze voor wie gezond, veilig en bewust wil koken. Traditionele antiaanbaklagen bevatten vaak PFAS \u2014 stoffen "

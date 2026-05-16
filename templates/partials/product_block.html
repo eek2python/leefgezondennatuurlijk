@@ -35,11 +35,11 @@
            {% endif %}
 </div>
        {% endif %}
-       {% if product.geschikt_voor %}
+       {% if product.suitable_for %}
 <div class="geschikt-voor">
 <strong>Geschikt voor</strong>
 <ul>
-           {% for gv in product.geschikt_voor %}
+           {% for gv in product.suitable_for %}
 <li>{{ gv }}</li>
            {% endfor %}
 </ul>

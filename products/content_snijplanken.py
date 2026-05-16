@@ -1,9 +1,5 @@
 CONTENT = {
-      "in_het_kort": {
-          "use_cases": ["dagelijks snijden", "mesvriendelijk", "duurzaam gebruik", "vlees en groente"],
-      },
-      "default_geschikt_voor": ["dagelijks koken", "behoud van scherpe messen", "vlees, vis en groente"],
-      "hero": {
+        "hero": {
         "h1": "Top 10 Houten Snijplanken \u2013 Gezond, Duurzaam & Stijlvol",
         "paragraphs": [
             "Een goede snijplank is onmisbaar in elke keuken \u2014 maar niet alle planken zijn even gezond of duurzaam. "

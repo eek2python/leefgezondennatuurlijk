@@ -1,9 +1,5 @@
 CONTENT = {
-      "in_het_kort": {
-          "use_cases": ["hoge temperaturen", "lange levensduur", "maximale controle", "krachtig aanbakken", "professioneel koken"],
-      },
-      "default_geschikt_voor": ["hoge temperaturen en searing", "krachtig aanbakken van vlees en vis", "lange levensduur (decennia)"],
-      "meta": {
+        "meta": {
         "title": "Beste RVS koekenpannen van 2026 \u2013 gezond koken zonder coating",
         "description": "Vergelijk de beste RVS koekenpannen van 2026. Ontdek sterke keuzes zonder coating, geschikt voor inductie en dagelijks gebruik.",
         "og_title": "Beste RVS koekenpannen van 2026",

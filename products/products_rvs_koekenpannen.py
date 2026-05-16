@@ -32,6 +32,7 @@ PRODUCTS = {
             "Hogere instapprijs",
             "Heeft wat leercurve vergeleken met keramisch",
         ],
+        "suitable_for": ["kleine huishoudens", "topkoks-mentaliteit", "fondvorming voor sauzen en jus"],
         "verdict": "Sterke allround RVS-koekenpan voor wie duurzaam en controlegericht wil bakken.",
     },
     "demeyere_multiline_7_24": {
@@ -67,6 +68,7 @@ PRODUCTS = {
             "Duidelijk premium geprijsd",
             "Minder vergevingsgezind dan keramisch",
         ],
+        "suitable_for": ["1–2 personen", "veeleisende thuiskoks", "fondvorming voor sauzen en jus"],
         "verdict": "Sterke keuze voor wie vooral op inductie kookt en maximale bakprestaties zoekt.",
     },
     "bk_superior_tri_ply_24": {
@@ -102,6 +104,7 @@ PRODUCTS = {
             "Minder premium afgewerkt dan Demeyere",
             "Kortere staat van dienst dan klassieke toplijnen",
         ],
+        "suitable_for": ["1–2 personen", "intensief dagelijks gebruik", "koken op hoge temperaturen"],
         "verdict": "Waarschijnlijk de interessantste keuze voor de gemiddelde koper die bewust naar RVS wil overstappen.",
     },
     "debuyer_affinity_24": {
@@ -137,6 +140,7 @@ PRODUCTS = {
             "Duur",
             "Minder logisch voor de gemiddelde koper",
         ],
+        "suitable_for": ["lunchgerechten en kleine porties", "professioneel niveau thuis", "koken op hoge temperaturen"],
         "verdict": "Premium RVS-keuze voor wie bewust voor techniek, controle en bouwkwaliteit gaat.",
     },
     "wmf_profi_24": {
@@ -173,6 +177,7 @@ PRODUCTS = {
             "Minder exclusief dan de topmodellen van Demeyere",
             "Niet de meest verfijnde warmtespreiding in dit overzicht",
         ],
+        "suitable_for": ["kleine huishoudens", "fanatieke thuiskoks", "fondvorming voor sauzen en jus"],
         "verdict": "Goede middenklasse RVS-koekenpan voor wie een degelijk merk zoekt zonder direct topsegmentprijzen.",
     },
     "demeyere_silverline_7_nanotouch_24": {
@@ -207,6 +212,7 @@ PRODUCTS = {
             "Hoog geprijsd",
             "Voor veel thuiskoks meer dan nodig",
         ],
+        "suitable_for": ["kleine huishoudens", "professioneel niveau thuis", "fondvorming voor sauzen en jus"],
         "verdict": "Premium RVS-pan voor wie maximale prestaties en langdurige kwaliteit zoekt.",
     },
     "bk_bright_24": {
@@ -241,6 +247,7 @@ PRODUCTS = {
             "Minder verfijnde constructie dan tri-ply/topmodellen",
             "Niet de beste keuze voor maximale warmterespons",
         ],
+        "suitable_for": ["kleine huishoudens", "dagelijks RVS-koken", "wie maximale controle over de bakprocessen wil"],
         "verdict": "Goede budgetvriendelijke instapper voor wie een eenvoudige RVS-koekenpan zoekt.",
     },
 
@@ -278,6 +285,7 @@ PRODUCTS = {
             "Hogere instapprijs",
             "Heeft wat leercurve vergeleken met keramisch",
         ],
+        "suitable_for": ["ruime porties voor het hele gezin", "topkoks-mentaliteit", "wie maximale controle over de bakprocessen wil"],
         "verdict": "Sterke allround RVS-koekenpan voor wie duurzaam en controlegericht wil bakken.",
     },
     "demeyere_silverline_7_nanotouch_28": {
@@ -314,6 +322,7 @@ PRODUCTS = {
             "Hoog geprijsd",
             "Voor veel thuiskoks meer dan nodig",
         ],
+        "suitable_for": ["dagelijks gezinskoken", "professioneel niveau thuis", "een coatingvrije keuken"],
         "verdict": "Premium RVS-pan voor wie maximale prestaties en langdurige kwaliteit zoekt.",
     },
     "demeyere_multiline_7_28": {
@@ -349,6 +358,7 @@ PRODUCTS = {
             "Duidelijk premium geprijsd",
             "Minder vergevingsgezind dan keramisch",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "professioneel niveau thuis", "searing en krachtig aanbraden van vlees"],
         "verdict": "Sterke keuze voor wie vooral op inductie kookt en maximale bakprestaties zoekt.",
     },
     "debuyer_affinity_28": {
@@ -384,6 +394,7 @@ PRODUCTS = {
             "Duur",
             "Minder logisch voor de gemiddelde koper",
         ],
+        "suitable_for": ["ruime porties voor het hele gezin", "veeleisende thuiskoks", "searing en krachtig aanbraden van vlees"],
         "verdict": "Premium RVS-keuze voor wie bewust voor techniek, controle en bouwkwaliteit gaat.",
     },
     "wmf_profi_28": {
@@ -420,6 +431,7 @@ PRODUCTS = {
             "Minder exclusief dan de topmodellen van Demeyere",
             "Niet de meest verfijnde warmtespreiding in dit overzicht",
         ],
+        "suitable_for": ["gezinnen van 2–4 personen", "fanatieke thuiskoks", "een coatingvrije keuken"],
         "verdict": "Goede middenklasse RVS-koekenpan voor wie een degelijk merk zoekt zonder direct topsegmentprijzen.",
     },
     "bk_superior_tri_ply_28": {
@@ -456,6 +468,7 @@ PRODUCTS = {
             "Minder premium afgewerkt dan Demeyere",
             "Kortere staat van dienst dan klassieke toplijnen",
         ],
+        "suitable_for": ["dagelijks gezinskoken", "intensief dagelijks gebruik", "koken op hoge temperaturen"],
         "verdict": "Waarschijnlijk de interessantste keuze voor de gemiddelde koper die bewust naar RVS wil overstappen.",
     },
     "bk_bright_28": {
@@ -490,6 +503,7 @@ PRODUCTS = {
             "Minder verfijnde constructie dan tri-ply/topmodellen",
             "Niet de beste keuze voor maximale warmterespons",
         ],
+        "suitable_for": ["dagelijks gezinskoken", "dagelijks RVS-koken", "fondvorming voor sauzen en jus"],
         "verdict": "Goede budgetvriendelijke instapper voor wie een eenvoudige RVS-koekenpan zonder coating zoekt.",
     },
 }

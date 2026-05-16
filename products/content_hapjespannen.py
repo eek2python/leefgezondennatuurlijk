@@ -1,9 +1,5 @@
 CONTENT = {
-      "in_het_kort": {
-          "use_cases": ["1-pansmaaltijden", "stoven en sudderen", "sauzen en risotto", "ruimere porties"],
-      },
-      "default_geschikt_voor": ["1-pansgerechten en stoofschotels", "sauzen en risotto", "geschikt voor inductie"],
-      "hero": {
+        "hero": {
         "h1": "Top {product_count} PFAS-vrije Hapjespannen voor Gezond Koken",
         "paragraphs": [
             "Een hapjespan is onmisbaar in iedere keuken: ideaal voor stoofgerechten, pasta\u2019s, risotto\u2019s en eenpansgerechten. "
