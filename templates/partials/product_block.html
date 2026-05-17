@@ -35,16 +35,6 @@
            {% endif %}
 </div>
        {% endif %}
-       {% if product.suitable_for %}
-<div class="geschikt-voor">
-<strong>Geschikt voor</strong>
-<ul>
-           {% for gv in product.suitable_for %}
-<li>{{ gv }}</li>
-           {% endfor %}
-</ul>
-</div>
-       {% endif %}
 <div class="verdict">
 <div class="verdict-stars">
 <span class="stars stars-{{ product.rating_class }}"></span>
