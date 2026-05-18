@@ -1,4 +1,13 @@
 RANKINGS = {
+    20: [
+        "demeyere_industry_5_20",
+        "bk_superior_tri_ply_20",
+        "sola_green_cooking_plus_20",
+        "demeyere_multiline_7_20",
+        "wmf_profi_20",
+        "debuyer_affinity_20",
+        "demeyere_silverline_7_nanotouch_20",
+    ],
     24: [
         "demeyere_industry_5_24",
         "demeyere_multiline_7_24",
