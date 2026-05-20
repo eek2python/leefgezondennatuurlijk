@@ -17,7 +17,7 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 149.00,
-        "price_last_checked": "2026-05-20"
+        "price_last_checked": "2026-05-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/demeyere-industry-5-rvs-koekenpan-koekenpan-inductie-24-cm-ptfe-vrij/9200000011477842/?cid=1776659016213-2891462213274&bltgh=fc8594e9-73db-4b3b-a235-8a18ecf62dc4.ProductList_Middle.0.ProductImage",
@@ -54,7 +54,7 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 123.00,
-        "price_last_checked": "2026-05-20"
+        "price_last_checked": "2026-05-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/demeyere-multiline-koekenpan-o-24-cm/9200000059194177/?bltgh=8ca144d7-f79e-4d0c-82de-9c9d7e7abae2.ProductList_Middle.0.ProductImage&cid=1776660409041-1660992847878",
@@ -91,7 +91,7 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 65.00,
-        "price_last_checked": "2026-05-20"
+        "price_last_checked": "2026-05-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.meesterslijpers.nl/bk-superior-3-ply-koekenpan-24cm?srsltid=AfmBOopi4ooLgvTkbJBP9EYkoPWs6Clxt5xefRgt1j68yio5pJFxHEvk",
@@ -128,7 +128,7 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 126.51,
-        "price_last_checked": "2026-05-20"
+        "price_last_checked": "2026-05-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/debuyer-affinity-koekenpan-o-24-cm/9200000015324056/?bltgh=32989719-32ab-44ee-a0a1-726bc0d40229.BuyBlock_distinctive-feature.0.FeatureListItem",
@@ -166,7 +166,7 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 58.02,
-        "price_last_checked": "2026-05-20"
+        "price_last_checked": "2026-05-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/wmf-profi-koekenpan-o-24-cm/9200000077125803/?cid=1776660174950-8074701362565&bltgh=469a5356-5d2e-440a-88f0-f6d568dd0dee.ProductList_Middle.1.ProductImage",
@@ -202,7 +202,7 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 209.00,
-        "price_last_checked": "2026-05-20"
+        "price_last_checked": "2026-05-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.pannenhuis.nl/products/demeyere-silverline-7-nano-touch-koekenpan?variant=54983851934072",
@@ -238,7 +238,7 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 40.29,
-        "price_last_checked": "2026-05-20"
+        "price_last_checked": "2026-05-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/bk-bright-koekenpan-24-cm-rvs/9300000111921944/?bltgh=6d7949f8-9d6e-41ab-8daf-a8741202be9e.BuyBlock_distinctive-feature.0.FeatureListItem",
