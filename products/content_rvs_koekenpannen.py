@@ -1,7 +1,7 @@
 CONTENT = {
         "meta": {
         "title": "Beste RVS koekenpannen van 2026 \u2013 gezond koken zonder coating",
-        "description": "Vergelijk de beste RVS koekenpannen van 2026. Ontdek sterke keuzes zonder coating, geschikt voor inductie en dagelijks gebruik.",
+        "description": "Vergelijk de beste RVS koekenpannen van 2026. Ontdek duurzame modellen zonder klassieke antiaanbaklaag, geschikt voor inductie en dagelijks gebruik.",
         "og_title": "Beste RVS koekenpannen van 2026",
         "og_description": "Onze selectie van sterke RVS koekenpannen zonder coating, van budget tot premium.",
         "canonical_path": "/rvs-koekenpannen/",
@@ -9,10 +9,8 @@ CONTENT = {
     "hero": {
         "h1": "Beste RVS koekenpannen van 2026",
         "paragraphs": [
-            "Wil je bakken zonder antiaanbaklaag, dan is een goede RVS koekenpan een logische stap. "
-            "RVS pannen bevatten geen PFAS-coating en zijn vooral interessant voor wie duurzaam, heet en gecontroleerd wil bakken.",
-            "RVS vraagt iets meer techniek dan keramische pannen, maar biedt vaak een langere levensduur, "
-            "sterke bakresultaten en veel controle bij aanbakken, afblussen en bruinen.",
+            "Wil je koken zonder klassieke antiaanbaklaag, dan is een goede RVS koekenpan een logische stap. RVS-pannen zijn vooral interessant voor wie duurzaam, heet en gecontroleerd wil bakken.",
+            "RVS vraagt iets meer techniek dan keramische pannen, maar biedt vaak een langere levensduur, sterke bakresultaten en veel controle bij aanbakken, afblussen en bruinen.",
         ],
     },
     "how_we_test": {
@@ -33,10 +31,10 @@ CONTENT = {
         "intro": "Een RVS koekenpan is vooral interessant voor wie bewust zonder coating wil koken "
                  "en waarde hecht aan duurzaamheid en hoge baktemperaturen.",
         "bullets": [
-            "<strong>Geen klassieke antiaanbaklaag:</strong> aantrekkelijk voor wie bewust zonder coating wil bakken.",
-            "<strong>Geschikt voor hoge hitte:</strong> ideaal voor vlees, aardappelen en krachtig aanbakken.",
-            "<strong>Duurzaam:</strong> een goede RVS pan kan jarenlang meegaan.",
-            "<strong>Veel controle:</strong> sterk voor bakken, afblussen en het opbouwen van smaak in de pan.",
+             "<strong>Geen klassieke antiaanbaklaag:</strong> interessant voor wie bewust kiest voor een pan zonder slijtende coating.",
+               "<strong>Geschikt voor hoge temperaturen:</strong> ideaal voor vlees, aardappelen en krachtig aanbraden.",
+               "<strong>Lange levensduur:</strong> een kwalitatieve RVS-pan kan jarenlang meegaan.",
+               "<strong>Veel controle:</strong> sterk voor bakken, afblussen en het opbouwen van smaak.",
         ],
         "outro": "De keerzijde is dat RVS minder vergevingsgezind is dan keramisch. "
                  "Goed voorverwarmen en de juiste baktechniek maken hier echt verschil.",
@@ -85,11 +83,7 @@ CONTENT = {
         },
         28: {
             "title": "Conclusie \u2013 welke RVS koekenpan van 28\u00a0cm past het best?",
-            "text": "28\u00a0cm is het formaat voor gezinnen en wie regelmatig grotere porties bereidt: roerbakgerechten, een hele "
-                    "kipfilet of vier eieren tegelijk. De Demeyere Industry\u00a05 is in dit formaat onze beste allround keuze "
-                    "voor dagelijks gezinskoken. Wie veel op inductie kookt en maximaal grip wil op temperatuur, zit het meest "
-                    "comfortabel bij de Demeyere Multiline\u00a07. Voor een vriendelijker prijspunt is de BK Bright een prima "
-                    "instap-RVS-pan voor wie bewust wil overstappen zonder direct in het premium-segment te belanden.",
+            "text": "28\u00a0cm is het formaat voor gezinnen en grotere porties. De Demeyere Industry 5 blijft onze beste allround keuze dankzij de sterke warmteverdeling en duurzame constructie. Voor maximale prestaties op inductie springt de Demeyere Multiline 7 eruit. Zoek je een toegankelijkere instap zonder direct naar het premiumsegment te gaan, dan biedt de BK Superior Tri-Ply een betere balans tussen prijs en prestaties.",
         },
     },
     "faq": {
@@ -107,11 +101,6 @@ CONTENT = {
                      "vooral voor delicate bereidingen.",
             },
             {
-                "q": "Waarom bakt eten sneller aan in RVS?",
-                "a": "RVS vraagt meer techniek. De pan moet goed op temperatuur zijn en ingredi\u00ebnten moeten "
-                     "vaak eerst een korst vormen voordat ze vanzelf loslaten.",
-            },
-            {
                 "q": "Is RVS geschikt voor inductie?",
                 "a": "Ja, de geselecteerde modellen op deze pagina zijn geschikt voor inductie.",
             },
@@ -127,12 +116,11 @@ CONTENT = {
             },
             {
                 "q": "Mag een RVS koekenpan in de vaatwasser?",
-                "a": "Ja, RVS is volledig vaatwasserbestendig. Voor een glanzend resultaat en het voorkomen van witte vlekken bevelen we wel handwas met warm water aan.",
+                "a": "De meeste RVS koekenpannen zijn vaatwasserbestendig. Toch raden veel fabrikanten handwas aan om glans en afwerking langer mooi te houden.",
             },
             {
-                "q": "Hoe verwijder ik aangekoekte resten of verkleuringen?",
-                "a": "Week de pan met warm water en een scheutje azijn of gebruik een speciaal RVS-reinigingsmiddel zoals Bar Keepers Friend. "
-                     "Schuren met staalwol mag bij RVS — iets dat bij keramische pannen absoluut niet kan.",
+                 "q": "Hoe verwijder ik aangekoekte resten of verkleuringen?",
+                 "a": "Week de pan in warm water met een scheutje azijn of gebruik een speciaal RVS-reinigingsmiddel zoals Bar Keepers Friend. Vermijd agressieve staalwol om krassen te voorkomen.",
             },
             {
                 "q": "Wat is het verschil tussen RVS en keramisch?",
@@ -150,6 +138,10 @@ CONTENT = {
             {
                 "q": "Welke olie werkt het best in een RVS pan?",
                 "a": "Voor hoge temperaturen kies je oliën met een hoog rookpunt: zonnebloemolie, druivenpitolie, geraffineerde olijfolie of ghee. Extra vierge olijfolie en boter zijn minder geschikt voor krachtig aanbraden — die gebruik je beter voor zachter bakken op middelhoog vuur.",
+            },
+            {
+               "q": "Welke maat RVS koekenpan heb ik nodig?",
+               "a": "20 cm is geschikt voor kleine porties en 1–2 personen, 24 cm voor dagelijks gebruik met 2–3 personen en 28 cm voor gezinnen of grotere maaltijden."
             },
         ],
     },
