@@ -65,7 +65,32 @@ CONTENT = {
                     "Wil je maximale prestaties en premium afwerking, dan springt de Silverline 7 NanoTouch eruit. "
                     "Voor de meeste huishoudens is de BK Superior Tri-Ply waarschijnlijk de interessantste combinatie "
                     "van prijs, materiaal en dagelijks gebruik.",
-        }
+        },
+        20: {
+            "title": "Conclusie \u2013 welke RVS koekenpan van 20\u00a0cm past het best?",
+            "text": "Een 20\u00a0cm RVS koekenpan is ideaal voor singles, stellen en kleine porties zoals een gebakken ei, "
+                    "een stuk vis of een snelle saus. Wil je in dit formaat direct goed zitten, dan is de Demeyere Industry\u00a05 "
+                    "de meest complete keuze: een vijflaags constructie met topkwaliteit warmteverdeling, ook bij lage porties. "
+                    "Zoek je een toegankelijkere prijs, dan biedt de BK Superior Tri-Ply een sterke balans tussen prijs, "
+                    "materiaal en dagelijks gebruik. Voor wie nog bewuster op de prijs let, is de Sola Green Cooking+ een "
+                    "prima Nederlandse instapper om RVS-koken te leren zonder topbedrag.",
+        },
+        24: {
+            "title": "Conclusie \u2013 welke RVS koekenpan van 24\u00a0cm past het best?",
+            "text": "24\u00a0cm is het meest veelzijdige formaat voor 2 tot 3 personen: groot genoeg voor een flink stuk vlees of "
+                    "een omelet voor twee, en nog handzaam genoeg om dagelijks te gebruiken. De Demeyere Industry\u00a05 blijft hier "
+                    "onze beste allrounder dankzij voorspelbare warmteverdeling en lange levensduur. De Demeyere Multiline\u00a07 is "
+                    "in dit formaat een sterke premium-keuze voor wie veel op inductie kookt. Voor een lagere instapprijs zonder "
+                    "in te leveren op de RVS-basis is de BK Superior Tri-Ply de meest logische keuze.",
+        },
+        28: {
+            "title": "Conclusie \u2013 welke RVS koekenpan van 28\u00a0cm past het best?",
+            "text": "28\u00a0cm is het formaat voor gezinnen en wie regelmatig grotere porties bereidt: roerbakgerechten, een hele "
+                    "kipfilet of vier eieren tegelijk. De Demeyere Industry\u00a05 is in dit formaat onze beste allround keuze "
+                    "voor dagelijks gezinskoken. Wie veel op inductie kookt en maximaal grip wil op temperatuur, zit het meest "
+                    "comfortabel bij de Demeyere Multiline\u00a07. Voor een vriendelijker prijspunt is de BK Bright een prima "
+                    "instap-RVS-pan voor wie bewust wil overstappen zonder direct in het premium-segment te belanden.",
+        },
     },
     "faq": {
         "title": "Veelgestelde vragen over RVS koekenpannen",

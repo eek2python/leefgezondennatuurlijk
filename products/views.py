@@ -489,7 +489,7 @@ def rvs_koekenpannen(request):
     products = [dict(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in RVS_KOEKENPANNEN_PRODUCTS]
     _enrich_rvs_products(products)
     product_count = len(products)
-    conclusie = content["conclusies"]["default"]
+    conclusie = content["conclusies"].get(size, content["conclusies"]["default"])
     faq_ld = _build_faq_ld(content["faq"]["items"])
     real_products = [p for p in products if p["affiliate_url"]]
     itemlist_ld = json.dumps({
