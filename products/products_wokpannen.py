@@ -177,8 +177,10 @@ PRODUCTS = {
        "features": ["PFAS-vrij", "Gerecycled aluminium"],
        "description": "Moderne PFAS-vrije wokpan uit gerecyclede materialen.",
        "rating": 4,
-       "rating_count": 50,
-       "price": 54.00,
+       "rating_count": None,
+       "rating_source": "editorial",
+       "price": 48.50,
+       "price_last_checked": "2026-05-21",
        "currency": "EUR",
        "availability": "InStock",
        "affiliate_url": "https://www.bol.com/nl/nl/p/brabantia-futura-green-wokpan-non-stick-o-28-cm/9300000186197427/",
@@ -192,8 +194,7 @@ PRODUCTS = {
        "cons": [
            "Coating gevoelig voor hoge hitte",
        ],
-        "suitable_for": ["dagelijks gezinskoken", "wie van Aziatische keuken houdt", "wie van gebruiksgemak houdt"],
-       "verdict": "Een stijlvolle wokpan voor wie duurzaamheid belangrijk vindt.",
+        "verdict": "Een stijlvolle wokpan voor wie duurzaamheid belangrijk vindt.",
    },
    "greenpan_cambridge_wok_28": {
        "slug": "greenpan-cambridge-wok-28",

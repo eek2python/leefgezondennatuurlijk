@@ -3,11 +3,11 @@ CONTENT = {
         "h1": "Top 10 Houten Snijplanken \u2013 Gezond, Duurzaam & Stijlvol",
         "paragraphs": [
             "Een goede snijplank is onmisbaar in elke keuken \u2014 maar niet alle planken zijn even gezond of duurzaam. "
-            "Plastic varianten kunnen schadelijke stoffen afgeven en slijten snel. "
+            "Plastic snijplanken kunnen na langdurig gebruik diepe snijgroeven ontwikkelen en slijten sneller dan veel houten alternatieven."
             "Daarom hebben wij de <strong>beste houten snijplanken</strong> van dit moment geselecteerd: gemaakt van natuurlijke materialen, "
             "vrij van toxische coatings en geschikt voor jarenlang gebruik.",
             "Of je nu dagelijks kookt of af en toe een maaltijd bereidt, de juiste houten snijplank maakt koken prettiger, veiliger en hygi\u00ebnischer. "
-            "Wij hebben tientallen modellen getest op <strong>materiaal, duurzaamheid, gebruiksgemak</strong> en <strong>onderhoud</strong>. "
+            "Wij hebben tientallen modellen vergeleken op <strong>materiaal, materiaal, duurzaamheid, gebruiksgemak</strong> en <strong>onderhoud</strong>. "
             "Hieronder vind je de <strong>Top\u00a010 houten snijplanken van 2026</strong> \u2014 zorgvuldig beoordeeld om gezond koken makkelijker te maken.",
         ],
     },
@@ -19,10 +19,10 @@ CONTENT = {
             "en hygi\u00ebnischer is bij juist gebruik."
         ),
         "bullets": [
-            "<strong>Hygi\u00ebnisch:</strong> Hout heeft van nature antibacteri\u00eble eigenschappen.",
-            "<strong>Duurzaam:</strong> Gaat jarenlang mee bij goed onderhoud.",
-            "<strong>Plasticvrij:</strong> Geen giftige stoffen of weekmakers.",
-            "<strong>Esthetisch:</strong> Geeft je keuken een warme, natuurlijke uitstraling.",
+            "<strong>Mesvriendelijk:</strong> hout geeft iets mee waardoor messen doorgaans langer scherp blijven.",
+   "<strong>Duurzaam:</strong> een kwalitatieve houten plank kan jarenlang meegaan bij goed onderhoud.",
+   "<strong>Plasticvrij:</strong> aantrekkelijk voor wie bewust minder kunststof in de keuken wil gebruiken.",
+   "<strong>Natuurlijke uitstraling:</strong> geeft een warme en tijdloze uitstraling aan de keuken.",
         ],
         "outro": None,
     },
@@ -50,11 +50,9 @@ CONTENT = {
         "default": {
             "title": "Conclusie \u2013 Onze aanbeveling",
             "text": (
-                "Een <strong>houten snijplank</strong> is een duurzame en gezonde keuze voor iedere keuken. "
-                "Wie op zoek is naar professionele kwaliteit kiest het best voor de <strong>BoosBlocks Pro Maple Series</strong> "
-                "\u2013 robuust, mesvriendelijk en gemaakt van hoogwaardig esdoornhout. Voor een milieuvriendelijke en betaalbare optie "
-                "is de <strong>IKEA APTITLIG Bamboe Snijplank</strong> een uitstekende keuze. "
-                "Welke je ook kiest, met een houten snijplank investeer je in een stijlvol, natuurlijk en langdurig alternatief voor plastic."
+            "Een houten snijplank is een duurzame keuze die bij goed onderhoud jarenlang mee kan gaan. "
+            "Zoek je maximale kwaliteit en een mesvriendelijk oppervlak, dan blijft de BoosBlocks Pro Maple Series onze sterkste allround keuze. "
+            "Voor wie een toegankelijkere instap zoekt, biedt de IKEA APTITLIG een eenvoudige en betaalbare oplossing voor dagelijks gebruik."
             ),
         },
     },
@@ -80,15 +78,7 @@ CONTENT = {
             {
                 "q": "Zijn houten snijplanken hygi\u00ebnischer dan plastic?",
                 "a": (
-                    "Ja. Hout heeft van nature <strong>antibacteri\u00eble eigenschappen</strong> waardoor bacteriën minder snel overleven "
-                    "dan op plastic oppervlakken. Bij goed onderhoud is een houten snijplank een veilig en duurzaam alternatief voor plastic."
-                ),
-            },
-            {
-                "q": "Hoe vaak moet ik mijn houten snijplank oli\u00ebn?",
-                "a": (
-                    "Afhankelijk van gebruik is \u00e9\u00e9n keer per maand meestal voldoende. Als het oppervlak droog of ruw aanvoelt, "
-                    "is het tijd voor een nieuwe laag olie. Gebruik hiervoor <strong>voedselveilige minerale olie</strong> of een speciale snijplankolie."
+                    "Bij goed onderhoud kunnen houten snijplanken zeer hygi\u00ebnisch zijn. Sommige houtsoorten lijken bacteriegroei minder te ondersteunen dan sterk beschadigde plastic oppervlakken, maar regelmatig reinigen blijft het belangrijkst."
                 ),
             },
             {
@@ -125,19 +115,23 @@ CONTENT = {
             },
             {
                 "q": "Waarom zijn houten snijplanken mesvriendelijker dan plastic?",
-                "a": "Hout heeft een zachtere vezelstructuur die meegeeft onder de snede, waardoor het mes zijn scherpte langer behoudt. Plastic en bamboe zijn harder en stomper messen sneller af. Een investering in goede houten snijplanken betaalt zich vaak terug in minder vaak slijpen.",
+                "a": "Veel houtsoorten geven iets mee onder de snede, waardoor messen vaak langer scherp blijven. Zeer harde materialen zoals glas en sommige bamboeplanken kunnen sneller slijtage aan messen veroorzaken.",
             },
             {
                 "q": "Hoe vaak moet ik mijn houten snijplank oliën?",
                 "a": "Bij nieuwe planken: de eerste maand wekelijks, daarna 1× per maand bij intensief gebruik of 1× per kwartaal bij normaal gebruik. Gebruik voedselveilige minerale olie of speciale snij­plank­olie — nooit olijfolie of plantaardige olie (die wordt ranzig).",
             },
+            {
+                "q":"Zijn glazen of houten snijplanken beter?",
+                "a":"Voor dagelijks snijden zijn houten snijplanken meestal vriendelijker voor messen. Glazen planken zijn eenvoudig schoon te maken, maar kunnen messen sneller bot maken."
+            }
         ],
     },
 "how_we_test": {
     "title": "Hoe wij snijplanken beoordelen",
     "intro": "Bij snijplanken selecteren we op criteria die bepalend zijn voor veiligheid, kwaliteit en dagelijks keukengebruik.",
     "bullets": [
-        "Materiaalkeuze: houtsoort, hardheid en voedselveiligheid.",
+        "Materiaalkeuze: houtsoort, hardheid en geschiktheid voor dagelijks keukengebruik.",
         "Duurzaamheid: weerstand tegen krassen, vocht en intensief gebruik.",
         "Onderhoudsgemak: eenvoudig te reinigen en te onderhouden.",
         "Formaat en stabiliteit: stevig werkoppervlak dat past bij dagelijkse bereidingen.",
