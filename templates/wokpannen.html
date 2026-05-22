@@ -37,26 +37,43 @@
 <header class="main">
 <h1>{{ hero_h1 }}</h1>
 </header>
-<p>Wokken vraagt om hoge temperaturen, en juist dan is een PFAS-vrije pan extra belangrijk. Onze top selectie biedt veilige, krachtige wokpannen — keramisch, koolstofstaal of RVS — voor authentieke wokresultaten zonder schadelijke stoffen.</p>
+{% for paragraph in content.hero.paragraphs %}
+<p>{{ paragraph|safe }}</p>
+{% endfor %}
 </div>
 </section>
 {% include "partials/format_selector.html" %}
 {% include "partials/top_picks.html" %}
 
+{% if content.why_choose %}
 <section>
 <header class="major">
-<h2>Waarom kiezen voor een PFAS-vrije wokpan?</h2>
+<h2>{{ content.why_choose.title }}</h2>
 </header>
-<p>Steeds meer consumenten kiezen bewust voor PFAS-vrije pannen, en dat is niet zonder reden. Traditionele antiaanbaklagen bevatten fluorverbindingen die langdurig in het milieu achterblijven en in sommige gevallen gezondheidsrisico's kunnen vormen. PFAS-vrije wokpannen bieden een veilig en duurzaam alternatief.</p>
+{% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
 <ul>
-<li><strong>Veiliger voor je gezondheid:</strong> keramische coatings bevatten geen schadelijke stoffen en geven geen dampen af bij hoge temperaturen.</li>
-<li><strong>Milieuvriendelijker:</strong> PFAS-vrije pannen dragen niet bij aan de verspreiding van moeilijk afbreekbare chemicaliën.</li>
-<li><strong>Uitstekende kookprestaties:</strong> keramiek kan goed omgaan met hoge temperaturen en reageert snel op hitteveranderingen.</li>
-<li><strong>Geschikt voor elke keuken:</strong> moderne PFAS-vrije pannen zijn bijna altijd geschikt voor inductie, gas en elektrisch koken.</li>
-<li><strong>Betere smaak en textuur:</strong> wokken op een PFAS-vrije pan zorgt vaak voor een natuurlijkere korst en meer authentieke wokresultaten.</li>
+{% for bullet in content.why_choose.bullets %}
+<li>{{ bullet|safe }}</li>
+{% endfor %}
 </ul>
-<p>Een PFAS-vrije wokpan is dus niet alleen een gezonde keuze, maar ook een logische stap richting een duurzamere keuken en betere kookervaring.</p>
+{% if content.why_choose.outro %}<p>{{ content.why_choose.outro|safe }}</p>{% endif %}
 </section>
+{% endif %}
+
+{% if content.wok_behavior %}
+<section>
+<header class="major">
+<h2>{{ content.wok_behavior.title }}</h2>
+</header>
+{% if content.wok_behavior.intro %}<p>{{ content.wok_behavior.intro|safe }}</p>{% endif %}
+<ul>
+{% for bullet in content.wok_behavior.bullets %}
+<li>{{ bullet|safe }}</li>
+{% endfor %}
+</ul>
+{% if content.wok_behavior.outro %}<p>{{ content.wok_behavior.outro|safe }}</p>{% endif %}
+</section>
+{% endif %}
 
 {% include "partials/how_we_select.html" %}
 
@@ -122,21 +139,20 @@
     </div>
 </section>
 
+{% if content.tips %}
 <section>
 <header class="major">
-<h2>Onderhoudstips voor PFAS-vrije wokpannen</h2>
+<h2>{{ content.tips.title }}</h2>
 </header>
-<p>Met de juiste verzorging gaat een PFAS-vrije wokpan jarenlang mee en behoudt hij zijn anti-aanbakprestaties en veiligheid. Gebruik onderstaande tips om jouw keramische of koolstofstalen wok optimaal te onderhouden.</p>
+{% if content.tips.intro %}<p>{{ content.tips.intro|safe }}</p>{% endif %}
 <ul>
-<li>Laat de pan volledig afkoelen voordat je hem schoonmaakt om thermische schokken te voorkomen.</li>
-<li>Gebruik warm water en een zachte spons; vermijd schuurmiddelen en metalen borstels.</li>
-<li>Reinig altijd met de hand — PFAS-vrije pannen zijn niet geschikt voor de vaatwasser.</li>
-<li>Gebruik houten of siliconen spatels om beschadigingen aan de coating te voorkomen.</li>
-<li>Bij keramische pannen: kook af en toe water met een beetje azijn om aangekoekte resten los te maken.</li>
-<li>Bij koolstofstalen pannen (zoals De Buyer): regelmatig opnieuw inbranden voor optimale prestaties.</li>
-<li>Bewaar de pan niet met andere pannen direct er bovenop — gebruik eventueel een vilten protector.</li>
+{% for bullet in content.tips.bullets %}
+<li>{{ bullet|safe }}</li>
+{% endfor %}
 </ul>
+{% if content.tips.outro %}<p>{{ content.tips.outro|safe }}</p>{% endif %}
 </section>
+{% endif %}
 
 {% if conclusie %}
 <section>
