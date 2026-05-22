@@ -2,12 +2,9 @@ CONTENT = {
         "hero": {
         "h1": "Top {product_count} PFAS-vrije Wokpannen \u2013 Gezond, Duurzaam & Stijlvol",
         "paragraphs": [
-            "Een PFAS-vrije wokpan is de beste keuze voor wie gezond, veilig en bewust wil koken. Traditionele antiaanbaklagen bevatten vaak PFAS \u2014 stoffen "
-            "die bij hoge temperaturen schadelijke dampen kunnen afgeven en nauwelijks afbreekbaar zijn in het milieu. Omdat wokken plaatsvindt op zeer hoge "
-            "temperaturen, speelt veiligheid hier een extra grote rol.",
+            "Veel consumenten kiezen tegenwoordig bewust voor PFAS-vrije wokpannen. Omdat wokken vaak op hogere temperaturen gebeurt dan normaal bakken, kiezen sommige gebruikers liever voor materialen zonder klassieke fluorhoudende antiaanbaklagen.",
             "Gelukkig bestaan er uitstekende alternatieven die volledig vrij zijn van PFAS. Denk aan keramisch gecoate wokpannen, koolstofstaal of hoogwaardige "
-            "roestvrijstalen modellen. Deze materialen zijn niet alleen veiliger, maar zorgen ook voor krachtige bakresultaten, een natuurlijke antiaanbakwerking "
-            "en een authentieke wokervaring.",
+            "roestvrijstalen modellen. Deze materialen zijn niet alleen veiliger, maar zorgen ook voor krachtige bakresultaten, goede bakprestaties en gebruiksgemak.",
             "PFAS-vrije wokpannen zijn duurzaam, robuust en ideaal voor dagelijks gebruik. Ze combineren moderne veiligheid met traditionele kookprestaties en "
             "zijn geschikt voor elk type fornuis \u2014 van gas tot inductie. Of je nu roerbakgerechten bereidt, ingredi\u00ebnten stoomt of snel wilt frituren, "
             "een PFAS-vrije wokpan levert betrouwbare prestaties zonder schadelijke stoffen.",
@@ -22,13 +19,24 @@ CONTENT = {
             "PFAS-vrije wokpannen bieden een veilig en duurzaam alternatief."
         ),
         "bullets": [
-            "<strong>Veiliger voor je gezondheid:</strong> keramische coatings bevatten geen schadelijke stoffen en geven geen dampen af bij hoge temperaturen.",
-            "<strong>Milieuvriendelijker:</strong> PFAS-vrije pannen dragen niet bij aan de verspreiding van moeilijk afbreekbare chemic\u00e4li\u00ebn.",
-            "<strong>Uitstekende kookprestaties:</strong> keramiek kan goed omgaan met hoge temperaturen en reageert snel op hitteveranderingen.",
-            "<strong>Geschikt voor elke keuken:</strong> moderne PFAS-vrije pannen zijn bijna altijd geschikt voor inductie, gas en elektrisch koken.",
-            "<strong>Betere smaak en textuur:</strong> wokken op een PFAS-vrije pan zorgt vaak voor een natuurlijkere korst en meer authentieke wokresultaten.",
+            "<strong>Geschikt voor hoge temperaturen:</strong> belangrijk voor krachtig roerbakken en snelle bereidingen.",
+            "<strong>Bewuste materiaalkeuze:</strong> interessant voor gebruikers die zonder klassieke fluorhoudende coatings willen koken.",
+            "<strong>Snelle warmteopbouw:</strong> belangrijk voor groenten, vlees en authentieke wokgerechten.",
+            "<strong>Geschikt voor moderne keukens:</strong> de meeste modellen werken op inductie, gas en elektrisch.",
+            "<strong>Veelzijdig:</strong> bruikbaar voor roerbakken, stomen en dagelijkse maaltijden."
         ],
         "outro": "Een PFAS-vrije wokpan is dus niet alleen een gezonde keuze, maar ook een logische stap richting een duurzamere keuken en betere kookervaring.",
+    },
+    "wok_behavior": {
+       "title":"Waar letten wij op bij wokpannen?",
+       "intro":"Bij een wokpan draait het niet alleen om een coating of materiaal. Een goede wok moet snel reageren op warmte en prettig werken tijdens roerbakken.",
+       "bullets":[
+           "<strong>Snelle warmteopbouw:</strong> belangrijk voor korte bereidingen op hogere temperaturen.",
+           "<strong>Gewicht en balans:</strong> lichtere wokpannen bewegen makkelijker tijdens roerbakken.",
+           "<strong>Warmteverdeling:</strong> voorkomt koude plekken bij grotere porties.",
+           "<strong>Geschiktheid voor hoge temperaturen:</strong> relevant voor schroeien en klassieke woktechnieken.",
+           "<strong>Gebruiksgemak:</strong> hoe prettig blijft de pan in dagelijks gebruik."
+       ]
     },
     "size_guide": None,
     "products_section": {
@@ -44,7 +52,7 @@ CONTENT = {
         "bullets": [
             "Laat de pan volledig afkoelen voordat je hem schoonmaakt om thermische schokken te voorkomen.",
             "Gebruik warm water en een zachte spons; vermijd schuurmiddelen en metalen borstels.",
-            "Reinig altijd met de hand \u2014 PFAS-vrije pannen zijn niet geschikt voor de vaatwasser.",
+            "Hoewel sommige modellen vaatwasbestendig zijn, raden veel fabriaknten handwas aan om de levensduur van de coating te verlengen.",
             "Gebruik houten of siliconen spatels om beschadigingen aan de coating te voorkomen.",
             "Bij keramische pannen: kook af en toe water met een beetje azijn om aangekoekte resten los te maken.",
             "Bij koolstofstalen pannen (zoals De Buyer): regelmatig opnieuw inbranden voor optimale prestaties.",
@@ -69,19 +77,10 @@ CONTENT = {
         30: {
             "title": "Conclusie \u2013 Onze aanbeveling",
             "text": (
-                "Zoek je een ruime wokpan voor grotere porties of koken voor het hele gezin, dan is "
-                "een <strong>30\u00a0cm wokpan</strong> de meest veelzijdige keuze. Binnen deze categorie springt de "
-                "<strong>GreenPan Barcelona Evershine</strong> eruit als beste koop dankzij de combinatie van een "
-                "PFAS-vrije keramische coating, stabiele constructie en uitstekende prestaties op inductie. "
-                "Voor wie geen concessies wil doen en maximale duurzaamheid en bakprestaties zoekt, "
-                "is de <strong>Scanpan TechnIQ wokpan</strong> de logische premium keuze. Deze pan is ontworpen "
-                "voor intensief gebruik en biedt professionele controle, terwijl hij volledig PFAS-vrij blijft. "
-                "Wil je vooral betaalbaar en gezond wokken, dan is de <strong>BK Easy Induction Ceramic wokpan</strong> "
-                "een uitstekende budgetoptie. Zoek je iets meer kwaliteit en afwerking zonder direct naar "
-                "het premiumsegment te gaan, dan bieden de <strong>GreenPan Copenhagen</strong> en "
-                "<strong>BK Balans+</strong> een sterke middenklasse keuze. "
-                "Welke pan je ook kiest: met een PFAS-vrije 30\u00a0cm wokpan kook je ruimer, effici\u00ebnter en "
-                "bewuster \u2013 ideaal voor dagelijks roerbakken zonder schadelijke stoffen."
+               "Zoek je een ruime wokpan voor grotere porties of koken voor het hele gezin, dan is een 30 cm wokpan een veelzijdige keuze. "
+               "De GreenPan Barcelona Evershine springt eruit als beste allround keuze dankzij de combinatie van stabiele constructie, ruime capaciteit en sterke prestaties op inductie. "
+               "Zoek je een toegankelijke instapoptie, dan blijft de BK Easy Induction Ceramic een interessante budgetkeuze. "
+               "Voor gebruikers die een stap hoger willen in afwerking en dagelijks gebruiksgemak bieden de GreenPan Copenhagen en BK Superior sterke middenklasse-opties."
             ),
         },
     },
@@ -90,7 +89,7 @@ CONTENT = {
         "items": [
             {
                 "q": "Zijn keramische wokpannen volledig PFAS-vrij?",
-                "a": "Ja. Keramische anti-aanbaklagen worden gemaakt zonder PFAS, PFOA, PTFE of andere schadelijke fluorverbindingen. Ze zijn daarom een veilig alternatief voor traditionele antiaanbakpannen.",
+                "a": "De meeste moderne keramische anti-aanbaklagen worden geproduceerd zonder PFAS, PFOA en PTFE. Controleer bij aankoop altijd de productspecificaties van de fabrikant.",
             },
             {
                 "q": "Hoe lang gaat een PFAS-vrije wokpan mee?",
@@ -132,6 +131,10 @@ CONTENT = {
             {
                 "q": "Welke wokpan is geschikt voor inductie?",
                 "a": "Alleen wokpannen met een platte, magnetische bodem werken op inductie. De meeste moderne PFAS-vrije keramische wokpannen (BK, GreenPan, BergHOFF) hebben standaard een induc­tiebodem. Traditionele rondbodem-woks werken niet op inductie zonder speciale wokring.",
+            },
+            {
+            "q":"Waarom hebben wokpannen hoge schuine randen?",
+            "a":"De hoge schuine randen maken het makkelijker om ingrediënten te bewegen en snel te roerbakken. Hierdoor ontstaat een gelijkmatige bereiding en blijft meer structuur behouden."
             },
         ],
     },
