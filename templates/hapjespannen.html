@@ -38,26 +38,28 @@
         <header class="main">
                 <h1>{{ hero_h1 }}</h1>
         </header>
-        <p>Een hapjespan is onmisbaar in iedere keuken — ideaal voor stoofgerechten, pasta's en eenpansgerechten. Onze PFAS-vrije selectie combineert veilige materialen met uitstekende bakprestaties, zodat je gezond en zonder zorgen kookt.</p>
+        {% for paragraph in content.hero.paragraphs %}
+        <p>{{ paragraph|safe }}</p>
+        {% endfor %}
         </div>
 </section>
 {% include "partials/format_selector.html" %}
 {% include "partials/top_picks.html" %}
 
+{% if content.why_choose %}
 <section>
 <header class="major">
-<h2>Waarom kiezen voor een PFAS-vrije hapjespan?</h2>
+<h2>{{ content.why_choose.title }}</h2>
 </header>
-<p>Een PFAS-vrije hapjespan is een bewuste keuze voor gezond koken en een veiligere keuken. Traditionele antiaanbaklagen kunnen fluorchemicaliën bevatten die bij hoge temperaturen of beschadiging ongewenste stoffen kunnen afgeven. PFAS-vrije alternatieven bieden dezelfde gebruiksvriendelijkheid, maar zonder deze risico's.</p>
+{% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
 <ul>
-<li><strong>Gezonder koken:</strong> PFAS-vrije coatings geven geen schadelijke stoffen af, ook niet bij hoge temperaturen.</li>
-<li><strong>Milieuvriendelijker:</strong> PFAS-stoffen breken nauwelijks af in de natuur. PFAS-vrije pannen verminderen je ecologische footprint.</li>
-<li><strong>Betere hittebestendigheid:</strong> Keramische lagen en stalen pannen kunnen hogere temperaturen aan zonder af te breken.</li>
-<li><strong>Lange levensduur:</strong> Materialen zoals keramiek en koolstofstaal blijven intact bij juist gebruik en gaan vaak jarenlang mee.</li>
-<li><strong>Geschikt voor alle warmtebronnen:</strong> Moderne PFAS-vrije pannen werken uitstekend op inductie, gas, elektrisch en in veel gevallen ook in de oven.</li>
+{% for bullet in content.why_choose.bullets %}
+<li>{{ bullet|safe }}</li>
+{% endfor %}
 </ul>
-<p>Of je nu kiest voor een keramische hapjespan met directe antiaanbakwerking of een natuurlijke stalen pan die zichzelf verbetert door gebruik: een PFAS-vrije hapjespan is een veilige, toekomstbestendige en duurzame keuze voor elke keuken.</p>
+{% if content.why_choose.outro %}<p>{{ content.why_choose.outro|safe }}</p>{% endif %}
 </section>
+{% endif %}
 {% include "partials/how_we_select.html" %}
 
 <h2 class="category-title" id="productlijst">{{ products_h2 }}</h2>
@@ -122,23 +124,20 @@
     </div>
 </section>
 
+{% if content.tips %}
 <section>
 <header class="major">
-<h2>Onderhoudstips voor PFAS-vrije hapjespannen</h2>
+<h2>{{ content.tips.title }}</h2>
 </header>
-<p>Met de juiste verzorging gaan PFAS-vrije hapjespannen jarenlang mee. Volg de onderstaande tips voor het beste behoud van de antiaanbaklaag en optimale kookprestaties.</p>
+{% if content.tips.intro %}<p>{{ content.tips.intro|safe }}</p>{% endif %}
 <ul>
-<li><strong>Reinig met de hand:</strong> was de pan altijd af met warm water en een zachte spons. Vermijd agressieve schuursponzen of staalwol.</li>
-<li><strong>Gebruik milde zeep:</strong> sterke ontvetters kunnen de keramische laag aantasten.</li>
-<li><strong>Laat de pan goed afkoelen:</strong> zet een hete pan nooit onder koud water om thermische schok en vervorming te voorkomen.</li>
-<li><strong>Gebruik houten of siliconen keukengerei:</strong> metalen spatels kunnen de coating beschadigen.</li>
-<li><strong>Kook op middelhoge temperatuur:</strong> keramische lagen presteren het best zonder extreme hitte.</li>
-<li><strong>Voorkom olie-sprays:</strong> aerosols kunnen een plakkerige film achterlaten die moeilijk te verwijderen is.</li>
-<li><strong>Bewaar de pan zorgvuldig:</strong> gebruik panbeschermers of keukenpapier tussen gestapelde pannen.</li>
-<li><strong>Voor stalen pannen (zoals Mineral B):</strong> brand de pan regelmatig in en vermijd afwasmiddel om de natuurlijke patina te behouden.</li>
+{% for bullet in content.tips.bullets %}
+<li>{{ bullet|safe }}</li>
+{% endfor %}
 </ul>
-<p>Met deze onderhoudstips blijft je hapjespan langer als nieuw, behoudt hij zijn antiaanbakprestaties en kook je gezonder.</p>
+{% if content.tips.outro %}<p>{{ content.tips.outro|safe }}</p>{% endif %}
 </section>
+{% endif %}
 
 {% if conclusie %}
 <section>

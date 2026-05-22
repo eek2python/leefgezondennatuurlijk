@@ -39,61 +39,47 @@
         <header class="main">
             <h1>{{ hero_h1 }}</h1>
         </header>
-        <p>Gezond koken begint met de juiste pan. Onze PFAS-vrije koekenpannen zijn geselecteerd op veiligheid, prestaties en duurzaamheid — zodat je elke dag bewust kookt zonder concessies.</p>
+        {% for paragraph in content.hero.paragraphs %}
+        <p>{{ paragraph|safe }}</p>
+        {% endfor %}
     </div>
 </section>
 {% include "partials/format_selector.html" %}
 {% include "partials/top_picks.html" %}
 
+{% if content.why_choose %}
 <section>
     <header class="major">
-        <h2>Waarom kiezen voor een PFAS-vrije koekenpan?</h2>
+        <h2>{{ content.why_choose.title }}</h2>
     </header>
-    <p>PFAS-vrije koekenpannen zijn de veilige en bewuste keuze voor wie gezond wil koken zonder schadelijke stoffen.
-    Traditionele antiaanbaklagen kunnen chemicaliën bevatten die niet afbreekbaar zijn in het milieu en zich kunnen ophopen in het lichaam.
-    Een PFAS-vrije pan daarentegen gebruikt natuurlijke keramische of minerale coatings die hittebestendig en voedselveilig zijn.</p>
+    {% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
     <ul>
-    <li><strong>Gezonder koken:</strong> Geen schadelijke dampen of microdeeltjes bij verhitting.</li>
-    <li><strong>Milieuvriendelijk:</strong> Bevat geen PFAS, PTFE of PFOA – veilig voor mens en natuur.</li>
-    <li><strong>Duurzaam:</strong> Gemaakt van robuuste materialen zoals RVS, keramiek of gerecycled aluminium.</li>
-    <li><strong>Onderhoudsvriendelijk:</strong> Eenvoudig schoon te maken met een zachte spons en warm water.</li>
+    {% for bullet in content.why_choose.bullets %}
+    <li>{{ bullet|safe }}</li>
+    {% endfor %}
     </ul>
+    {% if content.why_choose.outro %}<p>{{ content.why_choose.outro|safe }}</p>{% endif %}
 </section>
+{% endif %}
 
+{% if content.size_guide %}
 <!-- ⭐ KOOPGIDS: WELK FORMAAT KOEKENPAN? -->
 <section>
     <header class="major">
-        <h2>Welk formaat koekenpan heb ik nodig?</h2>
+        <h2>{{ content.size_guide.title }}</h2>
     </header>
-        <p>
-           Bij het kiezen van een nieuwe koekenpan speelt het formaat een grote rol.
-           Een te kleine pan bakt ongelijk, terwijl een te grote pan minder efficiënt opwarmt — vooral op inductie.
-           De ideale maat hangt af van je huishouden en kookstijl.
-        </p>
-        <h3>De meest gebruikte formaten</h3>
+    {% if content.size_guide.intro %}<p>{{ content.size_guide.intro|safe }}</p>{% endif %}
+    {% for section in content.size_guide.sections %}
+        <h3>{{ section.h3 }}</h3>
         <ul>
-        <li><b>Ø 20 cm</b> – Ideaal voor 1 persoon, perfect voor eieren en kleine porties.</li>
-        <li><b>Ø 24 cm</b> – Voor 1–2 personen; veelzijdig voor dagelijkse gerechten.</li>
-        <li><b>Ø 26 cm</b> – Voor 2–3 personen; goede balans tussen ruimte en efficiëntie.</li>
-        <li><b>Ø 28 cm</b> – Voor 3–4 personen; het populairste formaat in Nederland.</li>
-        <li><b>Ø 30–32 cm</b> – Voor grotere gezinnen; alleen geschikt als je kookplaat dit ondersteunt.</li>
+        {% for item in section.items %}
+            <li>{{ item|safe }}</li>
+        {% endfor %}
         </ul>
-        <h3>Aanbevolen combinaties per huishouden</h3>
-        <ul>
-        <li><b>Alleenstaand:</b> 20 cm of 24 cm</li>
-        <li><b>Stel:</b> 24 cm + 28 cm</li>
-        <li><b>Gezin (3–4 personen):</b> 26 cm + 28 cm</li>
-        <li><b>Groot gezin:</b> 28 cm + 32 cm</li>
-        </ul>
-        <h3>Praktische tips</h3>
-        <ul>
-        <li>🎯 <b>Stem de pan af op je kookplaat</b> — vooral bij inductie is de panbodem belangrijk.</li>
-        <li>🥩 <b>Bak je veel vlees?</b> Gebruik 26–28 cm voor optimaal dichtschroeien.</li>
-        <li>🍳 <b>Kook je vaak kleine porties?</b> Neem een extra 20 cm-pan erbij.</li>
-        <li>🍲 <b>Veel saus- of wokgerechten?</b> Overweeg een hapjespan van 24–28 cm.</li>
-        </ul>
-        <p><b>Kort gezegd:</b> 28 cm is het meest gekozen formaat in Nederland, maar 24 cm + 28 cm is voor de meeste keukens de ideale combinatie.</p>
+    {% endfor %}
+    {% if content.size_guide.outro %}<p>{{ content.size_guide.outro|safe }}</p>{% endif %}
 </section>
+{% endif %}
 {% include "partials/how_we_select.html" %}
 
 <h2 class="category-title" id="productlijst">{{ products_h2 }}</h2>
@@ -159,20 +145,20 @@
 </section>
 
 
+{% if content.tips %}
 <section>
 <header class="major">
-<h2>Onderhoudstips voor PFAS-vrije koekenpannen</h2>
+<h2>{{ content.tips.title }}</h2>
 </header>
-    <p>Met het juiste onderhoud verleng je de levensduur van je pan en behoudt de antiaanbaklaag zijn optimale werking.
-    PFAS-vrije pannen vragen weinig onderhoud, maar regelmatig en zorgvuldig gebruik maakt een groot verschil.</p>
+{% if content.tips.intro %}<p>{{ content.tips.intro|safe }}</p>{% endif %}
 <ul>
-<li>Laat de pan altijd afkoelen voor je hem afspoelt of schoonmaakt.</li>
-<li>Gebruik een zachte spons en milde afwasmiddel – vermijd schuursponsjes.</li>
-<li>Kook op middelhoog vuur om de coating te beschermen.</li>
-<li>Gebruik houten of siliconen keukengerei om krassen te voorkomen.</li>
-<li>Was de pan bij voorkeur met de hand, zelfs als deze vaatwasserbestendig is.</li>
+{% for bullet in content.tips.bullets %}
+<li>{{ bullet|safe }}</li>
+{% endfor %}
 </ul>
+{% if content.tips.outro %}<p>{{ content.tips.outro|safe }}</p>{% endif %}
 </section>
+{% endif %}
 
 {% if conclusie %}
 <section>

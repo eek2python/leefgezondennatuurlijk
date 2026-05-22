@@ -54,10 +54,10 @@ CONTENT = {
             {
                 "h3": "Praktische tips",
                 "items": [
-                    "\ud83c\udfaf <b>Stem de pan af op je kookplaat</b> \u2014 vooral bij inductie is de panbodem belangrijk.",
-                    "\ud83e\udd69 <b>Bak je veel vlees?</b> Gebruik 26\u201328\u00a0cm voor optimaal dichtschroeien.",
-                    "\ud83c\udf73 <b>Kook je vaak kleine porties?</b> Neem een extra 20\u00a0cm-pan erbij.",
-                    "\ud83c\udf72 <b>Veel saus- of wokgerechten?</b> Overweeg een hapjespan van 24\u201328\u00a0cm.",
+                    "🎯 <b>Stem de pan af op je kookplaat</b> \u2014 vooral bij inductie is de panbodem belangrijk.",
+                    "🥩 <b>Bak je veel vlees?</b> Gebruik 26\u201328\u00a0cm voor optimaal dichtschroeien.",
+                    "🍳 <b>Kook je vaak kleine porties?</b> Neem een extra 20\u00a0cm-pan erbij.",
+                    "🍲 <b>Veel saus- of wokgerechten?</b> Overweeg een hapjespan van 24\u201328\u00a0cm.",
                 ],
             },
         ],

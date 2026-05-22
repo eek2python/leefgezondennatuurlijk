@@ -137,6 +137,21 @@ def _build_in_het_kort(products, content):
     }
 
 
+def _format_content(content, **fmt):
+    def _walk(node):
+        if isinstance(node, str):
+            try:
+                return node.format(**fmt)
+            except (KeyError, IndexError, ValueError):
+                return node
+        if isinstance(node, list):
+            return [_walk(x) for x in node]
+        if isinstance(node, dict):
+            return {k: _walk(v) for k, v in node.items()}
+        return node
+    return _walk(content)
+
+
 def _build_faq_ld(faq_items):
     return json.dumps({
         "@context": "https://schema.org",
@@ -281,6 +296,7 @@ def koekenpannen(request):
     comparison_title = content["products_section"]["comparison_title"].format(
         product_count=product_count, selected_size=size
     )
+    content = _format_content(content, product_count=product_count, selected_size=size)
     faq_ld = _build_faq_ld(content["faq"]["items"])
     json_ld = _build_itemlist_ld(
         request,
@@ -333,6 +349,7 @@ def hapjespannen(request):
     comparison_title = content["products_section"]["comparison_title"].format(
         product_count=product_count, selected_size=size
     )
+    content = _format_content(content, product_count=product_count, selected_size=size)
     faq_ld = _build_faq_ld(content["faq"]["items"])
     json_ld = _build_itemlist_ld(
         request,
@@ -382,6 +399,7 @@ def wokpannen(request):
     comparison_title = content["products_section"]["comparison_title"].format(
         product_count=product_count, selected_size=size
     )
+    content = _format_content(content, product_count=product_count, selected_size=size)
     faq_ld = _build_faq_ld(content["faq"]["items"])
     json_ld = _build_itemlist_ld(
         request,
