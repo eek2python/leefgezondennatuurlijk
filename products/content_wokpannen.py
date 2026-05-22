@@ -52,7 +52,7 @@ CONTENT = {
         "bullets": [
             "Laat de pan volledig afkoelen voordat je hem schoonmaakt om thermische schokken te voorkomen.",
             "Gebruik warm water en een zachte spons; vermijd schuurmiddelen en metalen borstels.",
-            "Hoewel sommige modellen vaatwasbestendig zijn, raden veel fabriaknten handwas aan om de levensduur van de coating te verlengen.",
+            "Hoewel sommige modellen vaatwasbestendig zijn, raden veel fabrikanten handwas aan om de levensduur van de coating te verlengen.",
             "Gebruik houten of siliconen spatels om beschadigingen aan de coating te voorkomen.",
             "Bij keramische pannen: kook af en toe water met een beetje azijn om aangekoekte resten los te maken.",
             "Bij koolstofstalen pannen (zoals De Buyer): regelmatig opnieuw inbranden voor optimale prestaties.",
