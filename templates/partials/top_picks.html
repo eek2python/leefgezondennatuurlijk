@@ -1,12 +1,16 @@
 {% if top_picks %}
 <section class="category-section top-picks">
     <header class="major">
-        <h2>Snel kiezen: onze 3 aanbevelingen</h2>
+        {% with c1=top_picks.beste|yesno:"1,0" c2=top_picks.budget|yesno:"1,0" c3=top_picks.premium|yesno:"1,0" %}
+        {% with picks_count=c1|add:c2|add:c3 %}
+        <h2>Snel kiezen: {% if picks_count == 1 %}onze aanbeveling{% else %}onze {{ picks_count }} aanbevelingen{% endif %}</h2>
         {% if selected_size %}
-        <p class="top-picks-intro">Geen tijd om alles te vergelijken? Dit zijn onze drie belangrijkste keuzes uit de volledige {{ selected_size }} cm lijst.</p>
+        <p class="top-picks-intro">Geen tijd om alles te vergelijken? {% if picks_count == 1 %}Dit is onze belangrijkste keuze{% else %}Dit zijn onze {{ picks_count }} belangrijkste keuzes{% endif %} uit de volledige {{ selected_size }} cm lijst.</p>
         {% else %}
-        <p class="top-picks-intro">Geen tijd om alles te vergelijken? Dit zijn onze drie belangrijkste keuzes uit de volledige lijst.</p>
+        <p class="top-picks-intro">Geen tijd om alles te vergelijken? {% if picks_count == 1 %}Dit is onze belangrijkste keuze{% else %}Dit zijn onze {{ picks_count }} belangrijkste keuzes{% endif %} uit de volledige lijst.</p>
         {% endif %}
+        {% endwith %}
+        {% endwith %}
     </header>
     <div class="top-picks-grid">
         {% if top_picks.beste %}
