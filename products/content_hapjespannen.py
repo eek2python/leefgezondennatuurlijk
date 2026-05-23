@@ -2,32 +2,25 @@ CONTENT = {
         "hero": {
         "h1": "Top {product_count} PFAS-vrije Hapjespannen voor Gezond Koken",
         "paragraphs": [
-            "Een hapjespan is onmisbaar in iedere keuken: ideaal voor stoofgerechten, pasta\u2019s, risotto\u2019s en eenpansgerechten. "
-            "Toch bevatten veel traditionele pannen schadelijke stoffen zoals <strong>PFAS</strong> of <strong>teflon</strong>. "
-            "Deze stoffen kunnen bij verhitting vrijkomen en na verloop van tijd gezondheidsrisico\u2019s opleveren. "
-            "Gelukkig zijn er tegenwoordig uitstekende PFAS-vrije alternatieven die niet alleen veiliger zijn, maar ook duurzaam en gebruiksvriendelijk.",
-            "In deze top\u00a010 ontdek je de beste niet-giftige hapjespannen van dit moment \u2014 beoordeeld op "
-            "<em>materiaal, gebruiksgemak, duurzaamheid en prijs-kwaliteitverhouding</em>.",
+            "Een hapjespan is onmisbaar in de keuken: ideaal voor sauzen, pasta’s, risotto’s, stoofgerechten en complete éénpansmaaltijden. Omdat je een hapjespan vaak gebruikt voor langere bereidingen, kiezen veel mensen bewust voor een pan zonder klassieke PFAS- of PTFE-antiaanbaklaag.",
+               "In deze selectie vergelijken we PFAS-vrije hapjespannen op materiaal, warmteverdeling, gebruiksgemak, deksel, duurzaamheid en prijs-kwaliteit. Zo zie je snel welke pan past bij jouw manier van koken.",
         ],
     },
     "why_choose": {
-        "title": "Waarom kiezen voor een PFAS-vrije hapjespan?",
-        "intro": (
-            "Een PFAS-vrije hapjespan is een bewuste keuze voor gezond koken en een veiligere keuken. Traditionele antiaanbaklagen kunnen "
-            "fluorchemic\u00e4li\u00ebn bevatten die bij hoge temperaturen of beschadiging ongewenste stoffen kunnen afgeven. "
-            "PFAS-vrije alternatieven bieden dezelfde gebruiksvriendelijkheid, maar zonder deze risico\u2019s."
-        ),
-        "bullets": [
-            "<strong>Gezonder koken:</strong> PFAS-vrije coatings geven geen schadelijke stoffen af, ook niet bij hoge temperaturen.",
-            "<strong>Milieuvriendelijker:</strong> PFAS-stoffen breken nauwelijks af in de natuur. PFAS-vrije pannen verminderen je ecologische footprint.",
-            "<strong>Betere hittebestendigheid:</strong> Keramische lagen en stalen pannen kunnen hogere temperaturen aan zonder af te breken.",
-            "<strong>Lange levensduur:</strong> Materialen zoals keramiek en koolstofstaal blijven intact bij juist gebruik en gaan vaak jarenlang mee.",
-            "<strong>Geschikt voor alle warmtebronnen:</strong> Moderne PFAS-vrije pannen werken uitstekend op inductie, gas, elektrisch en in veel gevallen ook in de oven.",
-        ],
-        "outro": (
-            "Of je nu kiest voor een keramische hapjespan met directe antiaanbakwerking of een natuurlijke stalen pan die zichzelf verbetert door gebruik: "
-            "een PFAS-vrije hapjespan is een veilige, toekomstbestendige en duurzame keuze voor elke keuken."
-        ),
+         "title": "Waarom kiezen voor een PFAS-vrije hapjespan?",
+           "intro": (
+               "Een hapjespan wordt vaak gebruikt voor sauzen, sudderen en éénpansgerechten. Juist daarom is materiaalkeuze belangrijk: je wilt een pan die prettig kookt, goed warmte verdeelt en past bij dagelijks gebruik."
+           ),
+           "bullets": [
+               "<strong>Veelzijdig:</strong> geschikt voor bakken, sudderen, sauzen en complete éénpansgerechten.",
+               "<strong>Hoge randen:</strong> handig voor gerechten met saus, groenten of rijst zonder snel te morsen.",
+               "<strong>Bewuste materiaalkeuze:</strong> aantrekkelijk voor wie zonder klassieke PFAS- of PTFE-antiaanbaklaag wil koken.",
+               "<strong>Gebruiksvriendelijk:</strong> keramische hapjespannen bieden direct antiaanbakgemak.",
+               "<strong>Met deksel:</strong> veel modellen zijn geschikt voor langzaam garen en energiezuiniger koken."
+           ],
+           "outro": (
+               "Een goede hapjespan onderscheidt zich dus niet alleen door de coating, maar vooral door vorm, warmteverdeling, inhoud en gebruiksgemak."
+           ),
     },
     "size_guide": None,
     "products_section": {
@@ -48,47 +41,29 @@ CONTENT = {
             "<strong>Kook op middelhoge temperatuur:</strong> keramische lagen presteren het best zonder extreme hitte.",
             "<strong>Voorkom olie-sprays:</strong> aerosols kunnen een plakkerige film achterlaten die moeilijk te verwijderen is.",
             "<strong>Bewaar de pan zorgvuldig:</strong> gebruik panbeschermers of keukenpapier tussen gestapelde pannen.",
-            "<strong>Voor stalen pannen (zoals Mineral\u00a0B):</strong> brand de pan regelmatig in en vermijd afwasmiddel om de natuurlijke patina te behouden.",
-        ],
+            "Controleer altijd de maximale oventemperatuur, vooral bij pannen met soft-touch grepen of kunststof onderdelen.",
+            ],
         "outro": "Met deze onderhoudstips blijft je hapjespan langer als nieuw, behoudt hij zijn antiaanbakprestaties en kook je gezonder.",
     },
     "conclusies": {
         24: {
-            "title": "Conclusie \u2013 Onze aanbeveling",
-            "text": (
-                "Voor wie in het <strong>24\u00a0cm formaat</strong> een veelzijdige en gezonde hapjespan zoekt, "
-                "biedt deze selectie uitstekende opties voor uiteenlopende kookstijlen en budgetten. "
-                "De <strong>GreenPan Barcelona Pro</strong> is onze duidelijke favoriet dankzij zijn "
-                "hoogwaardige keramische coating, uitstekende bakprestaties en duurzame afwerking. "
-                "Zoek je een goed uitgebalanceerde middenklasse pan met moderne uitstraling, "
-                "dan is de <strong>BK Brilliant</strong> een zeer aantrekkelijke keuze. "
-                "Voor veeleisende thuiskoks die maximale prestaties en duurzaamheid belangrijk vinden, "
-                "bieden de <strong>WOLL Eco Lite QXR</strong> en de <strong>Le Creuset Toughened Non-Stick PRO</strong> "
-                "een premium kookervaring met uitstekende warmteverdeling en langdurige antiaanbakprestaties. "
-                "Geef je de voorkeur aan een volledig coatingvrije en natuurlijke oplossing, "
-                "dan is de <strong>De Buyer Mineral B Element</strong> een uitstekende keuze, "
-                "mits je bereid bent deze pan goed in te branden en te onderhouden. "
-                "Wil je vooral betaalbaar en PFAS-vrij koken, dan bieden de "
-                "<strong>Kochstar Essenz</strong>, <strong>BK Easy Induction</strong> en "
-                "<strong>GreenChef Prime</strong> solide prestaties voor dagelijks gebruik, "
-                "terwijl de <strong>Beka Cicla</strong> een duurzame middenweg vormt met gerecycled aluminium. "
-                "Welke hapjespan je ook kiest, met een PFAS-vrije keramische of natuurlijke pan "
-                "kook je gezonder, bewuster en met vertrouwen \u2013 ook in het compacte 24\u00a0cm formaat."
-            ),
+             "title": "Conclusie – welke hapjespan van 24 cm past het best?",
+               "text": (
+                   "Een hapjespan van 24 cm is vooral geschikt voor kleinere huishoudens, sauzen, pasta’s en dagelijkse éénpansgerechten. "
+                   "De GreenPan Barcelona Pro is in dit formaat de meest complete keuze dankzij de sterke afwerking, goede warmteverdeling en het glazen deksel. "
+                   "Zoek je een premium pan die toch licht blijft, dan is de WOLL Eco Lite QXR een interessante keuze. "
+                   "Voor wie vooral betaalbaar en praktisch wil koken, bieden de BK Brilliant en BK Easy Induction goede alternatieven. "
+                   "De Beka Cicla is interessant voor wie waarde hecht aan gerecycled aluminium en een complete pan met deksel zoekt."
+               ),
         },
         28: {
-            "title": "Conclusie \u2013 Onze aanbeveling",
-            "text": (
-                "Een goede PFAS-vrije hapjespan is een waardevolle investering in gezond en bewust koken. "
-                "Of je nu kiest voor de krachtige premiumprestaties van de GreenPan Barcelona Pro, de toegankelijke kwaliteit van de BK Easy Induction Ceramic "
-                "of de duurzame samenstelling van de Beka Cicla \u2013 er is voor ieder type kok een ideale optie. "
-                "Keramische pannen bieden een fijne, directe anti-aanbakwerking en zijn gebruiksvriendelijk voor alledaagse maaltijden. "
-                "Natuurlijke alternatieven zoals de De Buyer Mineral B Element ontwikkelen juist een steeds betere antiaanbaklaag naarmate je ze vaker gebruikt. "
-                "Alle pannen in deze top\u00a010 zijn PFAS-vrij en geschikt voor inductie, waardoor je met vertrouwen een gezonde keuze maakt. "
-                "Welke pan je ook kiest, een PFAS-vrije hapjespan maakt koken niet alleen veiliger, maar ook plezieriger. "
-                "Met het juiste onderhoud gaan deze pannen jarenlang mee en blijven ze topprestaties leveren. "
-                "Zo kook je elke dag duurzaam, gezond en met optimaal comfort."
-            ),
+             "title": "Conclusie – welke hapjespan van 28 cm past het best?",
+               "text": (
+                   "Een hapjespan van 28 cm is de meest veelzijdige maat voor gezinnen en grotere éénpansgerechten. "
+                   "De GreenPan Barcelona Pro blijft onze beste allround keuze door de combinatie van bouwkwaliteit, glazen deksel en sterke prestaties op inductie. "
+                   "De WOLL Eco Lite QXR is de logische premium keuze voor wie een lichte maar hoogwaardige pan zoekt. "
+                   "Voor een lager budget is de BK Enjoy een toegankelijke instapper, terwijl GreenChef Diamond en Beka Cicla sterke middenklasse-opties zijn voor dagelijks gebruik."
+               ),
         },
     },
     "faq": {
@@ -97,16 +72,7 @@ CONTENT = {
             {
                 "q": "Zijn PFAS-vrije hapjespannen veilig om mee te koken?",
                 "a": (
-                    "Ja. PFAS-vrije hapjespannen bevatten geen schadelijke fluorchemic\u00e4li\u00ebn. Ze maken gebruik van keramische coatings of "
-                    "natuurlijke materialen zoals koolstofstaal. Hierdoor zijn ze veiliger bij verhitting en geven ze geen ongewenste stoffen af aan je eten."
-                ),
-            },
-            {
-                "q": "Wat is beter: keramisch of koolstofstaal?",
-                "a": (
-                    "Keramische pannen zijn gebruiksvriendelijk, licht en hebben direct een goede antiaanbaklaag. "
-                    "Koolstofstalen pannen zoals Mineral\u00a0B gaan echter veel langer mee, zijn volledig coatingvrij en cre\u00ebren een natuurlijke antiaanbaklaag door inbranden. "
-                    "Welke het beste is, hangt af van je kookstijl."
+                    "Ja. PFAS-vrije hapjespannen bevatten geen schadelijke fluorchemic\u00e4li\u00ebn. De meeste modellen in deze categorie gebruiken een keramische antiaanbaklaag zonder PFAS. Controleer per product altijd de specificaties van de fabrikant."
                 ),
             },
             {
@@ -163,17 +129,21 @@ CONTENT = {
                 "q": "Welke maat hapjespan past bij mijn huishouden?",
                 "a": "24&nbsp;cm is comfortabel voor 1-2 personen, 26&nbsp;cm voor 2-3 personen en 28&nbsp;cm is de meest gekozen maat voor gezinnen tot 4 personen. Voor grotere porties of meal prep is 28&nbsp;cm met een hoogte van 6-7&nbsp;cm de gulden middenweg.",
             },
+            {
+               "q": "Is keramisch beter dan een traditionele antiaanbaklaag?",
+               "a": "Keramische coatings zijn populair omdat ze zonder PFAS worden aangeboden en direct gebruiksvriendelijk zijn. Ze vragen wel voorzichtig gebruik: vermijd metalen spatels, agressieve reiniging en langdurige oververhitting."
+            },
         ],
     },
 "how_we_test": {
     "title": "Hoe wij hapjespannen beoordelen",
     "intro": "Bij hapjespannen letten we op de criteria die bepalend zijn voor gezond, duurzaam en veelzijdig koken in dagelijks gebruik.",
     "bullets": [
-        "Materiaalveiligheid: geen PFAS of schadelijke coatings.",
-        "Warmteverdeling: gelijkmatig en geschikt voor inductie en andere warmtebronnen.",
-        "Veelzijdigheid: inzetbaar voor eenpansgerechten, sauzen, vlees, vis en roerbakgerechten.",
-        "Duurzaamheid: hoe goed houdt de coating stand bij intensief gebruik.",
-        "Prijs-kwaliteit: eerlijke vergelijking van budget tot premium.",
+       "Materiaalkeuze: voorkeur voor keramische coatings zonder PFAS en duidelijke productspecificaties.",
+       "Warmteverdeling: gelijkmatig bakken en sudderen op inductie en andere warmtebronnen.",
+       "Veelzijdigheid: geschikt voor sauzen, pasta’s, stoofgerechten en éénpansmaaltijden.",
+       "Gebruiksgemak: deksel, handgreep, gewicht, reiniging en dagelijks onderhoud.",
+       "Prijs-kwaliteit: eerlijke vergelijking van budget tot premium."
     ],
     "outro": None,
 },
