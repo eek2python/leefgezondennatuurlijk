@@ -2392,13 +2392,18 @@ input, select, textarea {
 }
 @media (max-width: 736px) {
    .format-sticky-inner {
-       padding-left: 7.75em;
+       padding-left: 6.5em;
+   }
+   .format-sticky-chips {
+       -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 18px), transparent 100%);
+               mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 18px), transparent 100%);
+       padding-right: 14px;
    }
 }
 @media (max-width: 480px) {
    .format-sticky-inner {
-       padding: 6px 12px 6px 7.75em;
-       gap: 8px;
+       padding: 6px 8px 6px 6.25em;
+       gap: 6px;
    }
    .format-sticky-label {
        display: none;
@@ -2408,8 +2413,8 @@ input, select, textarea {
        font-size: 13px;
    }
    .format-pill-sm {
-       padding: 5px 11px;
-       font-size: 12.5px;
+       padding: 5px 9px;
+       font-size: 12px;
    }
 }
 
