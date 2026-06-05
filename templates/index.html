@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Leef Natuurlijk & Gezond | Veilige & Gezonde Keukenproducten{% endblock %}
+{% block title %}Leef Natuurlijk & Gezond | PFAS-vrije en niet-toxische keukenproducten{% endblock %}
 
 {% block meta %}
-<meta name="description" content="Ontdek PFAS-vrije en niet-giftige keukenproducten voor een gezonder thuis. Vergelijk koekenpannen, airfryers, snijplanken en meer – zorgvuldig geselecteerd op veiligheid en duurzaamheid.">
-<meta property="og:title" content="Leef Natuurlijk & Gezond – Veilige Keukenproducten voor een Gezond Thuis">
+<meta name="description" content="Vergelijk PFAS-vrije en niet-toxische keukenproducten zoals koekenpannen, wokpannen, snijplanken en glazen vershoudbakjes. Onafhankelijk geselecteerd op materiaalveiligheid, duurzaamheid en dagelijks gebruik.">
+<meta property="og:title" content="PFAS-vrije & niet-toxische keukenproducten">
 <meta property="og:description" content="Ontdek PFAS-vrije en niet-giftige keukenproducten voor een gezonder thuis. Vergelijk koekenpannen, airfryers, snijplanken en meer.">
 <meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/keuken.jpg">
 <meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/">
@@ -21,33 +21,33 @@
            <!-- HERO BANNER -->
         <div class="hero-banner">
         <img src="{% static 'images/keuken.jpg' %}"
-                alt="Natuurlijke en gifvrije keuken"
+                alt="PFAS-vrije en niet-toxische keukenproducten"
                 class="hero-image">
         <div class="hero-overlay">
         <h1>Leef Natuurlijk & Gezond</h1>
-        <p>Bewuste keuzes voor een veilig en gezond thuis</p>
+        <p>Onafhankelijke gids voor PFAS-vrije en niet-toxische keukenproducten</p>
         </div>
         </div>
 
         <!-- WELKOM SECTIE -->
         <section class="intro-section">
         <div class="intro-container">
-        <h2>Welkom bij Leef Natuurlijk & Gezond</h2>
+        <h2>Bewust kiezen voor veilige keukenmaterialen</h2>
         <p>
-                   Steeds meer onderzoeken tonen aan dat veel alledaagse huishoudelijke producten — vooral plastic
-                   of synthetische materialen — schadelijke stoffen kunnen bevatten. Deze stoffen kunnen zich
-                   ophopen in je leefomgeving en op de lange termijn je gezondheid beïnvloeden.
+                   Veel keukenproducten komen dagelijks in contact met eten en drinken. Daarom kiezen steeds meer mensen bewust voor materialen zoals RVS, hout, glas en PFAS-vrije keramische coatings.
         </p>
         <p>
-                   Wij helpen je om bewuste, veilige keuzes te maken met zorgvuldig geselecteerde,
-                   niet-giftige en natuurlijke producten. Zo creëer je stap voor stap een gezond en aangenaam thuis.
+                   Op Leef Natuurlijk & Gezond vergelijken we keukenproducten op materiaalkeuze, gebruiksgemak, duurzaamheid en voedselveiligheid. Denk aan PFAS-vrije koekenpannen, houten snijplanken, glazen vershoudbakjes en andere producten voor een bewustere keuken.
         </p>
+           <p>
+                              Geen overdreven claims of onrealistische “gezondheidswonderen”, maar praktische koopgidsen voor producten die prettig zijn in dagelijks gebruik en passen bij een moderne, bewuste keuken.
+           </p>
         </div>
         </section>
 
         <!-- CATEGORIE THUMBNAILS -->
         <section class="category-section">
-        <h2>Ontdek onze categorieën</h2>
+        <h2>Vergelijk PFAS-vrije en niet-toxische keukenproducten</h2>
         <div class="category-grid">
 
                 <a href="/snijplanken/" class="category-card">
@@ -85,11 +85,27 @@
 <!--                <span>Bakpapier Alternatieven</span>-->
 <!--                </a>-->
 
+                                     
                 <a href="/blogs/" class="category-card">
                 <img src="{% static 'images/thumbnails/blog.webp' %}" alt="Blogs" loading="lazy" width="600" height="400">
                 <span>Blogs</span>
                 </a>
         </div>
         </section>
+
+<section class="home-links">
+                   <h2>Populaire categorieën</h2>
+           <p>
+              Ontdek zorgvuldig geselecteerde keukenproducten op basis van materiaalveiligheid,
+              duurzaamheid en dagelijks gebruiksgemak.
+           </p>
+                   <ul>
+                   <li><a href="/koekenpannen/">PFAS-vrije koekenpannen vergelijken</a></li>
+                   <li><a href="/hapjespannen/">Beste PFAS-vrije hapjespannen</a></li>
+                   <li><a href="/wokpannen/">PFAS-vrije wokpannen voor inductie</a></li>
+                   <li><a href="/snijplanken/">Beste houten snijplanken</a></li>
+                   <li><a href="/vershoudcontainers/">Glazen vershoudbakjes vergelijken</a></li>
+                   </ul>
+                   </section>
 
 {% endblock %}

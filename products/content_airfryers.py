@@ -1,14 +1,8 @@
 CONTENT = {
         "hero": {
-        "h1": "Top 6 PFAS-vrije Airfryers \u2013 Gezond, Veilig & Duurzaam",
+        "h1": "Top 6 PFAS-vrije Airfryers van 2026 - Keramische & Niet-giftige Modellen",
         "paragraphs": [
-            "Het gebruik van een PFAS-vrije airfryer is een bewuste keuze voor wie veilig en gezond wil koken. "
-            "Traditionele antiaanbaklagen kunnen PFAS bevatten, een groep chemische stoffen die bij hoge temperaturen schadelijke dampen kunnen afgeven. "
-            "Bovendien zijn PFAS slecht afbreekbaar, schadelijk voor het milieu en kunnen ze zich ophopen in het lichaam.",
-            "PFAS-vrije airfryers beschikken over veilige keramische coatings die hittebestendig, slijtvast en vrij van schadelijke chemic\u00e4li\u00ebn zijn. "
-            "Deze moderne alternatieven leveren uitstekende bakresultaten en maken het mogelijk om gezond en comfortabel te koken zonder risico\u2019s.",
-            "Wij hebben tientallen PFAS-vrije airfryers beoordeeld op materiaal, duurzaamheid, bakprestaties, ontwerp en gebruiksgemak. "
-            "Hieronder vind je de beste modellen van 2026.",
+            "Steeds meer consumenten zoeken een PFAS-vrije airfryer zonder klassieke tefloncoating of andere fluorhoudende antiaanbaklagen. Vooral bij apparaten die langdurig op hoge temperatuur werken, groeit de aandacht voor veilige materialen en duurzame alternatieven. Daarom kiezen veel mensen bewust voor airfryers met een keramische binnenmand of een PFAS-vrije coating.",
         ],
     },
     "why_choose": {
@@ -19,7 +13,7 @@ CONTENT = {
         ),
         "bullets": [
             "<strong>Gezonder koken:</strong> Geen PFAS, geen schadelijke dampen bij hoge temperatuur.",
-            "<strong>Milieuvriendelijker:</strong> PFAS zijn chemisch zeer persistent; PFAS-vrije coatings zijn dat niet.",
+            "<strong>Bewuste materiaalkeuze:</strong> veel consumenten geven de voorkeur aan keramische coatings of RVS-oplossingen zonder klassieke fluorcoatings.",
             "<strong>Hogere hittebestendigheid:</strong> Keramische coatings blijven stabiel bij extreme temperaturen.",
             "<strong>Betere duurzaamheid:</strong> Keramische manden slijten minder snel dan traditionele anti-aanbaklagen.",
         ],
@@ -79,14 +73,6 @@ CONTENT = {
                 "a": "Voor 1–2 personen volstaat 3–4 liter. Voor gezinnen van 3–4 personen is 5–6 liter ideaal, en voor grotere huishoudens of dual-zone bereidingen is 7+ liter aan te raden.",
             },
             {
-                "q": "Is een airfryer zuiniger dan een oven?",
-                "a": "Ja, een airfryer verbruikt gemiddeld 50–70% minder energie dan een traditionele oven, doordat hij sneller op temperatuur is en een kleiner volume verwarmt.",
-            },
-            {
-                "q": "Hoe maak ik een keramische airfryer-mand goed schoon?",
-                "a": "Laat de mand afkoelen, week hem in warm water met afwasmiddel en gebruik een zachte spons. Vermijd schuursponsjes of metalen borstels die de coating beschadigen.",
-            },
-            {
                 "q": "Maakt een airfryer veel geluid?",
                 "a": "De meeste airfryers produceren 50–65 dB tijdens het bakken, vergelijkbaar met een afzuigkap op stand 1. Premium modellen met betere ventilatoren zijn merkbaar stiller.",
             },
@@ -102,13 +88,17 @@ CONTENT = {
                 "q": "Hoe maak ik de mand van een airfryer het beste schoon?",
                 "a": "Laat de mand altijd eerst afkoelen. Week hem 10-15 minuten in warm sop, gebruik dan een zachte spons of borstel — nooit staalwol of schuurmiddelen die de coating beschadigen. Hardnekkige resten week je los met een beetje baking soda; de meeste manden zijn vaatwasbestendig maar handwas verlengt de levensduur.",
             },
+            {
+                "q": "Wat is de beste airfryer zonder teflon?",
+                "a": "Airfryers met een keramische binnenmand zijn populair bij consumenten die een alternatief zoeken voor klassieke teflon- of PTFE-coatings. Modellen van GreenPan, Inventum en Wartmann behoren momenteel tot de bekendste PFAS-vrije opties.",
+            },
         ],
     },
 "how_we_test": {
     "title": "Hoe wij airfryers beoordelen",
     "intro": "Bij airfryers selecteren we op de criteria die tellen voor veiligheid van het binnenwerk, gebruiksgemak en dagelijkse prestaties.",
     "bullets": [
-        "Materiaalveiligheid van de binnenmand: keramisch scoort beter dan kunststof antiaanbaklagen.",
+        "Materiaalveiligheid van de binnenmand: focus op keramische coatings en alternatieven zonder klassieke fluorcoatings.",
         "Capaciteit: voldoende inhoud voor dagelijks gebruik.",
         "Gebruiksgemak: overzichtelijke bediening en handige functies.",
         "Schoonmaakgemak: makkelijk te reinigen mand en onderdelen.",
