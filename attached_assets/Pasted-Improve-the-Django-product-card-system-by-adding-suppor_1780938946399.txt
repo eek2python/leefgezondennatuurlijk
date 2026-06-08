@@ -1,0 +1,139 @@
+Improve the Django product card system by adding support for selectable product color variants for products such as the GreenPan airfryer.
+
+GOAL
+Allow users to switch between available product colors directly inside the product card without reloading the page.
+
+The functionality should:
+
+* Change the displayed product image dynamically
+* Optionally update the affiliate URL dynamically
+* Show clickable color swatches
+* Be reusable for other products/categories later
+* Work cleanly in both desktop and mobile layouts
+* Maintain current SEO structure (no separate URLs/pages per color)
+
+IMPLEMENTATION REQUIREMENTS
+
+1. PRODUCT DATA STRUCTURE
+
+Extend the existing product JSON structure with optional variants.
+
+Example:
+
+“variants”: [
+{
+“name”: “Zwart”,
+“image”: “greenpan-black.jpg”,
+“affiliate_url”: “https://example.com/black”,
+“hex”: “#1f1f1f”
+},
+{
+“name”: “Crème”,
+“image”: “greenpan-cream.jpg”,
+“affiliate_url”: “https://example.com/cream”,
+“hex”: “#e9dfd1”
+},
+{
+“name”: “Groen”,
+“image”: “greenpan-green.jpg”,
+“affiliate_url”: “https://example.com/green”,
+“hex”: “#6f7d5b”
+}
+]
+
+The variant system must be OPTIONAL.
+Products without variants should continue to work normally.
+
+2. PRODUCT CARD TEMPLATE
+
+Update the product card template so that:
+
+* The first variant image becomes the default displayed image
+* Color swatches are rendered below the image
+* Clicking a swatch:
+    * updates the product image
+    * updates the affiliate button URL
+    * visually highlights the active swatch
+
+3. JAVASCRIPT
+
+Add lightweight vanilla JavaScript only.
+Do NOT use React/Vue/jQuery.
+
+Requirements:
+
+* Fast and lightweight
+* No page reloads
+* No inline onclick handlers
+* Event listeners attached cleanly
+* Multiple product cards on the same page must work independently
+
+4. CSS / UI
+
+Create modern color swatches:
+
+* Circular buttons
+* Smooth hover effect
+* Active state with border/shadow
+* Responsive on mobile
+
+Recommended style:
+
+* 16–18px circles
+* Small spacing between swatches
+* Elegant premium appearance
+
+5. ACCESSIBILITY
+
+Add:
+
+* aria-label for color names
+* keyboard focus support
+* alt text updates for variant image
+
+6. PERFORMANCE
+
+Requirements:
+
+* Lazy-load images
+* Avoid layout shifts
+* Do not preload all variant images unnecessarily
+* Keep implementation lightweight
+
+7. SEO
+
+IMPORTANT:
+
+* Do NOT create separate URLs for color variants
+* Do NOT change canonical URLs
+* Keep all variants inside the same product page/card
+* Preserve existing structured data
+
+8. REUSABILITY
+
+The implementation should be generic and reusable for:
+
+* airfryers
+* cookware
+* water kettles
+* kitchen appliances
+* future categories
+
+9. OPTIONAL NICE-TO-HAVE
+
+If possible:
+
+* Add smooth fade transition when switching images
+* Add tooltip with color name on hover
+
+10. OUTPUT
+
+Provide:
+
+* Updated Django template code
+* Required CSS
+* Required JavaScript
+* Example updated product JSON
+* Clear explanation where each file should be placed in the project structure
+
+Keep the implementation clean, minimal and production-ready.

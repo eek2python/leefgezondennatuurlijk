@@ -1,5 +1,34 @@
 {% load static %}
-<div class="product-block">
+<div class="product-block"{% if product.variants %} data-variant-card{% endif %}>
+{% if product.variants %}
+<div class="product-media">
+<a href="{% url 'product_detail' slug=product.slug %}" class="product-media-img">
+<img
+       src="{% static product.image_path|add:'/' %}{{ product.variants.0.image }}"
+       alt="{{ product.name }} – {{ product.variants.0.name }}"
+       loading="lazy"
+       data-variant-image
+       data-base-alt="{{ product.name }}"
+>
+</a>
+<div class="variant-swatches" role="group" aria-label="Beschikbare kleuren">
+       {% for variant in product.variants %}
+<button
+           type="button"
+           class="variant-swatch{% if forloop.first %} is-active{% endif %}"
+           style="--swatch: {{ variant.hex }};"
+           data-variant-swatch
+           data-image="{% static product.image_path|add:'/' %}{{ variant.image }}"
+           {% if variant.affiliate_url %}data-affiliate="{{ variant.affiliate_url }}"{% endif %}
+           data-name="{{ variant.name }}"
+           title="{{ variant.name }}"
+           aria-label="Kleur: {{ variant.name }}"
+           aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+></button>
+       {% endfor %}
+</div>
+</div>
+{% else %}
 <a href="{% url 'product_detail' slug=product.slug %}">
 <img
        src="{% static product.image_path|add:'/' %}{{ product.image }}"
@@ -8,6 +37,7 @@
        loading="lazy"
 >
 </a>
+{% endif %}
 <div class="content">
 <h3><a href="{% url 'product_detail' slug=product.slug %}">{{ forloop.counter }}. {{ product.name }}</a></h3>
 <p>{{ product.description }}</p>
@@ -53,12 +83,13 @@
 <span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
            {% endif %}
 </div>
-       {% if product.affiliate_url %}
+       {% if product.affiliate_url or product.variants.0.affiliate_url %}
 <a
-           href="{{ product.affiliate_url }}"
+           href="{% if product.variants.0.affiliate_url %}{{ product.variants.0.affiliate_url }}{% else %}{{ product.affiliate_url }}{% endif %}"
            target="_blank"
            rel="nofollow sponsored noopener"
            class="button primary small"
+           {% if product.variants %}data-variant-affiliate{% endif %}
 >
            Bekijk prijs &amp; reviews →
 </a>
