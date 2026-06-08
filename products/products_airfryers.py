@@ -67,6 +67,24 @@ PRODUCTS = {
         "features": ["5 L", "Thermolon keramische coating", "PFAS-vrij" "12 automatische programma\u2019s", "Premium afwerking"],
         "image": "airfryer-greenpan-silhouette-xl-5l-pfasvrij.jpg",
         "image_path": "images",
+        "variants": [
+            {
+                "name": "Moroccan Green",
+                "image": "airfryer-greenpan-silhouette-xl-5l-pfasvrij.jpg",
+                "hex": "#3a5a40",
+                "affiliate_url": "https://www.bol.com/nl/nl/p/greenpan-silhouette-air-fryer-xl-5l-enkele-mand-tot-4-personen-pfas-vrij-12-programma-s-automatisch-uitschakelen-met-timerfunctie-moroccan-green/9300000241640428/",
+            },
+            {
+                "name": "Cr\u00e8me",
+                "image": "airfryer-greenpan-silhouette-xl-5l-pfasvrij-creme.jpg",
+                "hex": "#e9dfd1",
+            },
+            {
+                "name": "Smokey Blue",
+                "image": "airfryer-greenpan-silhouette-xl-5l-pfasvrij-smokey-blue.jpg",
+                "hex": "#6b8a93",
+            },
+        ],
         "description": "Een hoogwaardige PFAS-vrije airfryer met GreenPan\u2019s Thermolon\u2122 keramische coating. Ontworpen voor gelijkmatige bakresultaten, hoge temperaturen en een stijlvol design voor elke keuken.",
         "pros": [
             "Thermolon\u2122 keramische binnenzijde zonder PFAS",

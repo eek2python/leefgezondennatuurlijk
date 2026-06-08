@@ -9,6 +9,8 @@
         }
         var affiliate = card.querySelector("[data-variant-affiliate]");
         var baseAlt = img.getAttribute("data-base-alt") || img.alt || "";
+        var baseAffiliate = affiliate ? affiliate.getAttribute("data-base-affiliate") || "" : "";
+        var requestId = 0;
 
         function activate(swatch) {
             if (swatch.classList.contains("is-active")) {
@@ -16,18 +18,25 @@
             }
 
             var src = swatch.getAttribute("data-image");
-            var url = swatch.getAttribute("data-affiliate");
+            var url = swatch.getAttribute("data-affiliate") || baseAffiliate;
             var name = swatch.getAttribute("data-name") || "";
 
             if (src && src !== img.getAttribute("src")) {
+                var current = ++requestId;
                 var preload = new Image();
                 img.style.opacity = "0";
                 preload.onload = function () {
+                    if (current !== requestId) {
+                        return;
+                    }
                     img.src = src;
                     img.alt = name ? baseAlt + " – " + name : baseAlt;
                     img.style.opacity = "1";
                 };
                 preload.onerror = function () {
+                    if (current !== requestId) {
+                        return;
+                    }
                     img.style.opacity = "1";
                 };
                 preload.src = src;

@@ -89,7 +89,7 @@
            target="_blank"
            rel="nofollow sponsored noopener"
            class="button primary small"
-           {% if product.variants %}data-variant-affiliate{% endif %}
+           {% if product.variants %}data-variant-affiliate data-base-affiliate="{{ product.affiliate_url }}"{% endif %}
 >
            Bekijk prijs &amp; reviews →
 </a>

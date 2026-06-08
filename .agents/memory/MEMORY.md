@@ -1,0 +1,1 @@
+- [Product color variants](product-color-variants.md) — optional card-only swatches; never expand into per-color URLs or structured data; variant images must share one aspect ratio.
