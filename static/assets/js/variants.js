@@ -8,8 +8,10 @@
             return;
         }
         var affiliate = card.querySelector("[data-variant-affiliate]");
+        var priceEl = card.querySelector("[data-variant-price]");
         var baseAlt = img.getAttribute("data-base-alt") || img.alt || "";
         var baseAffiliate = affiliate ? affiliate.getAttribute("data-base-affiliate") || "" : "";
+        var basePrice = priceEl ? priceEl.getAttribute("data-base-price") || "" : "";
         var requestId = 0;
 
         function activate(swatch) {
@@ -19,6 +21,7 @@
 
             var src = swatch.getAttribute("data-image");
             var url = swatch.getAttribute("data-affiliate") || baseAffiliate;
+            var price = swatch.getAttribute("data-price") || basePrice;
             var name = swatch.getAttribute("data-name") || "";
 
             if (src && src !== img.getAttribute("src")) {
@@ -44,6 +47,10 @@
 
             if (url && affiliate) {
                 affiliate.setAttribute("href", url);
+            }
+
+            if (priceEl && price) {
+                priceEl.textContent = price;
             }
 
             for (var i = 0; i < swatches.length; i++) {

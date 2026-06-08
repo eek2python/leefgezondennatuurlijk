@@ -20,6 +20,7 @@
            data-variant-swatch
            data-image="{% static product.image_path|add:'/' %}{{ variant.image }}"
            {% if variant.affiliate_url %}data-affiliate="{{ variant.affiliate_url }}"{% endif %}
+           {% if variant.price_range %}data-price="{{ variant.price_range }}"{% endif %}
            data-name="{{ variant.name }}"
            title="{{ variant.name }}"
            aria-label="Kleur: {{ variant.name }}"
@@ -76,8 +77,8 @@
            {% endif %}
 </div>
 <div class="meta">
-           {% if product.price_range %}
-<span class="price">{{ product.price_range }}</span>
+           {% if product.price_range or product.variants.0.price_range %}
+<span class="price"{% if product.variants %} data-variant-price data-base-price="{{ product.price_range }}"{% endif %}>{% if product.variants.0.price_range %}{{ product.variants.0.price_range }}{% else %}{{ product.price_range }}{% endif %}</span>
            {% endif %}
            {% if product.award %}
 <span class="product-badge {{ product.award_class }}">{{ product.award }}</span>

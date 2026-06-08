@@ -47,9 +47,9 @@ All 6 category pages use a standardised three-file content architecture per cate
 - `templates/partials/newsletter_signup.html` — newsletter signup placeholder (sidebar, no backend integration yet)
 
 ### Product Color Variants (optional, reusable)
-- Add an optional `variants` list to any product dict. Each variant: `name`, `image` (filename in the product's `image_path`), `hex` (swatch colour), and optional `affiliate_url`.
+- Add an optional `variants` list to any product dict. Each variant: `name`, `image` (filename in the product's `image_path`), `hex` (swatch colour), and optional `affiliate_url` and `price_range` (displayed price string).
 - When `variants` is present, `templates/partials/product_block.html` renders the first variant as the default image plus circular colour swatches; products without `variants` render unchanged.
-- `static/assets/js/variants.js` (loaded site-wide in base.html) handles swatch clicks: per-card scoped vanilla JS, lazy preload + fade swap, alt-text update, active-state toggle, and affiliate-button URL swap. Swatches without `affiliate_url` fall back to the button's `data-base-affiliate` (product-level URL).
+- `static/assets/js/variants.js` (loaded site-wide in base.html) handles swatch clicks: per-card scoped vanilla JS, lazy preload + fade swap, alt-text update, active-state toggle, affiliate-button URL swap, and price-text swap. Swatches without `affiliate_url` / `price_range` fall back to the product-level value (`data-base-affiliate` / `data-base-price`).
 - Swatch / media CSS lives near `.product-block` in `static/assets/css/main.css`.
 - SEO: variants are card-only and client-side. No new URLs/pages per colour; canonical and Schema.org structured data stay tied to the single base `product.image`.
 - **Important**: all variant images for a product must share the same aspect ratio (the example GreenPan airfryer uses 1200×800) to avoid layout shift when switching.
