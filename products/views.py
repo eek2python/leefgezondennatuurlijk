@@ -427,27 +427,75 @@ def wokpannen(request):
     })
 
 
-def airfryers(request):
-    content = AIRFRYERS_CONTENT
-    products = [dict(AIRFRYERS_PRODUCTS[k]) for k in AIRFRYERS_RANKINGS]
+AIRFRYER_FORMATS = ["compact", "xl", "dual"]
+AIRFRYER_BASE_URL = "https://www.leefnatuurlijkengezond.nl"
+
+
+def airfryers(request, fmt=None):
+    if fmt == "compact":
+        return redirect("airfryers", permanent=True)
+
+    selected_format = fmt or "compact"
+    if selected_format not in AIRFRYERS_RANKINGS:
+        raise Http404("Onbekend airfryer-formaat")
+
+    keys = AIRFRYERS_RANKINGS[selected_format]
+    products = [dict(AIRFRYERS_PRODUCTS[k]) for k in keys if k in AIRFRYERS_PRODUCTS]
     _enrich_products(products)
     product_count = len(products)
-    conclusie = content["conclusies"]["default"]
+
+    raw = AIRFRYERS_CONTENT
+    fmt_label = raw["formats"][selected_format]["label"]
+    content = _format_content(raw, product_count=product_count, selected_format=fmt_label)
+    fmt_meta = content["formats"][selected_format]
+
+    canonical_path = "/airfryers/" if selected_format == "compact" else f"/airfryers/{selected_format}/"
+    canonical_url = AIRFRYER_BASE_URL + canonical_path
+
+    hero_h1 = fmt_meta["h1"]
+    products_h2 = content["products_section"]["h2"]
+    comparison_title = content["products_section"]["comparison_title"]
+    conclusie = content["conclusies"].get(selected_format, {})
+
     faq_ld = _build_faq_ld(content["faq"]["items"])
     json_ld = _build_itemlist_ld(
         request,
-        "Top 6 PFAS-vrije Airfryers van 2026",
-        "De 6 beste PFAS-vrije airfryers van 2026 \u2013 gezond, duurzaam en zonder schadelijke stoffen.",
+        fmt_meta["itemlist_name"],
+        fmt_meta["itemlist_description"],
         products,
     )
+
+    format_links = [
+        {
+            "key": k,
+            "label": raw["formats"][k]["label"],
+            "url": "/airfryers/" if k == "compact" else f"/airfryers/{k}/",
+        }
+        for k in AIRFRYER_FORMATS
+    ]
+
     breadcrumbs = [{"label": "Airfryers", "url": "/airfryers/"}]
+    if selected_format != "compact":
+        breadcrumbs.append({"label": fmt_label, "url": None})
+
     return render(request, "airfryers.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
         "in_het_kort": _build_in_het_kort(products, content),
         "product_count": product_count,
         "content": content,
+        "selected_format": selected_format,
+        "format_links": format_links,
+        "hero_h1": hero_h1,
+        "products_h2": products_h2,
+        "comparison_title": comparison_title,
         "conclusie": conclusie,
+        "intro_extra": fmt_meta["intro_extra"],
+        "meta_title": fmt_meta["meta_title"],
+        "meta_description": fmt_meta["meta_description"],
+        "og_title": fmt_meta["og_title"],
+        "og_description": fmt_meta["og_description"],
+        "canonical_url": canonical_url,
         "json_ld": json_ld,
         "faq_ld": faq_ld,
         "breadcrumbs": breadcrumbs,

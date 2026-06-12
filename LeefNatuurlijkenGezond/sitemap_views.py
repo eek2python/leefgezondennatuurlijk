@@ -14,6 +14,8 @@ STATIC_URLS = [
     {"name": "wokpannen",          "loc_name": "wokpannen",         "changefreq": "monthly", "priority": "0.9"},
     {"name": "snijplanken",        "loc_name": "snijplanken",       "changefreq": "monthly", "priority": "0.9"},
     {"name": "airfryers",          "loc_name": "airfryers",         "changefreq": "monthly", "priority": "0.9"},
+    {"name": "airfryers_xl",       "loc_name": "airfryers_format",  "kwargs": {"fmt": "xl"},   "changefreq": "monthly", "priority": "0.8"},
+    {"name": "airfryers_dual",     "loc_name": "airfryers_format",  "kwargs": {"fmt": "dual"}, "changefreq": "monthly", "priority": "0.8"},
     {"name": "vershoudcontainers", "loc_name": "vershoudcontainers","changefreq": "monthly", "priority": "0.9"},
     {"name": "blogs_overview",     "loc_name": "blogs_overview",    "changefreq": "weekly",  "priority": "0.8"},
     {"name": "over_ons",           "loc_name": "over_ons",          "changefreq": "yearly",  "priority": "0.5"},
@@ -28,7 +30,7 @@ def sitemap_xml(request):
     static_urls = []
     for entry in STATIC_URLS:
         static_urls.append({
-            "loc": BASE_URL + reverse(entry["loc_name"]),
+            "loc": BASE_URL + reverse(entry["loc_name"], kwargs=entry.get("kwargs") or None),
             "changefreq": entry["changefreq"],
             "priority": entry["priority"],
         })

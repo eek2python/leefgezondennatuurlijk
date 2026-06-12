@@ -1,0 +1,235 @@
+You are working on the Django-based affiliate website “Leef Natuurlijk & Gezond”.
+
+GOAL:
+Extend the existing PFAS-vrije airfryer page to support THREE selectable formats/categories:
+
+1. Compact
+2. XL
+3. Dual-zone
+
+The implementation must:
+- remain SEO-friendly
+- remain responsive/mobile-friendly
+- preserve existing styling and component structure
+- support future expansion easily
+- avoid duplication as much as possible
+
+========================================
+PART 1 — FORMAT SELECTORS
+========================================
+
+Add a selector UI near the top of the airfryer product section.
+
+The selectors should visually match the existing size selectors used on other category pages (such as koekenpannen/hapjespannen/wokpannen).
+
+Use these labels:
+
+- Compact (3–5L)
+- XL (6–8L)
+- Dual-zone
+
+Requirements:
+- highlight active selector
+- responsive on mobile
+- preserve URL state
+- preserve canonical structure
+- accessible HTML/buttons
+
+Selectors should switch between:
+- compact airfryers
+- xl airfryers
+- dual-zone airfryers
+
+========================================
+PART 2 — URL STRUCTURE
+========================================
+
+Implement clean SEO-friendly URLs:
+
+/airfryers/
+/airfryers/xl/
+/airfryers/dual/
+
+Optional:
+compact may remain default root URL:
+- /airfryers/ = compact
+
+Requirements:
+- canonical tags correct per page
+- unique meta title + meta description per format
+- OG tags correct
+- breadcrumbs correct
+- no duplicate content issues
+
+========================================
+PART 3 — TEMPLATE LOGIC
+========================================
+
+Refactor the airfryer templates to support dynamic rendering.
+
+Requirements:
+- selected_format variable
+- dynamic product list
+- dynamic content blocks
+- dynamic H1
+- dynamic comparison titles
+- dynamic conclusion text
+
+Avoid hardcoded “Top 6”.
+
+Instead use:
+{product_count}
+
+========================================
+PART 4 — PRODUCT DATA STRUCTURE
+========================================
+
+Ensure product datasets are split cleanly:
+
+Example:
+AIRFRYER_PRODUCTS = {
+    "compact": {...},
+    "xl": {...},
+    "dual": {...},
+}
+
+Ensure:
+- existing compact models remain intact
+- xl models added
+- dual models added
+
+========================================
+PART 5 — CONTENT SUPPORT
+========================================
+
+Ensure CONTENT dictionary supports:
+
+- dynamic selected_format
+- dynamic product_count
+- dynamic conclusions per format
+
+Expected keys:
+- compact
+- xl
+- dual
+
+Ensure all pages render correctly even if:
+- a section intro is None
+- selected_format missing
+- product count changes
+
+========================================
+PART 6 — INTERNAL LINKING
+========================================
+
+Add internal links between:
+- compact
+- xl
+- dual
+
+Add contextual links in:
+- intro
+- conclusion
+- FAQ where relevant
+
+Examples:
+- “Looking for larger capacity? View our XL airfryers.”
+- “Need two separate cooking zones? See dual-zone airfryers.”
+
+Use natural anchor text.
+
+========================================
+PART 7 — SEO IMPROVEMENTS
+========================================
+
+Check and improve:
+- H1 uniqueness
+- title uniqueness
+- meta description uniqueness
+- structured data correctness
+- FAQ schema correctness
+- ItemList schema correctness
+- canonical consistency
+
+Ensure:
+- no duplicate H1s
+- no duplicate meta descriptions
+- no hardcoded wrong product counts
+
+========================================
+PART 8 — STRUCTURED DATA
+========================================
+
+Validate:
+- FAQPage schema
+- ItemList schema
+- Product schema
+
+Requirements:
+- product positions correct
+- URLs correct
+- ratings valid
+- prices valid
+- availability valid
+- no broken JSON-LD
+
+========================================
+PART 9 — COLOR VARIANT SUPPORT
+========================================
+
+Prepare reusable infrastructure for future product color selectors.
+
+Do NOT fully implement complex logic yet.
+
+But:
+- create scalable product variant support
+- allow optional “variants” field
+- support future image swapping
+- support future color selector buttons
+
+Example structure:
+
+"variants": [
+  {
+    "color": "Black",
+    "image": "...",
+    "affiliate_url": "..."
+  }
+]
+
+Ensure current rendering still works when variants are absent.
+
+========================================
+PART 10 — VALIDATION & CHECKS
+========================================
+
+Perform a full audit of ALL airfryer-related pages and components.
+
+Check for:
+- broken links
+- missing images
+- malformed affiliate URLs
+- inconsistent ratings
+- invalid availability values
+- missing alt text
+- inconsistent price formatting
+- layout overflows on mobile
+- duplicated awards
+- empty verdicts
+- inconsistent badge styling
+- inconsistent image paths
+- selector state bugs
+- broken canonical tags
+- schema validation issues
+
+========================================
+PART 11 — FINAL OUTPUT
+========================================
+
+After implementation:
+1. summarize all changes made
+2. list any warnings/issues found
+3. list any recommended future improvements
+4. confirm all routes tested
+5. confirm responsive behavior tested
+6. confirm schema validation status

@@ -1,0 +1,47 @@
+{% if format_links %}
+<div class="format-selector" data-format-selector>
+    <span class="label">Kies jouw formaat:</span>
+    {% for f in format_links %}
+    <a href="{{ f.url }}"
+       class="format-pill {% if f.key == selected_format %}is-active{% endif %}"
+       {% if f.key == selected_format %}aria-current="page"{% endif %}>
+        {{ f.label }}
+    </a>
+    {% endfor %}
+</div>
+
+<nav class="format-sticky" data-format-sticky aria-label="Formaatselector" inert>
+    <div class="format-sticky-inner">
+        <span class="format-sticky-label">Formaat:</span>
+        <div class="format-sticky-chips">
+            {% for f in format_links %}
+            <a href="{{ f.url }}"
+               class="format-pill format-pill-sm {% if f.key == selected_format %}is-active{% endif %}"
+               {% if f.key == selected_format %}aria-current="page"{% endif %}>
+                {{ f.label }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</nav>
+
+<script>
+(function () {
+    var ref = document.querySelector('[data-format-selector]');
+    var sticky = document.querySelector('[data-format-sticky]');
+    if (!ref || !sticky || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            var aboveViewport = !e.isIntersecting && e.boundingClientRect.top < 0;
+            sticky.classList.toggle('is-visible', aboveViewport);
+            if (aboveViewport) {
+                sticky.removeAttribute('inert');
+            } else {
+                sticky.setAttribute('inert', '');
+            }
+        });
+    }, { threshold: 0 });
+    io.observe(ref);
+})();
+</script>
+{% endif %}

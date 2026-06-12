@@ -1,25 +1,24 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Top 6 PFAS-vrije Airfryers – Gezond, Duurzame & Stijlvol | Leef Natuurlijk & Gezond{% endblock %}
+{% block title %}{{ meta_title }}{% endblock %}
 
 {% block meta %}
-<meta name="description" content="Ontdek de beste PFAS-vrije airfryers van 2026 met keramische binnenmand. Vergelijk veilige airfryers zonder teflon op cpaciteit, gebruiksgemak, schoonmaak en prijs-kwaliteit.">
+<meta name="description" content="{{ meta_description }}">
 <!-- 🔹 Open Graph -->
-<meta property="og:title" content="Top 6 PFAS-vrije Airfryers van 2026 – Keramische & Veilige modellen">
-<meta property="og:description" content="Vergelijk de beste PFAS-vrije airfryers met keramische binnenmand. Ontdek veilige modellen zonder klassieke tefloncoating, beoordeelt op gebruiksgemak en prestaties.">
+<meta property="og:title" content="{{ og_title }}">
+<meta property="og:description" content="{{ og_description }}">
 <meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/airfryers.jpg">
-<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/airfryers/">
+<meta property="og:url" content="{{ canonical_url }}">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/airfryers/">
 <meta property="og:locale" content="nl_NL">
 <!-- 🔹 Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Top 6 PFAS-vrije Airfryers van 2026">
-<meta name="twitter:description" content="De beste airfryers zonder PFAS of klassieke tefloncoating. Vergelijk keramische modellen op veiligheid, prestaties en gebruiksgemak.">
+<meta name="twitter:title" content="{{ og_title }}">
+<meta name="twitter:description" content="{{ og_description }}">
 <meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/airfryers.jpg">
-<!--Canonical -->
-<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/airfryers/" />
+<!-- 🔹 Canonical -->
+<link rel="canonical" href="{{ canonical_url }}">
 <!-- 🔹 Structured Data – Product ItemList -->
 <script type="application/ld+json">
 {{ json_ld|safe }}
@@ -39,13 +38,17 @@
                 <section id="banner">
                 <div class="content">
                 <header class="main">
-                <h1>{{ content.hero.h1 }}</h1>
+                <h1>{{ hero_h1 }}</h1>
                 </header>
                 {% for p in content.hero.paragraphs %}
                 <p>{{ p|safe }}</p>
                 {% endfor %}
+                {% if intro_extra %}<p>{{ intro_extra|safe }}</p>{% endif %}
                 </div>
                 </section>
+
+                {% include "partials/airfryer_format_selector.html" %}
+
                 {% include "partials/top_picks.html" %}
 
                 <section>
@@ -58,11 +61,30 @@
                 <li>{{ bullet|safe }}</li>
                 {% endfor %}
                 </ul>
+                <p>{{ content.why_choose.outro|safe }}</p>
                 </section>
+
+                {% if content.size_guide %}
+                <section>
+                <header class="major">
+                <h2>{{ content.size_guide.title }}</h2>
+                </header>
+                <p>{{ content.size_guide.intro|safe }}</p>
+                {% for sec in content.size_guide.sections %}
+                <h3>{{ sec.h3 }}</h3>
+                <ul>
+                {% for item in sec.items %}
+                <li>{{ item|safe }}</li>
+                {% endfor %}
+                </ul>
+                {% endfor %}
+                <p>{{ content.size_guide.outro|safe }}</p>
+                </section>
+                {% endif %}
 
                 <section id="producten" class="products">
                         <header class="major">
-                                <h2>{{ content.products_section.h2 }}</h2>
+                                <h2>{{ products_h2 }}</h2>
                         </header>
                         <div class="product-list">
 
@@ -76,7 +98,7 @@
 
                         <!-- Vergelijkingstabel -->
                         <section>
-                        <h2>{{ content.products_section.comparison_title }}</h2>
+                        <h2>{{ comparison_title }}</h2>
                         <div class="table-wrapper">
                         <table class="alt product-table">
                         <thead>

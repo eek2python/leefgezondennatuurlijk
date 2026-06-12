@@ -31,6 +31,7 @@ urlpatterns = [
    path("hapjespannen/", views.hapjespannen, name="hapjespannen"),
    path("wokpannen/", views.wokpannen, name="wokpannen"),
    path("airfryers/", views.airfryers, name="airfryers"),
+   path("airfryers/<slug:fmt>/", views.airfryers, name="airfryers_format"),
    path("vershoudcontainers/", views.vershoudcontainers, name="vershoudcontainers"),
    path("rvs-koekenpannen/", views.rvs_koekenpannen, name="rvs_koekenpannen"),
    path("over-ons/", views.over_ons, name="over_ons"),
