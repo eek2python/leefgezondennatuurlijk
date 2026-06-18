@@ -170,33 +170,32 @@ def _build_faq_ld(faq_items):
     })
 
 
-def _build_itemlist_ld(request, name, description, products):
-    return json.dumps({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": name,
-        "description": description,
-        "itemListOrder": "ItemListOrderDescending",
-        "numberOfItems": len(products),
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": i + 1,
-                "item": {
-                    "@type": "Product",
-                    "name": p["name"],
-                    "description": p["description"],
-                    "image": request.build_absolute_uri(
-                        f"/static/{p['image_path']}/{p['image']}"
-                    ),
-                    "brand": {"@type": "Brand", "name": p["brand"]},
-                    "material": p["material"],
-                    "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": p["rating"],
-                        "reviewCount": p["rating_count"],
-                    },
-                    "offers": {
+def _build_product_ld(request, p):
+    product_ld = {
+        "@type": "Product",
+        "name": p["name"],
+        "description": p["description"],
+        "image": request.build_absolute_uri(
+            f"/static/{p['image_path']}/{p['image']}"
+        ),
+        "brand": {"@type": "Brand", "name": p["brand"]},
+        "material": p["material"],
+    }
+    # Only emit aggregateRating when a real review/rating count exists.
+    # Schema.org requires ratingCount or reviewCount; emitting a null count
+    # produces invalid structured data (Google Rich Results error).
+    if p.get("rating_count"):
+        product_ld["aggregateRating"] = {
+            "@type": "AggregateRating",
+            "ratingValue": p["rating"],
+            "reviewCount": p["rating_count"],
+        }
+    product_ld["offers"] = _build_offer_ld(p)
+    return product_ld
+
+
+def _build_offer_ld(p):
+    return {
                         "@type": "Offer",
                         "url": p["affiliate_url"],
                         "price": p["price"],
@@ -238,8 +237,22 @@ def _build_itemlist_ld(request, name, description, products):
                                 },
                             },
                         },
-                    },
-                },
+                    }
+
+
+def _build_itemlist_ld(request, name, description, products):
+    return json.dumps({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": name,
+        "description": description,
+        "itemListOrder": "ItemListOrderDescending",
+        "numberOfItems": len(products),
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": i + 1,
+                "item": _build_product_ld(request, p),
             }
             for i, p in enumerate(products)
         ],
