@@ -286,19 +286,17 @@ PRODUCTS = {
                 "is_default": True,
             },
             {
-                # TODO: confirm exact shape label ("Vierkant" of "Rechthoekig")
-                # and supply verified data. Do not invent commercial data.
                 "id": "square",
                 "label": "Vierkant",
                 "shape": "Vierkant",
-                "capacities": [],  # TODO: capacities per container (ml)
-                "image": "",  # TODO: image filename, e.g. igluu-3delig-vierkant.jpg
-                "image_path": "images/vershoudbakjes",
-                "price": None,  # TODO: verified price
-                "price_last_checked": None,  # TODO: price-check date
+                "capacities": [320, 520, 800],
+                "image": "igluu-meal-prep-3delig-vierkant.webp",
+                "image_path": "images/products/vershoudbakjes",
+                "price": 24.95,
+                "price_last_checked": "2026-07-23",
                 "currency": "EUR",
-                "availability": "",  # TODO: availability (e.g. InStock)
-                "affiliate_url": "",  # TODO: affiliate URL for this shape
+                "availability": "InStock",  
+                "affiliate_url": "https://www.amazon.nl/dp/B08WJHTSQ1/?th=1",
                 "is_default": False,
             },
         ],
