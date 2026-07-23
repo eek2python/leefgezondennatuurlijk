@@ -41,3 +41,9 @@ id = "zCa6k9oM0lN4Qibwuq2QS"
 uri = "file://.local/url-structure-audit.md"
 type = "text"
 title = "URL Structure Audit & Migration Proposal"
+
+[[outputs]]
+id = "tfxkoi9krWDV9M-KonoSb"
+uri = "file://static/images/products/vershoudbakjes/igluu-meal-prep-3delig-vierkant.webp"
+type = "image"
+title = "Processed: Igluu 3-delig vierkant (800×800 WebP)"

@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "source": "vershoudbakjes/igluu-3delig-vierkant.jpg",
+    "slug": "igluu-meal-prep-3delig-vierkant",
+    "category": "vershoudbakjes",
+    "product_key": "igluu_meal_prep_3delig",
+    "enabled": true,
+    "variant_id": "square"
+  }
+]
