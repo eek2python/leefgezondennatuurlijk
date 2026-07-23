@@ -6,10 +6,13 @@
         if (buttons.length < 2) {
             return;
         }
-        var img = card.querySelector("[data-shape-image]");
-        var summary = card.querySelector("[data-shape-summary]");
-        var link = card.querySelector("[data-shape-affiliate]");
-        var disabledEl = card.querySelector("[data-shape-affiliate-disabled]");
+        var scope = card.hasAttribute("data-shape-page") ? document : card;
+        var img = scope.querySelector("[data-shape-image]");
+        var summary = scope.querySelector("[data-shape-summary]");
+        var link = scope.querySelector("[data-shape-affiliate]");
+        var disabledEl = scope.querySelector("[data-shape-affiliate-disabled]");
+        var capacityEl = scope.querySelector("[data-shape-capacity]");
+        var totalCapacityEl = scope.querySelector("[data-shape-total-capacity]");
         var requestId = 0;
 
         function activate(button) {
@@ -50,6 +53,19 @@
 
             if (summary && summaryText) {
                 summary.textContent = summaryText;
+            }
+
+            if (capacityEl) {
+                var capacity = button.getAttribute("data-capacity") || "";
+                if (capacity) {
+                    capacityEl.textContent = capacity;
+                }
+            }
+            if (totalCapacityEl) {
+                var totalCapacity = button.getAttribute("data-total-capacity") || "";
+                if (totalCapacity) {
+                    totalCapacityEl.textContent = totalCapacity;
+                }
             }
 
             if (link) {

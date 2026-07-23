@@ -30,22 +30,58 @@
         <h1>{{ product.name }}</h1>
     </header>
 
-    <div class="product-detail-layout">
+    <div class="product-detail-layout"{% if product.shape_variants|length > 1 %} data-shape-card data-shape-page data-product-slug="{{ product.slug }}" data-product-name="{{ product.name }}"{% endif %}>
+        {% if product.shape_variants %}
+        <img
+            src="{{ product.default_variant.image_url }}"
+            alt="{{ product.default_variant.alt_text }}"
+            class="image fit"
+            loading="lazy"
+            data-shape-image
+        >
+        {% if product.shape_variants|length > 1 %}
+        <div class="product-variant-selector">
+            <span class="product-variant-selector__label" id="variant-label-{{ product.slug }}">{{ product.variant_label|default:"Uitvoering" }}</span>
+            <div class="product-variant-selector__options" role="group" aria-labelledby="variant-label-{{ product.slug }}">
+                {% for variant in product.shape_variants %}
+                <button
+                    type="button"
+                    class="product-variant-button{% if variant.id == product.default_variant.id %} is-active{% endif %}"
+                    data-shape-option
+                    data-variant-id="{{ variant.id }}"
+                    data-label="{{ variant.label }}"
+                    data-shape="{{ variant.shape }}"
+                    data-image="{{ variant.image_url }}"
+                    data-alt="{{ variant.alt_text }}"
+                    data-capacity="{{ variant.formatted_capacity }}"
+                    data-total-capacity="{{ variant.formatted_total_capacity }}"
+                    data-affiliate="{{ variant.affiliate_url }}"
+                    data-summary="{{ variant.selected_summary }}"
+                    aria-label="{{ product.variant_label|default:'Uitvoering' }}: {{ variant.label }}"
+                    aria-pressed="{% if variant.id == product.default_variant.id %}true{% else %}false{% endif %}"
+                >{{ variant.label }}</button>
+                {% endfor %}
+            </div>
+        </div>
+        <p class="variant-selected-summary" data-shape-summary>{{ product.default_variant.selected_summary }}</p>
+        {% endif %}
+        {% else %}
         <img
             src="{% static product.image_path|add:'/' %}{{ product.image }}"
             alt="{{ product.name }}"
             class="image fit"
             loading="lazy"
         >
+        {% endif %}
     </div>
 
     <p>{{ product.description }}</p>
 
     {% if product.formatted_capacity %}
     <p>
-        <strong>Inhoud:</strong> {{ product.formatted_capacity }}
+        <strong>Inhoud:</strong> <span data-shape-capacity>{{ product.formatted_capacity }}</span>
         {% if product.formatted_total_capacity %}
-        <br><strong>Totale inhoud:</strong> {{ product.formatted_total_capacity }}
+        <br><strong>Totale inhoud:</strong> <span data-shape-total-capacity>{{ product.formatted_total_capacity }}</span>
         {% endif %}
     </p>
     {% endif %}
@@ -108,7 +144,23 @@
 {% endif %}
 
 <section>
-    {% if product.affiliate_url %}
+    {% if product.shape_variants %}
+    <a
+        href="{{ product.default_variant.affiliate_url }}"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+        class="button primary"
+        data-shape-affiliate
+        aria-label="Bekijk prijs en reviews – {{ product.default_variant.label }}"
+        {% if not product.default_variant.affiliate_url %}hidden{% endif %}
+    >Bekijk prijs &amp; reviews →</a>
+    <span
+        class="button disabled"
+        aria-disabled="true"
+        data-shape-affiliate-disabled
+        {% if product.default_variant.affiliate_url %}hidden{% endif %}
+    >Link voor deze uitvoering nog niet beschikbaar</span>
+    {% elif product.affiliate_url %}
     <a href="{{ product.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary">Bekijk prijs &amp; reviews →</a>
     {% else %}
     <span class="button disabled" aria-disabled="true">Binnenkort beschikbaar</span>
