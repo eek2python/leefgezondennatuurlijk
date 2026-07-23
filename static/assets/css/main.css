@@ -2338,6 +2338,41 @@ input, select, textarea {
    font-size: 13px;
 }
 
+
+/* Storage size filter (formaatfilter) */
+.storage-size-filter {
+   margin-top: 0;
+}
+.storage-size-filter__options {
+   display: inline-flex;
+   gap: 8px;
+   flex-wrap: wrap;
+   align-items: center;
+}
+.storage-size-filter__option:focus-visible {
+   outline: 2px solid #3d4449;
+   outline-offset: 2px;
+}
+.storage-size-filter__option--active {
+   text-decoration: underline;
+}
+.storage-size-filter__help {
+   flex-basis: 100%;
+   font-size: 13px;
+   color: #7f888f;
+   margin: 4px 0 0 0;
+}
+.storage-filter-count {
+   font-size: 14px;
+   color: #7f888f;
+   margin: 0 0 15px 0;
+}
+.product-size-info {
+   font-size: 14px;
+   color: #3d4449;
+   margin: 0 0 15px 0;
+}
+
 /* Sticky compact size selector */
 .format-sticky {
    position: fixed;

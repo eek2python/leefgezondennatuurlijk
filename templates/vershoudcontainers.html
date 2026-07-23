@@ -47,6 +47,7 @@
                 </section>
 
 {% include "partials/storage_type_selector.html" %}
+{% include "partials/storage_size_filter.html" %}
 
                 {% include "partials/top_picks.html" %}
 
@@ -69,6 +70,9 @@
                         </header>
                         {% if type_intro %}
                         <p>{{ type_intro|safe }}</p>
+                        {% endif %}
+                        {% if products %}
+                        <p class="storage-filter-count">{{ visible_product_count }} product{{ visible_product_count|pluralize:"en" }} gevonden</p>
                         {% endif %}
                         <div class="product-list">
 
@@ -95,6 +99,7 @@
                                         {% if show_total_column %}
                                         <th>Totale inhoud</th>
                                         {% endif %}
+                                        <th>Formaat</th>
                                         <th>Prijs</th>
                                         <th>Beoordeling</th>
                                         <th>Actie</th>
@@ -119,6 +124,7 @@
                                         {% if show_total_column %}
                                         <td>{{ row.total_display }}</td>
                                         {% endif %}
+                                        <td>{{ row.size_display }}</td>
                                         <td>{{ row.product.price_range }}</td>
                                         <td><span class="stars stars-{{ row.product.rating_class }}"></span></td>
                                         <td><a href="{{ row.product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews →</a></td>
@@ -129,7 +135,8 @@
                                         </div>
                                 </section>
                                 {% else %}
-                                <p>Voor deze uitvoering zijn momenteel geen producten beschikbaar. Bekijk een andere uitvoering hierboven.</p>
+                                <p>Binnen deze combinatie zijn momenteel geen producten beschikbaar.
+                                <a href="{{ size_filter_reset_url }}" class="button small">Toon alle formaten binnen {{ selected_type_label }}</a></p>
                                 {% endif %}
                                 </section>
 

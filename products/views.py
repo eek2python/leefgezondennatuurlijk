@@ -2,9 +2,20 @@ import os
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
 from .models import Product, Click
-from utils.product_helpers import get_capacity_display
+import logging
+from utils.product_helpers import (
+    get_capacity_display,
+    classify_storage_size,
+    get_product_size_categories,
+    filter_products_by_storage_size,
+    format_total_capacity,
+    STORAGE_SIZE_LABELS,
+    STORAGE_SIZE_THRESHOLDS,
+)
 from utils.variant_helpers import prepare_product_variants
 import json
+
+logger = logging.getLogger(__name__)
 from .products_koekenpannen import PRODUCTS as KOEKENPANNEN_PRODUCTS
 from .rankings_koekenpannen import RANKINGS as KOEKENPANNEN_RANKINGS
 from .content_koekenpannen import CONTENT as KOEKENPANNEN_CONTENT
@@ -553,9 +564,65 @@ def _validate_vershoudbakjes_awards():
 _validate_vershoudbakjes_awards()
 
 
+SIZE_FILTERS = [
+    {"key": "all", "slug": "alle", "label": "Alle"},
+    {"key": "small", "slug": "klein", "label": "Klein"},
+    {"key": "medium", "slug": "middel", "label": "Middel"},
+    {"key": "large", "slug": "groot", "label": "Groot"},
+]
+
+_SIZE_FILTER_SLUG_TO_FILTER = {f["slug"]: f for f in SIZE_FILTERS}
+
+
 def get_selected_storage_type(request):
     slug = request.GET.get("uitvoering", "enkel")
     return _VERSHOUDBAKJES_SLUG_TO_TYPE.get(slug, VERSHOUDBAKJES_TYPES[0])
+
+
+def get_selected_storage_size(request):
+    slug = request.GET.get("formaat", "alle")
+    return _SIZE_FILTER_SLUG_TO_FILTER.get(slug, SIZE_FILTERS[0])
+
+
+def prepare_storage_product(product, selected_size):
+    """Attach size-classification fields and, when a size filter is active,
+    pick a matching display variant for shape-variant families."""
+    product["size_categories"] = get_product_size_categories(product)
+    own_category = classify_storage_size(
+        product.get("capacities") if product.get("capacities") is not None else product.get("capacity")
+    )
+    product["size_category"] = own_category
+    product["size_label"] = STORAGE_SIZE_LABELS.get(own_category, "")
+    product["size_labels"] = [STORAGE_SIZE_LABELS[c] for c in product["size_categories"]]
+    if not product["size_categories"]:
+        logger.warning(
+            "Vershoudbakjes product '%s' heeft geen bruikbare capaciteit; alleen zichtbaar bij formaat 'Alle'",
+            product.get("slug"),
+        )
+
+    variants = product.get("shape_variants") or []
+    if selected_size != "all" and variants:
+        matching = [
+            v for v in variants
+            if classify_storage_size(v.get("capacities")) == selected_size
+        ]
+        if matching:
+            current_default = product.get("default_variant")
+            display = current_default if current_default in matching else matching[0]
+            if display is not current_default:
+                product["default_variant"] = display
+                for field in (
+                    "image", "image_path", "capacities", "price", "currency",
+                    "availability", "affiliate_url", "price_last_checked",
+                ):
+                    value = display.get(field)
+                    if value not in (None, "", []):
+                        product[field] = value
+                product["formatted_capacity"], product["formatted_total_capacity"] = get_capacity_display(product)
+                display_category = classify_storage_size(display.get("capacities"))
+                product["size_category"] = display_category
+                product["size_label"] = STORAGE_SIZE_LABELS.get(display_category, "")
+    return product
 
 
 def vershoudcontainers(request):
@@ -563,10 +630,15 @@ def vershoudcontainers(request):
     selected_type = get_selected_storage_type(request)
     type_key = selected_type["key"]
     type_content = content["types"][type_key]
+    selected_size_filter = get_selected_storage_size(request)
+    size_key = selected_size_filter["key"]
 
     keys = VERSHOUDCONTAINERS_RANKINGS.get(type_key, [])
-    products = [dict(VERSHOUDCONTAINERS_PRODUCTS[k]) for k in keys if k in VERSHOUDCONTAINERS_PRODUCTS]
-    _enrich_products(products)
+    all_ranked_products = [dict(VERSHOUDCONTAINERS_PRODUCTS[k]) for k in keys if k in VERSHOUDCONTAINERS_PRODUCTS]
+    _enrich_products(all_ranked_products)
+    for p in all_ranked_products:
+        prepare_storage_product(p, size_key)
+    products = filter_products_by_storage_size(all_ranked_products, size_key)
     product_count = len(products)
 
     is_set_type = type_key != "single"
@@ -578,6 +650,7 @@ def vershoudcontainers(request):
             "product": p,
             "capacity_display": capacity_display,
             "total_display": total_display,
+            "size_display": ", ".join(p.get("size_labels") or []) or "—",
         })
 
     available_types = [
@@ -585,11 +658,29 @@ def vershoudcontainers(request):
             "key": t["key"],
             "slug": t["slug"],
             "label": t["label"],
-            "url": f"?uitvoering={t['slug']}",
+            "url": f"?uitvoering={t['slug']}&formaat={selected_size_filter['slug']}",
             "is_active": t["key"] == type_key,
         }
         for t in VERSHOUDBAKJES_TYPES
     ]
+
+    available_size_filters = [
+        {
+            "key": f["key"],
+            "slug": f["slug"],
+            "label": f["label"],
+            "url": f"?uitvoering={selected_type['slug']}&formaat={f['slug']}",
+            "is_active": f["key"] == size_key,
+        }
+        for f in SIZE_FILTERS
+    ]
+    size_filter_reset_url = f"?uitvoering={selected_type['slug']}&formaat=alle"
+    size_filter_help = (
+        "Het formaat is gebaseerd op de inhoud van het grootste bakje: "
+        f"Klein tot en met {STORAGE_SIZE_THRESHOLDS['small_max_ml']} ml, "
+        f"Middel tot en met {format_total_capacity(STORAGE_SIZE_THRESHOLDS['medium_max_ml'])}, "
+        f"Groot daarboven."
+    )
 
     conclusie = type_content.get("conclusie")
     faq_ld = _build_faq_ld(content["faq"]["items"])
@@ -615,6 +706,12 @@ def vershoudcontainers(request):
         "comparison_title": type_content["comparison_title"],
         "show_total_column": is_set_type,
         "comparison_rows": comparison_rows,
+        "available_size_filters": available_size_filters,
+        "selected_size_filter": selected_size_filter,
+        "selected_size_key": size_key,
+        "size_filter_help": size_filter_help,
+        "size_filter_reset_url": size_filter_reset_url,
+        "visible_product_count": product_count,
         "conclusie": conclusie,
         "json_ld": json_ld,
         "faq_ld": faq_ld,

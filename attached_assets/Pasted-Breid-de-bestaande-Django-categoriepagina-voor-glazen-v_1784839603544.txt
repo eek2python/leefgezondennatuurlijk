@@ -1,0 +1,834 @@
+Breid de bestaande Django-categoriepagina voor glazen vershoudbakjes uit met een herbruikbare formaatfilter.
+
+De pagina heeft of krijgt al een hoofdselector voor:
+
+- Enkel
+- 3-delig
+- 5-delig
+
+Voeg daaronder een tweede selector toe:
+
+- Alle
+- Klein
+- Middel
+- Groot
+
+De formaatfilter moet werken voor:
+
+- losse vershoudbakjes;
+- 3-delige sets;
+- 5-delige sets;
+- productfamilies met meerdere inhoudsmaten;
+- producten met vormvarianten, zoals rond en vierkant;
+- producten die nog het oude `capacity`-veld gebruiken.
+
+==================================================
+1. INSPECTEER EERST HET PROJECT
+==================================================
+
+Inspecteer vóór implementatie:
+
+- de huidige vershoudbakjes-view;
+- products_vershoudbakjes.py;
+- rankings_vershoudbakjes.py;
+- content_vershoudbakjes.py;
+- de productkaart-template;
+- de vergelijkingstabel;
+- bestaande capaciteithelpers;
+- bestaande formaat- of maatselectors op andere categoriepagina’s;
+- bestaande productvariantselectors;
+- bestaande CSS en JavaScript voor selectors;
+- huidige tests;
+- de implementatie van de selector:
+  - Enkel;
+  - 3-delig;
+  - 5-delig.
+
+Hergebruik bestaande patronen en componenten.
+
+Maak geen tweede parallel systeem wanneer er al generieke selector-, capaciteit- of variantlogica bestaat.
+
+==================================================
+2. GEWENSTE PAGINA-INTERFACE
+==================================================
+
+Toon boven de rankings:
+
+Kies uitvoering
+
+[ Enkel ] [ 3-delig ] [ 5-delig ]
+
+Filter op formaat
+
+[ Alle ] [ Klein ] [ Middel ] [ Groot ]
+
+De uitvoeringselector en formaatfilter zijn twee verschillende filters.
+
+Gebruik afzonderlijke:
+
+- queryparameters;
+- CSS-klassen;
+- data-attributen;
+- variabelen;
+- viewhelpers.
+
+De formaatfilter mag een productvariantselector zoals Rond/Vierkant of 700 ml/1,5 L niet verstoren.
+
+==================================================
+3. URL-STRUCTUUR
+==================================================
+
+Gebruik deze queryparameters:
+
+- `uitvoering`
+- `formaat`
+
+Geldige URLs zijn bijvoorbeeld:
+
+/vershoudbakjes/?uitvoering=enkel&formaat=alle
+/vershoudbakjes/?uitvoering=enkel&formaat=klein
+/vershoudbakjes/?uitvoering=3-delig&formaat=middel
+/vershoudbakjes/?uitvoering=5-delig&formaat=groot
+
+Geldige uitvoeringswaarden:
+
+- enkel
+- 3-delig
+- 5-delig
+
+Geldige formaatwaarden:
+
+- alle
+- klein
+- middel
+- groot
+
+Standaardwaarden:
+
+- uitvoering: enkel
+- formaat: alle
+
+Ongeldige of ontbrekende waarden mogen nooit een server error veroorzaken.
+
+Val terug op:
+
+- enkel;
+- alle.
+
+Behoud beide waarden in de URL wanneer de bezoeker tussen opties wisselt.
+
+Voorbeeld:
+
+Wanneer de huidige selectie is:
+
+uitvoering=3-delig
+formaat=groot
+
+en de bezoeker “5-delig” kiest, wordt de link:
+
+?uitvoering=5-delig&formaat=groot
+
+Wanneer de bezoeker vervolgens “Middel” kiest:
+
+?uitvoering=5-delig&formaat=middel
+
+==================================================
+4. FORMAATCLASSIFICATIE
+==================================================
+
+Classificeer het praktische formaat op basis van het grootste bakje binnen de betreffende uitvoering of variant.
+
+Gebruik aanvankelijk deze grenzen:
+
+- Klein: grootste bak maximaal 600 ml
+- Middel: grootste bak van 601 tot en met 1.200 ml
+- Groot: grootste bak groter dan 1.200 ml
+
+Maak deze grenzen centraal configureerbaar.
+
+Gebruik bijvoorbeeld:
+
+STORAGE_SIZE_THRESHOLDS = {
+    "small_max_ml": 600,
+    "medium_max_ml": 1200,
+}
+
+Gebruik interne sleutels:
+
+- small
+- medium
+- large
+
+Gebruik zichtbare Nederlandse labels:
+
+STORAGE_SIZE_LABELS = {
+    "small": "Klein",
+    "medium": "Middel",
+    "large": "Groot",
+}
+
+Maak een herbruikbare helper:
+
+def classify_storage_size(capacities):
+    """
+    Classificeert een los bakje of set op basis van
+    de grootste geldige capaciteit.
+    """
+
+    valid_capacities = [
+        capacity
+        for capacity in capacities or []
+        if isinstance(capacity, (int, float)) and capacity > 0
+    ]
+
+    if not valid_capacities:
+        return None
+
+    largest_capacity_ml = max(valid_capacities)
+
+    if largest_capacity_ml <= 600:
+        return "small"
+
+    if largest_capacity_ml <= 1200:
+        return "medium"
+
+    return "large"
+
+Gebruik geen totale inhoud voor de formaatclassificatie.
+
+Voorbeeld:
+
+capacities = [400, 400, 400, 400, 400]
+
+Totale inhoud:
+2 L
+
+Grootste bak:
+400 ml
+
+Classificatie:
+Klein
+
+Voorbeeld:
+
+capacities = [400, 700, 1500]
+
+Totale inhoud:
+2,6 L
+
+Grootste bak:
+1,5 L
+
+Classificatie:
+Groot
+
+==================================================
+5. AFGELEIDE CAPACITEITSVELDEN
+==================================================
+
+Bereid per product of variant minimaal deze velden voor:
+
+- container_count;
+- smallest_capacity_ml;
+- largest_capacity_ml;
+- total_capacity_ml;
+- formatted_capacities;
+- formatted_smallest_capacity;
+- formatted_largest_capacity;
+- formatted_total_capacity;
+- size_category;
+- size_label.
+
+Gebruik de reeds bestaande helpers waar mogelijk:
+
+- format_capacities();
+- calculate_total_capacity();
+- format_total_capacity().
+
+Voorbeeld:
+
+"capacities": [400, 700, 1500]
+
+moet opleveren:
+
+container_count = 3
+smallest_capacity_ml = 400
+largest_capacity_ml = 1500
+total_capacity_ml = 2600
+formatted_capacities = "400 ml + 700 ml + 1,5 L"
+formatted_largest_capacity = "1,5 L"
+formatted_total_capacity = "2,6 L"
+size_category = "large"
+size_label = "Groot"
+
+Plaats deze berekeningen niet in de template.
+
+==================================================
+6. LOSSE PRODUCTEN ZONDER VARIANTEN
+==================================================
+
+Voor producten zonder variants:
+
+- gebruik `capacities` wanneer aanwezig;
+- ondersteun een enkele waarde, bijvoorbeeld `[800]`;
+- ondersteun tijdelijk het oude `capacity`-veld;
+- gebruik bestaande normalisatielogica wanneer die al bestaat.
+
+Voorbeeld:
+
+"capacities": [800]
+
+Classificatie:
+
+Middel
+
+Wanneer uitsluitend een oude tekstwaarde bestaat, bijvoorbeeld:
+
+"capacity": "800 ml"
+
+gebruik de bestaande backward-compatible parser wanneer aanwezig.
+
+Maak geen kwetsbare nieuwe tekstparser wanneer de applicatie dit al elders heeft opgelost.
+
+Wanneer de capaciteit niet betrouwbaar numeriek kan worden bepaald:
+
+- toon het product bij “Alle”;
+- toon het niet bij Klein, Middel of Groot;
+- voeg intern een waarschuwing toe;
+- laat de pagina niet crashen.
+
+==================================================
+7. PRODUCTFAMILIES MET MEERDERE VARIANTEN
+==================================================
+
+Een productfamilie kan meerdere inhouds- of vormvarianten hebben.
+
+Bijvoorbeeld:
+
+"variants": [
+    {
+        "id": "small",
+        "shape": "Rechthoekig",
+        "capacities": [450],
+        ...
+    },
+    {
+        "id": "medium",
+        "shape": "Rechthoekig",
+        "capacities": [1000],
+        ...
+    },
+    {
+        "id": "large",
+        "shape": "Rechthoekig",
+        "capacities": [1800],
+        ...
+    }
+]
+
+Dit product hoort dan bij:
+
+- Klein;
+- Middel;
+- Groot.
+
+Bereid daarom op productfamilieniveau voor:
+
+size_categories = ["small", "medium", "large"]
+
+Het product moet worden getoond wanneer minimaal één beschikbare variant bij het gekozen formaat past.
+
+Maak een helper vergelijkbaar met:
+
+def get_product_size_categories(product):
+    """
+    Geeft alle unieke formaatcategorieën terug waarin
+    het product of een van zijn varianten verkrijgbaar is.
+    """
+
+Regels:
+
+1. Heeft het product varianten met `capacities`, classificeer iedere variant.
+2. Verwijder dubbele categorieën.
+3. Sla varianten zonder geldige capaciteit over.
+4. Heeft het product geen bruikbare varianten, gebruik de capaciteit op productniveau.
+5. Behoud de logische volgorde:
+   small, medium, large.
+
+==================================================
+8. STANDAARDVARIANT BIJ EEN ACTIEVE FILTER
+==================================================
+
+Wanneer een productfamilie meerdere formaten bevat en de bezoeker bijvoorbeeld “Groot” selecteert:
+
+- toon de productfamilie;
+- selecteer bij de eerste weergave bij voorkeur een variant die onder Groot valt;
+- gebruik niet automatisch een kleine standaardvariant terwijl de pagina op Groot is gefilterd.
+
+Bereid hiervoor bijvoorbeeld voor:
+
+matching_variant_id
+
+en:
+
+display_variant
+
+Selectieregels:
+
+1. Zoek beschikbare varianten die bij het actieve formaat passen.
+2. Gebruik daarvan:
+   - eerst de bestaande defaultvariant wanneer die passend is;
+   - anders de eerste passende beschikbare variant.
+3. Bij formaat “Alle”:
+   - gebruik de gewone defaultvariant.
+4. Wanneer geen passende variant bestaat:
+   - toon de productfamilie niet binnen dat filter.
+
+De productvariantselector binnen het productblok moet daarna gewoon blijven werken.
+
+De bezoeker mag na het openen van het productblok ook naar een ander beschikbaar formaat wisselen.
+
+==================================================
+9. VORM- EN CAPACITEITSVARIANTEN
+==================================================
+
+Sommige producten hebben combinaties zoals:
+
+- Rond, 700 ml
+- Rond, 1,5 L
+- Vierkant, 700 ml
+- Vierkant, 2 L
+
+Behandel iedere geldige combinatie als een variant.
+
+Voorbeeld:
+
+{
+    "id": "round-700",
+    "shape": "Rond",
+    "capacities": [700],
+    ...
+},
+{
+    "id": "round-1500",
+    "shape": "Rond",
+    "capacities": [1500],
+    ...
+},
+{
+    "id": "square-700",
+    "shape": "Vierkant",
+    "capacities": [700],
+    ...
+}
+
+De paginaformaatfilter bepaalt welke productfamilies zichtbaar zijn en welke variant aanvankelijk wordt geselecteerd.
+
+De selector in het productblok bepaalt vervolgens de specifieke uitvoering.
+
+Gebruik geen onafhankelijke arrays zoals:
+
+shapes = [...]
+capacities = [...]
+
+wanneer niet iedere vorm-capaciteitcombinatie daadwerkelijk bestaat.
+
+==================================================
+10. FILTERLOGICA
+==================================================
+
+Maak een herbruikbare helper:
+
+filter_products_by_storage_size(products, selected_size)
+
+Gedrag:
+
+- `all`: alle producten tonen;
+- `small`: producten tonen waarvan `size_categories` small bevat;
+- `medium`: producten tonen waarvan `size_categories` medium bevat;
+- `large`: producten tonen waarvan `size_categories` large bevat.
+
+Behoud altijd de bestaande rankingvolgorde.
+
+Sorteer de producten niet automatisch op inhoud, tenzij de bestaande pagina dit al bewust doet.
+
+De formaatfilter is een filter binnen de bestaande ranking, geen nieuwe ranking.
+
+==================================================
+11. VIEWLOGICA
+==================================================
+
+De view moet minimaal voorbereiden:
+
+- available_storage_types;
+- selected_storage_type;
+- available_size_filters;
+- selected_size_filter;
+- all_ranked_products;
+- filtered_ranked_products;
+- visible_product_count;
+- comparison_rows;
+- content;
+- faq_items;
+- structured_data.
+
+Gebruik bijvoorbeeld:
+
+SIZE_FILTERS = [
+    {
+        "key": "all",
+        "slug": "alle",
+        "label": "Alle",
+    },
+    {
+        "key": "small",
+        "slug": "klein",
+        "label": "Klein",
+    },
+    {
+        "key": "medium",
+        "slug": "middel",
+        "label": "Middel",
+    },
+    {
+        "key": "large",
+        "slug": "groot",
+        "label": "Groot",
+    },
+]
+
+Maak helpers vergelijkbaar met:
+
+get_selected_storage_type(request)
+get_selected_storage_size(request)
+prepare_storage_product(product, selected_size)
+filter_products_by_storage_size(products, selected_size)
+
+De template mag geen complexe filter- of classificatielogica uitvoeren.
+
+==================================================
+12. TEMPLATE
+==================================================
+
+Toon de formaatfilter direct onder de uitvoeringselector.
+
+Gebruik server-side links, zodat de pagina zonder JavaScript werkt.
+
+Voorbeeldstructuur:
+
+<nav class="storage-size-filter"
+     aria-label="Filter vershoudbakjes op formaat">
+
+    <span class="storage-size-filter__label">
+        Filter op formaat
+    </span>
+
+    <div class="storage-size-filter__options">
+        ...
+    </div>
+</nav>
+
+Gebruik voor iedere optie een link.
+
+De actieve optie krijgt:
+
+aria-current="page"
+
+en een actieve CSS-klasse.
+
+Laat in of nabij de productsectie zien hoeveel producten passen:
+
+“5 producten gevonden”
+
+of:
+
+“1 product gevonden”
+
+Toon geen teller wanneer dit niet aansluit bij de huidige pagina-opmaak.
+
+==================================================
+13. UITLEG BIJ DE FILTER
+==================================================
+
+Voeg een korte toelichting toe, bijvoorbeeld:
+
+“Het formaat is gebaseerd op de inhoud van het grootste bakje in de set.”
+
+Plaats deze toelichting subtiel bij de filter of in een info-icoon volgens het bestaande ontwerp.
+
+Gebruik eventueel uitgebreidere toegankelijke tekst:
+
+- Klein: grootste bak maximaal 600 ml
+- Middel: grootste bak van 601 ml tot en met 1,2 L
+- Groot: grootste bak meer dan 1,2 L
+
+Maak de grenswaarden vanuit de centrale configuratie beschikbaar, zodat zichtbare teksten en technische logica niet uiteenlopen.
+
+==================================================
+14. PRODUCTKAART
+==================================================
+
+Toon waar relevant:
+
+Los product:
+
+Inhoud:
+800 ml
+
+Formaat:
+Middel
+
+Set:
+
+Samenstelling:
+400 ml + 700 ml + 1,5 L
+
+Grootste bak:
+1,5 L
+
+Totale inhoud:
+2,6 L
+
+Formaat:
+Groot
+
+Voor productfamilies met meerdere formaten kan worden getoond:
+
+Verkrijgbaar in:
+Klein, middel en groot
+
+of bij de geselecteerde variant:
+
+Geselecteerde inhoud:
+1,5 L
+
+Verberg velden zonder waarde.
+
+Toon nooit:
+
+- None;
+- 0 ml door ontbrekende informatie;
+- een lege totale inhoud;
+- dubbele capaciteitsteksten;
+- een formaatclassificatie zonder geldige capaciteit.
+
+==================================================
+15. VERGELIJKINGSTABEL
+==================================================
+
+Toon alleen producten die binnen de actieve uitvoering en formaatfilter vallen.
+
+Aanbevolen kolommen voor losse bakjes:
+
+- Product
+- Inhoud
+- Formaat
+- Vorm
+- Materiaal
+- Prijsniveau
+- Eindoordeel
+
+Aanbevolen kolommen voor sets:
+
+- Product
+- Samenstelling
+- Grootste bak
+- Totale inhoud
+- Formaat
+- Vorm
+- Prijsniveau
+- Eindoordeel
+
+Gebruik bestaande kolommen wanneer de huidige architectuur daarvan afwijkt.
+
+Bereid de tabelrijen volledig in Python voor.
+
+==================================================
+16. LEGE FILTERRESULTATEN
+==================================================
+
+Wanneer geen producten passen:
+
+- laat de pagina niet crashen;
+- toon geen lege vergelijkingstabel;
+- toon een nette melding:
+
+“Binnen deze combinatie zijn momenteel geen producten beschikbaar.”
+
+Voeg een link of knop toe naar:
+
+- formaat Alle binnen dezelfde uitvoering.
+
+Voorbeeld:
+
+?uitvoering=3-delig&formaat=alle
+
+Verander de filter niet automatisch zonder de bezoeker daarover te informeren.
+
+==================================================
+17. SEO EN CANONICAL
+==================================================
+
+Behoud één canonieke hoofd-URL voor de vershoudbakjespagina.
+
+Queryparameterfilters moeten standaard naar dezelfde hoofd-URL canonicaliseren, tenzij het project bewust een ander bestaand SEO-patroon gebruikt.
+
+Maak geen afzonderlijke indexeerbare pagina’s voor:
+
+- klein;
+- middel;
+- groot;
+- enkel;
+- 3-delig;
+- 5-delig.
+
+Behoud de bestaande algemene paginatitel en meta description.
+
+De zichtbare sectiekop mag wel aansluiten bij de selectie, bijvoorbeeld:
+
+“Beste grote 3-delige glazen vershoudsets”
+
+Voorkom onnatuurlijke of grammaticaal verkeerde combinaties.
+
+Gebruik vooraf voorbereide labels of headings in plaats van losse woorden direct aan elkaar te plakken.
+
+==================================================
+18. STRUCTURED DATA
+==================================================
+
+ItemList JSON-LD moet uitsluitend de zichtbare gefilterde producten bevatten.
+
+Vereisten:
+
+- juiste rankingvolgorde;
+- posities opnieuw nummeren vanaf 1;
+- geen verborgen producten opnemen;
+- geen dubbele productfamilies;
+- gebruik de geselecteerde of passende standaardvariant;
+- geen lege prijzen;
+- geen verkeerde variant-URL;
+- geen ongeldige capaciteitvelden.
+
+Laat FAQPage JSON-LD ongewijzigd wanneer de FAQ algemeen voor de uitvoering geldt.
+
+Pas de FAQ niet dynamisch aan uitsluitend vanwege Klein/Middel/Groot, tenzij daar daadwerkelijk aparte content voor bestaat.
+
+==================================================
+19. CSS
+==================================================
+
+Gebruik of breid generieke selectorstijlen uit.
+
+Mogelijke klassen:
+
+.storage-size-filter
+.storage-size-filter__label
+.storage-size-filter__options
+.storage-size-filter__option
+.storage-size-filter__option--active
+.storage-size-filter__help
+
+De filter moet:
+
+- mobiel bruikbaar zijn;
+- opties laten afbreken naar meerdere regels;
+- voldoende grote klikvlakken bieden;
+- een duidelijke actieve status hebben;
+- een zichtbare focusstatus hebben;
+- niet uitsluitend kleur gebruiken om selectie aan te geven;
+- aansluiten bij de uitvoeringselector zonder ermee te versmelten.
+
+==================================================
+20. ANALYTICS
+==================================================
+
+Wanneer de website al een GA4- of analyticshelper gebruikt, registreer dan optioneel:
+
+event:
+filter_storage_products
+
+parameters:
+
+- storage_type;
+- size_filter;
+- visible_product_count;
+- category.
+
+Voeg geen nieuwe analyticsbibliotheek toe uitsluitend voor deze functie.
+
+==================================================
+21. TESTS
+==================================================
+
+Voeg tests toe voor minimaal:
+
+1. Formaat Alle toont alle producten binnen de geselecteerde uitvoering.
+2. Klein gebruikt een grootste capaciteit van maximaal 600 ml.
+3. Middel gebruikt 601 tot en met 1.200 ml.
+4. Groot gebruikt meer dan 1.200 ml.
+5. De totale inhoud wordt niet voor classificatie gebruikt.
+6. `[400, 400, 400, 400, 400]` wordt Klein.
+7. `[400, 700, 1500]` wordt Groot.
+8. `[800]` wordt Middel.
+9. Producten zonder geldige capaciteit blijven zichtbaar bij Alle.
+10. Producten zonder geldige capaciteit worden niet willekeurig geclassificeerd.
+11. Productfamilies kunnen in meerdere formaatcategorieën vallen.
+12. Bij een actief formaat wordt een passende beginvariant geselecteerd.
+13. De gewone defaultvariant wordt gebruikt bij Alle.
+14. De rankingvolgorde blijft behouden.
+15. De vergelijkingstabel bevat alleen zichtbare producten.
+16. ItemList JSON-LD bevat alleen zichtbare producten.
+17. ItemList-posities beginnen opnieuw bij 1.
+18. Ongeldige formaatparameter valt terug op Alle.
+19. Ongeldige uitvoeringparameter valt terug op Enkel.
+20. Beide queryparameters blijven behouden bij navigatie.
+21. Lege resultaten tonen een nette melding.
+22. De productvariantselector blijft werken.
+23. Rond/Vierkant interfereert niet met Klein/Middel/Groot.
+24. Oude `capacity`-producten blijven functioneren.
+25. De template toont geen None of lege capaciteitsvelden.
+26. De pagina blijft bruikbaar zonder JavaScript.
+27. Andere categoriepagina’s blijven functioneren.
+28. De volledige bestaande testset slaagt.
+
+==================================================
+22. IMPLEMENTATIEGRENZEN
+==================================================
+
+Niet doen:
+
+- geen aparte ranking maken voor Klein, Middel en Groot;
+- geen producten dupliceren;
+- geen productfamilie als meerdere ranked producten tonen;
+- geen producten opnieuw rangschikken;
+- geen totale inhoud gebruiken als formaatmaatstaf;
+- geen productfeiten, capaciteiten of varianten verzinnen;
+- geen nieuwe productdata toevoegen;
+- geen bestaande prijzen of affiliate-links aanpassen;
+- geen huidige afbeeldingspipeline wijzigen;
+- geen scraping toevoegen;
+- geen frontendframework toevoegen;
+- geen complexe classificatielogica in templates plaatsen;
+- geen andere categorieën aanpassen behalve gedeelde helpers wanneer noodzakelijk.
+
+==================================================
+23. EINDRAPPORT
+==================================================
+
+Geef na implementatie:
+
+1. alle gewijzigde bestanden;
+2. de centrale formaatgrenzen;
+3. de classificatiehelper;
+4. de verwerking van producten zonder varianten;
+5. de verwerking van productfamilies met varianten;
+6. de aangepaste viewlogica;
+7. de gebruikte queryparameters;
+8. template- en CSS-wijzigingen;
+9. aantallen producten per uitvoering en formaat;
+10. producten zonder bruikbare capaciteit;
+11. producten die in meerdere formaatcategorieën vallen;
+12. testresultaten;
+13. bevestiging dat rankingvolgordes niet zijn gewijzigd;
+14. bevestiging dat productvariantselectors blijven functioneren;
+15. bevestiging dat de formaatfilter de grootste bak gebruikt en niet de totale inhoud.

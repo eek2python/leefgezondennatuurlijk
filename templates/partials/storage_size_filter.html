@@ -1,0 +1,17 @@
+{% if available_size_filters %}
+<nav class="format-selector storage-size-filter" data-storage-size-filter aria-label="Filter vershoudbakjes op formaat">
+    <span class="label storage-size-filter__label">Filter op formaat:</span>
+    <div class="storage-size-filter__options">
+    {% for f in available_size_filters %}
+    <a href="{{ f.url }}"
+       class="format-pill storage-size-filter__option {% if f.is_active %}is-active storage-size-filter__option--active{% endif %}"
+       {% if f.is_active %}aria-current="page"{% endif %}>
+        {{ f.label }}
+    </a>
+    {% endfor %}
+    </div>
+    {% if size_filter_help %}
+    <p class="storage-size-filter__help">{{ size_filter_help }}</p>
+    {% endif %}
+</nav>
+{% endif %}

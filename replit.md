@@ -101,6 +101,11 @@ All 6 category pages use a standardised three-file content architecture per cate
 - Canonical stays on base `/vershoudcontainers/` URL for all selector states
 - `oxo_good_grips_smart_seal_6delig` is intentionally unranked (entry still contains copy-pasted Glasslock placeholder data)
 - Tests: `StorageTypeSelectorTests` in `products/tests.py`
+- Second page-level filter: `?formaat=alle|klein|middel|groot` (default `alle`, invalid falls back); classification by LARGEST container (small ≤600 ml, medium ≤1200 ml, large >1200 ml) via `STORAGE_SIZE_THRESHOLDS`/`STORAGE_SIZE_LABELS`/`classify_storage_size`/`get_product_size_categories`/`filter_products_by_storage_size` in `utils/product_helpers.py`
+- View helpers: `get_selected_storage_size`, `prepare_storage_product` (sets size_categories/size_labels; under active filter picks matching default variant for shape families and recomputes formatted capacity + size label); both query params preserved in all selector/filter links
+- Filter partial: `templates/partials/storage_size_filter.html` (`.storage-size-filter*` classes); product count line, empty state with reset link to `formaat=alle`, "Formaat" column in comparison table, `.product-size-info` line on cards
+- Products without valid numeric capacity: shown only under "Alle" + logged warning
+- Tests: `StorageSizeClassificationTests`, `StorageSizeFilterPageTests`
 
 ### Comparison Template
 - `templates/comparison.html` — reusable comparison table template (not yet wired to a URL)

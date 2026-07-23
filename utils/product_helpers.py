@@ -96,3 +96,76 @@ def get_capacity_display(product):
     if len(values) > 1:
         formatted_total = format_total_capacity(calculate_total_capacity(values))
     return formatted, formatted_total
+
+
+# ---------------------------------------------------------------------------
+# Storage size classification (page-level formaatfilter)
+# ---------------------------------------------------------------------------
+
+STORAGE_SIZE_THRESHOLDS = {
+    "small_max_ml": 600,
+    "medium_max_ml": 1200,
+}
+
+STORAGE_SIZE_LABELS = {
+    "small": "Klein",
+    "medium": "Middel",
+    "large": "Groot",
+}
+
+STORAGE_SIZE_ORDER = ["small", "medium", "large"]
+
+
+def classify_storage_size(capacities):
+    """Classify a single container or set by its LARGEST valid capacity (ml).
+
+    Returns 'small', 'medium', 'large' or None when no valid capacity exists.
+    Total capacity is intentionally NOT used.
+    """
+    valid = _clean_capacities(capacities)
+    if not valid:
+        return None
+    largest = max(valid)
+    if largest <= STORAGE_SIZE_THRESHOLDS["small_max_ml"]:
+        return "small"
+    if largest <= STORAGE_SIZE_THRESHOLDS["medium_max_ml"]:
+        return "medium"
+    return "large"
+
+
+def _product_capacities(product):
+    """Raw capacity input for a product dict: 'capacities' -> legacy 'capacity'."""
+    raw = product.get("capacities")
+    if raw is None:
+        raw = product.get("capacity")
+    return raw
+
+
+def get_product_size_categories(product):
+    """All unique size categories a product (family) is available in.
+
+    Uses per-variant capacities for shape/format variant families; falls back
+    to product-level capacities. Order is always small, medium, large.
+    """
+    categories = set()
+    variants = product.get("shape_variants") or []
+    for variant in variants:
+        category = classify_storage_size(variant.get("capacities"))
+        if category:
+            categories.add(category)
+    if not categories:
+        category = classify_storage_size(_product_capacities(product))
+        if category:
+            categories.add(category)
+    return [c for c in STORAGE_SIZE_ORDER if c in categories]
+
+
+def filter_products_by_storage_size(products, selected_size):
+    """Filter enriched products by size category, preserving ranking order.
+
+    'all' returns every product. Products without any size category are only
+    shown under 'all'.
+    """
+    if selected_size == "all":
+        return list(products)
+    return [p for p in products if selected_size in (p.get("size_categories") or [])]
