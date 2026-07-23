@@ -4319,7 +4319,7 @@ table.product-table .product-badge {
  border: 2px solid #dbe1e4;
  border-radius: 6px;
  background-color: #ffffff;
- color: #3d4449;
+ color: #3d4449 !important;
  font-size: 0.85em;
  font-weight: 600;
  line-height: 1.4;
@@ -4337,7 +4337,7 @@ table.product-table .product-badge {
 .product-variant-button.is-active {
  border-color: #62d4e5;
  background-color: #62d4e5;
- color: #ffffff;
+ color: #ffffff !important;
 }
 .variant-selected-summary {
  font-size: 0.85em;
