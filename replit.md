@@ -55,6 +55,15 @@ All 6 category pages use a standardised three-file content architecture per cate
 - **Important**: all variant images for a product must share the same aspect ratio (the example GreenPan airfryer uses 1200×800) to avoid layout shift when switching.
 - Example wired on the GreenPan Silhouette airfryer (`products/products_airfryers.py`): Moroccan Green / Crème / Smokey Blue.
 
+### Product Shape/Format Variants (optional, reusable)
+- Distinct from the colour-swatch system: shape variants have an `id` key (colour swatches don't) and render as labelled buttons instead of swatches
+- Product dict gets `variant_label` (e.g. "Vorm") + `variants` list; each variant: `id` (unique), `label`, `shape`, `capacities` (ml), `image`, `image_path`, `price`, `price_last_checked`, `currency`, `availability`, `affiliate_url`, `is_default` (exactly one True)
+- Shared editorial data (name, description, pros/cons, rating, verdict, award, price_range) stays at family level; the product stays ONE ranked card / table row
+- `utils/variant_helpers.py::prepare_product_variants` (called from `_enrich_products`): validates unique ids (ValueError), enriches variants with formatted capacity fields + `image_url` + `alt_text` + `selected_summary`, sets `shape_variants` / `default_variant`, copies default variant's commercial fields to product level (keeps detail page, JSON-LD, no-JS rendering working), sets `capacity_summary` for comparison tables ("Afhankelijk van uitvoering" unless all variants share capacities)
+- Template: shape branch in `templates/partials/product_block.html` (semantic buttons, aria-pressed, selected-summary line, affiliate link + hidden disabled span toggled by JS)
+- JS: `static/assets/js/variant-selector.js` (card-scoped, data attributes, GA4 `select_product_variant` event when gtag present); CSS: `.product-variant-selector` / `.product-variant-button` in main.css
+- First use: Igluu Meal Prep 3-delig (Rond = verified default; Vierkant variant has TODOs awaiting real data)
+
 ### Product Detail Pages
 - URL: `/product/<slug>/` — dict-based product detail view
 - View: `products/views.py::product_detail` — looks up product by slug from `ALL_PRODUCTS_BY_SLUG` dict (simple 1:1 mapping, enforced unique at startup), falls back to DB model

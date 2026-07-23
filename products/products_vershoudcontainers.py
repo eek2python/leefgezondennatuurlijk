@@ -249,9 +249,7 @@ PRODUCTS = {
         "name": "Igluu Meal Prep \u2013 3-delige glazen vershoudset",
         "brand": "Igluu",
         "material": "Borosilicaat glas",
-        "capacities": [400, 650, 950],
         "features": ["Lekvrij", "Klikdeksel + silicone"],
-        "image": "igluu-3delig.jpg",
         "image_path": "images/vershoudbakjes",
         "description": "Betaalbare en praktische 3-delige set van borosilicaat glas met lekvrije klikdeksels. Ideaal als instapset voor gezond bewaren en opwarmen.",
         "pros": [
@@ -267,14 +265,43 @@ PRODUCTS = {
         "rating": 4,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 24.95,
-        "price_last_checked": "2026-07-08",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://www.amazon.nl/dp/B08DYF9GXP/?th=1",
         "price_range": "\u20ac",
         "verdict": "Een voordelige en complete glazen basisset voor iedereen die PFAS-vrij wil bewaren en opwarmen.",
         "award": "💰 Budget keuze",
+        "variant_label": "Vorm",
+        "variants": [
+            {
+                # Verified data from the original (round) product entry.
+                "id": "round",
+                "label": "Rond",
+                "shape": "Rond",
+                "capacities": [400, 650, 950],
+                "image": "igluu-3delig.jpg",
+                "image_path": "images/vershoudbakjes",
+                "price": 24.95,
+                "price_last_checked": "2026-07-08",
+                "currency": "EUR",
+                "availability": "InStock",
+                "affiliate_url": "https://www.amazon.nl/dp/B08DYF9GXP/?th=1",
+                "is_default": True,
+            },
+            {
+                # TODO: confirm exact shape label ("Vierkant" of "Rechthoekig")
+                # and supply verified data. Do not invent commercial data.
+                "id": "square",
+                "label": "Vierkant",
+                "shape": "Vierkant",
+                "capacities": [],  # TODO: capacities per container (ml)
+                "image": "",  # TODO: image filename, e.g. igluu-3delig-vierkant.jpg
+                "image_path": "images/vershoudbakjes",
+                "price": None,  # TODO: verified price
+                "price_last_checked": None,  # TODO: price-check date
+                "currency": "EUR",
+                "availability": "",  # TODO: availability (e.g. InStock)
+                "affiliate_url": "",  # TODO: affiliate URL for this shape
+                "is_default": False,
+            },
+        ],
     },
     "pyrex_cook_heat_3delig": {
         "slug": "pyrex-cook-heat-3delig",

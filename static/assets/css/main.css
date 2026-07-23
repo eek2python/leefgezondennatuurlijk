@@ -4286,6 +4286,60 @@ table.product-table .product-badge {
  transform: scale(1.1);
  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25), 0 0 0 3px #62d4e5;
 }
+
+/* Shape/format variant selector (buttons with text labels) */
+.product-variant-selector {
+ margin-top: 0.7em;
+ text-align: center;
+}
+.product-variant-selector__label {
+ display: block;
+ font-size: 0.8em;
+ font-weight: 600;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ color: #7f888f;
+ margin-bottom: 0.4em;
+}
+.product-variant-selector__options {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 8px;
+}
+.product-variant-button {
+ -webkit-appearance: none;
+ appearance: none;
+ padding: 0.35em 1em;
+ min-height: 2.2em;
+ border: 2px solid #dbe1e4;
+ border-radius: 6px;
+ background-color: #ffffff;
+ color: #3d4449;
+ font-size: 0.85em;
+ font-weight: 600;
+ line-height: 1.4;
+ cursor: pointer;
+ transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.product-variant-button:hover {
+ border-color: #62d4e5;
+}
+.product-variant-button:focus-visible {
+ outline: none;
+ border-color: #62d4e5;
+ box-shadow: 0 0 0 3px rgba(98, 212, 229, 0.5);
+}
+.product-variant-button.is-active {
+ border-color: #62d4e5;
+ background-color: #62d4e5;
+ color: #ffffff;
+}
+.variant-selected-summary {
+ font-size: 0.85em;
+ color: #7f888f;
+ margin: 0 0 0.8em 0;
+}
 @media (max-width: 736px) {
  .product-media {
    max-width: 38%;

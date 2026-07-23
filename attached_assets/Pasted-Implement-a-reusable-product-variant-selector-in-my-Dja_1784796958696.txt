@@ -1,0 +1,555 @@
+Implement a reusable product-variant selector in my Django affiliate website.
+
+The first product that should use this functionality is:
+
+Igluu Meal Prep – 3-piece glass storage set
+
+This product is available in two shape variants:
+
+- Round
+- Square or rectangular, depending on the actual product shape
+
+The visitor must be able to switch between these variants inside the existing product block by clicking clearly visible buttons.
+
+Do not create two separate ranked product cards. Both variants belong to one product family and must remain one ranked product.
+
+==================================================
+1. CURRENT PROJECT STRUCTURE
+==================================================
+
+The website is built with Django.
+
+Product data is stored in Python dictionaries in category-specific product files, such as:
+
+products_vershoudbakjes.py
+
+Ordering and selector logic may be stored separately in ranking files.
+
+Editorial content is stored separately in content files.
+
+Templates should remain as simple as possible. Business logic and data preparation should happen in Python.
+
+First inspect the current project structure and identify:
+
+- the product data file for storage containers;
+- the view that prepares storage-container products;
+- the reusable product-card template or partial;
+- existing variant or color-selector functionality used for airfryers;
+- existing JavaScript and CSS for product variant buttons.
+
+Reuse the current airfryer color-selector architecture where technically appropriate. Do not duplicate an entire variant system if a reusable implementation already exists.
+
+==================================================
+2. PRODUCT DATA STRUCTURE
+==================================================
+
+Refactor the current Igluu product so that shared product information remains at product-family level and variant-specific information is stored in a `variants` list.
+
+Use a structure comparable to:
+
+"igluu_meal_prep_3delig": {
+    "slug": "igluu-meal-prep-3delig",
+    "name": "Igluu Meal Prep – 3-delige glazen vershoudset",
+    "brand": "Igluu",
+    "material": "Borosilicaatglas",
+    "features": [
+        "Lekvrij",
+        "Klikdeksel met siliconen afdichting",
+    ],
+    "description": (
+        "Betaalbare en praktische 3-delige set van "
+        "borosilicaatglas met lekvrije klikdeksels."
+    ),
+    "pros": [
+        "Borosilicaatglas voor bewaren en opwarmen",
+        "Lekvrije klikdeksels met siliconen afdichting",
+        "Praktische set voor lunches en restjes",
+        "Goede prijs-kwaliteitverhouding",
+    ],
+    "cons": [
+        "Geen extra grote schaal voor familieporties",
+        "Deksels zijn niet geschikt voor ovengebruik",
+    ],
+    "rating": 4,
+    "rating_count": None,
+    "rating_source": "editorial",
+    "price_range": "€",
+    "verdict": (
+        "Een voordelige glazen basisset voor dagelijks "
+        "bewaren, meenemen en opwarmen."
+    ),
+    "award": "💰 Budget keuze",
+
+    "variant_label": "Vorm",
+
+    "variants": [
+        {
+            "id": "round",
+            "label": "Rond",
+            "shape": "Rond",
+            "capacities": [],
+            "image": "igluu-3delig-rond.jpg",
+            "image_path": "images/vershoudbakjes",
+            "price": None,
+            "price_last_checked": None,
+            "currency": "EUR",
+            "availability": "InStock",
+            "affiliate_url": "",
+            "is_default": True,
+        },
+        {
+            "id": "square",
+            "label": "Vierkant",
+            "shape": "Vierkant",
+            "capacities": [],
+            "image": "igluu-3delig-vierkant.jpg",
+            "image_path": "images/vershoudbakjes",
+            "price": None,
+            "price_last_checked": None,
+            "currency": "EUR",
+            "availability": "InStock",
+            "affiliate_url": "",
+            "is_default": False,
+        },
+    ],
+}
+
+Important:
+
+- Preserve the verified capacities, prices, URLs, availability, images and dates from the current product data where available.
+- Do not invent missing commercial data.
+- Insert clear TODO comments for values that still need to be supplied.
+- If the non-round product is actually rectangular, use:
+  - id: "rectangular"
+  - label: "Rechthoekig"
+  - shape: "Rechthoekig"
+  instead of “square”.
+- Exactly one variant must have `is_default = True`.
+- Variant IDs must be unique within the product.
+- Keep description, pros, cons, rating, award and verdict at family level unless there is a genuine material difference between variants.
+
+==================================================
+3. CAPACITY HELPERS
+==================================================
+
+The project already has or is introducing reusable helpers for:
+
+- `format_capacities(capacities)`
+- `calculate_total_capacity(capacities)`
+- `format_total_capacity(total_ml)`
+
+Apply these helpers to each variant independently.
+
+For example:
+
+capacities = [700, 700, 1500]
+
+must produce:
+
+formatted_capacity:
+"2 × 700 ml + 1,5 L"
+
+formatted_total_capacity:
+"2,9 L"
+
+Do not store formatted capacity text manually in the product dictionary.
+
+During view preparation, enrich every variant with:
+
+- `formatted_capacity`
+- `total_capacity_ml`
+- `formatted_total_capacity`
+- `container_count`
+
+If a variant does not yet contain valid capacities, do not show empty capacity labels in the interface.
+
+==================================================
+4. BACK-END PREPARATION
+==================================================
+
+Create or update a reusable product-preparation helper.
+
+Suggested responsibility:
+
+prepare_product_variants(product)
+
+This helper must:
+
+1. Read the product's `variants` list.
+2. Validate that variant IDs are unique.
+3. Select the default variant:
+   - first variant with `is_default = True`;
+   - otherwise the first valid variant.
+4. Enrich each variant with formatted capacity fields.
+5. Normalize optional variant fields.
+6. Add a `default_variant` object to the prepared product.
+7. Add a JSON-safe representation of variant data for the frontend.
+8. Leave products without variants fully functional.
+
+Do not mutate the original source dictionary if the current architecture normally copies product data before enriching it.
+
+Products without a `variants` field must continue using their existing fields:
+
+- image;
+- price;
+- affiliate_url;
+- availability;
+- capacities or capacity;
+- shape.
+
+==================================================
+5. PRODUCT BLOCK INTERFACE
+==================================================
+
+Inside the existing Igluu product card, show a selector:
+
+Vorm
+
+[ Rond ] [ Vierkant ]
+
+or:
+
+Vorm
+
+[ Rond ] [ Rechthoekig ]
+
+The default variant button must initially be active.
+
+Use semantic HTML buttons:
+
+<button type="button">
+
+Do not use links for controls that only change the selected variant.
+
+Each button must include:
+
+- `aria-pressed="true"` for the active option;
+- `aria-pressed="false"` for inactive options;
+- an accessible label;
+- keyboard focus styling.
+
+The active button must be visually distinct.
+
+Only show the selector when a product has at least two valid variants.
+
+Do not show a single disabled button when only one variant exists.
+
+==================================================
+6. ELEMENTS THAT MUST UPDATE
+==================================================
+
+When the visitor switches from one Igluu shape to the other, update all variant-specific information in the same product card without reloading the page:
+
+- product image;
+- image alt text;
+- displayed shape;
+- formatted capacity composition;
+- formatted total capacity;
+- price;
+- availability text;
+- availability styling, if currently used;
+- affiliate URL;
+- affiliate button accessibility label;
+- visible selected-variant summary;
+- price-check date, when displayed.
+
+The following family-level information should remain unchanged:
+
+- ranking;
+- award;
+- shared product name;
+- brand;
+- material;
+- description;
+- pros;
+- cons;
+- rating;
+- verdict.
+
+Show a small selected-variant line near the buy button or specifications:
+
+"Geselecteerd: Rond"
+
+or, when capacity is available:
+
+"Geselecteerd: Rond · 2 × 700 ml + 1,5 L"
+
+==================================================
+7. PRICE AND AFFILIATE BUTTON
+==================================================
+
+Every variant may have a different:
+
+- price;
+- availability;
+- affiliate URL;
+- price-check date.
+
+The affiliate button must always use the URL belonging to the currently selected variant.
+
+This is essential. Do not leave the button pointing to the default variant after switching.
+
+If the selected variant has no affiliate URL:
+
+- disable or hide the buy button according to the website's existing convention;
+- do not fall back silently to another shape's affiliate URL;
+- show a neutral availability message such as:
+  "Link voor deze uitvoering nog niet beschikbaar"
+  only if this fits the current design.
+
+If the selected variant has no current price:
+
+- display the site's existing fallback, such as “Bekijk actuele prijs”;
+- do not display €0 or “None”.
+
+==================================================
+8. IMAGE HANDLING
+==================================================
+
+Each variant may use a different image.
+
+When switching variants:
+
+- update the image source;
+- update `alt`;
+- preserve width and height attributes where available;
+- avoid layout shift;
+- preserve lazy loading;
+- use the project's Django static-file conventions.
+
+Suggested alt texts:
+
+"Igluu Meal Prep 3-delige glazen vershoudset rond"
+
+"Igluu Meal Prep 3-delige glazen vershoudset vierkant"
+
+Do not hard-code full static URLs inside JavaScript if Django currently generates them in the template.
+
+Instead, provide resolved image URLs through data attributes or JSON generated by Django.
+
+==================================================
+9. JAVASCRIPT IMPLEMENTATION
+==================================================
+
+Implement the selector with reusable vanilla JavaScript unless the project already uses another frontend framework for product variants.
+
+The JavaScript must:
+
+- support multiple product cards on one page;
+- scope updates to the clicked product card;
+- never rely on globally unique element IDs for repeated product cards;
+- use `data-*` attributes or a JSON script block;
+- attach behavior after `DOMContentLoaded`;
+- fail gracefully when JavaScript is unavailable;
+- avoid inline JavaScript event handlers;
+- avoid injecting unsanitized HTML;
+- update text using `textContent`;
+- update URLs using validated data supplied by Django.
+
+Suggested structure:
+
+<div class="product-card"
+     data-product-key="igluu_meal_prep_3delig">
+
+    <div class="variant-selector"
+         data-variant-selector>
+        ...
+    </div>
+
+    <script type="application/json"
+            class="product-variant-data">
+        ...
+    </script>
+</div>
+
+Alternatively use safely escaped data attributes if that matches the existing architecture better.
+
+Use Django's safe JSON mechanism, preferably `json_script`, rather than manually marking arbitrary JSON as safe.
+
+==================================================
+10. PROGRESSIVE ENHANCEMENT
+==================================================
+
+Without JavaScript:
+
+- the default variant must still be displayed correctly;
+- the product card must remain readable;
+- the default affiliate link must work;
+- there must be no empty placeholders.
+
+With JavaScript:
+
+- visitors can switch between the two shapes in place.
+
+Do not make the product card dependent on JavaScript for its initial rendering.
+
+==================================================
+11. CSS
+==================================================
+
+Add reusable styling for variant buttons, preferably reusing the airfryer color-selector styles where possible.
+
+The selector should:
+
+- fit the existing visual design;
+- work on mobile;
+- wrap onto another line when necessary;
+- have sufficient touch-target size;
+- show clear hover, active and focus-visible states;
+- avoid fixed widths that break longer labels such as “Rechthoekig”.
+
+Example class structure:
+
+.product-variant-selector
+.product-variant-selector__label
+.product-variant-selector__options
+.product-variant-button
+.product-variant-button.is-active
+
+Keep the styling generic. Do not name generic CSS classes specifically after Igluu.
+
+==================================================
+12. COMPARISON TABLE
+==================================================
+
+Keep Igluu as one row in the comparison table.
+
+Do not create separate rows for round and square/rectangular.
+
+For shape, show:
+
+"Rond en vierkant"
+
+or:
+
+"Rond en rechthoekig"
+
+For capacity, show a concise family-level summary only when accurate.
+
+Examples:
+
+"Afhankelijk van uitvoering"
+
+or:
+
+"Meerdere formaten"
+
+Do not combine capacities from both shape variants in a misleading way.
+
+If both variants have exactly the same capacities, the common formatted capacity may be shown.
+
+==================================================
+13. STRUCTURED DATA
+==================================================
+
+Review the current Product JSON-LD implementation.
+
+Do not create duplicate ranked products simply because there are two shapes.
+
+Use one Product entity for the Igluu product family unless the current structured-data architecture already supports ProductGroup and Product variants correctly.
+
+At minimum:
+
+- preserve valid existing Product structured data;
+- use the default variant's offer for the primary Offer;
+- do not put the wrong affiliate URL or price into JSON-LD;
+- do not generate invalid empty price fields;
+- do not break ItemList ordering.
+
+If implementing ProductGroup would require a major unrelated refactor, do not do that in this task. Document it as a possible future enhancement.
+
+==================================================
+14. ANALYTICS
+==================================================
+
+If the website already has an analytics helper or GA4 event pattern, add a variant-selection event.
+
+Suggested event:
+
+event name:
+`select_product_variant`
+
+parameters:
+
+- product_slug
+- product_name
+- variant_id
+- variant_label
+- shape
+- capacity
+- category
+
+Do not add a new analytics library solely for this feature.
+
+==================================================
+15. TESTS
+==================================================
+
+Add tests appropriate to the current project.
+
+Back-end tests:
+
+1. Igluu has two unique valid variants.
+2. Exactly one default variant is selected.
+3. Default variant data is used for initial rendering.
+4. Capacity formatting is calculated per variant.
+5. Products without variants still render normally.
+6. Missing optional price does not become zero.
+7. Missing affiliate URL is handled safely.
+8. Duplicate variant IDs are detected or handled.
+9. Comparison data keeps Igluu as one product.
+10. Structured data remains valid.
+
+Frontend/manual tests:
+
+1. The page initially shows the default shape.
+2. The active button has `aria-pressed="true"`.
+3. Clicking “Rond” updates all required fields.
+4. Clicking “Vierkant” or “Rechthoekig” updates all required fields.
+5. The affiliate button changes to the correct URL.
+6. The product image and alt text change.
+7. Price and availability change correctly.
+8. Capacity and total capacity change correctly.
+9. Keyboard navigation works.
+10. The selector works on mobile.
+11. Multiple variant-enabled cards do not interfere with each other.
+12. The default card still works with JavaScript disabled.
+13. Products without variants are visually unchanged.
+
+==================================================
+16. IMPLEMENTATION BOUNDARIES
+==================================================
+
+- Do not redesign the entire storage-container page.
+- Do not change product rankings.
+- Do not create a separate detail page.
+- Do not add unverified product facts.
+- Do not invent prices, capacities, URLs or availability.
+- Do not duplicate shared product content between variants.
+- Do not replace the existing capacity helper with template logic.
+- Do not alter unrelated categories unless needed to make the component reusable.
+- Preserve the existing responsive design and SEO behavior.
+
+==================================================
+17. FINAL REPORT
+==================================================
+
+After implementation, provide:
+
+1. A concise list of changed files.
+2. The final Igluu product data structure.
+3. The reusable Python preparation logic.
+4. The reusable template markup.
+5. The JavaScript variant-switching logic.
+6. The CSS additions.
+7. Tests performed and their results.
+8. Any missing Igluu data that I still need to provide, specifically:
+   - exact shape label;
+   - capacities per shape;
+   - image filename per shape;
+   - price per shape;
+   - affiliate URL per shape;
+   - availability per shape;
+   - price-check date per shape.
+9. Confirmation that products without variants still work.
+10. Confirmation that the Igluu product remains one ranked item.

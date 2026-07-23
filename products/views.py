@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
 from .models import Product, Click
 from utils.product_helpers import get_capacity_display
+from utils.variant_helpers import prepare_product_variants
 import json
 from .products_koekenpannen import PRODUCTS as KOEKENPANNEN_PRODUCTS
 from .rankings_koekenpannen import RANKINGS as KOEKENPANNEN_RANKINGS
@@ -87,6 +88,7 @@ def privacy(request):
 
 def _enrich_products(products):
     for p in products:
+        prepare_product_variants(p)
         p["formatted_capacity"], p["formatted_total_capacity"] = get_capacity_display(p)
         p["rating_class"] = str(p["rating"]).replace(".", "-")
         award = (p.get("award") or "").lower()

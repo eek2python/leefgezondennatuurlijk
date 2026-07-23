@@ -105,7 +105,7 @@
                                         · {{ product.features|join:" · " }}
                                         {% endif %}
                                         </td>
-                                        <td>{{ product.formatted_capacity }}</td>
+                                        <td>{% if product.capacity_summary %}{{ product.capacity_summary }}{% else %}{{ product.formatted_capacity }}{% endif %}</td>
                                         <td>{{ product.price_range }}</td>
                                         <td><span class="stars stars-{{ product.rating_class }}"></span></td>
                                         <td><a href="{{ product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews →</a></td>
