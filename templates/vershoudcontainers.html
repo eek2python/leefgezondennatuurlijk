@@ -84,6 +84,7 @@
                                         <tr>
                                         <th>Product</th>
                                         <th>Belangrijkste eigenschappen</th>
+                                        <th>Inhoud</th>
                                         <th>Prijs</th>
                                         <th>Beoordeling</th>
                                         <th>Actie</th>
@@ -104,6 +105,7 @@
                                         · {{ product.features|join:" · " }}
                                         {% endif %}
                                         </td>
+                                        <td>{{ product.formatted_capacity }}</td>
                                         <td>{{ product.price_range }}</td>
                                         <td><span class="stars stars-{{ product.rating_class }}"></span></td>
                                         <td><a href="{{ product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews →</a></td>

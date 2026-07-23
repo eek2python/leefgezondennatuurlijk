@@ -41,6 +41,15 @@
 
     <p>{{ product.description }}</p>
 
+    {% if product.formatted_capacity %}
+    <p>
+        <strong>Inhoud:</strong> {{ product.formatted_capacity }}
+        {% if product.formatted_total_capacity %}
+        <br><strong>Totale inhoud:</strong> {{ product.formatted_total_capacity }}
+        {% endif %}
+    </p>
+    {% endif %}
+
     {% if product.features %}
     <h3>Kenmerken</h3>
     <ul>

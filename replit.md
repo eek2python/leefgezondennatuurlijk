@@ -69,6 +69,13 @@ All 6 category pages use a standardised three-file content architecture per cate
 - `/privacy/` — Privacy policy (templates/privacy.html)
 - Views in `products/views.py` (over_ons, hoe_wij_beoordelen, privacy)
 
+### Capacity System (generic, reusable)
+- `utils/product_helpers.py` — category-agnostic helpers for products with one or more containers (values in ml): `format_capacities` ([700,700,1500] → "2 × 700 ml + 1,5 L"; sorts, groups equals, ≥1000 ml as liters with comma decimals), `calculate_total_capacity`, `format_total_capacity`, `get_capacity_display(product)`
+- Product dicts may have optional `capacities` list (ml); legacy `capacity` field supported as fallback; invalid entries (None/0/negative/strings) are ignored
+- `_enrich_products` (views.py) sets `formatted_capacity` / `formatted_total_capacity` on every product (empty strings when absent)
+- Display: product detail shows "Inhoud" + "Totale inhoud" (total only for multi-container sets); vershoudcontainers comparison table has an "Inhoud" column (no totals)
+- Tests: `products/tests.py` (run with `python manage.py test products`)
+
 ### Comparison Template
 - `templates/comparison.html` — reusable comparison table template (not yet wired to a URL)
 
