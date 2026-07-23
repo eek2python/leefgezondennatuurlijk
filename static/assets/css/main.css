@@ -4288,6 +4288,10 @@ table.product-table .product-badge {
 }
 
 /* Shape/format variant selector (buttons with text labels) */
+[hidden] {
+        display: none !important;
+}
+
 .product-variant-selector {
  margin-top: 0.7em;
  text-align: center;
