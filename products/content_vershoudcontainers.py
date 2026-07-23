@@ -1,11 +1,70 @@
 CONTENT = {
         "hero": {
-        "h1": "Top 5 Voedselveilige Glazen Vershoudbakjes \u2013 Gezond, Duurzaam & Stijlvol",
+        "h1": "Beste Glazen Vershoudbakjes van 2026 \u2013 Losse Bakjes en Sets",
         "paragraphs": [
             "Op zoek naar de beste glazen vershoudbakjes van 2026? Met borosilicaatglas kies je voor een voedselveilige, duurzame en "
-            "milieuvriendelijke oplossing die vrij is van BPA, PFAS en andere schadelijke stoffen. Onze zorgvuldig samengestelde selectie "
-            "van glazen vershoudsets helpt je de juiste keuze te maken voor jouw huishouden.",
+            "milieuvriendelijke oplossing die vrij is van BPA, PFAS en andere schadelijke stoffen. Kies hieronder tussen losse bakjes, "
+            "3-delige sets en 5-delige sets en vergelijk per uitvoering de beste opties voor jouw huishouden.",
         ],
+    },
+    "types": {
+        "single": {
+            "heading": "Beste losse glazen vershoudbakjes",
+            "intro": (
+                "Losse glazen vershoudbakjes zijn ideaal om je bestaande voorraad aan te vullen of gericht \u00e9\u00e9n formaat "
+                "te kiezen dat je vaak gebruikt. Hieronder vind je de beste losse bakjes van dit moment."
+            ),
+            "comparison_title": "Vergelijkingstabel \u2013 Losse glazen vershoudbakjes",
+            "itemlist_name": "Beste losse glazen vershoudbakjes van 2026",
+            "itemlist_description": "De beste losse glazen vershoudbakjes van 2026 \u2013 voedselveilig, duurzaam en PFAS-vrij.",
+            "conclusie": {
+                "title": "Conclusie \u2013 Onze aanbeveling voor losse bakjes",
+                "text": (
+                    "Voor wie losse glazen vershoudbakjes zoekt, komt de <strong>Pyrex Cook &amp; Store</strong> als beste keuze uit "
+                    "onze vergelijking dankzij de uitstekende bouwkwaliteit en veelzijdigheid. Wie vooral op de prijs let, zit goed "
+                    "met de <strong>Ikea 365+</strong>: een betaalbaar borosilicaatglazen bakje dat in veel maten verkrijgbaar is."
+                ),
+            },
+        },
+        "set_3": {
+            "heading": "Beste 3-delige glazen vershoudsets",
+            "intro": (
+                "Een 3-delige set met verschillende formaten dekt het grootste deel van het dagelijkse gebruik: kleine porties, "
+                "lunchgerechten en hoofdmaaltijden. Dit zijn de beste 3-delige glazen vershoudsets."
+            ),
+            "comparison_title": "Vergelijkingstabel \u2013 3-delige glazen vershoudsets",
+            "itemlist_name": "Beste 3-delige glazen vershoudsets van 2026",
+            "itemlist_description": "De beste 3-delige glazen vershoudsets van 2026 \u2013 voedselveilig, duurzaam en PFAS-vrij.",
+            "conclusie": {
+                "title": "Conclusie \u2013 Onze aanbeveling voor 3-delige sets",
+                "text": (
+                    "Wie op zoek is naar een gezonde, duurzame en veelzijdige manier om voedsel te bewaren, komt al snel uit bij borosilicaatglas. "
+                    "Deze vershoudbakjes zijn vrij van schadelijke stoffen, geur- en smaakneutraal en veilig te gebruiken in oven, magnetron, koelkast en vriezer. "
+                    "Uit onze vergelijking komt de <strong>Mepal EasyClip Glas \u2013 3-delige set</strong> naar voren als de beste allround keuze. "
+                    "Voor wie op zoek is naar een betaalbare maar kwalitatieve optie is de <strong>Igluu Glass Meal Prep \u2013 3-delige set</strong> een uitstekende keuze. "
+                    "Wie liever een premium glasoplossing wil, zit goed met de <strong>Pyrex Cook &amp; Heat \u2013 3-delige set</strong>, "
+                    "dankzij de hoogwaardige materialen en veelzijdige toepassingen."
+                ),
+            },
+        },
+        "set_5": {
+            "heading": "Beste 5-delige glazen vershoudsets",
+            "intro": (
+                "Een 5-delige set is de complete oplossing voor meal prep en grotere huishoudens: meerdere formaten in \u00e9\u00e9n "
+                "aanschaf. Hieronder vergelijken we de beste 5-delige glazen vershoudsets."
+            ),
+            "comparison_title": "Vergelijkingstabel \u2013 5-delige glazen vershoudsets",
+            "itemlist_name": "Beste 5-delige glazen vershoudsets van 2026",
+            "itemlist_description": "De beste 5-delige glazen vershoudsets van 2026 \u2013 voedselveilig, duurzaam en PFAS-vrij.",
+            "conclusie": {
+                "title": "Conclusie \u2013 Onze aanbeveling voor 5-delige sets",
+                "text": (
+                    "Bij de 5-delige sets is de <strong>Pyrex Cook &amp; Heat \u2013 5-delige set</strong> de premium keuze voor wie "
+                    "maximale kwaliteit en veelzijdigheid zoekt. De <strong>Igluu Meal Prep \u2013 5-delige set</strong> is de "
+                    "budgetvriendelijke optie met vijf gelijke bakjes, ideaal voor wekelijkse meal prep."
+                ),
+            },
+        },
     },
     "why_choose": {
         "title": "Waarom kiezen voor glazen vershoudbakjes?",
@@ -24,9 +83,9 @@ CONTENT = {
     },
     "size_guide": None,
     "products_section": {
-        "h2": "De 5 beste glazen vershoudbakjes van 2026",
+        "h2": "De beste glazen vershoudbakjes van 2026",
         "intro": None,
-        "comparison_title": "Vergelijkingstabel \u2013 Top 5 Glazen Vershoudbakjes",
+        "comparison_title": "Vergelijkingstabel \u2013 Glazen Vershoudbakjes",
     },
     "tips": {
         "title": "Onderhoudstips voor borosilicaatglazen vershoudbakjes",
@@ -43,19 +102,6 @@ CONTENT = {
             "<strong>Vermijd thermische stress:</strong> Plaats heet glas nooit direct op een koud aanrecht of in koud water \u2014 dit kan barsten veroorzaken.",
         ],
         "outro": None,
-    },
-    "conclusies": {
-        "default": {
-            "title": "Conclusie \u2013 Onze aanbeveling",
-            "text": (
-                "Wie op zoek is naar een gezonde, duurzame en veelzijdige manier om voedsel te bewaren, komt al snel uit bij borosilicaatglas. "
-                "Deze vershoudbakjes zijn vrij van schadelijke stoffen, geur- en smaakneutraal en veilig te gebruiken in oven, magnetron, koelkast en vriezer. "
-                "Uit onze vergelijking komt de <strong>Mepal EasyClip Glas \u2013 3-delige set</strong> naar voren als de beste allround keuze. "
-                "Voor wie op zoek is naar een betaalbare maar kwalitatieve optie is de <strong>Igluu Glass Meal Prep \u2013 3-delige set</strong> een uitstekende keuze. "
-                "Wie liever een premium glasoplossing wil, zit goed met de <strong>Pyrex Cook &amp; Heat \u2013 3-delige set</strong>, "
-                "dankzij de hoogwaardige materialen en veelzijdige toepassingen."
-            ),
-        },
     },
     "faq": {
         "title": "Veelgestelde vragen over glazen vershoudbakjes",

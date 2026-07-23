@@ -93,6 +93,15 @@ All 6 category pages use a standardised three-file content architecture per cate
 - Change detection via source checksum + config fingerprint (state in `reports/processing-state.json`); conservative auto-crop (transparent or uniform light borders only); atomic writes; per-entry `processing` overrides
 - Docs: `docs/product-image-pipeline.md`; tests: `products/test_product_image_processor.py` (35 tests)
 
+### Vershoudcontainers Uitvoering Selector (page-level)
+- `/vershoudcontainers/?uitvoering=enkel|3-delig|5-delig` — server-side selector (no JS), default `enkel`, invalid values fall back to single
+- `rankings_vershoudcontainers.py` maps `single` / `set_3` / `set_5` → ordered slug-key lists; `content_vershoudcontainers.py` has a `types` dict with per-type heading/intro/comparison_title/itemlist name+description/conclusie
+- View builds per-type JSON-LD ItemList, comparison rows, and shows "Totale inhoud" column only for sets; import-time `_validate_vershoudbakjes_awards` enforces max one of each award per group
+- Selector partial: `templates/partials/storage_type_selector.html` (format-pill links, aria-current)
+- Canonical stays on base `/vershoudcontainers/` URL for all selector states
+- `oxo_good_grips_smart_seal_6delig` is intentionally unranked (entry still contains copy-pasted Glasslock placeholder data)
+- Tests: `StorageTypeSelectorTests` in `products/tests.py`
+
 ### Comparison Template
 - `templates/comparison.html` — reusable comparison table template (not yet wired to a URL)
 

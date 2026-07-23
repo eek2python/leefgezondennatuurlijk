@@ -1,5 +1,8 @@
 # Auto-generated 301 redirect map: old underscore slug -> new hyphen slug
 SLUG_REDIRECTS = {
+    "berghoff_perfect_seal": "berghoff-perfect-seal",
+    "kitchenbrothers_5delig": "kitchenbrothers-5delig",
+    "oxo_good_grips_smart_seal_6delig": "oxo-good-grips-smart-seal-6delig",
     "beka_cicla_24": "beka-cicla-24",
     "berghoff_leo_recycled_wok_28": "berghoff-leo-recycled-wok-28",
     "berghoff_phantom_wok_30": "berghoff-phantom-wok-30",

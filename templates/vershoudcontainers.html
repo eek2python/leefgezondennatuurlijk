@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Top 5 Voedselveilige Glazen Vershoudbakjes – Gezond, Duurzaam & Stijlvol{% endblock %}
+{% block title %}Beste Glazen Vershoudbakjes van 2026 – Losse Bakjes en Sets{% endblock %}
 
 {% block meta %}
-<meta name="description" content="Ontdek de 5 beste PFAS-vrije glazen vershoudbakjes van 2026. Veilig, duurzaam en geschikt voor oven, magnetron en vriezer. Vergelijk prijzen en kwaliteit.">
+<meta name="description" content="Ontdek de beste PFAS-vrije glazen vershoudbakjes van 2026: losse bakjes, 3-delige en 5-delige sets. Veilig, duurzaam en geschikt voor oven, magnetron en vriezer.">
 
 <!-- 🔹 Open Graph -->
-<meta property="og:title" content="Top 5 Voedselveilige Glazen Vershoudbakjes – Veilig & Duurzaam">
-<meta property="og:description" content="De beste glazen vershoudbakjes van 2026. vrije van schadelijke stoffen, ovenbestendig, lekvrij en met klikdeksels. Bekijk de volledige vergelijking.">
+<meta property="og:title" content="Beste Glazen Vershoudbakjes van 2026 – Losse Bakjes en Sets">
+<meta property="og:description" content="De beste glazen vershoudbakjes van 2026: losse bakjes, 3-delige en 5-delige sets. Vrij van schadelijke stoffen, ovenbestendig en lekvrij.">
 <meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/vershoudcontainers.jpg">
 <meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/vershoudcontainers/">
 <meta property="og:type" content="website">
@@ -16,7 +16,7 @@
 <!-- 🔹 Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Top 5 PFAS-vrije Glazen Vershoudbakjes">
-<meta name="twitter:description" content="Vergelijk de beste glazen, voedselveilige vershoudbakjes van 2026. Veilig opwarmen, lekvrij en duurzaam.">
+<meta name="twitter:description" content="Vergelijk de beste glazen vershoudbakjes van 2026: losse bakjes, 3-delige en 5-delige sets. Veilig opwarmen, lekvrij en duurzaam.">
 <meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/vershoudcontainers.jpg">
 <!-- 🔹 Structured Data – Product ItemList -->
 <script type="application/ld+json">
@@ -45,6 +45,9 @@
                         {% endfor %}
                         </div>
                 </section>
+
+{% include "partials/storage_type_selector.html" %}
+
                 {% include "partials/top_picks.html" %}
 
 
@@ -62,12 +65,16 @@
 
                 <section id="producten" class="products">
                         <header class="major">
-                                <h2>{{ content.products_section.h2 }}</h2>
+                                <h2>{{ type_heading }}</h2>
                         </header>
+                        {% if type_intro %}
+                        <p>{{ type_intro|safe }}</p>
+                        {% endif %}
                         <div class="product-list">
 
 {% include "partials/how_we_select.html" %}
 
+                                {% if products %}
                                 <section class="top10-section">
 {% for product in products %}
 {% include "partials/product_block.html" %}
@@ -77,7 +84,7 @@
 
                                 <!-- Vergelijkingstabel -->
                                 <section>
-                                        <h2>{{ content.products_section.comparison_title }}</h2>
+                                        <h2>{{ comparison_title }}</h2>
                                         <div class="table-wrapper">
                                         <table class="alt product-table">
                                         <thead>
@@ -85,36 +92,45 @@
                                         <th>Product</th>
                                         <th>Belangrijkste eigenschappen</th>
                                         <th>Inhoud</th>
+                                        {% if show_total_column %}
+                                        <th>Totale inhoud</th>
+                                        {% endif %}
                                         <th>Prijs</th>
                                         <th>Beoordeling</th>
                                         <th>Actie</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        {% for product in products %}
+                                        {% for row in comparison_rows %}
                                         <tr>
                                         <td>
-                                        <strong>{{ product.name }}</strong>
-                                        {% if product.award %}
-                                        <br><span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
+                                        <strong>{{ row.product.name }}</strong>
+                                        {% if row.product.award %}
+                                        <br><span class="product-badge {{ row.product.award_class }}">{{ row.product.award }}</span>
                                         {% endif %}
                                         </td>
                                         <td>
-                                        {{ product.material }}
-                                        {% if product.features %}
-                                        · {{ product.features|join:" · " }}
+                                        {{ row.product.material }}
+                                        {% if row.product.features %}
+                                        · {{ row.product.features|join:" · " }}
                                         {% endif %}
                                         </td>
-                                        <td>{% if product.capacity_summary %}{{ product.capacity_summary }}{% else %}{{ product.formatted_capacity }}{% endif %}</td>
-                                        <td>{{ product.price_range }}</td>
-                                        <td><span class="stars stars-{{ product.rating_class }}"></span></td>
-                                        <td><a href="{{ product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews →</a></td>
+                                        <td>{{ row.capacity_display }}</td>
+                                        {% if show_total_column %}
+                                        <td>{{ row.total_display }}</td>
+                                        {% endif %}
+                                        <td>{{ row.product.price_range }}</td>
+                                        <td><span class="stars stars-{{ row.product.rating_class }}"></span></td>
+                                        <td><a href="{{ row.product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews →</a></td>
                                         </tr>
                                         {% endfor %}
                                         </tbody>
                                         </table>
                                         </div>
                                 </section>
+                                {% else %}
+                                <p>Voor deze uitvoering zijn momenteel geen producten beschikbaar. Bekijk een andere uitvoering hierboven.</p>
+                                {% endif %}
                                 </section>
 
                                 <section>

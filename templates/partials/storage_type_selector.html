@@ -1,0 +1,12 @@
+{% if available_types %}
+<div class="format-selector" data-storage-type-selector>
+    <span class="label">Kies uitvoering:</span>
+    {% for t in available_types %}
+    <a href="{{ t.url }}"
+       class="format-pill {% if t.is_active %}is-active{% endif %}"
+       {% if t.is_active %}aria-current="page"{% endif %}>
+        {{ t.label }}
+    </a>
+    {% endfor %}
+</div>
+{% endif %}

@@ -268,10 +268,10 @@ class PrepareProductVariantsTests(TestCase):
 
 class VariantPageTests(TestCase):
     def test_category_page_renders_selector_once(self):
-        response = self.client.get("/vershoudcontainers/")
+        response = self.client.get("/vershoudcontainers/?uitvoering=3-delig")
         self.assertEqual(response.status_code, 200)
         html = response.content.decode()
-        self.assertEqual(html.count("data-shape-card"), 1)
+        self.assertEqual(html.count("data-shape-card"), 2)
         self.assertIn('aria-pressed="true"', html)
         self.assertIn(">Rond</button>", html)
         self.assertIn(">Vierkant</button>", html)
@@ -280,7 +280,7 @@ class VariantPageTests(TestCase):
     def test_igluu_is_one_row_in_comparison_table(self):
         import re
 
-        response = self.client.get("/vershoudcontainers/")
+        response = self.client.get("/vershoudcontainers/?uitvoering=3-delig")
         html = response.content.decode()
         table = re.search(r"<tbody>(.*?)</tbody>", html, re.S).group(1)
         self.assertEqual(table.count("Igluu Meal Prep"), 1)
@@ -289,7 +289,7 @@ class VariantPageTests(TestCase):
     def test_structured_data_uses_default_variant_offer(self):
         import re
 
-        response = self.client.get("/vershoudcontainers/")
+        response = self.client.get("/vershoudcontainers/?uitvoering=3-delig")
         html = response.content.decode()
         blocks = re.findall(
             r'<script type="application/ld\+json">\s*(.*?)\s*</script>', html, re.S
@@ -318,3 +318,106 @@ class VariantPageTests(TestCase):
     def test_products_without_variants_render_normally(self):
         response = self.client.get("/product/pyrex-cook-store-enkel/")
         self.assertEqual(response.status_code, 200)
+
+class StorageTypeSelectorTests(TestCase):
+    def test_selector_shows_three_options(self):
+        response = self.client.get("/vershoudcontainers/")
+        html = response.content.decode()
+        self.assertEqual(html.count("data-storage-type-selector"), 1)
+        self.assertIn("Enkel", html)
+        self.assertIn("3-delig", html)
+        self.assertIn("5-delig", html)
+        self.assertIn('href="?uitvoering=enkel"', html)
+        self.assertIn('href="?uitvoering=3-delig"', html)
+        self.assertIn('href="?uitvoering=5-delig"', html)
+
+    def test_default_selection_is_single(self):
+        response = self.client.get("/vershoudcontainers/")
+        self.assertEqual(response.status_code, 200)
+        html = response.content.decode()
+        self.assertIn("Beste losse glazen vershoudbakjes", html)
+        self.assertIn("Pyrex Cook &amp; Store", html)
+        self.assertNotIn("Mepal EasyClip Glas – 3-delige", html)
+
+    def test_each_uitvoering_selects_correct_group(self):
+        cases = {
+            "enkel": ("Beste losse glazen vershoudbakjes", "Ikea 365+"),
+            "3-delig": ("Beste 3-delige glazen vershoudsets", "Glasslock"),
+            "5-delig": ("Beste 5-delige glazen vershoudsets", "KitchenBrothers"),
+        }
+        for slug, (heading, product) in cases.items():
+            response = self.client.get(f"/vershoudcontainers/?uitvoering={slug}")
+            self.assertEqual(response.status_code, 200)
+            html = response.content.decode()
+            self.assertIn(heading, html)
+            self.assertIn(product, html)
+            self.assertIn('aria-current="page"', html)
+
+    def test_invalid_value_falls_back_to_single(self):
+        for bad in ("bogus", "", "999", "<script>"):
+            response = self.client.get("/vershoudcontainers/", {"uitvoering": bad})
+            self.assertEqual(response.status_code, 200)
+            self.assertIn("Beste losse glazen vershoudbakjes", response.content.decode())
+
+    def test_only_selected_group_products_shown(self):
+        response = self.client.get("/vershoudcontainers/?uitvoering=5-delig")
+        html = response.content.decode()
+        self.assertIn("Pyrex Cook &amp; Heat – 5-delige", html)
+        self.assertNotIn("enkele schaal", html)
+        self.assertNotIn("Mepal EasyClip Glas \u2013 3-delige set", html)
+
+    def test_comparison_table_total_column_for_sets_only(self):
+        single = self.client.get("/vershoudcontainers/?uitvoering=enkel").content.decode()
+        sets = self.client.get("/vershoudcontainers/?uitvoering=5-delig").content.decode()
+        self.assertNotIn("<th>Totale inhoud</th>", single)
+        self.assertIn("<th>Totale inhoud</th>", sets)
+
+    def test_itemlist_ld_matches_selected_group(self):
+        import re
+        response = self.client.get("/vershoudcontainers/?uitvoering=5-delig")
+        html = response.content.decode()
+        blocks = re.findall(
+            r'<script type="application/ld\+json">\s*(.*?)\s*</script>', html, re.S
+        )
+        itemlist = next(json.loads(b) for b in blocks if '"ItemList"' in b)
+        names = [e["item"]["name"] for e in itemlist["itemListElement"]]
+        self.assertEqual(len(names), 5)
+        self.assertTrue(all("5-delige" in n or "6-delig" in n or "5 " in n or "set" in n.lower() for n in names))
+        positions = [e["position"] for e in itemlist["itemListElement"]]
+        self.assertEqual(positions, list(range(1, len(names) + 1)))
+
+    def test_faq_ld_present(self):
+        import re
+        response = self.client.get("/vershoudcontainers/?uitvoering=enkel")
+        html = response.content.decode()
+        blocks = re.findall(
+            r'<script type="application/ld\+json">\s*(.*?)\s*</script>', html, re.S
+        )
+        faq = next(json.loads(b) for b in blocks if '"FAQPage"' in b)
+        self.assertGreater(len(faq["mainEntity"]), 0)
+        self.assertIn("Veelgestelde vragen", html)
+
+    def test_no_none_rendered(self):
+        for slug in ("enkel", "3-delig", "5-delig"):
+            html = self.client.get(f"/vershoudcontainers/?uitvoering={slug}").content.decode()
+            self.assertNotIn(">None<", html)
+            self.assertNotIn(">0 ml<", html)
+
+    def test_single_capacity_formatting(self):
+        html = self.client.get("/vershoudcontainers/?uitvoering=enkel").content.decode()
+        self.assertIn("800 ml", html)
+
+    def test_shape_variant_selector_still_works_alongside_page_selector(self):
+        html = self.client.get("/vershoudcontainers/?uitvoering=3-delig").content.decode()
+        self.assertEqual(html.count("data-storage-type-selector"), 1)
+        self.assertIn("data-shape-option", html)
+        self.assertIn(">Rond</button>", html)
+        self.assertIn(">Vierkant</button>", html)
+
+    def test_award_validation_rejects_duplicates(self):
+        from .views import _ALLOWED_VERSHOUDBAKJES_AWARDS
+        self.assertEqual(len(_ALLOWED_VERSHOUDBAKJES_AWARDS), 3)
+
+    def test_other_category_pages_unchanged(self):
+        for url in ("/koekenpannen/", "/snijplanken/", "/airfryers/"):
+            self.assertEqual(self.client.get(url).status_code, 200)

@@ -1,2 +1,3 @@
 - [Product color variants](product-color-variants.md) — optional card-only swatches; never expand into per-color URLs or structured data; variant images must share one aspect ratio.
 - [Two product variant systems](product-variant-systems.md) — `id` key on a variant dict decides shape-button vs colour-swatch UI; never mix both styles in one product.
+- [Vershoudcontainers data quality](vershoudcontainers-data-quality.md) — user-added product dicts can be copy-paste placeholders; never rank them; slugs must be hyphenated (no "+"); test-assertion traps.

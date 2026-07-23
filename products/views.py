@@ -520,17 +520,83 @@ def airfryers(request, fmt=None):
     })
 
 
+VERSHOUDBAKJES_TYPES = [
+    {"key": "single", "slug": "enkel", "label": "Enkel", "heading": "Beste losse glazen vershoudbakjes"},
+    {"key": "set_3", "slug": "3-delig", "label": "3-delig", "heading": "Beste 3-delige glazen vershoudsets"},
+    {"key": "set_5", "slug": "5-delig", "label": "5-delig", "heading": "Beste 5-delige glazen vershoudsets"},
+]
+
+_VERSHOUDBAKJES_SLUG_TO_TYPE = {t["slug"]: t for t in VERSHOUDBAKJES_TYPES}
+
+_ALLOWED_VERSHOUDBAKJES_AWARDS = {"🏆 Beste keuze", "💰 Budget keuze", "💎 Premium keuze"}
+
+
+def _validate_vershoudbakjes_awards():
+    for type_key, keys in VERSHOUDCONTAINERS_RANKINGS.items():
+        seen = {}
+        for k in keys:
+            product = VERSHOUDCONTAINERS_PRODUCTS.get(k)
+            if product is None:
+                raise ValueError(f"Vershoudbakjes ranking '{type_key}' verwijst naar onbekende product key '{k}'")
+            award = product.get("award") or ""
+            if not award:
+                continue
+            if award not in _ALLOWED_VERSHOUDBAKJES_AWARDS:
+                raise ValueError(f"Onbekend awardlabel '{award}' bij product '{k}' (uitvoering '{type_key}')")
+            if award in seen:
+                raise ValueError(
+                    f"Award '{award}' komt meerdere keren voor in uitvoering '{type_key}': '{seen[award]}' en '{k}'"
+                )
+            seen[award] = k
+
+
+_validate_vershoudbakjes_awards()
+
+
+def get_selected_storage_type(request):
+    slug = request.GET.get("uitvoering", "enkel")
+    return _VERSHOUDBAKJES_SLUG_TO_TYPE.get(slug, VERSHOUDBAKJES_TYPES[0])
+
+
 def vershoudcontainers(request):
     content = VERSHOUDCONTAINERS_CONTENT
-    products = [dict(VERSHOUDCONTAINERS_PRODUCTS[k]) for k in VERSHOUDCONTAINERS_RANKINGS]
+    selected_type = get_selected_storage_type(request)
+    type_key = selected_type["key"]
+    type_content = content["types"][type_key]
+
+    keys = VERSHOUDCONTAINERS_RANKINGS.get(type_key, [])
+    products = [dict(VERSHOUDCONTAINERS_PRODUCTS[k]) for k in keys if k in VERSHOUDCONTAINERS_PRODUCTS]
     _enrich_products(products)
     product_count = len(products)
-    conclusie = content["conclusies"]["default"]
+
+    is_set_type = type_key != "single"
+    comparison_rows = []
+    for p in products:
+        capacity_display = p.get("capacity_summary") or p.get("formatted_capacity") or ""
+        total_display = p.get("formatted_total_capacity") or "" if is_set_type else ""
+        comparison_rows.append({
+            "product": p,
+            "capacity_display": capacity_display,
+            "total_display": total_display,
+        })
+
+    available_types = [
+        {
+            "key": t["key"],
+            "slug": t["slug"],
+            "label": t["label"],
+            "url": f"?uitvoering={t['slug']}",
+            "is_active": t["key"] == type_key,
+        }
+        for t in VERSHOUDBAKJES_TYPES
+    ]
+
+    conclusie = type_content.get("conclusie")
     faq_ld = _build_faq_ld(content["faq"]["items"])
     json_ld = _build_itemlist_ld(
         request,
-        "Top 5 PFAS-vrije Vershoudcontainers van 2026",
-        "De 5 beste glazen vershoudcontainers van 2026 \u2013 voedselveilig, duurzaam en PFAS-vrij.",
+        type_content["itemlist_name"],
+        type_content["itemlist_description"],
         products,
     )
     breadcrumbs = [{"label": "Vershoudbakjes", "url": "/vershoudcontainers/"}]
@@ -540,6 +606,15 @@ def vershoudcontainers(request):
         "in_het_kort": _build_in_het_kort(products, content),
         "product_count": product_count,
         "content": content,
+        "available_types": available_types,
+        "selected_type": selected_type,
+        "selected_type_key": type_key,
+        "selected_type_label": selected_type["label"],
+        "type_heading": type_content["heading"],
+        "type_intro": type_content.get("intro"),
+        "comparison_title": type_content["comparison_title"],
+        "show_total_column": is_set_type,
+        "comparison_rows": comparison_rows,
         "conclusie": conclusie,
         "json_ld": json_ld,
         "faq_ld": faq_ld,

@@ -1,0 +1,663 @@
+Pas de bestaande Django-categoriepagina voor glazen vershoudbakjes aan, zodat bezoekers bovenaan kunnen kiezen tussen drie uitvoeringen:
+
+- Enkel
+- 3-delig
+- 5-delig
+
+De gebruiker heeft de productblokken en productdata voor de enkele bakjes en 5-delige sets inmiddels toegevoegd. De 3-delige sets bestaan al in het project.
+
+Maak hiervan één consistente vershoudbakjespagina, volgens dezelfde architectuur, vormgeving en selectorlogica als de andere categoriepagina’s op de website.
+
+==================================================
+1. INSPECTEER EERST HET BESTAANDE PROJECT
+==================================================
+
+Inspecteer voordat je wijzigingen maakt:
+
+- de huidige vershoudbakjespagina;
+- de view voor vershoudbakjes;
+- products_vershoudbakjes.py;
+- rankings_vershoudbakjes.py;
+- content_vershoudbakjes.py;
+- de gebruikte productkaart-template;
+- de vergelijkingstabel;
+- bestaande pagina’s met een formaat-, maat- of typeselector;
+- bestaande JavaScript- en CSS-logica voor selectors;
+- de onlangs toegevoegde enkele en 5-delige productblokken;
+- bestaande variantselectors binnen productblokken, bijvoorbeeld Rond/Vierkant;
+- bestaande capaciteithelpers;
+- bestaande JSON-LD-generatie.
+
+Herbruik zoveel mogelijk bestaande componenten en patronen.
+
+Maak geen tweede, parallel selectorframework wanneer er al een herbruikbaar systeem bestaat.
+
+==================================================
+2. GEWENSTE PAGINASTRUCTUUR
+==================================================
+
+De pagina moet globaal deze volgorde krijgen:
+
+1. Breadcrumbs
+2. Hero en algemene introductie
+3. Uitvoeringselector
+4. Introductie voor de geselecteerde uitvoering
+5. Productranking voor de geselecteerde uitvoering
+6. Vergelijkingstabel voor de geselecteerde uitvoering
+7. Koopadvies of informatieve content
+8. FAQ
+9. Eventuele interne links
+
+Toon bij de selector:
+
+Kies uitvoering
+
+[ Enkel ] [ 3-delig ] [ 5-delig ]
+
+Gebruik exact deze korte labels in de knoppen.
+
+Gebruik voor de sectiekoppen duidelijkere teksten:
+
+- Enkel:
+  “Beste losse glazen vershoudbakjes”
+
+- 3-delig:
+  “Beste 3-delige glazen vershoudsets”
+
+- 5-delig:
+  “Beste 5-delige glazen vershoudsets”
+
+==================================================
+3. INTERNE SLEUTELS
+==================================================
+
+Gebruik stabiele interne waarden die losstaan van de zichtbare labels:
+
+- single
+- set_3
+- set_5
+
+Bijvoorbeeld:
+
+VERSHOUDBAKJES_TYPES = [
+    {
+        "key": "single",
+        "slug": "enkel",
+        "label": "Enkel",
+        "heading": "Beste losse glazen vershoudbakjes",
+    },
+    {
+        "key": "set_3",
+        "slug": "3-delig",
+        "label": "3-delig",
+        "heading": "Beste 3-delige glazen vershoudsets",
+    },
+    {
+        "key": "set_5",
+        "slug": "5-delig",
+        "label": "5-delig",
+        "heading": "Beste 5-delige glazen vershoudsets",
+    },
+]
+
+Gebruik geen Nederlandse zichtbare labels als technische dictionary keys wanneer dat onnodige kwetsbaarheid veroorzaakt.
+
+==================================================
+4. DATASTRUCTUUR
+==================================================
+
+Groepeer de bestaande rankings per uitvoering.
+
+Gebruik een structuur vergelijkbaar met:
+
+VERSHOUDBAKJES_RANKINGS = {
+    "single": [
+        # bestaande product keys van losse bakjes
+    ],
+    "set_3": [
+        # bestaande product keys van 3-delige sets
+    ],
+    "set_5": [
+        # bestaande product keys van 5-delige sets
+    ],
+}
+
+Belangrijk:
+
+- gebruik de reeds aanwezige product keys;
+- verander de productvolgorde niet zonder inhoudelijke reden;
+- verzin geen nieuwe producten;
+- verwijder geen bestaande producten;
+- dupliceer productdata niet;
+- houd productinformatie in products_vershoudbakjes.py;
+- houd volgorde en selectie in rankings_vershoudbakjes.py;
+- houd introducties, FAQ’s en koopadvies in content_vershoudbakjes.py.
+
+Wanneer de huidige bestanden al een iets andere, consistente architectuur gebruiken, pas bovenstaande structuur daarop aan.
+
+==================================================
+5. CONTENT PER UITVOERING
+==================================================
+
+Maak in content_vershoudbakjes.py aparte contentblokken per uitvoering.
+
+Bijvoorbeeld:
+
+VERSHOUDBAKJES_CONTENT = {
+    "single": {
+        "heading": "...",
+        "intro": "...",
+        "comparison_intro": "...",
+        "buying_advice": [...],
+        "faq": [...],
+    },
+    "set_3": {
+        "heading": "...",
+        "intro": "...",
+        "comparison_intro": "...",
+        "buying_advice": [...],
+        "faq": [...],
+    },
+    "set_5": {
+        "heading": "...",
+        "intro": "...",
+        "comparison_intro": "...",
+        "buying_advice": [...],
+        "faq": [...],
+    },
+}
+
+Gebruik bestaande teksten waar beschikbaar.
+
+Schrijf geen uitgebreide nieuwe commerciële teksten wanneer de bestaande bronbestanden daar nog geen inhoud voor bevatten.
+
+Kleine verbindende teksten mogen worden toegevoegd om de pagina technisch en inhoudelijk goed te laten functioneren.
+
+Voorkom dat dezelfde introductie drie keer vrijwel identiek wordt herhaald.
+
+==================================================
+6. SELECTORGEDRAG
+==================================================
+
+Gebruik hetzelfde gedrag als de bestaande formaat- of typeselectoren op andere categoriepagina’s.
+
+Heeft het project al een queryparameterpatroon, gebruik dat dan.
+
+Voorkeurs-URL’s:
+
+/vershoudbakjes/?uitvoering=enkel
+/vershoudbakjes/?uitvoering=3-delig
+/vershoudbakjes/?uitvoering=5-delig
+
+De standaardselectie is:
+
+enkel
+
+Validatie:
+
+- onbekende waarde → terugvallen op enkel;
+- ontbrekende waarde → enkel;
+- lege categorie → nette foutmelding of terugval;
+- nooit een server error door een ongeldige queryparameter.
+
+De geselecteerde uitvoering moet na verversen van de pagina behouden blijven.
+
+Wanneer de bestaande categoriepagina’s JavaScript gebruiken om zonder herladen te wisselen, hergebruik dat patroon. Zorg dan alsnog dat de geselecteerde waarde in de URL kan worden vastgelegd via de bestaande methode, bijvoorbeeld een queryparameter of history.replaceState.
+
+==================================================
+7. TOEGANKELIJKHEID SELECTOR
+==================================================
+
+Gebruik semantische links of buttons volgens het bestaande patroon.
+
+Wanneer de selector server-side via queryparameters werkt, gebruik bij voorkeur links:
+
+<a href="?uitvoering=enkel">Enkel</a>
+
+Wanneer de selector volledig client-side werkt, gebruik:
+
+<button type="button">
+
+De actieve optie moet hebben:
+
+- een duidelijke actieve CSS-status;
+- aria-current="page" bij links; of
+- aria-pressed="true" bij buttons.
+
+De selector moet:
+
+- met toetsenbord werken;
+- een zichtbare focusstatus hebben;
+- op mobiel afbreken of passend schalen;
+- voldoende grote klikvlakken hebben;
+- geen informatie uitsluitend via kleur communiceren.
+
+==================================================
+8. VIEWLOGICA
+==================================================
+
+Bereid alle paginadata in de view of een bestaande service/helper voor.
+
+De template mag geen complexe dictionarylogica uitvoeren.
+
+De view moet minimaal voorbereiden:
+
+- available_types;
+- selected_type;
+- selected_type_key;
+- selected_type_label;
+- page_heading;
+- page_intro;
+- ranked_products;
+- comparison_rows;
+- buying_advice;
+- faq_items;
+- structured_data.
+
+Gebruik een helper vergelijkbaar met:
+
+get_selected_storage_type(request)
+
+en:
+
+prepare_storage_container_page(selected_type)
+
+Voorbeeld:
+
+selected_slug = request.GET.get("uitvoering", "enkel")
+
+slug_to_key = {
+    "enkel": "single",
+    "3-delig": "set_3",
+    "5-delig": "set_5",
+}
+
+selected_key = slug_to_key.get(selected_slug, "single")
+
+Gebruik de architectuur van bestaande categoriepagina’s wanneer die al een generieke oplossing hebben.
+
+==================================================
+9. PRODUCTCAPACITEITEN
+==================================================
+
+Gebruik de bestaande capaciteithelpers.
+
+Voor losse bakjes kan bijvoorbeeld worden getoond:
+
+Inhoud:
+800 ml
+
+Voor sets:
+
+Inhoud:
+2 × 700 ml + 1,5 L
+
+Totale inhoud:
+2,9 L
+
+Gebruik waar van toepassing:
+
+- format_capacities();
+- calculate_total_capacity();
+- format_total_capacity();
+- container_count.
+
+Sla geen dubbel geformatteerde capaciteitsteksten op wanneer de informatie al als numerieke `capacities` beschikbaar is.
+
+Voorbeeld:
+
+"capacities": [700, 700, 1500]
+
+Niet:
+
+"capacity": "2 × 700 ml + 1,5 L"
+
+Behoud achterwaartse compatibiliteit voor bestaande producten die nog het oude `capacity`-veld gebruiken.
+
+==================================================
+10. PRODUCTBLOKKEN
+==================================================
+
+Gebruik voor alle drie uitvoeringen dezelfde herbruikbare productkaart-template.
+
+Maak niet drie vrijwel identieke templates.
+
+De productkaart moet zelf bepalen welke velden beschikbaar zijn.
+
+Voor losse bakjes kunnen relevante velden zijn:
+
+- inhoud;
+- vorm;
+- materiaal;
+- afmetingen;
+- ovenbestendigheid;
+- magnetronbestendigheid;
+- vaatwasserbestendigheid;
+- lekvrijheid.
+
+Voor sets kunnen relevante velden zijn:
+
+- aantal bakjes;
+- samenstelling;
+- totale inhoud;
+- vormen;
+- materiaal;
+- lekvrijheid;
+- ovenbestendigheid;
+- magnetronbestendigheid;
+- vaatwasserbestendigheid.
+
+Verberg velden zonder waarde.
+
+Toon nooit:
+
+- None;
+- lege labels;
+- 0 ml door ontbrekende data;
+- een lege totale inhoud;
+- dubbele capaciteitsregels.
+
+==================================================
+11. PAGINASELECTOR VERSUS PRODUCTVARIANTSELECTOR
+==================================================
+
+Houd twee soorten selectors strikt gescheiden.
+
+Paginaselector:
+
+- Enkel
+- 3-delig
+- 5-delig
+
+Productvariantselector binnen bijvoorbeeld Igluu:
+
+- Rond
+- Vierkant of rechthoekig
+
+Gebruik verschillende:
+
+- CSS-klassen;
+- data-attributen;
+- JavaScript-selectors;
+- statevariabelen;
+- URL-parameters.
+
+Voorbeeld:
+
+Paginaniveau:
+
+data-storage-type-selector
+
+Productniveau:
+
+data-product-variant-selector
+
+De paginaselector mag de vormselector binnen een productblok niet verstoren.
+
+De vormselector mag de geselecteerde pagina-uitvoering niet wijzigen.
+
+Test expliciet dat beide selectors op dezelfde pagina kunnen functioneren.
+
+==================================================
+12. VERGELIJKINGSTABEL
+==================================================
+
+Toon alleen de producten van de geselecteerde uitvoering in de vergelijkingstabel.
+
+Gebruik één herbruikbare tabelarchitectuur, maar pas kolommen logisch aan.
+
+Voor “Enkel” zijn geschikte kolommen bijvoorbeeld:
+
+- Product
+- Inhoud
+- Vorm
+- Materiaal
+- Oven
+- Magnetron
+- Vaatwasser
+- Prijsniveau
+- Eindoordeel
+
+Voor “3-delig” en “5-delig”:
+
+- Product
+- Samenstelling
+- Totale inhoud
+- Vorm
+- Materiaal
+- Oven
+- Magnetron
+- Vaatwasser
+- Prijsniveau
+- Eindoordeel
+
+Volg de bestaande vergelijkingstabellen en verwijder geen kolommen die de huidige website consequent gebruikt.
+
+Maak tabelrijen in Python gereed. Plaats geen complexe capaciteit- of fallbacklogica in de template.
+
+==================================================
+13. AWARDS EN RANKING
+==================================================
+
+Gebruik uitsluitend de drie bestaande awards:
+
+- 🏆 Beste keuze
+- 💰 Budget keuze
+- 💎 Premium keuze
+
+Awards gelden per geselecteerde uitvoering.
+
+Het is dus toegestaan dat bijvoorbeeld zowel binnen “Enkel” als binnen “5-delig” één product “Beste keuze” is.
+
+Valideer per uitvoering:
+
+- maximaal één Beste keuze;
+- maximaal één Budget keuze;
+- maximaal één Premium keuze;
+- geen onbekende awardlabels.
+
+Wijzig geen bestaande awards zonder dat dit noodzakelijk is om een technische inconsistentie op te lossen.
+
+==================================================
+14. AFBEELDINGEN
+==================================================
+
+Gebruik de bestaande image pipeline of de huidige afbeeldingspaden.
+
+De nieuwe paginaselector moet geen afbeeldingen dupliceren of opnieuw verwerken.
+
+Elke productkaart moet:
+
+- de juiste afbeelding gebruiken;
+- een correcte alttekst hebben;
+- lazy loading behouden;
+- width- en height-attributen behouden waar aanwezig;
+- geen layout shift introduceren.
+
+Voor producten met vormvarianten moet de variantafbeelding blijven wisselen zoals reeds geïmplementeerd.
+
+==================================================
+15. SEO
+==================================================
+
+Behoud één hoofdpagina voor vershoudbakjes.
+
+Gebruik een algemene paginatitel die alle uitvoeringen dekt, bijvoorbeeld:
+
+“Beste glazen vershoudbakjes van 2026 – Losse bakjes en sets”
+
+Gebruik een algemene meta description die losse bakjes, 3-delige sets en 5-delige sets noemt.
+
+Gebruik voor queryparameterselecties dezelfde canonieke hoofd-URL, tenzij de bestaande categoriearchitectuur bewust een ander SEO-patroon gebruikt.
+
+Voorkom drie concurrerende canonieke pagina’s die vrijwel dezelfde content bevatten.
+
+Behoud bestaande:
+
+- canonical;
+- Open Graph;
+- Twitter metadata;
+- breadcrumbs;
+- interne links.
+
+==================================================
+16. STRUCTURED DATA
+==================================================
+
+Pas ItemList JSON-LD aan op de geselecteerde uitvoering.
+
+Vereisten:
+
+- alleen zichtbare/ranked producten opnemen;
+- juiste volgorde;
+- posities beginnen bij 1;
+- geen dubbele producten;
+- correcte Product-data;
+- geen lege prijzen;
+- geen niet-bestaande affiliate-URL’s;
+- juiste afbeelding van de standaardvariant.
+
+FAQPage JSON-LD moet aansluiten bij de FAQ die voor de geselecteerde uitvoering zichtbaar is.
+
+Gebruik bestaande JSON-LD-helpers waar mogelijk.
+
+Breek geen bestaande Product- of AggregateRating-structured data.
+
+==================================================
+17. JAVASCRIPT
+==================================================
+
+Voeg alleen nieuwe JavaScript toe wanneer dat nodig is.
+
+Hergebruik bestaande selectorcode wanneer mogelijk.
+
+Wanneer nieuwe generieke code nodig is:
+
+- gebruik vanilla JavaScript;
+- geen inline onclick-handlers;
+- scope events correct;
+- laat verschillende productselectors elkaar niet beïnvloeden;
+- initialiseer na DOMContentLoaded;
+- gebruik textContent voor tekstupdates;
+- gebruik veilige door Django geleverde data;
+- laat de standaardweergave zonder JavaScript bruikbaar blijven.
+
+Maak geen grote nieuwe frontenddependency voor deze functie.
+
+==================================================
+18. CSS
+==================================================
+
+Gebruik de huidige designstijl.
+
+Geschikte generieke klassen zijn bijvoorbeeld:
+
+.storage-type-selector
+.storage-type-selector__label
+.storage-type-selector__options
+.storage-type-selector__option
+.storage-type-selector__option--active
+
+Herbruik liever bestaande generieke selectorclasses wanneer die al aanwezig zijn.
+
+De selector moet:
+
+- compact zijn;
+- aansluiten bij de bestaande websitekleuren;
+- responsief zijn;
+- op mobiel goed werken;
+- niet horizontaal buiten beeld lopen;
+- een duidelijke actieve staat hebben;
+- een zichtbare focus-visible staat hebben.
+
+==================================================
+19. LEGE OF ONVOLLEDIGE GROEPEN
+==================================================
+
+Controleer of alle drie groepen producten bevatten.
+
+Wanneer een groep leeg is:
+
+- laat de pagina niet crashen;
+- toon geen lege vergelijkingstabel;
+- toon een nette interne melding tijdens ontwikkeling;
+- log of rapporteer welke ranking ontbreekt.
+
+Plaats geen tijdelijke nep-producten op de live pagina.
+
+Wanneer de 5-delige setdata nog incompleet zijn, gebruik alleen reeds aanwezige en verifieerbare velden.
+
+==================================================
+20. TESTS
+==================================================
+
+Voeg tests toe volgens de bestaande teststructuur.
+
+Test minimaal:
+
+1. De pagina toont de drie selectoropties.
+2. “Enkel” is de standaardselectie.
+3. `?uitvoering=enkel` selecteert single.
+4. `?uitvoering=3-delig` selecteert set_3.
+5. `?uitvoering=5-delig` selecteert set_5.
+6. Een ongeldige waarde valt terug op single.
+7. Alleen producten uit de juiste ranking worden getoond.
+8. De juiste introductie wordt getoond.
+9. De juiste vergelijkingstabel wordt opgebouwd.
+10. De juiste FAQ wordt getoond.
+11. ItemList JSON-LD gebruikt de juiste producten en volgorde.
+12. FAQPage JSON-LD gebruikt de zichtbare FAQ.
+13. Capaciteiten van losse bakjes worden correct geformatteerd.
+14. Capaciteiten van sets worden gegroepeerd weergegeven.
+15. Totale inhoud wordt correct berekend.
+16. Producten met oude `capacity` blijven functioneren.
+17. De pagina toont geen lege velden of “None”.
+18. Productvariantselectors zoals Rond/Vierkant blijven werken.
+19. De paginaselector beïnvloedt productvariantselectors niet.
+20. Producten zonder varianten blijven functioneren.
+21. De drie awardregels worden per uitvoering gevalideerd.
+22. De pagina blijft bruikbaar zonder JavaScript.
+23. De bestaande categoriepagina’s blijven ongewijzigd functioneren.
+24. Bestaande projecttests blijven slagen.
+
+Voer na implementatie de volledige testset uit.
+
+==================================================
+21. IMPLEMENTATIEGRENZEN
+==================================================
+
+Niet doen:
+
+- geen producten of productfeiten verzinnen;
+- geen rankingvolgorde willekeurig wijzigen;
+- geen producten verwijderen;
+- geen drie losse categoriepagina’s aanmaken;
+- geen productdata in templates dupliceren;
+- geen capaciteitsteksten handmatig dupliceren;
+- geen nieuwe frontendframeworks toevoegen;
+- geen bestaande productvariantselector vervangen;
+- geen prijzen of beschikbaarheid scrapen;
+- geen afbeeldingspipeline opnieuw bouwen;
+- geen ongerelateerde categorieën aanpassen;
+- geen huidige productafbeeldingen verwijderen of overschrijven.
+
+==================================================
+22. EINDRAPPORT
+==================================================
+
+Geef na implementatie:
+
+1. een overzicht van gewijzigde bestanden;
+2. de definitieve datastructuur voor de drie uitvoeringen;
+3. de aangepaste rankingstructuur;
+4. de aangepaste contentstructuur;
+5. de viewlogica;
+6. de templatewijzigingen;
+7. eventuele CSS- en JavaScriptwijzigingen;
+8. de gebruikte URL- of selectiemethode;
+9. de producten die per uitvoering zijn gevonden;
+10. ontbrekende of onvolledige productgegevens;
+11. testresultaten;
+12. bevestiging dat Rond/Vierkant-selectors binnen producten nog werken;
+13. bevestiging dat de vershoudbakjespagina één categoriepagina blijft;
+14. bevestiging dat bestaande productdata en rankings niet zonder reden zijn gewijzigd.
