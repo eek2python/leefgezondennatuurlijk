@@ -85,6 +85,14 @@ All 6 category pages use a standardised three-file content architecture per cate
 - Display: product detail shows "Inhoud" + "Totale inhoud" (total only for multi-container sets); vershoudcontainers comparison table has an "Inhoud" column (no totals)
 - Tests: `products/tests.py` (run with `python manage.py test products`)
 
+### Product Image Pipeline
+- Originals in `assets/product_images/originals/<category>/` (not publicly served); manifest at `assets/product_images/manifest.json`; reports in `assets/product_images/reports/`
+- Output: `static/images/products/<category>/<slug>.webp` (800×800 white canvas, fill 0.78, WebP q85 m6)
+- Service (CLI-independent, admin-page ready): `products/services/product_image_processor.py` — `ProcessingConfig` dataclass, `load_manifest`, `validate_manifest`, `process_manifest_entry`, `write_processing_report`
+- Commands: `python manage.py process_product_images` (--all/--category/--product/--source/--dry-run/--force/--check/--report) and `register_product_image` (appends validated manifest entry with backup + atomic write)
+- Change detection via source checksum + config fingerprint (state in `reports/processing-state.json`); conservative auto-crop (transparent or uniform light borders only); atomic writes; per-entry `processing` overrides
+- Docs: `docs/product-image-pipeline.md`; tests: `products/test_product_image_processor.py` (35 tests)
+
 ### Comparison Template
 - `templates/comparison.html` — reusable comparison table template (not yet wired to a URL)
 

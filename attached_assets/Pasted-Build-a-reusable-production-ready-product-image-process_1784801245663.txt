@@ -1,0 +1,734 @@
+Build a reusable, production-ready product image processing pipeline for my existing Django affiliate website.
+
+The website is called “Leef Natuurlijk & Gezond” and contains product images for categories such as:
+
+- ceramic frying pans;
+- stainless-steel frying pans;
+- sauté pans;
+- woks;
+- air fryers;
+- wooden cutting boards;
+- glass food-storage containers.
+
+The pipeline must standardize product images so that product cards look consistent, images load quickly and original source files are always preserved.
+
+Do not build the Django admin upload interface yet. However, structure the implementation so that a future custom admin page can call the same image-processing service without duplicating logic.
+
+==================================================
+1. FIRST INSPECT THE EXISTING PROJECT
+==================================================
+
+Before changing files, inspect:
+
+- the Django project and app structure;
+- current static-file configuration;
+- current product-image directories;
+- how image paths are stored in product dictionaries;
+- product-card templates;
+- existing utility or service modules;
+- existing requirements or dependency configuration;
+- existing test structure.
+
+Reuse the current project conventions wherever reasonable.
+
+Do not move or rename existing production images automatically during the initial implementation.
+
+Do not modify unrelated product data or templates in this task.
+
+==================================================
+2. REQUIRED ARCHITECTURE
+==================================================
+
+Create a reusable architecture comparable to:
+
+assets/
+└── product_images/
+    ├── originals/
+    │   ├── airfryers/
+    │   ├── keramische-koekenpannen/
+    │   ├── rvs-koekenpannen/
+    │   ├── hapjespannen/
+    │   ├── wokpannen/
+    │   ├── snijplanken/
+    │   └── vershoudbakjes/
+    │
+    ├── manifest.json
+    └── reports/
+
+<django_app>/
+├── services/
+│   ├── __init__.py
+│   └── product_image_processor.py
+│
+├── management/
+│   └── commands/
+│       └── process_product_images.py
+│
+└── tests/
+    └── test_product_image_processor.py
+
+Processed website images must be written to the project’s existing static-image structure.
+
+Preferred output pattern, if compatible with the existing project:
+
+static/
+└── images/
+    └── products/
+        └── <category>/
+            └── <seo-slug>.webp
+
+If the existing website uses another structure, adapt to it and document the choice.
+
+The originals directory must not be publicly served as website assets.
+
+==================================================
+3. DEPENDENCIES
+==================================================
+
+Use Pillow for image processing.
+
+Add Pillow to the existing dependency file in the style already used by the project.
+
+Support these source formats:
+
+- .jpg
+- .jpeg
+- .png
+- .webp
+
+AVIF may be supported only if the project already has reliable AVIF support. Do not add a fragile dependency solely for AVIF.
+
+If an unsupported file is encountered, report it clearly and continue processing the remaining files.
+
+==================================================
+4. CENTRAL CONFIGURATION
+==================================================
+
+Create one centralized configuration object or dataclass.
+
+Use these defaults:
+
+CANVAS_WIDTH = 800
+CANVAS_HEIGHT = 800
+BACKGROUND_COLOR = (255, 255, 255)
+CONTENT_FILL_RATIO = 0.78
+WEBP_QUALITY = 85
+WEBP_METHOD = 6
+MIN_RECOMMENDED_SOURCE_WIDTH = 600
+MIN_RECOMMENDED_SOURCE_HEIGHT = 600
+MAX_UPSCALE_FACTOR = 1.5
+AUTO_CROP = True
+OVERWRITE_EXISTING = False
+
+The configuration must be reusable by:
+
+- the Django management command;
+- tests;
+- the future custom admin page.
+
+Do not scatter these values throughout the code.
+
+Allow individual manifest entries to override selected settings, such as:
+
+- content fill ratio;
+- automatic crop;
+- background colour;
+- vertical or horizontal positioning;
+- maximum upscale factor.
+
+==================================================
+5. IMAGE MANIFEST
+==================================================
+
+Use a manifest file to map original files to clean output names.
+
+Create:
+
+assets/product_images/manifest.json
+
+Example structure:
+
+[
+  {
+    "source": "vershoudbakjes/igluu-meal-prep-round.webp",
+    "slug": "igluu-meal-prep-3delig-rond",
+    "category": "vershoudbakjes",
+    "product_key": "igluu_meal_prep_3delig",
+    "variant_id": "round",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/igluu-meal-prep-square.jpg",
+    "slug": "igluu-meal-prep-3delig-vierkant",
+    "category": "vershoudbakjes",
+    "product_key": "igluu_meal_prep_3delig",
+    "variant_id": "square",
+    "enabled": true,
+    "processing": {
+      "content_fill_ratio": 0.74,
+      "vertical_offset": 0
+    }
+  }
+]
+
+The manifest must support:
+
+- source;
+- slug;
+- category;
+- product_key;
+- optional variant_id;
+- enabled;
+- optional processing overrides.
+
+Do not require every product to have a variant.
+
+Validate:
+
+- required fields;
+- duplicate output paths;
+- duplicate combinations of product_key and variant_id;
+- missing source files;
+- unsafe relative paths;
+- invalid category or slug values;
+- malformed processing overrides.
+
+Never allow manifest paths to escape the configured originals or output directories.
+
+==================================================
+6. FILE-NAMING RULES
+==================================================
+
+Output file names must be derived from the explicit manifest slug.
+
+Normalize slugs safely:
+
+- lowercase;
+- replace spaces and underscores with hyphens;
+- remove unsupported punctuation;
+- transliterate accented characters where practical;
+- collapse repeated hyphens;
+- remove leading and trailing hyphens.
+
+Examples:
+
+“GreenPan Bistro XL” becomes:
+
+greenpan-bistro-xl.webp
+
+“Igluu Meal Prep – Rond” becomes:
+
+igluu-meal-prep-rond.webp
+
+Do not silently overwrite two images that produce the same output filename.
+
+Raise a manifest validation error before processing when duplicate output paths exist.
+
+==================================================
+7. IMAGE-PROCESSING STEPS
+==================================================
+
+Implement the processing in this order.
+
+Step 1: Open the source safely
+
+- use Pillow;
+- handle corrupt or unreadable files;
+- use ImageOps.exif_transpose to apply EXIF orientation;
+- close file handles properly;
+- never modify the original source file.
+
+Step 2: Normalize the working image
+
+- convert to RGBA while processing;
+- preserve transparency until the final canvas is created;
+- do not preserve unnecessary source metadata.
+
+Step 3: Detect removable outside space
+
+Automatic cropping must be conservative.
+
+For images with transparency:
+
+- use the alpha channel to detect the visible bounding box;
+- remove only fully or almost fully transparent outside space.
+
+For images without transparency:
+
+- inspect pixels along the outer border;
+- estimate whether the border has a sufficiently uniform light background;
+- only crop when the border is demonstrably uniform and light;
+- compare pixels with the estimated background colour using a configurable tolerance.
+
+Do not blindly treat every near-white pixel in the image as background.
+
+Do not remove white parts of the actual product.
+
+If the background is not sufficiently uniform or light:
+
+- skip automatic cropping;
+- preserve the complete source image;
+- add a warning to the processing report.
+
+If no valid bounding box is found:
+
+- keep the original image;
+- add a warning;
+- do not crash.
+
+Allow `auto_crop: false` as a manifest override.
+
+Step 4: Preserve a small safety margin
+
+After automatic cropping, retain or add a small internal safety margin so that the product does not touch the calculated bounding box.
+
+Step 5: Calculate the target content area
+
+For an 800 × 800 canvas and a fill ratio of 0.78, the product must fit within:
+
+624 × 624 pixels
+
+Preserve the source aspect ratio.
+
+Do not stretch or distort images.
+
+Step 6: Resize
+
+Use:
+
+Image.Resampling.LANCZOS
+
+Rules:
+
+- reduce large images as needed;
+- allow limited upscaling only up to MAX_UPSCALE_FACTOR;
+- never upscale without limit;
+- generate a warning when the source is too small to reach the preferred display size;
+- record original, cropped and final dimensions.
+
+Step 7: Position the product
+
+Place the resized image on a square canvas.
+
+Default:
+
+- horizontally centred;
+- vertically centred;
+- white background.
+
+Support optional manifest overrides:
+
+- horizontal_offset;
+- vertical_offset.
+
+Offsets must be bounded so that the image cannot accidentally be placed entirely outside the canvas.
+
+Step 8: Flatten transparency
+
+Composite the working RGBA image onto the configured background.
+
+Convert the final image to RGB before saving as lossy WebP.
+
+Step 9: Save as WebP
+
+Use:
+
+- format: WEBP;
+- quality: 85;
+- method: 6;
+- optimized output where supported;
+- no EXIF or unnecessary metadata.
+
+Write files atomically:
+
+- first save to a temporary output file;
+- replace the final output only after successful completion;
+- remove abandoned temporary files after errors.
+
+==================================================
+8. CHANGE DETECTION
+==================================================
+
+Avoid reprocessing unchanged files unnecessarily.
+
+Calculate and store sufficient information in the report, such as:
+
+- source path;
+- source checksum;
+- processing configuration checksum;
+- output path;
+- processing timestamp.
+
+When the source file and relevant configuration have not changed and the output exists:
+
+- skip it by default;
+- report the status as `unchanged`.
+
+The `--force` option must process it again.
+
+A change to a relevant configuration value must cause reprocessing.
+
+==================================================
+9. MANAGEMENT COMMAND
+==================================================
+
+Create a Django management command:
+
+python manage.py process_product_images
+
+Support:
+
+python manage.py process_product_images --all
+
+Processes all enabled manifest entries.
+
+python manage.py process_product_images --category vershoudbakjes
+
+Processes one category.
+
+python manage.py process_product_images --product igluu_meal_prep_3delig
+
+Processes one product family.
+
+python manage.py process_product_images --source vershoudbakjes/example.jpg
+
+Processes one matching manifest entry.
+
+python manage.py process_product_images --dry-run
+
+Validates and shows intended actions without writing files.
+
+python manage.py process_product_images --force
+
+Reprocesses files even when unchanged.
+
+python manage.py process_product_images --check
+
+Only validates the manifest, original files and existing processed images.
+
+python manage.py process_product_images --report
+
+Writes a detailed JSON report.
+
+Allow compatible options to be combined, for example:
+
+python manage.py process_product_images \
+    --category vershoudbakjes \
+    --force \
+    --report
+
+Prevent ambiguous combinations where necessary and show a clear command error.
+
+==================================================
+10. COMMAND OUTPUT
+==================================================
+
+Display concise progress information, for example:
+
+[1/5] Igluu Meal Prep rond
+      source: assets/product_images/originals/vershoudbakjes/igluu-round.webp
+      output: static/images/products/vershoudbakjes/igluu-meal-prep-3delig-rond.webp
+      status: processed
+      dimensions: 1400×1100 → crop 1180×950 → 624×503 on 800×800
+      file size: 482 KB → 74 KB
+      saving: 84.6%
+
+Use statuses such as:
+
+- processed;
+- unchanged;
+- skipped;
+- warning;
+- failed.
+
+At the end, show a summary:
+
+Processed: 4
+Unchanged: 6
+Warnings: 1
+Failed: 0
+Original size: 8.4 MB
+Processed size: 1.1 MB
+Total saving: 86.9%
+
+The command must return a non-zero exit status when:
+
+- manifest validation fails;
+- one or more requested images fail processing;
+- unsafe paths are detected.
+
+Warnings alone should not result in a failing exit status.
+
+==================================================
+11. JSON REPORT
+==================================================
+
+When `--report` is used, write a timestamped file to:
+
+assets/product_images/reports/
+
+Example:
+
+product-image-report-2026-07-23-113000.json
+
+Include per image:
+
+- product_key;
+- variant_id;
+- source;
+- output;
+- source format;
+- original width and height;
+- cropped width and height;
+- resized width and height;
+- canvas width and height;
+- original bytes;
+- processed bytes;
+- percentage saving;
+- source checksum;
+- processing configuration checksum;
+- processing duration;
+- status;
+- warnings;
+- errors;
+- processed_at.
+
+Also maintain an optional latest report:
+
+assets/product_images/reports/latest.json
+
+Update it atomically.
+
+==================================================
+12. LOW-RESOLUTION AND QUALITY WARNINGS
+==================================================
+
+Add warnings for:
+
+- original dimensions below 600 × 600;
+- cropped product area that is very small;
+- required upscale exceeding MAX_UPSCALE_FACTOR;
+- output file larger than the original;
+- automatic crop skipped because no safe uniform border was detected;
+- extreme aspect ratios;
+- almost empty or almost fully transparent images;
+- output image with unexpectedly low visual content.
+
+Do not use AI image recognition.
+
+Do not pretend to determine the exact product object semantically.
+
+Use deterministic image-processing rules only.
+
+==================================================
+13. FUTURE ADMIN-PAGE COMPATIBILITY
+==================================================
+
+Keep the core processing logic out of the management command.
+
+The management command should call reusable service functions comparable to:
+
+load_manifest()
+validate_manifest()
+process_manifest_entry()
+process_product_image()
+build_output_path()
+calculate_processing_fingerprint()
+write_processing_report()
+
+Return structured result objects or dataclasses rather than printing from deep inside the processing service.
+
+The future admin page must be able to call:
+
+result = process_manifest_entry(entry, config, force=True)
+
+and receive:
+
+- success status;
+- output path;
+- dimensions;
+- file sizes;
+- warnings;
+- errors.
+
+Do not make the service depend on command-line arguments.
+
+==================================================
+14. OPTIONAL HELPER FOR NEW MANIFEST ENTRIES
+==================================================
+
+Add an optional command:
+
+python manage.py register_product_image \
+    --source vershoudbakjes/igluu-original.webp \
+    --product igluu_meal_prep_3delig \
+    --category vershoudbakjes \
+    --slug igluu-meal-prep-3delig-rond \
+    --variant round
+
+This command may append a validated entry to the manifest.
+
+Requirements:
+
+- never duplicate an existing entry;
+- preserve valid JSON formatting;
+- create a backup before changing the manifest;
+- use atomic writes;
+- validate the complete manifest after updating it.
+
+If this would add disproportionate complexity, implement it only after the main processor is working and tested.
+
+==================================================
+15. DOCUMENTATION
+==================================================
+
+Create concise project documentation, for example:
+
+docs/product-image-pipeline.md
+
+Explain:
+
+1. where original images must be placed;
+2. which formats are supported;
+3. how to add a manifest entry;
+4. how output names are determined;
+5. how to run a dry run;
+6. how to process all images;
+7. how to process one category or product;
+8. how to force reprocessing;
+9. how warnings are reported;
+10. how to adjust one problematic image using manifest overrides;
+11. why originals must never be manually overwritten;
+12. how a future admin page can call the service.
+
+Include the exact commands needed on Replit.
+
+==================================================
+16. TESTS
+==================================================
+
+Add automated tests using temporary directories and programmatically generated test images.
+
+Do not depend on real production images.
+
+Test at least:
+
+1. JPEG input becomes WebP.
+2. PNG transparency is flattened onto white.
+3. Existing WebP input is processed directly without conversion to JPEG.
+4. EXIF orientation is applied.
+5. Aspect ratio is preserved.
+6. Output canvas is exactly 800 × 800.
+7. Product content stays within the configured content area.
+8. Transparent empty borders are cropped safely.
+9. Uniform white borders are cropped conservatively.
+10. Non-uniform photographic backgrounds are not incorrectly cropped.
+11. A fully white image does not crash.
+12. A fully transparent image produces a clear failure or warning.
+13. Small images are not upscaled beyond the configured maximum.
+14. Slugs are normalized correctly.
+15. Duplicate output names are rejected.
+16. Unsafe relative paths are rejected.
+17. Existing outputs are not overwritten without permission.
+18. `--force` overwrites them.
+19. Unchanged files are skipped.
+20. A configuration change causes reprocessing.
+21. Dry-run writes no image files.
+22. JSON reports contain the required fields.
+23. A source processing failure does not prevent independent remaining files from being attempted.
+24. The management command returns the correct exit status.
+25. Products with and without variant IDs can both be represented.
+
+Run the existing project test suite after implementing the feature.
+
+==================================================
+17. INITIAL SAMPLE AND MIGRATION SAFETY
+==================================================
+
+Create two or three sample manifest entries only if matching source files already exist.
+
+Otherwise:
+
+- create an empty valid manifest;
+- include commented examples in the documentation;
+- do not add fake production records;
+- do not invent product paths.
+
+Do not automatically reprocess the current website image library.
+
+Do not delete current product images.
+
+Do not update current product dictionaries until I have reviewed sample output.
+
+The first implementation must allow me to test the pipeline with approximately five selected images before migrating all product images.
+
+==================================================
+18. MANUAL REVIEW WORKFLOW
+==================================================
+
+Document this recommended migration workflow:
+
+1. Put five original images with different source characteristics into the originals directory:
+   - one JPG with a white background;
+   - one transparent PNG;
+   - one existing WebP;
+   - one image with excessive white space;
+   - one relatively low-resolution image.
+
+2. Add the five entries to manifest.json.
+
+3. Run:
+
+python manage.py process_product_images --dry-run --report
+
+4. Run:
+
+python manage.py process_product_images --all --report
+
+5. Visually inspect the five output images.
+
+6. Adjust global settings or per-image overrides if required.
+
+7. Only after approval, add the remaining originals.
+
+==================================================
+19. IMPLEMENTATION BOUNDARIES
+==================================================
+
+Do not:
+
+- build the custom admin upload page yet;
+- scrape retailer websites;
+- change prices or availability;
+- use external image-processing APIs;
+- use AI image generation or object detection;
+- delete original files;
+- overwrite current production images automatically;
+- modify all product dictionaries;
+- add unverified product information;
+- hard-code Replit-specific absolute paths;
+- put image-processing business logic in templates;
+- silently ignore corrupt source files;
+- silently overwrite duplicate output paths.
+
+Keep the implementation suitable for normal local development, Replit and later deployment elsewhere.
+
+==================================================
+20. FINAL IMPLEMENTATION REPORT
+==================================================
+
+After implementation, provide:
+
+1. all files created or changed;
+2. the chosen originals and output directories;
+3. dependency changes;
+4. the final configuration defaults;
+5. the manifest schema;
+6. the image-processing sequence;
+7. supported management-command options;
+8. automated test results;
+9. existing project test results;
+10. instructions for processing my first five images;
+11. known limitations;
+12. confirmation that current production images and product data were not automatically changed;
+13. confirmation that the processing service is reusable by a future admin page.
