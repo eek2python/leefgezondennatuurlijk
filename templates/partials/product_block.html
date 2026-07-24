@@ -78,7 +78,7 @@
 <div class="content">
 <h3><a href="{% url 'product_detail' slug=product.slug %}">{{ forloop.counter }}. {{ product.name }}</a></h3>
 <p>{{ product.description }}</p>
-{% if product.size_labels %}
+{% if product.size_labels and not product.shape_variants %}
 <p class="product-size-info">
     {% if product.formatted_capacity %}{% if product.capacities|length > 1 %}Samenstelling: {{ product.formatted_capacity }}{% else %}Inhoud: {{ product.formatted_capacity }}{% endif %}{% endif %}
     {% if product.formatted_total_capacity %} · Totale inhoud: {{ product.formatted_total_capacity }}{% endif %}
