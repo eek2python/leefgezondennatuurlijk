@@ -4778,3 +4778,23 @@ table.product-table .product-badge {
 .lees-ook ul { margin: 0; padding-left: 1.2em; }
 .lees-ook li { margin: 0.3em 0; }
 .lees-ook a { color: #2f7d4e; font-weight: 600; }
+
+/* Sticky filter bar (vershoudbakjes) */
+.storage-filters-sticky {
+   position: sticky;
+   top: 0;
+   z-index: 50;
+   background: #ffffff;
+   padding: 10px 0 8px 0;
+   margin: 0 -1px;
+}
+.storage-filters-sticky.is-stuck {
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+   border-bottom: 1px solid #eef1f2;
+}
+.storage-filters-sticky.is-stuck .storage-size-filter__help {
+   display: none;
+}
+.storage-filters-sticky .format-selector {
+   margin-bottom: 6px;
+}

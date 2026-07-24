@@ -46,8 +46,21 @@
                         </div>
                 </section>
 
+<div class="storage-filters-sentinel" aria-hidden="true"></div>
+<div class="storage-filters-sticky">
 {% include "partials/storage_type_selector.html" %}
 {% include "partials/storage_size_filter.html" %}
+</div>
+<script>
+(function () {
+    var bar = document.querySelector(".storage-filters-sticky");
+    var sentinel = document.querySelector(".storage-filters-sentinel");
+    if (!bar || !sentinel || !("IntersectionObserver" in window)) { return; }
+    new IntersectionObserver(function (entries) {
+        bar.classList.toggle("is-stuck", !entries[0].isIntersecting);
+    }, { threshold: 0 }).observe(sentinel);
+})();
+</script>
 
                 {% include "partials/top_picks.html" %}
 
