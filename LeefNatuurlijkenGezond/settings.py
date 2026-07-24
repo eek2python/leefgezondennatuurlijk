@@ -28,6 +28,23 @@ DEBUG = os.environ.get("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = ['*']
 
+# Trust the Replit proxy and the production domain for CSRF-protected POSTs
+# (admin login etc.). Requests arrive via an https proxy, so Django needs the
+# external origins listed explicitly.
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.replit.dev',
+    'https://*.replit.app',
+    'https://www.leefnatuurlijkengezond.nl',
+    'https://leefnatuurlijkengezond.nl',
+]
+_replit_domain = os.environ.get('REPLIT_DEV_DOMAIN')
+if _replit_domain:
+    CSRF_TRUSTED_ORIGINS.append(f'https://{_replit_domain}')
+
+# Behind the Replit/deployment proxy the original scheme is passed via this
+# header; needed so Django sees requests as https for CSRF origin checks.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # Application definition
 
