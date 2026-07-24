@@ -10,8 +10,8 @@ PRODUCTS = {
             "Klikdeksel",
             "Magnetronventiel"
         ],
-        "image": "pyrex-cookstore-enkel.jpg",
-        "image_path": "images/vershoudbakjes",
+        "image": "pyrex-cookstore-enkel.webp",
+        "image_path": "images/products/vershoudbakjes",
         "description": "Hoogwaardig glazen vershoudbakje van borosilicaatglas met stevig klikdeksel en stoomventiel. Ideaal voor bewaren, invriezen, opwarmen en bereiden in de oven.",
         "pros": [
             "Borosilicaatglas is bestand tegen grote temperatuurverschillen",

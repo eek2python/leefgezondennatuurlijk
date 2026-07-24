@@ -66,11 +66,10 @@
 </div>
 </div>
 {% else %}
-<a href="{% url 'product_detail' slug=product.slug %}">
+<a href="{% url 'product_detail' slug=product.slug %}" class="image right">
 <img
        src="{% static product.image_path|add:'/' %}{{ product.image }}"
        alt="{{ product.name }}"
-       class="image right"
        loading="lazy"
 >
 </a>
