@@ -139,13 +139,5 @@
     "product_key": "luminarc_purebox_420ml_rond_enkel",
     "enabled": true,
     "variant_id": "round"
-  },
-  {
-    "source": "vershoudbakjes/luminarc-purebox-920ml-rond-enkel.jpg",
-    "slug": "luminarc-purebox-920ml-rond-enkel",
-    "category": "vershoudbakjes",
-    "product_key": "luminarc_purebox_920ml_rond_enkel",
-    "enabled": true,
-    "variant_id": "round"
   }
 ]

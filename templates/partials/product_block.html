@@ -26,7 +26,6 @@
             data-option-value="{{ option.value }}"
             aria-label="{{ group.label }}: {{ option.label }}"
             aria-pressed="{% if option.active %}true{% else %}false{% endif %}"
-            {% if not option.available %}disabled aria-disabled="true"{% endif %}
 >{{ option.label }}</button>
         {% endfor %}
 </div>

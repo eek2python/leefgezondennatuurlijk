@@ -79,13 +79,8 @@
                 !available
             );
             button.setAttribute("aria-pressed", isActive ? "true" : "false");
-            if (available) {
-                button.removeAttribute("disabled");
-                button.removeAttribute("aria-disabled");
-            } else {
-                button.setAttribute("disabled", "");
-                button.setAttribute("aria-disabled", "true");
-            }
+            button.removeAttribute("disabled");
+            button.removeAttribute("aria-disabled");
         }
     }
 
@@ -191,9 +186,6 @@
         });
 
         function handleSelect(button) {
-            if (button.hasAttribute("disabled")) {
-                return;
-            }
             var key = button.getAttribute("data-selector-key");
             var value = coerceValue(
                 variants,
