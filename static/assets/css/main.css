@@ -4333,7 +4333,7 @@ table.product-table .product-badge {
 }
 .product-variant-selector__label {
  display: block;
- font-size: 0.8em;
+ font-size: 0.65em;
  font-weight: 600;
  text-transform: uppercase;
  letter-spacing: 0.05em;
@@ -4344,18 +4344,18 @@ table.product-table .product-badge {
  display: flex;
  flex-wrap: wrap;
  justify-content: center;
- gap: 8px;
+ gap: 5px;
 }
 .product-variant-button {
  -webkit-appearance: none;
  appearance: none;
- padding: 0.35em 1em;
- min-height: 2.2em;
- border: 2px solid #dbe1e4;
- border-radius: 6px;
+ padding: 0.2em 0.7em;
+ min-height: 1.8em;
+ border: 1px solid #dbe1e4;
+ border-radius: 5px;
  background-color: #ffffff;
  color: #3d4449 !important;
- font-size: 0.85em;
+ font-size: 0.7em;
  font-weight: 600;
  line-height: 1.4;
  cursor: pointer;
