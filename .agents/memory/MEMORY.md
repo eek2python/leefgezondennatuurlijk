@@ -1,3 +1,4 @@
-- [Product color variants](product-color-variants.md) — optional card-only swatches; never expand into per-color URLs or structured data; variant images must share one aspect ratio.
-- [Two product variant systems](product-variant-systems.md) — `id` key on a variant dict decides shape-button vs colour-swatch UI; never mix both styles in one product.
-- [Vershoudcontainers data quality](vershoudcontainers-data-quality.md) — user-added product dicts can be copy-paste placeholders; never rank them; slugs must be hyphenated (no "+"); test-assertion traps.
+- [Two product variant systems](product-variant-systems.md) — colour-swatch vs shape-button variants share the `variants` key; how to tell them apart on product cards.
+- [Product color variants](product-color-variants.md) — conventions for the optional product-card colour-swatch feature.
+- [Vershoudcontainers data quality gotchas](vershoudcontainers-data-quality.md) — user-supplied entries may be copy-paste placeholders; never rank/publish them, report instead.
+- [Lock&Lock capacity decision](lock-and-lock-capacity.md) — middle option is the true 740 ml, never normalize to 750; empty variants must not fall back to another size's link.

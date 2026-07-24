@@ -137,6 +137,57 @@ PRODUCTS = {
         "price_range": "\u20ac\u20ac",
         "verdict": "Een uitstekende keuze voor wie maximale lekdichtheid en betrouwbaarheid belangrijk vindt.",
         "award": "",
+        "variant_label": "Inhoud",
+        "variants": [
+            {
+                # TODO: nog geen geverifieerde data voor de 630 ml-uitvoering:
+                # afbeelding, afmetingen, prijs, affiliate-link,
+                # beschikbaarheid en prijscontroledatum ontbreken.
+                "id": "630-ml",
+                "label": "630 ml",
+                "shape": "630 ml",
+                "capacities": [630],
+                "image": None,
+                "price": None,
+                "price_last_checked": None,
+                "currency": "EUR",
+                "availability": None,
+                "affiliate_url": None,
+                "is_default": False,
+            },
+            {
+                # Geverifieerde uitvoering (locklock.nl: "Glazen
+                # ovenschaaltje met deksel | Eenpersoons | 740 ml").
+                "id": "740-ml",
+                "label": "740 ml",
+                "shape": "740 ml",
+                "capacities": [740],
+                "image": "locknlock-enkel.jpg",
+                "image_path": "images/vershoudbakjes",
+                "price": 12.95,
+                "price_last_checked": "2026-07-08",
+                "currency": "EUR",
+                "availability": "InStock",
+                "affiliate_url": "https://locklock.nl/product/keuken/ovenschalen-met-deksel/glazen-ovenschaaltje-met-deksel-740-ml/",
+                "is_default": True,
+            },
+            {
+                # TODO: nog geen geverifieerde data voor de 1 L-uitvoering:
+                # afbeelding, afmetingen, prijs, affiliate-link,
+                # beschikbaarheid en prijscontroledatum ontbreken.
+                "id": "1000-ml",
+                "label": "1 L",
+                "shape": "1 L",
+                "capacities": [1000],
+                "image": None,
+                "price": None,
+                "price_last_checked": None,
+                "currency": "EUR",
+                "availability": None,
+                "affiliate_url": None,
+                "is_default": False,
+            },
+        ],
     },
     "luminarc_purebox_enkel": {
         "slug": "luminarc-purebox-enkel",

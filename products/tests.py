@@ -627,3 +627,142 @@ class StorageSizeFilterPageTests(TestCase):
         self.assertEqual(product["formatted_capacity"], "1,5 L + 1,8 L")
         self.assertEqual(product["formatted_total_capacity"], "3,3 L")
         self.assertEqual(product["size_label"], "Groot")
+
+
+class LockNLockCapacityVariantTests(TestCase):
+    """Inhoudselector (630 ml / 740 ml / 1 L) op het Lock&Lock-productblok."""
+
+    def _get_html(self, url="/vershoudcontainers/"):
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        return response.content.decode()
+
+    def _product(self):
+        from products.products_vershoudcontainers import PRODUCTS as VERSHOUDCONTAINERS_PRODUCTS
+        import copy as _copy
+        product = _copy.deepcopy(VERSHOUDCONTAINERS_PRODUCTS["locknlock_enkel"])
+        prepare_product_variants(product)
+        return product
+
+    def test_one_ranked_product(self):
+        from products.rankings_vershoudcontainers import RANKINGS as VERSHOUDCONTAINERS_RANKINGS
+        self.assertEqual(
+            VERSHOUDCONTAINERS_RANKINGS["single"].count("locknlock_enkel"), 1
+        )
+
+    def test_card_shows_three_capacity_options_with_exact_labels(self):
+        html = self._get_html()
+        self.assertIn(">630 ml</button>", html)
+        self.assertIn(">740 ml</button>", html)
+        self.assertIn(">1 L</button>", html)
+        self.assertIn("Inhoud", html)
+
+    def test_variant_ids_unique_and_one_default(self):
+        product = self._product()
+        ids = [v["id"] for v in product["shape_variants"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        defaults = [v for v in product["shape_variants"] if v.get("is_default")]
+        self.assertEqual(len(defaults), 1)
+        self.assertEqual(defaults[0]["id"], "740-ml")
+
+    def test_default_variant_commercial_data_copied_to_product(self):
+        product = self._product()
+        self.assertEqual(product["capacities"], [740])
+        self.assertEqual(product["price"], 12.95)
+        self.assertIn("740-ml", product["affiliate_url"])
+        self.assertEqual(product["image"], "locknlock-enkel.jpg")
+
+    def test_capacity_formatting(self):
+        product = self._product()
+        v630, v740, v1000 = product["shape_variants"]
+        self.assertEqual(v630["formatted_capacity"], "630 ml")
+        self.assertEqual(v740["formatted_capacity"], "740 ml")
+        self.assertEqual(v1000["formatted_capacity"], "1 L")
+
+    def test_selected_summary_no_duplicate_capacity(self):
+        product = self._product()
+        v740 = product["shape_variants"][1]
+        self.assertEqual(v740["selected_summary"], "Geselecteerd: 740 ml")
+
+    def test_all_variants_classified_medium(self):
+        from utils.product_helpers import classify_storage_size, get_product_size_categories
+        product = self._product()
+        for v in product["shape_variants"]:
+            self.assertEqual(classify_storage_size(v["capacities"]), "medium")
+        self.assertEqual(get_product_size_categories(product), ["medium"])
+
+    def test_visible_under_alle_and_middel_not_klein_groot(self):
+        for formaat, expected in (
+            ("alle", True), ("middel", True), ("klein", False), ("groot", False)
+        ):
+            html = self._get_html(f"/vershoudcontainers/?formaat={formaat}")
+            self.assertEqual(
+                "locknlock-enkel" in html, expected,
+                f"formaat={formaat}",
+            )
+
+    def test_missing_variant_data_not_rendered_as_zero_or_none(self):
+        product = self._product()
+        v630 = product["shape_variants"][0]
+        self.assertIsNone(v630["price"])
+        self.assertEqual(v630["affiliate_url"], "")
+        self.assertEqual(v630["image_url"], "")
+        html = self._get_html()
+        self.assertNotIn("€0", html)
+        self.assertNotIn(">None<", html)
+
+    def test_missing_affiliate_does_not_fall_back_to_other_variant(self):
+        html = self._get_html()
+        import re
+        card = re.search(
+            r'data-product-slug="locknlock-enkel".*?</div>\s*</div>', html, re.S
+        ).group(0)
+        buttons = re.findall(r'<button[^>]*data-shape-option[^>]*>', card)
+        self.assertEqual(len(buttons), 3)
+        for b in buttons:
+            if 'data-variant-id="630-ml"' in b or 'data-variant-id="1000-ml"' in b:
+                self.assertIn('data-affiliate=""', b)
+
+    def test_default_renders_serverside_without_js(self):
+        html = self._get_html()
+        self.assertIn("Geselecteerd: 740 ml", html)
+        self.assertIn('aria-pressed="true"', html)
+
+    def test_one_row_in_comparison_table(self):
+        import re
+        html = self._get_html()
+        table = re.search(r"<tbody>(.*?)</tbody>", html, re.S).group(1)
+        self.assertEqual(table.count("Lock&amp;Lock"), 1)
+        self.assertIn("Afhankelijk van uitvoering", table)
+
+    def test_itemlist_ld_contains_locknlock_once_with_default_offer(self):
+        import re
+        html = self._get_html()
+        blocks = re.findall(
+            r'<script type="application/ld\+json">\s*(.*?)\s*</script>', html, re.S
+        )
+        itemlist = next(json.loads(b) for b in blocks if '"ItemList"' in b)
+        entries = [
+            e["item"] for e in itemlist["itemListElement"]
+            if "Lock&Lock" in e["item"]["name"]
+        ]
+        self.assertEqual(len(entries), 1)
+        offer = entries[0]["offers"]
+        self.assertEqual(offer["price"], 12.95)
+        self.assertIn("740-ml", offer["url"])
+        positions = [e["position"] for e in itemlist["itemListElement"]]
+        self.assertEqual(len(positions), len(set(positions)))
+
+    def test_detail_page_uses_default_variant(self):
+        response = self.client.get("/product/locknlock-enkel/")
+        self.assertEqual(response.status_code, 200)
+        html = response.content.decode()
+        self.assertIn("740 ml", html)
+
+    def test_other_selectors_unaffected(self):
+        html = self._get_html("/vershoudcontainers/?uitvoering=3-delig")
+        self.assertIn(">Rond</button>", html)
+        self.assertIn(">Vierkant</button>", html)
+        html = self._get_html()
+        self.assertEqual(html.count("data-storage-type-selector"), 1)
+        self.assertEqual(html.count("data-storage-size-filter"), 1)

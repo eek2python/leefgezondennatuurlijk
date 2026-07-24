@@ -73,7 +73,7 @@ def prepare_product_variants(product):
         )
         pv["alt_text"] = f"{family_name} {pv['label'].lower()}".strip()
         summary = f"Geselecteerd: {pv['label']}"
-        if pv["formatted_capacity"]:
+        if pv["formatted_capacity"] and pv["formatted_capacity"] != pv["label"]:
             summary += f" · {pv['formatted_capacity']}"
         pv["selected_summary"] = summary
         if default is None and pv.get("is_default"):
