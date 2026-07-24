@@ -178,13 +178,5 @@
     "product_key": "igluu_5delig_rond",
     "enabled": true,
     "variant_id": "round"
-  },
-  {
-    "source": "vershoudbakjes/igluu-5delig-rechthoek.jpg",
-    "slug": "igluu-5delig-rechthoek",
-    "category": "vershoudbakjes",
-    "product_key": "igluu_5delig_rechthoek",
-    "enabled": true,
-    "variant_id": "rectangle"
   }
 ]

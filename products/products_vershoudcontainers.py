@@ -543,7 +543,6 @@ PRODUCTS = {
         "brand": "Igluu",
         "material": "Borosilicaat glas",
         "features": ["Lekvrij", "Klikdeksel + silicone"],
-        # "image_path": "images/vershoudbakjes",
         "description": "Betaalbare en praktische 3-delige set van borosilicaat glas met lekvrije klikdeksels. Ideaal als instapset voor gezond bewaren en opwarmen.",
         "pros": [
             "Borosilicaat glas: oven- en magnetronbestendig (zonder deksel in de oven)",
@@ -841,6 +840,37 @@ PRODUCTS = {
         "price_range": "\u20ac",
         "verdict": "Een voordelige en complete glazen basisset voor iedereen die PFAS-vrij wil bewaren en opwarmen.",
         "award": "💰 Budget keuze",
+        "variant_selectors": [
+            {"key": "shape", "label": "Vorm"},
+        ],
+        "variants": [
+            {
+                "id": "5delig-round",
+                "options": {"capacities": 950, 950, 950, 950, 950},
+                "option_labels": {"capacity": "500 ml"},
+                "image": "leo-perfect-seal-500ml-enkel.webp",
+                "image_path": "images/products/vershoudbakjes",
+                "price": 21.95,
+                "price_last_checked": "2026-07-24",
+                "currency": "EUR",
+                "availability": "InStock",
+                "affiliate_url": "https://www.bol.com/nl/nl/p/leo-perfect-seal-voorraaddoos-0-50l-transparant/9300000257748350/?cid=1784903686934-1708963479632",
+                "is_default": True,
+            },
+            {
+                "id": "1100-ml-square",
+                "options": {"capacity": 1100},
+                "option_labels": {"capacity": "1.1 L"},
+                "image": "leo-perfect-seal-1100ml-enkel.webp",
+                "image_path": "images/products/vershoudbakjes",
+                "price": 29.95,
+                "price_last_checked": "2026-07-24",
+                "currency": "EUR",
+                "availability": "InStock",
+                "affiliate_url": "https://www.bol.com/nl/nl/p/leo-perfect-seal-voorraaddoos-1-10l-transparant/9300000257748352/?cid=1784903686543-5719208168487",
+                "is_default": False,
+            },
+        ]
     },
     "kitchenbrothers_5delig": {
         "slug": "kitchenbrothers-5delig",
