@@ -62,26 +62,5 @@
     "category": "vershoudbakjes",
     "product_key": "mepal_easyclip_glass_450ml_enkel",
     "enabled": true
-  },
-  {
-    "source": "vershoudbakjes/mepal-easyclip-glass-700ml-enkel.jpg",
-    "slug": "mepal-easyclip-glass-700ml-enkel",
-    "category": "vershoudbakjes",
-    "product_key": "mepal_easyclip_glass_700ml_enkel",
-    "enabled": true
-  },
-  {
-    "source": "vershoudbakjes/mepal-easyclip-glass-1500ml-enkel.jpg",
-    "slug": "mepal-easyclip-glass-1500ml-enkel",
-    "category": "vershoudbakjes",
-    "product_key": "mepal_easyclip_glass_1500ml_enkel",
-    "enabled": true
-  },
-  {
-    "source": "vershoudbakjes/mepal-easyclip-glass-2250ml-enkel.jpg",
-    "slug": "mepal-easyclip-glass-2250ml-enkel",
-    "category": "vershoudbakjes",
-    "product_key": "mepal_easyclip_glass_2250ml_enkel",
-    "enabled": true
   }
 ]

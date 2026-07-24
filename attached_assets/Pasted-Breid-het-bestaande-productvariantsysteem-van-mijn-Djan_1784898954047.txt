@@ -1,0 +1,732 @@
+Breid het bestaande productvariantsysteem van mijn Django affiliatewebsite uit, zodat één productblok meerdere afhankelijke variantselectors kan ondersteunen.
+
+De huidige productvariantarchitectuur ondersteunt al producten met één selector, bijvoorbeeld:
+
+- Lock&Lock Enkel met Inhoud:
+  - 630 ml
+  - 750 ml
+  - 1 L
+
+Daarnaast wil ik producten ondersteunen die zowel in verschillende vormen als verschillende inhoudsmaten verkrijgbaar zijn.
+
+Voorbeeld:
+
+Vorm:
+- Rond
+- Rechthoekig
+- Vierkant
+
+Inhoud:
+- 450 ml
+- 750 ml
+- 1 L
+- 1,5 L
+
+Niet iedere combinatie hoeft daadwerkelijk te bestaan.
+
+Het bestaande systeem voor producten met slechts één selector moet volledig blijven werken.
+
+==================================================
+1. INSPECTEER EERST DE HUIDIGE IMPLEMENTATIE
+==================================================
+
+Inspecteer:
+
+- products_vershoudbakjes.py;
+- rankings_vershoudbakjes.py;
+- de vershoudbakjes-view;
+- de productvoorbereidingshelpers;
+- de bestaande productkaart-template;
+- de huidige variantselector;
+- de huidige JavaScript-code voor productvarianten;
+- de huidige CSS voor variantbuttons;
+- het Lock&Lock-product met inhoudsvarianten;
+- producten met een vormselector;
+- capaciteithelpers;
+- formaatfilter Alle / Klein / Middel / Groot;
+- vergelijkingstabel;
+- Product- en ItemList-JSON-LD;
+- bestaande tests.
+
+Hergebruik en generaliseer de bestaande implementatie.
+
+Bouw geen volledig los variantensysteem naast het bestaande systeem.
+
+==================================================
+2. DOELARCHITECTUUR
+==================================================
+
+Ondersteun voortaan:
+
+1. Producten zonder varianten.
+2. Producten met één selector:
+   - alleen Inhoud;
+   - alleen Vorm;
+   - eventueel alleen Kleur.
+3. Producten met meerdere afhankelijke selectors:
+   - Vorm + Inhoud;
+   - later eventueel Kleur + Inhoud;
+   - Vorm + Samenstelling voor sets.
+
+Gebruik één generieke datastructuur en één generieke frontendimplementatie.
+
+==================================================
+3. NIEUWE PRODUCTDATASTRUCTUUR
+==================================================
+
+Voeg op productniveau een lijst `variant_selectors` toe.
+
+Voorbeeld:
+
+"variant_selectors": [
+    {
+        "key": "shape",
+        "label": "Vorm",
+    },
+    {
+        "key": "capacity",
+        "label": "Inhoud",
+    },
+]
+
+Iedere concrete, daadwerkelijk verkrijgbare combinatie blijft één variant.
+
+Voorbeeld:
+
+"variants": [
+    {
+        "id": "round-630",
+        "options": {
+            "shape": "round",
+            "capacity": 630,
+        },
+        "option_labels": {
+            "shape": "Rond",
+            "capacity": "630 ml",
+        },
+        "capacities": [630],
+        "image": "voorbeeld-rond-630.webp",
+        "dimensions": null,
+        "price": null,
+        "affiliate_url": null,
+        "availability": null,
+        "price_last_checked": null,
+        "is_default": true,
+    },
+    {
+        "id": "round-750",
+        "options": {
+            "shape": "round",
+            "capacity": 750,
+        },
+        "option_labels": {
+            "shape": "Rond",
+            "capacity": "750 ml",
+        },
+        "capacities": [750],
+        "image": "voorbeeld-rond-750.webp",
+        "dimensions": null,
+        "price": null,
+        "affiliate_url": null,
+        "availability": null,
+        "price_last_checked": null,
+        "is_default": false,
+    },
+    {
+        "id": "rectangular-750",
+        "options": {
+            "shape": "rectangular",
+            "capacity": 750,
+        },
+        "option_labels": {
+            "shape": "Rechthoekig",
+            "capacity": "750 ml",
+        },
+        "capacities": [750],
+        "image": "voorbeeld-rechthoekig-750.webp",
+        "dimensions": null,
+        "price": null,
+        "affiliate_url": null,
+        "availability": null,
+        "price_last_checked": null,
+        "is_default": false,
+    },
+    {
+        "id": "rectangular-1000",
+        "options": {
+            "shape": "rectangular",
+            "capacity": 1000,
+        },
+        "option_labels": {
+            "shape": "Rechthoekig",
+            "capacity": "1 L",
+        },
+        "capacities": [1000],
+        "image": "voorbeeld-rechthoekig-1000.webp",
+        "dimensions": null,
+        "price": null,
+        "affiliate_url": null,
+        "availability": null,
+        "price_last_checked": null,
+        "is_default": false,
+    },
+]
+
+Belangrijk:
+
+- alleen werkelijk bestaande combinaties opnemen;
+- geen onafhankelijk `shapes`- en `capacities`-array gebruiken;
+- iedere variant heeft een unieke ID;
+- exact één variant is standaard;
+- prijs, afbeelding, URL en beschikbaarheid blijven per variant;
+- gedeelde beschrijving, rating, award, pluspunten en minpunten blijven op productniveau.
+
+==================================================
+4. LOCK&LOCK MIGREREN ZONDER FUNCTIONELE WIJZIGING
+==================================================
+
+Pas het bestaande Lock&Lock-product met 630 ml, 750 ml en 1 L aan naar dezelfde generieke structuur.
+
+Gebruik:
+
+"variant_selectors": [
+    {
+        "key": "capacity",
+        "label": "Inhoud",
+    },
+]
+
+Voorbeeldvariant:
+
+{
+    "id": "630-ml",
+    "options": {
+        "capacity": 630,
+    },
+    "option_labels": {
+        "capacity": "630 ml",
+    },
+    "capacities": [630],
+    ...
+}
+
+Behoud:
+
+- bestaande standaardvariant;
+- bestaande afbeeldingen;
+- bestaande affiliate-links;
+- bestaande prijzen;
+- bestaande beschikbaarheid;
+- bestaande ranking;
+- bestaande award.
+
+Lock&Lock moet zichtbaar hetzelfde blijven functioneren.
+
+==================================================
+5. BACKWARD COMPATIBILITY
+==================================================
+
+Ondersteun tijdelijk ook de bestaande opzet:
+
+"variant_label": "Inhoud"
+
+en varianten met velden zoals:
+
+"capacity_ml": 750
+"shape": "Rond"
+
+Maak een normalisatiehelper die oude variantdata omzet naar de nieuwe interne structuur.
+
+Bijvoorbeeld:
+
+normalize_product_variant_schema(product)
+
+Gedrag:
+
+- producten met `variant_selectors` en `options` blijven ongewijzigd;
+- oud `variant_label = "Inhoud"` wordt intern één capacity-selector;
+- oud `variant_label = "Vorm"` wordt intern één shape-selector;
+- `capacity_ml` wordt intern `options["capacity"]`;
+- `shape` wordt intern `options["shape"]`;
+- zichtbare labels worden automatisch opgebouwd wanneer mogelijk;
+- bestaande productbestanden hoeven niet allemaal onmiddellijk gemigreerd te worden.
+
+Gebruik de nieuwe genormaliseerde structuur in templates en JavaScript.
+
+==================================================
+6. VARIANTVALIDATIE
+==================================================
+
+Valideer per product:
+
+- selector keys zijn uniek;
+- iedere selector heeft key en label;
+- iedere variant heeft een unieke ID;
+- iedere variant bevat voor iedere selector een waarde in `options`;
+- iedere variant bevat bruikbare zichtbare labels;
+- exact één variant is standaard;
+- dezelfde optiecombinatie komt niet tweemaal voor;
+- capaciteit is positief en numeriek;
+- onbekende selector keys veroorzaken een duidelijke ontwikkelwaarschuwing;
+- ontbrekende commerciële data veroorzaken geen crash.
+
+Detecteer bijvoorbeeld als fout:
+
+{
+    "shape": "round",
+    "capacity": 750
+}
+
+wanneer exact dezelfde combinatie tweemaal voorkomt.
+
+==================================================
+7. SERVER-SIDE PRODUCTVOORBEREIDING
+==================================================
+
+Breid de bestaande productvoorbereidingshelper uit.
+
+Bereid minimaal voor:
+
+- normalized_variant_selectors;
+- normalized_variants;
+- default_variant;
+- display_variant;
+- variant_selector_options;
+- variant_json_data;
+- size_categories;
+- matching_variant_id.
+
+Voor iedere selector moet de backend de unieke opties in consistente volgorde voorbereiden.
+
+Voorbeeld:
+
+variant_selector_options = {
+    "shape": [
+        {
+            "value": "round",
+            "label": "Rond",
+        },
+        {
+            "value": "rectangular",
+            "label": "Rechthoekig",
+        },
+    ],
+    "capacity": [
+        {
+            "value": 630,
+            "label": "630 ml",
+        },
+        {
+            "value": 750,
+            "label": "750 ml",
+        },
+        {
+            "value": 1000,
+            "label": "1 L",
+        },
+    ],
+}
+
+Capaciteiten moeten numeriek gesorteerd worden.
+
+Vormen moeten hun bestaande of expliciet ingestelde volgorde behouden.
+
+Plaats deze logica niet in de template.
+
+==================================================
+8. TEMPLATE
+==================================================
+
+Genereer selectors dynamisch vanuit `variant_selectors`.
+
+Voor een product met twee selectors:
+
+Vorm
+
+[ Rond ] [ Rechthoekig ]
+
+Inhoud
+
+[ 630 ml ] [ 750 ml ] [ 1 L ]
+
+Voor Lock&Lock:
+
+Inhoud
+
+[ 630 ml ] [ 750 ml ] [ 1 L ]
+
+Gebruik één herbruikbaar templatefragment.
+
+Maak geen afzonderlijke templates voor:
+
+- alleen vorm;
+- alleen inhoud;
+- vorm plus inhoud.
+
+Gebruik semantische buttons:
+
+<button type="button">
+
+Voeg data-attributen toe zoals:
+
+- data-product-variant-selector;
+- data-selector-key;
+- data-option-value;
+- data-variant-id.
+
+Gebruik:
+
+aria-pressed="true"
+
+voor de actieve optie.
+
+Uitgeschakelde combinaties krijgen:
+
+disabled
+aria-disabled="true"
+
+Toon de selector alleen wanneer deze minimaal twee mogelijke opties heeft.
+
+Wanneer binnen de gekozen vorm nog maar één inhoud beschikbaar is, mag die inhoud zichtbaar geselecteerd blijven, maar toon geen nutteloze selector wanneer dit volgens de bestaande UX beter verborgen kan worden.
+
+==================================================
+9. AFHANKELIJKE SELECTORLOGICA
+==================================================
+
+Implementeer generieke afhankelijke selectorlogica.
+
+Voor iedere wijziging:
+
+1. Lees alle huidige geselecteerde opties.
+2. Zoek alle varianten die bij de selectie passen.
+3. Werk beschikbaarheid van andere selectoropties bij.
+4. Schakel combinaties uit waarvoor geen variant bestaat.
+5. Kies een volledige geldige variant.
+6. Werk het productblok bij.
+
+Wanneer de bezoeker van vorm wisselt:
+
+- behoud de geselecteerde inhoud wanneer die inhoud bij de nieuwe vorm bestaat;
+- anders kies de eerste of standaard geldige inhoud voor de nieuwe vorm.
+
+Voorbeeld:
+
+Beschikbare varianten:
+
+- Rond – 630 ml
+- Rond – 750 ml
+- Rechthoekig – 750 ml
+- Rechthoekig – 1 L
+
+Huidige selectie:
+
+Rond – 750 ml
+
+Bezoeker kiest Rechthoekig:
+
+Rechthoekig – 750 ml
+
+De inhoud blijft behouden.
+
+Huidige selectie:
+
+Rond – 630 ml
+
+Bezoeker kiest Rechthoekig:
+
+Rechthoekig – 750 ml
+
+Omdat Rechthoekig – 630 ml niet bestaat, wordt een geldige variant gekozen.
+
+==================================================
+10. BESCHIKBARE OPTIES TONEN
+==================================================
+
+Toon bij voorkeur alle opties die binnen de productfamilie bestaan.
+
+Maak tijdelijk ongeldige opties zichtbaar maar uitgeschakeld.
+
+Voorbeeld na keuze Rond:
+
+Vorm:
+[ Rond ] [ Rechthoekig ]
+
+Inhoud:
+[ 630 ml ] [ 750 ml ] [ 1 L uitgeschakeld ]
+
+Dit laat zien dat 1 L wel bestaat, maar niet in de gekozen vorm.
+
+Gebruik hiervoor:
+
+disabled
+aria-disabled="true"
+
+Wanneer het bestaande ontwerp uitgeschakelde opties te onduidelijk maakt, verbeter de generieke CSS-status.
+
+==================================================
+11. GESELECTEERDE VARIANT BIJ PAGINAFORMAATFILTER
+==================================================
+
+De vershoudbakjespagina heeft een formaatfilter:
+
+- Alle
+- Klein
+- Middel
+- Groot
+
+Wanneer een formaatfilter actief is:
+
+- kies server-side eerst een variant die bij dat formaat past;
+- initialiseer beide productselectors met de vorm en inhoud van die passende variant.
+
+Voorbeeld:
+
+Een product bevat:
+
+- Rond – 450 ml;
+- Rond – 750 ml;
+- Rechthoekig – 1,5 L.
+
+Bij formaat Groot moet het productblok openen met:
+
+- Vorm: Rechthoekig;
+- Inhoud: 1,5 L.
+
+Bij formaat Alle gebruik je de normale standaardvariant.
+
+Na initialisatie mag de bezoeker handmatig andere varianten selecteren.
+
+==================================================
+12. VARIANTAFHANKELIJKE PRODUCTGEGEVENS
+==================================================
+
+Wanneer een volledige variant is geselecteerd, werk bij:
+
+- afbeelding;
+- afbeelding-alttekst;
+- capaciteit;
+- vorm;
+- samenstelling;
+- afmetingen;
+- prijs;
+- beschikbaarheid;
+- affiliate-link;
+- prijscontroledatum;
+- tekst “Geselecteerd”;
+- toegankelijk label van de koopknop.
+
+Voorbeeld:
+
+Geselecteerd:
+Rechthoekig · 1 L
+
+Iedere geselecteerde variant moet altijd zijn eigen affiliate-link gebruiken.
+
+Val nooit stil terug op een andere vorm of inhoud.
+
+==================================================
+13. JAVASCRIPT
+==================================================
+
+Generaliseer de bestaande JavaScript-code.
+
+Gebruik:
+
+- vanilla JavaScript;
+- geen inline onclick;
+- geen globale IDs;
+- scoping per productkaart;
+- veilige JSON-data via Django `json_script`;
+- `textContent` voor tekst;
+- DOMContentLoaded;
+- herbruikbare functies.
+
+Geschikte functies zijn bijvoorbeeld:
+
+initializeProductVariantCard(card)
+getMatchingVariants(variants, selections)
+getExactVariant(variants, selections)
+updateAvailableOptions(card, variants, selections)
+selectFallbackVariant(variants, changedSelector, selections)
+renderVariant(card, variant)
+
+Het systeem moet meerdere productkaarten met verschillende selectorstructuren op dezelfde pagina ondersteunen.
+
+==================================================
+14. PROGRESSIVE ENHANCEMENT
+==================================================
+
+Zonder JavaScript moet:
+
+- de server-side standaardvariant zichtbaar zijn;
+- de juiste afbeelding zichtbaar zijn;
+- de juiste prijs zichtbaar zijn;
+- de juiste affiliate-link werken;
+- het productblok leesbaar blijven;
+- er geen lege placeholders zijn.
+
+De selectors mogen zonder JavaScript niet functioneren, maar de standaardvariant moet volledig bruikbaar zijn.
+
+==================================================
+15. CSS
+==================================================
+
+Gebruik generieke klassen, bijvoorbeeld:
+
+.product-variant-group
+.product-variant-group__label
+.product-variant-group__options
+.product-variant-option
+.product-variant-option--active
+.product-variant-option--unavailable
+
+Gebruik geen product- of merkgebonden CSS.
+
+Uitgeschakelde opties moeten:
+
+- duidelijk minder prominent zijn;
+- nog leesbaar zijn;
+- niet klikbaar zijn;
+- niet uitsluitend door kleur als uitgeschakeld herkenbaar zijn.
+
+Behoud zichtbare hover-, active- en focus-visible-staten.
+
+==================================================
+16. VERGELIJKINGSTABEL
+==================================================
+
+Houd iedere productfamilie als één rij.
+
+Voor producten met meerdere vormen en inhoudsmaten kan worden getoond:
+
+Vormen:
+Rond en rechthoekig
+
+Inhoud:
+630 ml, 750 ml en 1 L
+
+of een compacte bereikweergave wanneer dat inhoudelijk correct is.
+
+Combineer niet automatisch vorm en inhoud op een manier die suggereert dat iedere combinatie bestaat.
+
+Voeg eventueel een korte tekst toe:
+
+“Beschikbare inhoud verschilt per vorm”
+
+wanneer dit relevant is.
+
+==================================================
+17. STRUCTURED DATA
+==================================================
+
+Behoud één ranked product per productfamilie.
+
+Gebruik de server-side displayvariant voor primaire Product- en Offer-data.
+
+Vereisten:
+
+- geen dubbele ItemList-items;
+- geen afzonderlijke rankingpositie per vorm-inhoudcombinatie;
+- juiste standaardafbeelding;
+- juiste prijs en URL van dezelfde variant;
+- geen lege prijzen;
+- geen verkeerd gekoppelde offers.
+
+Voer geen grote ProductGroup-refactor uit tenzij die architectuur al bestaat.
+
+==================================================
+18. TESTS
+==================================================
+
+Voeg tests toe voor minimaal:
+
+1. Producten zonder varianten blijven werken.
+2. Producten met één inhoudselector blijven werken.
+3. Producten met één vormselector blijven werken.
+4. Producten met vorm plus inhoud tonen twee selectors.
+5. Alleen bestaande combinaties kunnen worden geselecteerd.
+6. Ongeldige combinaties worden uitgeschakeld.
+7. De huidige inhoud blijft behouden bij vormwijziging wanneer mogelijk.
+8. Een geldige fallback wordt gekozen wanneer behoud niet mogelijk is.
+9. Exact één variant wordt actief.
+10. Afbeelding wordt correct bijgewerkt.
+11. Prijs wordt correct bijgewerkt.
+12. Affiliate-link wordt correct bijgewerkt.
+13. Beschikbaarheid wordt correct bijgewerkt.
+14. Ontbrekende prijs wordt niet als nul weergegeven.
+15. Ontbrekende link valt niet terug op een andere variant.
+16. Lock&Lock blijft één inhoudselector tonen.
+17. Lock&Lock blijft één ranked product.
+18. Oude `variant_label`-producten blijven via normalisatie werken.
+19. Capaciteitsopties worden numeriek gesorteerd.
+20. Variant-IDs zijn uniek.
+21. Dubbele optiecombinaties worden gedetecteerd.
+22. Formaatfilter Groot opent een passende grote variant.
+23. Formaatfilter Alle gebruikt de gewone standaardvariant.
+24. Meerdere productkaarten beïnvloeden elkaar niet.
+25. Vergelijkingstabel houdt één rij per productfamilie.
+26. JSON-LD houdt één ItemList-item per productfamilie.
+27. De standaardweergave werkt zonder JavaScript.
+28. De bestaande volledige testset blijft slagen.
+
+==================================================
+19. MIGRATIESTRATEGIE
+==================================================
+
+Voer de wijziging gefaseerd uit.
+
+Fase 1:
+
+- implementeer de generieke normalisatie;
+- implementeer meerdere selectorassen;
+- behoud backward compatibility;
+- migreer Lock&Lock naar de nieuwe structuur;
+- voeg één testproduct of bestaand product met Vorm + Inhoud toe wanneer de werkelijke data aanwezig zijn.
+
+Fase 2:
+
+- rapporteer welke overige producten nog de oude variantstructuur gebruiken;
+- migreer die niet automatisch tenzij dit veilig en eenduidig kan;
+- laat oude productdata voorlopig via de normalisatiehelper werken.
+
+Verander geen productfeiten of rankings.
+
+==================================================
+20. IMPLEMENTATIEGRENZEN
+==================================================
+
+Niet doen:
+
+- geen aparte productkaart per combinatie;
+- geen afzonderlijke rankings per vorm;
+- geen combinaties verzinnen;
+- geen prijzen, URL’s, afbeeldingen of afmetingen verzinnen;
+- geen andere varianten als affiliate-linkfallback gebruiken;
+- geen nieuwe frontendlibrary toevoegen;
+- geen complexe variantlogica in de template plaatsen;
+- geen bestaande formaatfilter verwijderen;
+- geen afbeeldingspipeline wijzigen;
+- geen grote ongerelateerde refactor uitvoeren.
+
+==================================================
+21. EINDRAPPORT
+==================================================
+
+Rapporteer:
+
+1. alle gewijzigde bestanden;
+2. de oude en nieuwe variantstructuur;
+3. de normalisatiehelper voor oude producten;
+4. de generieke selectorvoorbereiding;
+5. de afhankelijke JavaScript-logica;
+6. CSS-wijzigingen;
+7. de gemigreerde Lock&Lock-data;
+8. het eerste product met Vorm + Inhoud;
+9. producten die nog de oude structuur gebruiken;
+10. ontbrekende variantgegevens;
+11. testresultaten;
+12. bevestiging dat producten zonder varianten blijven werken;
+13. bevestiging dat Lock&Lock één selector blijft tonen;
+14. bevestiging dat vorm en inhoud als afhankelijke selectors werken;
+15. bevestiging dat alleen bestaande combinaties selecteerbaar zijn;
+16. bevestiging dat iedere variant zijn eigen affiliate-link gebruikt.

@@ -11,29 +11,30 @@
 >
 </a>
 {% if product.shape_variants|length > 1 %}
-<div class="product-variant-selector">
-<span class="product-variant-selector__label" id="variant-label-{{ product.slug }}">{{ product.variant_label|default:"Uitvoering" }}</span>
-<div class="product-variant-selector__options" role="group" aria-labelledby="variant-label-{{ product.slug }}">
-       {% for variant in product.shape_variants %}
+<div class="product-variant-selector" data-variant-selectors>
+    {% for group in product.variant_selector_groups %}
+    {% if group.show %}
+<div class="product-variant-group" data-product-variant-selector data-selector-key="{{ group.key }}">
+<span class="product-variant-group__label product-variant-selector__label" id="variant-label-{{ product.slug }}-{{ group.key }}">{{ group.label }}</span>
+<div class="product-variant-group__options product-variant-selector__options" role="group" aria-labelledby="variant-label-{{ product.slug }}-{{ group.key }}">
+        {% for option in group.options %}
 <button
-           type="button"
-           class="product-variant-button{% if variant.id == product.default_variant.id %} is-active{% endif %}"
-           data-shape-option
-           data-variant-id="{{ variant.id }}"
-           data-label="{{ variant.label }}"
-           data-shape="{{ variant.shape }}"
-           data-image="{{ variant.image_url }}"
-           data-alt="{{ variant.alt_text }}"
-           data-capacity="{{ variant.formatted_capacity }}"
-           data-total-capacity="{{ variant.formatted_total_capacity }}"
-           data-affiliate="{{ variant.affiliate_url }}"
-           data-summary="{{ variant.selected_summary }}"
-           aria-label="{{ product.variant_label|default:'Uitvoering' }}: {{ variant.label }}"
-           aria-pressed="{% if variant.id == product.default_variant.id %}true{% else %}false{% endif %}"
->{{ variant.label }}</button>
-       {% endfor %}
+            type="button"
+            class="product-variant-option product-variant-button{% if option.active %} is-active product-variant-option--active{% endif %}{% if not option.available %} product-variant-option--unavailable{% endif %}"
+            data-variant-option
+            data-selector-key="{{ group.key }}"
+            data-option-value="{{ option.value }}"
+            aria-label="{{ group.label }}: {{ option.label }}"
+            aria-pressed="{% if option.active %}true{% else %}false{% endif %}"
+            {% if not option.available %}disabled aria-disabled="true"{% endif %}
+>{{ option.label }}</button>
+        {% endfor %}
 </div>
 </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% with data_id="variant-data-"|add:product.slug %}{{ product.variant_json_data|json_script:data_id }}{% endwith %}
 {% endif %}
 </div>
 {% elif product.variants %}

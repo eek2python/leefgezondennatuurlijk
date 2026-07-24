@@ -4374,6 +4374,22 @@ table.product-table .product-badge {
  background-color: #62d4e5;
  color: #ffffff !important;
 }
+.product-variant-group {
+ margin-top: 0.6em;
+}
+.product-variant-group:first-child {
+ margin-top: 0;
+}
+.product-variant-option--unavailable,
+.product-variant-option--unavailable:hover {
+ opacity: 0.45;
+ border-color: #dbe1e4;
+ border-style: dashed;
+ background-color: #f4f6f7;
+ color: #7f888f !important;
+ text-decoration: line-through;
+ cursor: not-allowed;
+}
 .variant-selected-summary {
  font-size: 0.85em;
  color: #7f888f;

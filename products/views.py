@@ -12,7 +12,7 @@ from utils.product_helpers import (
     STORAGE_SIZE_LABELS,
     STORAGE_SIZE_THRESHOLDS,
 )
-from utils.variant_helpers import prepare_product_variants
+from utils.variant_helpers import prepare_product_variants, set_display_variant
 import json
 
 logger = logging.getLogger(__name__)
@@ -610,14 +610,7 @@ def prepare_storage_product(product, selected_size):
             current_default = product.get("default_variant")
             display = current_default if current_default in matching else matching[0]
             if display is not current_default:
-                product["default_variant"] = display
-                for field in (
-                    "image", "image_path", "capacities", "price", "currency",
-                    "availability", "affiliate_url", "price_last_checked",
-                ):
-                    value = display.get(field)
-                    if value not in (None, "", []):
-                        product[field] = value
+                set_display_variant(product, display)
                 product["formatted_capacity"], product["formatted_total_capacity"] = get_capacity_display(product)
                 display_category = classify_storage_size(display.get("capacities"))
                 product["size_category"] = display_category

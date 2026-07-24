@@ -410,7 +410,7 @@ class StorageTypeSelectorTests(TestCase):
     def test_shape_variant_selector_still_works_alongside_page_selector(self):
         html = self.client.get("/vershoudcontainers/?uitvoering=3-delig").content.decode()
         self.assertEqual(html.count("data-storage-type-selector"), 1)
-        self.assertIn("data-shape-option", html)
+        self.assertIn("data-variant-option", html)
         self.assertIn(">Rond</button>", html)
         self.assertIn(">Vierkant</button>", html)
 
@@ -521,9 +521,9 @@ class StorageSizeFilterPageTests(TestCase):
         self.assertIn("?uitvoering=3-delig&amp;formaat=middel", html)
 
     def test_empty_result_shows_message_and_reset_link(self):
-        html = self._get("uitvoering=enkel&formaat=groot").content.decode()
+        html = self._get("uitvoering=3-delig&formaat=klein").content.decode()
         self.assertIn("Binnen deze combinatie zijn momenteel geen producten beschikbaar", html)
-        self.assertIn("?uitvoering=enkel&amp;formaat=alle", html)
+        self.assertIn("?uitvoering=3-delig&amp;formaat=alle", html)
         self.assertNotIn("<table", html)
 
     def test_ranking_order_preserved(self):
@@ -568,7 +568,7 @@ class StorageSizeFilterPageTests(TestCase):
     def test_shape_variant_selector_still_renders_with_filter(self):
         html = self._get("uitvoering=3-delig&formaat=middel").content.decode()
         self.assertIn("data-shape-card", html)
-        self.assertIn("data-shape-option", html)
+        self.assertIn("data-variant-option", html)
 
     def test_default_variant_used_at_alle(self):
         from products.views import prepare_storage_product
@@ -663,14 +663,14 @@ class LockNLockCapacityVariantTests(TestCase):
         self.assertEqual(len(ids), len(set(ids)))
         defaults = [v for v in product["shape_variants"] if v.get("is_default")]
         self.assertEqual(len(defaults), 1)
-        self.assertEqual(defaults[0]["id"], "740-ml")
+        self.assertEqual(defaults[0]["id"], "630-ml")
 
     def test_default_variant_commercial_data_copied_to_product(self):
         product = self._product()
-        self.assertEqual(product["capacities"], [740])
-        self.assertEqual(product["price"], 12.95)
-        self.assertIn("740-ml", product["affiliate_url"])
-        self.assertEqual(product["image"], "locknlock-enkel.jpg")
+        self.assertEqual(product["capacities"], [630])
+        self.assertEqual(product["price"], 9.95)
+        self.assertIn("630-ml", product["affiliate_url"])
+        self.assertEqual(product["image"], "locknlock-630ml-enkel.webp")
 
     def test_capacity_formatting(self):
         product = self._product()
@@ -701,31 +701,23 @@ class LockNLockCapacityVariantTests(TestCase):
                 f"formaat={formaat}",
             )
 
-    def test_missing_variant_data_not_rendered_as_zero_or_none(self):
-        product = self._product()
-        v630 = product["shape_variants"][0]
-        self.assertIsNone(v630["price"])
-        self.assertEqual(v630["affiliate_url"], "")
-        self.assertEqual(v630["image_url"], "")
+    def test_no_zero_or_none_rendered(self):
         html = self._get_html()
         self.assertNotIn("€0", html)
         self.assertNotIn(">None<", html)
 
-    def test_missing_affiliate_does_not_fall_back_to_other_variant(self):
-        html = self._get_html()
-        import re
-        card = re.search(
-            r'data-product-slug="locknlock-enkel".*?</div>\s*</div>', html, re.S
-        ).group(0)
-        buttons = re.findall(r'<button[^>]*data-shape-option[^>]*>', card)
-        self.assertEqual(len(buttons), 3)
-        for b in buttons:
-            if 'data-variant-id="630-ml"' in b or 'data-variant-id="1000-ml"' in b:
-                self.assertIn('data-affiliate=""', b)
+    def test_each_variant_keeps_own_affiliate_link(self):
+        product = self._product()
+        urls = [v["affiliate_url"] for v in product["shape_variants"]]
+        self.assertEqual(len(urls), len(set(urls)))
+        json_data = product["variant_json_data"]
+        self.assertEqual(
+            [v["affiliate_url"] for v in json_data["variants"]], urls
+        )
 
     def test_default_renders_serverside_without_js(self):
         html = self._get_html()
-        self.assertIn("Geselecteerd: 740 ml", html)
+        self.assertIn("Geselecteerd: 630 ml", html)
         self.assertIn('aria-pressed="true"', html)
 
     def test_one_row_in_comparison_table(self):
@@ -748,8 +740,8 @@ class LockNLockCapacityVariantTests(TestCase):
         ]
         self.assertEqual(len(entries), 1)
         offer = entries[0]["offers"]
-        self.assertEqual(offer["price"], 12.95)
-        self.assertIn("740-ml", offer["url"])
+        self.assertEqual(offer["price"], 9.95)
+        self.assertIn("630-ml", offer["url"])
         positions = [e["position"] for e in itemlist["itemListElement"]]
         self.assertEqual(len(positions), len(set(positions)))
 
@@ -757,7 +749,7 @@ class LockNLockCapacityVariantTests(TestCase):
         response = self.client.get("/product/locknlock-enkel/")
         self.assertEqual(response.status_code, 200)
         html = response.content.decode()
-        self.assertIn("740 ml", html)
+        self.assertIn("630 ml", html)
 
     def test_other_selectors_unaffected(self):
         html = self._get_html("/vershoudcontainers/?uitvoering=3-delig")
@@ -766,3 +758,281 @@ class LockNLockCapacityVariantTests(TestCase):
         html = self._get_html()
         self.assertEqual(html.count("data-storage-type-selector"), 1)
         self.assertEqual(html.count("data-storage-size-filter"), 1)
+
+
+class MultiSelectorVariantTests(TestCase):
+    """Generic multi-selector (Vorm + Inhoud) variant architecture."""
+
+    def _dual_product(self):
+        return {
+            "slug": "dual-test",
+            "name": "Dual Test",
+            "image_path": "images/vershoudbakjes",
+            "variant_selectors": [
+                {"key": "shape", "label": "Vorm"},
+                {"key": "capacity", "label": "Inhoud"},
+            ],
+            "variants": [
+                {
+                    "id": "round-630",
+                    "options": {"shape": "round", "capacity": 630},
+                    "option_labels": {"shape": "Rond", "capacity": "630 ml"},
+                    "capacities": [630],
+                    "image": "round-630.webp",
+                    "price": 9.95,
+                    "affiliate_url": "https://example.com/round-630",
+                    "availability": "InStock",
+                    "is_default": True,
+                },
+                {
+                    "id": "round-750",
+                    "options": {"shape": "round", "capacity": 750},
+                    "option_labels": {"shape": "Rond", "capacity": "750 ml"},
+                    "capacities": [750],
+                    "image": "round-750.webp",
+                    "price": 11.95,
+                    "affiliate_url": "https://example.com/round-750",
+                    "availability": "InStock",
+                    "is_default": False,
+                },
+                {
+                    "id": "rect-750",
+                    "options": {"shape": "rectangular", "capacity": 750},
+                    "option_labels": {"shape": "Rechthoekig", "capacity": "750 ml"},
+                    "capacities": [750],
+                    "image": "rect-750.webp",
+                    "price": 12.95,
+                    "affiliate_url": "https://example.com/rect-750",
+                    "availability": "InStock",
+                    "is_default": False,
+                },
+                {
+                    "id": "rect-1500",
+                    "options": {"shape": "rectangular", "capacity": 1500},
+                    "option_labels": {"shape": "Rechthoekig", "capacity": "1,5 L"},
+                    "capacities": [1500],
+                    "image": "rect-1500.webp",
+                    "price": None,
+                    "affiliate_url": None,
+                    "availability": None,
+                    "is_default": False,
+                },
+            ],
+        }
+
+    def test_two_selectors_prepared(self):
+        product = self._dual_product()
+        prepare_product_variants(product)
+        groups = product["variant_selector_groups"]
+        self.assertEqual([g["key"] for g in groups], ["shape", "capacity"])
+        self.assertEqual([g["label"] for g in groups], ["Vorm", "Inhoud"])
+        self.assertTrue(all(g["show"] for g in groups))
+
+    def test_capacity_options_numerically_sorted(self):
+        product = self._dual_product()
+        # deliberately shuffle
+        product["variants"].reverse()
+        prepare_product_variants(product)
+        caps = [o["value"] for o in product["variant_selector_options"]["capacity"]]
+        self.assertEqual(caps, [630, 750, 1500])
+
+    def test_shape_options_keep_data_order(self):
+        product = self._dual_product()
+        prepare_product_variants(product)
+        shapes = [o["value"] for o in product["variant_selector_options"]["shape"]]
+        self.assertEqual(shapes, ["round", "rectangular"])
+
+    def test_only_existing_combinations_available(self):
+        product = self._dual_product()
+        prepare_product_variants(product)
+        shape_group, capacity_group = product["variant_selector_groups"]
+        # default is round-630: for capacity selector, 1500 has no round variant
+        availability = {o["label"]: o["available"] for o in capacity_group["options"]}
+        self.assertEqual(
+            availability, {"630 ml": True, "750 ml": True, "1,5 L": False}
+        )
+        # both shapes reachable given other selections relaxed per-axis
+        shape_avail = {o["label"]: o["available"] for o in shape_group["options"]}
+        self.assertEqual(shape_avail["Rond"], True)
+        self.assertEqual(shape_avail["Rechthoekig"], False)  # rect-630 doesn't exist
+
+    def test_exactly_one_active_option_per_selector(self):
+        product = self._dual_product()
+        prepare_product_variants(product)
+        for group in product["variant_selector_groups"]:
+            active = [o for o in group["options"] if o["active"]]
+            self.assertEqual(len(active), 1)
+
+    def test_default_variant_and_summary(self):
+        product = self._dual_product()
+        prepare_product_variants(product)
+        self.assertEqual(product["default_variant"]["id"], "round-630")
+        self.assertEqual(
+            product["default_variant"]["selected_summary"],
+            "Geselecteerd: Rond · 630 ml",
+        )
+
+    def test_duplicate_option_combination_raises(self):
+        product = self._dual_product()
+        product["variants"][1]["options"] = {"shape": "round", "capacity": 630}
+        with self.assertRaises(ValueError):
+            prepare_product_variants(product)
+
+    def test_duplicate_ids_raise(self):
+        product = self._dual_product()
+        product["variants"][1]["id"] = "round-630"
+        with self.assertRaises(ValueError):
+            prepare_product_variants(product)
+
+    def test_missing_option_value_raises(self):
+        product = self._dual_product()
+        del product["variants"][2]["options"]["capacity"]
+        with self.assertRaises(ValueError):
+            prepare_product_variants(product)
+
+    def test_more_than_one_default_raises(self):
+        product = self._dual_product()
+        product["variants"][1]["is_default"] = True
+        with self.assertRaises(ValueError):
+            prepare_product_variants(product)
+
+    def test_missing_commercial_data_is_safe(self):
+        product = self._dual_product()
+        prepare_product_variants(product)
+        rect_1500 = product["shape_variants"][3]
+        self.assertIsNone(rect_1500["price"])
+        self.assertEqual(rect_1500["affiliate_url"], "")
+        json_variant = product["variant_json_data"]["variants"][3]
+        self.assertIsNone(json_variant["price"])
+        self.assertEqual(json_variant["affiliate_url"], "")
+
+    def test_variant_json_data_payload(self):
+        product = self._dual_product()
+        prepare_product_variants(product)
+        data = product["variant_json_data"]
+        self.assertEqual(data["default_id"], "round-630")
+        self.assertEqual(len(data["variants"]), 4)
+        self.assertEqual(
+            [s["key"] for s in data["selectors"]], ["shape", "capacity"]
+        )
+        ids = [v["id"] for v in data["variants"]]
+        self.assertEqual(len(ids), len(set(ids)))
+
+    def test_set_display_variant_reinitialises_both_selectors(self):
+        from utils.variant_helpers import set_display_variant
+
+        product = self._dual_product()
+        prepare_product_variants(product)
+        rect_1500 = product["shape_variants"][3]
+        set_display_variant(product, rect_1500)
+        self.assertEqual(product["default_variant"]["id"], "rect-1500")
+        self.assertEqual(product["variant_json_data"]["default_id"], "rect-1500")
+        for group in product["variant_selector_groups"]:
+            active = [o for o in group["options"] if o["active"]]
+            self.assertEqual(len(active), 1)
+        shape_group, capacity_group = product["variant_selector_groups"]
+        self.assertEqual(
+            [o["label"] for o in shape_group["options"] if o["active"]],
+            ["Rechthoekig"],
+        )
+        self.assertEqual(
+            [o["label"] for o in capacity_group["options"] if o["active"]],
+            ["1,5 L"],
+        )
+        self.assertEqual(product["capacities"], [1500])
+        self.assertEqual(product["matching_variant_id"], "rect-1500")
+
+    def test_size_filter_large_opens_matching_variant(self):
+        from products.views import prepare_storage_product
+
+        product = self._dual_product()
+        prepare_product_variants(product)
+        prepare_storage_product(product, "large")
+        self.assertEqual(product["default_variant"]["id"], "rect-1500")
+        self.assertEqual(product["size_label"], "Groot")
+
+    def test_size_filter_alle_keeps_normal_default(self):
+        from products.views import prepare_storage_product
+
+        product = self._dual_product()
+        prepare_product_variants(product)
+        prepare_storage_product(product, "all")
+        self.assertEqual(product["default_variant"]["id"], "round-630")
+
+
+class LegacyVariantNormalizationTests(TestCase):
+    """Old ``variant_label`` products keep working via normalisation."""
+
+    def test_legacy_capacity_label_becomes_capacity_selector(self):
+        product = {
+            "slug": "legacy-cap",
+            "name": "Legacy Cap",
+            "image_path": "images",
+            "variant_label": "Inhoud",
+            "variants": [
+                {"id": "600-ml", "label": "600 ml", "capacities": [600],
+                 "is_default": True},
+                {"id": "1000-ml", "label": "1 L", "capacity_ml": 1000,
+                 "capacities": [1000]},
+            ],
+        }
+        prepare_product_variants(product)
+        self.assertEqual(
+            product["variant_selectors"], [{"key": "capacity", "label": "Inhoud"}]
+        )
+        v600, v1000 = product["shape_variants"]
+        self.assertEqual(v600["options"], {"capacity": 600})
+        self.assertEqual(v1000["options"], {"capacity": 1000})
+        self.assertEqual(v1000["option_labels"], {"capacity": "1 L"})
+        caps = [o["value"] for o in product["variant_selector_options"]["capacity"]]
+        self.assertEqual(caps, [600, 1000])
+
+    def test_legacy_shape_label_becomes_shape_selector(self):
+        product = {
+            "slug": "legacy-shape",
+            "name": "Legacy Shape",
+            "image_path": "images",
+            "variant_label": "Vorm",
+            "variants": [
+                {"id": "round", "label": "Rond", "shape": "Rond",
+                 "capacities": [400, 650], "is_default": True},
+                {"id": "square", "label": "Vierkant", "shape": "Vierkant"},
+            ],
+        }
+        prepare_product_variants(product)
+        self.assertEqual(
+            product["variant_selectors"], [{"key": "shape", "label": "Vorm"}]
+        )
+        self.assertEqual(
+            product["shape_variants"][1]["options"], {"shape": "Vierkant"}
+        )
+
+    def test_existing_legacy_products_on_page_still_render(self):
+        # Igluu (Vorm) and IKEA/Mepal (Inhoud) still use the legacy structure.
+        response = self.client.get("/vershoudcontainers/?uitvoering=3-delig")
+        html = response.content.decode()
+        self.assertIn(">Rond</button>", html)
+        self.assertIn(">Vierkant</button>", html)
+        self.assertIn("Geselecteerd: Rond", html)
+        response = self.client.get("/vershoudcontainers/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_each_card_has_own_json_payload(self):
+        html = self.client.get("/vershoudcontainers/").content.decode()
+        self.assertIn('id="variant-data-locknlock-enkel"', html)
+        self.assertIn('id="variant-data-mepal-easyclip-glass-enkel"', html)
+        # ids unique
+        import re
+        ids = re.findall(r'id="(variant-data-[^"]+)"', html)
+        self.assertEqual(len(ids), len(set(ids)))
+
+    def test_lock_and_lock_shows_single_selector(self):
+        html = self.client.get("/vershoudcontainers/").content.decode()
+        import re
+        card = re.search(
+            r'data-product-slug="locknlock-enkel".*?<script', html, re.S
+        ).group(0)
+        self.assertEqual(card.count("data-product-variant-selector"), 1)
+        self.assertIn(">630 ml</button>", card)
+        self.assertIn(">740 ml</button>", card)
+        self.assertIn(">1 L</button>", card)
