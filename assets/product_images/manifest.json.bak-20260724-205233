@@ -163,12 +163,5 @@
     "product_key": "leo_perfect_seal_1100ml_enkel",
     "enabled": true,
     "variant_id": "square"
-  },
-  {
-    "source": "vershoudbakjes/pyrex-cookheat-5delig.jpg",
-    "slug": "pyrex-cookheat-5delig",
-    "category": "vershoudbakjes",
-    "product_key": "pyrex_cookheat_5delig",
-    "enabled": true
   }
 ]

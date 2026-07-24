@@ -755,8 +755,8 @@ PRODUCTS = {
         "material": "Borosilicaat glas",
         "capacities": [400, 600, 1000, 1200, 2500],
         "features": ["Clipdeksel", "Magnetronventiel"],
-        "image": "pyrex-cookheat-5delig.jpg",
-        "image_path": "images/vershoudbakjes",
+        "image": "pyrex-cookheat-5delig.webp",
+        "image_path": "images/products/vershoudbakjes",
         "description": "Een hoogwaardige 5-delige set van borosilicaat glas met stevige klikdeksels en silicone afdichting. Ontworpen voor veilig bewaren \u00e9n opwarmen in zowel oven als magnetron.",
         "pros": [
             "Borosilicaat glas: ovenbestendig tot hoge temperaturen",
