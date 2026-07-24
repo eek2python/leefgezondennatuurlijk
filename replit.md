@@ -63,6 +63,7 @@ All 6 category pages use a standardised three-file content architecture per cate
 - Template: shape branch in `templates/partials/product_block.html` (semantic buttons, aria-pressed, selected-summary line, affiliate link + hidden disabled span toggled by JS)
 - JS: `static/assets/js/variant-selector.js` (card-scoped, data attributes, GA4 `select_product_variant` event when gtag present); CSS: `.product-variant-selector` / `.product-variant-button` in main.css
 - First use: Igluu Meal Prep 3-delig (Rond = verified default; Vierkant variant has TODOs awaiting real data)
+- **Selector order = priority**: in `variant_selectors` the first selector always shows all its options; later selectors only show options that exist within the earlier choice. For shape+capacity products, put `shape` ("Vorm") first, `capacity` ("Inhoud") second — otherwise shapes get hidden by the selected capacity.
 - Second use: Lock&Lock enkel (`locknlock_enkel`, variant_label "Inhoud"): 630 ml / 740 ml / 1 L capacity options. 740 ml = verified default (real product is 740 ml, NOT 750 — user explicitly chose to keep the true capacity; do not "normalize" to 750). 630 ml and 1 L variants have TODOs awaiting real data (no image/price/link yet — CTA shows disabled state per convention)
 - `selected_summary` skips the capacity suffix when it equals the variant label (avoids "740 ml · 740 ml")
 

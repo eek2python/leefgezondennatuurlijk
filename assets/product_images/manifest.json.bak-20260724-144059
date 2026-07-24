@@ -155,13 +155,5 @@
     "product_key": "leo_perfect_seal_500ml_enkel",
     "enabled": true,
     "variant_id": "square"
-  },
-  {
-    "source": "vershoudbakjes/leo-perfect-seal-1100ml-enkel.jpg",
-    "slug": "leo-perfect-seal-1100ml-enkel",
-    "category": "vershoudbakjes",
-    "product_key": "leo_perfect_seal_1100ml_enkel",
-    "enabled": true,
-    "variant_id": "square"
   }
 ]

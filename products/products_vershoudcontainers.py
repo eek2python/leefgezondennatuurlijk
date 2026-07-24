@@ -321,6 +321,9 @@ PRODUCTS = {
         "price_range": "\u20ac\u20ac",
         "verdict": "Een degelijk glazen vershoudbakje dat veel functionaliteit biedt voor een aantrekkelijke prijs.",
         "award": "",
+        # NB: de volgorde bepaalt de prioriteit: de eerste selector toont
+        # altijd al zijn opties; latere selectors tonen alleen opties die
+        # bestaan binnen de eerdere keuze. Vorm dus altijd vóór Inhoud.
         "variant_selectors": [
             {"key": "shape", "label": "Vorm"},
             {"key": "capacity", "label": "Inhoud"}
@@ -330,7 +333,6 @@ PRODUCTS = {
                 "id": "630-ml-rectangle",
                 "options": {"shape": "rectangle", "capacity": 820},
                 "option_labels": {"shape": "Rechthoek", "capacity": "820 ml"},
-                "capacities": [820],
                 "image": "luminarc-purebox-820ml-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
                 "price": 9.14,
@@ -467,6 +469,37 @@ PRODUCTS = {
         "price_range": "\u20ac\u20ac",
         "verdict": "Een uitstekende keuze voor wie maximale lekdichtheid en betrouwbaarheid belangrijk vindt.",
         "award": "",
+        "variant_selectors": [
+            {"key": "capacity", "label": "Inhoud"},
+        ],
+        "variants": [
+            {
+                "id": "500-ml-square",
+                "options": {"capacity": 500},
+                "option_labels": {"capacity": "500 ml"},
+                "image": "leo-perfect-seal-500ml-enkel.webp",
+                "image_path": "images/products/vershoudbakjes",
+                "price": 21.95,
+                "price_last_checked": "2026-07-24",
+                "currency": "EUR",
+                "availability": "InStock",
+                "affiliate_url": "https://www.bol.com/nl/nl/p/leo-perfect-seal-voorraaddoos-0-50l-transparant/9300000257748350/?cid=1784903686934-1708963479632",
+                "is_default": True,
+            },
+            {
+                "id": "1100-ml-square",
+                "options": {"capacity": 1100},
+                "option_labels": {"capacity": "1.1 L"},
+                "image": "leo-perfect-seal-1100ml-enkel.webp",
+                "image_path": "images/products/vershoudbakjes",
+                "price": 29.95,
+                "price_last_checked": "2026-07-24",
+                "currency": "EUR",
+                "availability": "InStock",
+                "affiliate_url": "https://www.bol.com/nl/nl/p/leo-perfect-seal-voorraaddoos-1-10l-transparant/9300000257748352/?cid=1784903686543-5719208168487",
+                "is_default": False,
+            },
+        ]
     },
     
     # 3-DELIGE SETS
