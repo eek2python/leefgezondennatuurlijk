@@ -846,15 +846,17 @@ class MultiSelectorVariantTests(TestCase):
         product = self._dual_product()
         prepare_product_variants(product)
         shape_group, capacity_group = product["variant_selector_groups"]
-        # default is round-630: for capacity selector, 1500 has no round variant
+        # default is round-630: for the capacity selector (later group), only
+        # capacities that exist in the selected shape are shown; 1500 has no
+        # round variant so it is hidden
         availability = {o["label"]: o["available"] for o in capacity_group["options"]}
         self.assertEqual(
             availability, {"630 ml": True, "750 ml": True, "1,5 L": False}
         )
-        # both shapes reachable given other selections relaxed per-axis
+        # the first (primary) selector always shows all its options so every
+        # shape stays reachable
         shape_avail = {o["label"]: o["available"] for o in shape_group["options"]}
-        self.assertEqual(shape_avail["Rond"], True)
-        self.assertEqual(shape_avail["Rechthoekig"], False)  # rect-630 doesn't exist
+        self.assertEqual(shape_avail, {"Rond": True, "Rechthoekig": True})
 
     def test_exactly_one_active_option_per_selector(self):
         product = self._dual_product()

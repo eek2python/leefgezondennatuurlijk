@@ -322,14 +322,14 @@ PRODUCTS = {
         "verdict": "Een degelijk glazen vershoudbakje dat veel functionaliteit biedt voor een aantrekkelijke prijs.",
         "award": "",
         "variant_selectors": [
-            {"key": "capacity", "label": "Inhoud"},
-            {"key": "shape", "label": "Vorm"}
+            {"key": "shape", "label": "Vorm"},
+            {"key": "capacity", "label": "Inhoud"}
         ],
         "variants": [
             {
                 "id": "630-ml-rectangle",
                 "options": {"shape": "rectangle", "capacity": 820},
-                "option_labels": {"shape": "Rectangle", "capacity": "820 ml"},
+                "option_labels": {"shape": "Rechthoek", "capacity": "820 ml"},
                 "capacities": [820],
                 "image": "luminarc-purebox-820ml-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
@@ -343,7 +343,7 @@ PRODUCTS = {
             {
                 "id": "380-ml-rectangle",
                 "options": {"shape": "rectangle", "capacity": 380},
-                "option_labels": {"shape": "Rectangle", "capacity": "380 ml"},
+                "option_labels": {"shape": "Rechthoek", "capacity": "380 ml"},
                 "image": "luminarc-purebox-380ml-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
                 "price": 10.06,
@@ -356,7 +356,7 @@ PRODUCTS = {
             {
                 "id": "1220-ml-rectangle",
                 "options": {"shape": "rectangle", "capacity": 1220},
-                "option_labels": {"shape": "Rectangle", "capacity": "1.22 L"},
+                "option_labels": {"shape": "Rechthoek", "capacity": "1.22 L"},
                 "image": "luminarc-purebox-1220ml-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
                 "price": 10.58,
@@ -369,7 +369,7 @@ PRODUCTS = {
             {
                 "id": "1970-ml-rectangle",
                 "options": {"shape": "rectangle", "capacity": 1970},
-                "option_labels": {"shape": "Rectangle", "capacity": "1.97 L"},
+                "option_labels": {"shape": "Rechthoek", "capacity": "1.97 L"},
                 "image": "luminarc-purebox-1970ml-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
                 "price": 28.90,
@@ -382,7 +382,7 @@ PRODUCTS = {
             {
                 "id": "1220-ml-square",
                 "options": {"shape": "square", "capacity": 1220},
-                "option_labels": {"shape": "Square", "capacity": "1.22 L"},
+                "option_labels": {"shape": "Vierkant", "capacity": "1.22 L"},
                 "image": "luminarc-purebox-1220ml-vierkant-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
                 "price": 12.68,
@@ -395,7 +395,7 @@ PRODUCTS = {
             {
                 "id": "760-ml-square",
                 "options": {"shape": "square", "capacity": 760},
-                "option_labels": {"shape": "Square", "capacity": "760 ml"},
+                "option_labels": {"shape": "Vierkant", "capacity": "760 ml"},
                 "image": "luminarc-purebox-760ml-vierkant-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
                 "price": 11.72,
@@ -408,7 +408,7 @@ PRODUCTS = {
             {
                 "id": "420-ml-round",
                 "options": {"shape": "round", "capacity": 420},
-                "option_labels": {"shape": "Round", "capacity": "420 ml"},
+                "option_labels": {"shape": "Rond", "capacity": "420 ml"},
                 "image": "luminarc-purebox-420ml-rond-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
                 "price": 7.95,
@@ -421,7 +421,7 @@ PRODUCTS = {
             {
                 "id": "920-ml-round",
                 "options": {"shape": "round", "capacity": 920},
-                "option_labels": {"shape": "Round", "capacity": "920 ml"},
+                "option_labels": {"shape": "Rond", "capacity": "920 ml"},
                 "image": "luminarc-purebox-920ml-rond-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
                 "price": 11.45,

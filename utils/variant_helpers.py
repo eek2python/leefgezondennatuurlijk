@@ -227,16 +227,17 @@ def build_selector_options(selectors, variants):
     return result
 
 
-def _option_available(variants, key, value, selections):
+def _option_available(variants, key, value, selections, earlier_keys):
     """True when at least one variant has ``options[key] == value`` and
-    matches all *other* current selections."""
+    matches the current selections of all *earlier* (higher-priority)
+    selectors. Options that fail this check are hidden: earlier selectors
+    always show all their options, later selectors only show options that
+    actually exist for the combination chosen so far."""
     for v in variants:
         options = v["options"]
         if options.get(key) != value:
             continue
-        if all(
-            options.get(k) == sv for k, sv in selections.items() if k != key
-        ):
+        if all(options.get(k) == selections.get(k) for k in earlier_keys):
             return True
     return False
 
@@ -254,6 +255,7 @@ def rebuild_variant_selector_groups(product):
     selections = display["options"]
     options_by_key = product.get("variant_selector_options") or {}
     groups = []
+    earlier_keys = []
     for sel in selectors:
         key = sel["key"]
         options = []
@@ -264,7 +266,7 @@ def rebuild_variant_selector_groups(product):
                     "label": opt["label"],
                     "active": selections.get(key) == opt["value"],
                     "available": _option_available(
-                        variants, key, opt["value"], selections
+                        variants, key, opt["value"], selections, earlier_keys
                     ),
                 }
             )
@@ -273,9 +275,11 @@ def rebuild_variant_selector_groups(product):
                 "key": key,
                 "label": sel["label"],
                 "options": options,
-                "show": len(options) > 1,
+                "show": len([o for o in options if o["available"]]) > 1
+                or len(options) > 1,
             }
         )
+        earlier_keys.append(key)
     product["variant_selector_groups"] = groups
 
 

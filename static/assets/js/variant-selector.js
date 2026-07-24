@@ -56,29 +56,31 @@
         return best;
     }
 
-    function updateAvailableOptions(card, variants, selections) {
+    function updateAvailableOptions(card, variants, selections, selectorOrder) {
         var buttons = card.querySelectorAll("[data-variant-option]");
         for (var i = 0; i < buttons.length; i++) {
             var button = buttons[i];
             var key = button.getAttribute("data-selector-key");
             var rawValue = button.getAttribute("data-option-value");
             var value = coerceValue(variants, key, rawValue);
+            var earlierKeys = selectorOrder.slice(
+                0,
+                Math.max(selectorOrder.indexOf(key), 0)
+            );
             var available = variants.some(function (variant) {
                 if (variant.options[key] !== value) {
                     return false;
                 }
-                return Object.keys(selections).every(function (k) {
-                    return k === key || variant.options[k] === selections[k];
+                return earlierKeys.every(function (k) {
+                    return variant.options[k] === selections[k];
                 });
             });
             var isActive = selections[key] === value;
             button.classList.toggle("is-active", isActive);
             button.classList.toggle("product-variant-option--active", isActive);
-            button.classList.toggle(
-                "product-variant-option--unavailable",
-                !available
-            );
+            button.classList.remove("product-variant-option--unavailable");
             button.setAttribute("aria-pressed", isActive ? "true" : "false");
+            button.hidden = !available;
             button.removeAttribute("disabled");
             button.removeAttribute("aria-disabled");
         }
@@ -171,6 +173,9 @@
         };
 
         var variants = data.variants;
+        var selectorOrder = (data.selectors || []).map(function (s) {
+            return s.key;
+        });
         var defaultVariant = null;
         for (var i = 0; i < variants.length; i++) {
             if (variants[i].id === data.default_id) {
@@ -206,7 +211,7 @@
             Object.keys(variant.options).forEach(function (k) {
                 selections[k] = variant.options[k];
             });
-            updateAvailableOptions(card, variants, selections);
+            updateAvailableOptions(card, variants, selections, selectorOrder);
             renderVariant(card, variant, refs);
 
             if (typeof window.gtag === "function") {

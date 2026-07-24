@@ -20,7 +20,8 @@
         {% for option in group.options %}
 <button
             type="button"
-            class="product-variant-option product-variant-button{% if option.active %} is-active product-variant-option--active{% endif %}{% if not option.available %} product-variant-option--unavailable{% endif %}"
+            class="product-variant-option product-variant-button{% if option.active %} is-active product-variant-option--active{% endif %}"
+            {% if not option.available %}hidden{% endif %}
             data-variant-option
             data-selector-key="{{ group.key }}"
             data-option-value="{{ option.value }}"
