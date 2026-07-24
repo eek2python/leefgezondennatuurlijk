@@ -1,10 +1,10 @@
 [
   {
-    "source": "vershoudbakjes/pyrex-cookheat-3delig_rond.jpg",
-    "slug": "pyrex-cook-heat-3delig-rond",
+    "source": "vershoudbakjes/pyrex-cookstore-enkel.jpg",
+    "slug": "pyrex-cookstore-enkel",
     "category": "vershoudbakjes",
-    "product_key": "pyrex_cook_heat_3delig",
+    "product_key": "pyrex_cookstore_enkel",
     "enabled": true,
-    "variant_id": "round"
+    "variant_id": "square"
   }
 ]
