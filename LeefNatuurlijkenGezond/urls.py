@@ -20,10 +20,12 @@ from django.urls import path
 from django.contrib import admin
 from django.urls import path, include
 from products import views
+from products import admin_views
 from .sitemap_views import sitemap_xml
 from django.views.generic import TemplateView
 
 urlpatterns = [
+   path("admin/product-images/", admin_views.product_images_admin, name="admin_product_images"),
    path("admin/", admin.site.urls),
    path("", views.homepage, name="homepage"),
    path("snijplanken/", views.snijplanken, name="snijplanken"),

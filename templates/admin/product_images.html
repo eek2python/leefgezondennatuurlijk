@@ -1,0 +1,111 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}Productafbeeldingen{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">Home</a> &rsaquo; Productafbeeldingen
+</div>
+{% endblock %}
+
+{% block content %}
+<h1>Productafbeeldingen</h1>
+<p>Upload een origineel, koppel het aan een product en verwerk het automatisch naar
+{{ config.canvas_width }}×{{ config.canvas_height }} WebP in <code>static/images/products/</code>.
+Originelen worden nooit aangepast.</p>
+
+{% if manifest_error %}
+<p class="errornote">Manifest kan niet worden gelezen: {{ manifest_error }}</p>
+{% endif %}
+
+<div class="module" style="padding: 15px; margin-bottom: 20px;">
+    <h2>Nieuwe afbeelding uploaden &amp; verwerken</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="upload">
+        <table>
+            <tr>
+                <th style="text-align:left; padding: 4px 12px 4px 0;"><label for="id_image">Afbeelding</label></th>
+                <td><input type="file" name="image" id="id_image" accept=".jpg,.jpeg,.png,.webp" required></td>
+            </tr>
+            <tr>
+                <th style="text-align:left; padding: 4px 12px 4px 0;"><label for="id_category">Categorie</label></th>
+                <td>
+                    <select name="category" id="id_category">
+                        <option value="">— kies —</option>
+                        {% for c in categories %}
+                        <option value="{{ c }}">{{ c }}</option>
+                        {% endfor %}
+                    </select>
+                    of nieuw: <input type="text" name="new_category" placeholder="bijv. vershoudbakjes">
+                </td>
+            </tr>
+            <tr>
+                <th style="text-align:left; padding: 4px 12px 4px 0;"><label for="id_product_key">Product key</label></th>
+                <td><input type="text" name="product_key" id="id_product_key" placeholder="bijv. igluu_meal_prep_3delig" required></td>
+            </tr>
+            <tr>
+                <th style="text-align:left; padding: 4px 12px 4px 0;"><label for="id_slug">Slug (bestandsnaam)</label></th>
+                <td><input type="text" name="slug" id="id_slug" placeholder="bijv. igluu-meal-prep-3delig-rond" required></td>
+            </tr>
+            <tr>
+                <th style="text-align:left; padding: 4px 12px 4px 0;"><label for="id_variant_id">Variant-id (optioneel)</label></th>
+                <td><input type="text" name="variant_id" id="id_variant_id" placeholder="bijv. round"></td>
+            </tr>
+        </table>
+        <p><input type="submit" class="default" value="Uploaden &amp; verwerken"></p>
+    </form>
+</div>
+
+<div class="module" style="padding: 15px;">
+    <h2>Manifest ({{ rows|length }} entries)</h2>
+    <form method="post" style="margin-bottom: 12px;">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="process_all">
+        <label><input type="checkbox" name="force"> Alles opnieuw verwerken (force)</label>
+        <input type="submit" value="Alle entries verwerken">
+    </form>
+    <table id="result_list" style="width:100%;">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Categorie</th>
+                <th>Origineel</th>
+                <th>Output</th>
+                <th>Laatst verwerkt</th>
+                <th>Actie</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.entry.product_key }}{% if row.entry.variant_id %} ({{ row.entry.variant_id }}){% endif %}<br>
+                    <small>{{ row.entry.slug }}</small>
+                    {% if row.entry.enabled == False %}<br><small><strong>uitgeschakeld</strong></small>{% endif %}
+                </td>
+                <td>{{ row.entry.category }}</td>
+                <td>{{ row.entry.source }}{% if not row.source_exists %} <strong style="color:#ba2121;">(ontbreekt)</strong>{% endif %}</td>
+                <td>
+                    {% if row.output_exists %}
+                    <a href="{{ row.output_url }}" target="_blank">{{ row.output }}</a>
+                    {% else %}
+                    {{ row.output }} <em>(nog niet verwerkt)</em>
+                    {% endif %}
+                </td>
+                <td>{{ row.processed_at|default:"—" }}</td>
+                <td>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="process_one">
+                        <input type="hidden" name="source" value="{{ row.entry.source }}">
+                        <input type="submit" value="Verwerk opnieuw">
+                    </form>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="6">Nog geen entries in het manifest.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

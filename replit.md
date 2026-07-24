@@ -92,6 +92,7 @@ All 6 category pages use a standardised three-file content architecture per cate
 - Commands: `python manage.py process_product_images` (--all/--category/--product/--source/--dry-run/--force/--check/--report) and `register_product_image` (appends validated manifest entry with backup + atomic write)
 - Change detection via source checksum + config fingerprint (state in `reports/processing-state.json`); conservative auto-crop (transparent or uniform light borders only); atomic writes; per-entry `processing` overrides
 - Docs: `docs/product-image-pipeline.md`; tests: `products/test_product_image_processor.py` (35 tests)
+- Admin page: `/admin/product-images/` (staff-only, `products/admin_views.py` + `templates/admin/product_images.html`) — upload original + category/product_key/slug/variant → registers manifest entry (backup + atomic write) and processes to WebP in one step; per-entry "Verwerk opnieuw" and "Alle entries verwerken" (force) actions; failed uploads roll back manifest entry + saved original; tests: `products/test_admin_image_page.py`
 
 ### Vershoudcontainers Uitvoering Selector (page-level)
 - `/vershoudcontainers/?uitvoering=enkel|3-delig|5-delig` — server-side selector (no JS), default `enkel`, invalid values fall back to single
