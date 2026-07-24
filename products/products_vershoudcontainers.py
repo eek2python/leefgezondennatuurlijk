@@ -44,8 +44,8 @@ PRODUCTS = {
             "Ovenbestendig",
             "Losse deksels verkrijgbaar"
         ],
-        "image": "ikea-365+-enkel.jpg",
-        "image_path": "images/vershoudbakjes",
+        "image": "ikea-365+-enkel.webp",
+        "image_path": "images/products/vershoudbakjes",
         "description": "Betaalbaar glazen vershoudbakje van borosilicaatglas met los verkrijgbaar deksel. Geschikt voor dagelijks bewaren, invriezen en opwarmen.",
         "pros": [
             "Uitstekende prijs-kwaliteitverhouding",
@@ -79,8 +79,8 @@ PRODUCTS = {
             "EasyClip sluiting",
             "Lekvrij"
         ],
-        "image": "mepal-easyclip-glass-enkel.jpg",
-        "image_path": "images/vershoudbakjes",
+        "image": "mepal-easyclip-glass-enkel.webp",
+        "image_path": "images/products/vershoudbakjes",
         "description": "Premium glazen vershoudbakje van borosilicaatglas met het innovatieve EasyClip-sluitsysteem. Volledig lekdicht en geschikt voor oven, magnetron, koelkast en vriezer.",
         "pros": [
             "Volledig lekdicht dankzij EasyClip-sluiting",

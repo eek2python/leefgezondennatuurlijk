@@ -13,12 +13,5 @@
     "category": "vershoudbakjes",
     "product_key": "ikea_365+_enkel",
     "enabled": true
-  },
-  {
-    "source": "vershoudbakjes/mepal-easyclip-glass-enkel.jpg",
-    "slug": "mepal-easyclip-glass-enkel",
-    "category": "vershoudbakjes",
-    "product_key": "mepal_easyclip_glass_enkel",
-    "enabled": true
   }
 ]

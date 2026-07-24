@@ -1,0 +1,528 @@
+Breid het bestaande productblok voor `locknlock-enkel` op de Django-pagina voor glazen vershoudbakjes uit met een inhoudselector.
+
+De bezoeker moet binnen één productblok kunnen kiezen tussen:
+
+- 630 ml
+- 750 ml
+- 1 L
+
+Lock&Lock moet één productfamilie en één ranked product blijven. Maak dus geen drie afzonderlijke productkaarten of rankingitems.
+
+==================================================
+1. INSPECTEER EERST DE BESTAANDE IMPLEMENTATIE
+==================================================
+
+Inspecteer voor het wijzigen van bestanden:
+
+- het bestaande Lock&Lock-product in products_vershoudbakjes.py;
+- de exacte product key en slug;
+- rankings_vershoudbakjes.py;
+- de vershoudbakjes-view;
+- de herbruikbare productkaart-template;
+- bestaande variantselectors, bijvoorbeeld vormselectors;
+- bestaande capaciteithelpers;
+- bestaande JavaScript- en CSS-logica voor productvarianten;
+- de formaatfilter Alle / Klein / Middel / Groot;
+- ItemList- en Product-JSON-LD.
+
+Gebruik de bestaande variantarchitectuur. Bouw geen tweede variantensysteem uitsluitend voor Lock&Lock.
+
+Wanneer de werkelijke product key niet exact `locknlock-enkel` is, gebruik dan de bestaande product key en rapporteer welke key is gevonden.
+
+==================================================
+2. GEWENSTE INTERFACE
+==================================================
+
+Toon in het Lock&Lock-productblok:
+
+Inhoud
+
+[ 630 ml ] [ 750 ml ] [ 1 L ]
+
+Gebruik semantische buttons:
+
+<button type="button">
+
+De actieve variant moet:
+
+- een actieve CSS-klasse hebben;
+- `aria-pressed="true"` gebruiken;
+- visueel duidelijk geselecteerd zijn.
+
+Inactieve varianten gebruiken:
+
+aria-pressed="false"
+
+De selector moet:
+
+- met toetsenbord te bedienen zijn;
+- een zichtbare focusstatus hebben;
+- mobiel netjes afbreken;
+- voldoende grote klikvlakken hebben;
+- alleen bij Lock&Lock worden weergegeven;
+- andere productkaarten niet beïnvloeden.
+
+Gebruik als zichtbaar label exact:
+
+`Inhoud`
+
+Gebruik voor de opties exact:
+
+- `630 ml`
+- `750 ml`
+- `1 L`
+
+==================================================
+3. PRODUCTDATA OMBOUWEN NAAR VARIANTEN
+==================================================
+
+Behoud gedeelde informatie op productniveau, zoals:
+
+- productnaam;
+- merk;
+- beschrijving;
+- materiaal;
+- kenmerken;
+- pluspunten;
+- minpunten;
+- beoordeling;
+- award;
+- prijsniveau;
+- eindoordeel.
+
+Verplaats variantafhankelijke informatie naar een `variants`-lijst.
+
+Gebruik een structuur vergelijkbaar met:
+
+{
+    "product_key": "locknlock_enkel",
+    "slug": "locknlock-enkel",
+    "name": "Lock&Lock glazen vershoudbakje",
+    "brand": "Lock&Lock",
+
+    # Bestaande gedeelde productvelden blijven hier staan.
+
+    "variant_label": "Inhoud",
+
+    "variants": [
+        {
+            "id": "630-ml",
+            "label": "630 ml",
+            "capacity_ml": 630,
+            "capacities": [630],
+
+            "dimensions": null,
+            "image": null,
+            "price": null,
+            "affiliate_url": null,
+            "availability": null,
+            "price_last_checked": null,
+
+            "is_default": false
+        },
+        {
+            "id": "750-ml",
+            "label": "750 ml",
+            "capacity_ml": 750,
+            "capacities": [750],
+
+            "dimensions": null,
+            "image": null,
+            "price": null,
+            "affiliate_url": null,
+            "availability": null,
+            "price_last_checked": null,
+
+            "is_default": false
+        },
+        {
+            "id": "1000-ml",
+            "label": "1 L",
+            "capacity_ml": 1000,
+            "capacities": [1000],
+
+            "dimensions": null,
+            "image": null,
+            "price": null,
+            "affiliate_url": null,
+            "availability": null,
+            "price_last_checked": null,
+
+            "is_default": false
+        }
+    ]
+}
+
+Dit is een voorbeeldstructuur. Pas deze aan de bestaande productdatastructuur aan.
+
+Belangrijk:
+
+- verzin geen prijzen;
+- verzin geen afmetingen;
+- verzin geen affiliate-URL’s;
+- verzin geen beschikbaarheid;
+- verzin geen afbeeldingsbestanden;
+- behoud bestaande geverifieerde Lock&Lock-data;
+- zet ontbrekende gegevens niet om in zichtbare nulwaarden;
+- rapporteer welke gegevens nog per inhoudsmaat ontbreken.
+
+==================================================
+4. STANDAARDVARIANT
+==================================================
+
+Gebruik de bestaande Lock&Lock-uitvoering als standaardvariant wanneer kan worden vastgesteld welke inhoud die momenteel vertegenwoordigt.
+
+Regels:
+
+1. Wanneer het huidige product aantoonbaar 630 ml, 750 ml of 1 L is, maak die uitvoering de standaardvariant.
+2. Wanneer dat niet betrouwbaar kan worden vastgesteld:
+   - kies niet willekeurig op basis van vermoedens;
+   - gebruik tijdelijk de eerste volledig ingevulde variant;
+   - rapporteer dat ik de gewenste standaardvariant nog moet bevestigen.
+3. Exact één variant mag `is_default = true` hebben.
+
+==================================================
+5. CAPACITEIT EN FORMATTERING
+==================================================
+
+Gebruik numerieke milliliterwaarden:
+
+- 630
+- 750
+- 1000
+
+Gebruik de bestaande capaciteithelper om deze zichtbaar te formatteren.
+
+Verwachte uitvoer:
+
+630 → `630 ml`
+750 → `750 ml`
+1000 → `1 L`
+
+Sla de zichtbare formattering niet dubbel op wanneer deze door een helper kan worden berekend.
+
+Bereid per variant minimaal voor:
+
+- formatted_capacity;
+- total_capacity_ml;
+- formatted_total_capacity;
+- container_count;
+- size_category;
+- size_label.
+
+Voor alle drie varianten geldt volgens de huidige grenswaarden:
+
+- 630 ml → medium / Middel;
+- 750 ml → medium / Middel;
+- 1.000 ml → medium / Middel.
+
+De Lock&Lock-productfamilie moet daarom voorkomen bij:
+
+- formaatfilter Alle;
+- formaatfilter Middel.
+
+Niet bij:
+
+- Klein;
+- Groot.
+
+Baseer dit op de centrale classificatiehelper en hard-code dit niet uitsluitend voor Lock&Lock.
+
+==================================================
+6. WAT MOET ER BIJ SELECTIE WIJZIGEN?
+==================================================
+
+Wanneer de bezoeker een andere inhoud kiest, moeten binnen hetzelfde Lock&Lock-productblok de variantafhankelijke gegevens worden bijgewerkt:
+
+- geselecteerde inhoud;
+- afbeelding;
+- afbeelding-alttekst;
+- afmetingen;
+- prijs;
+- beschikbaarheid;
+- affiliate-link;
+- prijscontroledatum;
+- toegankelijk label van de affiliateknop.
+
+Toon bijvoorbeeld:
+
+`Geselecteerd: 750 ml`
+
+Gebruik bij de afbeelding een variantafhankelijke alttekst, bijvoorbeeld:
+
+- “Lock&Lock glazen vershoudbakje 630 ml”
+- “Lock&Lock glazen vershoudbakje 750 ml”
+- “Lock&Lock glazen vershoudbakje 1 liter”
+
+Gedeelde productinformatie blijft ongewijzigd.
+
+==================================================
+7. PRIJS EN AFFILIATE-LINK
+==================================================
+
+Iedere inhoudsmaat kan een eigen:
+
+- prijs;
+- affiliate-URL;
+- beschikbaarheid;
+- prijscontroledatum
+
+hebben.
+
+De affiliateknop moet altijd naar de geselecteerde inhoudsmaat verwijzen.
+
+Een selectie van 630 ml mag dus niet naar de 1-literuitvoering leiden.
+
+Wanneer een variant nog geen affiliate-URL heeft:
+
+- val niet stil terug op de link van een andere inhoudsmaat;
+- toon of gebruik de bestaande neutrale fallback;
+- verberg of deactiveer de koopknop volgens de huidige websiteconventie;
+- toon geen defecte of lege link.
+
+Wanneer een prijs ontbreekt:
+
+- toon niet `€0`;
+- toon niet `None`;
+- gebruik de bestaande tekst zoals “Bekijk actuele prijs”, wanneer die al in het project bestaat.
+
+==================================================
+8. GELDIGE EN ONGELDIGE VARIANTEN
+==================================================
+
+Een variant mag alleen als normale selecteerbare koopvariant worden behandeld wanneer de essentiële data volgens de bestaande websiteconventie geldig zijn.
+
+Maak ontbrekende data zichtbaar in het implementatierapport.
+
+Voorkom dat een variant met ontbrekende productlink ongemerkt naar een andere variant verwijst.
+
+Wanneer een inhoudsmaat nog niet compleet is maar wel in de selector moet worden voorbereid:
+
+- markeer de ontbrekende velden duidelijk in de productdata;
+- laat de pagina niet crashen;
+- gebruik geen verzonnen gegevens.
+
+==================================================
+9. JAVASCRIPT
+==================================================
+
+Gebruik de bestaande generieke productvariant-JavaScriptlogica.
+
+Wanneer aanpassing nodig is:
+
+- gebruik vanilla JavaScript;
+- gebruik geen inline onclick-handlers;
+- scope alle updates tot de betreffende productkaart;
+- ondersteun meerdere productkaarten met selectors op één pagina;
+- gebruik geen globale IDs voor herhaalde elementen;
+- gebruik veilige JSON-data vanuit Django;
+- gebruik bij voorkeur Django `json_script`;
+- wijzig tekst met `textContent`;
+- initialiseer na DOMContentLoaded;
+- laat de standaardvariant zonder JavaScript correct renderen.
+
+Gebruik bijvoorbeeld afzonderlijke data-attributen:
+
+- `data-product-variant-selector`
+- `data-variant-id`
+- `data-product-variant-data`
+
+De bestaande pagina-uitvoeringselector en formaatfilter mogen hierdoor niet worden beïnvloed.
+
+==================================================
+10. AFHANKELIJKHEID VAN ANDERE SELECTORS
+==================================================
+
+Lock&Lock krijgt nu alleen een inhoudselector.
+
+Wanneer Lock&Lock later ook verschillende vormen krijgt, moet de datastructuur uitbreidbaar zijn naar combinaties zoals:
+
+- rechthoekig – 630 ml;
+- rechthoekig – 750 ml;
+- vierkant – 1 L.
+
+Gebruik daarom echte variantobjecten en niet uitsluitend een losse lijst met capaciteiten.
+
+Maak nu geen vormselector wanneer Lock&Lock in de bestaande data maar één vorm heeft.
+
+==================================================
+11. VERGELIJKINGSTABEL
+==================================================
+
+Houd Lock&Lock als één rij in de vergelijkingstabel.
+
+Toon bij inhoud bijvoorbeeld:
+
+`630 ml, 750 ml en 1 L`
+
+of:
+
+`630 ml–1 L`
+
+Gebruik de eerste vorm wanneer dat duidelijker aansluit op de bestaande tabelstijl.
+
+Toon niet drie afzonderlijke Lock&Lock-rijen.
+
+Wanneer de tabel een formaatcategorie toont, gebruik:
+
+`Middel`
+
+De tabel hoeft niet interactief mee te wisselen met de selector in de productkaart, tenzij dit reeds de bestaande architectuur is.
+
+==================================================
+12. PAGINAFILTER MIDDEL
+==================================================
+
+Controleer de bestaande paginaformaatfilter:
+
+- Alle;
+- Klein;
+- Middel;
+- Groot.
+
+Omdat alle Lock&Lock-varianten tussen 601 en 1.200 ml vallen, moet Lock&Lock zichtbaar zijn bij:
+
+`?formaat=alle`
+
+en:
+
+`?formaat=middel`
+
+Lock&Lock mag niet zichtbaar zijn bij:
+
+`?formaat=klein`
+
+of:
+
+`?formaat=groot`
+
+Gebruik hiervoor de generieke `size_categories`-logica.
+
+Verander de bestaande rankingvolgorde niet.
+
+==================================================
+13. STRUCTURED DATA
+==================================================
+
+Behoud Lock&Lock als één productfamilie in:
+
+- ItemList JSON-LD;
+- de zichtbare ranking;
+- de vergelijkingstabel.
+
+Gebruik voor de primaire Product- of Offer-data de geselecteerde server-side standaardvariant.
+
+Vereisten:
+
+- geen dubbele ItemList-posities;
+- geen drie afzonderlijke ranked producten;
+- geen lege prijsvelden;
+- geen verkeerde affiliate-link;
+- geen prijs van 630 ml combineren met een link naar 1 L;
+- geen invalid JSON-LD.
+
+Implementeer geen grote ProductGroup-refactor uitsluitend voor dit product. Noteer ProductGroup eventueel als toekomstige SEO-uitbreiding.
+
+==================================================
+14. CSS
+==================================================
+
+Hergebruik de bestaande productvariantstijlen.
+
+Gebruik generieke klassen, bijvoorbeeld:
+
+.product-variant-selector
+.product-variant-selector__label
+.product-variant-selector__options
+.product-variant-selector__button
+.product-variant-selector__button--active
+
+Maak geen CSS-klassen die alleen aan Lock&Lock zijn gekoppeld.
+
+Zorg dat:
+
+- 630 ml, 750 ml en 1 L op mobiel netjes passen;
+- opties zo nodig naar een volgende regel afbreken;
+- de actieve optie duidelijk herkenbaar is;
+- hover en focus-visible aanwezig zijn;
+- touch targets voldoende groot zijn.
+
+==================================================
+15. TESTS
+==================================================
+
+Voeg tests toe volgens de bestaande teststructuur.
+
+Test minimaal:
+
+1. Lock&Lock blijft één ranked product.
+2. De productkaart toont drie inhoudsopties.
+3. De labels zijn exact 630 ml, 750 ml en 1 L.
+4. De variant-IDs zijn uniek.
+5. Exact één variant is standaard.
+6. De standaardvariant wordt server-side correct weergegeven.
+7. 630 wordt weergegeven als 630 ml.
+8. 750 wordt weergegeven als 750 ml.
+9. 1000 wordt weergegeven als 1 L.
+10. Alle drie varianten worden geclassificeerd als Middel.
+11. Lock&Lock is zichtbaar bij Alle.
+12. Lock&Lock is zichtbaar bij Middel.
+13. Lock&Lock is niet zichtbaar bij Klein.
+14. Lock&Lock is niet zichtbaar bij Groot.
+15. Selectie wijzigt de juiste capaciteit.
+16. Selectie wijzigt de juiste afbeelding wanneer variantafbeeldingen bestaan.
+17. Selectie wijzigt de juiste prijs.
+18. Selectie wijzigt de juiste affiliate-link.
+19. Een ontbrekende prijs wordt niet als nul weergegeven.
+20. Een ontbrekende link valt niet terug op een andere inhoudsmaat.
+21. De vergelijkingstabel bevat één Lock&Lock-rij.
+22. Productvariantselectors op andere producten blijven werken.
+23. De pagina-uitvoeringselector blijft werken.
+24. De paginaformaatfilter blijft werken.
+25. De standaardweergave werkt zonder JavaScript.
+26. ItemList JSON-LD bevat Lock&Lock slechts één keer.
+27. Bestaande projecttests blijven slagen.
+
+==================================================
+16. IMPLEMENTATIEGRENZEN
+==================================================
+
+Niet doen:
+
+- geen drie afzonderlijke productkaarten maken;
+- geen ranking wijzigen;
+- geen nieuwe award toekennen;
+- geen productinformatie verzinnen;
+- geen prijzen, links, afmetingen of beschikbaarheid verzinnen;
+- geen vormselector toevoegen zonder bestaande vormvarianten;
+- geen huidige afbeeldingspipeline wijzigen;
+- geen scraper toevoegen;
+- geen nieuwe frontenddependency installeren;
+- geen variantlogica rechtstreeks in de template dupliceren;
+- geen andere productdata aanpassen tenzij nodig voor een gedeelde helper.
+
+==================================================
+17. EINDRAPPORT
+==================================================
+
+Rapporteer na implementatie:
+
+1. alle gewijzigde bestanden;
+2. de gevonden Lock&Lock-product key;
+3. de uiteindelijke Lock&Lock-datastructuur;
+4. welke variant als standaard is ingesteld en waarom;
+5. de templatewijzigingen;
+6. de JavaScript- en CSS-wijzigingen;
+7. de verwerking van de formaatfilter Middel;
+8. de weergave in de vergelijkingstabel;
+9. de JSON-LD-verwerking;
+10. ontbrekende gegevens per variant:
+    - afbeelding;
+    - afmetingen;
+    - prijs;
+    - affiliate-link;
+    - beschikbaarheid;
+    - prijscontroledatum;
+11. alle testresultaten;
+12. bevestiging dat Lock&Lock één product in de ranking blijft;
+13. bevestiging dat iedere selectie de juiste affiliate-link gebruikt.

@@ -1,0 +1,10 @@
+[
+  {
+    "source": "vershoudbakjes/pyrex-cookstore-enkel.jpg",
+    "slug": "pyrex-cookstore-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "pyrex_cookstore_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  }
+]
