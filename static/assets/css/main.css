@@ -2373,6 +2373,32 @@ input, select, textarea {
    margin: 0 0 15px 0;
 }
 
+/* Geschikt voor (gebruiksinformatie) */
+.product-usage {
+   margin: 0 0 15px 0;
+}
+.product-usage__title {
+   display: block;
+   margin-bottom: 5px;
+}
+.product-usage__list {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   font-size: inherit;
+}
+.product-usage__row {
+   display: flex;
+   gap: 10px;
+   padding: 2px 0;
+}
+.product-usage__label {
+   flex: 0 0 110px;
+   font-weight: 600;
+   color: #3d4449;
+}
+
+
 /* Sticky compact size selector */
 .format-sticky {
    position: fixed;

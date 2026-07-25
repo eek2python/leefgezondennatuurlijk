@@ -502,7 +502,7 @@ class StorageSizeFilterPageTests(TestCase):
 
     def test_size_filter_reduces_products(self):
         html = self._get("uitvoering=enkel&formaat=klein").content.decode()
-        self.assertIn("3 producten gevonden", html)
+        self.assertIn("2 producten gevonden", html)
 
     def test_invalid_formaat_falls_back_to_alle(self):
         full = self._get("uitvoering=enkel&formaat=alle").content.decode()
@@ -552,12 +552,12 @@ class StorageSizeFilterPageTests(TestCase):
         blocks = re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', html, re.S)
         itemlist = next(json.loads(b) for b in blocks if '"ItemList"' in b)
         elements = itemlist["itemListElement"]
-        self.assertEqual(len(elements), 3)
-        self.assertEqual([e["position"] for e in elements], [1, 2, 3])
+        self.assertEqual(len(elements), 2)
+        self.assertEqual([e["position"] for e in elements], [1, 2])
 
     def test_comparison_table_only_visible_products(self):
         html = self._get("uitvoering=enkel&formaat=klein").content.decode()
-        self.assertEqual(html.count("<tr>"), 4)  # 1 header row + 3 visible products
+        self.assertEqual(html.count("<tr>"), 3)  # 1 header row + 2 visible products
 
     def test_selector_and_filter_render_with_aria_current(self):
         html = self._get("uitvoering=enkel&formaat=klein").content.decode()

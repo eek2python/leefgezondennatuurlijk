@@ -1,4 +1,1 @@
-- [Two product variant systems](product-variant-systems.md) — colour-swatch vs shape-button variants share the `variants` key; how to tell them apart on product cards.
-- [Product color variants](product-color-variants.md) — conventions for the optional product-card colour-swatch feature.
-- [Vershoudcontainers data quality gotchas](vershoudcontainers-data-quality.md) — user-supplied entries may be copy-paste placeholders; never rank/publish them, report instead.
-- [Lock&Lock capacity decision](lock-and-lock-capacity.md) — middle option is the true 740 ml, never normalize to 750; empty variants must not fall back to another size's link.
+- [Vershoudbakjes data rules](vershoudbakjes-data-rules.md) — usage None never shown as "Nee"; suspect copied records get report-only treatment, never invented facts.

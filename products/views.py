@@ -12,6 +12,7 @@ from utils.product_helpers import (
     STORAGE_SIZE_LABELS,
     STORAGE_SIZE_THRESHOLDS,
 )
+from utils.usage_helpers import build_usage_display
 from utils.variant_helpers import prepare_product_variants, set_display_variant
 import json
 
@@ -100,6 +101,8 @@ def privacy(request):
 def _enrich_products(products):
     for p in products:
         prepare_product_variants(p)
+        if "usage_display" not in p:
+            p["usage_display"] = build_usage_display(p.get("usage"))
         p["formatted_capacity"], p["formatted_total_capacity"] = get_capacity_display(p)
         p["rating_class"] = str(p["rating"]).replace(".", "-")
         award = (p.get("award") or "").lower()
@@ -562,6 +565,12 @@ def _validate_vershoudbakjes_awards():
 
 
 _validate_vershoudbakjes_awards()
+
+from products.validators_vershoudbakjes import validate_vershoudbakjes  # noqa: E402
+
+VERSHOUDBAKJES_AUDIT_WARNINGS = validate_vershoudbakjes(
+    VERSHOUDCONTAINERS_PRODUCTS, VERSHOUDCONTAINERS_RANKINGS
+)
 
 
 SIZE_FILTERS = [

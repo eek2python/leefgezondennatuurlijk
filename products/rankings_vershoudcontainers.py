@@ -2,7 +2,7 @@
 # Keys verwijzen naar product keys in products_vershoudcontainers.py.
 RANKINGS = {
     "single": [
-        "pyrex_cook_store_3delig",
+        "pyrex_cook_store_enkel",
         "ikea_365+_enkel",
         "mepal_easyclip_glass_enkel",
         "locknlock_enkel",

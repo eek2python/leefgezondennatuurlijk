@@ -43,6 +43,7 @@ from utils.product_helpers import (
     format_capacities,
     format_total_capacity,
 )
+from utils.usage_helpers import build_usage_display, merge_usage
 
 logger = logging.getLogger(__name__)
 
@@ -362,6 +363,8 @@ def prepare_product_variants(product):
             if normalized not in label_values:
                 summary += f" · {formatted}"
         pv["selected_summary"] = summary
+        pv["usage"] = merge_usage(product.get("usage"), v.get("usage"))
+        pv["usage_display"] = build_usage_display(pv["usage"])
         if default is None and pv.get("is_default"):
             default = pv
         prepared.append(pv)
@@ -377,6 +380,7 @@ def prepare_product_variants(product):
     rebuild_variant_selector_groups(product)
 
     _copy_commercial_fields(product, default)
+    product["usage_display"] = default["usage_display"]
 
     product["variant_json_data"] = {
         "selectors": [
@@ -398,6 +402,10 @@ def prepare_product_variants(product):
                 "price": pv.get("price"),
                 "price_last_checked": pv.get("price_last_checked") or "",
                 "summary": pv["selected_summary"],
+                "usage": [
+                    {"label": row["label"], "text": row["text"]}
+                    for row in pv["usage_display"]
+                ],
                 "is_default": pv is default,
             }
             for pv in prepared
@@ -418,6 +426,7 @@ def set_display_variant(product, variant):
     initialise on this variant."""
     product["default_variant"] = variant
     _copy_commercial_fields(product, variant)
+    product["usage_display"] = variant.get("usage_display") or []
     rebuild_variant_selector_groups(product)
     json_data = product.get("variant_json_data")
     if json_data:

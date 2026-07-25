@@ -85,6 +85,16 @@
     {% if product.size_labels|length > 1 %} · Verkrijgbaar in: {{ product.size_labels|join:", " }}{% elif product.size_labels %} · Formaat: {{ product.size_labels.0 }}{% endif %}
 </p>
 {% endif %}
+{% if product.usage_display %}
+<div class="product-usage" data-shape-usage>
+<strong class="product-usage__title">Geschikt voor</strong>
+<ul class="product-usage__list" data-shape-usage-list>
+    {% for row in product.usage_display %}
+<li class="product-usage__row"><span class="product-usage__label">{{ row.label }}</span><span class="product-usage__value">{{ row.text }}</span></li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
        {% if product.pros or product.cons %}
 <div class="pros-cons">
            {% if product.pros %}

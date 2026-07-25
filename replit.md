@@ -111,6 +111,14 @@ All 6 category pages use a standardised three-file content architecture per cate
 - Products without valid numeric capacity: shown only under "Alle" + logged warning
 - Tests: `StorageSizeClassificationTests`, `StorageSizeFilterPageTests`
 
+### Vershoudbakjes Usage Info ("Geschikt voor")
+- Optional `usage` dict per product (and per variant, partial override): keys `oven`/`microwave`/`freezer`/`dishwasher`, each `{container, lid, note}` with True/False/None; None = unknown and is NEVER rendered as "Nee" (row hidden; `container=True, lid=None` renders "Bakje: ja")
+- Helpers: `utils/usage_helpers.py` (`merge_usage`, `build_usage_display`, `validate_usage`); wired via `prepare_product_variants` (per-variant `usage_display` + JSON payload rows) and `_enrich_products` fallback; template block `data-shape-usage` in `partials/product_block.html`; variant switch updates rows client-side (`variant-selector.js`)
+- Import-time validator `products/validators_vershoudbakjes.py::validate_vershoudbakjes` (called from views.py): raises on structural errors (dup variant ids/option combos, ≠1 default, bad award/usage schema, unknown ranking keys); logs report-only warnings (copied texts between brands, missing images, etc.). Known-suspect copied records (BergHOFF, Glasslock, KitchenBrothers, OXO) intentionally have NO usage data — report only, never invent facts
+- Editorial rules for this category: max 3 pros / 2 cons; generic usage claims live in `usage`, not pros/cons
+- IKEA 365+ & Mepal EasyClip enkel migrated from legacy shape-as-capacity variants to `variant_selectors` capacity selectors; `pyrex_cook_store_3delig` renamed to `pyrex_cook_store_enkel` (single 800 ml container)
+- Full audit + open verification items: `docs/audit-vershoudbakjes.md`; tests: `products/test_usage_vershoudbakjes.py`
+
 ### Comparison Template
 - `templates/comparison.html` — reusable comparison table template (not yet wired to a URL)
 

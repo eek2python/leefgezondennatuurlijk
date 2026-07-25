@@ -1,0 +1,529 @@
+Controleer en verbeter de productdata en productblokken voor de categorie
+glazen vershoudbakjes in mijn bestaande Django-project.
+
+De afbeeldingen van de 3-delige sets zijn onlangs handmatig aangepast.
+Behoud deze recente afbeeldingsnamen en afbeeldingspaden exact. Verwerk,
+hernoem of vervang de afbeeldingen niet in deze taak.
+
+Doel van deze taak:
+
+1. productblokken inhoudelijk consistenter maken;
+2. feitelijke gebruiksinformatie overzichtelijk presenteren;
+3. plus- en minpunten uitsluitend gebruiken voor onderscheidende eigenschappen;
+4. bekende structurele fouten corrigeren;
+5. twijfelachtige productdata rapporteren zonder nieuwe feiten te verzinnen;
+6. bestaande selectors, rankings, prijzen en affiliate-links veilig behouden.
+
+==================================================
+1. INSPECTEER EERST DE BESTAANDE IMPLEMENTATIE
+==================================================
+
+Inspecteer minimaal:
+
+- products_vershoudbakjes.py;
+- rankings_vershoudbakjes.py;
+- content_vershoudbakjes.py;
+- de vershoudbakjes-view;
+- de productkaart-template;
+- de vergelijkingstabel;
+- bestaande varianthelpers;
+- bestaande capaciteithelpers;
+- bestaande CSS en JavaScript voor variantselectors;
+- bestaande tests.
+
+Maak vóór aanpassing een back-up of gebruik een aparte Git-commit.
+
+Gebruik geen regex om blind stukken uit het Python-bestand te vervangen.
+Wijzig de datastructuren bewust en controleer alle referenties.
+
+==================================================
+2. BEHOUD DE RECENTE AFBEELDINGSWIJZIGINGEN
+==================================================
+
+Behoud met name de huidige afbeeldingen en paden van de 3-delige sets,
+waaronder de recent gebruikte WebP-bestanden in:
+
+images/products/vershoudbakjes
+
+Verander in deze taak niet:
+
+- bestandsnamen van recent aangepaste afbeeldingen;
+- afbeeldingen van varianten;
+- de image pipeline;
+- de visuele uitsnede;
+- afbeeldingsformaten;
+- bestaande werkende altteksten, tenzij een variantnaam aantoonbaar ontbreekt.
+
+Rapporteer afwijkende oude afbeeldingspaden wel, maar migreer uitsluitend
+wanneer het juiste vervangende bestand aantoonbaar in het project bestaat.
+
+==================================================
+3. SCHEID SPECIFICATIES VAN PLUS- EN MINPUNTEN
+==================================================
+
+Productspecificaties moeten vertellen wat met het product mogelijk is.
+
+Plus- en minpunten moeten vertellen waarom een bezoeker juist dit product
+wel of niet boven een ander product zou kiezen.
+
+Verwijder daarom generieke gebruiksvoorwaarden uit `pros` en `cons` wanneer
+deze als gestructureerde specificatie kunnen worden weergegeven.
+
+Voorbeelden die normaal niet als minpunt hoeven terug te komen:
+
+- “Deksel is niet ovenbestendig”
+- “Deksel niet geschikt voor ovengebruik”
+- “Gebruik zonder deksel in de oven”
+
+De ovenbestendigheid van het bakje en het deksel moet wel expliciet zichtbaar
+blijven in de productspecificaties.
+
+Voeg op productniveau een structuur toe die aansluit op de huidige
+projectarchitectuur, bijvoorbeeld:
+
+"usage": {
+    "oven": {
+        "container": True,
+        "lid": False,
+        "note": "Alleen het glazen bakje"
+    },
+    "microwave": {
+        "container": True,
+        "lid": True,
+        "note": "Ventiel openen"
+    },
+    "freezer": {
+        "container": True,
+        "lid": True,
+        "note": None
+    },
+    "dishwasher": {
+        "container": True,
+        "lid": True,
+        "note": None
+    }
+}
+
+Gebruik uitsluitend waarden die uit de bestaande productdata betrouwbaar
+kunnen worden afgeleid.
+
+Wanneer iets niet bekend is:
+
+- gebruik `None`;
+- toon het veld niet als “Nee”;
+- verzin geen geschiktheid;
+- vermeld het in het auditrapport.
+
+==================================================
+4. ONDERSTEUN AFWIJKINGEN PER VARIANT
+==================================================
+
+Productniveau bevat de standaard gebruikseigenschappen.
+
+Een variant mag alleen afwijkende waarden overschrijven:
+
+{
+    "id": "voorbeeld-variant",
+    "usage": {
+        "oven": {
+            "container": False,
+            "lid": False,
+            "note": None
+        }
+    }
+}
+
+De voorbereiding van productdata moet:
+
+1. productniveau als basis gebruiken;
+2. variantwaarden daaroverheen samenvoegen;
+3. de uiteindelijke gebruikseigenschappen van de geselecteerde variant
+   aan de template leveren.
+
+Wanneer de bezoeker een andere vorm of inhoud kiest, moeten eventuele
+afwijkende gebruikseigenschappen mee veranderen.
+
+Dit geldt vooral voor:
+
+- ovenbestendigheid van het bakje;
+- magnetronbestendigheid van het bakje;
+- instructies voor het deksel;
+- vriezerbestendigheid;
+- vaatwasserbestendigheid.
+
+==================================================
+5. WEERGAVE IN HET PRODUCTBLOK
+==================================================
+
+Voeg een compacte sectie toe, bijvoorbeeld:
+
+Geschikt voor
+
+Oven                 Ja, alleen zonder deksel
+Magnetron            Ja, ventiel openen
+Vriezer               Ja
+Vaatwasser            Ja
+
+Maak duidelijk onderscheid tussen bakje en deksel wanneer dat relevant is.
+
+Gebruik bijvoorbeeld:
+
+Oven
+Bakje: Ja
+Deksel: Nee
+
+of een compacte tekst:
+
+Oven: ja, alleen het glazen bakje
+
+Kies de variant die het best past bij de bestaande vormgeving.
+
+Regels:
+
+- toon geen `None`;
+- toon geen onbekende waarde als “Nee”;
+- toon geen lege regel;
+- vermijd dezelfde informatie opnieuw in beschrijving, features en pluspunten;
+- laat de gebruikssectie reageren op variantselectie;
+- houd de standaardvariant zonder JavaScript volledig bruikbaar.
+
+Voeg daarnaast eenmaal op paginaniveau een algemene toelichting toe:
+
+“Let op: kunststof deksels zijn doorgaans niet ovenbestendig. Volg bij
+magnetrongebruik de instructies per product, bijvoorbeeld door het ventiel
+te openen of het deksel te verwijderen.”
+
+Deze algemene tekst vervangt niet de productspecifieke gebruiksinformatie.
+
+==================================================
+6. REDACTIONELE REGELS VOOR PRODUCTBLOKKEN
+==================================================
+
+Pas voor alle vershoudbakjes deze regels toe:
+
+Beschrijving:
+
+- circa 25 tot 45 woorden;
+- benoem producttype, materiaal, sluiting en belangrijkste toepassing;
+- geen overdreven claims;
+- geen herhaling van alle pluspunten;
+- geen PFAS-vermelding tenzij die werkelijk relevant en onderscheidend is.
+
+Features:
+
+- twee of drie korte, feitelijke kenmerken;
+- consistente hoofdletters;
+- geen volledige zinnen;
+- geen informatie die al uitsluitend bij een variant hoort.
+
+Pluspunten:
+
+- maximaal drie;
+- uitsluitend onderscheidende voordelen;
+- concreet en vergelijkbaar;
+- geen algemene productspecificaties als “geschikt voor magnetron”;
+- geen vrijblijvende formuleringen zoals “Nederlands kwaliteitsmerk”.
+
+Minpunten:
+
+- maximaal twee;
+- alleen relevante keuzeaspecten;
+- liever één echt minpunt dan twee opvulpunten;
+- “deksel niet ovenbestendig” alleen opnemen wanneer het uitzonderlijk of
+  wezenlijk onderscheidend is;
+- geen onzeker advies zoals “controleer of dit product lekvrij is” in een
+  definitief productblok.
+
+Verdict:
+
+- circa 8 tot 18 woorden;
+- benoem de belangrijkste reden om dit product te kiezen;
+- voorkom generieke conclusies die bij meerdere producten identiek zijn.
+
+==================================================
+7. VOORBEELD VAN GEWENSTE REDACTIE
+==================================================
+
+Voor Pyrex Cook & Store mag de uiteindelijke inhoud bijvoorbeeld qua stijl
+hierop lijken:
+
+Beschrijving:
+“Veelzijdig bakje van borosilicaatglas met stevig klikdeksel en
+magnetronventiel. Geschikt voor bewaren, invriezen en verwarmen, waarbij
+het glazen bakje ook in de oven kan worden gebruikt.”
+
+Pluspunten:
+- Goed bestand tegen grote temperatuurverschillen
+- Stevig klikdeksel met praktisch magnetronventiel
+- Geschikt voor bewaren, verwarmen en serveren
+
+Minpunten:
+- Relatief zwaar om dagelijks mee te nemen
+- Bovengemiddeld geprijsd voor één bakje
+
+Gebruik:
+- Oven bakje: ja
+- Oven deksel: nee
+- Magnetron: ja, ventiel openen
+- Vriezer: ja
+
+Gebruik dit als schrijfstijl, maar kopieer deze tekst niet naar andere
+producten.
+
+==================================================
+8. NORMALISEER VEILIGE STRUCTURELE VERSCHILLEN
+==================================================
+
+Voer de volgende veilige normalisaties uit:
+
+- `Borosilicaat glas` → `Borosilicaatglas`
+- `silicone afdichting` → `siliconen afdichting`
+- lege awardstrings `""` → `None`
+- prijzen als tekenreeks, bijvoorbeeld `"65.00"`, naar een numerieke waarde
+- zichtbare liters via de bestaande Nederlandse formatteringshelper:
+  - 1,2 L
+  - 1,5 L
+  - 1,97 L
+  - 2,25 L
+- behoud capaciteiten intern als milliliters
+- consistente schrijfwijze van:
+  - Klikdeksel
+  - Ventieldeksel
+  - EasyClip-sluiting
+  - 4-zijdige sluiting
+
+Verwijder oude velden zoals:
+
+"shape": "600 ml"
+
+wanneer het feitelijk een inhoudsoptie is.
+
+Migreer dergelijke varianten naar de generieke structuur:
+
+"variant_selectors": [
+    {"key": "capacity", "label": "Inhoud"}
+]
+
+en:
+
+"options": {"capacity": 600}
+"option_labels": {"capacity": "600 ml"}
+
+Pas dit onder meer veilig toe op IKEA 365+ en Mepal EasyClip.
+
+Behoud backward compatibility wanneer andere categorieën nog het oude
+variantschema gebruiken.
+
+==================================================
+9. CORRIGEER ALLEEN AANTOONBARE FOUTEN
+==================================================
+
+Corrigeer veilige fouten, waaronder:
+
+- de productsleutel `pyrex_cook_store_3delig` hoort bij een enkel bakje;
+  hernoem deze naar een passende enkele-productkey en werk alle interne
+  referenties atomair bij;
+- Luminarc-variant-ID `630-ml-rectangle` bevat capaciteit 820 ml;
+  maak de ID consistent met 820 ml;
+- gebruik exact één `is_default = True` per productfamilie;
+- zorg dat iedere variant-ID uniek is;
+- zorg dat iedere optiecombinatie uniek is;
+- zorg dat alle productafbeeldingen vanuit hun werkelijke bestaande pad
+  worden geladen;
+- voeg ontbrekende `capacities` op een variant niet zelf in wanneer de
+  werkelijke inhoud onbekend is.
+
+==================================================
+10. PRODUCTEN DIE NIET AUTOMATISCH MOGEN WORDEN HERSCHREVEN
+==================================================
+
+Controleer onderstaande producten expliciet op gekopieerde of conflicterende
+informatie:
+
+- berghoff_perfect_seal
+- glasslock_3delig
+- bormioli_frigoverre_5delig
+- igluu_meal_prep_5delig
+- kitchenbrothers_5delig
+- luminarc_purebox_5delig
+- oxo_good_grips_smart_seal_6delig
+
+Bekende soorten problemen zijn onder andere:
+
+- een ander merk in de beschrijving;
+- een verkeerde affiliate-link;
+- tekst over een andere vorm;
+- tekst over een ander aantal bakjes;
+- een afbeelding van een ander product;
+- materiaal dat conflicteert met de beschrijving;
+- capaciteiten die niet bij het zichtbare aantal passen;
+- identieke teksten bij verschillende merken.
+
+Voor deze producten geldt:
+
+- verzin geen vervangende productfeiten;
+- gebruik geen internetgegevens in deze taak;
+- pas alleen onbetwistbare schrijf- of formatteerfouten aan;
+- zet inhoudelijke twijfels in een auditrapport;
+- laat twijfelachtige claims niet ongemerkt als geverifieerd staan.
+
+Wanneer het project een statusveld ondersteunt, gebruik bijvoorbeeld:
+
+"editorial_status": "review_required"
+
+Voeg niet zelf een nieuwe publicatieworkflow toe wanneer die nog niet bestaat.
+Rapporteer dan alleen de benodigde handmatige controle.
+
+==================================================
+11. AANDACHTSPUNTEN PER HUIDIGE PRODUCTGROEP
+==================================================
+
+Controleer minimaal:
+
+Losse bakjes:
+
+- IKEA-variant van 600 ml heeft mogelijk een linktekst die 740 ml noemt;
+- Mepal en IKEA gebruiken inhoud ten onrechte als `shape`;
+- Lock&Lock moet één productfamilie met inhoudsselector blijven;
+- Luminarc moet vorm en inhoud als afhankelijke selectors behouden;
+- BergHOFF/LEO-benaming en merkvelden moeten onderling consistent zijn.
+
+3-delige sets:
+
+- behoud alle recent aangepaste afbeeldingen;
+- Igluu- en Pyrex-vormvarianten moeten hun eigen capaciteiten houden;
+- Glasslock-tekst mag niet automatisch van Luminarc zijn overgenomen;
+- de beschrijving en verdicts moeten onderling onderscheidend zijn.
+
+5-delige sets:
+
+- Bormioli mag niet langer als “3-delig” worden omschreven;
+- Igluu met vijf gelijke bakjes mag niet “drie verschillende formaten” noemen;
+- KitchenBrothers-materiaal en beschrijving mogen elkaar niet tegenspreken;
+- de rechthoekige Igluu-variant mist mogelijk capaciteiten;
+- OXO bevat mogelijk data van Glasslock en moet als handmatige controle
+  worden gerapporteerd.
+
+==================================================
+12. VALIDATIEHELPER
+==================================================
+
+Voeg of breid een vershoudbakjesvalidator uit.
+
+Controleer minimaal:
+
+- product key en slug zijn logisch consistent;
+- materiaal gebruikt een toegestane consistente schrijfwijze;
+- award is `None` of een van:
+  - 🏆 Beste keuze
+  - 💰 Budget keuze
+  - 💎 Premium keuze
+- prijs is numeriek;
+- capaciteit is positief en numeriek;
+- aantal capaciteiten past bij het opgegeven aantal bakjes wanneer dat
+  betrouwbaar uit de data blijkt;
+- exact één defaultvariant;
+- unieke variant-IDs;
+- unieke optiecombinaties;
+- iedere variant heeft een bestaande afbeelding of rapporteert een fout;
+- geen inhoudsmaat in het veld `shape`;
+- geen zichtbare decimale punt in Nederlandse literlabels;
+- geen verboden placeholders zoals None, TODO of lege tekst op de pagina;
+- verdachte identieke beschrijvingen, pluspunten of verdicts tussen merken;
+- merknaam uit de productnaam komt niet in conflict met tekst of URL-data;
+- gebruiksinformatie bevat uitsluitend True, False, None of het afgesproken
+  schema.
+
+Laat de validator rapporteren, maar wijzig onzekere productfeiten niet zelf.
+
+==================================================
+13. TESTS
+==================================================
+
+Voeg tests toe voor:
+
+1. Gebruikseigenschappen worden correct getoond.
+2. Onbekende waarden worden verborgen.
+3. Productniveau wordt door varianten overgenomen.
+4. Variantwaarden overschrijven productniveau.
+5. Variantwissel actualiseert gebruiksinformatie.
+6. Deksel niet ovenbestendig hoeft niet in ieder minpuntenblok te staan.
+7. Maximaal drie pluspunten en twee minpunten.
+8. Geen inhoudswaarden in `shape`.
+9. Literlabels gebruiken Nederlandse komma’s.
+10. Elke productfamilie heeft maximaal één rankingitem.
+11. Elke productfamilie heeft exact één defaultvariant.
+12. Variant-IDs en optiecombinaties zijn uniek.
+13. De recent aangepaste 3-delige afbeeldingen blijven bestaan.
+14. Bestaande vorm- en inhoudselectors blijven werken.
+15. Producten zonder varianten blijven werken.
+16. Vergelijkingstabel en JSON-LD blijven geldig.
+17. De volledige bestaande testset blijft slagen.
+
+==================================================
+14. AUDITRAPPORT
+==================================================
+
+Maak:
+
+docs/audit-vershoudbakjes.md
+
+Gebruik per product deze kolommen:
+
+| Product | Probleem | Automatisch gecorrigeerd | Handmatige controle nodig | Huidige waarde |
+
+Neem op:
+
+- structurele fouten;
+- gekopieerde teksten;
+- conflicterend materiaal;
+- ontbrekende capaciteiten;
+- verkeerde merkverwijzingen;
+- verdachte affiliate-links;
+- ontbrekende gebruiksinformatie;
+- ontbrekende of afwijkende afbeeldingen;
+- onduidelijke setdefinitie;
+- teksten die nog productspecifieker moeten worden.
+
+Maak duidelijk onderscheid tussen:
+
+- veilig gecorrigeerd;
+- waarschijnlijk probleem;
+- nog te verifiëren.
+
+==================================================
+15. IMPLEMENTATIEGRENZEN
+==================================================
+
+Niet doen:
+
+- geen nieuwe productfeiten verzinnen;
+- geen online productonderzoek uitvoeren;
+- geen rankings wijzigen;
+- geen awards wijzigen tenzij een veld alleen technisch ongeldig is;
+- geen prijzen of affiliate-links vervangen op basis van vermoedens;
+- geen recente afbeeldingen aanpassen;
+- geen producten verwijderen;
+- geen productvariant aan een andere variantlink koppelen;
+- geen gebruikseigenschap als “Nee” markeren wanneer deze alleen onbekend is;
+- geen volledig nieuw contentmanagementsysteem bouwen.
+
+==================================================
+16. EINDRAPPORT
+==================================================
+
+Rapporteer na uitvoering:
+
+1. alle gewijzigde bestanden;
+2. welke recente afbeeldingswijzigingen zijn behouden;
+3. de definitieve `usage`-structuur;
+4. templatewijzigingen;
+5. variant-overerving;
+6. aangepaste plus- en minpunten;
+7. structureel gemigreerde producten;
+8. veilig gecorrigeerde fouten;
+9. producten die nog handmatige verificatie nodig hebben;
+10. testresultaten;
+11. validatieresultaten;
+12. bevestiging dat rankings en productvolgordes niet zijn gewijzigd;
+13. bevestiging dat geen onbekende productfeiten zijn verzonnen.

@@ -132,6 +132,27 @@
             refs.totalCapacityEl.textContent = variant.total_capacity;
         }
 
+        if (refs.usageEl && refs.usageList) {
+            var rows = variant.usage || [];
+            if (rows.length) {
+                var html = "";
+                for (var r = 0; r < rows.length; r++) {
+                    html +=
+                        '<li class="product-usage__row"><span class="product-usage__label"></span><span class="product-usage__value"></span></li>';
+                }
+                refs.usageList.innerHTML = html;
+                var items = refs.usageList.querySelectorAll(".product-usage__row");
+                for (var k = 0; k < rows.length; k++) {
+                    items[k].children[0].textContent = rows[k].label;
+                    items[k].children[1].textContent = rows[k].text;
+                }
+                refs.usageEl.hidden = false;
+            } else {
+                refs.usageList.innerHTML = "";
+                refs.usageEl.hidden = true;
+            }
+        }
+
         if (refs.link) {
             if (variant.affiliate_url) {
                 refs.link.setAttribute("href", variant.affiliate_url);
@@ -168,6 +189,8 @@
             link: scope.querySelector("[data-shape-affiliate]"),
             disabledEl: scope.querySelector("[data-shape-affiliate-disabled]"),
             capacityEl: scope.querySelector("[data-shape-capacity]"),
+            usageEl: scope.querySelector("[data-shape-usage]"),
+            usageList: scope.querySelector("[data-shape-usage-list]"),
             totalCapacityEl: scope.querySelector("[data-shape-total-capacity]"),
             requestId: { value: 0 }
         };

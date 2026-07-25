@@ -215,21 +215,5 @@
     "category": "vershoudbakjes",
     "product_key": "bormioli_frigoverre_set_3",
     "enabled": true
-  },
-  {
-    "source": "vershoudbakjes/luminarc-purebox-3delig.jpg",
-    "slug": "luminarc-purebox-3delig",
-    "category": "vershoudbakjes",
-    "product_key": "luminarc_purebox_3delig",
-    "enabled": true,
-    "variant_id": "round"
-  },
-  {
-    "source": "vershoudbakjes/glasslock-ovensafe-3delig.jpg",
-    "slug": "glasslock-ovensafe-3delig",
-    "category": "vershoudbakjes",
-    "product_key": "glasslock_ovensafe_3delig",
-    "enabled": true,
-    "variant_id": "rectangle"
   }
 ]
