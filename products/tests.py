@@ -283,7 +283,7 @@ class VariantPageTests(TestCase):
         response = self.client.get("/vershoudcontainers/?uitvoering=3-delig")
         html = response.content.decode()
         table = re.search(r"<tbody>(.*?)</tbody>", html, re.S).group(1)
-        self.assertEqual(table.count("Igluu Meal Prep"), 1)
+        self.assertEqual(table.count("<strong>Igluu Meal Prep"), 1)
         self.assertIn("Afhankelijk van uitvoering", table)
 
     def test_structured_data_uses_default_variant_offer(self):
@@ -369,8 +369,8 @@ class StorageTypeSelectorTests(TestCase):
     def test_comparison_table_total_column_for_sets_only(self):
         single = self.client.get("/vershoudcontainers/?uitvoering=enkel").content.decode()
         sets = self.client.get("/vershoudcontainers/?uitvoering=5-delig").content.decode()
-        self.assertNotIn("<th>Totale inhoud</th>", single)
-        self.assertIn("<th>Totale inhoud</th>", sets)
+        self.assertNotIn(">Totale inhoud</th>", single)
+        self.assertIn(">Totale inhoud</th>", sets)
 
     def test_itemlist_ld_matches_selected_group(self):
         import re
@@ -498,16 +498,16 @@ class StorageSizeFilterPageTests(TestCase):
 
     def test_alle_shows_all_products_of_type(self):
         html = self._get("uitvoering=enkel&formaat=alle").content.decode()
-        self.assertIn("6 producten gevonden", html)
+        self.assertRegex(html, r"6\s+producten\s+gevonden")
 
     def test_size_filter_reduces_products(self):
         html = self._get("uitvoering=enkel&formaat=klein").content.decode()
-        self.assertIn("2 producten gevonden", html)
+        self.assertRegex(html, r"4\s+producten\s+gevonden")
 
     def test_invalid_formaat_falls_back_to_alle(self):
         full = self._get("uitvoering=enkel&formaat=alle").content.decode()
         invalid = self._get("uitvoering=enkel&formaat=onzin").content.decode()
-        self.assertIn("6 producten gevonden", invalid)
+        self.assertRegex(invalid, r"6\s+producten\s+gevonden")
         self.assertEqual(full.count("product-block"), invalid.count("product-block"))
 
     def test_invalid_uitvoering_falls_back_to_enkel(self):
@@ -552,12 +552,12 @@ class StorageSizeFilterPageTests(TestCase):
         blocks = re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', html, re.S)
         itemlist = next(json.loads(b) for b in blocks if '"ItemList"' in b)
         elements = itemlist["itemListElement"]
-        self.assertEqual(len(elements), 2)
-        self.assertEqual([e["position"] for e in elements], [1, 2])
+        self.assertEqual(len(elements), 4)
+        self.assertEqual([e["position"] for e in elements], [1, 2, 3, 4])
 
     def test_comparison_table_only_visible_products(self):
         html = self._get("uitvoering=enkel&formaat=klein").content.decode()
-        self.assertEqual(html.count("<tr>"), 3)  # 1 header row + 2 visible products
+        self.assertEqual(html.count("<tr>"), 5)  # 1 header row + 4 visible products
 
     def test_selector_and_filter_render_with_aria_current(self):
         html = self._get("uitvoering=enkel&formaat=klein").content.decode()
@@ -684,6 +684,33 @@ class LockNLockCapacityVariantTests(TestCase):
         v740 = product["shape_variants"][1]
         self.assertEqual(v740["selected_summary"], "Geselecteerd: 740 ml")
 
+    def test_capacities_derived_from_options_capacity(self):
+        product = {
+            "slug": "test-derive",
+            "name": "Test",
+            "variant_selectors": [{"key": "capacity", "label": "Inhoud"}],
+            "variants": [
+                {
+                    "id": "500-ml",
+                    "options": {"capacity": 500},
+                    "option_labels": {"capacity": "500 ml"},
+                    "is_default": True,
+                },
+                {
+                    "id": "1000-ml",
+                    "options": {"capacity": 1000},
+                    "option_labels": {"capacity": "1 L"},
+                },
+            ],
+        }
+        prepare_product_variants(product)
+        caps = [v["capacities"] for v in product["shape_variants"]]
+        self.assertEqual(caps, [[500], [1000]])
+        self.assertEqual(
+            [v["formatted_capacity"] for v in product["shape_variants"]],
+            ["500 ml", "1 L"],
+        )
+
     def test_all_variants_classified_medium(self):
         from utils.product_helpers import classify_storage_size, get_product_size_categories
         product = self._product()
@@ -724,7 +751,7 @@ class LockNLockCapacityVariantTests(TestCase):
         import re
         html = self._get_html()
         table = re.search(r"<tbody>(.*?)</tbody>", html, re.S).group(1)
-        self.assertEqual(table.count("Lock&amp;Lock"), 1)
+        self.assertEqual(table.count("<strong>Lock&amp;Lock"), 1)
         self.assertIn("Afhankelijk van uitvoering", table)
 
     def test_itemlist_ld_contains_locknlock_once_with_default_offer(self):

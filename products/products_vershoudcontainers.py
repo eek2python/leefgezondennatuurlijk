@@ -15,9 +15,9 @@ PRODUCTS = {
         "description": "Hoogwaardig glazen vershoudbakje van borosilicaatglas met stevig klikdeksel en stoomventiel. Ideaal voor bewaren, invriezen, opwarmen en bereiden in de oven.",
         "usage": {
             "oven": {"container": True, "lid": False, "note": "Alleen het glazen bakje"},
-            "microwave": {"container": True, "lid": True, "note": "Ventiel openen"},
-            "freezer": {"container": True, "lid": None, "note": None},
-            "dishwasher": {"container": None, "lid": None, "note": None},
+            "microwave": {"container": True, "lid": False, "note": "Alleen het glazen bakje"},
+            "freezer": {"container": True, "lid": True, "note": None},
+            "dishwasher": {"container": True, "lid": None, "note": None},
         },
         "pros": [
             "Borosilicaatglas is bestand tegen grote temperatuurverschillen",
@@ -27,7 +27,7 @@ PRODUCTS = {
         "cons": [
             "Zwaarder dan kunststof bewaarbakjes",
         ],
-        "rating": 5,
+        "rating": 4.4,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 23.21,
@@ -52,10 +52,10 @@ PRODUCTS = {
         "image_path": "images/products/vershoudbakjes",
         "description": "Betaalbaar glazen vershoudbakje van borosilicaatglas met los verkrijgbaar deksel. Geschikt voor dagelijks bewaren, invriezen en opwarmen.",
         "usage": {
-            "oven": {"container": True, "lid": None, "note": None},
-            "microwave": {"container": True, "lid": None, "note": None},
-            "freezer": {"container": True, "lid": None, "note": None},
-            "dishwasher": {"container": None, "lid": None, "note": None},
+            "oven": {"container": True, "lid": None, "note": "Alleen het glazen bakje"},
+            "microwave": {"container": True, "lid": True, "note": None},
+            "freezer": {"container": True, "lid": True, "note": None},
+            "dishwasher": {"container": True, "lid": True, "note": None},
         },
         "pros": [
             "Uitstekende prijs-kwaliteitverhouding",
@@ -66,13 +66,9 @@ PRODUCTS = {
             "Deksel wordt apart verkocht",
             "Minder lekdicht dan premium systemen",
         ],
-        "rating":4.5,
+        "rating":4.3,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 3.49,
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://www.ikea.com/nl/nl/p/ikea-365-voorraadpot-met-deksel-vierkant-glas-kunststof-s39269120/#content",
         "price_range": "\u20ac",
         "verdict": "De beste budgetkeuze voor wie een degelijk glazen vershoudbakje zoekt zonder veel uit te geven.",
         "award": "💰 Budget keuze",
@@ -91,7 +87,7 @@ PRODUCTS = {
                 "price_last_checked": "2026-07-24",
                 "currency": "EUR",
                 "availability": "InStock",
-                "affiliate_url": "https://www.ikea.com/nl/nl/p/ikea-365-voorraadpot-740-ml",
+                "affiliate_url": "https://www.ikea.com/nl/nl/p/ikea-365-voorraadpot-met-deksel-vierkant-glas-kunststof-s39269120/#content",
                 "is_default": True,
             },
             {
@@ -139,10 +135,10 @@ PRODUCTS = {
         "image_path": "images/products/vershoudbakjes",
         "description": "Premium glazen vershoudbakje van borosilicaatglas met het innovatieve EasyClip-sluitsysteem. Volledig lekdicht en geschikt voor oven, magnetron, koelkast en vriezer.",
         "usage": {
-            "oven": {"container": True, "lid": False, "note": None},
-            "microwave": {"container": True, "lid": None, "note": None},
-            "freezer": {"container": True, "lid": None, "note": None},
-            "dishwasher": {"container": None, "lid": None, "note": None},
+            "oven": {"container": True, "lid": False, "note": "Alleen het glazen bakje"},
+            "microwave": {"container": True, "lid": True, "note": "Met deksel het stoomventiel openen"},
+            "freezer": {"container": True, "lid": True, "note": None},
+            "dishwasher": {"container": True, "lid": True, "note": None},
         },
         "pros": [
             "Volledig lekdicht dankzij EasyClip-sluiting",
@@ -152,7 +148,7 @@ PRODUCTS = {
         "cons": [
             "Hoger geprijsd dan veel alternatieven",
         ],
-        "rating": 5,
+        "rating": 4.7,
         "rating_count": None,
         "rating_source": "editorial",
         "currency": "EUR",
@@ -236,10 +232,10 @@ PRODUCTS = {
         "image_path": "images/vershoudbakjes",
         "description": "Stevig glazen vershoudbakje met de bekende vierzijdige Lock&Lock-sluiting. Ideaal voor lekvrij bewaren, meenemen en opwarmen.",
         "usage": {
-            "oven": {"container": None, "lid": False, "note": None},
-            "microwave": {"container": True, "lid": None, "note": None},
-            "freezer": {"container": True, "lid": None, "note": None},
-            "dishwasher": {"container": None, "lid": None, "note": None},
+            "oven": {"container": True, "lid": False, "note": "Alleen het glazen bakje tot 400 °C"},
+            "microwave": {"container": True, "lid": False, "note": "Alleen het glazen bakje"},
+            "freezer": {"container": True, "lid": True, "note": "Tot -20 °C"},
+            "dishwasher": {"container": True, "lid": True, "note": "Bovenste rek"},
         },
         "pros": [
             "Zeer betrouwbare vierzijdige kliksluiting",
@@ -252,11 +248,6 @@ PRODUCTS = {
         "rating": 4.5,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 12.95,
-        "price_last_checked": "2026-07-08",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://locklock.nl/product/keuken/ovenschalen-met-deksel/glazen-ovenschaaltje-met-deksel-740-ml/",
         "price_range": "\u20ac\u20ac",
         "verdict": "Een uitstekende keuze voor wie maximale lekdichtheid en betrouwbaarheid belangrijk vindt.",
         "award": None,
@@ -268,7 +259,6 @@ PRODUCTS = {
                 "id": "630-ml",
                 "options": {"capacity": 630},
                 "option_labels": {"capacity": "630 ml"},
-                "capacities": [630],
                 "image": "locknlock-630ml-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
                 "price": 9.95,
@@ -282,7 +272,6 @@ PRODUCTS = {
                 "id": "740-ml",
                 "options": {"capacity": 740},
                 "option_labels": {"capacity": "740 ml"},
-                "capacities": [740],
                 "image": "locknlock-740ml-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
                 "price": 12.95,
@@ -296,7 +285,6 @@ PRODUCTS = {
                 "id": "1000-ml",
                 "options": {"capacity": 1000},
                 "option_labels": {"capacity": "1 L"},
-                "capacities": [1000],
                 "image": "locknlock-1l-enkel.webp",
                 "image_path": "images/products/vershoudbakjes",
                 "price": 15.95,
@@ -324,7 +312,7 @@ PRODUCTS = {
         "usage": {
             "oven": {"container": None, "lid": False, "note": None},
             "microwave": {"container": True, "lid": True, "note": "Ventiel openen"},
-            "freezer": {"container": None, "lid": None, "note": None},
+            "freezer": {"container": True, "lid": True, "note": None},
             "dishwasher": {"container": None, "lid": None, "note": None},
         },
         "pros": [
@@ -334,15 +322,11 @@ PRODUCTS = {
         ],
         "cons": [
             "Minder premium afgewerkt dan de topmodellen",
+            "Niet geschikt voor de opwarming in de oven",
         ],
-        "rating": 4.5,
+        "rating": 4.4,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 10.15,
-        "price_last_checked": "2026-07-08",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://www.bol.com/nl/nl/p/luminarc-pure-box-active-vershouddoos-rechthoekig-glas-0-82l/9200000035762057/?cid=1783485254896-7774995525740",
         "price_range": "\u20ac\u20ac",
         "verdict": "Een degelijk glazen vershoudbakje dat veel functionaliteit biedt voor een aantrekkelijke prijs.",
         "award": None,
@@ -466,24 +450,51 @@ PRODUCTS = {
         "brand": "Berghoff",
         "material": "Borosilicaatglas",
         "features": [
-            "4-zijdige sluiting",
-            "Lekvrij"
+            "Eenhandige sluiting",
+            "Lekvrij",
+            "Magnetronventiel",
         ],
-        "description": "Stevig glazen vershoudbakje met een vierzijdige kliksluiting. Ideaal voor lekvrij bewaren, meenemen en opwarmen.",
+        "description": "Gebruiksvriendelijk vershoudbakje van borosilicaatglas met een "
+        "luchtdichte, lekvrije deksel die met één hand opent en sluit. "
+        "Het stapelbare bakje is geschikt voor bewaren, invriezen, "
+        "opwarmen en gebruik in de oven.",
         "pros": [
-            "Zeer betrouwbare vierzijdige kliksluiting",
-            "Lekvrij dankzij siliconen afdichting",
-            "Stevig glas voor dagelijks gebruik",
+            "Eenvoudig met één hand te openen en te sluiten",
+            "Luchtdichte, lekvrije afsluiting voor bewaren en meenemen",
+            "Stapelbaar ontwerp benut de kastruimte efficiënt",
         ],
         "cons": [
-            "Iets zwaarder dan vergelijkbare kunststof bakjes",
+            "Hoger geprijsd dan veel eenvoudige glazen vershoudbakjes",
         ],
-        "rating": 4.5,
+        "rating": 4.4,
         "rating_count": None,
         "rating_source": "editorial",
         "price_range": "\u20ac\u20ac",
-        "verdict": "Een uitstekende keuze voor wie maximale lekdichtheid en betrouwbaarheid belangrijk vindt.",
-        "award": None,
+        "verdict": "Gebruiksvriendelijk premium bakje met sterke lekdichting "
+        "en praktische eenhandige sluiting.",
+        "usage": {
+            "oven": {
+                "container": True,
+                "lid": False,
+                "note": "Glazen bakje maximaal 280 °C",
+            },
+            "microwave": {
+                "container": True,
+                "lid": True,
+                "note": "Ventiel openen; maximaal 600 W gedurende 3 minuten",
+            },
+            "freezer": {
+                "container": True,
+                "lid": True,
+                "note": None,
+            },
+            "dishwasher": {
+                "container": True,
+                "lid": False,
+                "note": "Zonder deksel",
+            },
+        },
+        "award": "💎 Premium keuze",
         "variant_selectors": [
             {"key": "capacity", "label": "Inhoud"},
         ],
@@ -531,10 +542,10 @@ PRODUCTS = {
         "image_path": "images/products/vershoudbakjes",
         "description": "Een premium borosilicaat glazen set met lekvrije EasyClip-deksels. Geschikt voor oven, magnetron, koelkast en vriezer. Uitstekende duurzaamheid en gebruiksgemak.",
         "usage": {
-            "oven": {"container": True, "lid": False, "note": None},
-            "microwave": {"container": True, "lid": None, "note": None},
-            "freezer": {"container": True, "lid": None, "note": None},
-            "dishwasher": {"container": None, "lid": None, "note": None},
+            "oven": {"container": True, "lid": False, "note": "Alleen het glazen bakje"},
+            "microwave": {"container": True, "lid": True, "note": "Met deksel het stoomventiel openen"},
+            "freezer": {"container": True, "lid": True, "note": None},
+            "dishwasher": {"container": True, "lid": True, "note": None},
         },
         "pros": [
             "Borosilicaatglas: veilig en geurvrij",
@@ -545,7 +556,7 @@ PRODUCTS = {
             "Iets zwaarder dan kunststof alternatieven",
             "Hogere prijsklasse",
         ],
-        "rating": 5,
+        "rating": 4.7,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 49.97,
@@ -565,10 +576,10 @@ PRODUCTS = {
         "features": ["Lekvrij", "Klikdeksel met siliconen afdichting"],
         "description": "Betaalbare en praktische 3-delige set van borosilicaat glas met lekvrije klikdeksels. Ideaal als instapset voor gezond bewaren en opwarmen.",
         "usage": {
-            "oven": {"container": True, "lid": False, "note": None},
-            "microwave": {"container": True, "lid": None, "note": None},
-            "freezer": {"container": None, "lid": None, "note": None},
-            "dishwasher": {"container": None, "lid": None, "note": None},
+            "oven": {"container": True, "lid": False, "note": "Alleen het glazen bakje tot 300 °C"},
+            "microwave": {"container": True, "lid": False, "note": "Alleen het glazen bakje"},
+            "freezer": {"container": True, "lid": True, "note": "Tot -20 °C"},
+            "dishwasher": {"container": True, "lid": False, "note": None},
         },
         "pros": [
             "Drie verschillende formaten voor dagelijkse porties",
@@ -578,7 +589,7 @@ PRODUCTS = {
         "cons": [
             "Geen extra grote schaal voor familieporties",
         ],
-        "rating": 4,
+        "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
         "price_range": "\u20ac",
@@ -624,10 +635,10 @@ PRODUCTS = {
         "features": ["Klikdeksel", "Magnetronventiel"],
         "description": "Een hoogwaardige 3-delige set van borosilicaat glas met stevige klikdeksels en siliconen afdichting. Ontworpen voor veilig bewaren \u00e9n opwarmen in zowel oven als magnetron.",
         "usage": {
-            "oven": {"container": True, "lid": False, "note": None},
+            "oven": {"container": True, "lid": False, "note": "Alleen het glazen bakje tot 350 °C"},
             "microwave": {"container": True, "lid": True, "note": "Ventiel openen"},
-            "freezer": {"container": None, "lid": None, "note": None},
-            "dishwasher": {"container": None, "lid": None, "note": None},
+            "freezer": {"container": True, "lid": True, "note": "Tot -40 °C"},
+            "dishwasher": {"container": True, "lid": True, "note": None},
         },
         "pros": [
             "Borosilicaatglas: ovenbestendig tot hoge temperaturen",
@@ -637,7 +648,7 @@ PRODUCTS = {
         "cons": [
             "Grotere formaten nemen meer ruimte in",
         ],
-        "rating": 5,
+        "rating": 4.5,
         "rating_count": None,
         "rating_source": "editorial",
         "price_range": "\u20ac\u20ac\u20ac",
@@ -681,15 +692,15 @@ PRODUCTS = {
         "brand": "Bormioli Rocco",
         "material": "Borosilicaatglas",
         "capacities": [240, 750, 1600],
-        "features": ["Ovenbestendig", "Vriezerbestendig"],
+        "features": ["Magnetronbestendig", "Vriezerbestendig"],
         "image": "bormioli-frigoverre-set-3.webp",
         "image_path": "images/products/vershoudbakjes",
         "description": "Duurzame set van glazen vershoudbakjes voor dagelijks bewaren en meenemen. Het glas is voedselveilig en geschikt voor oven, magnetron en vriezer (gebruik zonder deksel bij verhitting).",
         "usage": {
-            "oven": {"container": True, "lid": False, "note": None},
+            "oven": {"container": False, "lid": False, "note": None},
             "microwave": {"container": True, "lid": False, "note": "Zonder deksel verwarmen"},
-            "freezer": {"container": True, "lid": None, "note": None},
-            "dishwasher": {"container": None, "lid": None, "note": None},
+            "freezer": {"container": True, "lid": True, "note": None},
+            "dishwasher": {"container": True, "lid": True, "note": None},
         },
         "pros": [
             "Voedselveilig glas, vrij van schadelijke stoffen",
@@ -697,8 +708,9 @@ PRODUCTS = {
         ],
         "cons": [
             "Deksel sluit minder stevig dan sommige premium kliksystemen",
+            "Niet geschikt voor opwarming in de oven",
         ],
-        "rating": 4.5,
+        "rating": 4.0,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 27.99,
@@ -723,7 +735,7 @@ PRODUCTS = {
         "usage": {
             "oven": {"container": None, "lid": False, "note": None},
             "microwave": {"container": True, "lid": True, "note": "Ventiel openen"},
-            "freezer": {"container": None, "lid": None, "note": None},
+            "freezer": {"container": True, "lid": True, "note": None},
             "dishwasher": {"container": None, "lid": None, "note": None},
         },
         "pros": [
@@ -733,8 +745,9 @@ PRODUCTS = {
         ],
         "cons": [
             "Ronde vorm minder effici\u00ebnt voor mealprep-stapeling",
+            "Niet geschikt voor opwarming in de oven",
         ],
-        "rating": 4.5,
+        "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 26.61,
@@ -756,6 +769,12 @@ PRODUCTS = {
         "image": "glasslock-ovensafe-3delig.webp",
         "image_path": "images/products/vershoudbakjes",
         "description": "Een praktische en sterke 3-delige set van gehard glas met ventieldeksels. Ideaal voor dagelijks bewaren, opwarmen en meenemen dankzij de stevige 4-kliks sluiting.",
+        "usage": {
+            "oven": {"container": True, "lid": False, "note": "Alleen het glazen bakje tot 230 °C"},
+            "microwave": {"container": True, "lid": False, "note": "Alleen het glazen bakje"},
+            "freezer": {"container": True, "lid": True, "note": "Tot -20 °C"},
+            "dishwasher": {"container": True, "lid": True, "note": None},
+        },
         "pros": [
             "Extra stootbestendig gehard glas",
             "4-kliks sluiting met siliconen ring voor lekvrije opslag",
@@ -764,7 +783,7 @@ PRODUCTS = {
         "cons": [
             "Ronde vorm minder effici\u00ebnt voor mealprep-stapeling",
         ],
-        "rating": 4.5,
+        "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 41.29,
@@ -789,10 +808,10 @@ PRODUCTS = {
         "image_path": "images/products/vershoudbakjes",
         "description": "Een hoogwaardige 5-delige set van borosilicaat glas met stevige klikdeksels en siliconen afdichting. Ontworpen voor veilig bewaren \u00e9n opwarmen in zowel oven als magnetron.",
         "usage": {
-            "oven": {"container": True, "lid": False, "note": None},
+            "oven": {"container": True, "lid": False, "note": "Alleen het glazen bakje tot 350 °C"},
             "microwave": {"container": True, "lid": True, "note": "Ventiel openen"},
-            "freezer": {"container": None, "lid": None, "note": None},
-            "dishwasher": {"container": None, "lid": None, "note": None},
+            "freezer": {"container": True, "lid": True, "note": "Tot -40 °C"},
+            "dishwasher": {"container": True, "lid": True, "note": None},
         },
         "pros": [
             "Borosilicaatglas: ovenbestendig tot hoge temperaturen",
@@ -802,7 +821,7 @@ PRODUCTS = {
         "cons": [
             "Grotere formaten nemen meer ruimte in",
         ],
-        "rating": 5,
+        "rating": 4.5,
         "rating_count": 295,
         "price": 65.00,
         "currency": "EUR",
@@ -810,7 +829,7 @@ PRODUCTS = {
         "affiliate_url": "https://www.amazon.nl/-/en/Pyrex-glass-dishes-airtight-microwave/dp/B08297GR65/ref=pd_bxgy_thbs_d_sccl_1/262-4000866-4191437?pd_rd_w=jiJYP&content-id=amzn1.sym.75142c34-87ae-4c36-8448-6beafeb35427&pf_rd_p=75142c34-87ae-4c36-8448-6beafeb35427&pf_rd_r=C2V0YSA2BKFHRGZNBH2C&pd_rd_wg=z7GlD&pd_rd_r=bc0a416f-878f-4caa-a30d-5fbfb410b2f0&pd_rd_i=B08297GR65&psc=1",
         "price_range": "\u20ac\u20ac\u20ac",
         "verdict": "De meest betrouwbare en complete premium glas-set voor veilig bewaren en opwarmen.",
-        "award": "💎 Premium keuze",
+        "award": "🏆 Beste keuze",
     },
     "bormioli_frigoverre_5delig": {
         "slug": "bormioli-frigoverre-5delig",
@@ -823,10 +842,10 @@ PRODUCTS = {
         "image_path": "images/vershoudbakjes",
         "description": "Duurzame set van glazen vershoudbakjes voor dagelijks bewaren en meenemen. Het glas is voedselveilig en geschikt voor oven, magnetron en vriezer (gebruik zonder deksel bij verhitting).",
         "usage": {
-            "oven": {"container": True, "lid": False, "note": None},
+            "oven": {"container": False, "lid": False, "note": None},
             "microwave": {"container": True, "lid": False, "note": "Zonder deksel verwarmen"},
-            "freezer": {"container": True, "lid": None, "note": None},
-            "dishwasher": {"container": None, "lid": None, "note": None},
+            "freezer": {"container": True, "lid": True, "note": None},
+            "dishwasher": {"container": True, "lid": True, "note": None},
         },
         "pros": [
             "Voedselveilig glas, vrij van schadelijke stoffen",
@@ -834,8 +853,9 @@ PRODUCTS = {
         ],
         "cons": [
             "Sluitmechanisme vaak eenvoudiger dan klikdeksels",
+            "Niet geschikt voor opwarming in de oven",
         ],
-        "rating": 4.5,
+        "rating": 3.9,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 44.99,
@@ -858,10 +878,10 @@ PRODUCTS = {
         "image_path": "images/products/vershoudbakjes",
         "description": "Betaalbare en praktische 5-delige set van borosilicaat glas met lekvrije klikdeksels. Ideaal als instapset voor gezond bewaren en opwarmen.",
         "usage": {
-            "oven": {"container": True, "lid": False, "note": None},
-            "microwave": {"container": True, "lid": None, "note": None},
-            "freezer": {"container": None, "lid": None, "note": None},
-            "dishwasher": {"container": None, "lid": None, "note": None},
+            "oven": {"container": True, "lid": False, "note": "Alleen het glazen bakje tot 300 °C"},
+            "microwave": {"container": True, "lid": True, "note": "Met deksel het stoomventiel openen"},
+            "freezer": {"container": True, "lid": True, "note": "Tot -20 °C"},
+            "dishwasher": {"container": True, "lid": False, "note": None},
         },
         "pros": [
             "Vijf gelijke bakjes van 950 ml, handig voor meal-prep",
@@ -871,7 +891,7 @@ PRODUCTS = {
         "cons": [
             "Geen extra grote schaal voor familieporties",
         ],
-        "rating": 4,
+        "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 33.95,
@@ -881,7 +901,7 @@ PRODUCTS = {
         "affiliate_url": "https://www.amazon.nl/Igluu-Meal-Prep-Storage-Containers/dp/B0CJC5BHJZ?ref_=ast_sto_dp&th=1",
         "price_range": "\u20ac",
         "verdict": "Een voordelige en complete glazen basisset voor iedereen die PFAS-vrij wil bewaren en opwarmen.",
-        "award": "💰 Budget keuze",
+        "award": None,
         "variant_selectors": [
             {"key": "shape", "label": "Vorm"},
         ],
@@ -906,6 +926,7 @@ PRODUCTS = {
                 "option_labels": {"shape": "Rechthoek"},
                 "image": "igluu-5delig-rechthoek.webp",
                 "image_path": "images/products/vershoudbakjes",
+                "capacities": [840, 840, 840, 840, 840],
                 "price": 38.95,
                 "price_last_checked": "2026-07-24",
                 "currency": "EUR",
@@ -921,19 +942,45 @@ PRODUCTS = {
         "brand": "KitchenBrothers",
         "material": "Borosilicaatglas",
         "capacities": [1000, 1000, 1000, 1000, 1000],
-        "features": ["Lekvrij"],
+        "features": ["Luchtdichte klikdeksels"],
         "image": "kitchenbrothers-5delig.webp",
         "image_path": "images/products/vershoudbakjes",
-        "description": "Een praktische en sterke 5-delige set van gehard glas met ventieldeksels. Ideaal voor dagelijks bewaren, opwarmen en meenemen dankzij de stevige 4-kliks sluiting.",
+        "description": "Praktische meal-prepset met vijf rechthoekige bakjes van "
+        "borosilicaatglas, elk met een inhoud van 1 liter. De luchtdichte "
+        "klikdeksels met siliconen afdichting maken de set geschikt voor "
+        "voorbereiden, bewaren, invriezen en meenemen van maaltijden.",
+        "usage": {
+            "oven": {
+                "container": True,
+                "lid": False,
+                "note": "Alleen het glazen bakje; deksel volledig verwijderen",
+            },
+            "microwave": {
+                "container": True,
+                "lid": False,
+                "note": "Deksel volledig verwijderen voor het opwarmen",
+            },
+            "freezer": {
+                "container": True,
+                "lid": True,
+                "note": "Geschikt voor temperaturen vanaf -40 °C",
+            },
+            "dishwasher": {
+                "container": True,
+                "lid": None,
+                "note": "Niet duidelijk voor de deksel",
+            },
+        },
         "pros": [
-            "4-kliks sluiting met siliconen ring voor lekvrije opslag",
-            "Handig ventiel voor veilig magnetrongebruik",
-            "Compacte ronde formaten, makkelijk stapelbaar",
+            "Vijf gelijke bakjes van 1 liter zijn praktisch voor meal-prepping",
+            "Luchtdichte en lekvrije klikdeksels met siliconen afdichting",
+            "Borosilicaatglas is goed bestand tegen grote temperatuurverschillen",
         ],
         "cons": [
-            "Ronde vorm minder effici\u00ebnt voor mealprep-stapeling",
+            "Alle bakjes hebben hetzelfde formaat, waardoor de set minder veelzijdig is",
+            "Vijf glazen bakjes nemen relatief veel ruimte en gewicht in",
         ],
-        "rating": 4.5,
+        "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 25.00,
@@ -942,8 +989,9 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "https://www.bol.com/nl/nl/p/kitchenbrothers-meal-prep-bakjes-vershoudbakjes-set-luchtdicht-bpa-vrij-1l-glas-5-stuks/9300000003218666/?Referrer=ADVNLYAH002032-S-2330346176471134-9300000003218666-PMAX-C-698295020&msclkid=e7e8b08fdc3b1fc25db8dad674cf256b",
         "price_range": "\u20ac\u20ac",
-        "verdict": "Een stevige en gebruiksvriendelijke set met uitstekend ventielsysteem voor dagelijks gebruik.",
-        "award": None,
+        "verdict": "Sterke en betaalbare meal-prepset voor vijf volledige maaltijden "
+        "in gelijke porties.",
+        "award": "💰 Budget keuze",
     },
     "luminarc_purebox_5delig": {
         "slug": "luminarc-purebox-5delig",
@@ -968,6 +1016,7 @@ PRODUCTS = {
         ],
         "cons": [
             "Ronde vorm minder effici\u00ebnt voor mealprep-stapeling",
+            "Niet geschikt voor opwarming in de oven",
         ],
         "rating": 4.5,
         "rating_count": None,

@@ -1,31 +1,70 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Beste Glazen Vershoudbakjes van 2026 – Losse Bakjes en Sets{% endblock %}
+
+{% block title %}
+Beste glazen vershoudbakjes van 2026 – losse bakjes en sets
+{% endblock %}
+
 
 {% block meta %}
-<meta name="description" content="Ontdek de beste PFAS-vrije glazen vershoudbakjes van 2026: losse bakjes, 3-delige en 5-delige sets. Veilig, duurzaam en geschikt voor oven, magnetron en vriezer.">
+<meta
+    name="description"
+    content="Vergelijk de beste glazen vershoudbakjes van 2026: losse bakjes, 3-delige sets en 5-delige sets. Bekijk verschillen in inhoud, materiaal, lekdichtheid, gebruiksgemak en prijs."
+>
 
-<!-- 🔹 Open Graph -->
-<meta property="og:title" content="Beste Glazen Vershoudbakjes van 2026 – Losse Bakjes en Sets">
-<meta property="og:description" content="De beste glazen vershoudbakjes van 2026: losse bakjes, 3-delige en 5-delige sets. Vrij van schadelijke stoffen, ovenbestendig en lekvrij.">
-<meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/vershoudcontainers.jpg">
-<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/vershoudcontainers/">
+<!-- Open Graph -->
+<meta
+    property="og:title"
+    content="Beste glazen vershoudbakjes van 2026 – losse bakjes en sets"
+>
+<meta
+    property="og:description"
+    content="Vergelijk glazen vershoudbakjes en sets op inhoud, materiaal, lekdichtheid, gebruiksgemak, toepassingen en prijs."
+>
+<meta
+    property="og:image"
+    content="https://www.leefnatuurlijkengezond.nl/static/images/vershoudcontainers.jpg"
+>
+<meta
+    property="og:url"
+    content="https://www.leefnatuurlijkengezond.nl/vershoudcontainers/"
+>
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/vershoudcontainers/">
 <meta property="og:locale" content="nl_NL">
-<!-- 🔹 Twitter -->
+
+<link
+    rel="canonical"
+    href="https://www.leefnatuurlijkengezond.nl/vershoudcontainers/"
+>
+
+<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Top 5 PFAS-vrije Glazen Vershoudbakjes">
-<meta name="twitter:description" content="Vergelijk de beste glazen vershoudbakjes van 2026: losse bakjes, 3-delige en 5-delige sets. Veilig opwarmen, lekvrij en duurzaam.">
-<meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/vershoudcontainers.jpg">
-<!-- 🔹 Structured Data – Product ItemList -->
+<meta
+    name="twitter:title"
+    content="Beste glazen vershoudbakjes van 2026"
+>
+<meta
+    name="twitter:description"
+    content="Vergelijk losse glazen vershoudbakjes en sets op inhoud, materiaal, lekdichtheid, gebruiksgemak en prijs."
+>
+<meta
+    name="twitter:image"
+    content="https://www.leefnatuurlijkengezond.nl/static/images/vershoudcontainers.jpg"
+>
+
+<!-- Structured Data – Product ItemList -->
+{% if json_ld %}
 <script type="application/ld+json">
 {{ json_ld|safe }}
 </script>
-<!-- 🔹 Structured Data – FAQPage -->
+{% endif %}
+
+<!-- Structured Data – FAQPage -->
+{% if faq_ld %}
 <script type="application/ld+json">
 {{ faq_ld|safe }}
 </script>
+{% endif %}
 {% endblock %}
 
 
@@ -34,164 +73,358 @@
 {% include "partials/breadcrumbs.html" %}
 {% include "partials/affiliate_disclosure.html" %}
 
-                <!-- Content -->
-                <section id="banner">
-                        <div class="content">
-                        <header class="main">
-                        <h1>{{ content.hero.h1 }}</h1>
-                        </header>
-                        {% for p in content.hero.paragraphs %}
-                        <p>{{ p|safe }}</p>
-                        {% endfor %}
-                        </div>
-                </section>
 
-<div class="storage-filters-sentinel" aria-hidden="true"></div>
-<div class="storage-filters-sticky">
-{% include "partials/storage_type_selector.html" %}
-{% include "partials/storage_size_filter.html" %}
+<!-- Hero -->
+<section id="banner" class="storage-hero">
+    <div class="content">
+        <header class="main">
+            <h1>{{ content.hero.h1 }}</h1>
+        </header>
+
+        {% for paragraph in content.hero.paragraphs %}
+        <p>{{ paragraph|safe }}</p>
+        {% endfor %}
+    </div>
+</section>
+
+
+<!-- Filters -->
+<div
+    class="storage-filters-sentinel"
+    aria-hidden="true"
+></div>
+
+<div
+    class="storage-filters-sticky"
+    role="region"
+    aria-label="Filter glazen vershoudbakjes"
+>
+    {% include "partials/storage_type_selector.html" %}
+    {% include "partials/storage_size_filter.html" %}
 </div>
-<script>
-(function () {
-    var bar = document.querySelector(".storage-filters-sticky");
-    var sentinel = document.querySelector(".storage-filters-sentinel");
-    if (!bar || !sentinel || !("IntersectionObserver" in window)) { return; }
-    new IntersectionObserver(function (entries) {
-        bar.classList.toggle("is-stuck", !entries[0].isIntersecting);
-    }, { threshold: 0 }).observe(sentinel);
-})();
-</script>
-
-                {% include "partials/top_picks.html" %}
 
 
-                <section>
-                        <header class="major">
-                        <h2>{{ content.why_choose.title }}</h2>
-                        </header>
-                        <p>{{ content.why_choose.intro|safe }}</p>
-                        <ul>
-                        {% for bullet in content.why_choose.bullets %}
-                        <li>{{ bullet|safe }}</li>
-                        {% endfor %}
-                        </ul>
-                </section>
-
-                <section id="producten" class="products">
-                        <header class="major">
-                                <h2>{{ type_heading }}</h2>
-                        </header>
-                        {% if type_intro %}
-                        <p>{{ type_intro|safe }}</p>
-                        {% endif %}
-                        <p class="usage-general-note"><em>Let op: kunststof deksels zijn doorgaans niet ovenbestendig. Volg bij magnetrongebruik de instructies per product, bijvoorbeeld door het ventiel te openen of het deksel te verwijderen.</em></p>
-                        {% if products %}
-                        <p class="storage-filter-count">{{ visible_product_count }} product{{ visible_product_count|pluralize:"en" }} gevonden</p>
-                        {% endif %}
-                        <div class="product-list">
-
-{% include "partials/how_we_select.html" %}
-
-                                {% if products %}
-                                <section class="top10-section">
-{% for product in products %}
-{% include "partials/product_block.html" %}
-{% endfor %}
-                                </section>
+<!-- Uitgelichte keuzes -->
+{% include "partials/top_picks.html" %}
 
 
-                                <!-- Vergelijkingstabel -->
-                                <section>
-                                        <h2>{{ comparison_title }}</h2>
-                                        <div class="table-wrapper">
-                                        <table class="alt product-table">
-                                        <thead>
-                                        <tr>
-                                        <th>Product</th>
-                                        <th>Belangrijkste eigenschappen</th>
-                                        <th>Inhoud</th>
-                                        {% if show_total_column %}
-                                        <th>Totale inhoud</th>
-                                        {% endif %}
-                                        <th>Formaat</th>
-                                        <th>Prijs</th>
-                                        <th>Beoordeling</th>
-                                        <th>Actie</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {% for row in comparison_rows %}
-                                        <tr>
-                                        <td>
-                                        <strong>{{ row.product.name }}</strong>
-                                        {% if row.product.award %}
-                                        <br><span class="product-badge {{ row.product.award_class }}">{{ row.product.award }}</span>
-                                        {% endif %}
-                                        </td>
-                                        <td>
-                                        {{ row.product.material }}
-                                        {% if row.product.features %}
-                                        · {{ row.product.features|join:" · " }}
-                                        {% endif %}
-                                        </td>
-                                        <td>{{ row.capacity_display }}</td>
-                                        {% if show_total_column %}
-                                        <td>{{ row.total_display }}</td>
-                                        {% endif %}
-                                        <td>{{ row.size_display }}</td>
-                                        <td>{{ row.product.price_range }}</td>
-                                        <td><span class="stars stars-{{ row.product.rating_class }}"></span></td>
-                                        <td><a href="{{ row.product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews →</a></td>
-                                        </tr>
-                                        {% endfor %}
-                                        </tbody>
-                                        </table>
-                                        </div>
-                                </section>
+<!-- Waarom kiezen -->
+<section
+    class="storage-why-choose"
+    aria-labelledby="why-choose-title"
+>
+    <header class="major">
+        <h2 id="why-choose-title">
+            {{ content.why_choose.title }}
+        </h2>
+    </header>
+
+    {% if content.why_choose.intro %}
+    <p>{{ content.why_choose.intro|safe }}</p>
+    {% endif %}
+
+    {% if content.why_choose.bullets %}
+    <ul>
+        {% for bullet in content.why_choose.bullets %}
+        <li>{{ bullet|safe }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</section>
+
+
+<!-- Producten -->
+<section
+    id="producten"
+    class="products storage-products"
+    aria-labelledby="products-title"
+>
+    <header class="major">
+        <h2 id="products-title">
+            {{ type_heading }}
+        </h2>
+    </header>
+
+    {% if type_intro %}
+    <p>{{ type_intro|safe }}</p>
+    {% endif %}
+
+    <p class="usage-general-note">
+        <em>
+            Let op: kunststof deksels zijn doorgaans niet ovenbestendig.
+            Volg bij magnetrongebruik de instructies per product, bijvoorbeeld
+            door het ventiel te openen of het deksel te verwijderen.
+        </em>
+    </p>
+
+    <!-- Methodologie -->
+    {% include "partials/how_we_select.html" %}
+
+    {% if products %}
+
+    <p
+        class="storage-filter-count"
+        aria-live="polite"
+    >
+        {{ visible_product_count }}
+        product{{ visible_product_count|pluralize:"en" }}
+        gevonden
+    </p>
+
+    <div class="product-list">
+
+        <!-- Gerangschikte productblokken -->
+        <div class="ranked-products">
+            {% for product in products %}
+                {% include "partials/product_block.html" %}
+            {% endfor %}
+        </div>
+
+
+        <!-- Vergelijkingstabel -->
+        {% if comparison_rows %}
+        <section
+            class="comparison-section"
+            aria-labelledby="comparison-title"
+        >
+            <header class="major">
+                <h2 id="comparison-title">
+                    {{ comparison_title }}
+                </h2>
+            </header>
+
+            <div
+                class="table-wrapper"
+                tabindex="0"
+                role="region"
+                aria-label="{{ comparison_title }}"
+            >
+                <table class="alt product-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Belangrijkste eigenschappen</th>
+                            <th scope="col">Inhoud</th>
+
+                            {% if show_total_column %}
+                            <th scope="col">Totale inhoud</th>
+                            {% endif %}
+
+                            <th scope="col">Formaat</th>
+                            <th scope="col">Prijsniveau</th>
+                            <th scope="col">Beoordeling</th>
+                            <th scope="col">Actie</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for row in comparison_rows %}
+
+                        {% firstof row.affiliate_url row.product.affiliate_url as comparison_affiliate_url %}
+                        {% firstof row.rating row.product.rating as comparison_rating %}
+                        {% firstof row.rating_class row.product.rating_class as comparison_rating_class %}
+
+                        <tr>
+                            <th scope="row">
+                                <strong>{{ row.product.name }}</strong>
+
+                                {% if row.product.award %}
+                                <br>
+                                <span
+                                    class="product-badge {{ row.product.award_class }}"
+                                >
+                                    {{ row.product.award }}
+                                </span>
+                                {% endif %}
+                            </th>
+
+                            <td>
+                                {% if row.product.material %}
+                                    {{ row.product.material }}
+                                {% endif %}
+
+                                {% if row.product.features %}
+                                    {% if row.product.material %} · {% endif %}
+                                    {{ row.product.features|join:" · " }}
+                                {% endif %}
+                            </td>
+
+                            <td>
+                                {{ row.capacity_display|default:"—" }}
+                            </td>
+
+                            {% if show_total_column %}
+                            <td>
+                                {{ row.total_display|default:"—" }}
+                            </td>
+                            {% endif %}
+
+                            <td>
+                                {{ row.size_display|default:"—" }}
+                            </td>
+
+                            <td>
+                                {% if row.product.price_range %}
+                                    <span
+                                        aria-label="Prijsniveau {{ row.product.price_range }}"
+                                    >
+                                        {{ row.product.price_range }}
+                                    </span>
                                 {% else %}
-                                <p>Binnen deze combinatie zijn momenteel geen producten beschikbaar.
-                                <a href="{{ size_filter_reset_url }}" class="button small">Toon alle formaten binnen {{ selected_type_label }}</a></p>
+                                    —
                                 {% endif %}
-                                </section>
+                            </td>
 
-                                <section>
-                                        <header class="major">
-                                        <h2>{{ content.tips.title }}</h2>
-                                        </header>
-                                        {% if content.tips.intro %}
-                                        <p>{{ content.tips.intro|safe }}</p>
-                                        {% endif %}
-                                        <ul>
-                                        {% for bullet in content.tips.bullets %}
-                                        <li>{{ bullet|safe }}</li>
-                                        {% endfor %}
-                                        </ul>
-                                </section>
+                            <td>
+                                {% if comparison_rating %}
+                                <span
+                                    class="stars stars-{{ comparison_rating_class }}"
+                                    role="img"
+                                    aria-label="Onze beoordeling: {{ comparison_rating|stringformat:'g' }} van 5"
+                                ></span>
 
-
-                                {% if conclusie %}
-                                <section>
-                                        <header class="major">
-                                        <h2>{{ conclusie.title }}</h2>
-                                        </header>
-                                        <p>{{ conclusie.text|safe }}</p>
-                                </section>
+                                <span class="rating-value">
+                                    {{ comparison_rating|stringformat:"g" }}/5
+                                </span>
+                                {% else %}
+                                <span>Niet beoordeeld</span>
                                 {% endif %}
+                            </td>
+
+                            <td>
+                                {% if comparison_affiliate_url %}
+                                <a
+                                    href="{{ comparison_affiliate_url }}"
+                                    class="button primary small"
+                                    target="_blank"
+                                    rel="nofollow sponsored noopener"
+                                    aria-label="Bekijk prijs en reviews van {{ row.product.name }}"
+                                >
+                                    Bekijk prijs &amp; reviews
+                                </a>
+                                {% else %}
+                                <span class="availability-note">
+                                    Geen actuele prijslink
+                                </span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        {% endif %}
+
+    </div>
+
+    {% else %}
+
+    <div class="storage-empty-state">
+        <p>
+            Binnen deze combinatie zijn momenteel geen producten beschikbaar.
+        </p>
+
+        {% if size_filter_reset_url %}
+        <p>
+            <a
+                href="{{ size_filter_reset_url }}"
+                class="button small"
+            >
+                Toon alle formaten binnen {{ selected_type_label }}
+            </a>
+        </p>
+        {% endif %}
+    </div>
+
+    {% endif %}
+</section>
 
 
-                                <section>
-                                <header class="major">
-                                        <h2>{{ content.faq.title }}</h2>
-                                        </header>
-                                        {% for item in content.faq.items %}
-                                        <div class="faq-item">
-                                        <h3>{{ forloop.counter }}. {{ item.q }}</h3>
-                                        <p>{{ item.a|safe }}</p>
-                                        </div>
-                                        {% endfor %}
-                                </section>
+<!-- Conclusie -->
+{% if conclusie %}
+<section
+    class="storage-conclusion"
+    aria-labelledby="conclusion-title"
+>
+    <header class="major">
+        <h2 id="conclusion-title">
+            {{ conclusie.title }}
+        </h2>
+    </header>
 
+    <p>{{ conclusie.text|safe }}</p>
+</section>
+{% endif %}
+
+
+<!-- Onderhoudstips -->
+{% if content.tips %}
+<section
+    class="storage-tips"
+    aria-labelledby="tips-title"
+>
+    <header class="major">
+        <h2 id="tips-title">
+            {{ content.tips.title }}
+        </h2>
+    </header>
+
+    {% if content.tips.intro %}
+    <p>{{ content.tips.intro|safe }}</p>
+    {% endif %}
+
+    {% if content.tips.bullets %}
+    <ul>
+        {% for bullet in content.tips.bullets %}
+        <li>{{ bullet|safe }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if content.tips.outro %}
+    <p>{{ content.tips.outro|safe }}</p>
+    {% endif %}
+</section>
+{% endif %}
+
+
+<!-- FAQ -->
+{% if content.faq.items %}
+<section
+    class="faq-section"
+    aria-labelledby="faq-title"
+>
+    <header class="major">
+        <h2 id="faq-title">
+            {{ content.faq.title }}
+        </h2>
+    </header>
+
+    <div class="faq-list">
+        {% for item in content.faq.items %}
+        <details class="faq-item">
+            <summary>
+                {{ item.q }}
+            </summary>
+
+            <div class="faq-item__answer">
+                <p>{{ item.a|safe }}</p>
+            </div>
+        </details>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+
+<!-- Aanvullende navigatie -->
 {% include "partials/handige_artikelen.html" %}
 {% include "partials/related_categories.html" %}
 {% include "partials/author_byline.html" %}
+
+
+<!-- Sticky filtergedrag -->
+<script src="{% static 'js/storage-filters.js' %}" defer></script>
+
 {% endblock %}

@@ -337,6 +337,11 @@ def prepare_product_variants(product):
         pv["options"] = dict(v["options"])
         pv["option_labels"] = dict(v["option_labels"])
         caps = _clean_capacities(pv.get("capacities"))
+        if not caps:
+            cap_value = pv["options"].get("capacity")
+            if isinstance(cap_value, (int, float)) and cap_value > 0:
+                caps = [cap_value]
+                pv["capacities"] = caps
         pv["container_count"] = len(caps)
         pv["formatted_capacity"] = format_capacities(caps)
         pv["total_capacity_ml"] = calculate_total_capacity(caps)
