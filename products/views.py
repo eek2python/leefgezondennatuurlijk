@@ -18,6 +18,7 @@ from utils.variant_helpers import (
     resolve_commercial_fields,
     set_display_variant,
 )
+import copy
 import json
 
 logger = logging.getLogger(__name__)
@@ -212,11 +213,24 @@ def _build_product_ld(request, p):
             "ratingValue": p["rating"],
             "reviewCount": p["rating_count"],
         }
-    product_ld["offers"] = _build_offer_ld(p)
+    offer = _build_offer_ld(p)
+    if offer is not None:
+        product_ld["offers"] = offer
     return product_ld
 
 
 def _build_offer_ld(p):
+    # Nooit een Offer zonder geldige prijs én URL (en munteenheid /
+    # beschikbaarheid): een displayvariant zonder eigen commerciële data
+    # levert géén Offer op — er wordt niet teruggevallen op een andere
+    # variant.
+    if (
+        not p.get("affiliate_url")
+        or p.get("price") in (None, "")
+        or not p.get("currency")
+        or not p.get("availability")
+    ):
+        return None
     return {
                         "@type": "Offer",
                         "url": p["affiliate_url"],
@@ -640,7 +654,9 @@ def vershoudcontainers(request):
     size_key = selected_size_filter["key"]
 
     keys = VERSHOUDCONTAINERS_RANKINGS.get(type_key, [])
-    all_ranked_products = [dict(VERSHOUDCONTAINERS_PRODUCTS[k]) for k in keys if k in VERSHOUDCONTAINERS_PRODUCTS]
+    # Deep copies: voorbereiden/variantselectie mag de brondata in PRODUCTS
+    # (inclusief geneste variant-dicts) nooit muteren.
+    all_ranked_products = [copy.deepcopy(VERSHOUDCONTAINERS_PRODUCTS[k]) for k in keys if k in VERSHOUDCONTAINERS_PRODUCTS]
     _enrich_products(all_ranked_products)
     for p in all_ranked_products:
         prepare_storage_product(p, size_key)
@@ -818,7 +834,8 @@ def product_detail(request, slug):
             return redirect("product_detail", slug=new_slug, permanent=True)
     entry = ALL_PRODUCTS_BY_SLUG.get(slug)
     if entry:
-        product = dict(entry["data"])
+        # Deep copy: verrijking/variantnormalisatie mag de brondata nooit muteren.
+        product = copy.deepcopy(entry["data"])
         cat_key = entry["category"]
         cat_info = CATEGORY_MAP[cat_key]
         _enrich_products([product])

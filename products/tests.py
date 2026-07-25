@@ -629,6 +629,146 @@ class StorageSizeFilterPageTests(TestCase):
         self.assertEqual(product["size_label"], "Groot")
 
 
+class DisplayVariantHardeningTests(TestCase):
+    """Variantafhankelijke velden worden bij iedere variantselectie
+    expliciet gezet of gewist — nooit stil een waarde van een eerdere
+    variant behouden."""
+
+    def _make_product(self):
+        return {
+            "slug": "hardening-test",
+            "name": "Hardening Test",
+            "image": "family.webp",
+            "image_path": "images/vershoudbakjes",
+            "affiliate_url": "https://example.com/family",
+            "price": 1.0,
+            "currency": "EUR",
+            "availability": "InStock",
+            "price_last_checked": "2026-07-01",
+            "variant_label": "Inhoud",
+            "variants": [
+                {
+                    "id": "a",
+                    "label": "500 ml",
+                    "capacities": [500],
+                    "image": "a.webp",
+                    "price": 9.99,
+                    "currency": "EUR",
+                    "availability": "InStock",
+                    "affiliate_url": "https://example.com/a",
+                    "price_last_checked": "2026-07-10",
+                    "usage": {"oven": {"container": True}},
+                    "is_default": True,
+                },
+                {
+                    "id": "b",
+                    "label": "1 L",
+                    "capacities": [1000],
+                    # géén commerciële data, geen afbeelding, geen usage
+                },
+            ],
+        }
+
+    def _prepared(self):
+        product = self._make_product()
+        prepare_product_variants(product)
+        return product
+
+    def _variant(self, product, vid):
+        return next(v for v in product["shape_variants"] if v["id"] == vid)
+
+    def test_variant_without_url_never_inherits_url(self):
+        from utils.variant_helpers import set_display_variant
+        product = self._prepared()
+        set_display_variant(product, self._variant(product, "b"))
+        self.assertEqual(product["affiliate_url"], "")
+
+    def test_variant_without_price_never_inherits_price(self):
+        from utils.variant_helpers import set_display_variant
+        product = self._prepared()
+        set_display_variant(product, self._variant(product, "b"))
+        self.assertIsNone(product["price"])
+        self.assertIsNone(product["currency"])
+        self.assertIsNone(product["price_last_checked"])
+
+    def test_variant_without_availability_never_inherits_availability(self):
+        from utils.variant_helpers import set_display_variant
+        product = self._prepared()
+        set_display_variant(product, self._variant(product, "b"))
+        self.assertEqual(product["availability"], "")
+
+    def test_variant_with_unknown_usage_clears_previous_usage(self):
+        from utils.variant_helpers import set_display_variant
+        product = self._prepared()
+        self.assertTrue(product["usage_display"])  # variant A heeft usage
+        set_display_variant(product, self._variant(product, "b"))
+        self.assertEqual(product["usage_display"], [])
+
+    def test_variant_images_selected_correctly_with_family_fallback(self):
+        from utils.variant_helpers import set_display_variant
+        product = self._prepared()
+        self.assertEqual(product["image"], "a.webp")
+        set_display_variant(product, self._variant(product, "b"))
+        # variant B heeft geen eigen afbeelding → expliciete familie-fallback
+        self.assertEqual(product["image"], "family.webp")
+        set_display_variant(product, self._variant(product, "a"))
+        self.assertEqual(product["image"], "a.webp")
+
+    def test_prepared_products_do_not_affect_each_other(self):
+        import copy as _copy
+        from utils.variant_helpers import set_display_variant
+        p1 = self._make_product()
+        p2 = _copy.deepcopy(p1)
+        prepare_product_variants(p1)
+        prepare_product_variants(p2)
+        set_display_variant(p1, self._variant(p1, "b"))
+        self.assertEqual(p2["affiliate_url"], "https://example.com/a")
+        self.assertEqual(p2["default_variant"]["id"], "a")
+
+    def test_source_products_not_mutated_by_page_view(self):
+        import copy as _copy
+        from products.products_vershoudcontainers import PRODUCTS
+        before = _copy.deepcopy(PRODUCTS)
+        for query in ("", "?uitvoering=enkel&formaat=groot", "?uitvoering=3-delig"):
+            self.client.get(f"/vershoudcontainers/{query}")
+        self.assertEqual(PRODUCTS, before)
+
+    def test_source_products_not_mutated_by_detail_page(self):
+        import copy as _copy
+        from products.products_vershoudcontainers import PRODUCTS
+        before = _copy.deepcopy(PRODUCTS)
+        self.client.get("/product/igluu-meal-prep-3delig/")
+        self.client.get("/product/locknlock-enkel/")
+        self.assertEqual(PRODUCTS, before)
+
+    def test_product_without_variants_keeps_product_level_fields(self):
+        product = {
+            "slug": "plain",
+            "name": "Plain",
+            "affiliate_url": "https://example.com/p",
+            "price": 4.5,
+            "currency": "EUR",
+            "availability": "InStock",
+        }
+        prepare_product_variants(product)
+        self.assertEqual(product["affiliate_url"], "https://example.com/p")
+        self.assertEqual(product["price"], 4.5)
+
+    def test_offer_ld_omitted_without_price_or_url(self):
+        from products.views import _build_offer_ld
+        base = {
+            "affiliate_url": "https://example.com/x",
+            "price": 9.99,
+            "currency": "EUR",
+            "availability": "InStock",
+        }
+        self.assertIsNotNone(_build_offer_ld(base))
+        for missing in ("affiliate_url", "price", "currency", "availability"):
+            broken = dict(base)
+            broken[missing] = None
+            self.assertIsNone(_build_offer_ld(broken), missing)
+
+
 class ComparisonRowResolutionTests(TestCase):
     """Strikte resolutie van commerciële velden in comparison_rows."""
 

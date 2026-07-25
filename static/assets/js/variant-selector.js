@@ -97,6 +97,15 @@
     }
 
     function renderVariant(card, variant, refs) {
+        // Variant zonder eigen afbeelding: expliciete productfamilie-fallback
+        // (de bij init vastgelegde afbeelding) in plaats van stil de
+        // afbeelding van de vorige variant te laten staan.
+        if (refs.img && !variant.image && refs.familyImage) {
+            variant = Object.assign({}, variant, {
+                image: refs.familyImage,
+                alt: variant.alt || refs.familyAlt
+            });
+        }
         if (refs.img && variant.image && variant.image !== refs.img.getAttribute("src")) {
             var current = ++refs.requestId.value;
             var preload = new Image();
@@ -122,14 +131,16 @@
             refs.img.alt = variant.alt;
         }
 
-        if (refs.summary && variant.summary) {
-            refs.summary.textContent = variant.summary;
+        // Expliciet zetten óf wissen: nooit een waarde van de vorige
+        // variant laten staan wanneer de nieuwe variant die niet heeft.
+        if (refs.summary) {
+            refs.summary.textContent = variant.summary || "";
         }
-        if (refs.capacityEl && variant.capacity) {
-            refs.capacityEl.textContent = variant.capacity;
+        if (refs.capacityEl) {
+            refs.capacityEl.textContent = variant.capacity || "";
         }
-        if (refs.totalCapacityEl && variant.total_capacity) {
-            refs.totalCapacityEl.textContent = variant.total_capacity;
+        if (refs.totalCapacityEl) {
+            refs.totalCapacityEl.textContent = variant.total_capacity || "";
         }
 
         if (refs.usageEl && refs.usageList) {
@@ -165,6 +176,10 @@
                     refs.disabledEl.hidden = true;
                 }
             } else {
+                // Wis expliciet de oude URL zodat er geen stale href van
+                // een vorige variant in de DOM achterblijft.
+                refs.link.removeAttribute("href");
+                refs.link.removeAttribute("aria-label");
                 refs.link.hidden = true;
                 if (refs.disabledEl) {
                     refs.disabledEl.hidden = false;
@@ -194,6 +209,10 @@
             totalCapacityEl: scope.querySelector("[data-shape-total-capacity]"),
             requestId: { value: 0 }
         };
+        if (refs.img) {
+            refs.familyImage = refs.img.getAttribute("src") || "";
+            refs.familyAlt = refs.img.getAttribute("alt") || "";
+        }
 
         var variants = data.variants;
         var selectorOrder = (data.selectors || []).map(function (s) {

@@ -1,0 +1,224 @@
+Voer een kleine, gerichte hardening uit van de bestaande displayvariantlogica
+voor vershoudbakjes.
+
+De vorige taak is succesvol afgerond:
+
+- storage-filters.js bestaat en werkt;
+- vergelijkingstabel gebruikt strikt de commerciële velden van display_variant;
+- cross-variant fallback in comparison_rows is verwijderd;
+- alle tests slagen.
+
+Er resteert één gemeld risico:
+
+Wanneer `set_display_variant` of vergelijkbare logica een andere variant
+activeert, kunnen variantafhankelijke productvelden mogelijk een waarde van
+de vorige of productniveauvariant behouden wanneer de nieuw geselecteerde
+variant dat veld niet bevat.
+
+Doel:
+
+Zorg dat alle variantafhankelijke velden bij iedere variantselectie expliciet
+en deterministisch worden gezet of leeggemaakt.
+
+==================================================
+1. INSPECTEER EERST
+==================================================
+
+Inspecteer:
+
+- `set_display_variant`;
+- `resolve_display_variant`;
+- `resolve_commercial_fields`;
+- productvoorbereiding voor productkaarten;
+- variant-JSON voor client-side selectors;
+- JavaScript dat varianten wisselt;
+- Product- en Offer-JSON-LD;
+- tests voor variantwisseling.
+
+Rapporteer eerst:
+
+1. welke velden door `set_display_variant` worden gemuteerd;
+2. welke velden alleen worden overschreven wanneer een waarde aanwezig is;
+3. welke velden daardoor stale kunnen blijven;
+4. of productobjecten in-place worden gemuteerd;
+5. of dezelfde productdictionary meerdere keren binnen één request wordt
+   hergebruikt.
+
+Voer daarna alleen noodzakelijke wijzigingen uit.
+
+==================================================
+2. VARIANTAFHANKELIJKE VELDEN
+==================================================
+
+Behandel minimaal deze velden als variantafhankelijk:
+
+- affiliate_url;
+- price;
+- currency;
+- availability;
+- price_last_checked;
+- image;
+- image_path;
+- dimensions;
+- capacities;
+- capacity_display;
+- total_capacity;
+- total_display;
+- selected_variant_id;
+- selected_variant_label;
+- usage;
+- alttekst;
+- eventuele SKU of offer URL.
+
+Controleer de werkelijke veldnamen in het project.
+
+Bij iedere displayvariant moeten deze velden:
+
+1. uit de geselecteerde variant worden gevuld;
+2. of expliciet op None / lege presentatiewaarde worden gezet;
+3. nooit stil een waarde van een eerder geselecteerde variant behouden.
+
+==================================================
+3. GEEN CROSS-VARIANT FALLBACK
+==================================================
+
+Voor producten met varianten geldt:
+
+- geen commerciële fallback naar productniveau;
+- geen fallback naar defaultvariant;
+- geen fallback naar een eerder geselecteerde variant;
+- geen fallback naar de eerste complete variant.
+
+Een ontbrekende waarde op de geselecteerde variant blijft ontbrekend.
+
+Uitzondering:
+
+Gedeelde, niet-variantafhankelijke productvelden zoals naam, merk,
+beschrijving, rating, award, pluspunten en minpunten mogen van productniveau
+komen.
+
+==================================================
+4. VERMIJD IN-PLACE MUTATIE WAAR MOGELIJK
+==================================================
+
+Controleer of `set_display_variant` de oorspronkelijke productdictionary
+in-place wijzigt.
+
+Geef de voorkeur aan:
+
+- een gekopieerd prepared productobject;
+- een afzonderlijke `display`-structuur;
+- of expliciete resolved velden.
+
+Bijvoorbeeld:
+
+prepared_product = {
+    **product,
+    "display_variant": display_variant,
+    "display": {
+        "affiliate_url": ...,
+        "price": ...,
+        "availability": ...,
+        ...
+    },
+}
+
+Voorkom dat het selecteren of voorbereiden van variant B de brondata of een
+andere productkaart beïnvloedt.
+
+Voer geen grote architectuurrefactor uit wanneer een beperkte veilige
+aanpassing voldoende is.
+
+==================================================
+5. CLIENT-SIDE VARIANTWISSEL
+==================================================
+
+Controleer de JavaScript-renderfunctie voor variantwissels.
+
+Bij iedere variantselectie moet zij expliciet verwerken:
+
+- URL aanwezig → knop tonen en href zetten;
+- URL ontbreekt → href verwijderen en knop verbergen of uitschakelen;
+- prijs aanwezig → prijs tonen;
+- prijs ontbreekt → oude prijs verwijderen en bestaande neutrale fallback tonen;
+- afbeelding aanwezig → afbeelding en alttekst aanpassen;
+- afbeelding ontbreekt → geen afbeelding van vorige variant laten staan,
+  tenzij een expliciete productfamiliefallback volgens projectbeleid bestaat;
+- usage aanwezig → gerenderde waarden vervangen;
+- usage onbekend → oude variantwaarden verwijderen;
+- beschikbaarheid aanwezig → tonen;
+- beschikbaarheid ontbreekt → oude status verwijderen.
+
+Gebruik geen constructie zoals:
+
+if (variant.price) {
+    priceElement.textContent = variant.price;
+}
+
+zonder een expliciete `else` die de vorige waarde wist.
+
+==================================================
+6. JSON-LD
+==================================================
+
+Controleer dat Product- en Offer-JSON-LD:
+
+- uitsluitend server-side displayvariantdata gebruiken;
+- geen commerciële fallback naar een andere variant toepassen;
+- geen Offer genereren zonder geldige prijs en URL;
+- prijs, URL, beschikbaarheid en afbeelding van dezelfde variant gebruiken.
+
+Client-side variantwisseling hoeft JSON-LD niet dynamisch te herschrijven,
+tenzij dit al onderdeel van de bestaande architectuur is.
+
+==================================================
+7. TESTS
+==================================================
+
+Voeg tests toe voor minimaal:
+
+1. Variant A heeft URL, variant B niet:
+   B krijgt nooit URL van A.
+2. Variant A heeft prijs, variant B niet:
+   B toont nooit prijs van A.
+3. Variant A heeft availability, variant B niet:
+   B houdt status van A niet vast.
+4. Variant A heeft afwijkende usage, variant B onbekende usage:
+   waarden van A verdwijnen bij B.
+5. Variant A en B hebben verschillende afbeeldingen:
+   juiste afbeelding wordt geselecteerd.
+6. Meerdere prepared productobjecten beïnvloeden elkaar niet.
+7. Brondata in PRODUCTS wordt niet gemuteerd.
+8. Product zonder varianten blijft productniveauvelden gebruiken.
+9. Comparison rows blijven strikt displayvariantdata gebruiken.
+10. JSON-LD bevat geen Offer bij ontbrekende prijs of URL.
+11. Alle bestaande 196 tests blijven slagen.
+
+==================================================
+8. GRENZEN
+==================================================
+
+Niet doen:
+
+- geen productdata aanpassen;
+- geen ontbrekende URL’s, prijzen of afbeeldingen invullen;
+- geen productteksten wijzigen;
+- geen rankings, awards of ratings wijzigen;
+- geen nieuwe variantarchitectuur invoeren;
+- geen fallback naar een andere variant toevoegen.
+
+==================================================
+9. EINDRAPPORT
+==================================================
+
+Rapporteer:
+
+1. waar het stale-value-risico zat;
+2. welke velden zijn gehard;
+3. of in-place mutatie is verwijderd of beperkt;
+4. hoe ontbrekende waarden nu worden gewist;
+5. wijzigingen in client-side variantweergave;
+6. gevolgen voor JSON-LD;
+7. toegevoegde tests;
+8. volledige testresultaten;
+9. bevestiging dat productdata niet zijn gewijzigd.

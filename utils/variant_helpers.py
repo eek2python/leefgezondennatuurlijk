@@ -284,20 +284,43 @@ def rebuild_variant_selector_groups(product):
     product["variant_selector_groups"] = groups
 
 
-def _copy_commercial_fields(product, variant):
-    for field in (
-        "image",
-        "image_path",
-        "capacities",
-        "price",
-        "currency",
-        "availability",
-        "affiliate_url",
-        "price_last_checked",
-    ):
+#: Variant-dependent fields that must be explicitly set (or cleared) on the
+#: product dict for every display-variant selection. A missing value on the
+#: selected variant must never silently keep the value of a previously
+#: selected variant.
+_VARIANT_COMMERCIAL_FIELDS = {
+    "price": None,
+    "currency": None,
+    "availability": "",
+    "affiliate_url": "",
+    "price_last_checked": None,
+    "capacities": [],
+}
+
+
+def _apply_display_variant_fields(product, variant):
+    """Deterministically project the display variant onto product level.
+
+    Commercial fields are taken ONLY from the variant; when the variant
+    lacks a field it is explicitly cleared (no fallback to another variant
+    or to stale product-level data). Image/image_path fall back to the
+    family-level original image — the documented product-family fallback —
+    so detail pages and no-JS rendering always have an image.
+    """
+    for field, empty in _VARIANT_COMMERCIAL_FIELDS.items():
         value = variant.get(field)
-        if value not in (None, "", []):
-            product[field] = value
+        product[field] = value if value not in (None, "", []) else empty
+    image = variant.get("image")
+    if image:
+        product["image"] = image
+        product["image_path"] = variant.get("image_path") or product.get(
+            "_family_image_path", product.get("image_path", "")
+        )
+    else:
+        product["image"] = product.get("_family_image", "")
+        product["image_path"] = product.get(
+            "_family_image_path", product.get("image_path", "")
+        )
 
 
 def prepare_product_variants(product):
@@ -330,6 +353,8 @@ def prepare_product_variants(product):
     _validate_variants(product, selectors, variants)
 
     family_name = product.get("name", "")
+    product.setdefault("_family_image", product.get("image", ""))
+    product.setdefault("_family_image_path", product.get("image_path", ""))
     prepared = []
     default = None
     for v in variants:
@@ -384,7 +409,7 @@ def prepare_product_variants(product):
     )
     rebuild_variant_selector_groups(product)
 
-    _copy_commercial_fields(product, default)
+    _apply_display_variant_fields(product, default)
     product["usage_display"] = default["usage_display"]
 
     product["variant_json_data"] = {
@@ -454,7 +479,7 @@ def set_display_variant(product, variant):
     rebuilds selector groups and the JSON default id so both selectors
     initialise on this variant."""
     product["default_variant"] = variant
-    _copy_commercial_fields(product, variant)
+    _apply_display_variant_fields(product, variant)
     product["usage_display"] = variant.get("usage_display") or []
     rebuild_variant_selector_groups(product)
     json_data = product.get("variant_json_data")
