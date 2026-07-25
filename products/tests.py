@@ -769,6 +769,44 @@ class DisplayVariantHardeningTests(TestCase):
             self.assertIsNone(_build_offer_ld(broken), missing)
 
 
+class VariantAuditCommandTests(TestCase):
+    """Read-only auditcommand: python manage.py audit_product_variants."""
+
+    def _run(self, *args):
+        from io import StringIO
+        from django.core.management import call_command
+        out = StringIO()
+        call_command("audit_product_variants", *args, stdout=out)
+        return out.getvalue()
+
+    def test_command_runs_without_errors(self):
+        output = self._run()
+        self.assertIn("Structurele fouten: 0", output)
+
+    def test_command_detects_known_airfryer_jsonld_mismatch(self):
+        output = self._run("--category", "airfryers")
+        self.assertIn("inconsistent_jsonld_variant", output)
+        self.assertIn("greenpan_silhouette_xl_5l", output)
+
+    def test_command_does_not_mutate_source_data(self):
+        import copy as _copy
+        from products.products_vershoudcontainers import PRODUCTS as P1
+        from products.products_airfryers import PRODUCTS as P2
+        before1, before2 = _copy.deepcopy(P1), _copy.deepcopy(P2)
+        self._run()
+        self.assertEqual(P1, before1)
+        self.assertEqual(P2, before2)
+
+    def test_strict_mode_fails_on_warnings(self):
+        from django.core.management.base import CommandError
+        with self.assertRaises(CommandError):
+            self._run("--strict")
+
+    def test_no_unsafe_commercial_firstof_in_comparison_templates(self):
+        output = self._run()
+        self.assertNotIn("unsafe_template_firstof", output)
+
+
 class ComparisonRowResolutionTests(TestCase):
     """Strikte resolutie van commerciële velden in comparison_rows."""
 

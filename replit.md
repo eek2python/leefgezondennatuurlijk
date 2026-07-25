@@ -119,6 +119,13 @@ All 6 category pages use a standardised three-file content architecture per cate
 - IKEA 365+ & Mepal EasyClip enkel migrated from legacy shape-as-capacity variants to `variant_selectors` capacity selectors; `pyrex_cook_store_3delig` renamed to `pyrex_cook_store_enkel` (single 800 ml container)
 - Full audit + open verification items: `docs/audit-vershoudbakjes.md`; tests: `products/test_usage_vershoudbakjes.py`
 
+### Variant Audit Command
+- `python manage.py audit_product_variants` (`--category`, `--strict`, `--report`) — read-only projectwide variant audit; `--report` writes `docs/audit-product-variants.md` (Dutch, spec-format sections: Samenvatting, Gedeelde infrastructuur, Categorieoverzicht, fouten/waarschuwingen tables, Handmatige controle)
+- Checks: button-variant defaults (missing/multiple), missing variant URL/price, swatch vs JSON-LD price/URL mismatch, source-data mutation (helper path AND real view flow via RequestFactory), JS set-or-clear branches present in both variant scripts, deepcopy usage in views, unsafe `firstof ... affiliate_url` fallbacks in the 7 comparison templates
+- Stable issue codes (e.g. `inconsistent_jsonld_variant`, `missing_variant_clear_branch`, `stale_variant_value_risk`); `--strict` exits nonzero on warnings too
+- Known accepted warning: `greenpan_silhouette_xl_5l` product-level price differs from default swatch (report-only; price fixes are editorial)
+- Tests: `VariantAuditCommandTests` in `products/tests.py`
+
 ### Comparison Template
 - `templates/comparison.html` — reusable comparison table template (not yet wired to a URL)
 

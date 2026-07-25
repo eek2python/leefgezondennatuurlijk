@@ -45,12 +45,21 @@
                 preload.src = src;
             }
 
-            if (url && affiliate) {
-                affiliate.setAttribute("href", url);
+            // Expliciet zetten óf wissen: geen stale waarde van een vorige
+            // swatch laten staan. Fallback naar de basiswaarde van het
+            // product (data-base-*) is gedocumenteerd familiebeleid.
+            if (affiliate) {
+                if (url) {
+                    affiliate.setAttribute("href", url);
+                    affiliate.hidden = false;
+                } else {
+                    affiliate.removeAttribute("href");
+                    affiliate.hidden = true;
+                }
             }
 
-            if (priceEl && price) {
-                priceEl.textContent = price;
+            if (priceEl) {
+                priceEl.textContent = price || "";
             }
 
             for (var i = 0; i < swatches.length; i++) {

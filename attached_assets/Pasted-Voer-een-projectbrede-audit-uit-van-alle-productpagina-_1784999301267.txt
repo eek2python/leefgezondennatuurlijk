@@ -1,0 +1,594 @@
+Voer een projectbrede audit uit van alle productpagina’s en productcategorieën
+die varianten ondersteunen.
+
+Aanleiding:
+
+Voor de vershoudbakjespagina is recent de commerciële variantresolutie
+verbeterd. De vergelijkingstabel gebruikt nu strikt de geselecteerde
+displayvariant voor:
+
+- affiliate-link;
+- prijs;
+- beschikbaarheid;
+- capaciteit;
+- ratingweergave.
+
+Er resteerde daarnaast een mogelijk stale-value-risico in
+`set_display_variant` of vergelijkbare logica: wanneer een nieuwe variant
+een veld niet bevat, kan theoretisch een waarde van een vorige variant,
+defaultvariant of productniveau blijven staan.
+
+Doel van deze taak:
+
+1. inventariseer alle productcategorieën met varianten;
+2. controleer welke centrale en categorie-specifieke helpers zij gebruiken;
+3. detecteer cross-variant fallbacks en stale-value-risico’s;
+4. controleer productblok, vergelijkingstabel en JSON-LD op onderlinge
+   consistentie;
+5. voer alleen centrale en aantoonbaar veilige fixes uit;
+6. rapporteer categorie-specifieke risico’s die niet veilig automatisch
+   kunnen worden opgelost;
+7. voeg herhaalbare tests toe.
+
+==================================================
+1. EERST ALLEEN INVENTARISEREN
+==================================================
+
+Inspecteer eerst het volledige project zonder wijzigingen uit te voeren.
+
+Zoek minimaal naar:
+
+- productdata met `variants`;
+- `variant_label`;
+- `variant_selectors`;
+- `display_variant`;
+- `selected_variant`;
+- `default_variant`;
+- `set_display_variant`;
+- `resolve_display_variant`;
+- `resolve_commercial_fields`;
+- `normalize_variant`;
+- `prepare_product`;
+- `comparison_rows`;
+- `affiliate_url`;
+- `price_last_checked`;
+- variantafhankelijke afbeeldingen;
+- variantafhankelijke beschikbaarheid;
+- Product- en Offer-JSON-LD;
+- JavaScript voor variantselectors;
+- templates met variantbuttons;
+- templates met productvergelijkingstabellen.
+
+Inventariseer per productcategorie:
+
+- naam van de categorie;
+- productdatabestand;
+- view;
+- relevante helpers;
+- productkaart-template;
+- vergelijkingstabel-template;
+- JavaScriptbestand;
+- JSON-LD-builder;
+- bestaande tests;
+- aantal producten met varianten;
+- ondersteunde selectorsoorten, bijvoorbeeld:
+  - diameter;
+  - inhoud;
+  - vorm;
+  - maat;
+  - kleur;
+  - uitvoering.
+
+Maak vóór implementatie een inventarisatierapport met een tabel:
+
+| Categorie | Variantproducten | Gedeelde helper | Eigen helper | Productkaart | Tabel | JSON-LD | Risiconiveau |
+
+Gebruik risiconiveaus:
+
+- laag;
+- middel;
+- hoog.
+
+==================================================
+2. GEBRUIK VERSHOUDBAKJES ALS REFERENTIE
+==================================================
+
+Gebruik de recente vershoudbakjesimplementatie als referentie voor gewenst
+gedrag.
+
+Controleer welke onderdelen daar nu bestaan, waaronder:
+
+- `resolve_commercial_fields`;
+- expliciete `comparison_rows`;
+- displayvariantselectie;
+- strikte variantlinks;
+- geen cross-variant affiliatefallback;
+- kaart/tabelconsistentie;
+- JSON-LD-consistentie;
+- tests voor ontbrekende variantlinks en prijzen.
+
+Kopieer niet blind categorie-specifieke code.
+
+Identificeer eerst welke logica generiek genoeg is om centraal te delen.
+
+==================================================
+3. CENTRALE DEFINITIE VAN VARIANTAFHANKELIJKE VELDEN
+==================================================
+
+Bepaal projectbreed welke velden variantafhankelijk kunnen zijn.
+
+Controleer minimaal:
+
+- affiliate_url;
+- price;
+- currency;
+- availability;
+- price_last_checked;
+- image;
+- image_path;
+- image_alt;
+- dimensions;
+- capacities;
+- capacity_display;
+- diameter;
+- size;
+- shape;
+- color;
+- model;
+- selected_variant_id;
+- selected_variant_label;
+- usage;
+- SKU;
+- offer_url;
+- stock_status.
+
+Gebruik de werkelijke veldnamen in het project.
+
+Maak indien passend een centrale constante of configuratie, bijvoorbeeld:
+
+VARIANT_DEPENDENT_FIELDS = (
+    "affiliate_url",
+    "price",
+    "currency",
+    "availability",
+    "price_last_checked",
+    "image",
+    "image_path",
+    "dimensions",
+    "usage",
+)
+
+Voeg geen velden toe die in het project niet bestaan.
+
+==================================================
+4. CONTROLEER IN-PLACE MUTATIE
+==================================================
+
+Zoek alle helpers die productdictionaries in-place wijzigen.
+
+Controleer met name patronen zoals:
+
+product["price"] = variant.get("price", product.get("price"))
+
+of:
+
+if variant.get("affiliate_url"):
+    product["affiliate_url"] = variant["affiliate_url"]
+
+Deze patronen zijn riskant, omdat oude waarden kunnen blijven staan.
+
+Rapporteer per helper:
+
+- wordt de brondata gemuteerd?
+- wordt een shallow copy of deep copy gemaakt?
+- kunnen waarden van een vorige variant blijven staan?
+- wordt hetzelfde productobject meerdere keren binnen één request gebruikt?
+- kan filtering de productdata voor een volgende rendering beïnvloeden?
+
+Geef de voorkeur aan voorbereide kopieën of een aparte displaystructuur.
+
+==================================================
+5. GEWENSTE CENTRALE OPZET
+==================================================
+
+Wanneer veilig en passend, centraliseer de variantresolutie in herbruikbare
+helpers.
+
+Bijvoorbeeld:
+
+resolve_display_variant(product, selection=None, size_filter=None)
+
+resolve_variant_fields(product, display_variant)
+
+prepare_product_for_display(product, display_variant)
+
+resolve_commercial_fields(product, display_variant)
+
+De voorbereidende output mag bijvoorbeeld bevatten:
+
+{
+    "source_product": product,
+    "display_variant": display_variant,
+    "display_variant_id": ...,
+    "display": {
+        "affiliate_url": ...,
+        "price": ...,
+        "currency": ...,
+        "availability": ...,
+        "price_last_checked": ...,
+        "image": ...,
+        "image_path": ...,
+        "dimensions": ...,
+        "usage": ...,
+    },
+}
+
+Belangrijk:
+
+- muteer de oorspronkelijke productdata niet;
+- gebruik voor producten met varianten geen commerciële fallback naar een
+  andere variant;
+- gebruik productniveauvelden alleen voor producten zonder commerciële
+  variantdata;
+- gedeelde niet-variantafhankelijke velden blijven op productniveau.
+
+Voer geen grote refactor uit wanneer categorieën fundamenteel verschillende
+variantenlogica hebben. Rapporteer die dan apart.
+
+==================================================
+6. STRIKTE COMMERCIELE RESOLUTIE
+==================================================
+
+Voor ieder product met varianten geldt:
+
+- prijs komt uitsluitend van de gekozen displayvariant;
+- affiliate-link komt uitsluitend van de gekozen displayvariant;
+- beschikbaarheid komt uitsluitend van de gekozen displayvariant;
+- prijscontroledatum komt uitsluitend van de gekozen displayvariant;
+- ontbrekende waarden blijven ontbrekend;
+- geen fallback naar defaultvariant;
+- geen fallback naar eerste variant;
+- geen fallback naar een vorige variant;
+- geen fallback naar productniveau wanneer productniveau verouderde
+  variantdata kan bevatten.
+
+Voor producten zonder varianten mogen productniveauvelden worden gebruikt.
+
+Maak deze regels centraal wanneer dat veilig kan.
+
+==================================================
+7. PRODUCTKAARTCONTROLE
+==================================================
+
+Controleer per categorie:
+
+- gebruikt de productkaart dezelfde displayvariant als de backend selecteert?
+- gebruikt de koopknop exact de affiliate-link van die variant?
+- wordt een ontbrekende link daadwerkelijk verwijderd?
+- wordt een ontbrekende prijs daadwerkelijk gewist?
+- wordt een ontbrekende beschikbaarheid gewist?
+- wordt de juiste afbeelding gebruikt?
+- worden afmetingen en gebruiksinformatie meegewisseld?
+- kan client-side selectie oude waarden laten staan?
+
+Zoek in JavaScript naar patronen zoals:
+
+if (variant.price) {
+    priceElement.textContent = variant.price;
+}
+
+Zonder expliciete `else` is dit een stale-value-risico.
+
+Gewenst patroon:
+
+if (variant.price != null) {
+    priceElement.textContent = formatPrice(variant.price);
+    priceElement.hidden = false;
+} else {
+    priceElement.textContent = "";
+    priceElement.hidden = true;
+}
+
+Pas dit principe toe op alle variantafhankelijke velden.
+
+==================================================
+8. VERGELIJKINGSTABELLEN
+==================================================
+
+Controleer alle productvergelijkingstabellen.
+
+Per rij moet de backend bij voorkeur expliciet voorbereiden:
+
+- displayvariant;
+- displayvariant-ID;
+- affiliate-link;
+- prijs;
+- beschikbaarheid;
+- capaciteit, diameter of maat;
+- afbeelding wanneer gebruikt;
+- rating;
+- rating class.
+
+De tabel mag niet zelf via templatefallbacks commerciële data combineren.
+
+Zoek en rapporteer risicopatronen zoals:
+
+{% firstof row.affiliate_url row.product.affiliate_url %}
+
+of:
+
+{{ row.product.price }}
+
+bij producten met varianten.
+
+Verwijder alleen fallbacks wanneer de backend aantoonbaar altijd expliciete
+rijvelden levert.
+
+==================================================
+9. JSON-LD
+==================================================
+
+Controleer alle Product-, Offer- en ItemList-JSON-LD-builders.
+
+Per productfamilie moet gelden:
+
+- één ItemList-item;
+- één server-side displayvariant als basis;
+- prijs, URL, beschikbaarheid en afbeelding komen van dezelfde variant;
+- geen Offer zonder geldige URL en prijs;
+- geen prijs van variant A met URL van variant B;
+- geen dubbele rankingpositie per variant;
+- productfamilierating wordt niet als afzonderlijke variantrating voorgesteld.
+
+Documenteer per categorie welke variant voor JSON-LD wordt gebruikt:
+
+- defaultvariant;
+- filtermatchingvariant;
+- expliciete displayvariant.
+
+Maak dit consistent met productkaart en tabel waar mogelijk.
+
+==================================================
+10. CLIENT-SIDE SELECTORS
+==================================================
+
+Inventariseer alle variant-JavaScriptimplementaties.
+
+Controleer per implementatie:
+
+- scope per productkaart;
+- geen globale IDs;
+- meerdere kaarten beïnvloeden elkaar niet;
+- huidige selectie wordt volledig opnieuw gerenderd;
+- ongeldige combinaties worden geblokkeerd;
+- ontbrekende velden worden gewist;
+- koopknop verdwijnt of wordt uitgeschakeld bij ontbrekende URL;
+- prijs van vorige variant blijft niet staan;
+- afbeelding van vorige variant blijft niet staan zonder expliciete fallback;
+- usage van vorige variant blijft niet staan;
+- aria-pressed en disabled-statussen zijn correct.
+
+Centraliseer JavaScript alleen wanneer meerdere categorieën werkelijk dezelfde
+componentstructuur gebruiken.
+
+==================================================
+11. CATEGORIEËN ZONDER VARIANTEN
+==================================================
+
+Productpagina’s zonder varianten hebben geen cross-variant stale-value-risico.
+
+Controleer daar alleen:
+
+- geen onnodige varianthelper;
+- correcte productniveauprijs;
+- correcte affiliate-link;
+- correcte JSON-LD;
+- geen lege commerciële velden.
+
+Voer geen variantrefactor uit op categorieën zonder varianten.
+
+==================================================
+12. AUTOMATISCHE FIXES
+==================================================
+
+Voer uitsluitend fixes uit die aantoonbaar veilig zijn.
+
+Toegestaan:
+
+- centrale helper corrigeren zodat brondata niet wordt gemuteerd;
+- variantvelden expliciet op None zetten;
+- templatefallback verwijderen wanneer expliciete backendvelden bestaan;
+- ontbrekende `else`-tak toevoegen die oude variantwaarden wist;
+- Product/Offer-builder dezelfde resolver laten gebruiken;
+- duplicatie vervangen door een bestaande generieke helper;
+- tests toevoegen.
+
+Niet toegestaan:
+
+- productdata of prijzen invullen;
+- affiliate-links vervangen;
+- ontbrekende afbeeldingen raden;
+- rankings wijzigen;
+- awards of ratings wijzigen;
+- nieuwe varianten toevoegen;
+- productteksten herschrijven;
+- categorieën migreren zonder betrouwbare tests.
+
+==================================================
+13. PROJECTBREDE AUDITCOMMANDO
+==================================================
+
+Breid, indien passend, het bestaande auditcommand uit of maak een nieuw
+read-only managementcommand:
+
+python manage.py audit_product_variants
+
+Het command moet projectbreed controleren:
+
+- categorieën met varianten;
+- in-place mutatie;
+- ontbrekende displayvariant;
+- meerdere defaultvarianten;
+- ontbrekende commerciële velden;
+- cross-variant fallbacks;
+- templatefallbacks;
+- onveilige JavaScriptupdates;
+- JSON-LD-mismatches.
+
+Ondersteun minimaal:
+
+python manage.py audit_product_variants
+
+python manage.py audit_product_variants --category vershoudbakjes
+
+python manage.py audit_product_variants --strict
+
+python manage.py audit_product_variants --report
+
+Rapportpad:
+
+docs/audit-product-variants.md
+
+Het command is standaard read-only.
+
+==================================================
+14. RAPPORTSTRUCTUUR
+==================================================
+
+Maak een rapport:
+
+# Projectbrede audit productvarianten
+
+## Samenvatting
+
+- categorieën gecontroleerd;
+- categorieën met varianten;
+- variantproducten;
+- structurele fouten;
+- waarschuwingen;
+- handmatige controles.
+
+## Gedeelde infrastructuur
+
+| Helper | Gebruikt door | Mutatie | Commerciële fallback | Status |
+
+## Categorieoverzicht
+
+| Categorie | Productkaart | Tabel | JSON-LD | JavaScript | Risico | Actie |
+
+## Structurele fouten
+
+| Code | Categorie | Bestand | Product | Probleem | Actie |
+
+## Handmatige controle
+
+| Categorie | Probleem | Waarom niet automatisch opgelost |
+
+Gebruik stabiele issuecodes, bijvoorbeeld:
+
+- source_product_mutated
+- stale_variant_value_risk
+- commercial_product_fallback
+- cross_variant_affiliate_fallback
+- cross_variant_price_fallback
+- missing_display_variant
+- inconsistent_card_table_variant
+- inconsistent_jsonld_variant
+- missing_variant_clear_branch
+- duplicate_variant_helper
+- unsafe_template_firstof
+- missing_variant_url
+- missing_variant_price
+
+==================================================
+15. TESTS
+==================================================
+
+Voeg centrale tests en categoriegerichte regressietests toe.
+
+Test minimaal:
+
+1. Bronproductdata wordt niet gemuteerd.
+2. Variant A met URL en variant B zonder URL:
+   B erft URL van A niet.
+3. Variant A met prijs en variant B zonder prijs:
+   B erft prijs van A niet.
+4. Variant A met afbeelding en variant B zonder afbeelding:
+   oud beeld blijft niet onbedoeld staan.
+5. Product zonder varianten gebruikt productniveauvelden.
+6. Productkaart en vergelijkingstabel gebruiken dezelfde displayvariant.
+7. JSON-LD gebruikt dezelfde commerciële variant.
+8. Geen Offer zonder prijs en URL.
+9. Meerdere productkaarten beïnvloeden elkaar niet.
+10. Filtermatchingvariant wordt consistent gebruikt.
+11. Defaultvariant blijft correct voor ongefilterde pagina.
+12. Templates bevatten geen onveilige commerciële fallback bij
+    variantproducten.
+13. JavaScript wist ontbrekende velden.
+14. Alle bestaande tests blijven slagen.
+
+Voeg per categorie alleen tests toe wanneer daar een specifieke implementatie
+bestaat.
+
+==================================================
+16. UITVOERINGSSTRATEGIE
+==================================================
+
+Werk gefaseerd.
+
+Fase 1:
+- inventarisatie;
+- rapport;
+- identificatie gedeelde helpers;
+- nog geen wijzigingen.
+
+Fase 2:
+- alleen centrale, veilige fixes;
+- centrale tests.
+
+Fase 3:
+- categorie-specifieke fixes die aantoonbaar nodig zijn;
+- regressietests per categorie.
+
+Stop en rapporteer wanneer een wijziging productdata of redactionele keuzes
+zou vereisen.
+
+==================================================
+17. GEEN ONGERELATEERDE WIJZIGINGEN
+==================================================
+
+Niet doen:
+
+- geen algemene templateherbouw;
+- geen CSS-herontwerp;
+- geen nieuwe frontendframeworks;
+- geen productcontent wijzigen;
+- geen rankings, awards of ratings wijzigen;
+- geen afbeeldingen hernoemen;
+- geen affiliate-links actualiseren;
+- geen prijsupdates uitvoeren;
+- geen nieuwe variantselectors toevoegen.
+
+==================================================
+18. EINDRAPPORT
+==================================================
+
+Rapporteer na uitvoering:
+
+1. alle gevonden productcategorieën met varianten;
+2. welke centrale helpers zij gebruiken;
+3. welke categorieën eigen variantlogica hebben;
+4. welke stale-value-risico’s zijn gevonden;
+5. welke cross-variant fallbacks zijn gevonden;
+6. welke centrale fixes zijn uitgevoerd;
+7. welke categorie-specifieke fixes zijn uitgevoerd;
+8. welke problemen alleen zijn gerapporteerd;
+9. hoe productkaart, tabel en JSON-LD nu worden uitgelijnd;
+10. welke JavaScriptimplementaties zijn gehard;
+11. pad en gebruik van het auditcommand;
+12. pad van het auditrapport;
+13. toegevoegde tests;
+14. volledige testresultaten;
+15. bevestiging dat productdata, rankings, awards, ratings, afbeeldingen en
+    teksten niet zijn gewijzigd;
+16. lijst met resterende handmatige controles.
