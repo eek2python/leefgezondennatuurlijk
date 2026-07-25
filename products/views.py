@@ -110,6 +110,8 @@ def _enrich_products(products):
             p["usage_display"] = build_usage_display(p.get("usage"))
         p["formatted_capacity"], p["formatted_total_capacity"] = get_capacity_display(p)
         p["rating_class"] = str(p["rating"]).replace(".", "-")
+        # Nederlandse displaywaarde (komma); numerieke rating blijft ongewijzigd.
+        p["rating_display"] = str(p["rating"]).replace(".", ",") if p.get("rating") else ""
         award = (p.get("award") or "").lower()
         if "beste keuze" in award:
             p["award_class"] = "best-choice"
@@ -679,6 +681,7 @@ def vershoudcontainers(request):
             "availability": commercial["availability"],
             "rating": p.get("rating"),
             "rating_class": p.get("rating_class"),
+            "rating_display": p.get("rating_display"),
             "capacity_display": capacity_display,
             "total_display": total_display,
             "size_display": ", ".join(p.get("size_labels") or []) or "—",

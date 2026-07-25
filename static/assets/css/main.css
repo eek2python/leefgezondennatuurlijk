@@ -4854,6 +4854,23 @@ table.product-table .product-badge {
    margin-bottom: 0;
 }
 
+/* Redactionele beoordeling: label + sterren + zichtbare score */
+.editorial-rating {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 0.35rem;
+}
+.rating-label {
+   font-weight: 600;
+}
+.editorial-rating--compact {
+   font-size: 0.95rem;
+}
+.editorial-rating .rating-value {
+   margin-left: 0;
+}
+
 /* Vergelijkingstabel: toegankelijkheid en statusweergave */
 .rating-value {
    display: inline-block;

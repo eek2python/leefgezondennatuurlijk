@@ -277,15 +277,17 @@ Beste glazen vershoudbakjes van 2026 – losse bakjes en sets
 
                             <td>
                                 {% if comparison_rating %}
-                                <span
-                                    class="stars stars-{{ comparison_rating_class }}"
-                                    role="img"
-                                    aria-label="Onze beoordeling: {{ comparison_rating|stringformat:'g' }} van 5"
-                                ></span>
-
-                                <span class="rating-value">
-                                    {{ comparison_rating|stringformat:"g" }}/5
-                                </span>
+                                {% firstof row.rating_display row.product.rating_display as comparison_rating_display %}
+                                <div class="editorial-rating editorial-rating--compact">
+                                    <span class="rating-label">Onze beoordeling:</span>
+                                    <span
+                                        class="stars stars-{{ comparison_rating_class }}"
+                                        aria-hidden="true"
+                                    ></span>
+                                    <span class="rating-value">
+                                        {{ comparison_rating_display }}/5
+                                    </span>
+                                </div>
                                 {% else %}
                                 <span>Niet beoordeeld</span>
                                 {% endif %}

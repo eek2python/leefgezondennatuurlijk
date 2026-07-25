@@ -769,6 +769,81 @@ class DisplayVariantHardeningTests(TestCase):
             self.assertIsNone(_build_offer_ld(broken), missing)
 
 
+class EditorialRatingDisplayTests(TestCase):
+    """Zichtbaar 'Onze beoordeling: X,X/5' naast de sterren."""
+
+    def test_product_card_shows_label_and_dutch_score(self):
+        response = self.client.get("/koekenpannen/")
+        html = response.content.decode()
+        self.assertIn("Onze beoordeling:", html)
+        self.assertRegex(html, r'class="rating-value">\s*\d,?\d?/5')
+
+    def test_comparison_table_shows_label(self):
+        for url in ("/vershoudcontainers/", "/airfryers/", "/snijplanken/"):
+            html = self.client.get(url).content.decode()
+            self.assertIn("editorial-rating--compact", html, url)
+            self.assertIn("Onze beoordeling:", html, url)
+
+    def test_no_double_label(self):
+        html = self.client.get("/koekenpannen/").content.decode()
+        self.assertNotIn("Onze beoordeling: Onze beoordeling:", html)
+
+    def test_dutch_comma_and_unchanged_numeric_rating(self):
+        import copy as _copy
+        from products.products_koekenpannen import PRODUCTS
+        from products.views import _enrich_products
+        before = _copy.deepcopy(PRODUCTS)
+        products = [_copy.deepcopy(p) for p in PRODUCTS.values()]
+        _enrich_products(products)
+        for p in products:
+            if p.get("rating"):
+                self.assertNotIn(".", p["rating_display"])
+                self.assertEqual(
+                    p["rating_display"], str(p["rating"]).replace(".", ",")
+                )
+                self.assertIsInstance(p["rating"], (int, float))
+        self.assertEqual(PRODUCTS, before)
+
+    def test_jsonld_rating_stays_numeric(self):
+        import json as _json
+        import re as _re
+        html = self.client.get("/koekenpannen/").content.decode()
+        for ld in _re.findall(
+            r'<script type="application/ld\+json">\s*(.*?)\s*</script>', html, _re.S
+        ):
+            data = _json.loads(ld)
+            if data.get("@type") != "ItemList":
+                continue
+            for element in data.get("itemListElement", []):
+                agg = element.get("item", {}).get("aggregateRating")
+                if agg:
+                    self.assertIsInstance(agg["ratingValue"], (int, float))
+
+    def test_stars_hidden_for_screenreaders(self):
+        html = self.client.get("/koekenpannen/").content.decode()
+        self.assertNotIn('role="img"', html)
+
+    def test_customer_review_counts_not_labeled(self):
+        # Reviewaantallen (externe klantdata) staan alleen in JSON-LD; het
+        # label hoort uitsluitend bij de redactionele score.
+        html = self.client.get("/koekenpannen/").content.decode()
+        label_count = html.count("Onze beoordeling:")
+        self.assertGreater(label_count, 0)
+        self.assertNotIn("Klantbeoordeling: Onze beoordeling", html)
+
+    def test_no_rating_block_without_rating(self):
+        from django.template.loader import render_to_string
+        product = {
+            "slug": "x", "name": "X", "brand": "Y", "features": [],
+            "pros": [], "cons": [], "rating": None, "rating_class": "",
+            "rating_display": "", "image": "", "image_path": "images",
+        }
+        html = render_to_string(
+            "partials/product_block.html", {"product": product}
+        )
+        self.assertNotIn("Onze beoordeling:", html)
+
+
 class VariantAuditCommandTests(TestCase):
     """Read-only auditcommand: python manage.py audit_product_variants."""
 

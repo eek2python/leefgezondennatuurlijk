@@ -58,7 +58,11 @@
                         {% endif %}
                     </td>
                     <td>{{ product.price_range }}</td>
-                    <td><span class="stars stars-{{ product.rating_class }}"></span></td>
+                    <td>{% if product.rating %}<div class="editorial-rating editorial-rating--compact">
+<span class="rating-label">Onze beoordeling:</span>
+<span class="stars stars-{{ product.rating_class }}" aria-hidden="true"></span>
+<span class="rating-value">{{ product.rating_display }}/5</span>
+</div>{% else %}—{% endif %}</td>
                     <td>
                         {% if product.affiliate_url %}
                         <a href="{{ product.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk prijs →</a>

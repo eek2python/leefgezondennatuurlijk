@@ -1,0 +1,362 @@
+Voer een gerichte aanpassing uit aan de sterrenbeoordelingen op alle relevante
+productpagina’s.
+
+Doel:
+
+Voeg bij iedere redactionele sterrenbeoordeling zichtbare tekst toe in de vorm:
+
+Onze beoordeling: 4,5/5
+
+De tekst moet direct naast of vlak bij de sterren staan.
+
+Belangrijk:
+
+- controleer eerst de huidige implementatie;
+- voeg geen dubbele labels toe;
+- wijzig geen ratings;
+- wijzig geen ratingberekening;
+- wijzig geen awards;
+- wijzig geen productdata;
+- behoud bestaande sterren-CSS en rating classes;
+- gebruik Nederlandse decimale weergave waar dat al de projectconventie is.
+
+==================================================
+1. INSPECTEER EERST
+==================================================
+
+Zoek projectbreed naar:
+
+- `rating-value`;
+- `rating_class`;
+- `stars-`;
+- `product.rating`;
+- `row.rating`;
+- `Onze beoordeling`;
+- `Beoordeling`;
+- productkaarttemplates;
+- vergelijkingstabellen;
+- top-picks;
+- JSON-LD-ratingweergave;
+- eventuele detailpagina’s.
+
+Inspecteer minimaal:
+
+- `partials/product_block.html`;
+- vergelijkingstabeltemplates;
+- `partials/top_picks.html`;
+- categorie-specifieke producttemplates;
+- CSS voor sterren en ratingtekst;
+- helpers die ratings formatteren.
+
+Rapporteer vóór wijziging kort:
+
+1. waar sterren momenteel worden weergegeven;
+2. waar al numerieke ratingtekst staat;
+3. waar `aria-label` al aanwezig is;
+4. welke templates moeten worden aangepast;
+5. of één centrale partial alle productpagina’s afdekt.
+
+Voer daarna alleen noodzakelijke wijzigingen uit.
+
+==================================================
+2. GEWENSTE WEERGAVE
+==================================================
+
+De zichtbare weergave moet bij voorkeur zijn:
+
+Onze beoordeling: ★★★★★ 4,5/5
+
+of, wanneer de bestaande layout sterren eerst toont:
+
+★★★★★ Onze beoordeling: 4,5/5
+
+Gebruik de bestaande sterrencomponent en wijzig het visuele sterrensysteem niet.
+
+Voorkeursmarkup:
+
+<div class="editorial-rating">
+    <span class="rating-label">Onze beoordeling:</span>
+    <span
+        class="stars stars-{{ rating_class }}"
+        role="img"
+        aria-label="Onze beoordeling: {{ rating_display }} van 5"
+    ></span>
+    <span class="rating-value">{{ rating_display }}/5</span>
+</div>
+
+Pas de variabelen aan de bestaande context aan.
+
+==================================================
+3. DJANGO-RATINGFORMATTERING
+==================================================
+
+Controleer hoe ratings momenteel zijn opgeslagen:
+
+- float;
+- Decimal;
+- string;
+- reeds geformatteerde displaywaarde.
+
+Voorkom een punt wanneer de site Nederlandse notatie gebruikt.
+
+Gewenst:
+
+4,5/5
+
+Niet gewenst:
+
+4.5/5
+
+Maak indien nodig centraal een displayveld, bijvoorbeeld:
+
+rating_display = str(rating).replace(".", ",")
+
+of gebruik een bestaande locale-/formathelper.
+
+Voorkom logica zoals `.replace()` verspreid over meerdere templates wanneer
+een centrale formatter beschikbaar is.
+
+Gebruik bij voorkeur expliciete backendvelden:
+
+{
+    "rating": 4.5,
+    "rating_display": "4,5",
+    "rating_class": "4-5",
+}
+
+Wijzig de onderliggende numerieke rating niet.
+
+==================================================
+4. PRODUCTKAARTEN
+==================================================
+
+Controleer `partials/product_block.html`.
+
+Wanneer de sterren daar momenteel bijvoorbeeld zo staan:
+
+<span class="stars stars-{{ product.rating_class }}"></span>
+
+vervang dit door een toegankelijke combinatie met zichtbare tekst:
+
+<div class="editorial-rating">
+    <span class="rating-label">Onze beoordeling:</span>
+    <span
+        class="stars stars-{{ product.rating_class }}"
+        role="img"
+        aria-label="Onze beoordeling: {{ product.rating_display }} van 5"
+    ></span>
+    <span class="rating-value">
+        {{ product.rating_display }}/5
+    </span>
+</div>
+
+Gebruik bestaande velden wanneer die al aanwezig zijn.
+
+Wanneer `product.rating_display` nog niet bestaat, bereid dit server-side voor.
+
+==================================================
+5. VERGELIJKINGSTABELLEN
+==================================================
+
+Controleer alle vergelijkingstabellen.
+
+De kolomkop mag gewoon blijven:
+
+Beoordeling
+
+Binnen de cel moet zichtbaar staan:
+
+Onze beoordeling: 4,5/5
+
+Bijvoorbeeld:
+
+<td>
+    <div class="editorial-rating editorial-rating--compact">
+        <span class="rating-label">Onze beoordeling:</span>
+        <span
+            class="stars stars-{{ row.rating_class }}"
+            role="img"
+            aria-label="Onze beoordeling: {{ row.rating_display }} van 5"
+        ></span>
+        <span class="rating-value">
+            {{ row.rating_display }}/5
+        </span>
+    </div>
+</td>
+
+Wanneer de tabel te smal wordt, mag de compacte variant de tekst en score op
+meerdere regels tonen.
+
+Verwijder geen bestaande numerieke score wanneer die al correct zichtbaar is.
+
+==================================================
+6. TOP PICKS EN ANDERE COMPONENTEN
+==================================================
+
+Controleer:
+
+- top picks;
+- uitgelichte producten;
+- categorie-overzichten;
+- detailpagina’s;
+- cards in gerelateerde artikelen.
+
+Voeg het label alleen toe waar een redactionele productspecifieke score wordt
+getoond.
+
+Niet toevoegen bij:
+
+- externe klantbeoordelingen;
+- reviewaantallen van webshops;
+- AggregateRating uit een externe bron;
+- awards;
+- algemene categoriebeoordelingen.
+
+Maak duidelijk onderscheid tussen:
+
+- `Onze beoordeling`;
+- `Klantbeoordeling`;
+- `Aantal reviews`.
+
+==================================================
+7. TOEGANKELIJKHEID
+==================================================
+
+Zorg dat schermlezers niet dezelfde informatie onnodig dubbel voorlezen.
+
+Gebruik één van deze aanpakken:
+
+A. sterren hebben een volledig aria-label en numerieke zichtbare tekst is
+   `aria-hidden="true"`;
+
+of:
+
+B. sterren zijn decoratief met `aria-hidden="true"` en de zichtbare tekst bevat
+   de volledige betekenis.
+
+Voorkeursoptie B:
+
+<div class="editorial-rating">
+    <span class="rating-label">Onze beoordeling:</span>
+    <span
+        class="stars stars-{{ rating_class }}"
+        aria-hidden="true"
+    ></span>
+    <span class="rating-value">
+        {{ rating_display }}/5
+    </span>
+</div>
+
+Dit voorkomt dubbele aankondigingen.
+
+Gebruik geen `role="img"` én volledige zichtbare tekst wanneer dat door een
+schermlezer dubbel wordt uitgesproken.
+
+==================================================
+8. CSS
+==================================================
+
+Controleer eerst of deze classes al bestaan:
+
+- `.editorial-rating`;
+- `.rating-label`;
+- `.rating-value`;
+- `.editorial-rating--compact`.
+
+Voeg alleen ontbrekende CSS toe.
+
+Richtlijn:
+
+.editorial-rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.rating-label {
+    font-weight: 600;
+}
+
+.rating-value {
+    white-space: nowrap;
+}
+
+.editorial-rating--compact {
+    font-size: 0.95rem;
+}
+
+Gebruik bestaande spacing-, kleur- en fontvariabelen.
+
+Controleer mobiele weergave en vergelijkingstabellen.
+
+==================================================
+9. JSON-LD
+==================================================
+
+Wijzig JSON-LD niet inhoudelijk.
+
+Controleer alleen dat:
+
+- de numerieke rating numeriek blijft;
+- `ratingValue` niet wordt omgezet naar `"4,5"`;
+- zichtbare tekst `4,5/5` mag tonen;
+- JSON-LD `4.5` numeriek blijft gebruiken.
+
+Dus:
+
+zichtbare HTML:
+4,5/5
+
+JSON-LD:
+"ratingValue": 4.5
+
+==================================================
+10. TESTS
+==================================================
+
+Voeg tests toe of pas bestaande tests aan.
+
+Controleer minimaal:
+
+1. Productkaart bevat zichtbaar `Onze beoordeling:`.
+2. Productkaart toont numerieke score.
+3. Vergelijkingstabel bevat zichtbaar `Onze beoordeling:`.
+4. Nederlandse displaywaarde gebruikt een komma.
+5. Onderliggende numerieke rating blijft ongewijzigd.
+6. JSON-LD blijft een numerieke rating gebruiken.
+7. Geen dubbele tekst `Onze beoordeling: Onze beoordeling:`.
+8. Externe klantbeoordelingen krijgen dit label niet.
+9. Geen ratingblok bij ontbrekende rating.
+10. Alle bestaande tests blijven slagen.
+
+==================================================
+11. GEEN ONGERELATEERDE WIJZIGINGEN
+==================================================
+
+Niet doen:
+
+- geen ratings aanpassen;
+- geen sterren afronden op een andere manier;
+- geen productteksten wijzigen;
+- geen awards wijzigen;
+- geen reviewaantallen aanpassen;
+- geen JSON-LD-rating omzetten naar tekst;
+- geen algemene CSS-refactor;
+- geen productdata wijzigen.
+
+==================================================
+12. EINDRAPPORT
+==================================================
+
+Rapporteer:
+
+1. welke templates ratings tonen;
+2. welke centrale partials zijn aangepast;
+3. waar `Onze beoordeling:` is toegevoegd;
+4. hoe de Nederlandse scoreweergave wordt gemaakt;
+5. hoe dubbele schermlezertekst wordt voorkomen;
+6. welke CSS is toegevoegd of hergebruikt;
+7. welke tests zijn toegevoegd of aangepast;
+8. volledige testresultaten;
+9. bevestiging dat ratings en productdata niet zijn gewijzigd.

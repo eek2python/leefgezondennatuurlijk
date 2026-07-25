@@ -130,7 +130,13 @@
     </header>
     <div class="verdict">
         <div class="verdict-stars">
-            <span class="stars stars-{{ product.rating_class }}"></span>
+            {% if product.rating %}
+            <div class="editorial-rating">
+                <span class="rating-label">Onze beoordeling:</span>
+                <span class="stars stars-{{ product.rating_class }}" aria-hidden="true"></span>
+                <span class="rating-value">{{ product.rating_display }}/5</span>
+            </div>
+            {% endif %}
         </div>
         <p>{{ product.verdict }}</p>
     </div>
