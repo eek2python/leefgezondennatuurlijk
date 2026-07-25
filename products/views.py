@@ -13,7 +13,11 @@ from utils.product_helpers import (
     STORAGE_SIZE_THRESHOLDS,
 )
 from utils.usage_helpers import build_usage_display
-from utils.variant_helpers import prepare_product_variants, set_display_variant
+from utils.variant_helpers import (
+    prepare_product_variants,
+    resolve_commercial_fields,
+    set_display_variant,
+)
 import json
 
 logger = logging.getLogger(__name__)
@@ -648,8 +652,17 @@ def vershoudcontainers(request):
     for p in products:
         capacity_display = p.get("capacity_summary") or p.get("formatted_capacity") or ""
         total_display = p.get("formatted_total_capacity") or "" if is_set_type else ""
+        display_variant = p.get("default_variant") if p.get("shape_variants") else None
+        commercial = resolve_commercial_fields(p, display_variant)
         comparison_rows.append({
             "product": p,
+            "display_variant": display_variant,
+            "display_variant_id": display_variant.get("id") if display_variant else None,
+            "affiliate_url": commercial["affiliate_url"],
+            "price": commercial["price"],
+            "availability": commercial["availability"],
+            "rating": p.get("rating"),
+            "rating_class": p.get("rating_class"),
             "capacity_display": capacity_display,
             "total_display": total_display,
             "size_display": ", ".join(p.get("size_labels") or []) or "—",

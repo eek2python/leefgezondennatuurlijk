@@ -629,6 +629,85 @@ class StorageSizeFilterPageTests(TestCase):
         self.assertEqual(product["size_label"], "Groot")
 
 
+class ComparisonRowResolutionTests(TestCase):
+    """Strikte resolutie van commerciële velden in comparison_rows."""
+
+    def test_static_storage_filters_js_exists(self):
+        from django.contrib.staticfiles import finders
+        self.assertIsNotNone(finders.find("js/storage-filters.js"))
+
+    def test_script_loaded_exactly_once(self):
+        html = self.client.get("/vershoudcontainers/").content.decode()
+        self.assertEqual(html.count("js/storage-filters.js"), 1)
+
+    def test_resolver_product_without_variants_uses_product_level(self):
+        from utils.variant_helpers import resolve_commercial_fields
+        product = {
+            "slug": "plain",
+            "affiliate_url": "https://example.com/p",
+            "price": 12.5,
+            "availability": "InStock",
+            "price_last_checked": "2026-07-01",
+        }
+        resolved = resolve_commercial_fields(product)
+        self.assertEqual(resolved["affiliate_url"], "https://example.com/p")
+        self.assertEqual(resolved["price"], 12.5)
+        self.assertEqual(resolved["availability"], "InStock")
+
+    def test_resolver_variant_product_uses_display_variant_only(self):
+        from utils.variant_helpers import resolve_commercial_fields
+        variant_a = {"id": "a", "affiliate_url": "https://example.com/a", "price": 5}
+        variant_b = {"id": "b"}  # geen commerciële data
+        product = {
+            "slug": "fam",
+            "affiliate_url": "https://example.com/stale-from-a",
+            "price": 5,
+            "shape_variants": [variant_a, variant_b],
+            "default_variant": variant_a,
+        }
+        resolved = resolve_commercial_fields(product, variant_b)
+        self.assertEqual(resolved["affiliate_url"], "")
+        self.assertIsNone(resolved["price"])
+        self.assertEqual(resolved["availability"], "")
+
+    def test_rows_contain_explicit_fields(self):
+        response = self.client.get("/vershoudcontainers/")
+        rows = response.context["comparison_rows"]
+        self.assertTrue(rows)
+        for row in rows:
+            for field in (
+                "affiliate_url", "price", "availability",
+                "rating", "rating_class", "display_variant_id",
+            ):
+                self.assertIn(field, row)
+
+    def test_row_variant_matches_card_display_variant_under_size_filter(self):
+        response = self.client.get("/vershoudcontainers/?uitvoering=enkel&formaat=groot")
+        for row in response.context["comparison_rows"]:
+            product = row["product"]
+            if product.get("shape_variants"):
+                self.assertEqual(
+                    row["display_variant_id"],
+                    product["default_variant"]["id"],
+                )
+                self.assertEqual(
+                    row["affiliate_url"],
+                    product["default_variant"].get("affiliate_url") or "",
+                )
+
+    def test_no_empty_href_rendered(self):
+        for query in ("", "?uitvoering=enkel&formaat=klein", "?uitvoering=3-delig"):
+            html = self.client.get(f"/vershoudcontainers/{query}").content.decode()
+            self.assertNotIn('href=""', html)
+
+    def test_rating_numeric_text_and_scope_preserved(self):
+        html = self.client.get("/vershoudcontainers/").content.decode()
+        self.assertIn('class="rating-value"', html)
+        self.assertRegex(html, r"[0-9](?:\.[0-9])?/5")
+        self.assertIn('<th scope="col">Product</th>', html)
+        self.assertIn('<th scope="row">', html)
+
+
 class LockNLockCapacityVariantTests(TestCase):
     """Inhoudselector (630 ml / 740 ml / 1 L) op het Lock&Lock-productblok."""
 

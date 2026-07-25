@@ -4824,3 +4824,54 @@ table.product-table .product-badge {
 .storage-filters-sticky .format-selector {
    margin-bottom: 6px;
 }
+
+/* FAQ (vershoudbakjes, details/summary) */
+.faq-list {
+   display: grid;
+   gap: 1rem;
+}
+.faq-item {
+   border: 1px solid rgba(210, 215, 217, 0.75);
+   border-radius: 0.5rem;
+   background: #ffffff;
+}
+.faq-item summary {
+   cursor: pointer;
+   font-weight: 600;
+   padding: 1rem 1.25rem;
+}
+.faq-item summary:hover {
+   text-decoration: underline;
+}
+.faq-item summary:focus-visible {
+   outline: 3px solid currentColor;
+   outline-offset: 3px;
+}
+.faq-item__answer {
+   padding: 0 1.25rem 1rem;
+}
+.faq-item__answer p:last-child {
+   margin-bottom: 0;
+}
+
+/* Vergelijkingstabel: toegankelijkheid en statusweergave */
+.rating-value {
+   display: inline-block;
+   margin-left: 0.35rem;
+   white-space: nowrap;
+}
+.availability-note {
+   display: inline-block;
+   font-size: 0.9rem;
+   color: #7f888f;
+}
+.storage-empty-state {
+   padding: 1.25rem;
+   border: 1px solid rgba(210, 215, 217, 0.75);
+   border-radius: 0.5rem;
+   margin-bottom: 2em;
+}
+.table-wrapper[tabindex="0"]:focus-visible {
+   outline: 3px solid currentColor;
+   outline-offset: 3px;
+}

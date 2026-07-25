@@ -1,0 +1,563 @@
+Voer een gerichte follow-up uit voor de pagina met glazen vershoudbakjes.
+
+De HTML-template is inmiddels handmatig verbeterd. Deze taak gaat uitsluitend over:
+
+1. controleren en eventueel aanmaken of aanpassen van `storage-filters.js`;
+2. controleren en eventueel toevoegen van aanvullende CSS voor FAQ, ratings,
+   lege staat en toegankelijke tabelscroll;
+3. controleren en eventueel verbeteren van de backendvoorbereiding van
+   `comparison_rows`, zodat prijs, affiliate-link, rating en variantdata
+   consistent en veilig zijn.
+
+Belangrijk:
+
+- inspecteer eerst de huidige implementatie;
+- voeg geen dubbele JavaScript- of CSS-logica toe;
+- herschrijf geen productteksten;
+- wijzig geen rankings;
+- wijzig geen productafbeeldingen;
+- wijzig geen awards;
+- wijzig geen productdata tenzij dat strikt nodig is voor consistente
+  backendvoorbereiding;
+- behoud bestaande werkende variantselectors.
+
+==================================================
+1. INSPECTEER EERST DE HUIDIGE SETUP
+==================================================
+
+Inspecteer minimaal:
+
+- de actuele template voor de vershoudbakjespagina;
+- `base.html`;
+- alle bestaande JavaScriptbestanden die op deze pagina worden geladen;
+- alle bestaande CSS-bestanden voor:
+  - productkaarten;
+  - vergelijkingstabellen;
+  - FAQ;
+  - sticky filters;
+  - ratings;
+  - lege resultaten;
+- `partials/storage_type_selector.html`;
+- `partials/storage_size_filter.html`;
+- `partials/product_block.html`;
+- `partials/how_we_select.html`;
+- de view voor de vershoudbakjespagina;
+- helpers die `comparison_rows` voorbereiden;
+- variantnormalisatie;
+- displayvariantselectie;
+- formaatfilterlogica;
+- tests voor vershoudbakjes;
+- static file configuration.
+
+Rapporteer vóór wijziging kort:
+
+1. welk JavaScriptbestand momenteel sticky filtergedrag bevat;
+2. of inline JavaScript nog in de template staat;
+3. welk stylesheet de vershoudbakjespagina gebruikt;
+4. of FAQ-stijlen al bestaan;
+5. of rating- en empty-state-stijlen al bestaan;
+6. hoe `comparison_rows` momenteel worden opgebouwd;
+7. of `row.affiliate_url` al bestaat;
+8. of de tabel nu `row.product.affiliate_url` of een displayvariant gebruikt;
+9. welke displayvariant wordt gebruikt bij formaatfilters;
+10. welke wijzigingen echt nodig zijn.
+
+Voer daarna alleen noodzakelijke wijzigingen uit.
+
+==================================================
+2. JAVASCRIPT: STICKY FILTERS
+==================================================
+
+Controleer eerst of het sticky filtergedrag al bestaat in:
+
+- inline JavaScript in de template;
+- een bestaand algemeen JavaScriptbestand;
+- een bestaand pagina-specifiek bestand.
+
+Gewenst gedrag:
+
+- observeer `.storage-filters-sentinel`;
+- voeg of verwijder `.is-stuck` op `.storage-filters-sticky`;
+- gebruik `IntersectionObserver`;
+- doe niets wanneer vereiste elementen ontbreken;
+- veroorzaak geen JavaScriptfout in oudere browsers;
+- initialiseer na DOMContentLoaded of gebruik een bestand met `defer`;
+- initialiseer slechts één observer;
+- voorkom dubbele eventlisteners.
+
+Wanneer dezelfde functionaliteit al correct in een bestaand JavaScriptbestand
+staat:
+
+- maak geen nieuw bestand;
+- behoud de huidige implementatie;
+- rapporteer dat geen wijziging nodig was.
+
+Wanneer inline JavaScript nog in de template staat en geen gelijkwaardige
+externe implementatie bestaat:
+
+- verplaats de functionaliteit naar een passend statisch bestand;
+- gebruik bij voorkeur:
+  `static/js/storage-filters.js`;
+- verwijder alleen de bijbehorende inline code uit de template;
+- laad het bestand met `{% static %}` en `defer`.
+
+Gebruik qua gedrag bijvoorbeeld:
+
+"use strict";
+
+document.addEventListener("DOMContentLoaded", () => {
+    const filterBar = document.querySelector(".storage-filters-sticky");
+    const sentinel = document.querySelector(".storage-filters-sentinel");
+
+    if (!filterBar || !sentinel || !("IntersectionObserver" in window)) {
+        return;
+    }
+
+    if (filterBar.dataset.stickyInitialized === "true") {
+        return;
+    }
+
+    filterBar.dataset.stickyInitialized = "true";
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            filterBar.classList.toggle("is-stuck", !entry.isIntersecting);
+        },
+        { threshold: 0 }
+    );
+
+    observer.observe(sentinel);
+});
+
+Pas deze code aan de bestaande projectstijl aan.
+
+==================================================
+3. CONTROLEER DE SCRIPTINCLUDE
+==================================================
+
+Controleer of de template het bestand correct laadt:
+
+{% load static %}
+
+<script src="{% static 'js/storage-filters.js' %}" defer></script>
+
+Plaats het script niet dubbel wanneer `base.html` al pagina-specifieke scripts
+ondersteunt via een block.
+
+Wanneer `base.html` een scriptblock heeft, gebruik dat bestaande mechanisme.
+
+Voorbeelden:
+
+{% block extra_js %}
+<script src="{% static 'js/storage-filters.js' %}" defer></script>
+{% endblock %}
+
+of de werkelijke blocknaam van het project.
+
+Voorkom:
+
+- dubbele scriptincludes;
+- scripts midden in semantische content wanneer een bestaand scriptblock
+  beschikbaar is;
+- inline eventhandlers.
+
+==================================================
+4. CSS: INSPECTEER VOOR TOEVOEGEN
+==================================================
+
+Controleer eerst of onderstaande componenten al stijlen hebben:
+
+- `.faq-list`;
+- `.faq-item`;
+- `.faq-item summary`;
+- `.faq-item__answer`;
+- `.rating-value`;
+- `.availability-note`;
+- `.storage-empty-state`;
+- `.storage-filter-count`;
+- `.table-wrapper[tabindex="0"]`;
+- `.storage-filters-sticky.is-stuck`.
+
+Voeg alleen ontbrekende of onvoldoende stijlen toe.
+
+Gebruik het bestaande stylesheet dat inhoudelijk het beste past, bijvoorbeeld:
+
+- een pagina-specifiek vershoudbakjesstylesheet;
+- het algemene productvergelijkingsstylesheet;
+- het hoofdstylesheet wanneer dat de bestaande conventie is.
+
+Maak geen tweede stylesheet uitsluitend voor enkele regels wanneer het project
+al een geschikte stylesheetstructuur heeft.
+
+==================================================
+5. FAQ-CSS
+==================================================
+
+Wanneer de FAQ nu met `<details>` en `<summary>` wordt weergegeven, zorg dan
+voor minimaal:
+
+.faq-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.faq-item {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+}
+
+.faq-item summary:hover {
+    text-decoration: underline;
+}
+
+.faq-item summary:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+}
+
+.faq-item__answer {
+    padding: 0 1.25rem 1rem;
+}
+
+.faq-item__answer p:last-child {
+    margin-bottom: 0;
+}
+
+Pas kleuren, border-radius en spacing aan de bestaande design tokens aan.
+
+Gebruik geen harde witte achtergrond wanneer het bestaande thema ook dark
+mode ondersteunt. Gebruik dan bestaande CSS-variabelen.
+
+Zorg dat de standaard driehoek van `<summary>` niet onbedoeld verdwijnt,
+tenzij er al een consistente custom indicator bestaat.
+
+==================================================
+6. AANVULLENDE TOEGANKELIJKHEIDS-CSS
+==================================================
+
+Controleer en voeg waar nodig toe:
+
+.rating-value {
+    display: inline-block;
+    margin-left: 0.35rem;
+    white-space: nowrap;
+}
+
+.availability-note {
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.storage-empty-state {
+    padding: 1.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 0.5rem;
+}
+
+.storage-filter-count {
+    font-weight: 600;
+}
+
+.table-wrapper[tabindex="0"]:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+}
+
+Controleer daarbij:
+
+- bestaande focusstijlen;
+- dark mode;
+- mobiele weergave;
+- contrast;
+- of `.table-wrapper` al horizontaal scrollt;
+- of de focusoutline niet wordt afgeknipt door `overflow`.
+
+Gebruik bestaande CSS-variabelen en conventies wanneer beschikbaar.
+
+==================================================
+7. STICKY FILTER-CSS
+==================================================
+
+Controleer of `.storage-filters-sticky.is-stuck` al visueel wordt gebruikt.
+
+Wanneer `.is-stuck` momenteel geen effect heeft, voeg een subtiele,
+bestaande-stijlconforme status toe, bijvoorbeeld:
+
+- lichte schaduw;
+- duidelijke onderrand;
+- achtergrondkleur;
+- passende z-index.
+
+Wijzig de positioneringslogica niet wanneer sticky gedrag al correct werkt.
+
+Voorkom dat de filterbalk content afdekt of horizontaal buiten beeld valt.
+
+Test minimaal op:
+
+- desktop;
+- smalle mobiele viewport;
+- lange filterlabels;
+- filters op meerdere regels.
+
+==================================================
+8. BACKEND: INSPECTEER `comparison_rows`
+==================================================
+
+Zoek waar `comparison_rows` worden opgebouwd.
+
+Controleer of iedere rij momenteel minimaal bevat:
+
+- `product`;
+- `capacity_display`;
+- `total_display`;
+- `size_display`;
+- displayvariant of variant-ID;
+- affiliate-link;
+- prijs;
+- beschikbaarheid;
+- rating;
+- rating class.
+
+Bepaal of de rij is gebaseerd op:
+
+- algemene productdata;
+- defaultvariant;
+- displayvariant;
+- formaatfiltermatchingvariant.
+
+Gebruik de displayvariant die server-side al voor de productkaart is gekozen.
+
+De vergelijkingstabel moet dezelfde server-side variant tonen als de
+productkaart bij paginalading.
+
+Voorbeeld:
+
+- bij `formaat=groot` kiest de productkaart een grote variant;
+- de vergelijkingstabel moet prijs, inhoud en affiliate-link van diezelfde
+  grote variant gebruiken.
+
+==================================================
+9. GEWENSTE STRUCTUUR VAN `comparison_rows`
+==================================================
+
+Bereid bij voorkeur per rij expliciet voor:
+
+{
+    "product": product,
+    "display_variant": display_variant,
+    "display_variant_id": display_variant.get("id") if display_variant else None,
+    "affiliate_url": resolved_affiliate_url,
+    "price": resolved_price,
+    "availability": resolved_availability,
+    "rating": product.get("rating"),
+    "rating_class": product.get("rating_class"),
+    "capacity_display": ...,
+    "total_display": ...,
+    "size_display": ...,
+}
+
+Gebruik de bestaande helperarchitectuur en naamconventies.
+
+Vul commerciële velden in deze volgorde:
+
+1. displayvariantwaarde, wanneer aanwezig;
+2. productniveau alleen wanneer het product geen varianten heeft;
+3. geen fallback naar een andere variant.
+
+Dus:
+
+- een ontbrekende affiliate-link op de displayvariant mag niet stil
+  terugvallen op de link van een andere variant;
+- een prijs mag niet van een andere variant komen;
+- beschikbaarheid mag niet van een andere variant komen;
+- een algemene productlink mag alleen worden gebruikt voor een product zonder
+  commerciële variantdata.
+
+==================================================
+10. CENTRALE RESOLVER
+==================================================
+
+Wanneer dezelfde fallbacklogica op meerdere plaatsen voorkomt, maak of gebruik
+een centrale helper, bijvoorbeeld:
+
+resolve_display_variant(product, selected_size=None)
+resolve_commercial_fields(product, display_variant)
+build_comparison_row(product, display_variant, context)
+
+De helper voor commerciële velden moet bijvoorbeeld teruggeven:
+
+{
+    "affiliate_url": ...,
+    "price": ...,
+    "availability": ...,
+    "price_last_checked": ...,
+}
+
+Zorg dat:
+
+- productkaart;
+- vergelijkingstabel;
+- JSON-LD
+
+waar mogelijk dezelfde resolver gebruiken.
+
+Voorkom drie verschillende interpretaties van “standaardvariant”.
+
+==================================================
+11. RATING EN RATING_CLASS
+==================================================
+
+Controleer hoe `rating_class` wordt gegenereerd.
+
+De voorgestelde ratings gebruiken mogelijk één decimaal, bijvoorbeeld:
+
+- 4.2;
+- 4.3;
+- 4.4;
+- 4.7.
+
+Controleer of bestaande CSS-klassen en helpers deze waarden ondersteunen.
+
+Wanneer de huidige sterren alleen halve sterren ondersteunen:
+
+- behoud de werkende visuele afronding;
+- toon daarnaast de exacte numerieke score;
+- documenteer hoe de visuele score wordt afgerond.
+
+Voorbeeld:
+
+- numeriek: 4,3/5;
+- visuele sterrenklasse: 4-5 of equivalente bestaande notatie.
+
+Wijzig niet zonder noodzaak het gehele sterrensysteem.
+
+==================================================
+12. TEMPLATECOMPATIBILITEIT
+==================================================
+
+Controleer of de actuele template deze velden gebruikt:
+
+- `row.affiliate_url`;
+- `row.rating`;
+- `row.rating_class`;
+- `row.product.affiliate_url` als fallback.
+
+Wanneer de backend na wijziging altijd expliciete rijvelden levert, mag de
+templatefallback voorlopig blijven voor backward compatibility.
+
+Verwijder fallback uitsluitend wanneer alle paden aantoonbaar zijn getest.
+
+Controleer ook of Django `{% firstof %}` correct wordt gebruikt en geen lege
+string als geldige verkeerde waarde kiest.
+
+==================================================
+13. JSON-LD-CONSISTENTIE
+==================================================
+
+Controleer of dezelfde displayvariant wordt gebruikt voor:
+
+- vergelijkingstabel;
+- productkaart;
+- Product JSON-LD;
+- Offer URL;
+- prijs;
+- afbeelding.
+
+Corrigeer alleen wanneer bestaande helpers inconsistent zijn.
+
+Vereisten:
+
+- geen prijs van variant A met URL van variant B;
+- geen productniveau-link gebruiken wanneer de displayvariant een andere
+  concrete variant vertegenwoordigt;
+- geen lege prijs in Offer;
+- geen meerdere ItemList-posities voor varianten van dezelfde productfamilie.
+
+==================================================
+14. TESTS VOOR JAVASCRIPT EN TEMPLATE
+==================================================
+
+Voeg waar passend tests toe of werk bestaande tests bij.
+
+Controleer minimaal:
+
+1. `storage-filters.js` bestaat wanneer de template ernaar verwijst.
+2. Het script wordt slechts één keer geladen.
+3. Inline sticky-filter-JavaScript is verwijderd wanneer het externe bestand
+   wordt gebruikt.
+4. De pagina rendert zonder ontbrekende static file.
+5. De FAQ gebruikt bestaande of nieuwe stijlen.
+6. De template bevat toegankelijke numerieke ratingtekst.
+7. De lege staat rendert correct.
+8. De vergelijkingstabel bevat een toegankelijke link wanneer URL aanwezig is.
+9. Zonder URL wordt geen lege `<a href="">` gerenderd.
+10. Tabelkoppen behouden `scope`.
+11. Bestaande filters blijven werken.
+12. Bestaande variantselectors blijven werken.
+
+Voeg geen zware browser-testdependency toe als die nog niet bestaat.
+
+==================================================
+15. TESTS VOOR BACKEND
+==================================================
+
+Test minimaal:
+
+1. Product zonder varianten gebruikt productniveau-link en prijs.
+2. Product met varianten gebruikt de displayvariant.
+3. `formaat=groot` gebruikt een grote matchingvariant in kaart en tabel.
+4. Ontbrekende variantlink valt niet terug op een andere variant.
+5. Ontbrekende variantprijs wordt niet als nul weergegeven.
+6. De tabelcapaciteit hoort bij dezelfde variant als de affiliate-link.
+7. Rating wordt op productfamilieniveau gebruikt.
+8. Exacte rating blijft numeriek beschikbaar.
+9. Rating class wordt correct afgeleid.
+10. JSON-LD gebruikt dezelfde displayvariant.
+11. Meerdere productkaarten beïnvloeden elkaar niet.
+12. Bestaande testset blijft slagen.
+
+==================================================
+16. GEEN ONGERELATEERDE WIJZIGINGEN
+==================================================
+
+Niet doen:
+
+- geen productteksten herschrijven;
+- geen awards wijzigen;
+- geen ratings inhoudelijk wijzigen;
+- geen nieuwe productvarianten toevoegen;
+- geen productafbeeldingen wijzigen;
+- geen rankingvolgorde aanpassen;
+- geen volledige CSS-refactor;
+- geen nieuw JavaScriptframework toevoegen;
+- geen frontend build pipeline wijzigen;
+- geen nieuwe templatingarchitectuur invoeren.
+
+==================================================
+17. EINDRAPPORT
+==================================================
+
+Rapporteer na uitvoering:
+
+1. welke bestaande JavaScriptlogica is gevonden;
+2. of `storage-filters.js` is toegevoegd, aangepast of niet nodig was;
+3. waar het script wordt geladen;
+4. welke CSS-regels al bestonden;
+5. welke CSS-regels zijn toegevoegd of aangepast;
+6. welk stylesheet is gewijzigd;
+7. hoe `comparison_rows` vóór de wijziging werden opgebouwd;
+8. hoe de displayvariant nu wordt bepaald;
+9. hoe affiliate-link, prijs en beschikbaarheid worden opgelost;
+10. of productkaart, tabel en JSON-LD dezelfde variant gebruiken;
+11. welke tests zijn toegevoegd of aangepast;
+12. volledige testresultaten;
+13. bevestiging dat productdata, afbeeldingen, rankings en awards niet zijn
+    gewijzigd;
+14. eventuele resterende risico’s of handmatige controles.

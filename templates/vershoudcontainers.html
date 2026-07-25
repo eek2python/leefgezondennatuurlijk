@@ -220,7 +220,7 @@ Beste glazen vershoudbakjes van 2026 – losse bakjes en sets
                     <tbody>
                         {% for row in comparison_rows %}
 
-                        {% firstof row.affiliate_url row.product.affiliate_url as comparison_affiliate_url %}
+                        {# affiliate_url is strikt opgelost in de view: displayvariant voor variantproducten, productniveau anders — bewust géén fallback naar een andere variant #}
                         {% firstof row.rating row.product.rating as comparison_rating %}
                         {% firstof row.rating_class row.product.rating_class as comparison_rating_class %}
 
@@ -292,9 +292,9 @@ Beste glazen vershoudbakjes van 2026 – losse bakjes en sets
                             </td>
 
                             <td>
-                                {% if comparison_affiliate_url %}
+                                {% if row.affiliate_url %}
                                 <a
-                                    href="{{ comparison_affiliate_url }}"
+                                    href="{{ row.affiliate_url }}"
                                     class="button primary small"
                                     target="_blank"
                                     rel="nofollow sponsored noopener"

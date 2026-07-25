@@ -424,6 +424,30 @@ def prepare_product_variants(product):
         product["capacity_summary"] = "Afhankelijk van uitvoering"
 
 
+def resolve_commercial_fields(product, display_variant=None):
+    """Resolve the commercial fields (affiliate_url, price, availability,
+    price_last_checked) for server-side rendering.
+
+    Strict rules:
+      - products with button variants use ONLY the display variant's own
+        data — a missing field never silently falls back to another
+        variant or to product level;
+      - products without button variants use product-level fields.
+    """
+    if display_variant is None:
+        display_variant = product.get("default_variant")
+    if product.get("shape_variants") and display_variant:
+        source = display_variant
+    else:
+        source = product
+    return {
+        "affiliate_url": source.get("affiliate_url") or "",
+        "price": source.get("price"),
+        "availability": source.get("availability") or "",
+        "price_last_checked": source.get("price_last_checked"),
+    }
+
+
 def set_display_variant(product, variant):
     """Make ``variant`` the server-rendered display variant: updates
     ``default_variant``, copies its commercial fields to product level, and
