@@ -58,7 +58,13 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'products',
     'blogs',
+    'audits',
 ]
+
+# Retentie van auditruns per audit_key. None = geen automatische
+# verwijdering (geen bestaand beleid); zet bv. op 20 om alleen de laatste
+# 20 uitvoeringen per audit te bewaren.
+AUDIT_RUN_RETENTION_PER_KEY = None
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -21,11 +21,17 @@ from django.contrib import admin
 from django.urls import path, include
 from products import views
 from products import admin_views
+from audits import admin_views as audit_admin_views
 from .sitemap_views import sitemap_xml
 from django.views.generic import TemplateView
 
 urlpatterns = [
    path("admin/product-images/", admin_views.product_images_admin, name="admin_product_images"),
+   path("admin/product-audits/", audit_admin_views.dashboard, name="audit_dashboard"),
+   path("admin/product-audits/run/", audit_admin_views.run_audit_view, name="audit_run"),
+   path("admin/product-audits/runs/<int:run_id>/", audit_admin_views.run_detail, name="audit_run_detail"),
+   path("admin/product-audits/runs/<int:run_id>/export/<slug:fmt>/", audit_admin_views.export_run, name="audit_run_export"),
+   path("admin/product-audits/history/<slug:audit_key>/", audit_admin_views.run_history, name="audit_history"),
    path("admin/", admin.site.urls),
    path("", views.homepage, name="homepage"),
    path("snijplanken/", views.snijplanken, name="snijplanken"),

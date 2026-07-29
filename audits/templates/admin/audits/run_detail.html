@@ -1,0 +1,95 @@
+{% extends "admin/base_site.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<h1>{{ run.title }} — run #{{ run.pk }}</h1>
+<p><a href="{% url 'audit_dashboard' %}">&larr; terug naar dashboard</a></p>
+
+<table>
+  <tr><th>Status</th><td>{{ run.status }}</td></tr>
+  <tr><th>Gestart door</th><td>{{ run.requested_by|default:"—" }}</td></tr>
+  <tr><th>Categorie</th><td>{{ run.category|default:"alle" }}</td></tr>
+  <tr><th>Gestart</th><td>{{ run.started_at|date:"d-m-Y H:i:s" }}</td></tr>
+  <tr><th>Klaar</th><td>{{ run.finished_at|date:"d-m-Y H:i:s" }}</td></tr>
+  <tr><th>Duur</th><td>{{ run.duration_ms|default:"—" }} ms</td></tr>
+  <tr><th>Parameters</th><td>{{ run.parameters }}</td></tr>
+  <tr><th>Issues</th><td>{{ run.issue_count }} totaal — {{ run.error_count }} fouten, {{ run.warning_count }} waarschuwingen</td></tr>
+  {% if run.failure_message %}<tr><th>Fout</th><td>{{ run.failure_message }}</td></tr>{% endif %}
+</table>
+
+<p>
+  <a href="{% url 'audit_run_export' run.pk 'csv' %}">Exporteer CSV</a> |
+  <a href="{% url 'audit_run_export' run.pk 'json' %}">Exporteer JSON</a>
+</p>
+
+{% if children %}
+<h2>Onderliggende audits</h2>
+<table>
+  <thead><tr><th>Audit</th><th>Status</th><th>Fouten</th><th>Waarschuwingen</th><th></th></tr></thead>
+  <tbody>
+  {% for child in children %}
+    <tr>
+      <td>{{ child.title }}</td><td>{{ child.status }}</td>
+      <td>{{ child.error_count }}</td><td>{{ child.warning_count }}</td>
+      <td><a href="{% url 'audit_run_detail' child.pk %}">bekijk</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+<h2>Issues</h2>
+<form method="get">
+  <select name="severity">
+    <option value="">alle severities</option>
+    {% for s in severities %}<option value="{{ s }}" {% if filters.severity == s %}selected{% endif %}>{{ s }}</option>{% endfor %}
+  </select>
+  <select name="category">
+    <option value="">alle categorieën</option>
+    {% for c in categories %}<option value="{{ c }}" {% if filters.category == c %}selected{% endif %}>{{ c }}</option>{% endfor %}
+  </select>
+  <select name="code">
+    <option value="">alle codes</option>
+    {% for c in codes %}<option value="{{ c }}" {% if filters.code == c %}selected{% endif %}>{{ c }}</option>{% endfor %}
+  </select>
+  <input type="text" name="product" value="{{ filters.product }}" placeholder="product">
+  <button type="submit" class="button">Filter</button>
+</form>
+
+<table>
+  <thead>
+    <tr><th>Severity</th><th>Code</th><th>Categorie</th><th>Product</th><th>Variant</th><th>Veld</th><th>Probleem</th><th>Verwacht</th><th>Werkelijk</th></tr>
+  </thead>
+  <tbody>
+    {% for issue in issues %}
+    <tr>
+      <td>{{ issue.severity }}</td>
+      <td>{{ issue.code }}</td>
+      <td>{{ issue.category }}</td>
+      <td>{{ issue.product_slug }}</td>
+      <td>{{ issue.variant_id }}</td>
+      <td>{{ issue.field }}</td>
+      <td>{{ issue.message }}</td>
+      <td>{{ issue.expected }}</td>
+      <td>{{ issue.actual }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="9">Geen issues.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if price_table %}
+<h2>Interne prijstabel (niet publiek)</h2>
+<table>
+  <thead><tr><th>Categorie</th><th>Product</th><th>Variant</th><th>Prijs</th><th>Handmatig niveau</th><th>Berekend niveau</th></tr></thead>
+  <tbody>
+    {% for row in price_table %}
+    <tr>
+      <td>{{ row.category }}</td><td>{{ row.product }}</td><td>{{ row.variant }}</td>
+      <td>{{ row.price|default_if_none:"—" }}</td><td>{{ row.manual }}</td><td>{{ row.computed }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}

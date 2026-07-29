@@ -1,0 +1,85 @@
+{% extends "admin/base_site.html" %}
+{% block title %}Productaudits{% endblock %}
+{% block content %}
+<h1>Productaudits</h1>
+
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin:12px 0;">
+  <div class="module" style="padding:10px 14px;">
+    <strong>Laatste volledige audit</strong><br>
+    {% if full_latest %}
+      {{ full_latest.created_at|date:"d-m-Y H:i" }} — {{ full_latest.status }}
+      (<a href="{% url 'audit_run_detail' full_latest.pk %}">bekijk</a>)
+    {% else %}nog niet uitgevoerd{% endif %}
+  </div>
+  <div class="module" style="padding:10px 14px;">
+    <strong>Openstaande fouten</strong><br>{{ open_errors }}
+  </div>
+  <div class="module" style="padding:10px 14px;">
+    <strong>Openstaande waarschuwingen</strong><br>{{ open_warnings }}
+  </div>
+  <div class="module" style="padding:10px 14px;">
+    <strong>Mislukte audits</strong><br>
+    {% if failed_audits %}
+      {% for r in failed_audits %}{{ r.audit_key }}{% if not forloop.last %}, {% endif %}{% endfor %}
+    {% else %}geen{% endif %}
+  </div>
+</div>
+
+{% if can_run %}
+<form method="post" action="{% url 'audit_run' %}" style="margin-bottom:16px;">
+  {% csrf_token %}
+  <input type="hidden" name="audit_key" value="{{ full_audit_key }}">
+  <button type="submit" class="button default">Volledige productaudit uitvoeren</button>
+  <span style="color:#666;">(alle veilige lokale audits; netwerkchecks blijven uit)</span>
+</form>
+{% endif %}
+
+<table>
+  <thead>
+    <tr>
+      <th>Audit</th><th>Omschrijving</th><th>Laatste status</th>
+      <th>Laatste uitvoering</th><th>Fouten</th><th>Waarschuwingen</th><th>Actie</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      <td><strong>{{ row.definition.title }}</strong></td>
+      <td>{{ row.definition.description }}</td>
+      <td>{% if row.latest %}{{ row.latest.status }}{% else %}—{% endif %}</td>
+      <td>{% if row.latest %}{{ row.latest.created_at|date:"d-m-Y H:i" }}{% else %}—{% endif %}</td>
+      <td>{% if row.latest %}{{ row.latest.error_count }}{% else %}—{% endif %}</td>
+      <td>{% if row.latest %}{{ row.latest.warning_count }}{% else %}—{% endif %}</td>
+      <td>
+        {% if row.definition.admin_runnable %}
+          {% if can_run %}
+          <form method="post" action="{% url 'audit_run' %}" style="display:inline;">
+            {% csrf_token %}
+            <input type="hidden" name="audit_key" value="{{ row.definition.key }}">
+            {% if row.definition.supports_category %}
+            <select name="category">
+              <option value="">alle categorieën</option>
+              {% for cat in row.definition.categories %}
+              <option value="{{ cat }}">{{ cat }}</option>
+              {% endfor %}
+            </select>
+            {% endif %}
+            <button type="submit" class="button">Audit uitvoeren</button>
+          </form>
+          {% endif %}
+        {% else %}
+          <em>Niet via admin (netwerk).</em><br>
+          <code>{{ row.definition.cli_hint }}</code>
+        {% endif %}
+        {% if row.latest %}
+          <br><a href="{% url 'audit_run_detail' row.latest.pk %}">Bekijk laatste resultaat</a>
+        {% endif %}
+        {% if can_history %}
+          <br><a href="{% url 'audit_history' row.definition.key %}">Bekijk historie</a>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -119,7 +119,13 @@ All 6 category pages use a standardised three-file content architecture per cate
 - IKEA 365+ & Mepal EasyClip enkel migrated from legacy shape-as-capacity variants to `variant_selectors` capacity selectors; `pyrex_cook_store_3delig` renamed to `pyrex_cook_store_enkel` (single 800 ml container)
 - Full audit + open verification items: `docs/audit-vershoudbakjes.md`; tests: `products/test_usage_vershoudbakjes.py`
 
-### Price Levels (price → price_range)
+### Audit Dashboard
+- Central admin audit dashboard at `/admin/product-audits/` (app `audits/`): registry (`audits/registry.py`), runner (`audits/runner.py`), result types (`audits/result.py`), checks in `audits/checks/` (variants, pricing, product_data, rankings).
+- Audits are read-only, run synchronously, persist to `ProductAuditRun`/`ProductAuditIssue` (SQLite). Duplicate concurrent runs are blocked. Permissions: `audits.view_product_audits`, `run_product_audits`, `view_product_audit_history` (superusers pass automatically).
+- `manage.py audit_product_variants` (unchanged interface) and `manage.py audit_products` share the same check functions — never duplicate audit logic between command and admin.
+- Network-dependent live link checks stay CLI-only (`scripts/monitor_products.py`); retention via `AUDIT_RUN_RETENTION_PER_KEY` (default None = keep everything).
+
+## Price Levels (price → price_range)
 - `utils/pricing.py`: central `get_price_range(price, category)` with per-category thresholds; only `koekenpannen` has definitive thresholds (<25 €, <50 €€, <90 €€€, ≥90 €€€€). Other categories are passthrough (manual `price_range`) until their thresholds are decided.
 - `_enrich_products(products, category=...)` sets `display_price_range` on products and swatch variants; templates only render `display_price_range` / `row.price_range` — never concrete prices. Derived levels are strict per display variant (no fallback); `data-price` is always emitted (even empty) when derived, and `variants.js` clears + hides the level on switch.
 - Manual `price_range` fields stay in the data (backward compat / report-only); the audit command reports `price_range_mismatch` etc. and a full internal price table.

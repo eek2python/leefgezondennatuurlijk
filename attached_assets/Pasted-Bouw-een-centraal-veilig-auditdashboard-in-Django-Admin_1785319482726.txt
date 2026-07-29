@@ -1,0 +1,682 @@
+Bouw een centraal, veilig auditdashboard in Django Admin waarin bestaande en
+toekomstige productaudits kunnen worden uitgevoerd en bekeken.
+
+Aanleiding:
+
+In het project bestaan inmiddels meerdere audits, managementcommands, helpers
+en tests voor onder andere:
+
+- productdata;
+- productvarianten;
+- displayvariantconsistentie;
+- affiliate-links;
+- prijzen;
+- prijsniveaus;
+- beschikbaarheid;
+- afbeeldingen;
+- JSON-LD;
+- rankings en awards;
+- ontbrekende of inconsistente velden.
+
+Deze controles moeten centraal beschikbaar worden gemaakt via Django Admin,
+zonder bestaande auditlogica te dupliceren.
+
+Belangrijk:
+
+- inspecteer eerst de huidige setup;
+- hergebruik bestaande auditfuncties en managementcommands;
+- audits zijn standaard read-only;
+- wijzig geen productdata vanuit het dashboard;
+- voer geen automatische reparaties uit;
+- beperk toegang tot bevoegde beheerders;
+- voorkom dubbele auditimplementaties;
+- zorg dat normale adminpagina’s blijven werken.
+
+==================================================
+1. INSPECTEER EERST DE HUIDIGE AUDITS
+==================================================
+
+Zoek projectbreed naar:
+
+- managementcommands met `audit`, `check`, `validate`, `verify` of `monitor`;
+- bestaande audithelpers;
+- productvalidatie;
+- variantvalidatie;
+- prijs- en prijsniveaucontroles;
+- affiliate-linkcontroles;
+- availability checks;
+- afbeeldingcontroles;
+- JSON-LD-controles;
+- ranking- en awardregels;
+- merkmaximumcontroles;
+- tests die auditresultaten opbouwen;
+- bestanden in `docs/` met auditrapporten;
+- bestaande admin-customizations;
+- bestaande modellen voor jobs, logs of rapporten;
+- Celery, RQ, Huey, background tasks of vergelijkbare infrastructuur.
+
+Maak vóór wijzigingen een inventarisatierapport:
+
+| Audit | Implementatie | Managementcommand | Read-only | Output | Geschikt voor admin |
+|---|---|---|---|---|---|
+
+Rapporteer daarnaast:
+
+1. welke audits al centraal herbruikbare Python-functies hebben;
+2. welke audits alleen in managementcommands zijn geïmplementeerd;
+3. welke audits bestanden schrijven;
+4. welke audits externe HTTP-verzoeken uitvoeren;
+5. welke audits mogelijk lang duren;
+6. welke categorieën door iedere audit worden ondersteund;
+7. welke admin-architectuur het project momenteel gebruikt;
+8. of achtergrondtaken beschikbaar zijn;
+9. welke wijzigingen nodig zijn om auditlogica veilig te hergebruiken.
+
+Voer daarna alleen noodzakelijke wijzigingen uit.
+
+==================================================
+2. GEEN LOGICA IN ADMIN VASTLEGGEN
+==================================================
+
+Plaats de auditlogica niet rechtstreeks in:
+
+- `admin.py`;
+- admin views;
+- templates;
+- JavaScript.
+
+Maak of gebruik een centrale servicelaag, bijvoorbeeld:
+
+audits/
+    __init__.py
+    registry.py
+    runner.py
+    result.py
+    checks/
+        product_data.py
+        variants.py
+        pricing.py
+        affiliate_links.py
+        images.py
+        jsonld.py
+
+Pas deze structuur aan de bestaande projectarchitectuur aan.
+
+Zowel managementcommands als Django Admin moeten dezelfde functies aanroepen.
+
+Voorkom:
+
+- dezelfde prijscontrole in command én admin;
+- dezelfde variantcontrole in meerdere modules;
+- parsing van console-output om auditresultaten te reconstrueren.
+
+==================================================
+3. CENTRAAL AUDITRESULTAAT
+==================================================
+
+Gebruik één gestructureerd resultaatmodel of dataclass, bijvoorbeeld:
+
+@dataclass
+class AuditIssue:
+    code: str
+    severity: str
+    message: str
+    category: str | None = None
+    product_slug: str | None = None
+    variant_id: str | None = None
+    file_path: str | None = None
+    field: str | None = None
+    expected: str | None = None
+    actual: str | None = None
+
+@dataclass
+class AuditResult:
+    audit_key: str
+    title: str
+    started_at: datetime
+    finished_at: datetime
+    status: str
+    issues: list[AuditIssue]
+    metadata: dict
+
+Gebruik bestaande projectconventies als die al aanwezig zijn.
+
+Ondersteun severities:
+
+- info;
+- warning;
+- error;
+- critical.
+
+Ondersteun uitvoeringsstatussen:
+
+- pending;
+- running;
+- completed;
+- failed.
+
+==================================================
+4. AUDITREGISTRY
+==================================================
+
+Maak een centrale registry waarin iedere audit wordt geregistreerd.
+
+Bijvoorbeeld:
+
+register_audit(
+    key="product_variants",
+    title="Productvarianten",
+    description="Controleert variantdata, displayvarianten en commerciële velden.",
+    runner=run_product_variant_audit,
+    supports_category=True,
+    uses_network=False,
+)
+
+Iedere auditdefinitie bevat minimaal:
+
+- unieke key;
+- titel;
+- korte omschrijving;
+- runner;
+- categorieondersteuning;
+- indicatie of externe HTTP-verzoeken nodig zijn;
+- indicatie of de audit potentieel lang duurt;
+- vereiste permissie.
+
+Registreer uitsluitend audits die werkelijk in het project bestaan.
+
+==================================================
+5. RELEVANTE AUDITS SAMENBRENGEN
+==================================================
+
+Inventariseer en registreer waar beschikbaar minimaal:
+
+1. Productdata
+   - verplichte velden;
+   - dubbele slugs;
+   - ongeldige types;
+   - ontbrekende afbeeldingen;
+   - placeholders.
+
+2. Productvarianten
+   - ontbrekende displayvariant;
+   - meerdere defaults;
+   - stale variant value risk;
+   - cross-variant fallback;
+   - mutatie van brondata;
+   - kaart/tabel/JSON-LD-consistentie.
+
+3. Prijzen en prijsniveaus
+   - ongeldige prijs;
+   - ontbrekende prijs;
+   - negatieve prijs;
+   - handmatig prijsniveau wijkt af;
+   - variantprijs en productprijs worden vermengd;
+   - grensgevallen van de prijsniveauhelper.
+
+4. Affiliate-links
+   - ontbrekende link;
+   - ongeldige URL;
+   - verkeerde variantlink;
+   - ontbrekende affiliate-attributen in templates;
+   - optioneel live bereikbaarheid wanneer bestaande infrastructuur dit ondersteunt.
+
+5. Beschikbaarheid
+   - ongeldige status;
+   - ontbrekende status;
+   - product- en variantstatus inconsistent.
+
+6. Afbeeldingen
+   - bestand ontbreekt;
+   - bestandspad ongeldig;
+   - variantafbeelding ontbreekt;
+   - verweesde afbeelding, alleen wanneer betrouwbaar vast te stellen.
+
+7. Rankings en awards
+   - maximaal aantal producten per merk;
+   - dubbele awards;
+   - ontbrekende beste keuze;
+   - awardbeleid per categorie;
+   - ranking- en scoreconsistentie.
+
+8. JSON-LD
+   - prijs, URL en variant komen niet overeen;
+   - Offer zonder prijs of URL;
+   - ongeldige availability;
+   - dubbele ItemList-posities;
+   - zichtbare FAQ verschilt van FAQPage JSON-LD.
+
+9. Rendering en templates
+   - ontbrekende templatevelden;
+   - lege href;
+   - onveilige commerciële fallback;
+   - dubbele scriptincludes;
+   - ontbrekende static files.
+
+Voeg geen audit toe wanneer daarvoor nog geen betrouwbare implementatie bestaat.
+Rapporteer zulke controles als toekomstige uitbreiding.
+
+==================================================
+6. OPSLAG VAN UITVOERINGEN
+==================================================
+
+Maak, wanneer nog niet aanwezig, modellen om audituitvoeringen en issues te
+bewaren.
+
+Bijvoorbeeld:
+
+ProductAuditRun:
+- id;
+- audit_key;
+- title;
+- status;
+- requested_by;
+- category;
+- parameters JSON;
+- started_at;
+- finished_at;
+- duration_ms;
+- issue_count;
+- error_count;
+- warning_count;
+- failure_message;
+- created_at.
+
+ProductAuditIssue:
+- run;
+- code;
+- severity;
+- category;
+- product_slug;
+- variant_id;
+- field;
+- message;
+- expected;
+- actual;
+- file_path;
+- metadata JSON.
+
+Gebruik geschikte indexes op:
+
+- audit_key;
+- status;
+- created_at;
+- severity;
+- category;
+- product_slug.
+
+Maak migrations.
+
+Bewaar geen gevoelige credentials, volledige externe responses of
+affiliategeheimen.
+
+==================================================
+7. DJANGO-ADMINPAGINA
+==================================================
+
+Voeg een centrale adminpagina toe, bijvoorbeeld:
+
+/admin/product-audits/
+
+Gebruik een duidelijke titel:
+
+Productaudits
+
+Toon een overzichtstabel:
+
+| Audit | Omschrijving | Laatste status | Laatste uitvoering | Fouten | Waarschuwingen | Actie |
+
+Per audit:
+
+- knop `Audit uitvoeren`;
+- optioneel categorie selecteren;
+- link `Bekijk laatste resultaat`;
+- link `Bekijk historie`.
+
+Voeg bovenaan samenvattingskaarten toe:
+
+- laatste volledige audit;
+- openstaande fouten;
+- openstaande waarschuwingen;
+- audits die zijn mislukt.
+
+Houd de vormgeving dicht bij de standaard Django Admin.
+
+Voeg geen zwaar frontendframework toe.
+
+==================================================
+8. UITVOEREN VAN EEN AUDIT
+==================================================
+
+Een auditstart moet via POST verlopen.
+
+Vereisten:
+
+- CSRF-bescherming;
+- admin login vereist;
+- geschikte permissie vereist;
+- geen uitvoering via GET;
+- valideer audit key;
+- valideer categorie;
+- log wie de audit startte;
+- voorkom onbedoeld dubbel starten van dezelfde audit;
+- toon een duidelijke succes- of foutmelding.
+
+Gebruik een formulier met:
+
+- audit;
+- categorie, indien ondersteund;
+- eventueel `strict`;
+- eventueel `network_checks`.
+
+Standaard:
+
+- `strict=False`;
+- `network_checks=False`;
+- read-only.
+
+==================================================
+9. SYNCHROON OF ACHTERGRONDTAAK
+==================================================
+
+Controleer eerst of het project achtergrondtaakinfrastructuur heeft.
+
+Wanneer Celery, RQ, Huey of een gelijkwaardige bestaande oplossing aanwezig is:
+
+- voer lange audits als achtergrondtaak uit;
+- sla status en voortgang op;
+- laat de adminpagina periodiek verversen of bied handmatige refresh.
+
+Wanneer geen achtergrondinfrastructuur bestaat:
+
+- voeg niet uitsluitend hiervoor een zwaar jobsysteem toe;
+- voer snelle, lokale audits synchroon uit;
+- markeer langzame of netwerkafhankelijke audits als niet geschikt voor directe adminuitvoering;
+- bied voor die audits een commandline-instructie of beperkte veilige uitvoering;
+- voorkom request time-outs.
+
+Classificeer audits bijvoorbeeld als:
+
+- quick;
+- standard;
+- long_running;
+- network_dependent.
+
+==================================================
+10. RESULTAAT- EN DETAILPAGINA
+==================================================
+
+Maak een detailpagina voor iedere uitvoering:
+
+/admin/product-audits/runs/<id>/
+
+Toon:
+
+- auditnaam;
+- status;
+- gestart door;
+- start- en eindtijd;
+- duur;
+- parameters;
+- samenvatting;
+- aantal issues per severity;
+- issues in een filterbare tabel.
+
+Filters:
+
+- severity;
+- categorie;
+- product;
+- issuecode.
+
+Kolommen:
+
+| Severity | Code | Categorie | Product | Variant | Veld | Probleem | Verwacht | Werkelijk |
+
+Maak product-slugs waar mogelijk klikbaar naar de relevante admin- of
+productpagina zonder een URL te raden.
+
+==================================================
+11. VOLLEDIGE PROJECTAUDIT
+==================================================
+
+Voeg een optie toe:
+
+Volledige productaudit uitvoeren
+
+Deze voert alle veilige lokale audits na elkaar uit.
+
+Netwerkafhankelijke controles staan standaard uit.
+
+De volledige audit moet:
+
+- één parent run of auditbatch krijgen;
+- onderliggende resultaten per audit bewaren;
+- doorgaan wanneer één niet-kritieke audit faalt;
+- failures apart rapporteren;
+- geen productdata wijzigen.
+
+Voorkom dat dezelfde centrale data onnodig voor elke audit opnieuw wordt geladen
+wanneer een veilige gedeelde context mogelijk is.
+
+==================================================
+12. MANAGEMENTCOMMANDS BLIJVEN WERKEN
+==================================================
+
+Bestaande commands moeten blijven werken.
+
+Laat managementcommands dezelfde centrale runner gebruiken.
+
+Bijvoorbeeld:
+
+python manage.py audit_product_variants
+python manage.py audit_product_prices
+python manage.py audit_products
+python manage.py audit_products --category keramische-koekenpannen
+python manage.py audit_products --strict
+
+Console-output mag worden opgebouwd uit hetzelfde `AuditResult`.
+
+Voorkom dat een command afhankelijk wordt van een actieve adminrequest.
+
+==================================================
+13. PRIJSNIVEAUAUDIT
+==================================================
+
+Neem de nieuwe automatische prijsniveaucontrole op in het dashboard.
+
+Voor keramische koekenpannen gelden voorlopig:
+
+- minder dan €25: `€`;
+- €25 tot minder dan €50: `€€`;
+- €50 tot minder dan €90: `€€€`;
+- €90 of hoger: `€€€€`.
+
+De audit controleert:
+
+- numerieke prijs is geldig;
+- berekend prijsniveau;
+- eventueel opgeslagen handmatig niveau;
+- mismatch tussen opgeslagen en berekende waarde;
+- displayvariantprijs en prijsniveau horen bij elkaar;
+- productkaart en tabel gebruiken hetzelfde niveau;
+- JSON-LD gebruikt de numerieke prijs en niet het prijsniveau.
+
+Toon per afwijking:
+
+- categorie;
+- product;
+- variant;
+- prijs;
+- handmatig niveau;
+- berekend niveau.
+
+Deze audit wijzigt niets.
+
+==================================================
+14. PERMISSIES
+==================================================
+
+Definieer aparte permissies, bijvoorbeeld:
+
+- `view_product_audits`;
+- `run_product_audits`;
+- `view_product_audit_history`.
+
+Standaard:
+
+- superusers hebben toegang;
+- staff zonder expliciete permissie kan geen audit starten;
+- auditresultaten bevatten geen gevoelige configuratie.
+
+Gebruik Django-permissions en geen hardcoded gebruikersnamen.
+
+==================================================
+15. VEILIGHEID
+==================================================
+
+Zorg voor:
+
+- CSRF;
+- POST voor uitvoeringen;
+- toegangscontrole;
+- audit key allowlist via registry;
+- geen arbitraire commandnamen vanuit requestparameters;
+- geen `subprocess` met gebruikersinvoer;
+- geen shellcommando’s vanuit admin;
+- escape van alle issuevelden;
+- beperkte foutmeldingen in de UI;
+- volledige traceback alleen in serverlog;
+- bescherming tegen dubbele uitvoering.
+
+Roep centrale Python-functies rechtstreeks aan.
+
+Gebruik niet:
+
+subprocess.run(["python", "manage.py", user_supplied_command])
+
+==================================================
+16. RETENTIE
+==================================================
+
+Voeg een eenvoudige retentiestrategie toe.
+
+Bijvoorbeeld:
+
+- bewaar de laatste 20 uitvoeringen per audit;
+- of bewaar resultaten 90 dagen;
+- verwijder niets automatisch zonder expliciete projectkeuze.
+
+Maak retentie configureerbaar in settings.
+
+Voer standaard nog geen automatische verwijdering uit wanneer er geen bestaand
+beleid is.
+
+==================================================
+17. EXPORT
+==================================================
+
+Bied bij voorkeur een veilige export van één auditrun:
+
+- CSV voor issues;
+- JSON voor gestructureerde resultaten.
+
+Gebruik admin-only endpoints.
+
+Exporteer geen secrets of volledige externe HTTP-responses.
+
+Dit onderdeel mag worden overgeslagen wanneer het de taak onnodig groot maakt.
+
+==================================================
+18. TESTS
+==================================================
+
+Voeg tests toe voor minimaal:
+
+1. Niet-ingelogde gebruiker heeft geen toegang.
+2. Staff zonder permissie kan geen audit starten.
+3. Bevoegde beheerder kan overzicht openen.
+4. Audit starten kan alleen via POST.
+5. CSRF blijft actief.
+6. Ongeldige audit key wordt geweigerd.
+7. Ongeldige categorie wordt geweigerd.
+8. Auditrun wordt opgeslagen.
+9. Issues worden correct opgeslagen.
+10. Error- en warningaantallen kloppen.
+11. Mislukte audit krijgt status `failed`.
+12. Bestaande managementcommands blijven werken.
+13. Admin en command gebruiken dezelfde auditfunctie.
+14. Audit wijzigt geen productdata.
+15. Prijsniveauaudit rapporteert een mismatch.
+16. Volledige audit combineert meerdere resultaten.
+17. Dubbele gelijktijdige uitvoering wordt voorkomen.
+18. Resultaatdetail is filterbaar.
+19. Templates escapen issueberichten.
+20. Alle bestaande tests blijven slagen.
+
+==================================================
+19. GEEN ONGERELATEERDE WIJZIGINGEN
+==================================================
+
+Niet doen:
+
+- geen productdata wijzigen;
+- geen automatische reparatieknoppen toevoegen;
+- geen prijzen of affiliate-links actualiseren;
+- geen rankings, awards of ratings veranderen;
+- geen productteksten herschrijven;
+- geen bestaande adminpagina’s herontwerpen;
+- geen zwaar frontendframework toevoegen;
+- geen achtergrondtaaksysteem toevoegen wanneer dat nog niet bestaat;
+- geen auditlogica dupliceren.
+
+==================================================
+20. GEFASSEERDE UITVOERING
+==================================================
+
+Werk in fasen.
+
+Fase 1:
+- inventariseer bestaande audits;
+- ontwerp registry en resultaatstructuur;
+- rapporteer plan.
+
+Fase 2:
+- centraliseer uitsluitend auditlogica die nu al betrouwbaar bestaat;
+- behoud bestaande commands;
+- voeg tests toe.
+
+Fase 3:
+- voeg modellen, migrations en adminoverzicht toe;
+- voeg permissies en resultaatpagina’s toe.
+
+Fase 4:
+- integreer volledige audit;
+- voeg prijsniveauaudit toe;
+- voer volledige testsuite uit.
+
+Stop en rapporteer wanneer bestaande auditlogica niet veilig zonder
+gedragswijziging kan worden gecentraliseerd.
+
+==================================================
+21. EINDRAPPORT
+==================================================
+
+Rapporteer na uitvoering:
+
+1. welke bestaande audits zijn gevonden;
+2. welke audits in het dashboard zijn opgenomen;
+3. welke audits niet zijn opgenomen en waarom;
+4. locatie van registry, runner en resultaattypes;
+5. toegevoegde modellen en migrations;
+6. admin-URL;
+7. beschikbare permissies;
+8. hoe audits worden gestart;
+9. welke audits synchroon of asynchroon draaien;
+10. hoe dubbele uitvoering wordt voorkomen;
+11. hoe managementcommands dezelfde logica hergebruiken;
+12. hoe de prijsniveauaudit is geïntegreerd;
+13. toegevoegde tests;
+14. volledige testresultaten;
+15. bevestiging dat geen productdata zijn gewijzigd;
+16. resterende handmatige controles.
