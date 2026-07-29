@@ -8,6 +8,12 @@
             <th scope="row"><a href="{% url 'admin_product_images' %}">Productafbeeldingen uploaden &amp; verwerken</a></th>
             <td style="text-align: right;"><a href="{% url 'admin_product_images' %}" class="addlink">Openen</a></td>
         </tr>
+        {% if perms.audits.view_product_audits %}
+        <tr>
+            <th scope="row"><a href="{% url 'audit_dashboard' %}">Productaudits — dashboard</a></th>
+            <td style="text-align: right;"><a href="{% url 'audit_dashboard' %}" class="addlink">Openen</a></td>
+        </tr>
+        {% endif %}
     </table>
 </div>
 {{ block.super }}
