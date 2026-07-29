@@ -108,7 +108,7 @@
                         · {{ product.features|join:" · " }}
                         {% endif %}
                         </td>
-                        <td>{{ product.price_range }}</td>
+                        <td>{{ product.display_price_range|default:"—" }}</td>
                         <td>{% if product.rating %}<div class="editorial-rating editorial-rating--compact">
 <span class="rating-label">Onze beoordeling:</span>
 <span class="stars stars-{{ product.rating_class }}" aria-hidden="true"></span>

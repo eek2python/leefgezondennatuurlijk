@@ -13,6 +13,7 @@ from utils.product_helpers import (
     STORAGE_SIZE_THRESHOLDS,
 )
 from utils.usage_helpers import build_usage_display
+from utils.pricing import get_price_range, has_price_range_config
 from utils.variant_helpers import (
     prepare_product_variants,
     resolve_commercial_fields,
@@ -103,9 +104,53 @@ def privacy(request):
     })
 
 
-def _enrich_products(products):
+def _derive_price_levels(p, category):
+    """Zet ``display_price_range`` op product- (en swatchvariant-)niveau.
+
+    - Categorieën met definitieve prijsgrenzen (zie utils/pricing.py) leiden
+      het niveau strikt af uit het numerieke ``price``-veld van de getoonde
+      displayvariant: geen fallback naar een andere variant of naar een
+      handmatig niveau; ontbrekende prijs → leeg niveau.
+    - Overige categorieën gebruiken de bestaande handmatige
+      ``price_range``-velden ongewijzigd (report-only in de audit).
+    Concrete prijzen worden hierdoor nooit zichtbaar gemaakt.
+    """
+    variants = p.get("variants")
+    is_swatch = bool(variants) and not p.get("shape_variants")
+    if has_price_range_config(category):
+        p["price_range_is_derived"] = True
+        if is_swatch:
+            # Kleurswatches: strikt het niveau van de eigen variantprijs.
+            for v in variants:
+                v["display_price_range"] = get_price_range(v.get("price"), category) or ""
+            p["display_price_range"] = variants[0]["display_price_range"]
+        elif p.get("shape_variants"):
+            # Knopvarianten: prepare_product_variants projecteerde de
+            # commerciële velden van de displayvariant al strikt (set-or-clear).
+            p["display_price_range"] = get_price_range(p.get("price"), category) or ""
+        else:
+            computed = get_price_range(p.get("price"), category)
+            if computed:
+                p["display_price_range"] = computed
+            elif p.get("price") in (None, ""):
+                # Zonder numerieke prijs blijft het handmatige niveau de
+                # enige (backward-compatible) bron.
+                p["display_price_range"] = p.get("price_range") or ""
+            else:
+                p["display_price_range"] = ""
+    else:
+        p["price_range_is_derived"] = False
+        if is_swatch:
+            first = variants[0]
+            p["display_price_range"] = first.get("price_range") or p.get("price_range") or ""
+        else:
+            p["display_price_range"] = p.get("price_range") or ""
+
+
+def _enrich_products(products, category=None):
     for p in products:
         prepare_product_variants(p)
+        _derive_price_levels(p, category)
         if "usage_display" not in p:
             p["usage_display"] = build_usage_display(p.get("usage"))
         p["formatted_capacity"], p["formatted_total_capacity"] = get_capacity_display(p)
@@ -298,9 +343,9 @@ def _build_itemlist_ld(request, name, description, products):
 
 
 def snijplanken(request):
-    products = [dict(SNIJPLANKEN_PRODUCTS[k]) for k in SNIJPLANKEN_RANKINGS]
+    products = [copy.deepcopy(SNIJPLANKEN_PRODUCTS[k]) for k in SNIJPLANKEN_RANKINGS]
     content = SNIJPLANKEN_CONTENT
-    _enrich_products(products)
+    _enrich_products(products, category="snijplanken")
     product_count = len(products)
     conclusie = content["conclusies"]["default"]
     faq_ld = _build_faq_ld(content["faq"]["items"])
@@ -337,8 +382,10 @@ def koekenpannen(request):
         size = 28 if 28 in available_sizes else available_sizes[0]
 
     keys = KOEKENPANNEN_RANKINGS[size]
-    products = [dict(KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in KOEKENPANNEN_PRODUCTS]
-    _enrich_products(products)
+    # Deep copies: prijsniveau-afleiding zet velden op geneste variant-dicts
+    # en mag de brondata in PRODUCTS nooit muteren.
+    products = [copy.deepcopy(KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in KOEKENPANNEN_PRODUCTS]
+    _enrich_products(products, category="koekenpannen")
     product_count = len(products)
 
     conclusie = content["conclusies"].get(size, {})
@@ -390,8 +437,8 @@ def hapjespannen(request):
         size = 28 if 28 in available_sizes else available_sizes[0]
 
     keys = HAPJESPANNEN_RANKINGS[size]
-    products = [dict(HAPJESPANNEN_PRODUCTS[k]) for k in keys if k in HAPJESPANNEN_PRODUCTS]
-    _enrich_products(products)
+    products = [copy.deepcopy(HAPJESPANNEN_PRODUCTS[k]) for k in keys if k in HAPJESPANNEN_PRODUCTS]
+    _enrich_products(products, category="hapjespannen")
     product_count = len(products)
 
     conclusie = content["conclusies"].get(size, {})
@@ -440,8 +487,8 @@ def wokpannen(request):
         size = 28 if 28 in available_sizes else available_sizes[0]
 
     keys = WOKPANNEN_RANKINGS[size]
-    products = [dict(WOKPANNEN_PRODUCTS[k]) for k in keys if k in WOKPANNEN_PRODUCTS]
-    _enrich_products(products)
+    products = [copy.deepcopy(WOKPANNEN_PRODUCTS[k]) for k in keys if k in WOKPANNEN_PRODUCTS]
+    _enrich_products(products, category="wokpannen")
     product_count = len(products)
 
     conclusie = content["conclusies"].get(size, {})
@@ -491,8 +538,8 @@ def airfryers(request, fmt=None):
         raise Http404("Onbekend airfryer-formaat")
 
     keys = AIRFRYERS_RANKINGS[selected_format]
-    products = [dict(AIRFRYERS_PRODUCTS[k]) for k in keys if k in AIRFRYERS_PRODUCTS]
-    _enrich_products(products)
+    products = [copy.deepcopy(AIRFRYERS_PRODUCTS[k]) for k in keys if k in AIRFRYERS_PRODUCTS]
+    _enrich_products(products, category="airfryers")
     product_count = len(products)
 
     raw = AIRFRYERS_CONTENT
@@ -659,7 +706,7 @@ def vershoudcontainers(request):
     # Deep copies: voorbereiden/variantselectie mag de brondata in PRODUCTS
     # (inclusief geneste variant-dicts) nooit muteren.
     all_ranked_products = [copy.deepcopy(VERSHOUDCONTAINERS_PRODUCTS[k]) for k in keys if k in VERSHOUDCONTAINERS_PRODUCTS]
-    _enrich_products(all_ranked_products)
+    _enrich_products(all_ranked_products, category="vershoudcontainers")
     for p in all_ranked_products:
         prepare_storage_product(p, size_key)
     products = filter_products_by_storage_size(all_ranked_products, size_key)
@@ -679,6 +726,8 @@ def vershoudcontainers(request):
             "affiliate_url": commercial["affiliate_url"],
             "price": commercial["price"],
             "availability": commercial["availability"],
+            # Prijsniveau expliciet per rij (zelfde bron als de productkaart).
+            "price_range": p.get("display_price_range") or "",
             "rating": p.get("rating"),
             "rating_class": p.get("rating_class"),
             "rating_display": p.get("rating_display"),
@@ -760,7 +809,7 @@ def _enrich_rvs_products(products):
         p["image"] = (p.get("image") or "").split("/")[-1]
         if (p.get("affiliate_url") or "").startswith("TODO"):
             p["affiliate_url"] = None
-    _enrich_products(products)
+    _enrich_products(products, category="rvs-koekenpannen")
 
 
 def rvs_koekenpannen(request):
@@ -775,7 +824,7 @@ def rvs_koekenpannen(request):
         size = 28 if 28 in available_sizes else available_sizes[0]
 
     keys = RVS_KOEKENPANNEN_RANKINGS[size]
-    products = [dict(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in RVS_KOEKENPANNEN_PRODUCTS]
+    products = [copy.deepcopy(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in RVS_KOEKENPANNEN_PRODUCTS]
     _enrich_rvs_products(products)
     product_count = len(products)
     conclusie = content["conclusies"].get(size, content["conclusies"]["default"])
@@ -841,7 +890,7 @@ def product_detail(request, slug):
         product = copy.deepcopy(entry["data"])
         cat_key = entry["category"]
         cat_info = CATEGORY_MAP[cat_key]
-        _enrich_products([product])
+        _enrich_products([product], category=cat_key)
         if cat_key == "rvs-koekenpannen":
             product["image_path"] = "images/rvs-koekenpannen"
             product["image"] = (product.get("image") or "").split("/")[-1]

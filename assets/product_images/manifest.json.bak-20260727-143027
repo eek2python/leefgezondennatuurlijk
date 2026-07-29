@@ -1,0 +1,347 @@
+[
+  {
+    "source": "vershoudbakjes/pyrex-cookstore-enkel.jpg",
+    "slug": "pyrex-cookstore-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "pyrex_cookstore_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/ikea-365-enkel.jpg",
+    "slug": "ikea-365-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "ikea_365+_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-enkel.jpg",
+    "slug": "mepal-easyclip-glass-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/locknlock-enkel.jpg",
+    "slug": "locknlock-740ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "locknlock_740ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/locknlock-630ml-enkel.jpg",
+    "slug": "locknlock-630ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "locknlock_630ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/locknlock-1l-enkel.jpg",
+    "slug": "locknlock-1l-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "locknlock_1l_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/ikea-365-1l-enkel.jpg",
+    "slug": "ikea-365-1l-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "ikea_365+_1l_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/ikea-365-12l-enkel.jpg",
+    "slug": "ikea-365-12l-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "ikea_365+_1.2l_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-450ml-enkel.jpg",
+    "slug": "mepal-easyclip-glass-450ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_450ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-700ml-enkel.jpg",
+    "slug": "mepal-easyclip-glass-700ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_700ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-1500ml-enkel.jpg",
+    "slug": "mepal-easyclip-glass-1500ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_1500ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-2250ml-enkel.jpg",
+    "slug": "mepal-easyclip-glass-2250ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_2250ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-820ml-enkel.jpg",
+    "slug": "luminarc-purebox-820ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_820ml_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-380ml-enkel.jpg",
+    "slug": "luminarc-purebox-380ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_380ml_enkel",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-1220ml-enkel.jpg",
+    "slug": "luminarc-purebox-1220ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_1220ml_enkel",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-1970ml-enkel.jpg",
+    "slug": "luminarc-purebox-1970ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_1970ml_enkel",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-760ml-vierkant-enkel.jpg",
+    "slug": "luminarc-purebox-760ml-vierkant-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_760ml_vierkant_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-1220ml-vierkant-enkel.jpg",
+    "slug": "luminarc-purebox-1220ml-vierkant-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_1220ml_vierkant_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-420ml-rond-enkel.jpg",
+    "slug": "luminarc-purebox-420ml-rond-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_420ml_rond_enkel",
+    "enabled": true,
+    "variant_id": "round"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-920ml-rond-enkel.jpg",
+    "slug": "luminarc-purebox-920ml-rond-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_920ml_rond_enkel",
+    "enabled": true,
+    "variant_id": "round"
+  },
+  {
+    "source": "vershoudbakjes/leo-perfect-seal-500ml-enkel.jpg",
+    "slug": "leo-perfect-seal-500ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "leo_perfect_seal_500ml_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/leo-perfect-seal-1100ml-enkel.jpg",
+    "slug": "leo-perfect-seal-1100ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "leo_perfect_seal_1100ml_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/pyrex-cookheat-5delig.jpg",
+    "slug": "pyrex-cookheat-5delig",
+    "category": "vershoudbakjes",
+    "product_key": "pyrex_cookheat_5delig",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/igluu-5delig-rond.jpg",
+    "slug": "igluu-5delig-rond",
+    "category": "vershoudbakjes",
+    "product_key": "igluu_5delig_rond",
+    "enabled": true,
+    "variant_id": "round"
+  },
+  {
+    "source": "vershoudbakjes/igluu-5delig-rechthoek.jpg",
+    "slug": "igluu-5delig-rechthoek",
+    "category": "vershoudbakjes",
+    "product_key": "igluu_5delig_rechthoek",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "vershoudbakjes/kitchenbrothers-5delig.jpg",
+    "slug": "kitchenbrothers-5delig",
+    "category": "vershoudbakjes",
+    "product_key": "kitchenbrothers_5delig",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-5delig.jpg",
+    "slug": "luminarc-purebox-5delig",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_5delig",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-3.jpg",
+    "slug": "mepal-easyclip-glass-3",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_3",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "vershoudbakjes/vershoudbakjes-bormioli-frigoverre-set-3.jpg",
+    "slug": "bormioli-frigoverre-set-3",
+    "category": "vershoudbakjes",
+    "product_key": "bormioli_frigoverre_set_3",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-3delig.jpg",
+    "slug": "luminarc-purebox-3delig",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_3delig",
+    "enabled": true,
+    "variant_id": "round"
+  },
+  {
+    "source": "vershoudbakjes/glasslock-ovensafe-3delig.jpg",
+    "slug": "glasslock-ovensafe-3delig",
+    "category": "vershoudbakjes",
+    "product_key": "glasslock_ovensafe_3delig",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan01-greenpan-barcelona-pro.jpg",
+    "slug": "greenpan-barcelona-pro-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_barcelona_pro_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan02-kochstar-essenz-taupe.jpg",
+    "slug": "kochstar-essenz-28cm-taupe",
+    "category": "keramische-koekenpannen",
+    "product_key": "kochstar_essenz_28cm_taupe",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan02-kochstar-essenz-zwart.jpg",
+    "slug": "kochstar-essenz-28cm-zwart",
+    "category": "keramische-koekenpannen",
+    "product_key": "kochstar_essenz_28cm_zwart",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan-demeyere-alu-pro-5-28.jpg",
+    "slug": "demeyere-alu-pro-5-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "demeyere_alu_pro_5_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan03-habonne-hybrid.jpg",
+    "slug": "habonne-hybrid-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "habonne_hybrid_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan04-greenchef-diamond.jpg",
+    "slug": "greenchef-diamond-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenchef_diamond_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan05-bk-easy-induction.jpg",
+    "slug": "bk-easy-induction-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk_easy_induction_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan06-brabantia-dusk.jpg",
+    "slug": "brabantia-dusk-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "brabantia_dusk_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan07-tefal-renew.jpg",
+    "slug": "tefal-renew-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "tefal_renew_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan08-bk-enjoy.jpg",
+    "slug": "bk-enjoy-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk_enjoy_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/demeyere-alu-pro-5-ceraforce-28cm.jpg",
+    "slug": "demeyere-alu-pro-5-ceraforce-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "demeyere_alu_pro_5_ceraforce_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan10-debuyer-ceranoa.jpg",
+    "slug": "debuyer-ceranoa-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "debuyer_ceranoa_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-mayflower-grijs-28cm.jpg",
+    "slug": "greenpan-mayflower-grijs-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_mayflower_grijs_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-mayflower-blauw-28cm.jpg",
+    "slug": "greenpan-mayflower-blauw-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_mayflower_blauw_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan01-greenpan-barcelona-pro-24cm.jpg",
+    "slug": "greenpan-barcelona-pro-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_barcelona_pro_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/kochstar-essenz-taupe-24cm.jpg",
+    "slug": "kochstar-essenz-taupe-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "kochstar_essenz_taupe_24cm",
+    "enabled": true
+  }
+]

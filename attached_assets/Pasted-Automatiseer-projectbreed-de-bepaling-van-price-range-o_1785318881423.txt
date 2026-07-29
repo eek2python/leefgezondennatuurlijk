@@ -1,0 +1,829 @@
+Automatiseer projectbreed de bepaling van `price_range` op basis van het
+numerieke `price`-veld.
+
+Doel:
+
+- `price` blijft de interne numerieke bron voor prijsgerelateerde logica;
+- `price_range` wordt centraal en consequent uit `price` afgeleid;
+- variantprijzen krijgen hun eigen prijsniveau;
+- handmatig verouderde of inconsistente `price_range`-waarden worden niet
+  meer leidend gebruikt;
+- productkaarten en vergelijkingstabellen tonen uitsluitend het prijsniveau;
+- deze taak maakt geen concrete prijzen zichtbaar op de website;
+- Product JSON-LD wordt niet automatisch uitgebreid met concrete prijzen;
+- productdata, prijzen, rankings, awards en affiliate-links worden niet
+  inhoudelijk gewijzigd.
+
+Voor keramische koekenpannen gelden voorlopig deze prijsniveaus:
+
+- minder dan €25: `€`
+- €25 tot minder dan €50: `€€`
+- €50 tot minder dan €90: `€€€`
+- €90 of hoger: `€€€€`
+
+==================================================
+1. INSPECTEER EERST
+==================================================
+
+Zoek projectbreed naar:
+
+- `price`;
+- `price_range`;
+- `display_price`;
+- `display_price_range`;
+- `price_last_checked`;
+- `currency`;
+- `get_price_range`;
+- `resolve_commercial_fields`;
+- `resolve_display_variant`;
+- `prepare_product`;
+- `comparison_rows`;
+- Product- en Offer-JSON-LD;
+- productkaarten;
+- vergelijkingstabellen;
+- variantselectors;
+- JavaScript voor variantwissels;
+- prijsfilters;
+- prijs- of productsortering;
+- managementcommands en audits rond prijzen;
+- tests rond prijzen en prijsniveaus.
+
+Inspecteer minimaal:
+
+- productdatabestanden voor keramische koekenpannen;
+- gedeelde producthelpers;
+- varianthelpers;
+- views voor productlijsten;
+- vergelijkingstabeltemplates;
+- `partials/product_block.html`;
+- variant-JavaScript;
+- JSON-LD-builders;
+- auditcommands;
+- adminfunctionaliteit rond audits, wanneer aanwezig.
+
+Rapporteer vóór wijzigingen:
+
+1. waar `price` momenteel wordt gebruikt;
+2. waar `price_range` momenteel wordt gebruikt;
+3. waar concrete prijzen zichtbaar in HTML worden getoond;
+4. of concrete prijzen in JSON-LD worden gepubliceerd;
+5. of prijsniveaus handmatig in productdata staan;
+6. of er al een centrale prijsniveauhelper bestaat;
+7. of varianten eigen `price_range`-velden hebben;
+8. of templates rechtstreeks `product.price_range` gebruiken;
+9. of vergelijkingstabellen een resolved displayvariant gebruiken;
+10. of client-side variantwisseling het prijsniveau bijwerkt;
+11. of categorieën verschillende prijsgrenzen hanteren;
+12. welke wijzigingen echt nodig zijn.
+
+Voer daarna alleen noodzakelijke wijzigingen uit.
+
+==================================================
+2. CENTRALE PRIJSNIVEAUHELPER
+==================================================
+
+Maak of gebruik één centrale helper voor de prijsniveaubepaling.
+
+Plaats deze in een bestaande geschikte helpermodule, bijvoorbeeld:
+
+- `utils/pricing.py`;
+- `utils/product_helpers.py`;
+- of een bestaande categorieconfiguratiemodule.
+
+Gebruik bijvoorbeeld:
+
+from decimal import Decimal, InvalidOperation
+
+def get_price_range(price):
+    if price is None:
+        return None
+
+    try:
+        normalized_price = Decimal(str(price))
+    except (InvalidOperation, TypeError, ValueError):
+        return None
+
+    if normalized_price < Decimal("0"):
+        return None
+    if normalized_price < Decimal("25"):
+        return "€"
+    if normalized_price < Decimal("50"):
+        return "€€"
+    if normalized_price < Decimal("90"):
+        return "€€€"
+    return "€€€€"
+
+Gebruik bestaande projectconventies wanneer die afwijken.
+
+Vereisten:
+
+- `None` geeft `None`;
+- ongeldige prijzen geven `None`;
+- negatieve prijzen geven `None`;
+- grenswaarden worden exact verwerkt;
+- gebruik bij voorkeur `Decimal`;
+- documenteer de grenswaarden;
+- geef alleen een prijsniveau terug en nooit een zichtbare concrete prijs.
+
+==================================================
+3. ÉÉN BRON VAN WAARHEID
+==================================================
+
+`price` is de numerieke bronwaarde.
+
+`price_range` is uitsluitend een afgeleide presentatiewaarde.
+
+Voorkom logica waarbij:
+
+- `price_range` wordt gebruikt om een concrete prijs te bepalen;
+- een handmatig `price_range` een berekend niveau overschrijft;
+- een productniveauprijsniveau wordt gebruikt voor een variant met een andere
+  prijs;
+- een prijs van variant A wordt gecombineerd met het prijsniveau van variant B;
+- een geformatteerde prijsstring wordt gebruikt voor berekeningen;
+- een concrete prijs uit `price_range` wordt afgeleid.
+
+De richting is uitsluitend:
+
+`price` → `price_range`
+
+Nooit:
+
+`price_range` → `price`
+
+==================================================
+4. GEEN CONCRETE PRIJSWEERGAVE TOEVOEGEN
+==================================================
+
+Deze taak mag geen concrete productprijzen zichtbaar maken op de website.
+
+Het numerieke `price`-veld wordt uitsluitend intern gebruikt voor:
+
+- het berekenen van `price_range`;
+- audits en validatie;
+- variantconsistentie;
+- interne controles;
+- toekomstige affiliate- of product-API-integratie.
+
+Op productkaarten en in vergelijkingstabellen mag alleen het prijsniveau worden
+getoond:
+
+- €
+- €€
+- €€€
+- €€€€
+
+Niet zichtbaar toevoegen:
+
+- €42,99;
+- €59,90;
+- vanaf €42,99;
+- prijs gecontroleerd op een bepaalde datum;
+- actuele prijs;
+- adviesprijs;
+- kortingsprijs;
+- variantprijs;
+- prijsrange in eurobedragen.
+
+Voeg geen nieuwe concrete prijscomponent toe.
+
+Activeer geen bestaande verborgen concrete-prijsweergave.
+
+Wijzig geen knoptekst naar een exacte prijs.
+
+Bestaande knoppen mogen bijvoorbeeld blijven:
+
+- Bekijk prijs;
+- Bekijk actuele prijs;
+- Bekijk prijs en reviews.
+
+Controleer na wijziging alle aangepaste templates en bevestig dat zij
+uitsluitend `price_range` of `display_price_range` tonen.
+
+==================================================
+5. PRODUCTEN ZONDER VARIANTEN
+==================================================
+
+Voor producten zonder varianten:
+
+resolved_price = product.get("price")
+resolved_price_range = get_price_range(resolved_price)
+
+Bereid de afgeleide waarde server-side voor.
+
+Bijvoorbeeld:
+
+prepared_product["display_price_range"] = get_price_range(
+    product.get("price")
+)
+
+Gebruik geen concrete zichtbare prijs in het prepared display-object wanneer
+dat niet al bewust onderdeel van de frontend is.
+
+Voorkom mutatie van de oorspronkelijke productdata.
+
+Bij voorkeur:
+
+prepared_product = {
+    **product,
+    "display_price_range": get_price_range(product.get("price")),
+}
+
+Niet:
+
+product["price_range"] = ...
+
+wanneer dat de brondata in-place wijzigt.
+
+==================================================
+6. PRODUCTEN MET VARIANTEN
+==================================================
+
+Voor producten met varianten:
+
+- gebruik uitsluitend de prijs van de geselecteerde displayvariant;
+- bereken `price_range` uit die variantprijs;
+- gebruik geen productniveauprijs als fallback;
+- gebruik geen prijs van een andere variant;
+- laat het prijsniveau leeg wanneer de displayvariant geen prijs heeft;
+- wis een oud prijsniveau wanneer een nieuwe variant geen geldige prijs heeft.
+
+Bijvoorbeeld:
+
+display_variant = resolve_display_variant(...)
+
+resolved_price = (
+    display_variant.get("price")
+    if display_variant is not None
+    else None
+)
+
+resolved_price_range = get_price_range(resolved_price)
+
+Voor GreenPan Mayflower moet dit opleveren:
+
+- Blauw, interne prijs 42.99 → zichtbaar prijsniveau `€€`;
+- Grijs, interne prijs 59.90 → zichtbaar prijsniveau `€€€`.
+
+Voor Kochstar:
+
+- Zwart, interne prijs 13.99 → zichtbaar prijsniveau `€`;
+- Taupe, interne prijs 14.99 → zichtbaar prijsniveau `€`.
+
+De concrete prijzen blijven intern en worden door deze taak niet zichtbaar
+gemaakt.
+
+==================================================
+7. DISPLAYOBJECTEN
+==================================================
+
+Bereid waar passend expliciete displayvelden voor:
+
+{
+    "display_variant": display_variant,
+    "display_variant_id": ...,
+    "display_price_range": resolved_price_range,
+}
+
+Voeg niet automatisch toe:
+
+{
+    "display_price": resolved_price
+}
+
+wanneer die waarde daardoor zichtbaar in templates of client-side data kan
+worden.
+
+Wanneer `display_price` al intern nodig is voor bestaande logica:
+
+- behoud het veld;
+- gebruik het niet in zichtbare HTML;
+- documenteer waar het wordt gebruikt;
+- voorkom dat het per ongeluk door templates wordt weergegeven.
+
+==================================================
+8. COMPARISON_ROWS
+==================================================
+
+Zorg dat iedere vergelijkingstabelrij expliciet het juiste prijsniveau bevat.
+
+Bijvoorbeeld:
+
+{
+    "product": product,
+    "display_variant": display_variant,
+    "price_range": get_price_range(resolved_price),
+    "affiliate_url": resolved_affiliate_url,
+    "availability": resolved_availability,
+    ...
+}
+
+De template moet bij voorkeur gebruiken:
+
+{{ row.price_range }}
+
+of:
+
+{{ row.display_price_range }}
+
+Niet:
+
+{{ row.product.price_range }}
+
+bij producten met varianten.
+
+Niet zichtbaar toevoegen:
+
+{{ row.price }}
+
+of:
+
+€ {{ row.price }}
+
+De tabel moet alleen prijsniveaus tonen.
+
+Controleer dat prijsniveau, affiliate-link en displayvariant bij dezelfde
+variant horen.
+
+==================================================
+9. PRODUCTKAARTEN
+==================================================
+
+Zorg dat productkaarten het berekende prijsniveau van dezelfde displayvariant
+gebruiken.
+
+Gewenste zichtbare weergave:
+
+Prijsniveau: €€
+
+of alleen:
+
+€€
+
+Afhankelijk van de bestaande site-opmaak.
+
+Niet toevoegen:
+
+Prijs: €42,99
+
+Bij client-side variantwisseling moet het prijsniveau worden aangepast.
+
+Voorbeeld van veilige variantdata:
+
+{
+    "id": "...",
+    "price_range": "€€"
+}
+
+Het is voor deze taak niet nodig om de concrete `price` naar de browser te
+sturen wanneer het client-side script alleen het prijsniveau nodig heeft.
+
+Wanneer de concrete prijs momenteel al in variant-JSON staat:
+
+- verwijder dit niet zonder eerst bestaand gebruik te controleren;
+- gebruik het niet voor zichtbare prijsweergave;
+- rapporteer dat de prijs client-side beschikbaar is;
+- voorkom dat deze taak nieuwe prijsweergave activeert.
+
+Bij ontbrekende prijs:
+
+- verwijder een eerder prijsniveau;
+- toon geen prijsniveau van de vorige variant;
+- gebruik geen productniveauprijsniveau als fallback.
+
+==================================================
+10. CLIENT-SIDE VARIANTWISSEL
+==================================================
+
+Controleer JavaScript voor variantwissels.
+
+De variantwissel moet het prijsniveau expliciet bijwerken.
+
+Gewenst patroon:
+
+if (variant.price_range) {
+    priceRangeElement.textContent = variant.price_range;
+    priceRangeElement.hidden = false;
+} else {
+    priceRangeElement.textContent = "";
+    priceRangeElement.hidden = true;
+}
+
+Niet:
+
+if (variant.price_range) {
+    priceRangeElement.textContent = variant.price_range;
+}
+
+zonder `else`, omdat dan een oud prijsniveau kan blijven staan.
+
+Voeg geen JavaScript toe dat concrete prijzen formatteert of toont.
+
+Voeg geen code toe zoals:
+
+priceElement.textContent = `€ ${variant.price}`;
+
+==================================================
+11. BESTAANDE HANDMATIGE PRICE_RANGE-VELDEN
+==================================================
+
+Controleer alle bestaande handmatige `price_range`-velden.
+
+Voorkeursstrategie:
+
+- laat ze voorlopig in de productdata staan voor backward compatibility;
+- gebruik ze niet langer als primaire bron wanneer een geldige prijs bestaat;
+- rapporteer verschillen tussen handmatig en berekend niveau;
+- verwijder ze niet projectbreed zonder afzonderlijke migratietaak.
+
+Maak een auditoverzicht:
+
+| Categorie | Product | Variant | Interne prijs | Handmatig niveau | Berekend niveau |
+
+Dit rapport mag concrete prijzen tonen in de admin, commandline of auditoutput,
+maar niet op de publieke website.
+
+Wijzig geen prijzen.
+
+Pas handmatige `price_range`-velden alleen automatisch aan wanneer dit
+uitdrukkelijk onderdeel van de gekozen implementatie is en veilig kan zonder
+brondata te muteren.
+
+De voorkeur is berekenen bij rendering in plaats van permanent herschrijven.
+
+==================================================
+12. CATEGORIEËN EN PRIJSREGELS
+==================================================
+
+Controleer of andere productcategorieën bewust andere prijsgrenzen gebruiken.
+
+Ga niet automatisch ervan uit dat de grenzen voor keramische koekenpannen
+passend zijn voor:
+
+- RVS-koekenpannen;
+- airfryers;
+- snijplanken;
+- glazen vershoudbakjes;
+- hapjespannen;
+- wokpannen;
+- pannensets;
+- toekomstige categorieën.
+
+Ontwerp de helper daarom bij voorkeur categorieconfigureerbaar.
+
+Bijvoorbeeld:
+
+PRICE_RANGE_THRESHOLDS = {
+    "keramische-koekenpannen": (
+        (Decimal("25"), "€"),
+        (Decimal("50"), "€€"),
+        (Decimal("90"), "€€€"),
+        (None, "€€€€"),
+    ),
+}
+
+of:
+
+get_price_range(
+    price,
+    category="keramische-koekenpannen",
+)
+
+Gebruik de bestaande categoriekeys.
+
+Voor deze taak mogen alleen de grenzen voor keramische koekenpannen definitief
+worden toegepast, tenzij andere categorieën aantoonbaar exact dezelfde
+indeling gebruiken.
+
+Rapporteer andere categorieën apart.
+
+==================================================
+13. JSON-LD EN STRUCTURED DATA
+==================================================
+
+Deze taak mag Product- of Offer-JSON-LD niet automatisch uitbreiden met
+concrete prijzen.
+
+Controleer eerst de huidige situatie.
+
+Rapporteer:
+
+1. welke pagina’s Product JSON-LD bevatten;
+2. welke pagina’s een Offer bevatten;
+3. of `price` momenteel al in Offer JSON-LD wordt gepubliceerd;
+4. of prijs, URL en beschikbaarheid bij dezelfde displayvariant horen;
+5. of JSON-LD exacte prijzen publiceert die niet zichtbaar in HTML staan.
+
+Vereisten voor deze taak:
+
+- voeg geen nieuwe Offer toe;
+- voeg geen concrete prijs toe aan bestaande Product JSON-LD;
+- zet `price_range` nooit in het `price`-veld;
+- gebruik nooit `€€` als schema.org-prijs;
+- wijzig bestaand JSON-LD-beleid niet automatisch;
+- rapporteer eventuele bestaande concrete prijsweergave afzonderlijk.
+
+Niet correct:
+
+"price": "€€"
+
+Niet correct:
+
+"price": "42,99"
+
+Niet correct:
+
+"price": "€42,99"
+
+Technisch correct wanneer later bewust gebruikt:
+
+"price": "42.99",
+"priceCurrency": "EUR"
+
+Maar concrete Offer-prijzen vallen buiten deze taak.
+
+Wanneer de website momenteel al handmatig bijgehouden prijzen in JSON-LD
+publiceert:
+
+- verander dit niet stil;
+- rapporteer waar dit gebeurt;
+- geef aan of die prijzen uit hetzelfde displayvariantveld komen;
+- voeg een aparte aanbeveling toe voor toekomstige affiliate-API-integratie.
+
+==================================================
+14. TOEKOMSTIGE AFFILIATE- OF PRODUCT-API
+==================================================
+
+De architectuur moet toekomstige actuele prijsintegratie niet blokkeren.
+
+Houd rekening met een toekomstige officiële affiliate- of product-API,
+bijvoorbeeld van bol.
+
+Mogelijke toekomstige velden:
+
+- live_price;
+- regular_price;
+- sale_price;
+- price_currency;
+- price_updated_at;
+- affiliate_url;
+- availability;
+- offer_id.
+
+Voeg deze integratie nu niet toe.
+
+Voeg geen API-client toe.
+
+Voeg geen scraping toe.
+
+Gebruik geen webshopprijzen live vanaf publieke productpagina’s.
+
+De huidige interne `price`-velden blijven voorlopig alleen bruikbaar voor:
+
+- prijsniveau;
+- audit;
+- interne consistentie.
+
+==================================================
+15. PRIJSWEERGAVE EN DISCLAIMERS
+==================================================
+
+Voeg door deze taak geen nieuwe prijsdisclaimer toe, omdat er geen concrete
+prijs zichtbaar wordt gemaakt.
+
+Behoud bestaande affiliatevermeldingen.
+
+Voeg geen tekst toe zoals:
+
+- prijzen kunnen wijzigen;
+- prijs gecontroleerd op;
+- actuele prijs bij bol;
+- adviesprijs.
+
+Dergelijke teksten zijn pas relevant wanneer concrete prijzen zichtbaar
+worden gepubliceerd.
+
+==================================================
+16. AUDITINTEGRATIE
+==================================================
+
+Integreer de prijsniveaucontrole in de bestaande auditinfrastructuur wanneer
+die al aanwezig is.
+
+Controleer minimaal:
+
+- handmatig prijsniveau wijkt af van berekend prijsniveau;
+- ontbrekende prijs;
+- ongeldige prijs;
+- negatieve prijs;
+- variant heeft prijs maar productkaart gebruikt productniveau;
+- productkaart en tabel gebruiken verschillende prijsniveaus;
+- JSON-LD gebruikt een andere variantprijs;
+- prijsniveau van vorige variant kan blijven staan;
+- `price_range` ontbreekt terwijl een geldige prijs aanwezig is.
+
+Gebruik bijvoorbeeld issuecodes:
+
+- invalid_price
+- missing_price
+- negative_price
+- stale_price_range
+- price_range_mismatch
+- cross_variant_price
+- inconsistent_card_table_price_range
+- inconsistent_jsonld_price
+- product_level_variant_price_fallback
+- visible_concrete_price_detected
+- concrete_price_in_jsonld
+
+Wanneer een centraal admin-auditdashboard bestaat:
+
+- registreer de prijsniveauaudit daarin;
+- maak deze read-only;
+- toon concrete prijzen alleen aan bevoegde admins;
+- wijzig geen productdata vanuit de audit.
+
+==================================================
+17. PUBLIEKE TEMPLATE-AUDIT
+==================================================
+
+Voeg een controle toe die publieke templates scant op ongewenste concrete
+prijsweergave.
+
+Controleer patronen zoals:
+
+{{ product.price }}
+{{ row.price }}
+{{ variant.price }}
+{{ display_price }}
+€{{ ...price... }}
+€ {{ ...price... }}
+
+Maak onderscheid tussen:
+
+- publieke templates;
+- admin templates;
+- tests;
+- auditrapporten;
+- JSON-LD.
+
+Rapporteer zichtbare concrete prijzen op publieke productpagina’s als:
+
+visible_concrete_price_detected
+
+Verwijder bestaande prijsweergave niet automatisch wanneer die bewust is
+ingevoerd; rapporteer deze eerst.
+
+Voor de aangepaste prijsniveauonderdelen mag echter geen nieuwe zichtbare prijs
+worden toegevoegd.
+
+==================================================
+18. TESTS VOOR DE PRIJSNIVEAUHELPER
+==================================================
+
+Voeg tests toe voor minimaal:
+
+1. `None` geeft geen prijsniveau.
+2. Ongeldige tekst geeft geen prijsniveau.
+3. Negatieve prijs geeft geen prijsniveau.
+4. 0 geeft `€`.
+5. 24.99 geeft `€`.
+6. 25.00 geeft `€€`.
+7. 49.99 geeft `€€`.
+8. 50.00 geeft `€€€`.
+9. 89.99 geeft `€€€`.
+10. 90.00 geeft `€€€€`.
+11. Numerieke string `"42.99"` wordt correct verwerkt.
+12. Decimal-waarde wordt correct verwerkt.
+13. Float-waarde wordt correct verwerkt.
+
+==================================================
+19. TESTS VOOR PRODUCTEN ZONDER VARIANTEN
+==================================================
+
+Test minimaal:
+
+1. Product zonder varianten gebruikt productniveauprijs.
+2. Berekend prijsniveau wordt correct voorbereid.
+3. Handmatig prijsniveau wordt niet leidend gebruikt.
+4. Bronproductdata wordt niet gemuteerd.
+5. Geen concrete prijs verschijnt in publieke HTML.
+6. Geen nieuw Offer wordt toegevoegd aan JSON-LD.
+
+==================================================
+20. TESTS VOOR VARIANTPRODUCTEN
+==================================================
+
+Test minimaal:
+
+1. Product met varianten gebruikt displayvariantprijs.
+2. Variant zonder prijs erft geen prijs van andere variant.
+3. Variant zonder prijs erft geen productniveauprijs.
+4. Variant A en B kunnen verschillende prijsniveaus hebben.
+5. GreenPan Mayflower Blauw geeft `€€`.
+6. GreenPan Mayflower Grijs geeft `€€€`.
+7. Kochstar Zwart geeft `€`.
+8. Kochstar Taupe geeft `€`.
+9. Variantwisseling wist een oud prijsniveau.
+10. Meerdere productkaarten beïnvloeden elkaar niet.
+11. Productkaart en vergelijkingstabel gebruiken hetzelfde niveau.
+12. Affiliate-link en prijsniveau horen bij dezelfde displayvariant.
+13. Geen concrete prijs verschijnt door variantwisseling.
+
+==================================================
+21. TESTS VOOR TEMPLATES EN JSON-LD
+==================================================
+
+Test minimaal:
+
+1. Productkaart toont alleen het prijsniveau.
+2. Vergelijkingstabel toont alleen het prijsniveau.
+3. Publieke HTML bevat geen exacte interne productprijs.
+4. Geen nieuw concrete-prijsveld wordt toegevoegd.
+5. JSON-LD wordt niet automatisch uitgebreid met Offer.
+6. `price_range` wordt nooit als schema.org-prijs gebruikt.
+7. Bestaande JSON-LD blijft syntactisch geldig.
+8. Templates gebruiken `row.price_range` of equivalent resolved veld.
+9. Templates gebruiken bij variantproducten niet blind
+   `row.product.price_range`.
+10. Alle bestaande tests blijven slagen.
+
+==================================================
+22. GEEN ONGERELATEERDE WIJZIGINGEN
+==================================================
+
+Niet doen:
+
+- geen prijzen aanpassen;
+- geen affiliate-links wijzigen;
+- geen live prijsweergave toevoegen;
+- geen adviesprijzen toevoegen;
+- geen kortingen toevoegen;
+- geen prijzen scrapen;
+- geen affiliate-API implementeren;
+- geen Offer JSON-LD toevoegen;
+- geen awards wijzigen;
+- geen ranking aanpassen;
+- geen productteksten wijzigen;
+- geen productafbeeldingen wijzigen;
+- geen concrete prijs uit `price_range` afleiden;
+- geen geformatteerde prijsstring als numerieke bron opslaan;
+- geen prijsregels voor andere categorieën opleggen zonder audit;
+- geen productdata verwijderen tijdens deze taak.
+
+==================================================
+23. GEFASSEERDE UITVOERING
+==================================================
+
+Werk gefaseerd.
+
+Fase 1:
+- inventariseer huidig prijs- en prijsniveaugebruik;
+- rapporteer zichtbare concrete prijzen;
+- rapporteer bestaand JSON-LD-prijsgebruik;
+- nog geen wijzigingen.
+
+Fase 2:
+- voeg centrale prijsniveauhelper en tests toe;
+- pas alleen keramische koekenpannen toe.
+
+Fase 3:
+- lijn productkaarten, vergelijkingstabellen en variantselectors uit;
+- voorkom concrete prijsweergave;
+- voeg regressietests toe.
+
+Fase 4:
+- integreer read-only audit;
+- voer volledige testsuite uit;
+- rapporteer andere categorieën die nog een eigen prijsindeling nodig hebben.
+
+Stop en rapporteer wanneer een wijziging bestaand prijsbeleid of concrete
+prijsweergave zou veranderen buiten deze opdracht.
+
+==================================================
+24. EINDRAPPORT
+==================================================
+
+Rapporteer na uitvoering:
+
+1. waar `price` projectbreed voor wordt gebruikt;
+2. waar `price_range` voor wordt gebruikt;
+3. waar concrete prijzen momenteel zichtbaar zijn;
+4. waar concrete prijzen momenteel in JSON-LD staan;
+5. welke handmatige prijsniveaus afweken;
+6. locatie van de centrale prijsniveauhelper;
+7. gebruikte prijsgrenzen;
+8. hoe producten zonder varianten worden behandeld;
+9. hoe variantproducten worden behandeld;
+10. hoe productkaart en vergelijkingstabel zijn uitgelijnd;
+11. hoe client-side variantwisseling het prijsniveau bijwerkt;
+12. bevestiging dat geen nieuwe concrete prijzen zichtbaar zijn gemaakt;
+13. bevestiging dat geen nieuwe Offer-prijzen zijn toegevoegd;
+14. hoe bestaand JSON-LD is behandeld;
+15. welke andere categorieën een eigen prijsindeling nodig hebben;
+16. welke auditchecks zijn toegevoegd;
+17. toegevoegde tests;
+18. volledige testresultaten;
+19. bevestiging dat prijzen, productdata, affiliate-links, awards, rankings,
+    afbeeldingen en teksten niet zijn gewijzigd;
+20. eventuele resterende handmatige controles.

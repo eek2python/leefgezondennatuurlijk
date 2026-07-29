@@ -1,5 +1,6 @@
 import copy
 import json
+import re
 
 from django.test import SimpleTestCase, TestCase
 
@@ -842,6 +843,197 @@ class EditorialRatingDisplayTests(TestCase):
             "partials/product_block.html", {"product": product}
         )
         self.assertNotIn("Onze beoordeling:", html)
+
+
+class PriceRangeHelperTests(SimpleTestCase):
+    """Centrale prijsniveauhelper: price → price_range (utils/pricing.py)."""
+
+    def test_none_gives_none(self):
+        from utils.pricing import get_price_range
+        self.assertIsNone(get_price_range(None, "koekenpannen"))
+
+    def test_invalid_text_gives_none(self):
+        from utils.pricing import get_price_range
+        self.assertIsNone(get_price_range("nvt", "koekenpannen"))
+        self.assertIsNone(get_price_range("€42,99", "koekenpannen"))
+
+    def test_negative_gives_none(self):
+        from utils.pricing import get_price_range
+        self.assertIsNone(get_price_range(-1, "koekenpannen"))
+
+    def test_boundaries(self):
+        from utils.pricing import get_price_range
+        cases = [
+            (0, "€"), (24.99, "€"), (25.00, "€€"), (49.99, "€€"),
+            (50.00, "€€€"), (89.99, "€€€"), (90.00, "€€€€"),
+        ]
+        for price, expected in cases:
+            self.assertEqual(get_price_range(price, "koekenpannen"), expected, price)
+
+    def test_numeric_string_decimal_float(self):
+        from decimal import Decimal
+        from utils.pricing import get_price_range
+        self.assertEqual(get_price_range("42.99", "koekenpannen"), "€€")
+        self.assertEqual(get_price_range(Decimal("42.99"), "koekenpannen"), "€€")
+        self.assertEqual(get_price_range(42.99, "koekenpannen"), "€€")
+
+    def test_unknown_category_gives_none(self):
+        from utils.pricing import get_price_range
+        self.assertIsNone(get_price_range(42.99, "airfryers"))
+
+
+class NonVariantPriceRangeTests(TestCase):
+    """Producten zonder varianten: productniveauprijs → berekend niveau."""
+
+    def test_computed_level_overrides_manual(self):
+        from products.views import _enrich_products
+        product = {
+            "name": "Test", "rating": 4.0, "price": 42.99,
+            "price_range": "€€€€",  # verouderd handmatig niveau
+        }
+        _enrich_products([product], category="koekenpannen")
+        self.assertEqual(product["display_price_range"], "€€")
+        # Handmatig veld blijft ongewijzigd in de data (backward compat).
+        self.assertEqual(product["price_range"], "€€€€")
+
+    def test_manual_level_only_used_without_price(self):
+        from products.views import _enrich_products
+        product = {"name": "Test", "rating": 4.0, "price_range": "€€"}
+        _enrich_products([product], category="koekenpannen")
+        self.assertEqual(product["display_price_range"], "€€")
+
+    def test_source_data_not_mutated(self):
+        from products.products_koekenpannen import PRODUCTS
+        before = copy.deepcopy(PRODUCTS)
+        self.client.get("/koekenpannen/")
+        self.assertEqual(PRODUCTS, before)
+
+    def test_no_concrete_price_in_public_html(self):
+        from products.products_koekenpannen import PRODUCTS
+        html = self.client.get("/koekenpannen/").content.decode()
+        for p in PRODUCTS.values():
+            for source in [p] + list(p.get("variants") or []):
+                price = source.get("price")
+                if price is None:
+                    continue
+                formatted = f"{price:.2f}"
+                self.assertNotIn(f"€{formatted}", html)
+                self.assertNotIn(f"€ {formatted}", html)
+                self.assertNotIn(formatted.replace(".", ","), html)
+
+    def test_no_new_offer_added_for_unknown_category_passthrough(self):
+        # Andere categorie: display is passthrough van handmatig niveau.
+        from products.views import _enrich_products
+        product = {"name": "Test", "rating": 4.0, "price": 42.99,
+                   "price_range": "€€€"}
+        _enrich_products([product], category="wokpannen")
+        self.assertEqual(product["display_price_range"], "€€€")
+
+
+class VariantPriceRangeTests(TestCase):
+    """Variantproducten: strikt het niveau van de eigen variantprijs."""
+
+    def _enriched(self, key):
+        from products.products_koekenpannen import PRODUCTS
+        from products.views import _enrich_products
+        product = copy.deepcopy(PRODUCTS[key])
+        _enrich_products([product], category="koekenpannen")
+        return product
+
+    def test_mayflower_variants(self):
+        p = self._enriched("greenpan_mayflower_28")
+        by_name = {v["name"]: v["display_price_range"] for v in p["variants"]}
+        self.assertEqual(by_name["Blauw"], "€€")   # 42.99
+        self.assertEqual(by_name["Grijs"], "€€€")  # 59.90
+        # Kaartniveau = getoonde (eerste) swatch, niet handmatig "€€-€€€".
+        self.assertEqual(p["display_price_range"],
+                         p["variants"][0]["display_price_range"])
+
+    def test_kochstar_variants(self):
+        p = self._enriched("kochstar_essenz_24")
+        for v in p["variants"]:
+            self.assertEqual(v["display_price_range"], "€")
+
+    def test_variant_without_price_gets_empty_level(self):
+        from products.views import _enrich_products
+        product = {
+            "name": "Test", "rating": 4.0, "price_range": "€€",
+            "variants": [
+                {"name": "A", "price": 42.99},
+                {"name": "B"},  # geen prijs: geen niveau, geen fallback
+            ],
+        }
+        _enrich_products([product], category="koekenpannen")
+        self.assertEqual(product["variants"][0]["display_price_range"], "€€")
+        self.assertEqual(product["variants"][1]["display_price_range"], "")
+
+    def test_swatch_data_price_always_emitted_when_derived(self):
+        html = self.client.get("/koekenpannen/").content.decode()
+        # Afgeleide niveaus als data-price op swatches (Mayflower).
+        self.assertIn('data-price="€€€"', html)
+        self.assertIn('data-price="€€"', html)
+        # Geen productniveau-fallbackattribuut bij afgeleide niveaus.
+        self.assertNotIn("data-base-price", html)
+
+    def test_js_clears_and_never_falls_back_for_derived_levels(self):
+        js = open("static/assets/js/variants.js", encoding="utf-8").read()
+        self.assertIn('swatch.hasAttribute("data-price")', js)
+        self.assertIn('priceEl.textContent = price || ""', js)
+        self.assertIn("priceEl.hidden = !price", js)
+
+    def test_cards_do_not_share_state(self):
+        p1 = self._enriched("greenpan_mayflower_28")
+        p2 = self._enriched("kochstar_essenz_24")
+        self.assertNotEqual(p1["display_price_range"],
+                            p2["display_price_range"])
+
+
+class PriceRangeTemplateTests(TestCase):
+    """Templates en JSON-LD tonen alleen prijsniveaus."""
+
+    def test_comparison_table_uses_display_level(self):
+        from products.products_koekenpannen import PRODUCTS
+        from products.rankings_koekenpannen import RANKINGS
+        from utils.pricing import get_price_range
+        html = self.client.get("/koekenpannen/").content.decode()
+        key = RANKINGS[28][0]
+        p = PRODUCTS[key]
+        source = (p.get("variants") or [p])[0]
+        expected = get_price_range(source.get("price"), "koekenpannen")
+        self.assertIn(f"<td>{expected}</td>", html)
+
+    def test_vershoud_table_uses_row_level(self):
+        html = self.client.get("/vershoudcontainers/").content.decode()
+        self.assertIn("Prijsniveau", html)
+        self.assertEqual(
+            self.client.get("/vershoudcontainers/").status_code, 200)
+
+    def test_price_range_never_in_jsonld_price_field(self):
+        for url in ("/koekenpannen/", "/airfryers/", "/vershoudcontainers/"):
+            html = self.client.get(url).content.decode()
+            for ld in re.findall(
+                r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+                html, re.S,
+            ):
+                data = json.loads(ld)
+                text = json.dumps(data)
+                self.assertNotIn('"price": "€', text)
+
+    def test_jsonld_still_valid_and_no_new_offers(self):
+        html = self.client.get("/koekenpannen/").content.decode()
+        blocks = re.findall(
+            r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+            html, re.S,
+        )
+        self.assertTrue(blocks)
+        for ld in blocks:
+            json.loads(ld)  # geen exceptie: syntactisch geldig
+
+    def test_all_category_pages_render(self):
+        for url in ("/koekenpannen/", "/wokpannen/", "/hapjespannen/",
+                    "/snijplanken/", "/airfryers/", "/rvs-koekenpannen/",
+                    "/vershoudcontainers/"):
+            self.assertEqual(self.client.get(url).status_code, 200, url)
 
 
 class VariantAuditCommandTests(TestCase):

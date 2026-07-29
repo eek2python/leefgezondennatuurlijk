@@ -15,7 +15,9 @@ Stabiele issuecodes:
     missing_display_variant, multiple_default_variants,
     inconsistent_card_table_variant, inconsistent_jsonld_variant,
     missing_variant_clear_branch, unsafe_template_firstof,
-    missing_variant_url, missing_variant_price, invalid_variant_data
+    missing_variant_url, missing_variant_price, invalid_variant_data,
+    missing_price, invalid_price, negative_price, price_range_mismatch,
+    stale_price_range, visible_concrete_price_detected
 """
 
 import copy
@@ -27,7 +29,25 @@ from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.test import RequestFactory
 
+from utils.pricing import get_price_range, has_price_range_config
 from utils.variant_helpers import prepare_product_variants
+
+#: Auditcategorienaam → categoriekey van utils/pricing.py.
+PRICING_CATEGORY_KEYS = {
+    "koekenpannen": "koekenpannen",
+    "hapjespannen": "hapjespannen",
+    "wokpannen": "wokpannen",
+    "rvs-koekenpannen": "rvs-koekenpannen",
+    "snijplanken": "snijplanken",
+    "airfryers": "airfryers",
+    "vershoudbakjes": "vershoudcontainers",
+}
+
+#: Patronen die op een zichtbare concrete prijs in publieke templates duiden.
+#: price_range/display_price_range zijn prijsniveaus en dus toegestaan.
+_CONCRETE_PRICE_RE = re.compile(
+    r"\{\{\s*[\w.]*\bprice\s*(?:\|[^}]*)?\}\}|€\s*\{\{"
+)
 
 CATEGORY_SOURCES = {
     "koekenpannen": "products.products_koekenpannen",
@@ -110,7 +130,15 @@ class Command(BaseCommand):
             warnings.extend(result["warnings"])
             rows.append(result["summary"])
 
+        price_rows = []
+        for name, module_path in categories.items():
+            e, w, pr = self.audit_price_levels(name, module_path)
+            errors.extend(e)
+            warnings.extend(w)
+            price_rows.extend(pr)
+
         warnings.extend(self.audit_templates())
+        errors.extend(self.audit_concrete_price_templates())
         errors.extend(self.audit_js_clear_branches())
         errors.extend(self.audit_view_deepcopy_usage())
 
@@ -119,7 +147,7 @@ class Command(BaseCommand):
             errors.extend(e)
             warnings.extend(w)
 
-        lines = self.render_report(rows, errors, warnings)
+        lines = self.render_report(rows, errors, warnings, price_rows)
         report_text = "\n".join(lines) + "\n"
         self.stdout.write(report_text)
 
@@ -265,6 +293,94 @@ class Command(BaseCommand):
                     "Default-swatch-URL wijkt af van productniveau-URL (JSON-LD-basis)",
                 )
             )
+        return issues
+
+    # ------------------------------------------------------------------
+    def audit_price_levels(self, name, module_path):
+        """Read-only prijsniveau-audit: vergelijkt handmatige
+        ``price_range``-velden met het uit ``price`` berekende niveau.
+        Alleen categorieën met definitieve grenzen (utils/pricing.py) geven
+        ``price_range_mismatch``-waarschuwingen; overige zijn report-only.
+        Er worden nooit prijzen of productdata gewijzigd."""
+        errors, warnings, price_rows = [], [], []
+        pricing_key = PRICING_CATEGORY_KEYS.get(name, name)
+        configured = has_price_range_config(pricing_key)
+
+        def check_price(key, variant_label, price, manual):
+            computed = get_price_range(price, pricing_key) if configured else None
+            price_rows.append(
+                (name, key, variant_label, price, manual or "—", computed or "—")
+            )
+            if price is None:
+                warnings.append(
+                    ("missing_price", name, key,
+                     f"{variant_label or 'product'}: geen numerieke prijs")
+                )
+                return
+            try:
+                numeric = float(price)
+            except (TypeError, ValueError):
+                errors.append(
+                    ("invalid_price", name, key,
+                     f"{variant_label or 'product'}: prijs {price!r} is niet numeriek")
+                )
+                return
+            if numeric < 0:
+                errors.append(
+                    ("negative_price", name, key,
+                     f"{variant_label or 'product'}: negatieve prijs {price!r}")
+                )
+                return
+            if configured and manual and manual != computed:
+                warnings.append(
+                    ("price_range_mismatch", name, key,
+                     f"{variant_label or 'product'}: handmatig '{manual}' ≠ "
+                     f"berekend '{computed}' (berekend niveau is leidend "
+                     "bij rendering; brondata blijft ongewijzigd)")
+                )
+            if configured and computed and not manual and variant_label == "":
+                warnings.append(
+                    ("stale_price_range", name, key,
+                     "price_range ontbreekt terwijl een geldige prijs bestaat "
+                     "(niveau wordt bij rendering berekend)")
+                )
+
+        products = _load_products(module_path)
+        for key, product in products.items():
+            variants = product.get("variants") or []
+            swatch = bool(variants) and not all(_is_button_variant(v) for v in variants)
+            if swatch:
+                for v in variants:
+                    check_price(key, v.get("name") or "?", v.get("price"),
+                                v.get("price_range"))
+            elif variants:
+                for v in variants:
+                    check_price(key, v.get("id") or "?", v.get("price"),
+                                v.get("price_range"))
+            else:
+                check_price(key, "", product.get("price"), product.get("price_range"))
+        return errors, warnings, price_rows
+
+    def audit_concrete_price_templates(self):
+        """Publieke templates mogen alleen prijsniveaus tonen; een zichtbare
+        concrete prijs ({{ ...price }}, € {{ ... }}) is een fout."""
+        issues = []
+        base = Path(settings.BASE_DIR)
+        for path in sorted((base / "templates").rglob("*.html")):
+            rel = str(path.relative_to(base))
+            if "/admin" in rel:
+                continue
+            for i, line in enumerate(
+                path.read_text(encoding="utf-8").splitlines(), 1
+            ):
+                for match in _CONCRETE_PRICE_RE.finditer(line):
+                    snippet = match.group(0)
+                    if "price_range" in snippet or "price_last_checked" in snippet:
+                        continue
+                    issues.append(
+                        ("visible_concrete_price_detected", "templates", rel,
+                         f"regel {i}: {snippet[:60]}")
+                    )
         return issues
 
     # ------------------------------------------------------------------
@@ -441,7 +557,7 @@ class Command(BaseCommand):
         return rows
 
     # ------------------------------------------------------------------
-    def render_report(self, rows, errors, warnings):
+    def render_report(self, rows, errors, warnings, price_rows=None):
         lines = [
             "# Projectbrede audit productvarianten",
             "",
@@ -495,6 +611,19 @@ class Command(BaseCommand):
                 lines.append("|---|---|---|---|")
                 for code, cat, key, msg in items:
                     lines.append(f"| {code} | {cat} | {key} | {msg} |")
+        if price_rows:
+            lines += [
+                "",
+                "## Prijsniveau-audit (interne prijzen; niet publiek)",
+                "",
+                "| Categorie | Product | Variant | Interne prijs | Handmatig niveau | Berekend niveau |",
+                "|---|---|---|---|---|---|",
+            ]
+            for cat, key, variant, price, manual, computed in price_rows:
+                price_txt = "—" if price is None else f"{price}"
+                lines.append(
+                    f"| {cat} | {key} | {variant or '—'} | {price_txt} | {manual} | {computed} |"
+                )
         lines += [
             "",
             "## Handmatige controle",

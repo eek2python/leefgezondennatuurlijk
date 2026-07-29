@@ -119,6 +119,11 @@ All 6 category pages use a standardised three-file content architecture per cate
 - IKEA 365+ & Mepal EasyClip enkel migrated from legacy shape-as-capacity variants to `variant_selectors` capacity selectors; `pyrex_cook_store_3delig` renamed to `pyrex_cook_store_enkel` (single 800 ml container)
 - Full audit + open verification items: `docs/audit-vershoudbakjes.md`; tests: `products/test_usage_vershoudbakjes.py`
 
+### Price Levels (price → price_range)
+- `utils/pricing.py`: central `get_price_range(price, category)` with per-category thresholds; only `koekenpannen` has definitive thresholds (<25 €, <50 €€, <90 €€€, ≥90 €€€€). Other categories are passthrough (manual `price_range`) until their thresholds are decided.
+- `_enrich_products(products, category=...)` sets `display_price_range` on products and swatch variants; templates only render `display_price_range` / `row.price_range` — never concrete prices. Derived levels are strict per display variant (no fallback); `data-price` is always emitted (even empty) when derived, and `variants.js` clears + hides the level on switch.
+- Manual `price_range` fields stay in the data (backward compat / report-only); the audit command reports `price_range_mismatch` etc. and a full internal price table.
+
 ### Variant Audit Command
 - `python manage.py audit_product_variants` (`--category`, `--strict`, `--report`) — read-only projectwide variant audit; `--report` writes `docs/audit-product-variants.md` (Dutch, spec-format sections: Samenvatting, Gedeelde infrastructuur, Categorieoverzicht, fouten/waarschuwingen tables, Handmatige controle)
 - Checks: button-variant defaults (missing/multiple), missing variant URL/price, swatch vs JSON-LD price/URL mismatch, source-data mutation (helper path AND real view flow via RequestFactory), JS set-or-clear branches present in both variant scripts, deepcopy usage in views, unsafe `firstof ... affiliate_url` fallbacks in the 7 comparison templates

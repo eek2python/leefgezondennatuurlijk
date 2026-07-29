@@ -140,8 +140,8 @@
         </div>
         <p>{{ product.verdict }}</p>
     </div>
-    {% if product.price_range %}
-    <p><strong>Prijsniveau:</strong> {{ product.price_range }}</p>
+    {% if product.display_price_range %}
+    <p><strong>Prijsniveau:</strong> {{ product.display_price_range }}</p>
     {% endif %}
     {% if product.award %}
     <span class="product-badge {{ product.award_class }}">{{ product.award }}</span>

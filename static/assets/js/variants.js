@@ -21,7 +21,13 @@
 
             var src = swatch.getAttribute("data-image");
             var url = swatch.getAttribute("data-affiliate") || baseAffiliate;
-            var price = swatch.getAttribute("data-price") || basePrice;
+            // Afgeleide niveaus zetten het attribuut altijd (ook leeg):
+            // een aanwezige lege data-price wist het oude niveau expliciet
+            // en valt nooit terug op productniveau. Alleen swatches zonder
+            // attribuut (legacy handmatige niveaus) gebruiken de basis.
+            var price = swatch.hasAttribute("data-price")
+                ? (swatch.getAttribute("data-price") || "")
+                : basePrice;
             var name = swatch.getAttribute("data-name") || "";
 
             if (src && src !== img.getAttribute("src")) {
@@ -60,6 +66,7 @@
 
             if (priceEl) {
                 priceEl.textContent = price || "";
+                priceEl.hidden = !price;
             }
 
             for (var i = 0; i < swatches.length; i++) {

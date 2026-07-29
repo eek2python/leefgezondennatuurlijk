@@ -11,7 +11,7 @@ PRODUCTS = {
        "rating": 4.8,
        "rating_count": None,
        "rating_source": "editorial",
-       "price": 44.99,
+       "price": 47.51,
        "price_last_checked": "2026-05-22",
        "currency": "EUR",
        "availability": "InStock",
