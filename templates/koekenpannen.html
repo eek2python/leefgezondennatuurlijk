@@ -132,14 +132,7 @@
 </div>{% else %}—{% endif %}
             </td>
             <td>
-            <a
-                                       href="{{ product.affiliate_url }}"
-                                       target="_blank"
-                                       rel="nofollow sponsored noopener"
-                                       class="button primary small"
-            >
-                                       Bekijk prijs &amp; reviews →
-            </a>
+            {% include "includes/product_link.html" with resolved_link=product.resolved_link availability_label=product.availability_label link_product=product link_small=True %}
             </td>
             </tr>
                            {% endfor %}

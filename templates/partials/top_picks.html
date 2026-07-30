@@ -25,7 +25,7 @@
             </div>
             {% endif %}
             <p class="top-pick-blurb">Onze allround topkeuze met de beste balans tussen kwaliteit, prestaties en prijs.</p>
-            <a href="{{ top_picks.beste.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary">Bekijk prijs &amp; reviews →</a>
+            {% include "includes/product_link.html" with resolved_link=top_picks.beste.resolved_link availability_label=top_picks.beste.availability_label link_product=top_picks.beste %}
         </div>
         {% endif %}
         {% if top_picks.budget %}
@@ -40,7 +40,7 @@
             </div>
             {% endif %}
             <p class="top-pick-blurb">Slimme keuze voor wie kwaliteit zoekt zonder te veel uit te geven.</p>
-            <a href="{{ top_picks.budget.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary">Bekijk prijs &amp; reviews →</a>
+            {% include "includes/product_link.html" with resolved_link=top_picks.budget.resolved_link availability_label=top_picks.budget.availability_label link_product=top_picks.budget %}
         </div>
         {% endif %}
         {% if top_picks.premium %}
@@ -55,7 +55,7 @@
             </div>
             {% endif %}
             <p class="top-pick-blurb">Voor wie geen compromissen sluit: topkwaliteit, professionele afwerking en maximale levensduur.</p>
-            <a href="{{ top_picks.premium.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary">Bekijk prijs &amp; reviews →</a>
+            {% include "includes/product_link.html" with resolved_link=top_picks.premium.resolved_link availability_label=top_picks.premium.availability_label link_product=top_picks.premium %}
         </div>
         {% endif %}
     </div>

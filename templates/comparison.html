@@ -64,9 +64,7 @@
 <span class="rating-value">{{ product.rating_display }}/5</span>
 </div>{% else %}—{% endif %}</td>
                     <td>
-                        {% if product.affiliate_url %}
-                        <a href="{{ product.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk prijs →</a>
-                        {% endif %}
+                        {% include "includes/product_link.html" with resolved_link=product.resolved_link availability_label=product.availability_label link_product=product link_small=True %}
                     </td>
                 </tr>
                 {% endfor %}
@@ -106,9 +104,7 @@
     {% if product.verdict %}
     <p><strong>Eindoordeel:</strong> {{ product.verdict }}</p>
     {% endif %}
-    {% if product.affiliate_url %}
-    <a href="{{ product.affiliate_url }}" target="_blank" rel="nofollow sponsored noopener" class="button primary small">Bekijk prijs &amp; reviews →</a>
-    {% endif %}
+    {% include "includes/product_link.html" with resolved_link=product.resolved_link availability_label=product.availability_label link_product=product link_small=True %}
 </section>
 {% endfor %}
 

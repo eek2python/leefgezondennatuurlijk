@@ -1,0 +1,660 @@
+Implementeer projectbreed een duidelijk onderscheid tussen affiliate-, retailer- en fabrikantlinks voor alle productkaarten, vergelijkingstabellen, productdetailpagina’s en varianten.
+
+DOEL
+
+Gebruik voortaan drie afzonderlijke URL-velden:
+
+affiliate_url
+
+Alleen voor aantoonbare affiliatelinks.
+
+Publieke links krijgen:rel="nofollow sponsored noopener"
+
+retailer_url
+
+Voor normale productpagina’s bij webwinkels zonder actieve affiliatecode.
+
+Publieke links krijgen:rel="nofollow noopener"
+
+Gebruik nooit rel="sponsored".
+
+official_url
+
+Voor informatieve productpagina’s van de fabrikant.
+
+Publieke links krijgen:rel="noopener"
+
+Gebruik nooit rel="sponsored".
+
+Presenteer deze niet als kooplink of prijslink.
+
+Hanteer overal deze prioriteitsvolgorde:
+
+affiliate_url→ retailer_url→ official_url→ availability_label→ anders geen knop of link tonen
+
+BELANGRIJKE RANDVOORWAARDEN
+
+Inventariseer eerst hoe productlinks momenteel worden opgebouwd.
+
+Zoek naar bestaande helpers zoals:
+
+resolve_commercial_fields
+
+resolve_variant_fields
+
+display_variant
+
+set_display_variant
+
+affiliate_url-resolvers
+
+Breid bestaande centrale helpers uit in plaats van parallelle linklogica toe te voegen.
+
+Voorkom dat templates rechtstreeks een willekeurig URL-veld kiezen.
+
+Houd de bestaande variantselectie intact.
+
+Voorkom fallback van een geselecteerde variant naar een link van een andere variant.
+
+Verander geen bestaande URL inhoudelijk tijdens deze taak.
+
+Verplaats bestaande links niet automatisch van affiliate_url naar retailer_url, omdat niet technisch kan worden vastgesteld of een URL werkelijk een actieve affiliatelink is.
+
+Rapporteer bestaande verdachte affiliate_url-waarden wel voor handmatige beoordeling.
+
+Verwijder geen trackingparameters uit echte affiliatelinks.
+
+Pas geen productprijzen, beoordelingen, teksten, awards of rangschikkingen aan.
+
+FASE 1 — INVENTARISATIE
+
+Zoek projectbreed naar:
+
+affiliate_url
+
+retailer_url
+
+official_url
+
+availability_label
+
+product_url
+
+buy_url
+
+shop_url
+
+display_url
+
+href="{{ product
+
+href="{{ row
+
+rel="sponsored"
+
+“Bekijk actuele prijs”
+
+“Bekijk bij”
+
+“Meer informatie”
+
+“Bekijk productspecificaties”
+
+Rapporteer:
+
+welke templates productlinks tonen;
+
+welke Python-helpers links bepalen;
+
+welke gegevensbestanden product-URL’s bevatten;
+
+hoe varianten hun eigen URL’s opslaan;
+
+waar rel-attributen hardcoded staan;
+
+waar links in JSON-LD worden gebruikt;
+
+waar vergelijkingstabellen links tonen;
+
+of alle producten gewone dictionaries zijn of ook Django-modellen gebruiken.
+
+Voer daarna de implementatie uit.
+
+FASE 2 — DATASTRUCTUUR UITBREIDEN
+
+Ondersteun bij elk product en iedere variant optioneel:
+
+"affiliate_url": "",
+"retailer_url": "",
+"official_url": "",
+"availability_label": "",
+
+Alle velden moeten optioneel zijn. Oude producten die alleen affiliate_url hebben, mogen niet breken.
+
+Gebruik bij voorkeur lege strings of None volgens de bestaande projectconventie. Normaliseer alleen tijdens resolutie, bijvoorbeeld:
+
+def normalize_optional_url(value):
+    if not isinstance(value, str):
+        return ""
+    return value.strip()
+
+Voeg geen databasevelden of migraties toe wanneer de producten momenteel vanuit Python-dictionaries worden geladen.
+
+FASE 3 — CENTRALE LINKRESOLVER
+
+Maak of breid één centrale helper uit, bijvoorbeeld in:
+
+utils/variant_helpers.py
+
+Gebruik een gestructureerd resultaat, bijvoorbeeld:
+
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class ProductLink:
+    url: str = ""
+    link_type: str = ""
+    label: str = ""
+    rel: str = ""
+    is_commercial: bool = False
+
+Ondersteunde linktypen:
+
+affiliate
+retailer
+official
+none
+
+Voorgestelde resolver:
+
+def resolve_product_link(product, selected_variant=None):
+    source = selected_variant or product
+
+    affiliate_url = normalize_optional_url(source.get("affiliate_url"))
+    retailer_url = normalize_optional_url(source.get("retailer_url"))
+    official_url = normalize_optional_url(source.get("official_url"))
+
+    if affiliate_url:
+        return ProductLink(
+            url=affiliate_url,
+            link_type="affiliate",
+            label="Bekijk actuele prijs",
+            rel="nofollow sponsored noopener",
+            is_commercial=True,
+        )
+
+    if retailer_url:
+        return ProductLink(
+            url=retailer_url,
+            link_type="retailer",
+            label="Bekijk actuele prijs",
+            rel="nofollow noopener",
+            is_commercial=True,
+        )
+
+    if official_url:
+        return ProductLink(
+            url=official_url,
+            link_type="official",
+            label="Bekijk productspecificaties",
+            rel="noopener",
+            is_commercial=False,
+        )
+
+    return ProductLink()
+
+Pas dit aan de bestaande datastructuur en codeconventies aan.
+
+VARIANTREGELS
+
+Wanneer een product varianten heeft:
+
+Gebruik eerst de URL-velden van de actief geselecteerde variant.
+
+Gebruik geen URL van een andere variant.
+
+Productniveau-fallback mag alleen als die aantoonbaar naar de algemene productfamilie of naar dezelfde geselecteerde uitvoering leidt.
+
+Behoud bestaande veilige variantregels uit resolve_commercial_fields.
+
+Een lege affiliate_url op de geselecteerde variant mag niet automatisch leiden tot de affiliate_url van een andere variant.
+
+retailer_url en official_url moeten dezelfde variantveiligheid volgen.
+
+De link moet bij een variantwissel samen met afbeelding, prijs en beschikbaarheid veranderen.
+
+Wanneer productniveau-fallback volgens de huidige architectuur nodig is, implementeer die expliciet en documenteer de regel. Geen impliciete dictionary-fallback.
+
+FASE 4 — TEMPLATECONTEXT
+
+Bereken de link bij voorkeur in Python en geef één resolved object aan de template door:
+
+product["resolved_link"] = resolve_product_link(
+    product,
+    selected_variant=display_variant,
+)
+
+Voor vergelijkingstabellen kan dit bijvoorbeeld zijn:
+
+row["resolved_link"]
+
+Gebruik niet op verschillende plekken afzonderlijke templatecondities om affiliate_url, retailer_url en official_url te kiezen.
+
+De templates moeten alleen het reeds bepaalde resultaat renderen.
+
+FASE 5 — HERBRUIKBARE TEMPLATEPARTIAL
+
+Maak bij voorkeur een herbruikbare partial, bijvoorbeeld:
+
+templates/includes/product_link.html
+
+Concept:
+
+{% if resolved_link and resolved_link.url %}
+    <a
+        href="{{ resolved_link.url }}"
+        class="{% if resolved_link.link_type == 'official' %}button secondary{% else %}button primary{% endif %}"
+        target="_blank"
+        rel="{{ resolved_link.rel }}"
+        data-link-type="{{ resolved_link.link_type }}"
+        {% if product.slug %}data-product-slug="{{ product.slug }}"{% endif %}
+    >
+        {{ resolved_link.label }}
+    </a>
+{% elif availability_label %}
+    <span class="availability-note">
+        {{ availability_label }}
+    </span>
+{% endif %}
+
+Pas variabelenamen aan de bestaande templatecontext aan.
+
+Gebruik:
+
+affiliate_url:
+
+label: “Bekijk actuele prijs”
+
+primaire knop
+
+rel="nofollow sponsored noopener"
+
+retailer_url:
+
+label: “Bekijk actuele prijs”
+
+primaire knop
+
+rel="nofollow noopener"
+
+official_url:
+
+label: “Bekijk productspecificaties”
+
+secundaire knop
+
+rel="noopener"
+
+geen URL, wel availability_label:
+
+toon alleen de status als niet-klikbare tekst
+
+bijvoorbeeld “Nog niet algemeen verkrijgbaar”
+
+geen URL en geen label:
+
+toon niets
+
+geen lege knop
+
+geen href=""
+
+geen href="#"
+
+Gebruik de partial in alle relevante:
+
+productkaarten;
+
+productlijsten;
+
+vergelijkingstabellen;
+
+productdetailpagina’s;
+
+variantweergaven;
+
+eventuele aanbevolen-productblokken.
+
+FASE 6 — JAVASCRIPT EN VARIANTWISSELS
+
+Inventariseer bestaande JavaScript voor varianten.
+
+Werk de variantpayload bij zodat die afzonderlijk kan bevatten:
+
+{
+  affiliate_url: "...",
+  retailer_url: "...",
+  official_url: "...",
+  availability_label: "..."
+}
+
+Gebruik dezelfde prioriteit in JavaScript:
+
+affiliate_url
+→ retailer_url
+→ official_url
+→ availability_label
+
+Voorkom dubbele bedrijfslogica door bij voorkeur resolved linkgegevens vanuit Django als JSON mee te geven:
+
+{
+  resolved_url: "...",
+  resolved_link_type: "affiliate",
+  resolved_label: "Bekijk actuele prijs",
+  resolved_rel: "nofollow sponsored noopener"
+}
+
+Bij variantwissel moeten minimaal worden bijgewerkt:
+
+href;
+
+linktekst;
+
+rel;
+
+class;
+
+data-link-type;
+
+zichtbaarheid van knop;
+
+availability_label;
+
+eventuele click-trackingmetadata.
+
+Wanneer een variant geen link heeft:
+
+verwijder href;
+
+verberg de knop;
+
+toon eventueel availability_label;
+
+laat nooit de URL van de voorgaande variant staan.
+
+FASE 7 — VERGELIJKINGSTABEL
+
+Pas vergelijkingstabellen aan zodat zij dezelfde resolved link gebruiken als de productkaart.
+
+Eisen:
+
+geen afwijkende linkprioriteit;
+
+geen automatische voorkeur voor affiliate_url buiten de centrale resolver;
+
+geen link van een andere variant;
+
+official_url krijgt een informatief label;
+
+ontbrekende link resulteert niet in een lege anchor;
+
+indien de tabel alleen de productnaam klikbaar maakt, moeten rel en linktype eveneens correct worden toegepast.
+
+FASE 8 — JSON-LD
+
+Controleer bestaand Product-, Offer- en ItemList-schema.
+
+Regels:
+
+Gebruik een retailer_url of official_url niet automatisch als affiliate- of Offer-URL.
+
+Een fabrikantinformatiepagina is geen verkooppagina.
+
+Genereer geen Offer wanneer er:
+
+geen concrete verkoopprijs is;
+
+geen concrete verkoper is;
+
+geen daadwerkelijke verkooppagina is;
+
+alleen official_url beschikbaar is.
+
+availability_label is interne/publieke presentatietekst en mag niet rechtstreeks als ongeldige schema.org-waarde worden uitgevoerd.
+
+Gebruik alleen ondersteunde schema.org-availabilitywaarden.
+
+Verander bestaande JSON-LD niet verder dan noodzakelijk voor correcte URL-semantiek.
+
+Rapporteer twijfelgevallen.
+
+FASE 9 — LINKTRACKING
+
+Als clicktracking bestaat, voeg dan het linktype toe:
+
+data-link-type="affiliate"
+data-link-type="retailer"
+data-link-type="official"
+
+Zorg dat analytics onderscheid kan maken tussen:
+
+affiliate_click;
+
+retailer_click;
+
+official_product_info_click.
+
+Markeer alleen affiliate_click als affiliateconversieverkeer.
+
+Behoud bestaande analyticsfunctionaliteit en voorkom dubbele events.
+
+FASE 10 — AUDITREGELS
+
+Voeg deze controles toe aan het bestaande productauditdashboard en de gedeelde auditservice:
+
+affiliate_url_and_retailer_url_both_present
+affiliate_url_and_official_url_both_present
+retailer_url_and_official_url_both_present
+affiliate_url_without_affiliate_confirmation
+retailer_url_with_sponsored_rel
+official_url_with_sponsored_rel
+official_url_using_price_button_label
+missing_link_with_empty_button
+invalid_product_url
+variant_link_fallback_to_other_variant
+stale_variant_link
+tracking_parameters_in_retailer_url
+tracking_parameters_in_official_url
+
+Meerdere URL’s mogen technisch aanwezig zijn, omdat de template een prioriteitsvolgorde heeft. Geef dit daarom standaard als INFO of WARNING, niet automatisch als ERROR.
+
+De audit moet vooral controleren of:
+
+de juiste URL wordt gekozen;
+
+rel-attributen kloppen;
+
+het label klopt;
+
+een gewone link niet als gesponsord wordt gemarkeerd;
+
+geen URL van een verkeerde variant wordt gebruikt.
+
+Markeer een affiliate_url zonder technisch verifieerbare affiliatebevestiging alleen als handmatige-reviewmelding. Probeer niet automatisch te bepalen dat trackingparameters een affiliatecode zijn.
+
+FASE 11 — TESTS
+
+Voeg minimaal tests toe voor:
+
+Alleen affiliate_url:
+
+affiliate wordt gekozen;
+
+juiste tekst;
+
+rel bevat sponsored.
+
+Alleen retailer_url:
+
+retailer wordt gekozen;
+
+rel bevat geen sponsored.
+
+Alleen official_url:
+
+official wordt gekozen;
+
+label is “Bekijk productspecificaties”;
+
+rel bevat geen sponsored.
+
+Alle drie aanwezig:
+
+affiliate_url wint.
+
+retailer_url en official_url:
+
+retailer_url wint.
+
+Geen URL, wel availability_label:
+
+geen anchor;
+
+label zichtbaar.
+
+Geen URL en geen availability_label:
+
+geen knop en geen lege anchor.
+
+Geselecteerde variant met eigen affiliatelink:
+
+eigen affiliatelink wordt gebruikt.
+
+Geselecteerde variant zonder link:
+
+geen link van een andere variant.
+
+Variant met retailer_url:
+
+retailerlink en correcte rel.
+
+Variant met official_url:
+
+informatielink en correcte labeltekst.
+
+Variantwissel van affiliate naar geen link:
+
+oude href verdwijnt;
+
+knop wordt verborgen;
+
+availability_label verschijnt indien aanwezig.
+
+Vergelijkingstabel gebruikt dezelfde resolved link.
+
+Official-only product genereert geen verkoop-Offer zonder retailer en prijs.
+
+Geen enkele niet-affiliatelink krijgt rel="sponsored".
+
+Oude producten met alleen affiliate_url blijven functioneren.
+
+Lege strings en None veroorzaken geen fouten.
+
+Draai daarna de volledige bestaande testsuite.
+
+FASE 12 — ACHTERWAARTSE COMPATIBILITEIT
+
+Bestaande producten met alleen affiliate_url moeten blijven werken.
+
+Maak retailer_url en official_url optioneel.
+
+Maak geen massale automatische datamigratie van bestaande affiliate_url-velden.
+
+Maak wel een rapport met bestaande affiliate_url-waarden die waarschijnlijk gewone productlinks zijn en handmatig gecontroleerd moeten worden.
+
+Gebruik geen domeingebaseerde aanname dat een Bol.com-, Amazon- of andere winkellink automatisch affiliate of niet-affiliate is.
+
+FASE 13 — DOCUMENTATIE
+
+Voeg korte ontwikkelaarsdocumentatie toe, bijvoorbeeld:
+
+docs/product-links.md
+
+Leg daarin vast:
+
+affiliate_url is uitsluitend voor echte affiliatelinks;
+
+retailer_url is voor gewone winkelpagina’s;
+
+official_url is voor fabrikantdocumentatie;
+
+de prioriteit is affiliate → retailer → official → status;
+
+welke rel-attributen per linktype gelden;
+
+hoe varianten hun eigen links opslaan;
+
+dat affiliate-URL’s niet automatisch mogen worden opgeschoond;
+
+dat retailer_url en official_url bij voorkeur zonder trackingparameters worden opgeslagen;
+
+dat een fabrikantpagina niet als verkooppagina mag worden gepresenteerd.
+
+ACCEPTATIECRITERIA
+
+De taak is voltooid wanneer:
+
+alle productweergaven dezelfde centrale linkresolver gebruiken;
+
+affiliate_url altijd prioriteit heeft;
+
+retailer_url tweede prioriteit heeft;
+
+official_url alleen als informatielink wordt getoond;
+
+availability_label wordt getoond wanneer geen link beschikbaar is;
+
+niet-affiliatelinks nooit rel="sponsored" krijgen;
+
+varianten nooit een verouderde of verkeerde URL overnemen;
+
+geen lege of misleidende knoppen verschijnen;
+
+vergelijkingstabellen dezelfde logica gebruiken;
+
+bestaande producten achterwaarts compatibel blijven;
+
+auditregels zijn toegevoegd;
+
+alle nieuwe en bestaande tests slagen.
+
+RAPPORTEER NA UITVOERING
+
+Geef na implementatie:
+
+gewijzigde bestanden;
+
+gevonden oude linklogica;
+
+gekozen centrale resolver;
+
+wijze waarop variantlinks worden afgehandeld;
+
+templates die de nieuwe partial gebruiken;
+
+aanpassingen aan JavaScript;
+
+toegevoegde auditregels;
+
+aantal toegevoegde tests;
+
+resultaat van de volledige testsuite;
+
+lijst met bestaande affiliate_url-waarden die handmatig naar retailer_url moeten worden beoordeeld;
+
+resterende risico’s of niet-aangepaste uitzonderingen.
+
+BELANGRIJKE NUANCE
+
+Verplaats in deze taak nog niet alle bestaande affiliate_url-velden automatisch. Daarvoor moet eerst duidelijk zijn welke links werkelijk bij een actief affiliateprogramma horen. De nieuwe structuur en templatevolgorde kunnen wel direct worden ingevoerd; daarna kunnen de bestaande URL’s gecontroleerd worden geclassificeerd.

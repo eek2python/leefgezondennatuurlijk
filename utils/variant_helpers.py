@@ -34,6 +34,7 @@ existing swatch system in ``templates/partials/product_block.html``.
 """
 
 import logging
+from dataclasses import dataclass
 
 from django.templatetags.static import static as static_url
 
@@ -293,9 +294,119 @@ _VARIANT_COMMERCIAL_FIELDS = {
     "currency": None,
     "availability": "",
     "affiliate_url": "",
+    "retailer_url": "",
+    "official_url": "",
+    "availability_label": "",
     "price_last_checked": None,
     "capacities": [],
 }
+
+
+def normalize_optional_url(value):
+    """Normaliseer een optioneel URL-veld naar een gestripte string.
+
+    Ontbrekende waarden, ``None`` en niet-string-waarden worden een lege
+    string; bestaande URL's worden inhoudelijk NIET gewijzigd (geen
+    verwijdering van trackingparameters)."""
+    if not isinstance(value, str):
+        return ""
+    return value.strip()
+
+
+#: Ondersteunde linktypen voor :func:`resolve_product_link`.
+LINK_TYPE_AFFILIATE = "affiliate"
+LINK_TYPE_RETAILER = "retailer"
+LINK_TYPE_OFFICIAL = "official"
+LINK_TYPE_NONE = "none"
+
+#: rel-attributen per linktype. Niet-affiliatelinks krijgen NOOIT
+#: ``sponsored``.
+LINK_REL = {
+    LINK_TYPE_AFFILIATE: "nofollow sponsored noopener",
+    LINK_TYPE_RETAILER: "nofollow noopener",
+    LINK_TYPE_OFFICIAL: "noopener",
+}
+
+#: Knoplabels per linktype (bestaande siteconventie voor commerciële links).
+LINK_LABEL = {
+    LINK_TYPE_AFFILIATE: "Bekijk prijs & reviews →",
+    LINK_TYPE_RETAILER: "Bekijk prijs & reviews →",
+    LINK_TYPE_OFFICIAL: "Bekijk productspecificaties →",
+}
+
+
+@dataclass(frozen=True)
+class ProductLink:
+    """Resolved productlink voor templates en JSON-payloads."""
+
+    url: str = ""
+    link_type: str = LINK_TYPE_NONE
+    label: str = ""
+    rel: str = ""
+    is_commercial: bool = False
+
+
+def resolve_product_link(product, selected_variant=None):
+    """Centrale linkresolver: affiliate → retailer → official → geen link.
+
+    Strikte variantregels (zelfde bron-selectie als
+    :func:`resolve_commercial_fields`):
+      - producten met button-varianten gebruiken UITSLUITEND de URL-velden
+        van de geselecteerde displayvariant; een lege URL op de variant
+        valt nooit terug op een andere variant of op productniveau;
+      - producten zonder button-varianten gebruiken productniveau-velden.
+    """
+    if selected_variant is None:
+        selected_variant = product.get("default_variant")
+    if product.get("shape_variants") and selected_variant:
+        source = selected_variant
+    else:
+        source = product
+
+    return _resolve_source_link(source)
+
+
+def _resolve_source_link(source):
+    """Los de link op uit één bron-dict (product óf variant) volgens de
+    vaste prioriteit affiliate → retailer → official → geen link."""
+    for field_name, link_type, is_commercial in (
+        ("affiliate_url", LINK_TYPE_AFFILIATE, True),
+        ("retailer_url", LINK_TYPE_RETAILER, True),
+        ("official_url", LINK_TYPE_OFFICIAL, False),
+    ):
+        url = normalize_optional_url(source.get(field_name))
+        if url:
+            return ProductLink(
+                url=url,
+                link_type=link_type,
+                label=LINK_LABEL[link_type],
+                rel=LINK_REL[link_type],
+                is_commercial=is_commercial,
+            )
+    return ProductLink()
+
+
+def resolve_availability_label(product, selected_variant=None):
+    """Beschikbaarheidstekst volgens dezelfde strikte bronselectie als
+    :func:`resolve_product_link` (alleen getoond wanneer er geen link is)."""
+    if selected_variant is None:
+        selected_variant = product.get("default_variant")
+    if product.get("shape_variants") and selected_variant:
+        source = selected_variant
+    else:
+        source = product
+    label = source.get("availability_label")
+    return label.strip() if isinstance(label, str) else ""
+
+
+def apply_resolved_link(product, selected_variant=None):
+    """Zet ``product["resolved_link"]`` en ``product["availability_label"]``
+    op basis van de centrale resolver, zodat templates alleen het reeds
+    bepaalde resultaat renderen."""
+    product["resolved_link"] = resolve_product_link(product, selected_variant)
+    product["availability_label"] = resolve_availability_label(
+        product, selected_variant
+    )
 
 
 def _apply_display_variant_fields(product, variant):
@@ -376,8 +487,16 @@ def prepare_product_variants(product):
         pv["label"] = pv.get("label") or _variant_display_label(pv, selectors)
         pv["display_label"] = _variant_display_label(pv, selectors)
         pv["shape"] = pv.get("shape") or pv["label"]
-        pv["affiliate_url"] = pv.get("affiliate_url") or ""
+        pv["affiliate_url"] = normalize_optional_url(pv.get("affiliate_url"))
+        pv["retailer_url"] = normalize_optional_url(pv.get("retailer_url"))
+        pv["official_url"] = normalize_optional_url(pv.get("official_url"))
+        pv["availability_label"] = (
+            pv["availability_label"].strip()
+            if isinstance(pv.get("availability_label"), str)
+            else ""
+        )
         pv["availability"] = pv.get("availability") or ""
+        pv["resolved_link"] = _resolve_source_link(pv)
         pv["image_path"] = pv.get("image_path") or product.get("image_path", "")
         pv["image_url"] = (
             static_url(f"{pv['image_path']}/{pv['image']}") if pv.get("image") else ""
@@ -410,6 +529,7 @@ def prepare_product_variants(product):
     rebuild_variant_selector_groups(product)
 
     _apply_display_variant_fields(product, default)
+    apply_resolved_link(product, default)
     product["usage_display"] = default["usage_display"]
 
     product["variant_json_data"] = {
@@ -428,6 +548,15 @@ def prepare_product_variants(product):
                 "capacity": pv["formatted_capacity"],
                 "total_capacity": pv["formatted_total_capacity"],
                 "affiliate_url": pv["affiliate_url"],
+                "retailer_url": pv["retailer_url"],
+                "official_url": pv["official_url"],
+                "availability_label": pv["availability_label"],
+                # Resolved linkgegevens (centrale resolver in Django, geen
+                # dubbele bedrijfslogica in JavaScript).
+                "resolved_url": pv["resolved_link"].url,
+                "resolved_link_type": pv["resolved_link"].link_type,
+                "resolved_label": pv["resolved_link"].label,
+                "resolved_rel": pv["resolved_link"].rel,
                 "availability": pv["availability"],
                 "price": pv.get("price"),
                 "price_last_checked": pv.get("price_last_checked") or "",
@@ -466,7 +595,14 @@ def resolve_commercial_fields(product, display_variant=None):
     else:
         source = product
     return {
-        "affiliate_url": source.get("affiliate_url") or "",
+        "affiliate_url": normalize_optional_url(source.get("affiliate_url")),
+        "retailer_url": normalize_optional_url(source.get("retailer_url")),
+        "official_url": normalize_optional_url(source.get("official_url")),
+        "availability_label": (
+            source["availability_label"].strip()
+            if isinstance(source.get("availability_label"), str)
+            else ""
+        ),
         "price": source.get("price"),
         "availability": source.get("availability") or "",
         "price_last_checked": source.get("price_last_checked"),
@@ -480,6 +616,7 @@ def set_display_variant(product, variant):
     initialise on this variant."""
     product["default_variant"] = variant
     _apply_display_variant_fields(product, variant)
+    apply_resolved_link(product, variant)
     product["usage_display"] = variant.get("usage_display") or []
     rebuild_variant_selector_groups(product)
     json_data = product.get("variant_json_data")

@@ -9,6 +9,7 @@ from django.test import Client, TestCase
 from django.urls import reverse
 
 from audits import runner as audit_runner
+from audits.checks.links import run_product_link_check
 from audits.checks.variants import run_price_level_check, run_variant_check
 from audits.models import ProductAuditIssue, ProductAuditRun
 from audits.registry import all_audits, get_audit
@@ -261,8 +262,8 @@ class RegistryTests(TestCase):
         keys = {d.key for d in all_audits()}
         self.assertEqual(
             keys,
-            {"product_variants", "price_levels", "product_data",
-             "brand_diversity", "live_links"},
+            {"product_variants", "price_levels", "product_links",
+             "product_data", "brand_diversity", "live_links"},
         )
 
     def test_retention_opt_in(self):
@@ -276,3 +277,33 @@ class RegistryTests(TestCase):
         self.assertEqual(
             ProductAuditRun.objects.filter(audit_key="brand_diversity").count(), 2
         )
+
+
+class ProductLinkAuditTests(TestCase):
+    """Auditregels voor het onderscheid affiliate/retailer/official."""
+
+    def test_runner_registered_and_runs(self):
+        issues, metadata = run_product_link_check(category="snijplanken")
+        self.assertIn("products_checked", metadata)
+        self.assertGreater(metadata["products_checked"], 0)
+        # Geen enkele niet-affiliatelink mag sponsored-rel opleveren en
+        # er mag geen variant-fallback optreden in bestaande data.
+        codes = {i.code for i in issues}
+        self.assertNotIn("retailer_url_with_sponsored_rel", codes)
+        self.assertNotIn("official_url_with_sponsored_rel", codes)
+        self.assertNotIn("variant_link_fallback_to_other_variant", codes)
+        self.assertNotIn("stale_variant_link", codes)
+
+    def test_unconfirmed_affiliate_urls_are_info_only(self):
+        issues, metadata = run_product_link_check(category="snijplanken")
+        review = [
+            i for i in issues
+            if i.code == "affiliate_url_without_affiliate_confirmation"
+        ]
+        self.assertEqual(len(review), metadata["manual_review_affiliate_urls"])
+        for issue in review:
+            self.assertEqual(issue.severity, "info")
+
+    def test_full_run_over_all_categories(self):
+        result = audit_runner.run_audit("product_links")
+        self.assertEqual(result.status, "completed")

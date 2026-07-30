@@ -147,33 +147,39 @@
        {% if product.shape_variants|length > 1 %}
 <p class="variant-selected-summary" data-shape-summary>{{ product.default_variant.selected_summary }}</p>
        {% endif %}
+{# Resolved link van de displayvariant (centrale resolver); JS werkt href/rel/label/klasse bij per variantwissel. #}
+{% with resolved_link=product.default_variant.resolved_link %}
 <a
-           href="{{ product.default_variant.affiliate_url }}"
+           {% if resolved_link.url %}href="{{ resolved_link.url }}"{% endif %}
            target="_blank"
-           rel="nofollow sponsored noopener"
-           class="button primary small"
+           {% if resolved_link.rel %}rel="{{ resolved_link.rel }}"{% endif %}
+           class="button{% if resolved_link.link_type != 'official' %} primary{% endif %} small"
            data-shape-affiliate
-           aria-label="Bekijk prijs en reviews – {{ product.default_variant.label }}"
-           {% if not product.default_variant.affiliate_url %}hidden{% endif %}
->
-           Bekijk prijs &amp; reviews →
-</a>
+           data-link-type="{{ resolved_link.link_type }}"
+           aria-label="{{ resolved_link.label|cut:" →" }} – {{ product.default_variant.label }}"
+           {% if not resolved_link.url %}hidden{% endif %}
+>{{ resolved_link.label }}</a>
 <span
            class="button small disabled"
            aria-disabled="true"
            data-shape-affiliate-disabled
-           {% if product.default_variant.affiliate_url %}hidden{% endif %}
->Link voor deze uitvoering nog niet beschikbaar</span>
-       {% elif product.affiliate_url or product.variants.0.affiliate_url %}
+           {% if resolved_link.url %}hidden{% endif %}
+>{{ product.default_variant.availability_label|default:"Link voor deze uitvoering nog niet beschikbaar" }}</span>
+{% endwith %}
+       {% elif product.variants and product.affiliate_url or product.variants.0.affiliate_url %}
+{# Kleurswatch-systeem: bestaand affiliate-wisselgedrag (variants.js) blijft intact. #}
 <a
            href="{% if product.variants.0.affiliate_url %}{{ product.variants.0.affiliate_url }}{% else %}{{ product.affiliate_url }}{% endif %}"
            target="_blank"
            rel="nofollow sponsored noopener"
            class="button primary small"
-           {% if product.variants %}data-variant-affiliate data-base-affiliate="{{ product.affiliate_url }}"{% endif %}
+           data-link-type="affiliate"
+           data-variant-affiliate data-base-affiliate="{{ product.affiliate_url }}"
 >
            Bekijk prijs &amp; reviews →
 </a>
+       {% elif product.resolved_link.url or product.availability_label %}
+       {% include "includes/product_link.html" with resolved_link=product.resolved_link availability_label=product.availability_label link_product=product link_small=True %}
        {% else %}
 <span class="button small disabled" aria-disabled="true">Binnenkort beschikbaar</span>
        {% endif %}

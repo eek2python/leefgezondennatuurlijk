@@ -15,8 +15,11 @@ from utils.product_helpers import (
 from utils.usage_helpers import build_usage_display
 from utils.pricing import get_price_range, has_price_range_config
 from utils.variant_helpers import (
+    apply_resolved_link,
     prepare_product_variants,
+    resolve_availability_label,
     resolve_commercial_fields,
+    resolve_product_link,
     set_display_variant,
 )
 import copy
@@ -150,6 +153,11 @@ def _derive_price_levels(p, category):
 def _enrich_products(products, category=None):
     for p in products:
         prepare_product_variants(p)
+        # Centrale linkresolutie: producten met button-varianten kregen hun
+        # resolved_link al in prepare_product_variants (displayvariant);
+        # alle overige producten resolven hier op productniveau.
+        if "resolved_link" not in p:
+            apply_resolved_link(p)
         _derive_price_levels(p, category)
         if "usage_display" not in p:
             p["usage_display"] = build_usage_display(p.get("usage"))
@@ -724,6 +732,10 @@ def vershoudcontainers(request):
             "display_variant": display_variant,
             "display_variant_id": display_variant.get("id") if display_variant else None,
             "affiliate_url": commercial["affiliate_url"],
+            # Dezelfde centrale resolver als de productkaart; geen
+            # afwijkende linkprioriteit in de vergelijkingstabel.
+            "resolved_link": resolve_product_link(p, display_variant),
+            "availability_label": resolve_availability_label(p, display_variant),
             "price": commercial["price"],
             "availability": commercial["availability"],
             # Prijsniveau expliciet per rij (zelfde bron als de productkaart).
@@ -896,6 +908,9 @@ def product_detail(request, slug):
             product["image"] = (product.get("image") or "").split("/")[-1]
             if (product.get("affiliate_url") or "").startswith("TODO"):
                 product["affiliate_url"] = None
+                # affiliate_url is na verrijking gewijzigd: resolved link
+                # opnieuw bepalen via de centrale resolver.
+                apply_resolved_link(product)
         from django.urls import reverse
         category_url = reverse(cat_info["url_name"])
         breadcrumbs = [

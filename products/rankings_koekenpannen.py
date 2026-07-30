@@ -28,9 +28,9 @@ RANKINGS = {
         "greenchef_vintage_26",
         "demeyere_alu_pro_5_ceraforce_26",
         "bk_easy_induction_26",
-        "fissler_cenit_ceramic_26",
+        "fissler_essential_26",
         "greenpan_venice_pro_26",
-        "scanpan_ceramic_26",
+        "scanpan_nura_26",
     ],
     28: [
         "greenpan_barcelona_pro_28",

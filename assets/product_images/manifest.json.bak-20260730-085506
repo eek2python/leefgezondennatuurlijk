@@ -665,19 +665,5 @@
     "category": "keramische-koekenpannen",
     "product_key": "scanpan_ceramic_32cm",
     "enabled": true
-  },
-  {
-    "source": "keramische-koekenpannen/fissler-essential-26cm.jpg",
-    "slug": "fissler-essential-26cm",
-    "category": "keramische-koekenpannen",
-    "product_key": "fissler_essential_26cm",
-    "enabled": true
-  },
-  {
-    "source": "keramische-koekenpannen/scanpan-nura-26cm.jpg",
-    "slug": "scanpan-nura-26cm",
-    "category": "keramische-koekenpannen",
-    "product_key": "scanpan_nura_26cm",
-    "enabled": true
   }
 ]

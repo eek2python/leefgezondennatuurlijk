@@ -165,23 +165,42 @@
         }
 
         if (refs.link) {
-            if (variant.affiliate_url) {
-                refs.link.setAttribute("href", variant.affiliate_url);
+            // Resolved linkgegevens komen uit Django (centrale resolver);
+            // dezelfde prioriteit affiliate → retailer → official.
+            // Fallback op affiliate_url voor oude payloads zonder
+            // resolved-velden.
+            var resolvedUrl = variant.resolved_url || variant.affiliate_url || "";
+            var resolvedType = variant.resolved_link_type ||
+                (variant.affiliate_url ? "affiliate" : "none");
+            var resolvedLabel = variant.resolved_label || "Bekijk prijs & reviews →";
+            var resolvedRel = variant.resolved_rel ||
+                (resolvedType === "affiliate" ? "nofollow sponsored noopener" : "");
+            if (resolvedUrl) {
+                refs.link.setAttribute("href", resolvedUrl);
+                refs.link.setAttribute("rel", resolvedRel);
+                refs.link.setAttribute("data-link-type", resolvedType);
+                refs.link.textContent = resolvedLabel;
+                refs.link.classList.toggle("primary", resolvedType !== "official");
                 refs.link.setAttribute(
                     "aria-label",
-                    "Bekijk prijs en reviews – " + variant.label
+                    resolvedLabel.replace(/\s*→\s*$/, "") + " – " + variant.label
                 );
                 refs.link.hidden = false;
                 if (refs.disabledEl) {
                     refs.disabledEl.hidden = true;
                 }
             } else {
-                // Wis expliciet de oude URL zodat er geen stale href van
-                // een vorige variant in de DOM achterblijft.
+                // Wis expliciet de oude URL, rel en linktype zodat er geen
+                // stale link van een vorige variant in de DOM achterblijft.
                 refs.link.removeAttribute("href");
+                refs.link.removeAttribute("rel");
+                refs.link.setAttribute("data-link-type", "none");
                 refs.link.removeAttribute("aria-label");
                 refs.link.hidden = true;
                 if (refs.disabledEl) {
+                    refs.disabledEl.textContent = variant.availability_label ||
+                        refs.disabledDefaultText ||
+                        "Link voor deze uitvoering nog niet beschikbaar";
                     refs.disabledEl.hidden = false;
                 }
             }
@@ -212,6 +231,9 @@
         if (refs.img) {
             refs.familyImage = refs.img.getAttribute("src") || "";
             refs.familyAlt = refs.img.getAttribute("alt") || "";
+        }
+        if (refs.disabledEl) {
+            refs.disabledDefaultText = refs.disabledEl.textContent || "";
         }
 
         var variants = data.variants;
@@ -263,6 +285,8 @@
                     variant_id: variant.id,
                     variant_label: variant.label,
                     changed_selector: key,
+                    link_type: variant.resolved_link_type ||
+                        (variant.affiliate_url ? "affiliate" : "none"),
                     capacity: variant.capacity || "",
                     category: window.location.pathname
                 });

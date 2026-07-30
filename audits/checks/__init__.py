@@ -18,6 +18,7 @@ from audits.checks.variants import (
     run_price_level_check,
     run_variant_check,
 )
+from audits.checks.links import run_product_link_check
 from audits.checks.product_data import run_product_data_check
 from audits.checks.rankings import run_brand_diversity_check
 
@@ -47,6 +48,22 @@ register_audit(
     supports_category=True,
     uses_network=False,
     speed=SPEED_QUICK,
+    categories=AUDIT_CATEGORIES,
+)
+
+register_audit(
+    key="product_links",
+    title="Productlinks (affiliate/retailer/fabrikant)",
+    description=(
+        "Onderscheid tussen affiliate_url, retailer_url en official_url: "
+        "prioriteit, rel-attributen, labels, variantveiligheid, "
+        "trackingparameters en handmatige-reviewlijst voor onbevestigde "
+        "affiliatelinks."
+    ),
+    runner=run_product_link_check,
+    supports_category=True,
+    uses_network=False,
+    speed=SPEED_STANDARD,
     categories=AUDIT_CATEGORIES,
 )
 

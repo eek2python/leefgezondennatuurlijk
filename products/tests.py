@@ -4,7 +4,12 @@ import re
 
 from django.test import SimpleTestCase, TestCase
 
-from utils.variant_helpers import prepare_product_variants
+from utils.variant_helpers import (
+    prepare_product_variants,
+    resolve_commercial_fields,
+    resolve_product_link,
+    set_display_variant,
+)
 from utils.product_helpers import (
     calculate_total_capacity,
     format_capacities,
@@ -1589,3 +1594,206 @@ class LegacyVariantNormalizationTests(TestCase):
         self.assertIn(">630 ml</button>", card)
         self.assertIn(">740 ml</button>", card)
         self.assertIn(">1 L</button>", card)
+
+
+class ProductLinkResolverTests(TestCase):
+    """Tests voor de centrale linkresolver (affiliate → retailer →
+    official → availability_label)."""
+
+    def _variant_product(self, variant_extra):
+        variant = {
+            "id": "v1",
+            "options": {"shape": "rond"},
+            "option_labels": {"shape": "Rond"},
+            "is_default": True,
+        }
+        variant.update(variant_extra)
+        return {
+            "slug": "test-product",
+            "name": "Testproduct",
+            "variant_selectors": [{"key": "shape", "label": "Vorm"}],
+            "variants": [variant],
+        }
+
+    def test_affiliate_only_wins_with_sponsored_rel(self):
+        link = resolve_product_link({"affiliate_url": "https://a.example/x"})
+        self.assertEqual(link.link_type, "affiliate")
+        self.assertEqual(link.url, "https://a.example/x")
+        self.assertIn("sponsored", link.rel)
+        self.assertIn("nofollow", link.rel)
+        self.assertTrue(link.is_commercial)
+        self.assertIn("prijs", link.label.lower())
+
+    def test_retailer_only_no_sponsored(self):
+        link = resolve_product_link({"retailer_url": "https://shop.example/x"})
+        self.assertEqual(link.link_type, "retailer")
+        self.assertNotIn("sponsored", link.rel)
+        self.assertIn("nofollow", link.rel)
+        self.assertTrue(link.is_commercial)
+
+    def test_official_only_informative(self):
+        link = resolve_product_link({"official_url": "https://brand.example/x"})
+        self.assertEqual(link.link_type, "official")
+        self.assertEqual(link.rel, "noopener")
+        self.assertNotIn("sponsored", link.rel)
+        self.assertIn("productspecificaties", link.label.lower())
+        self.assertFalse(link.is_commercial)
+
+    def test_priority_affiliate_beats_all(self):
+        link = resolve_product_link({
+            "affiliate_url": "https://a.example/x",
+            "retailer_url": "https://shop.example/x",
+            "official_url": "https://brand.example/x",
+        })
+        self.assertEqual(link.link_type, "affiliate")
+
+    def test_priority_retailer_beats_official(self):
+        link = resolve_product_link({
+            "retailer_url": "https://shop.example/x",
+            "official_url": "https://brand.example/x",
+        })
+        self.assertEqual(link.link_type, "retailer")
+
+    def test_no_urls_returns_empty_link(self):
+        link = resolve_product_link({})
+        self.assertEqual(link.url, "")
+        self.assertEqual(link.link_type, "none")
+        link = resolve_product_link({
+            "affiliate_url": None, "retailer_url": "", "official_url": "   ",
+        })
+        self.assertEqual(link.url, "")
+
+    def test_selected_variant_own_affiliate_used(self):
+        product = self._variant_product({"affiliate_url": "https://a.example/v1"})
+        prepare_product_variants(product)
+        link = resolve_product_link(product, product["default_variant"])
+        self.assertEqual(link.url, "https://a.example/v1")
+        self.assertEqual(link.link_type, "affiliate")
+
+    def test_variant_without_link_never_falls_back(self):
+        product = {
+            "slug": "test-product",
+            "name": "Testproduct",
+            "affiliate_url": "https://a.example/family",
+            "variant_selectors": [{"key": "shape", "label": "Vorm"}],
+            "variants": [
+                {"id": "v1", "options": {"shape": "rond"},
+                 "option_labels": {"shape": "Rond"},
+                 "affiliate_url": "https://a.example/v1", "is_default": True},
+                {"id": "v2", "options": {"shape": "vierkant"},
+                 "option_labels": {"shape": "Vierkant"}},
+            ],
+        }
+        prepare_product_variants(product)
+        v2 = product["shape_variants"][1]
+        link = resolve_product_link(product, v2)
+        self.assertEqual(link.url, "")
+        self.assertEqual(link.link_type, "none")
+
+    def test_variant_retailer_url(self):
+        product = self._variant_product({"retailer_url": "https://shop.example/v1"})
+        prepare_product_variants(product)
+        link = product["default_variant"]["resolved_link"]
+        self.assertEqual(link.link_type, "retailer")
+        self.assertNotIn("sponsored", link.rel)
+
+    def test_variant_official_url(self):
+        product = self._variant_product({"official_url": "https://brand.example/v1"})
+        prepare_product_variants(product)
+        link = product["default_variant"]["resolved_link"]
+        self.assertEqual(link.link_type, "official")
+        self.assertIn("productspecificaties", link.label.lower())
+
+    def test_variant_switch_clears_stale_link(self):
+        product = {
+            "slug": "test-product",
+            "name": "Testproduct",
+            "variant_selectors": [{"key": "shape", "label": "Vorm"}],
+            "variants": [
+                {"id": "v1", "options": {"shape": "rond"},
+                 "option_labels": {"shape": "Rond"},
+                 "affiliate_url": "https://a.example/v1", "is_default": True},
+                {"id": "v2", "options": {"shape": "vierkant"},
+                 "option_labels": {"shape": "Vierkant"},
+                 "availability_label": "Nog niet algemeen verkrijgbaar"},
+            ],
+        }
+        prepare_product_variants(product)
+        self.assertEqual(product["resolved_link"].url, "https://a.example/v1")
+        set_display_variant(product, product["shape_variants"][1])
+        self.assertEqual(product["resolved_link"].url, "")
+        self.assertEqual(product["affiliate_url"], "")
+        self.assertEqual(
+            product["availability_label"], "Nog niet algemeen verkrijgbaar"
+        )
+
+    def test_variant_json_payload_contains_resolved_fields(self):
+        product = self._variant_product({"retailer_url": "https://shop.example/v1"})
+        prepare_product_variants(product)
+        payload = product["variant_json_data"]["variants"][0]
+        self.assertEqual(payload["resolved_url"], "https://shop.example/v1")
+        self.assertEqual(payload["resolved_link_type"], "retailer")
+        self.assertNotIn("sponsored", payload["resolved_rel"])
+        self.assertIn("retailer_url", payload)
+        self.assertIn("official_url", payload)
+        self.assertIn("availability_label", payload)
+
+    def test_legacy_product_with_only_affiliate_url_keeps_working(self):
+        commercial = resolve_commercial_fields(
+            {"affiliate_url": "https://a.example/x", "price": 10}
+        )
+        self.assertEqual(commercial["affiliate_url"], "https://a.example/x")
+        self.assertEqual(commercial["retailer_url"], "")
+        self.assertEqual(commercial["official_url"], "")
+        self.assertEqual(commercial["availability_label"], "")
+
+
+class ProductLinkPartialTests(TestCase):
+    """Rendering van templates/includes/product_link.html."""
+
+    def _render(self, context):
+        from django.template.loader import render_to_string
+        return render_to_string("includes/product_link.html", context)
+
+    def test_affiliate_rendering(self):
+        html = self._render({
+            "resolved_link": resolve_product_link(
+                {"affiliate_url": "https://a.example/x"}
+            ),
+        })
+        self.assertIn('rel="nofollow sponsored noopener"', html)
+        self.assertIn('data-link-type="affiliate"', html)
+        self.assertIn("button primary", html)
+
+    def test_official_rendering_secondary_without_sponsored(self):
+        html = self._render({
+            "resolved_link": resolve_product_link(
+                {"official_url": "https://brand.example/x"}
+            ),
+        })
+        self.assertIn('rel="noopener"', html)
+        self.assertNotIn("sponsored", html)
+        self.assertNotIn("primary", html)
+        self.assertIn("Bekijk productspecificaties", html)
+
+    def test_availability_label_without_url(self):
+        html = self._render({
+            "resolved_link": resolve_product_link({}),
+            "availability_label": "Nog niet algemeen verkrijgbaar",
+        })
+        self.assertNotIn("<a", html)
+        self.assertNotIn("href", html)
+        self.assertIn("Nog niet algemeen verkrijgbaar", html)
+
+    def test_nothing_rendered_without_url_and_label(self):
+        html = self._render({"resolved_link": resolve_product_link({})})
+        self.assertNotIn("<a", html)
+        self.assertNotIn("href=", html)
+        self.assertNotIn("button", html)
+
+    def test_official_only_product_gets_no_offer_jsonld(self):
+        from products.views import _build_offer_ld
+        self.assertIsNone(_build_offer_ld({
+            "official_url": "https://brand.example/x",
+            "price": 99, "currency": "EUR", "availability": "InStock",
+        }))

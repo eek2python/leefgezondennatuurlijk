@@ -1,0 +1,33 @@
+{% comment %}
+Herbruikbare productlink-partial. Rendert het reeds in Python bepaalde
+resultaat van utils.variant_helpers.resolve_product_link — templates kiezen
+zelf nooit tussen affiliate_url/retailer_url/official_url.
+
+Context:
+  resolved_link       — ProductLink (url, link_type, label, rel, is_commercial)
+  availability_label  — tekst die als niet-klikbare status wordt getoond
+                        wanneer er geen link is (optioneel)
+  link_product        — het product (voor slug/naam in aria-label, optioneel)
+  link_small          — truthy voor de kleine knopvariant (optioneel)
+
+Regels:
+  - affiliate/retailer: primaire knop, rel uit de resolver (alleen affiliate
+    bevat "sponsored");
+  - official: secundaire (informatieve) knop, nooit sponsored, nooit als
+    prijslink gepresenteerd;
+  - geen URL + wel availability_label: alleen status als tekst;
+  - geen URL en geen label: niets (geen lege knop, geen href="" of href="#").
+{% endcomment %}
+{% if resolved_link and resolved_link.url %}
+<a
+    href="{{ resolved_link.url }}"
+    class="button{% if resolved_link.link_type != 'official' %} primary{% endif %}{% if link_small %} small{% endif %}"
+    target="_blank"
+    rel="{{ resolved_link.rel }}"
+    data-link-type="{{ resolved_link.link_type }}"
+    {% if link_product.slug %}data-product-slug="{{ link_product.slug }}"{% endif %}
+    {% if link_product.name %}aria-label="{{ resolved_link.label|cut:" →" }} van {{ link_product.name }}"{% endif %}
+>{{ resolved_link.label }}</a>
+{% elif availability_label %}
+<span class="availability-note">{{ availability_label }}</span>
+{% endif %}

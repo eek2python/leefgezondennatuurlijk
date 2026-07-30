@@ -115,8 +115,8 @@
 <span class="rating-value">{{ product.rating_display }}/5</span>
 </div>{% else %}—{% endif %}</td>
                         <td>
-                        {% if product.affiliate_url %}
-                        <a href="{{ product.affiliate_url }}" class="button primary small" target="_blank" rel="nofollow sponsored noopener">Bekijk prijs &amp; reviews →</a>
+                        {% if product.resolved_link.url or product.availability_label %}
+                        {% include "includes/product_link.html" with resolved_link=product.resolved_link availability_label=product.availability_label link_product=product link_small=True %}
                         {% else %}
                         <span class="button small disabled" aria-disabled="true">Binnenkort beschikbaar</span>
                         {% endif %}

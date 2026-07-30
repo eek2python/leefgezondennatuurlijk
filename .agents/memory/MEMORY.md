@@ -1,3 +1,4 @@
 - [Vershoudbakjes data rules](vershoudbakjes-data-rules.md) — usage None never shown as "Nee"; suspect copied records get report-only treatment, never invented facts.
 - [Display-variant strictness](variant-display-strictness.md) — commercial fields come only from the selected variant, cleared when missing; deep-copy PRODUCTS before enrichment.
 - [Audit dashboard architecture](audit-dashboard-architecture.md) — all audit logic in audits/checks/, shared by commands and admin; never duplicate checks or parse console output.
+- [Product link resolution](product-link-resolution.md) — one central resolver (affiliate→retailer→official→status); templates/JS never pick URL fields themselves; never auto-reclassify affiliate URLs.

@@ -294,16 +294,8 @@ Beste glazen vershoudbakjes van 2026 – losse bakjes en sets
                             </td>
 
                             <td>
-                                {% if row.affiliate_url %}
-                                <a
-                                    href="{{ row.affiliate_url }}"
-                                    class="button primary small"
-                                    target="_blank"
-                                    rel="nofollow sponsored noopener"
-                                    aria-label="Bekijk prijs en reviews van {{ row.product.name }}"
-                                >
-                                    Bekijk prijs &amp; reviews
-                                </a>
+                                {% if row.resolved_link.url or row.availability_label %}
+                                {% include "includes/product_link.html" with resolved_link=row.resolved_link availability_label=row.availability_label link_product=row.product link_small=True %}
                                 {% else %}
                                 <span class="availability-note">
                                     Geen actuele prijslink
