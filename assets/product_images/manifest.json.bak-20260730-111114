@@ -686,12 +686,5 @@
     "category": "keramische-koekenpannen",
     "product_key": "scanpan_nura_32cm",
     "enabled": true
-  },
-  {
-    "source": "keramische-koekenpannen/combekk-forest-easy-32cm.jpg",
-    "slug": "combekk-forest-easy-32cm",
-    "category": "keramische-koekenpannen",
-    "product_key": "combekk_forest_easy_32cm",
-    "enabled": true
   }
 ]
