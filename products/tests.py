@@ -886,6 +886,41 @@ class PriceRangeHelperTests(SimpleTestCase):
         from utils.pricing import get_price_range
         self.assertIsNone(get_price_range(42.99, "airfryers"))
 
+    def test_hapjespannen_boundaries(self):
+        from utils.pricing import get_price_range
+        cases = [
+            (None, None), (0, "€"), (39.99, "€"), (40.00, "€€"),
+            (69.99, "€€"), (70.00, "€€€"), (109.99, "€€€"),
+            (110.00, "€€€€"), (250.00, "€€€€"),
+        ]
+        for price, expected in cases:
+            self.assertEqual(
+                get_price_range(price, "hapjespannen"), expected, price
+            )
+
+    def test_hapjespannen_decimal_boundary_precision(self):
+        from decimal import Decimal
+        from utils.pricing import get_price_range
+        # 39.999 mag niet door floatafronding als €€ worden ingedeeld.
+        self.assertEqual(get_price_range(Decimal("39.999"), "hapjespannen"), "€")
+        self.assertEqual(get_price_range("39.999", "hapjespannen"), "€")
+        self.assertEqual(get_price_range(Decimal("109.999"), "hapjespannen"), "€€€")
+
+    def test_koekenpannen_thresholds_unchanged(self):
+        from decimal import Decimal
+        from utils.pricing import PRICE_RANGE_THRESHOLDS
+        self.assertEqual(
+            [u for u, _ in PRICE_RANGE_THRESHOLDS["koekenpannen"]],
+            [Decimal("25"), Decimal("50"), Decimal("90"), None],
+        )
+
+    def test_unknown_category_no_silent_fallback_to_koekenpannen(self):
+        from utils.pricing import get_price_range, has_price_range_config
+        self.assertFalse(has_price_range_config("wokpannen"))
+        # €45 zou bij koekenpangrenzen "€€" zijn; onbekend blijft None.
+        self.assertIsNone(get_price_range(45, "wokpannen"))
+        self.assertTrue(has_price_range_config("hapjespannen"))
+
 
 class NonVariantPriceRangeTests(TestCase):
     """Producten zonder varianten: productniveauprijs → berekend niveau."""

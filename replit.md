@@ -126,7 +126,7 @@ All 6 category pages use a standardised three-file content architecture per cate
 - Network-dependent live link checks stay CLI-only (`scripts/monitor_products.py`); retention via `AUDIT_RUN_RETENTION_PER_KEY` (default None = keep everything).
 
 ## Price Levels (price → price_range)
-- `utils/pricing.py`: central `get_price_range(price, category)` with per-category thresholds; only `koekenpannen` has definitive thresholds (<25 €, <50 €€, <90 €€€, ≥90 €€€€). Other categories are passthrough (manual `price_range`) until their thresholds are decided.
+- `utils/pricing.py`: central `get_price_range(price, category)` with per-category thresholds (Decimal comparisons; a price exactly on a boundary falls in the next tier). Definitive thresholds: `koekenpannen` (<25 €, <50 €€, <90 €€€, ≥90 €€€€) and `hapjespannen` (<40 €, <70 €€, <110 €€€, ≥110 €€€€). Other categories are passthrough (manual `price_range`) until their thresholds are decided; unknown categories never silently fall back to another category's thresholds. New category = one entry in `PRICE_RANGE_THRESHOLDS`. The audit reports mismatches only; source data is never rewritten.
 - `_enrich_products(products, category=...)` sets `display_price_range` on products and swatch variants; templates only render `display_price_range` / `row.price_range` — never concrete prices. Derived levels are strict per display variant (no fallback); `data-price` is always emitted (even empty) when derived, and `variants.js` clears + hides the level on switch.
 - Manual `price_range` fields stay in the data (backward compat / report-only); the audit command reports `price_range_mismatch` etc. and a full internal price table.
 

@@ -1,0 +1,513 @@
+Breid de bestaande productaudit voor prijsniveaus uit met categoriegebonden prijsgrenzen voor PFAS-vrije hapjespannen.
+
+DOEL
+
+De website controleert momenteel de price_range van keramische koekenpannen aan de hand van vaste prijscategorieën. Voeg dezelfde auditcontrole toe voor hapjespannen, maar gebruik voor deze productcategorie eigen prijsgrenzen.
+
+Gebruik voor hapjespannen:
+
+€: prijs lager dan €40
+
+€€: prijs vanaf €40 tot lager dan €70
+
+€€€: prijs vanaf €70 tot lager dan €110
+
+€€€€: prijs vanaf €110
+
+De bovengrens valt steeds in de volgende categorie:
+
+€39,99 → €
+
+€40,00 → €€
+
+€69,99 → €€
+
+€70,00 → €€€
+
+€109,99 → €€€
+
+€110,00 → €€€€
+
+BELANGRIJKE RANDVOORWAARDEN
+
+Inventariseer eerst hoe de bestaande price_range-audit voor keramische koekenpannen is geïmplementeerd.
+
+Zoek naar bestaande helpers, configuratie en auditregels voor:
+
+price_range
+
+price range
+
+price tier
+
+price band
+
+keramische-koekenpannen
+
+PRICE_RANGE_THRESHOLDS
+
+expected_price_range
+
+price_range_mismatch
+
+invalid_price_range
+
+Hergebruik de bestaande centrale helper en auditstructuur.
+
+Maak geen tweede, losstaande implementatie voor hapjespannen.
+
+Pas geen productprijzen of handmatig ingevulde price_range-waarden automatisch aan.
+
+De audit moet afwijkingen rapporteren, niet stilzwijgend corrigeren.
+
+Behoud de bestaande grenzen voor keramische koekenpannen ongewijzigd.
+
+Gebruik Decimal voor geldbedragen en grensvergelijkingen.
+
+Gebruik geen floats voor de centrale prijsberekening.
+
+FASE 1 — INVENTARISATIE
+
+Onderzoek eerst:
+
+Waar de huidige prijsgrenzen voor keramische koekenpannen zijn vastgelegd.
+
+Welke helper de verwachte price_range berekent.
+
+Welke auditregel een verkeerde price_range meldt.
+
+Hoe de productcategorie wordt bepaald:
+
+categorienaam;
+
+datasourcenaam;
+
+product family;
+
+slug;
+
+registryconfiguratie.
+
+Of producten met varianten hun prijs op productniveau of variantniveau opslaan.
+
+Hoe producten zonder prijs momenteel worden behandeld.
+
+Of het auditdashboard de huidige prijs en verwachte price_range al toont.
+
+Welke tests al bestaan voor prijsgrenzen.
+
+Rapporteer de gevonden architectuur kort en voer daarna de implementatie uit.
+
+FASE 2 — CENTRALE CATEGORIECONFIGURATIE
+
+Leg de prijsgrenzen centraal en categoriegebonden vast.
+
+Gebruik bij voorkeur de bestaande configuratiestructuur. Wanneer nog geen centrale configuratie bestaat, maak bijvoorbeeld:
+
+from decimal import Decimal
+
+PRICE_RANGE_THRESHOLDS = {
+    "keramische-koekenpannen": (
+        Decimal("25.00"),
+        Decimal("50.00"),
+        Decimal("90.00"),
+    ),
+    "hapjespannen": (
+        Decimal("40.00"),
+        Decimal("70.00"),
+        Decimal("110.00"),
+    ),
+}
+
+De tuple betekent:
+
+grens tussen € en €€
+grens tussen €€ en €€€
+grens tussen €€€ en €€€€
+
+Gebruik de werkelijke categorie-identifier die al in het project bestaat. Mogelijke namen zijn bijvoorbeeld:
+
+hapjespannen
+
+pfas-vrije-hapjespannen
+
+hapjespannen-28-cm
+
+keramische-hapjespannen
+
+Voeg geen nieuwe identifier toe wanneer de productcategorie al onder een bestaande sleutel geregistreerd is.
+
+FASE 3 — CENTRALE PRICE_RANGE-HELPER
+
+Breid de bestaande helper uit zodat deze categoriegebonden grenzen gebruikt.
+
+Voorkeursvorm:
+
+from decimal import Decimal, InvalidOperation
+
+
+VALID_PRICE_RANGES = {"€", "€€", "€€€", "€€€€"}
+
+
+def normalize_price(value):
+    if value is None or value == "":
+        return None
+
+    try:
+        return Decimal(str(value))
+    except (InvalidOperation, TypeError, ValueError):
+        return None
+
+
+def calculate_price_range(price, category_key):
+    normalized_price = normalize_price(price)
+
+    if normalized_price is None:
+        return None
+
+    thresholds = PRICE_RANGE_THRESHOLDS.get(category_key)
+
+    if thresholds is None:
+        return None
+
+    level_2, level_3, level_4 = thresholds
+
+    if normalized_price < level_2:
+        return "€"
+
+    if normalized_price < level_3:
+        return "€€"
+
+    if normalized_price < level_4:
+        return "€€€"
+
+    return "€€€€"
+
+Pas namen en locatie aan de bestaande architectuur aan.
+
+BELANGRIJK
+
+Gebruik < voor de bovengrens.
+
+Een prijs exact op een grens hoort bij de volgende categorie.
+
+Gebruik dezelfde helper voor de websiteweergave en de audit wanneer dat al de bestaande architectuur is.
+
+Voorkom verschillende berekeningen in templates, views en auditcode.
+
+Houd de ingestelde price_range als brondata intact; de audit vergelijkt deze met de berekende verwachting.
+
+FASE 4 — HAPJESPANNEN TOEVOEGEN
+
+Koppel de hapjespannencategorie aan deze grenzen:
+
+(
+    Decimal("40.00"),
+    Decimal("70.00"),
+    Decimal("110.00"),
+)
+
+Verwachte uitkomsten:
+
+0,00–39,99       → €
+40,00–69,99      → €€
+70,00–109,99     → €€€
+110,00 en hoger  → €€€€
+
+De audit moet alle hapjespannen controleren waarop deze categorieconfiguratie van toepassing is.
+
+Controleer ook:
+
+producten zonder varianten;
+
+producten met een prijs op productniveau;
+
+producten met varianten;
+
+producten waarbij een display_variant de commerciële prijs bepaalt;
+
+producten met price=None;
+
+producten met een lege price_range;
+
+producten met een ongeldige price_range.
+
+FASE 5 — VARIANTREGELS
+
+Hergebruik de bestaande veilige variantselectie.
+
+Regels:
+
+Wanneer de productkaart een specifieke display_variant gebruikt, moet de audit dezelfde prijs gebruiken.
+
+Gebruik geen prijs van een willekeurige andere variant.
+
+Wanneer een geselecteerde variant geen prijs heeft, meld dat volgens de bestaande auditlogica.
+
+Gebruik alleen productniveau-fallback wanneer de bestaande commerciële resolver dit expliciet toestaat.
+
+De price_range moet overeenkomen met de prijs die daadwerkelijk publiek voor het product of de geselecteerde variant wordt gebruikt.
+
+Voorkom dat de audit een variantprijs vergelijkt met een price_range van een andere variant.
+
+Breid indien nodig de bestaande resolve_commercial_fields of vergelijkbare helper uit, maar maak geen afzonderlijke variantresolver voor deze audit.
+
+FASE 6 — AUDITREGELS
+
+Hergebruik bestaande issue codes wanneer die al bestaan.
+
+Voorkeursregels:
+
+price_range_mismatch
+missing_price_range
+invalid_price_range
+price_without_price_range
+price_range_without_price
+missing_price_range_configuration
+invalid_price
+
+Voeg alleen nieuwe issue codes toe wanneer de huidige auditstructuur daarvoor nog geen equivalent heeft.
+
+Voor price_range_mismatch moet de melding minimaal bevatten:
+
+productnaam;
+
+productslug;
+
+categorie;
+
+actuele prijs;
+
+opgeslagen price_range;
+
+verwachte price_range;
+
+gebruikte grensconfiguratie;
+
+eventueel geselecteerde variant.
+
+Voorbeeld:
+
+BK Hapjespan 28 cm heeft price_range "€€", maar bij een prijs van €74,95
+wordt voor de categorie hapjespannen "€€€" verwacht.
+Gebruikte grenzen: €40 / €70 / €110.
+
+Ernstniveaus:
+
+price_range_mismatch: WARNING
+
+missing_price_range bij aanwezige prijs: WARNING
+
+invalid_price_range: ERROR of WARNING volgens bestaande conventie
+
+price_range_without_price: INFO of WARNING
+
+missing_price_range_configuration: ERROR
+
+invalid_price: ERROR
+
+Pas de niveaus aan de bestaande projectconventies aan.
+
+FASE 7 — AUDITDASHBOARD
+
+Zorg dat het bestaande auditdashboard voor ieder prijsprobleem toont:
+
+categorie;
+
+product;
+
+variant indien relevant;
+
+prijs;
+
+huidige price_range;
+
+verwachte price_range;
+
+gebruikte categoriegrenzen;
+
+issue code;
+
+ernst;
+
+bronbestand of productregistry indien beschikbaar.
+
+Voeg geen apart dashboard voor hapjespannen toe. Gebruik het bestaande centrale productauditdashboard.
+
+Indien het dashboard filters ondersteunt, zorg dan dat op de hapjespannencategorie en op price_range_mismatch kan worden gefilterd.
+
+FASE 8 — TESTS
+
+Voeg minimaal tests toe voor hapjespannen met deze waarden:
+
+price=None      → expected=None
+price=0         → €
+price=39.99     → €
+price=40.00     → €€
+price=69.99     → €€
+price=70.00     → €€€
+price=109.99    → €€€
+price=110.00    → €€€€
+price=250.00    → €€€€
+
+Voeg daarnaast tests toe voor:
+
+Correct opgeslagen niveau:
+
+geen auditissue.
+
+Verkeerd opgeslagen niveau:
+
+price_range_mismatch.
+
+Prijs aanwezig, price_range ontbreekt:
+
+passende auditmelding.
+
+price_range aanwezig, prijs ontbreekt:
+
+passende auditmelding.
+
+Ongeldige waarde zoals:
+
+"€€€€€"
+
+"premium"
+
+2
+
+lege whitespace.
+
+Decimale grenswaarden:
+
+39.999 mag niet door floats verkeerd worden ingedeeld;
+
+gebruik Decimal volgens de bestaande prijsafronding.
+
+Keramische koekenpannen:
+
+bestaande grenzen van €25, €50 en €90 blijven ongewijzigd.
+
+Hapjespannen:
+
+nieuwe grenzen van €40, €70 en €110 worden toegepast.
+
+Onbekende categorie:
+
+geen stille fallback naar de koekenpangrenzen;
+
+meld ontbrekende configuratie of volg de bestaande expliciete fallbackregel.
+
+Variantproduct:
+
+audit gebruikt alleen de geselecteerde display_variant.
+
+Variant zonder prijs:
+
+geen prijs van andere variant overnemen.
+
+Volledige auditrun:
+
+bestaande auditchecks blijven functioneren.
+
+Draai daarna de volledige testsuite.
+
+FASE 9 — DOCUMENTATIE
+
+Werk de bestaande documentatie over prijsniveaus bij.
+
+Leg vast:
+
+Keramische koekenpannen:
+€       < €25
+€€      €25–<€50
+€€€     €50–<€90
+€€€€    ≥ €90
+
+Hapjespannen:
+€       < €40
+€€      €40–<€70
+€€€     €70–<€110
+€€€€    ≥ €110
+
+Leg ook vast:
+
+waarom prijsgrenzen categoriegebonden zijn;
+
+dat bedragen met Decimal worden verwerkt;
+
+dat exacte grensbedragen in de volgende categorie vallen;
+
+dat de audit brondata niet automatisch wijzigt;
+
+hoe een nieuwe productcategorie aan de configuratie wordt toegevoegd.
+
+FASE 10 — GEEN AUTOMATISCHE DATACORRECTIES
+
+Wijzig tijdens deze taak niet automatisch alle bestaande price_range-waarden van hapjespannen.
+
+Voer eerst de audit uit en rapporteer:
+
+hoeveel hapjespannen zijn gecontroleerd;
+
+hoeveel correcte waarden zijn gevonden;
+
+hoeveel mismatches zijn gevonden;
+
+hoeveel producten geen prijs hebben;
+
+hoeveel producten geen price_range hebben;
+
+welke producten handmatig moeten worden aangepast.
+
+Pas alleen code, configuratie, tests en documentatie aan.
+
+ACCEPTATIECRITERIA
+
+De taak is voltooid wanneer:
+
+hapjespannen categoriegebonden prijsgrenzen gebruiken;
+
+de grenzen €40, €70 en €110 correct worden toegepast;
+
+exacte grensbedragen in de volgende categorie vallen;
+
+dezelfde centrale helper wordt gebruikt als voor keramische koekenpannen;
+
+er geen dubbele prijslogica ontstaat;
+
+varianten veilig worden afgehandeld;
+
+het bestaande auditdashboard mismatches toont;
+
+keramische-koekenpangrenzen ongewijzigd blijven;
+
+bestaande productdata niet automatisch wordt herschreven;
+
+alle nieuwe tests en de volledige bestaande testsuite slagen.
+
+RAPPORTEER NA UITVOERING
+
+Geef na implementatie:
+
+gewijzigde bestanden;
+
+gevonden bestaande prijsrange-architectuur;
+
+gebruikte categorie-identifier voor hapjespannen;
+
+centrale configuratie met alle prijsgrenzen;
+
+aangepaste helper;
+
+toegevoegde of hergebruikte issue codes;
+
+aantal gecontroleerde hapjespannen;
+
+gevonden price_range-mismatches;
+
+toegevoegde tests;
+
+resultaat van de volledige testsuite;
+
+resterende uitzonderingen of risico’s.

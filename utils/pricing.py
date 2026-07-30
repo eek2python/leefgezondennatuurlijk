@@ -14,6 +14,18 @@ grenzen bewust zijn vastgesteld):
         €25 – < €50      → €€
         €50 – < €90      → €€€
         ≥ €90            → €€€€
+
+    hapjespannen ("hapjespannen"):
+        < €40            → €
+        €40 – < €70      → €€
+        €70 – < €110     → €€€
+        ≥ €110           → €€€€
+
+Grenzen zijn categoriegebonden (prijspeil verschilt per producttype);
+bedragen worden met Decimal vergeleken en een prijs exact op een grens
+valt altijd in de volgende categorie. Een nieuwe categorie toevoegen =
+één entry in PRICE_RANGE_THRESHOLDS; onbekende categorieën blijven
+bewust zonder niveau (geen stille fallback naar andermans grenzen).
 """
 
 from decimal import Decimal, InvalidOperation
@@ -25,6 +37,12 @@ PRICE_RANGE_THRESHOLDS = {
         (Decimal("25"), "€"),
         (Decimal("50"), "€€"),
         (Decimal("90"), "€€€"),
+        (None, "€€€€"),
+    ),
+    "hapjespannen": (
+        (Decimal("40"), "€"),
+        (Decimal("70"), "€€"),
+        (Decimal("110"), "€€€"),
         (None, "€€€€"),
     ),
 }

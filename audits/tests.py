@@ -100,6 +100,22 @@ class RunnerTests(TestCase):
         self.assertIn("price_range_mismatch", codes)
         self.assertTrue(meta["price_table"])
 
+    def test_price_level_audit_covers_hapjespannen_with_own_thresholds(self):
+        issues, meta = run_price_level_check(category="hapjespannen")
+        rows = [
+            r for r in meta["price_table"] if r["category"] == "hapjespannen"
+        ]
+        self.assertTrue(rows)
+        # Grenzen €40/€70/€110: verwachte niveaus in de tabel moeten met de
+        # centrale helper overeenkomen (geen koekenpangrenzen).
+        from utils.pricing import get_price_range
+        for row in rows:
+            expected = get_price_range(row["price"], "hapjespannen") or "—"
+            self.assertEqual(
+                row["computed"], expected,
+                (row["product"], row["variant"], row["price"]),
+            )
+
     def test_failed_audit_gets_failed_status(self):
         from audits import registry
 
