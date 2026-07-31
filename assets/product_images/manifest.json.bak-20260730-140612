@@ -833,12 +833,5 @@
     "category": "rvs-koekenpannen",
     "product_key": "wmf_profi_20",
     "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/wmf-profi-28.jpg",
-    "slug": "wmf-profi-28",
-    "category": "rvs-koekenpannen",
-    "product_key": "wmf_profi_28",
-    "enabled": true
   }
 ]

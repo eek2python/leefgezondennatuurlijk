@@ -817,8 +817,6 @@ def vershoudcontainers(request):
 
 def _enrich_rvs_products(products):
     for p in products:
-        p["image_path"] = "images/rvs-koekenpannen"
-        p["image"] = (p.get("image") or "").split("/")[-1]
         if (p.get("affiliate_url") or "").startswith("TODO"):
             p["affiliate_url"] = None
     _enrich_products(products, category="rvs-koekenpannen")
@@ -904,8 +902,6 @@ def product_detail(request, slug):
         cat_info = CATEGORY_MAP[cat_key]
         _enrich_products([product], category=cat_key)
         if cat_key == "rvs-koekenpannen":
-            product["image_path"] = "images/rvs-koekenpannen"
-            product["image"] = (product.get("image") or "").split("/")[-1]
             if (product.get("affiliate_url") or "").startswith("TODO"):
                 product["affiliate_url"] = None
                 # affiliate_url is na verrijking gewijzigd: resolved link

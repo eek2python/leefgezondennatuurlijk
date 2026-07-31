@@ -805,40 +805,5 @@
     "category": "rvs-koekenpannen",
     "product_key": "demeyere_industry_5_28",
     "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/demeyere-multiline-7-20.jpg",
-    "slug": "demeyere-multiline-7-20",
-    "category": "rvs-koekenpannen",
-    "product_key": "demeyere_multiline_7_20",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/demeyere-silverline-7-28.jpg",
-    "slug": "demeyere-silverline-7-28",
-    "category": "rvs-koekenpannen",
-    "product_key": "demeyere_silverline_7_28",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/sola-green-cooking-plus-20.jpg",
-    "slug": "sola-green-cooking-plus-20",
-    "category": "rvs-koekenpannen",
-    "product_key": "sola_green_cooking_plus_20",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/wmf-profi-20.jpg",
-    "slug": "wmf-profi-20",
-    "category": "rvs-koekenpannen",
-    "product_key": "wmf_profi_20",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/wmf-profi-28.jpg",
-    "slug": "wmf-profi-28",
-    "category": "rvs-koekenpannen",
-    "product_key": "wmf_profi_28",
-    "enabled": true
   }
 ]
