@@ -439,7 +439,10 @@ PRODUCTS = {
                 ),
                 "hex": "#6B8A93",
                 "affiliate_url": "",
-                "retailer_url": "",
+                "retailer_url": (
+                    "https://greenpan.nl/products/"
+                    "bistro-xl-airfryer-sky-blue"
+                ),
                 "official_url": (
                     "https://greenpan.nl/products/"
                     "bistro-xl-airfryer-sky-blue"

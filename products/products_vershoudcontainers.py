@@ -34,7 +34,7 @@ PRODUCTS = {
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "",
-        "retailer_url": "https://www.bol.com/nl/nl/p/pyrex-cook-store-vershoudbakje-borosilicaatglas-800-ml-transparant/9200000",
+        "retailer_url": "https://www.bol.com/nl/nl/p/pyrex-cook-store-vershoudbakje-borosilicaatglas-800-ml-transparant/9200000117155201/",
         "price_last_checked": "2026-07-24",
         "price_range": "\u20ac\u20ac",
         "verdict": "Een van de beste losse glazen vershoudbakjes dankzij de uitstekende bouwkwaliteit, veelzijdigheid en lange levensduur.",

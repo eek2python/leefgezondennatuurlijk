@@ -1,0 +1,30 @@
+{% comment %}
+Gedeelde FAQ-sectie met inklapbare antwoorden (opzet van de
+vershoudbakjes-pagina's). Verwacht `content.faq` in de context.
+{% endcomment %}
+{% if content.faq.items %}
+<section
+    class="faq-section"
+    aria-labelledby="faq-title"
+>
+    <header class="major">
+        <h2 id="faq-title">
+            {{ content.faq.title }}
+        </h2>
+    </header>
+
+    <div class="faq-list">
+        {% for item in content.faq.items %}
+        <details class="faq-item">
+            <summary>
+                {{ item.q }}
+            </summary>
+
+            <div class="faq-item__answer">
+                <p>{{ item.a|safe }}</p>
+            </div>
+        </details>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}

@@ -80,11 +80,11 @@ PRODUCTS = {
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "",
-        # "retailer_url": (
-        #     "https://www.bol.com/nl/nl/p/"
-        #     "bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-zwart-"
-        #     "koelgreep-ovenbestendig-tot-160/9300000196237263/"
-        # ),
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-zwart-"
+            "koelgreep-ovenbestendig-tot-160/9300000196237263/"
+        ),
         "official_url": "",
         "availability_label": "",
         "price_range": "€€",
@@ -132,7 +132,7 @@ PRODUCTS = {
                 "hex": "#708238",
                 "affiliate_url": "",
                 "retailer_url": (
-                    "https://www.bol.com/nl/nl/p/bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-lichtblauw-koelgrepen-ovenbestendig-tot-160/9300000196237270/"
+                    "https://www.bol.com/nl/nl/p/bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-olijfgroen-koelgrepen-ovenbestendig-tot-160/9300000196237266/"
                 ),
                 "price": 47.45,
                 "price_last_checked": "2026-06-31",

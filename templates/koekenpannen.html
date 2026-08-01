@@ -167,17 +167,7 @@
 
 {% endif %}
 
-<section class="faq-section">
-    <header class="major">
-        <h2>{{ content.faq.title }}</h2>
-    </header>
-{% for item in content.faq.items %}
-<div class="faq-item">
-<h3>{{ forloop.counter }}. {{ item.q }}</h3>
-<p>{{ item.a|safe }}</p>
-</div>
-{% endfor %}
-</section>
+{% include "partials/faq_section.html" %}
 
 {% include "partials/handige_artikelen.html" %}
 {% include "partials/related_categories.html" with current_category='koekenpannen' %}
