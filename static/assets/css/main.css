@@ -4892,3 +4892,19 @@ table.product-table .product-badge {
    outline: 3px solid currentColor;
    outline-offset: 3px;
 }
+
+/* Custom: sidebar-menu blijft in beeld op grote schermen (>1280px).
+   Sticky binnen de flex-layout; eigen verticale scroll als het menu
+   hoger is dan het venster, zonder horizontale scrollbalk. */
+	@media screen and (min-width: 1281px) {
+
+		#sidebar > .inner {
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+			max-height: 100vh;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+
+	}
