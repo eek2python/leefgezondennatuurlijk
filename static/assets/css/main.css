@@ -4929,3 +4929,11 @@ table.product-table .product-badge {
 		display: block;
 		margin: 0 auto;
 	}
+
+/* Custom: bullets van "Handige artikelen" direct vóór de gecentreerde
+   links in plaats van tegen de linkerrand van de sectie. */
+	.handige-artikelen ul {
+		list-style-position: inside;
+		padding-left: 0;
+		margin-left: 0;
+	}
