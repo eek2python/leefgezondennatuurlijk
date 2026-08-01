@@ -1,142 +1,336 @@
 CONTENT = {
-        "hero": {
-        "h1": "Top 10 Houten Snijplanken \u2013 Gezond, Duurzaam & Stijlvol",
+    "hero": {
+        "h1": "De {product_count} beste houten snijplanken van 2026",
         "paragraphs": [
-            "Een goede snijplank is onmisbaar in elke keuken \u2014 maar niet alle planken zijn even gezond of duurzaam. "
-            "Plastic snijplanken kunnen na langdurig gebruik diepe snijgroeven ontwikkelen en slijten sneller dan veel houten alternatieven."
-            "Daarom hebben wij de <strong>beste houten snijplanken</strong> van dit moment geselecteerd: gemaakt van natuurlijke materialen, "
-            "vrij van toxische coatings en geschikt voor jarenlang gebruik.",
-            "Of je nu dagelijks kookt of af en toe een maaltijd bereidt, de juiste houten snijplank maakt koken prettiger, veiliger en hygi\u00ebnischer. "
-            "Wij hebben tientallen modellen vergeleken op <strong>materiaal, materiaal, duurzaamheid, gebruiksgemak</strong> en <strong>onderhoud</strong>. "
-            "Hieronder vind je de <strong>Top\u00a010 houten snijplanken van 2026</strong> \u2014 zorgvuldig beoordeeld om gezond koken makkelijker te maken.",
+            (
+                "Een houten snijplank is een praktisch alternatief voor "
+                "kunststof, glas of composiet. Hout is doorgaans vriendelijk "
+                "voor messen en verkrijgbaar in uiteenlopende formaten, "
+                "houtsoorten en constructies."
+            ),
+            (
+                "Voor deze selectie vergelijken we houten en bamboe "
+                "snijplanken op materiaal, constructie, formaat, onderhoud, "
+                "praktische eigenschappen, prijs en beschikbaarheid. Zo zie "
+                "je sneller welke plank past bij jouw keuken en manier van "
+                "koken."
+            ),
         ],
     },
+
     "why_choose": {
         "title": "Waarom kiezen voor een houten snijplank?",
         "intro": (
-            "Houten snijplanken zijn niet alleen mooi om te zien, maar ook een bewuste keuze voor je gezondheid \u00e9n het milieu. "
-            "In tegenstelling tot plastic of glazen planken is hout een natuurlijk, mesvriendelijk materiaal dat geen microplastics afgeeft "
-            "en hygi\u00ebnischer is bij juist gebruik."
+            "Houten snijplanken combineren een relatief zacht snijoppervlak "
+            "met een natuurlijke uitstraling. Ze vragen wel meer onderhoud "
+            "dan veel kunststof planken en moeten doorgaans met de hand "
+            "worden gereinigd."
         ),
         "bullets": [
-            "<strong>Mesvriendelijk:</strong> hout geeft iets mee waardoor messen doorgaans langer scherp blijven.",
-   "<strong>Duurzaam:</strong> een kwalitatieve houten plank kan jarenlang meegaan bij goed onderhoud.",
-   "<strong>Plasticvrij:</strong> aantrekkelijk voor wie bewust minder kunststof in de keuken wil gebruiken.",
-   "<strong>Natuurlijke uitstraling:</strong> geeft een warme en tijdloze uitstraling aan de keuken.",
+            (
+                "<strong>Vriendelijk voor messen:</strong> veel houtsoorten "
+                "geven enigszins mee onder de snede, waardoor de snijrand "
+                "minder snel slijt dan op harde oppervlakken zoals glas, "
+                "steen of keramiek."
+            ),
+            (
+                "<strong>Verschillende constructies:</strong> je kunt kiezen "
+                "uit dunne dagelijkse planken, dikke hakblokken en "
+                "kopshouten modellen."
+            ),
+            (
+                "<strong>Kunststofvrij snijoppervlak:</strong> aantrekkelijk "
+                "voor wie minder kunststof in de keuken wil gebruiken."
+            ),
+            (
+                "<strong>Veel formaten:</strong> van compacte planken voor "
+                "kleine snijtaken tot grote werkblokken voor uitgebreide "
+                "bereidingen."
+            ),
+            (
+                "<strong>Natuurlijke uitstraling:</strong> houtsoorten zoals "
+                "esdoorn, walnoot, beuken en acacia hebben ieder een eigen "
+                "kleur en nerfstructuur."
+            ),
         ],
-        "outro": None,
-    },
-    "size_guide": None,
-    "products_section": {
-        "h2": "De 10 beste houten snijplanken van 2026",
-        "intro": (
-            "Van compacte <strong>bamboe snijplanken</strong> tot robuuste <strong>end-grain walnootplanken</strong>: "
-            "ontdek hieronder welke houten snijplank het beste bij jouw kookstijl past \u2014 getest op kwaliteit, duurzaamheid en gebruiksgemak."
+        "outro": (
+            "De beste keuze hangt niet alleen af van de houtsoort. Ook "
+            "dikte, nerfrichting, formaat, gewicht, onderhoud en beschikbare "
+            "werkruimte zijn belangrijk."
         ),
-        "comparison_title": "Vergelijkingstabel \u2013 Top 10 Houten Snijplanken",
     },
+
+    "size_guide": None,
+
+    "products_section": {
+        "h2": "Onze selectie houten snijplanken",
+        "intro": (
+            "De selectie loopt van lichte bamboeplanken tot dikke "
+            "kopshouten hakblokken. De producten verschillen niet alleen "
+            "in prijs, maar ook in formaat, materiaal, gewicht, constructie "
+            "en gebruiksdoel."
+        ),
+        "comparison_title": "Vergelijkingstabel – houten snijplanken",
+    },
+
     "tips": {
         "title": "Onderhoudstips voor houten snijplanken",
-        "intro": None,
+        "intro": (
+            "Hout reageert op vocht en temperatuur. Zorgvuldig reinigen, "
+            "drogen en onderhouden helpt om scheuren, vervorming en "
+            "loslatende lijmnaden te beperken."
+        ),
         "bullets": [
-            "Was de snijplank altijd met de hand in warm water en een milde zeep. Vermijd de vaatwasser om scheuren en kromtrekken te voorkomen.",
-            "Laat de plank na het wassen rechtop drogen, zodat beide zijden gelijkmatig ventileren.",
-            "Behandel het oppervlak regelmatig met <strong>natuurlijke minerale olie</strong> of <strong>bijenwas</strong> om uitdroging te voorkomen en het hout te voeden.",
-            "Vermijd langdurig contact met vocht, zuur voedsel of agressieve schoonmaakmiddelen.",
+            (
+                "<strong>Was de plank met de hand:</strong> gebruik warm "
+                "water, een mild afwasmiddel en een zachte spons. De houten "
+                "en bamboe planken in deze selectie zijn niet geschikt voor "
+                "de vaatwasser."
+            ),
+            (
+                "<strong>Laat de plank volledig drogen:</strong> droog hem "
+                "na het wassen af en zet hem bij voorkeur rechtop zodat "
+                "beide zijden kunnen ventileren."
+            ),
+            (
+                "<strong>Vermijd langdurig weken:</strong> laat een houten "
+                "plank niet in de gootsteen of in een laag water liggen."
+            ),
+            (
+                "<strong>Voorkom sterke temperatuurwisselingen:</strong> "
+                "gebruik geen kokend water en leg een natte plank niet direct "
+                "op een warmtebron."
+            ),
+            (
+                "<strong>Gebruik een geschikt onderhoudsproduct:</strong> "
+                "behandel de plank indien de fabrikant dit adviseert met "
+                "voedselveilige minerale olie of een speciaal product voor "
+                "houten snijplanken."
+            ),
+            (
+                "<strong>Gebruik geen bakolie voor onderhoud:</strong> "
+                "oliën zoals olijf- en zonnebloemolie kunnen oxideren en "
+                "onaangenaam gaan ruiken."
+            ),
+            (
+                "<strong>Bescherm beide zijden:</strong> behandel en reinig "
+                "de plank zo gelijkmatig mogelijk om spanningsverschillen "
+                "in het hout te beperken."
+            ),
+            (
+                "<strong>Controleer de plank regelmatig:</strong> let op "
+                "diepe scheuren, loslatende lijmnaden, ernstige vervorming "
+                "of beschadigingen die niet meer goed te reinigen zijn."
+            ),
         ],
-        "outro": None,
+        "outro": (
+            "Volg altijd de onderhoudsinstructies van de fabrikant, omdat "
+            "houtsoort, constructie en oorspronkelijke afwerking per model "
+            "verschillen."
+        ),
     },
+
     "conclusies": {
         "default": {
-            "title": "Conclusie \u2013 Onze aanbeveling",
+            "title": "Conclusie – welke houten snijplank past het best?",
             "text": (
-            "Een houten snijplank is een duurzame keuze die bij goed onderhoud jarenlang mee kan gaan. "
-            "Zoek je maximale kwaliteit en een mesvriendelijk oppervlak, dan blijft de BoosBlocks Pro Maple Series onze sterkste allround keuze. "
-            "Voor wie een toegankelijkere instap zoekt, biedt de IKEA APTITLIG een eenvoudige en betaalbare oplossing voor dagelijks gebruik."
+                "De <strong>KAAMUT walnoot end-grain</strong> is onze beste "
+                "allround keuze door de kopshouten constructie, het handzame "
+                "formaat, de sapgeul en de antislipvoetjes. De "
+                "<strong>IKEA APTITLIG</strong> is onze budgetkeuze voor wie "
+                "een lichte en ruime plank zoekt tegen een zeer lage prijs. "
+                "De <strong>BoosBlocks Pro Maple</strong> is onze "
+                "premiumkeuze voor wie voldoende ruimte heeft voor een groot "
+                "en zwaar kopshouten hakblok. Wie vooral een extra groot "
+                "werkoppervlak zoekt, kan kijken naar de "
+                "<strong>Zwilling beukenhouten snijplank van 60 × 40 cm</strong>."
             ),
         },
     },
+
     "faq": {
         "title": "Veelgestelde vragen over houten snijplanken",
         "items": [
             {
-                "q": "Hoe onderhoud ik mijn houten snijplank het best?",
+                "q": "Hoe onderhoud ik een houten snijplank?",
                 "a": (
-                    "Was de plank met de hand in warm water en milde zeep. Droog hem rechtop en behandel het oppervlak regelmatig met "
-                    "<strong>minerale olie</strong> of <strong>bijenwas</strong> om het hout in goede conditie te houden. "
-                    "Vermijd de vaatwasser en langdurig contact met vocht."
+                    "Was de plank met de hand in warm water met een mild "
+                    "afwasmiddel. Droog hem daarna af en laat hem rechtop "
+                    "volledig drogen. Behandel de plank indien nodig met een "
+                    "voedselveilig onderhoudsproduct dat geschikt is voor "
+                    "houten snijplanken."
                 ),
             },
             {
-                "q": "Welke houtsoort is het meest geschikt voor een snijplank?",
+                "q": "Welke houtsoort is geschikt voor een snijplank?",
                 "a": (
-                    "<strong>Esdoorn</strong> en <strong>walnoot</strong> zijn populair vanwege hun duurzaamheid en mesvriendelijkheid. "
-                    "<strong>Bamboe</strong> is een duurzaam alternatief, lichter van gewicht en milieuvriendelijk, terwijl "
-                    "<strong>beuken</strong> en <strong>acacia</strong> betaalbare opties bieden met een natuurlijke uitstraling."
+                    "Esdoorn, walnoot en beuken worden veel gebruikt voor "
+                    "houten snijplanken. Acacia en rubberwood zijn eveneens "
+                    "gangbare opties. De geschiktheid hangt niet alleen af "
+                    "van de houtsoort, maar ook van hardheid, nerfrichting, "
+                    "dikte, lijmconstructie en oppervlakteafwerking."
                 ),
             },
             {
-                "q": "Zijn houten snijplanken hygi\u00ebnischer dan plastic?",
+                "q": "Is bamboe hetzelfde als hout?",
                 "a": (
-                    "Bij goed onderhoud kunnen houten snijplanken zeer hygi\u00ebnisch zijn. Sommige houtsoorten lijken bacteriegroei minder te ondersteunen dan sterk beschadigde plastic oppervlakken, maar regelmatig reinigen blijft het belangrijkst."
+                    "Nee. Bamboe is botanisch een grassoort, maar wordt voor "
+                    "snijplanken verwerkt tot gelijmde panelen. Bamboeplanken "
+                    "zijn vaak licht en relatief voordelig, maar kunnen harder "
+                    "aanvoelen dan sommige hardhouten planken."
                 ),
             },
             {
-                "q": "Hoe verwijder ik vlekken of geur uit een houten snijplank?",
+                "q": "Zijn houten snijplanken hygiënisch?",
                 "a": (
-                    "Strooi grof zout op de plank, snij een citroen doormidden en wrijf de plank in. Laat 5 minuten inwerken en spoel af. "
-                    "Dit verwijdert kleur- en geurresten op natuurlijke wijze zonder de houtvezels te beschadigen."
+                    "Een houten snijplank kan hygiënisch worden gebruikt "
+                    "wanneer hij na ieder gebruik goed wordt gereinigd en "
+                    "volledig kan drogen. Gebruik bij voorkeur aparte planken "
+                    "voor rauwe dierlijke producten en producten die direct "
+                    "worden gegeten. Vervang of herstel een plank wanneer "
+                    "diepe scheuren of beschadigingen niet meer goed te "
+                    "reinigen zijn."
+                ),
+            },
+            {
+                "q": "Moet ik aparte snijplanken gebruiken?",
+                "a": (
+                    "Aparte planken kunnen helpen om kruisbesmetting te "
+                    "beperken. Gebruik bijvoorbeeld een aparte plank voor "
+                    "rauw vlees, vis of gevogelte en een andere voor brood, "
+                    "groenten en producten die direct worden gegeten."
+                ),
+            },
+            {
+                "q": "Hoe verwijder ik geuren of oppervlakkige vlekken?",
+                "a": (
+                    "Reinig de plank eerst met warm water en een mild "
+                    "afwasmiddel. Laat hem daarna volledig drogen. Gebruik "
+                    "voor hardnekkige geuren of vlekken alleen een aanvullende "
+                    "reinigingsmethode die geschikt is voor de houtsoort en "
+                    "afwerking van de plank."
                 ),
             },
             {
                 "q": "Welk formaat snijplank heb ik nodig?",
                 "a": (
-                    "Voor dagelijks gebruik is 30×20\u00a0cm een praktische maat. Voor grotere bereidingen of bij het snijden van vlees of brood is 40×30\u00a0cm of groter aan te raden. "
-                    "Houd rekening met je werkbladruimte en opbergmogelijkheden."
+                    "Een compacte plank rond 30 × 20 cm is handig voor kleine "
+                    "snijtaken en beperkte werkruimte. Een formaat rond "
+                    "40 × 30 cm biedt meer ruimte voor dagelijkse "
+                    "bereidingen. Extra grote planken van 50 cm of meer zijn "
+                    "geschikt voor uitgebreid snijwerk, maar nemen ook meer "
+                    "werk- en opbergruimte in."
                 ),
             },
             {
-                "q": "Wanneer moet ik mijn snijplank vervangen?",
+                "q": "Wat is het verschil tussen een gewone en een kopshouten snijplank?",
                 "a": (
-                    "Vervang de plank wanneer er diepe groeven, scheuren of donkere vlekken zijn die niet meer weggaan. Diepe inkepingen kunnen bacteriën vasthouden. "
-                    "Bij goed onderhoud gaat een kwaliteits houten snijplank echter 5 tot 10 jaar of langer mee."
+                    "Bij een kopshouten of end-grain plank staan de uiteinden "
+                    "van de houtvezels aan het snijoppervlak. Bij een gewone "
+                    "plank lopen de vezels meestal in de lengte of breedte. "
+                    "Kopshouten planken zijn vaak dikker en zwaarder en zijn "
+                    "doorgaans vriendelijk voor messen, maar kosten "
+                    "meer en vragen regelmatig onderhoud."
+                ),
+            },
+            {
+                "q": "Wanneer moet ik een houten snijplank vervangen?",
+                "a": (
+                    "Vervang of laat de plank herstellen wanneer hij diepe "
+                    "scheuren, loslatende lijmnaden, ernstige vervorming of "
+                    "beschadigingen heeft die niet meer goed te reinigen zijn. "
+                    "Oppervlakkige snijsporen zijn niet automatisch een reden "
+                    "om de plank weg te doen."
                 ),
             },
             {
                 "q": "Mag een houten snijplank in de vaatwasser?",
                 "a": (
-                    "Nee, absoluut niet. De combinatie van hitte en water laat hout zwellen, krimpen en uiteindelijk barsten. Was houten snijplanken altijd met de hand "
-                    "in warm water met milde zeep en droog ze rechtop voor goede ventilatie."
+                    "De houten en bamboe snijplanken in deze selectie zijn "
+                    "niet geschikt voor de vaatwasser. Langdurige blootstelling "
+                    "aan heet water en sterke temperatuurwisselingen kan het "
+                    "hout laten vervormen of scheuren en lijmnaden aantasten."
                 ),
             },
             {
-                "q": "Welk hout is het meest hygiënisch voor een snijplank?",
-                "a": "Hardhout met fijne porieën zoals beuken, esdoorn en kersen­hout zijn van nature antibacterieel: de poriesluiting trekt vocht en bacteriën in, waar ze afsterven door uitdroging. Studies tonen aan dat hardhout hygiënischer is dan plastic, dat juist krassen ontwikkelt waarin bacteriën zich nestelen.",
-            },
-            {
-                "q": "Waarom zijn houten snijplanken mesvriendelijker dan plastic?",
-                "a": "Veel houtsoorten geven iets mee onder de snede, waardoor messen vaak langer scherp blijven. Zeer harde materialen zoals glas en sommige bamboeplanken kunnen sneller slijtage aan messen veroorzaken.",
+                "q": "Waarom kiezen veel mensen hout voor hun keukenmessen?",
+                "a": (
+                    "Veel houtsoorten geven enigszins mee onder de snede en "
+                    "zijn daardoor doorgaans vriendelijker voor de snijrand "
+                    "dan glas, steen of keramiek. De exacte invloed hangt af "
+                    "van houtsoort, hardheid, nerfrichting en constructie."
+                ),
             },
             {
                 "q": "Hoe vaak moet ik mijn houten snijplank oliën?",
-                "a": "Bij nieuwe planken: de eerste maand wekelijks, daarna 1× per maand bij intensief gebruik of 1× per kwartaal bij normaal gebruik. Gebruik voedselveilige minerale olie of speciale snij­plank­olie — nooit olijfolie of plantaardige olie (die wordt ranzig).",
+                "a": (
+                    "Dat verschilt per plank en gebruiksfrequentie. Behandel "
+                    "de plank wanneer het hout droog of dof oogt en volg "
+                    "daarbij de instructies van de fabrikant. Gebruik een "
+                    "voedselveilig product dat geschikt is voor houten "
+                    "snijplanken."
+                ),
             },
             {
-                "q":"Zijn glazen of houten snijplanken beter?",
-                "a":"Voor dagelijks snijden zijn houten snijplanken meestal vriendelijker voor messen. Glazen planken zijn eenvoudig schoon te maken, maar kunnen messen sneller bot maken."
-            }
+                "q": "Welke olie is geschikt voor een houten snijplank?",
+                "a": (
+                    "Gebruik voedselveilige minerale olie of een speciaal "
+                    "onderhoudsproduct voor houten snijplanken. Gebruik geen "
+                    "olijfolie, zonnebloemolie of andere gangbare bakolie voor "
+                    "langdurig onderhoud, omdat deze kan oxideren en "
+                    "onaangenaam kan gaan ruiken."
+                ),
+            },
+            {
+                "q": "Zijn glazen of houten snijplanken beter?",
+                "a": (
+                    "Voor dagelijks snijden is hout doorgaans vriendelijker "
+                    "voor messen. Glas is eenvoudig af te nemen, maar het zeer "
+                    "harde oppervlak kan snijranden sneller laten slijten. "
+                    "Welke plank het meest praktisch is, hangt ook af van "
+                    "onderhoud, gewicht en gebruiksdoel."
+                ),
+            },
         ],
     },
-"how_we_test": {
-    "title": "Hoe wij snijplanken beoordelen",
-    "intro": "Bij snijplanken selecteren we op criteria die bepalend zijn voor veiligheid, kwaliteit en dagelijks keukengebruik.",
-    "bullets": [
-        "Materiaalkeuze: houtsoort, hardheid en geschiktheid voor dagelijks keukengebruik.",
-        "Duurzaamheid: weerstand tegen krassen, vocht en intensief gebruik.",
-        "Onderhoudsgemak: eenvoudig te reinigen en te onderhouden.",
-        "Formaat en stabiliteit: stevig werkoppervlak dat past bij dagelijkse bereidingen.",
-        "Prijs-kwaliteit: eerlijke vergelijking van budget tot premium segment.",
-    ],
-    "outro": None,
-},
+
+    "how_we_test": {
+        "title": "Hoe wij houten snijplanken beoordelen",
+        "intro": (
+            "Onze beoordeling is redactioneel en gebaseerd op "
+            "productspecificaties, materiaal, constructie, formaat, "
+            "onderhoud, prijs en beschikbaarheid. Tenzij expliciet vermeld, "
+            "voeren wij geen laboratorium- of langdurige gebruikstest uit."
+        ),
+        "bullets": [
+            (
+                "<strong>Materiaal:</strong> houtsoort, bamboe of rubberwood "
+                "en de productspecifieke oppervlakteafwerking."
+            ),
+            (
+                "<strong>Constructie:</strong> langs-, dwars- of kopshout, "
+                "dikte, omkeerbaarheid en eventuele lijmnaden."
+            ),
+            (
+                "<strong>Formaat en gebruik:</strong> werkoppervlak, gewicht, "
+                "opbergruimte, sapgeul, handgrepen en "
+                "antislipvoorzieningen."
+            ),
+            (
+                "<strong>Onderhoud:</strong> reiniging, drogen, oliën en "
+                "andere productspecifieke onderhoudsinstructies."
+            ),
+            (
+                "<strong>Prijs-kwaliteit:</strong> verhouding tussen prijs, "
+                "afmetingen, materiaal en constructie."
+            ),
+            (
+                "<strong>Beschikbaarheid:</strong> is de exacte maat en "
+                "uitvoering daadwerkelijk verkrijgbaar?"
+            ),
+        ],
+        "outro": (
+            "Prijzen en beschikbaarheid kunnen tussentijds veranderen."
+        ),
+    },
 }

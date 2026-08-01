@@ -23,9 +23,13 @@ gepresenteerd; varianten mogen nooit een link van een andere variant tonen.
   "opschonen"; de audit `product_links` levert de handmatige-reviewlijst
   (`affiliate_url_without_affiliate_confirmation`, INFO). Bevestigde
   affiliatelinks kunnen `affiliate_confirmed: True` krijgen.
-- Kleurswatch-uitzondering (varianten zonder `id`): affiliate-only met
-  gedocumenteerde familie-fallback naar productniveau; retailer/official op
-  swatch-varianten wordt niet gerenderd (audit waarschuwt).
+- Variant-fallbackregel (aug 2026, expliciete gebruikersbeslissing): een
+  variant zonder énige eigen URL valt terug op de oorspronkelijke
+  productniveau-URL's (familie-snapshot `_family_links`), nooit op een
+  andere variant. Eerst volledige prioriteit binnen de variant zelf.
+- Kleurswatches (varianten zonder `id`) volgen dezelfde regels; links
+  worden serverside resolved aangeleverd, de swatch-JS bevat geen eigen
+  prioriteitslogica.
 - JSON-LD Offer alleen uit affiliate_url; nooit uit retailer/official.
 
 Volledige regels: `docs/product-links.md`.

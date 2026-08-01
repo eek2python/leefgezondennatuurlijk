@@ -1,255 +1,611 @@
 CONTENT = {
     "hero": {
         "paragraphs": [
-            "Steeds meer consumenten zoeken een PFAS-vrije airfryer zonder klassieke tefloncoating of andere fluorhoudende antiaanbaklagen. Vooral bij apparaten die langdurig op hoge temperatuur werken groeit de aandacht voor veilige materialen, duurzame coatings en alternatieven zonder PFAS. Daarom kiezen veel mensen bewust voor airfryers met een keramische binnenmand of een expliciet PFAS-vrije coating.",
-            "Op deze pagina vind je zorgvuldig geselecteerde PFAS-vrije airfryers in verschillende formaten en categorie\u00ebn \u2014 van compacte modellen voor kleine huishoudens tot ruime XL-airfryers en dual-zone airfryers met dubbele lade voor gezinnen en grotere maaltijden.",
-            "Wij beoordelen airfryers op materiaalveiligheid, keramische coatingkwaliteit, gebruiksgemak, bakprestaties, duurzaamheid en prijs-kwaliteitverhouding. Zo helpen we je bij het vinden van een veilige en praktische airfryer die past bij jouw keuken en kookstijl.",
+            (
+                "Steeds meer consumenten letten bij de aanschaf van een "
+                "airfryer op de samenstelling van de antiaanbaklaag. "
+                "Daarom groeit de belangstelling voor modellen waarvan de "
+                "fabrikant expliciet vermeldt dat de mand, binnenpan of "
+                "coating PFAS-vrij is."
+            ),
+            (
+                "Op deze pagina vergelijken we PFAS-vrije airfryers in "
+                "verschillende formaten: compacte modellen, ruime "
+                "XL-airfryers en dual-zoneairfryers met twee afzonderlijke "
+                "laden."
+            ),
+            (
+                "De geselecteerde modellen verschillen in coatingtype, "
+                "inhoud, vermogen, programma’s, onderhoud en beschikbare "
+                "functies. Sommige hebben een expliciet bevestigde keramische "
+                "coating; bij andere modellen bevestigt de fabrikant alleen "
+                "dat de antiaanbaklaag PFAS-vrij is."
+            ),
         ],
     },
+
     "formats": {
         "compact": {
-            "label": "Compact (3\u20135L)",
-            "h1": "De Beste Compacte PFAS-vrije Airfryers (3\u20135L) van 2026",
-            "meta_title": "Beste Compacte PFAS-vrije Airfryers (3\u20135L) 2026 | Leef Natuurlijk & Gezond",
-            "meta_description": "Vergelijk de beste compacte PFAS-vrije airfryers (3\u20135L) van 2026 met keramische binnenmand. Ideaal voor 1\u20132 personen \u2013 veilig, zuinig en zonder teflon.",
-            "og_title": "Beste Compacte PFAS-vrije Airfryers (3\u20135L) van 2026",
-            "og_description": "De beste compacte PFAS-vrije airfryers met keramische binnenmand \u2013 ideaal voor kleinere huishoudens en keukens.",
-            "intro_extra": "Heb je meer capaciteit nodig? Bekijk onze <a href=\"/airfryers/xl/\">XL airfryers (6\u20138L)</a> of de <a href=\"/airfryers/dual/\">dual-zone airfryers</a> met dubbele lade.",
-            "itemlist_name": "Top {product_count} Compacte PFAS-vrije Airfryers (3\u20135L) van 2026",
-            "itemlist_description": "De {product_count} beste compacte PFAS-vrije airfryers van 2026 \u2013 keramisch, veilig en zonder teflon.",
+            "label": "Compact (3–5 L)",
+            "h1": (
+                "De beste compacte PFAS-vrije airfryers "
+                "(3–5 L) van 2026"
+            ),
+            "meta_title": (
+                "Beste compacte PFAS-vrije airfryers "
+                "(3–5 L) 2026 | Leef Natuurlijk & Gezond"
+            ),
+            "meta_description": (
+                "Vergelijk compacte PFAS-vrije airfryers van 2026 "
+                "op inhoud, coating, programma’s, prijs en onderhoud."
+            ),
+            "og_title": (
+                "Beste compacte PFAS-vrije airfryers "
+                "(3–5 L) van 2026"
+            ),
+            "og_description": (
+                "Vergelijk compacte PFAS-vrije airfryers voor kleinere "
+                "huishoudens en keukens."
+            ),
+            "intro_extra": (
+                'Heb je meer capaciteit nodig? Bekijk onze '
+                '<a href="/airfryers/xl/">XL-airfryers (6–8 L)</a> '
+                'of de <a href="/airfryers/dual/">dual-zoneairfryers</a> '
+                "met dubbele lade."
+            ),
+            "itemlist_name": (
+                "Top {product_count} compacte PFAS-vrije airfryers "
+                "(3–5 L) van 2026"
+            ),
+            "itemlist_description": (
+                "De {product_count} beste compacte PFAS-vrije airfryers "
+                "van 2026, vergeleken op functies, coating en prijs."
+            ),
         },
+
         "xl": {
-            "label": "XL (6\u20138L)",
-            "h1": "De Beste XL PFAS-vrije Airfryers (6\u20138L) van 2026",
-            "meta_title": "Beste XL PFAS-vrije Airfryers (6\u20138L) 2026 | Leef Natuurlijk & Gezond",
-            "meta_description": "Vergelijk de beste XL PFAS-vrije airfryers (6\u20138L) van 2026 met keramische binnenmand. Ruime capaciteit voor gezinnen van 3\u20135 personen, zonder PFAS.",
-            "og_title": "Beste XL PFAS-vrije Airfryers (6\u20138L) van 2026",
-            "og_description": "De beste XL PFAS-vrije airfryers met keramische binnenmand \u2013 ruime capaciteit voor gezinnen en grotere porties.",
-            "intro_extra": "Voor kleinere keukens zijn onze <a href=\"/airfryers/\">compacte airfryers (3\u20135L)</a> handiger, terwijl je met een <a href=\"/airfryers/dual/\">dual-zone airfryer</a> twee gerechten tegelijk bereidt.",
-            "itemlist_name": "Top {product_count} XL PFAS-vrije Airfryers (6\u20138L) van 2026",
-            "itemlist_description": "De {product_count} beste XL PFAS-vrije airfryers van 2026 \u2013 ruime keramische capaciteit, veilig en zonder teflon.",
+            "label": "XL (6–8 L)",
+            "h1": (
+                "De beste XL PFAS-vrije airfryers "
+                "(6–8 L) van 2026"
+            ),
+            "meta_title": (
+                "Beste XL PFAS-vrije airfryers "
+                "(6–8 L) 2026 | Leef Natuurlijk & Gezond"
+            ),
+            "meta_description": (
+                "Vergelijk XL PFAS-vrije airfryers van 6–8 liter "
+                "op inhoud, coating, programma’s, vermogen en prijs."
+            ),
+            "og_title": (
+                "Beste XL PFAS-vrije airfryers "
+                "(6–8 L) van 2026"
+            ),
+            "og_description": (
+                "Ruime PFAS-vrije airfryers voor grotere porties "
+                "en huishoudens."
+            ),
+            "intro_extra": (
+                'Voor kleinere keukens zijn onze '
+                '<a href="/airfryers/">compacte airfryers (3–5 L)</a> '
+                "handiger, terwijl je met een "
+                '<a href="/airfryers/dual/">dual-zoneairfryer</a> '
+                "twee bereidingen afzonderlijk kunt instellen."
+            ),
+            "itemlist_name": (
+                "Top {product_count} XL PFAS-vrije airfryers "
+                "(6–8 L) van 2026"
+            ),
+            "itemlist_description": (
+                "De {product_count} beste XL PFAS-vrije airfryers "
+                "van 2026, vergeleken op capaciteit, functies en prijs."
+            ),
         },
+
         "dual": {
             "label": "Dual-zone",
-            "h1": "De Beste Dual-zone PFAS-vrije Airfryers van 2026",
-            "meta_title": "Beste Dual-zone PFAS-vrije Airfryers 2026 | Leef Natuurlijk & Gezond",
-            "meta_description": "Vergelijk de beste dual-zone PFAS-vrije airfryers van 2026 met dubbele lade. Bereid twee gerechten tegelijk \u2013 keramisch, veilig en zonder teflon.",
-            "og_title": "Beste Dual-zone PFAS-vrije Airfryers van 2026",
-            "og_description": "De beste dual-zone PFAS-vrije airfryers met dubbele lade \u2013 bereid twee gerechten tegelijk op aparte temperaturen.",
-            "intro_extra": "Heb je geen twee aparte zones nodig? Vergelijk dan onze <a href=\"/airfryers/\">compacte airfryers (3\u20135L)</a> of ruime <a href=\"/airfryers/xl/\">XL airfryers (6\u20138L)</a>.",
-            "itemlist_name": "Top {product_count} Dual-zone PFAS-vrije Airfryers van 2026",
-            "itemlist_description": "De {product_count} beste dual-zone PFAS-vrije airfryers van 2026 \u2013 dubbele lade, keramisch en zonder teflon.",
+            "h1": (
+                "De beste dual-zone PFAS-vrije airfryers van 2026"
+            ),
+            "meta_title": (
+                "Beste dual-zone PFAS-vrije airfryers "
+                "2026 | Leef Natuurlijk & Gezond"
+            ),
+            "meta_description": (
+                "Vergelijk dual-zone PFAS-vrije airfryers met twee "
+                "laden, synchronisatie, verschillende inhoudsmaten "
+                "en programma’s."
+            ),
+            "og_title": (
+                "Beste dual-zone PFAS-vrije airfryers van 2026"
+            ),
+            "og_description": (
+                "PFAS-vrije dual-zoneairfryers waarmee je twee "
+                "bereidingen tegelijk afzonderlijk kunt instellen."
+            ),
+            "intro_extra": (
+                "Heb je geen twee aparte zones nodig? Vergelijk dan onze "
+                '<a href="/airfryers/">compacte airfryers (3–5 L)</a> '
+                "of ruime "
+                '<a href="/airfryers/xl/">XL-airfryers (6–8 L)</a>.'
+            ),
+            "itemlist_name": (
+                "Top {product_count} dual-zone PFAS-vrije "
+                "airfryers van 2026"
+            ),
+            "itemlist_description": (
+                "De {product_count} beste PFAS-vrije "
+                "dual-zoneairfryers van 2026 met twee afzonderlijke "
+                "bakzones."
+            ),
         },
     },
+
     "why_choose": {
         "title": "Waarom kiezen voor een PFAS-vrije airfryer?",
         "intro": (
-            "Moderne airfryers werken op hoge temperaturen, waardoor traditionele antiaanbaklagen op basis van PFAS sneller kunnen slijten "
-            "of bij verkeerd gebruik ongewenste dampen kunnen afgeven. Een PFAS-vrije airfryer biedt een veiliger en duurzamer alternatief "
-            "voor dagelijks gebruik."
+            "Een PFAS-vrije airfryer is interessant voor consumenten "
+            "die een antiaanbaklaag zonder PFAS verkiezen. De exacte "
+            "samenstelling verschilt per model: sommige fabrikanten "
+            "bevestigen een keramische coating, terwijl andere alleen "
+            "vermelden dat de antiaanbaklaag PFAS-vrij is."
         ),
         "bullets": [
-            "<strong>Gezonder koken:</strong> geen PFAS of fluorhoudende coatings in de binnenmand.",
-            "<strong>Bewuste materiaalkeuze:</strong> veel consumenten geven de voorkeur aan keramische coatings of RVS-oplossingen zonder klassieke antiaanbakchemicali\u00ebn.",
-            "<strong>Hogere hittebestendigheid:</strong> keramische coatings blijven stabiel bij hoge temperaturen.",
-            "<strong>Betere duurzaamheid:</strong> keramische manden behouden hun eigenschappen vaak langer dan traditionele anti-aanbaklagen.",
-            "<strong>Geschikt voor dagelijks gebruik:</strong> moderne PFAS-vrije airfryers combineren veiligheid met snelheid en gebruiksgemak.",
+            (
+                "<strong>Expliciete PFAS-vrijvermelding:</strong> bij de "
+                "geselecteerde modellen is PFAS-vrijheid voor de mand, "
+                "binnenpan of coating vermeld."
+            ),
+            (
+                "<strong>Keuze uit verschillende coatings:</strong> "
+                "sommige modellen hebben een bevestigde keramische "
+                "antiaanbaklaag, andere een niet nader gespecificeerde "
+                "PFAS-vrije coating."
+            ),
+            (
+                "<strong>Verschillende formaten:</strong> er zijn "
+                "compacte, XL- en dual-zoneuitvoeringen voor uiteenlopende "
+                "porties en beschikbare keukenruimte."
+            ),
+            (
+                "<strong>Praktische functies:</strong> afhankelijk van "
+                "het model zijn er automatische programma’s, "
+                "synchronisatie, stoomfuncties, kijkvensters, "
+                "warmhoudfuncties of dubbele verwarmingselementen."
+            ),
+            (
+                "<strong>Onderhoud verschilt per model:</strong> sommige "
+                "manden en roosters mogen in de vaatwasser, terwijl bij "
+                "andere uitvoeringen handwas wordt aanbevolen."
+            ),
         ],
         "outro": (
-            "Of je nu kiest voor een compacte airfryer, een XL-model of een dual-zone airfryer met dubbele lade: "
-            "een PFAS-vrij model helpt je om bewuster, veiliger en duurzamer te koken."
+            "Vergelijk daarom niet alleen de PFAS-status, maar ook de "
+            "capaciteit, functies, onderhoudsinstructies, afmetingen "
+            "en beschikbare productdocumentatie."
         ),
     },
+
     "size_guide": {
         "title": "Welke maat airfryer heb je nodig?",
         "intro": (
-            "De juiste inhoud hangt vooral af van je huishouden, kookstijl en hoe vaak je grotere porties bereidt. "
-            "Onderstaande richtlijnen helpen bij het kiezen van het juiste formaat."
+            "De benodigde inhoud hangt af van het type gerecht, de "
+            "portiegrootte en de beschikbare ruimte. De literinhoud "
+            "alleen zegt niet hoeveel voedsel je optimaal tegelijk "
+            "kunt bereiden."
         ),
         "sections": [
             {
-                "h3": "Compact (3\u20135 liter)",
+                "h3": "Compact, ongeveer 3–5 liter",
                 "items": [
-                    "Ideaal voor 1\u20132 personen of kleinere keukens.",
-                    "Bekijk alle <a href=\"/airfryers/\">compacte PFAS-vrije airfryers</a>.",
+                    (
+                        "Vaak passend voor kleinere porties en "
+                        "huishoudens van één of twee personen."
+                    ),
+                    (
+                        'Bekijk alle <a href="/airfryers/">compacte '
+                        "PFAS-vrije airfryers</a>."
+                    ),
                 ],
             },
             {
-                "h3": "XL (6\u20138 liter)",
+                "h3": "XL, ongeveer 6–8 liter",
                 "items": [
-                    "Geschikt voor gezinnen van 3\u20135 personen en grotere porties.",
-                    "Bekijk alle <a href=\"/airfryers/xl/\">XL PFAS-vrije airfryers</a>.",
+                    (
+                        "Biedt meer ruimte voor grotere porties, maar "
+                        "vraagt doorgaans ook meer aanrecht- en "
+                        "opbergruimte."
+                    ),
+                    (
+                        'Bekijk alle <a href="/airfryers/xl/">XL '
+                        "PFAS-vrije airfryers</a>."
+                    ),
                 ],
             },
             {
                 "h3": "Dual-zone",
                 "items": [
-                    "Twee aparte lades waarmee je verschillende gerechten tegelijk kunt bereiden op aparte temperaturen en tijden.",
-                    "Bekijk alle <a href=\"/airfryers/dual/\">dual-zone PFAS-vrije airfryers</a>.",
+                    (
+                        "Heeft twee afzonderlijke laden waarmee je "
+                        "verschillende tijden en temperaturen kunt "
+                        "instellen."
+                    ),
+                    (
+                        'Bekijk alle <a href="/airfryers/dual/">dual-zone '
+                        "PFAS-vrije airfryers</a>."
+                    ),
                 ],
             },
         ],
         "outro": (
-            "Wie regelmatig complete maaltijden tegelijk wil bereiden of grotere hoeveelheden gebruikt, profiteert vaak van een XL- of dual-zone model."
+            "Let bij dual-zoneairfryers ook op de inhoud per lade. "
+            "Een totaalinhoud van 8 liter betekent bijvoorbeeld vaak "
+            "twee afzonderlijke manden van elk 4 liter."
         ),
     },
+
     "products_section": {
-        "h2": "Top {product_count} PFAS-vrije airfryers van 2026 \u2013 {selected_format}",
-        "intro": (
-            "Van compacte airfryers voor kleine huishoudens tot ruime XL-modellen en dual-zone airfryers met dubbele lade: "
-            "hieronder vind je de beste PFAS-vrije airfryers van dit moment, geselecteerd op veilige materialen, "
-            "gebruiksgemak en dagelijkse prestaties."
+        "h2": (
+            "Top {product_count} PFAS-vrije airfryers van 2026 – "
+            "{selected_format}"
         ),
-        "comparison_title": "Vergelijkingstabel \u2013 Top {product_count} PFAS-vrije Airfryers ({selected_format})",
+        "intro": (
+            "Hieronder vergelijken we de geselecteerde modellen op "
+            "PFAS-status, coatingtype, capaciteit, programma’s, "
+            "functies, onderhoud, prijs en beschikbaarheid."
+        ),
+        "comparison_title": (
+            "Vergelijkingstabel – Top {product_count} PFAS-vrije "
+            "airfryers ({selected_format})"
+        ),
     },
+
     "tips": {
         "title": "Onderhoudstips voor PFAS-vrije airfryers",
         "intro": (
-            "Met de juiste verzorging gaat een PFAS-vrije airfryer jarenlang mee en blijft de keramische binnenmand "
-            "in optimale conditie."
+            "Volg bij reiniging altijd de instructies van de fabrikant. "
+            "De toegestane reinigingsmethode verschilt per coating, "
+            "onderdeel en model."
         ),
         "bullets": [
-            "Reinig de mand altijd met de hand met warm water en milde zeep.",
-            "Gebruik geen metalen spatels of schuursponzen om de keramische laag te beschermen.",
-            "Laat de mand volledig afkoelen voordat je deze schoonmaakt.",
-            "Gebruik liever een bakkwast dan olie-sprays om aankoeken te voorkomen.",
-            "Laat onderdelen volledig drogen voordat je ze terugplaatst.",
-            "Gebruik eventueel een zachte microvezeldoek om keramische oppervlakken langer mooi te houden.",
-            "Voorkom langdurige oververhitting zonder inhoud om onnodige slijtage van de coating te beperken.",
+            (
+                "Laat manden, roosters en bodemplaten eerst voldoende "
+                "afkoelen voordat je ze reinigt."
+            ),
+            (
+                "Gebruik warm water, een mild afwasmiddel en een zachte "
+                "spons wanneer handwas wordt voorgeschreven of aanbevolen."
+            ),
+            (
+                "Plaats onderdelen alleen in de vaatwasser wanneer de "
+                "fabrikant dit voor het exacte model toestaat."
+            ),
+            (
+                "Vermijd staalwol, schuurmiddelen, metalen borstels en "
+                "scherpe voorwerpen op antiaanbaklagen."
+            ),
+            (
+                "Gebruik houten, kunststof of siliconen gerei wanneer "
+                "je voedsel uit de mand haalt."
+            ),
+            (
+                "Laat aangekoekte resten eerst weken in plaats van ze "
+                "krachtig los te schuren."
+            ),
+            (
+                "Droog losse onderdelen voordat je ze terugplaatst en "
+                "controleer regelmatig of er voedselresten rond het "
+                "verwarmingselement aanwezig zijn."
+            ),
+            (
+                "Gebruik alleen accessoires en bakvormen die geschikt "
+                "zijn voor de temperatuur van de airfryer en voldoende "
+                "luchtcirculatie toelaten."
+            ),
+            (
+                "Laat het apparaat niet langdurig leeg op de hoogste "
+                "temperatuur werken, tenzij de fabrikant dit voor een "
+                "specifieke functie voorschrijft."
+            ),
         ],
         "outro": (
-            "Goed onderhoud verlengt niet alleen de levensduur van de airfryer, maar helpt ook om de bakprestaties "
-            "en veiligheid van de coating optimaal te behouden."
+            "Voorzichtig onderhoud helpt schade aan coatings en losse "
+            "onderdelen te beperken, maar er is geen vaste levensduur "
+            "voor een antiaanbaklaag te geven."
         ),
     },
+
     "conclusies": {
         "compact": {
-            "title": "Conclusie \u2013 Onze aanbeveling",
+            "title": (
+                "Conclusie – welke compacte airfryer past het best?"
+            ),
             "text": (
-                "Voor kleinere huishoudens en dagelijks gebruik zijn compacte PFAS-vrije airfryers een uitstekende keuze. "
-                "De <strong>Inventum GF500HLD</strong> biedt hierbij de beste balans tussen keramische materiaalveiligheid, "
-                "gebruiksgemak en bakprestaties. Zoek je vooral een betaalbare instapper, dan is de "
-                "<strong>Bourgini Slimfit XL</strong> een aantrekkelijke budgetkeuze. "
-                "Wie premium afwerking en extra functies zoekt, vindt in de "
-                "<strong>GreenPan Silhouette XL</strong> een van de meest hoogwaardige keramische airfryers van dit moment. "
-                "Heb je meer ruimte nodig? Bekijk dan onze <a href=\"/airfryers/xl/\">XL airfryers</a> of <a href=\"/airfryers/dual/\">dual-zone airfryers</a>."
+                "De <strong>Inventum GF500HLD</strong> is onze beste "
+                "allround keuze door de inhoud van 5 liter, acht "
+                "programma’s, meegeleverde accessoires en "
+                "vaatwasserbestendige onderdelen. De "
+                "<strong>Bourgini Slimfit Airfryer Pure XL</strong> "
+                "is onze budgetaanbeveling wanneer je een smalle "
+                "behuizing en een expliciet bevestigde keramische "
+                "PFAS-vrije coating zoekt. De "
+                "<strong>MasterPRO Rocket Cyclone 500</strong> "
+                "onderscheidt zich door acht programma’s en een "
+                "kijkvenster, maar is duurder. De "
+                "<strong>Maison & Kitchen 5 L</strong> heeft de "
+                "laagste aanschafprijs, al zijn de technische "
+                "specificaties minder uitgebreid gedocumenteerd. "
+                'Wil je grotere porties kunnen bereiden? Bekijk dan onze '
+                '<a href="/airfryers/xl/">XL-airfryers</a> of '
+                '<a href="/airfryers/dual/">dual-zoneairfryers</a>.'
             ),
         },
+
         "xl": {
-            "title": "Conclusie \u2013 Onze aanbeveling",
+            "title": "Conclusie – welke XL-airfryer past het best?",
             "text": (
-                "Voor gezinnen en grotere porties biedt een XL airfryer duidelijk meer flexibiliteit en gebruiksgemak. "
-                "De <strong>Inventum GF730HLDB</strong> is onze beste allround keuze dankzij de ruime keramische binnenmand, "
-                "betrouwbare prestaties en sterke prijs-kwaliteitverhouding. "
-                "De <strong>Princess 182280</strong> is een aantrekkelijke budgetoptie voor wie veel inhoud zoekt zonder premium prijskaartje. "
-                "Zoek je juist maximale afwerking, design en hoogwaardige keramische materialen, dan behoort de "
-                "<strong>GreenPan Bistro XXL</strong> tot de beste premium PFAS-vrije airfryers van dit moment. "
-                "Voor een kleinere keuken bekijk je onze <a href=\"/airfryers/\">compacte airfryers</a>, voor twee gerechten tegelijk de <a href=\"/airfryers/dual/\">dual-zone airfryers</a>."
+                "De <strong>Inventum GF730HLDB</strong> is onze beste "
+                "allround keuze door de inhoud van 7,3 liter, "
+                "stoomfunctie, crispyfunctie en acht automatische "
+                "programma’s. De <strong>Princess 182280</strong> is "
+                "onze budgetkeuze door de inhoud van 8 liter, het "
+                "dubbele verwarmingselement en het vermogen van "
+                "2000 watt. De <strong>GreenPan Bistro XXL</strong> "
+                "is de premiumkeuze voor wie specifiek een keramische "
+                "PFAS-vrije coating, elf programma’s en meerdere "
+                "kleuruitvoeringen zoekt. De "
+                "<strong>Bourgini Slimfit Pure XXL</strong> combineert "
+                "8 liter inhoud met een relatief smalle behuizing. De "
+                "<strong>Maison & Kitchen 8 L</strong> is een "
+                "voordeliger alternatief, maar heeft minder uitgebreid "
+                "gedocumenteerde productspecificaties. "
+                'Voor kleinere porties bekijk je onze '
+                '<a href="/airfryers/">compacte airfryers</a>; voor '
+                'twee afzonderlijke bereidingen de '
+                '<a href="/airfryers/dual/">dual-zoneairfryers</a>.'
             ),
         },
+
         "dual": {
-            "title": "Conclusie \u2013 Onze aanbeveling",
+            "title": (
+                "Conclusie – welke dual-zoneairfryer past het best?"
+            ),
             "text": (
-                "Dual-zone airfryers zijn ideaal voor gezinnen of gebruikers die meerdere gerechten tegelijk willen bereiden. "
-                "De <strong>Inventum GF800HLD</strong> biedt hierbij de beste combinatie van gebruiksgemak, keramische binnenmanden en dagelijkse prestaties. "
-                "Voor prijsbewuste gebruikers is de <strong>Bourgini Duo</strong> een aantrekkelijke dual-zone instapper. "
-                "Zoek je maximale afwerking en premium keramische kwaliteit, dan is de "
-                "<strong>GreenPan Bistro Dual</strong> een van de meest complete PFAS-vrije dual airfryers van dit moment. "
-                "Geen twee zones nodig? Bekijk dan onze <a href=\"/airfryers/\">compacte airfryers</a> of <a href=\"/airfryers/xl/\">XL airfryers</a>."
+                "De <strong>Inventum GF800HLD</strong> is onze beste "
+                "allround keuze door Dual Cook, synchronisatie, acht "
+                "programma’s en vaatwasserbestendige onderdelen. De "
+                "<strong>Bourgini Duo</strong> is onze budgetkeuze en "
+                "heeft twee manden met een bevestigde keramische "
+                "PFAS-vrije coating. De "
+                "<strong>GreenPan Bistro Dual Zone</strong> is de "
+                "premiumkeuze door de twee kijkvensters, Sync Air en "
+                "het vermogen van 3000 watt. "
+                'Geen twee zones nodig? Bekijk dan onze '
+                '<a href="/airfryers/">compacte airfryers</a> of '
+                '<a href="/airfryers/xl/">XL-airfryers</a>.'
             ),
         },
     },
+
     "faq": {
         "title": "Veelgestelde vragen over PFAS-vrije airfryers",
         "items": [
             {
                 "q": "Zijn alle airfryers PFAS-vrij?",
                 "a": (
-                    "Nee. Veel traditionele anti-aanbaklagen bevatten fluorhoudende coatings zoals PTFE. "
-                    "Kies daarom specifiek voor een airfryer met een keramische of expliciet PFAS-vrije binnenmand."
+                    "Nee. De samenstelling van de antiaanbaklaag "
+                    "verschilt per model. Kies een airfryer waarbij de "
+                    "fabrikant expliciet bevestigt dat de mand, "
+                    "binnenpan of coating PFAS-vrij is."
                 ),
             },
             {
-                "q": "Is keramisch altijd PFAS-vrij?",
+                "q": "Is een keramische coating altijd PFAS-vrij?",
                 "a": (
-                    "Hoogwaardige keramische coatings bevatten doorgaans geen PFAS, PTFE of PFOA. "
-                    "Controleer wel altijd de productspecificaties van de fabrikant."
+                    "Niet automatisch. Controleer of de fabrikant voor "
+                    "het exacte model expliciet vermeldt dat de "
+                    "keramische coating PFAS-vrij is. Alleen de term "
+                    "‘keramisch’ is onvoldoende als bevestiging."
                 ),
             },
             {
                 "q": "Welke capaciteit airfryer heb ik nodig?",
                 "a": (
-                    "Voor 1\u20132 personen volstaat meestal 3\u20135 liter. "
-                    "Voor gezinnen van 3\u20135 personen is 6\u20138 liter ideaal. "
-                    "Dual-zone airfryers zijn handig wanneer je meerdere gerechten tegelijk wilt bereiden."
+                    "Een model van ongeveer 3–5 liter past vaak bij "
+                    "kleinere porties. Voor grotere hoeveelheden kan "
+                    "6–8 liter praktischer zijn. Kijk ook naar de vorm "
+                    "van de mand en, bij dual-zoneairfryers, naar de "
+                    "inhoud per afzonderlijke lade."
                 ),
             },
             {
-                "q": "Wat is het verschil tussen compacte, XL en dual-zone airfryers?",
+                "q": (
+                    "Wat is het verschil tussen compacte, XL- en "
+                    "dual-zoneairfryers?"
+                ),
                 "a": (
-                    "<a href=\"/airfryers/\">Compacte airfryers</a> nemen minder ruimte in beslag en zijn geschikt voor kleinere huishoudens. "
-                    "<a href=\"/airfryers/xl/\">XL-airfryers</a> bieden meer capaciteit voor grotere porties. "
-                    "<a href=\"/airfryers/dual/\">Dual-zone modellen</a> beschikken over twee aparte lades waarmee je verschillende gerechten tegelijk kunt bereiden."
+                    '<a href="/airfryers/">Compacte airfryers</a> '
+                    "nemen doorgaans minder ruimte in en zijn geschikt "
+                    "voor kleinere porties. "
+                    '<a href="/airfryers/xl/">XL-airfryers</a> '
+                    "bieden meer totale capaciteit. "
+                    '<a href="/airfryers/dual/">Dual-zoneairfryers</a> '
+                    "hebben twee afzonderlijke laden waarmee je "
+                    "verschillende tijden en temperaturen kunt instellen."
                 ),
             },
             {
-                "q": "Is een keramische coating in een airfryer veilig?",
+                "q": (
+                    "Wat betekent een keramische coating bij een "
+                    "airfryer?"
+                ),
                 "a": (
-                    "Ja, hoogwaardige keramische coatings zijn voedselveilig en bevatten geen PFAS of PTFE. "
-                    "Bij normaal gebruik geven ze geen schadelijke dampen af."
+                    "Een keramische coating is een type antiaanbaklaag. "
+                    "De exacte samenstelling en gebruiksinstructies "
+                    "verschillen per fabrikant. Controleer of "
+                    "PFAS-vrijheid voor het exacte model wordt bevestigd "
+                    "en volg de opgegeven temperatuur- en "
+                    "onderhoudsinstructies."
                 ),
             },
             {
-                "q": "Mag een PFAS-vrije airfryer-mand in de vaatwasser?",
+                "q": (
+                    "Mag een PFAS-vrije airfryermand in de vaatwasser?"
+                ),
                 "a": (
-                    "Sommige modellen zijn vaatwasserbestendig, maar handwas verlengt doorgaans de levensduur van de keramische coating."
+                    "Dat verschilt per model. Sommige manden en "
+                    "roosters zijn vaatwasserbestendig, terwijl bij "
+                    "andere modellen handwas wordt voorgeschreven of "
+                    "aanbevolen. Volg de instructies van de fabrikant."
                 ),
             },
             {
-                "q": "Hoeveel energie verbruikt een airfryer ten opzichte van een oven?",
+                "q": (
+                    "Verbruikt een airfryer minder energie dan een oven?"
+                ),
                 "a": (
-                    "Een airfryer verbruikt gemiddeld minder energie dan een traditionele oven doordat hij sneller opwarmt "
-                    "en een kleinere ruimte verwarmt."
+                    "Dat hangt af van het vermogen, de bereidingstijd, "
+                    "de hoeveelheid voedsel en het type oven. Een "
+                    "airfryer verwarmt een kleinere ruimte en kan daardoor "
+                    "bij kleine porties efficiënter zijn, maar dat geldt "
+                    "niet automatisch voor iedere bereiding."
                 ),
             },
             {
                 "q": "Maakt een airfryer veel geluid?",
                 "a": (
-                    "De meeste airfryers produceren ongeveer 50\u201365 dB tijdens gebruik, vergelijkbaar met een afzuigkap op lage stand."
+                    "Airfryers gebruiken een ventilator en zijn daardoor "
+                    "hoorbaar tijdens gebruik. Het geluidsniveau verschilt "
+                    "per model en wordt door fabrikanten niet altijd "
+                    "opgegeven."
                 ),
             },
             {
-                "q": "Hoe maak ik de mand van een airfryer het beste schoon?",
+                "q": (
+                    "Hoe maak ik de mand van een airfryer het beste schoon?"
+                ),
                 "a": (
-                    "Laat de mand eerst afkoelen, week hem in warm water met milde zeep en gebruik een zachte spons. "
-                    "Vermijd staalwol of agressieve schuurmiddelen."
+                    "Laat de mand eerst afkoelen. Gebruik vervolgens "
+                    "warm water, een mild afwasmiddel en een zachte spons. "
+                    "Laat aangekoekte resten eerst weken en vermijd "
+                    "staalwol, scherpe voorwerpen en agressieve "
+                    "schuurmiddelen."
                 ),
             },
             {
-                "q": "Wat is de beste airfryer zonder teflon?",
+                "q": (
+                    "Welke airfryer heeft geen klassieke "
+                    "PTFE-coating?"
+                ),
                 "a": (
-                    "Airfryers met een keramische binnenmand zijn populair bij consumenten die een alternatief zoeken voor klassieke tefloncoatings. "
-                    "Merken zoals GreenPan, Inventum, Wartmann en Princess bieden momenteel interessante PFAS-vrije opties."
+                    "Kijk naar modellen waarbij de fabrikant expliciet "
+                    "een PFAS-vrije keramische coating bevestigt, zoals "
+                    "bepaalde uitvoeringen van GreenPan en Bourgini. "
+                    "Bij andere merken wordt soms alleen een PFAS-vrije "
+                    "antiaanbaklaag vermeld zonder het exacte coatingtype "
+                    "te specificeren."
+                ),
+            },
+            {
+                "q": "Is PFAS-vrij hetzelfde als keramisch?",
+                "a": (
+                    "Nee. PFAS-vrij beschrijft wat volgens de fabrikant "
+                    "niet in de coating is gebruikt. Keramisch beschrijft "
+                    "het type of de positionering van de antiaanbaklaag. "
+                    "Een coating kan PFAS-vrij zijn zonder dat de fabrikant "
+                    "deze als keramisch omschrijft."
+                ),
+            },
+            {
+                "q": (
+                    "Is een dual-zoneairfryer altijd groter dan een "
+                    "XL-airfryer?"
+                ),
+                "a": (
+                    "Niet noodzakelijk. Een dual-zoneairfryer heeft twee "
+                    "afzonderlijke laden, maar de totale inhoud kan "
+                    "vergelijkbaar zijn met die van een XL-model met één "
+                    "grote mand. De vorm en breedte van het apparaat "
+                    "verschillen vaak wel."
+                ),
+            },
+            {
+                "q": (
+                    "Kunnen beide laden van een dual-zoneairfryer "
+                    "tegelijk worden gebruikt?"
+                ),
+                "a": (
+                    "Ja, bij dual-zoneairfryers kunnen beide laden "
+                    "doorgaans tegelijk werken. Veel modellen bieden "
+                    "een synchronisatiefunctie waarmee bereidingen met "
+                    "verschillende tijden toch tegelijk eindigen."
+                ),
+            },
+            {
+                "q": "Waar moet ik op letten bij een PFAS-vrije claim?",
+                "a": (
+                    "Controleer of de claim betrekking heeft op het "
+                    "exacte model en op het onderdeel dat met voedsel "
+                    "in contact komt, zoals de mand, binnenpan, "
+                    "bodemplaat of coating. Een algemene merkclaim is "
+                    "minder sterk dan productspecifieke documentatie."
                 ),
             },
         ],
     },
+
     "how_we_test": {
         "title": "Hoe wij airfryers beoordelen",
         "intro": (
-            "Bij airfryers beoordelen we niet alleen bakprestaties, maar vooral ook de veiligheid van het binnenwerk, "
-            "de kwaliteit van de coating en het gebruiksgemak bij dagelijks koken."
+            "Onze beoordeling is redactioneel en gebaseerd op "
+            "productspecificaties, fabrikantdocumentatie, capaciteit, "
+            "functies, prijs en beschikbaarheid. Tenzij expliciet "
+            "vermeld, voeren wij geen laboratorium- of langdurige "
+            "gebruikstest uit."
         ),
         "bullets": [
-            "Materiaalveiligheid van de binnenmand: focus op keramische coatings en alternatieven zonder klassieke fluorcoatings.",
-            "Capaciteit en bruikbaarheid voor verschillende huishoudgroottes.",
-            "Gebruiksgemak: bediening, programma\u2019s en dagelijks comfort.",
-            "Schoonmaakgemak van mand en onderdelen.",
-            "Bakprestaties: gelijkmatige garing en luchtcirculatie.",
-            "Prijs-kwaliteitverhouding binnen iedere categorie.",
+            (
+                "<strong>PFAS-status:</strong> is voor het exacte model "
+                "duidelijk bevestigd dat de mand, binnenpan of coating "
+                "PFAS-vrij is?"
+            ),
+            (
+                "<strong>Coatingtype:</strong> wordt een keramische "
+                "coating expliciet bevestigd of alleen een algemene "
+                "PFAS-vrije antiaanbaklaag?"
+            ),
+            (
+                "<strong>Capaciteit:</strong> totale inhoud, inhoud per "
+                "lade en praktische bruikbaarheid voor verschillende "
+                "porties."
+            ),
+            (
+                "<strong>Functies:</strong> programma’s, "
+                "temperatuurinstelling, synchronisatie, stomen, "
+                "kijkvensters, warmhouden en verwarmingselementen."
+            ),
+            (
+                "<strong>Onderhoud:</strong> "
+                "vaatwassergeschiktheid, handwasadvies en "
+                "beschikbaarheid van reserveonderdelen."
+            ),
+            (
+                "<strong>Afmetingen:</strong> benodigde ruimte op het "
+                "aanrecht en praktische plaatsing in de keuken."
+            ),
+            (
+                "<strong>Prijs-kwaliteit:</strong> verhouding tussen "
+                "prijs, capaciteit, functies en beschikbare "
+                "productdocumentatie."
+            ),
+            (
+                "<strong>Beschikbaarheid:</strong> is de exacte "
+                "uitvoering actueel verkrijgbaar?"
+            ),
         ],
         "outro": (
-            "Alle geselecteerde modellen zijn gekozen met extra aandacht voor veilige materialen, praktische bruikbaarheid en duurzaamheid op lange termijn."
+            "Prijzen, beschikbaarheid en productspecificaties kunnen "
+            "tussentijds veranderen."
         ),
     },
 }

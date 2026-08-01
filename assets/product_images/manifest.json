@@ -840,5 +840,404 @@
     "category": "rvs-koekenpannen",
     "product_key": "wmf_profi_28",
     "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan01.jpg",
+    "slug": "hapjespan-greenpan-barcelona-pro-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_greenpan_barcelona_pro_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-bk-enjoy-28cm.jpg",
+    "slug": "hapjespan-bk-enjoy-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_enjoy_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan03.jpg",
+    "slug": "hapjespan-woll-ecolite-qxr-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_woll_ecolite_qxr_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan04.jpg",
+    "slug": "hapjespan-greenchef-diamond-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_greenchef_diamond_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan02.jpg",
+    "slug": "hapjespan-bk-easy-induction-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_easy_induction_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan06.jpg",
+    "slug": "hapjespan-be-living-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_be_living_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan07.jpg",
+    "slug": "hapjespan-greenpan-torino-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_greenpan_torino_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-bk-enjoy-licht-blauw-28cm.jpg",
+    "slug": "hapjespan-bk-enjoy-licht-blauw-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_enjoy_licht_blauw_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-bk-enjoy-olijf-groen-28cm.jpg",
+    "slug": "hapjespan-bk-enjoy-olijf-groen-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_enjoy_olijf_groen_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-bk-enjoy-oxford-blauw-28cm.jpg",
+    "slug": "hapjespan-bk-enjoy-oxford-blauw-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_enjoy_oxford_blauw_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/greenpan-barcelona-pro-24cm.jpg",
+    "slug": "hapjespan-greenpan-barcelona-pro-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_greenpan_barcelona_pro_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-bk-brilliant-24cm.jpg",
+    "slug": "hapjespan-bk-brilliant-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_brilliant_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/woll-ecolite-qxr-24cm.jpg",
+    "slug": "hapjespan-woll-ecolite-qxr-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_woll_ecolite_qxr_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/greenchef-prime-24cm.jpg",
+    "slug": "hapjespan-greenchef-prime-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_greenchef_prime_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/bk-balans-plus-24cm.jpg",
+    "slug": "hapjespan-bk-balans-plus-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_balans_plus_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-kochstar-essenz-24cm.jpg",
+    "slug": "hapjespan-kochstar-essenz-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_kochstar_essenz_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/beka-cicla-24cm.jpg",
+    "slug": "hapjespan-beka-cicla-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_beka_cicla_24cm",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank08-kaamut.jpg",
+    "slug": "snijplank-kaamut",
+    "category": "snijplanken",
+    "product_key": "snijplank_kaamut",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank02-ikea.jpg",
+    "slug": "snijplank-ikea",
+    "category": "snijplanken",
+    "product_key": "snijplank_ikea",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank01-boosblocks.jpg",
+    "slug": "snijplank-boosblocks",
+    "category": "snijplanken",
+    "product_key": "snijplank_boosblocks",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank04-zwilling.jpg",
+    "slug": "snijplank-zwilling",
+    "category": "snijplanken",
+    "product_key": "snijplank_zwilling",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank07-namture.jpg",
+    "slug": "snijplank-namture",
+    "category": "snijplanken",
+    "product_key": "snijplank_namture",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank06-wmf.jpg",
+    "slug": "snijplank-wmf",
+    "category": "snijplanken",
+    "product_key": "snijplank_wmf",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank09-continenta.jpg",
+    "slug": "snijplank-continenta",
+    "category": "snijplanken",
+    "product_key": "snijplank_continenta",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank05-hema.jpg",
+    "slug": "snijplank-hema",
+    "category": "snijplanken",
+    "product_key": "snijplank_hema",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-inventum-gf500hld-5l-pfasvrij-keramisch.jpg",
+    "slug": "airfryer-inventum-gf500hld-5l-pfasvrij-keramisch",
+    "category": "airfryers",
+    "product_key": "airfryer-inventum-gf500hld-5l-pfasvrij-keramisch",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-bourgini-slimfit-5l-pfasvrij-keramisch.jpg",
+    "slug": "airfryer-bourgini-slimfit-5l-pfasvrij-keramisch",
+    "category": "airfryers",
+    "product_key": "airfryer-bourgini-slimfit-5l-pfasvrij-keramisch",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-masterpro-rocket-cyclone-500-5l-pfasvrij.jpg",
+    "slug": "airfryer-masterpro-rocket-cyclone-500-5l-pfasvrij",
+    "category": "airfryers",
+    "product_key": "airfryer-masterpro-rocket-cyclone-500-5l-pfasvrij",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-wartmann-wm2312af-5l-pfasvrij.jpg",
+    "slug": "airfryer-wartmann-wm2312af-5l-pfasvrij",
+    "category": "airfryers",
+    "product_key": "airfryer-wartmann-wm2312af-5l-pfasvrij",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-maison-kitchen-5l-pfasvrij.jpg",
+    "slug": "airfryer-maison-kitchen-5l-pfasvrij",
+    "category": "airfryers",
+    "product_key": "airfryer-maison-kitchen-5l-pfasvrij",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-inventum-gf730hldb-7-3l-pfasvrij.jpg",
+    "slug": "airfryer-inventum-gf730hldb-7-3l-pfasvrij",
+    "category": "airfryers",
+    "product_key": "airfryer-inventum-gf730hldb-7-3l-pfasvrij",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-princess-182280-8l-pfasvrij.jpg",
+    "slug": "airfryer-princess-182280-8l-pfasvrij",
+    "category": "airfryers",
+    "product_key": "airfryer-princess-182280-8l-pfasvrij",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-greenpan-bistro-xxl-7-2l-black.jpg",
+    "slug": "airfryer-greenpan-bistro-xxl-7-2l-black",
+    "category": "airfryers",
+    "product_key": "airfryer-greenpan-bistro-xxl-7-2l_black",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-greenpan-bistro-xxl-7-2l-pine-green.jpg",
+    "slug": "airfryer-greenpan-bistro-xxl-7-2l-pine-green",
+    "category": "airfryers",
+    "product_key": "airfryer-greenpan-bistro-xxl-7-2l_pine_green",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-greenpan-bistro-xxl-7-2l-smokey-blue.jpg",
+    "slug": "airfryer-greenpan-bistro-xxl-7-2l-smokey-blue",
+    "category": "airfryers",
+    "product_key": "airfryer-greenpan-bistro-xxl-7-2l_smokey_blue",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-bourgini-slimfit-pure-8l-zwart.jpg",
+    "slug": "airfryer-bourgini-slimfit-pure-8l-zwart",
+    "category": "airfryers",
+    "product_key": "airfryer-bourgini-slimfit-pure-8l_zwart",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-bourgini-slimfit-pure-8l-beige.jpg",
+    "slug": "airfryer-bourgini-slimfit-pure-8l-beige",
+    "category": "airfryers",
+    "product_key": "airfryer-bourgini-slimfit-pure-8l_beige",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-maison-kitchen-8l.jpg",
+    "slug": "airfryer-maison-kitchen-8l",
+    "category": "airfryers",
+    "product_key": "airfryer-maison-kitchen-8l",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-inventum-gf800hld-dual-8l.jpg",
+    "slug": "airfryer-inventum-gf800hld-dual-8l",
+    "category": "airfryers",
+    "product_key": "airfryer-inventum-gf800hld-dual-8l",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-bourgini-duo-8l.jpg",
+    "slug": "airfryer-bourgini-duo-8l",
+    "category": "airfryers",
+    "product_key": "airfryer-bourgini-duo-8l",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-greenpan-bistro-dual-8l.jpg",
+    "slug": "airfryer-greenpan-bistro-dual-8l",
+    "category": "airfryers",
+    "product_key": "airfryer-greenpan-bistro-dual-8l",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-wartmann-wm2511af-11l.jpg",
+    "slug": "airfryer-wartmann-wm2511af-11l",
+    "category": "airfryers",
+    "product_key": "airfryer-wartmann-wm2511af-11l",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan01.jpg",
+    "slug": "wokpan-greenpan-torino-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-greenpan_torino-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan02.jpg",
+    "slug": "wokpan-hema-milano-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-hema-milano-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan03.jpg",
+    "slug": "wokpan-wmf-durado-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-wmf-durado-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan04.jpg",
+    "slug": "wokpan-greenchef-diamond-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-greenchef-diamond-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/primecook-wok-28.jpg",
+    "slug": "wokpan-primecook-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-primecook-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan06.jpg",
+    "slug": "wokpan-bk-granite-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-bk-granite-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan-brabantia-indu-28cm.jpg",
+    "slug": "wokpan-brabantia-indu-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-brabantia-indu-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan08.jpg",
+    "slug": "wokpan-greenpan-cambridge-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-greenpan-cambridge-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan09.jpg",
+    "slug": "wokpan-bk-easy-basic-ceramic-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-bk-easy-basic-ceramic-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan10.jpg",
+    "slug": "wokpan-berghoff-leo-phantom-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-berghoff-leo-phantom-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan-greenpan-barcelona-evershine-30cm.jpg",
+    "slug": "wokpan-greenpan-barcelona-evershine-30m",
+    "category": "wokpannen",
+    "product_key": "wokpan-greenpan-barcelona-evershine-30m",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan-bk-easy-induction-30cm.jpg",
+    "slug": "wokpan-bk-easy-induction-30cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-bk-easy-induction-30cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan-bk-superior-30cm.jpg",
+    "slug": "wokpan-bk-superior-ceramic-30cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-bk-superior-ceramic-30cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan-greenpan-copenhagen-30cm.jpg",
+    "slug": "wokpan-greenpan-copenhagen-30cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-greenpan-copenhagen-30cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan-berghoff-phantom-30cm.jpg",
+    "slug": "wokpan-berghoff-phantom-30cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-berghoff-phantom-30cm",
+    "enabled": true
   }
 ]

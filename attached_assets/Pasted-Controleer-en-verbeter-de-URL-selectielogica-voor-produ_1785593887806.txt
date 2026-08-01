@@ -1,0 +1,196 @@
+Controleer en verbeter de URL-selectielogica voor productblokken met en zonder varianten.
+
+Context
+De productdata gebruikt meerdere URL-velden:
+
+- affiliate_url
+- retailer_url
+- official_url
+
+Sommige producten hebben daarnaast een lijst met varianten. Iedere variant kan eigen velden hebben, zoals:
+
+- affiliate_url
+- retailer_url
+- official_url
+- price
+- image
+- availability
+
+Het huidige probleem lijkt te zijn dat bij producten met varianten alleen naar `affiliate_url` wordt gekeken. Omdat dat veld vaak leeg is, werkt de specifieke URL van de geselecteerde variant niet, ook al bevat die variant wel een `retailer_url` of `official_url`.
+
+Doel
+Zorg dat de knop of productlink altijd de juiste URL gebruikt, zowel op productniveau als bij de geselecteerde variant.
+
+Gewenste URL-prioriteit
+Gebruik voor zowel producten als varianten deze prioriteit:
+
+1. affiliate_url
+2. retailer_url
+3. official_url
+4. geen klikbare knop wanneer alle URL-velden leeg zijn
+
+Gewenste linklabels
+Gebruik afhankelijk van het gekozen URL-type:
+
+- affiliate_url:
+  knoptekst: "Bekijk prijs en reviews"
+  rel="nofollow sponsored noopener"
+- retailer_url:
+  knoptekst: "Bekijk prijs en reviews"
+  rel="nofollow noopener"
+- official_url:
+  knoptekst: "Bekijk productspecificaties"
+  rel="noopener"
+
+Gewenste logica bij varianten
+Wanneer een product varianten heeft en de gebruiker een variant selecteert:
+
+1. Gebruik eerst de URL-velden van de geselecteerde variant.
+2. Pas daarop dezelfde prioriteit toe:
+   affiliate_url → retailer_url → official_url.
+3. Als de geselecteerde variant geen bruikbare URL heeft, val dan terug op de URL-velden van het hoofdproduct.
+4. Gebruik daarbij opnieuw:
+   affiliate_url → retailer_url → official_url.
+5. De link, knoptekst en `rel`-waarde moeten direct worden bijgewerkt zodra een andere variant wordt geselecteerd.
+6. De URL van een andere, niet-geselecteerde variant mag nooit worden gebruikt.
+
+Gewenste logica zonder varianten
+Gebruik op productniveau:
+
+affiliate_url → retailer_url → official_url → geen knop.
+
+Controleer de volledige implementatie
+Zoek in het project naar alle plaatsen waar productlinks worden opgebouwd of weergegeven, waaronder mogelijk:
+
+- Django templates
+- template tags
+- inclusion tags
+- context processors
+- views
+- JavaScript voor variantselectie
+- vergelijkingstabellen
+- productkaarten
+- detailpagina’s
+- JSON-data-attributen
+- structured data of JSON-LD
+- functies zoals `get_product_url`, `product_url`, `buy_url`,
+  `selected_variant`, `updateVariant` of vergelijkbare helpers
+
+Beperk de oplossing niet tot één template als dezelfde fout ook elders kan optreden.
+
+Voorkeursimplementatie
+Centraliseer de URL-selectie zoveel mogelijk in één herbruikbare helper, bijvoorbeeld:
+
+```python
+def resolve_product_link(product, variant=None):
+    source = variant or {}
+
+    for field, label, rel in (
+        (
+            "affiliate_url",
+            "Bekijk prijs en reviews",
+            "nofollow sponsored noopener",
+        ),
+        (
+            "retailer_url",
+            "Bekijk prijs en reviews",
+            "nofollow noopener",
+        ),
+        (
+            "official_url",
+            "Bekijk productspecificaties",
+            "noopener",
+        ),
+    ):
+        url = source.get(field)
+        if url:
+            return {
+                "url": url,
+                "type": field,
+                "label": label,
+                "rel": rel,
+            }
+
+    if variant is not None:
+        for field, label, rel in (
+            (
+                "affiliate_url",
+                "Bekijk prijs en reviews",
+                "nofollow sponsored noopener",
+            ),
+            (
+                "retailer_url",
+                "Bekijk prijs en reviews",
+                "nofollow noopener",
+            ),
+            (
+                "official_url",
+                "Bekijk productspecificaties",
+                "noopener",
+            ),
+        ):
+            url = product.get(field)
+            if url:
+                return {
+                    "url": url,
+                    "type": field,
+                    "label": label,
+                    "rel": rel,
+                }
+
+return None
+
+Pas deze helper aan de bestaande datastructuur en architectuur aan. Vermijd duplicatie tussen Python en JavaScript waar mogelijk. Wanneer variantselectie client-side plaatsvindt, geef dan per variant alle relevante linkgegevens mee aan JavaScript, bijvoorbeeld:
+
+{
+  "affiliate_url": "",
+  "retailer_url": "https://...",
+  "official_url": "",
+  "resolved_url": "https://...",
+  "resolved_url_type": "retailer_url",
+  "resolved_label": "Bekijk bij verkoper",
+  "resolved_rel": "nofollow noopener"
+}
+
+Belangrijke randgevallen
+Test minimaal:
+
+Product zonder varianten met alleen affiliate_url.
+Product zonder varianten met alleen retailer_url.
+Product zonder varianten met alleen official_url.
+Product met variant met affiliate_url.
+Product met variant zonder affiliate_url maar met retailer_url.
+Product met variant zonder affiliate_url en retailer_url maar met official_url.
+Variant zonder URL, maar hoofdproduct met affiliate_url.
+Variant zonder URL, maar hoofdproduct alleen met retailer_url.
+Variant zonder URL, maar hoofdproduct alleen met official_url.
+Product en variant zonder enige URL.
+Wisselen tussen twee varianten met verschillende URL-types.
+Een variant met retailer_url gevolgd door een variant met affiliate_url.
+Een variant met lege strings, None of ontbrekende URL-velden.
+Varianten met eigen prijs en afbeelding, zodat bestaande variantlogica niet wordt beschadigd.
+
+Controleer ook:
+
+dat lege strings niet als geldige URL worden behandeld;
+dat er geen href="" of href="#" wordt gerenderd;
+dat de knop volledig verdwijnt wanneer geen URL beschikbaar is;
+dat knoptekst en rel-attributen bij variantwissel correct veranderen;
+dat target="_blank" alleen wordt gebruikt wanneer dit past bij de bestaande siteconventie;
+dat bestaande affiliate-tracking behouden blijft;
+dat productafbeeldingen en producttitels niet per ongeluk naar de verkeerde variant linken;
+dat vergelijkingstabellen dezelfde URL-prioriteit gebruiken;
+dat structured data geen lege of onjuiste URL krijgt.
+
+Voer na de aanpassing tests uit en rapporteer:
+
+welke bestanden zijn aangepast;
+wat de oorspronkelijke fout was;
+hoe de nieuwe fallbacklogica werkt;
+welke testgevallen zijn gecontroleerd;
+of er nog templates of scripts zijn met afwijkende URL-logica.
+
+Maak de aanpassing direct in de code. Geef daarna een compacte diff-samenvatting en vermeld eventuele resterende risico’s.
+
+
+Een belangrijk detail is dat de fallback eerst binnen de geselecteerde variant moet plaatsvinden. Een variant met een lege `affiliate_url` maar een gevulde `retailer_url` mag dus niet meteen terugvallen op de hoofd-`affiliate_url`; eerst moet de `retailer_url` van diezelfde variant worden gebruikt.

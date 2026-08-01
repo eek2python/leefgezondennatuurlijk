@@ -1,303 +1,405 @@
 PRODUCTS = {
-    "boosblocks_pro_maple": {
-        "slug": "boosblocks-pro-maple",
-        "name": "BoosBlocks Pro Maple Series \u2013 End-grain Esdoorn (51\u00d738\u00d76 cm)",
-        "brand": "BoosBlocks",
-        "material": "Esdoornhout",
-        "features": ["End-grain", "Omkeerbaar", "Professioneel formaat (51\u00d738\u00d76 cm)"],
-        "image": "snijplank01_boosblocks.jpg",
-        "image_path": "images",
-        "description": "Professionele end-grain snijplank van Noord-Amerikaans esdoorn, ontworpen voor chefs die dagelijks intensief snijden.",
-        "pros": [
-            "End-grain oppervlak dat messen spaart",
-            "Dik massief esdoornhout voor maximale stabiliteit",
-            "Dubbelzijdig bruikbaar",
-        ],
-        "cons": [
-            "Zwaar door massieve constructie",
-            "Regelmatig oli\u00ebn aanbevolen",
-        ],
-        "rating": 5,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 323.64,
-        "price_last_checked": "2026-05-21",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://www.boosblocks.de/nl/product/boos-hard-maple-reversible-end-grain-chopping-with-grips-51x38x6cm/",
-        "price_range": "\u20ac\u20ac\u20ac\u20ac",
-        "verdict": "Premium keuze voor intensief dagelijks gebruik en gebruikers die maximale duurzaamheid zoeken.",
-        "award": "🏆 Beste keuze",
-    },
-    "ikea_aptitlig_bamboe": {
-        "slug": "ikea-aptitlig-bamboe",
-        "name": "IKEA APTITLIG Bamboe Snijplank (45\u00d728 cm)",
-        "brand": "IKEA",
-        "material": "Bamboe",
-        "features": ["Lichtgewicht", "Duurzaam", "Eenvoudig onderhoud"],
-        "image": "snijplank02_ikea.jpg",
-        "image_path": "images",
-        "description": "Lichte, duurzame bamboeplank met natuurlijke afwerking \u2013 perfect voor dagelijks snijden en serveren.",
-        "pros": [
-            "Duurzaam bamboe-materiaal",
-            "Dubbelzijdig te gebruiken",
-            "Licht en makkelijk te hanteren",
-        ],
-        "cons": [
-            "Gevoelig voor vocht bij verkeerd onderhoud",
-            "Niet geschikt voor de vaatwasser",
-        ],
-        "rating": 4,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 6.99,
-        "price_last_checked": "2026-05-21",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://www.ikea.com/nl/nl/p/aptitlig-snijplank-bamboe-80233430/",
-        "price_range": "\u20ac",
-        "verdict": "Duurzame en voordelige keuze voor de dagelijkse keukenroutine.",
-        "award": "💰 Budget keuze",
-    },
     "kaamut_walnoot_endgrain": {
         "slug": "kaamut-walnoot-endgrain",
-        "name": "KAAMUT\u00ae Professionele Snijplank Walnoot \u2013 End-Grain 40\u00d727,5\u00d73,5 cm",
+        "name": (
+            "KAAMUT Professionele Snijplank Walnoot "
+            "End-Grain (40 × 27,5 × 3,5 cm)"
+        ),
         "brand": "KAAMUT",
-        "material": "Walnoothout",
-        "features": ["End-grain", "Antislip", "Sapgeul", "40\u00d727,5\u00d73,5 cm"],
-        "image": "snijplank08_kaamut.jpg",
-        "image_path": "images",
-        "description": "Massieve professionele snijplank van Noord-Amerikaanse walnoot met kopshouten (end-grain) constructie. Elegant, duurzaam en perfect voor intensief gebruik.",
+        "material": "Zwarte walnoot in kopshoutconstructie",
+        "features": [
+            "Kopshoutconstructie",
+            "Sapgeul",
+            "Antislipvoetjes",
+            "Handgrepen",
+            "40 × 27,5 × 3,5 cm",
+        ],
+        "image": "snijplank-kaamut.webp",
+        "image_path": "images/products/snijplanken",
+        "description": (
+            "Dikke snijplank van zwarte walnoot met een kopshouten "
+            "constructie, sapgeul, handgrepen en losse antislipvoetjes."
+        ),
         "pros": [
-            "Kopshout (end-grain) spaart messen en verlengt de levensduur",
-            "Massief walnoothout met luxe uitstraling",
-            "Voorzien van sapgeul, antislipvoetjes en handgrepen",
+            "Kopshouten oppervlak is relatief vriendelijk voor snijranden",
+            "Sapgeul en handgrepen vergroten het praktische gebruiksgemak",
+            "Dikke constructie biedt een stabiel werkoppervlak",
         ],
         "cons": [
             "Niet vaatwasserbestendig",
-            "Regelmatig oli\u00ebn nodig voor behoud van kwaliteit",
+            "Regelmatig onderhoud met geschikte olie aanbevolen",
         ],
-        "rating": 5,
+        "rating": 4.7,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 129.00,
-        "price_last_checked": "2026-05-21",
+        "price_last_checked": "2026-07-31",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "https://www.bol.com/nl/nl/p/kaamut-professionele-snijplank-massief-kopshout-van-zwarte-walnoot-40x27-5x3-5-cm-extra-dik-duurzaam-sapgeul-en-handvaten-bijgeleverde-antislip-voetjes-luxe-geschenkdoos/9300000196972499/",
-        "price_range": "\u20ac\u20ac\u20ac\u20ac",
-        "verdict": "Luxe walnoothouten plank met topafwerking voor de serieuze thuiskok.",
-        "award": "💎 Premium keuze",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "kaamut-professionele-snijplank-massief-kopshout-van-"
+            "zwarte-walnoot-40x27-5x3-5-cm-extra-dik-duurzaam-"
+            "sapgeul-en-handvaten-bijgeleverde-antislip-voetjes-"
+            "luxe-geschenkdoos/9300000196972499/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€€€",
+        "verdict": (
+            "Onze beste allround keuze voor wie een handzame, dikke "
+            "kopshouten plank met sapgeul en antislip zoekt."
+        ),
+        "award": "🏆 Beste keuze",
     },
-    "zwilling_beukenhout_60x40": {
-        "slug": "zwilling-beukenhout-60x40",
-        "name": "Zwilling Houten Snijplank (60\u00d740 cm)",
-        "brand": "Zwilling",
-        "material": "Beukenhout",
-        "features": ["Groot werkoppervlak", "Professionele kwaliteit"],
-        "image": "snijplank04_zwilling.jpg",
-        "image_path": "images",
-        "description": "Ruime beukenhouten plank van Zwilling \u2013 perfect stabiel oppervlak voor groot snijwerk.",
+    
+    "ikea_aptitlig_bamboe": {
+        "slug": "ikea-aptitlig-bamboe",
+        "name": "IKEA APTITLIG Bamboe Snijplank (45 × 28 cm)",
+        "brand": "IKEA",
+        "material": "Bamboe",
+        "features": [
+            "Omkeerbaar",
+            "Licht en handzaam",
+            "45 × 28 cm",
+        ],
+        "image": "snijplank-ikea.webp",
+        "image_path": "images/products/snijplanken",
+        "description": (
+            "Lichte bamboe snijplank van 45 × 28 cm voor dagelijks "
+            "snijwerk en gebruik als serveerplank."
+        ),
         "pros": [
-            "Groot werkoppervlak voor bereidingen",
-            "Massief beukenhout met stevige constructie",
-            "Hoogwaardige afwerking van gerenommeerd merk",
+            "Zeer lage aanschafprijs",
+            "Ruim formaat voor dagelijks gebruik",
+            "Licht en eenvoudig te verplaatsen",
         ],
         "cons": [
-            "Zwaar bij verplaatsen",
+            "Niet geschikt voor de vaatwasser",
+            "Dunnere en lichtere constructie dan massiefhouten hakblokken",
+        ],
+        "rating": 4.1,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 6.99,
+        "price_last_checked": "2026-07-31",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.ikea.com/nl/nl/p/"
+            "aptitlig-snijplank-bamboe-80233430/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€",
+        "verdict": (
+            "Onze budgetkeuze door het ruime formaat, het lage gewicht "
+            "en de zeer lage aanschafprijs."
+        ),
+        "award": "💰 Budget keuze",
+    },
+    
+    "boosblocks_pro_maple": {
+        "slug": "boosblocks-pro-maple",
+        "name": (
+            "BoosBlocks Pro Maple End-Grain Snijplank "
+            "(51 × 38 × 6 cm)"
+        ),
+        "brand": "BoosBlocks",
+        "material": "Noord-Amerikaans esdoorn in kopshoutconstructie",
+        "features": [
+            "Kopshoutconstructie",
+            "Omkeerbaar",
+            "Verzonken handgrepen",
+            "51 × 38 × 6 cm",
+        ],
+        "image": "snijplank-boosblocks.webp",
+        "image_path": "images/products/snijplanken",
+        "description": (
+            "Groot en dik hakblok van Noord-Amerikaans esdoorn met "
+            "kopshouten constructie en verzonken handgrepen."
+        ),
+        "pros": [
+            "Zeer groot werkoppervlak",
+            "Dikke kopshouten constructie voor een stabiel werkoppervlak",
+            "Omkeerbaar en aan beide zijden bruikbaar",
+        ],
+        "cons": [
+            "Zeer hoge aanschafprijs",
+            "Zwaar en lastig regelmatig te verplaatsen",
+            "Regelmatig onderhoud met geschikte olie aanbevolen",
+        ],
+        "rating": 4.8,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 323.64,
+        "price_last_checked": "2026-07-31",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.boosblocks.de/nl/product/"
+            "boos-hard-maple-reversible-end-grain-chopping-"
+            "with-grips-51x38x6cm/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€€€",
+        "verdict": (
+            "Onze premiumkeuze voor wie een groot en zwaar "
+            "kopshouten hakblok voor intensief gebruik zoekt."
+        ),
+        "award": "💎 Premium keuze",
+    },
+    
+    "zwilling_beukenhout_60x40": {
+        "slug": "zwilling-beukenhout-60x40",
+        "name": "Zwilling Beukenhouten Snijplank (60 × 40 × 3,5 cm)",
+        "brand": "Zwilling",
+        "material": "Massief beukenhout",
+        "features": [
+            "Extra groot werkoppervlak",
+            "Massief beukenhout",
+            "60 × 40 × 3,5 cm",
+        ],
+        "image": "snijplank-zwilling.webp",
+        "image_path": "images/products/snijplanken",
+        "description": (
+            "Extra grote snijplank van massief beukenhout met een "
+            "werkoppervlak van 60 × 40 cm."
+        ),
+        "pros": [
+            "Veel werkruimte voor grotere bereidingen",
+            "Dikte van 3,5 cm geeft de plank substantie",
+            "Relatief gunstige prijs voor dit formaat",
+        ],
+        "cons": [
+            "Neemt veel werk- en opbergruimte in",
+            "Zwaar en minder gemakkelijk te verplaatsen",
             "Niet vaatwasserbestendig",
         ],
         "rating": 4.4,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 53.99,
-        "price_last_checked": "2026-05-21",
+        "price": 54.99,
+        "price_last_checked": "2026-07-31",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "https://www.knivesandtools.nl/nl/pt/-zwilling-twin-snijplank-60x40x3-5-cm-beukenhout-35118-100.htm",
-        "price_range": "\u20ac\u20ac\u20ac",
-        "verdict": "Betrouwbare hardhouten plank met uitstekende snijstabiliteit.",
-        "award": "",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.knivesandtools.nl/nl/pt/"
+            "-zwilling-twin-snijplank-60x40x3-5-cm-"
+            "beukenhout-35118-100.htm"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€€",
+        "verdict": (
+            "Een interessante keuze voor wie vooral veel werkruimte "
+            "zoekt en voldoende plaats heeft om de plank neer te leggen."
+        ),
+        "award": None,
     },
-    "wmf_acacia_40x32": {
-        "slug": "wmf-acacia-40x32",
-        "name": "WMF Acacia Snijplank (40\u00d732 cm)",
-        "brand": "WMF",
-        "material": "Acaciahout",
-        "features": ["Stevig en stijlvol", "Geschikt voor dagelijks gebruik"],
-        "image": "snijplank06_wmf.jpg",
-        "image_path": "images",
-        "description": "Robuuste plank van acaciahout met natuurlijke olieafwerking \u2013 fraai en duurzaam.",
+
+    
+    "namture_premium_olie_45x30": {
+        "slug": "namture-premium-olie-45x30",
+        "name": "Namture Acacia Hakblok (45 × 30 × 4 cm)",
+        "brand": "Namture",
+        "material": "Massief acaciahout",
+        "features": [
+            "Geolied oppervlak",
+            "Antislipvoorziening",
+            "Extra dikke constructie",
+            "45 × 30 × 4 cm",
+        ],
+        "image": "snijplank-namture.webp",
+        "image_path": "images/products/snijplanken",
+        "description": (
+            "Dik hakblok van massief acaciahout met een formaat van "
+            "45 × 30 cm en een dikte van 4 cm."
+        ),
         "pros": [
-            "Hard acaciahout met lange levensduur",
-            "Mooi donker houtpatroon",
-            "Afgeronde randen voor comfort",
+            "Dikke constructie voor een stabiel werkoppervlak",
+            "Ruim formaat voor snijden en serveren",
+            "Donkere en gevarieerde houttekening",
         ],
         "cons": [
-            "Regelmatig onderhoud nodig",
-            "Iets zwaarder dan gemiddelde plank",
+            "Niet geschikt voor de vaatwasser",
+            "Regelmatig onderhoud met geschikte olie aanbevolen",
+            "Zwaarder dan dunne dagelijkse snijplanken",
         ],
         "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 40.66,
-        "price_last_checked": "2026-05-21",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://www.amazon.nl/WMF-Snijplank-keukenmessen-anti-slip-1879984500/dp/B07TV8S14K/",
-        "price_range": "\u20ac\u20ac",
-        "verdict": "Stevige acaciahouten plank die esthetiek met functionaliteit combineert.",
-        "award": "",
-    },
-    "namture_premium_olie_45x30": {
-        "slug": "namture-premium-olie-45x30",
-        "name": "Namture Snijplank Hout Premium Olie \u2013 45\u00d730\u00d74 cm",
-        "brand": "Namture",
-        "material": "Massief acaciahout",
-        "features": ["Olieafwerking", "Mesvriendelijk oppervlak"],
-        "image": "snijplank07_namture.jpg",
-        "image_path": "images",
-        "description": "Elegante houten snijplank met premium olieafwerking. Het robuuste ontwerp en natuurlijke uitstraling maken dit een uitstekende keuze voor dagelijks gebruik.",
-        "pros": [
-            "Massief houten constructie met natuurlijke olieafwerking",
-            "Ruim formaat voor snijden en serveren",
-            "Mesvriendelijk oppervlak voorkomt snel bot worden",
-        ],
-        "cons": [
-            "Niet geschikt voor vaatwasser",
-            "Regelmatig oli\u00ebn nodig om de glans te behouden",
-        ],
-        "rating": 4.2,
-        "rating_count": None,
-        "rating_source": "editorial",
         "price": 69.99,
-        "price_last_checked": "2026-05-21",
+        "price_last_checked": "2026-07-31",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "https://www.bol.com/nl/nl/p/namture-hakblok-acacia-classic-snijplank-hout-45x30-cm-extra-dik-4-cm-premium-acaciahout-antislip-snijplank-serveerplank-borrelplank-tapasplank-luxe-geschenkdoos/9300000236075401/",
-        "price_range": "\u20ac\u20ac\u20ac",
-        "verdict": "Stevige houten plank met premium afwerking en natuurlijk karakter.",
-        "award": "",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "namture-hakblok-acacia-classic-snijplank-hout-"
+            "45x30-cm-extra-dik-4-cm-premium-acaciahout-"
+            "antislip-snijplank-serveerplank-borrelplank-"
+            "tapasplank-luxe-geschenkdoos/9300000236075401/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€€",
+        "verdict": (
+            "Een dik acaciahouten hakblok voor wie meer stabiliteit "
+            "zoekt zonder direct voor een kopshouten premiumplank te kiezen."
+        ),
+        "award": None,
     },
-    "wooden_amsterdam_walnoot_40x30": {
-        "slug": "wooden-amsterdam-walnoot-40x30",
-        "name": "Wooden Amsterdam End-Grain Snijplank Walnoot (40\u00d730 cm)",
-        "brand": "Wooden Amsterdam",
-        "material": "Walnoothout",
-        "features": ["Kopshout", "Luxe afwerking", "Design uit Amsterdam"],
-        "image": "snijplank03_woodenamsterdam.jpg",
-        "image_path": "images",
-        "description": "Ambachtelijke end-grain plank van massief walnoothout \u2013 stijlvol, mesvriendelijk en uiterst duurzaam.",
+    
+    "wmf_acacia_40x32": {
+        "slug": "wmf-acacia-40x32",
+        "name": "WMF Acacia Snijplank (40 × 32 cm)",
+        "brand": "WMF",
+        "material": "Acaciahout",
+        "features": [
+            "Geolied oppervlak",
+            "Afgeronde randen",
+            "40 × 32 cm",
+        ],
+        "image": "snijplank-wmf.webp",
+        "image_path": "images/products/snijplanken",
+        "description": (
+            "Acaciahouten snijplank van 40 × 32 cm met een geolied "
+            "oppervlak en afgeronde randen."
+        ),
         "pros": [
-            "Diepe walnoottint met luxueuze uitstraling",
-            "End-grain constructie verlengt de levensduur van messen",
-            "Ambachtelijke afwerking met luxe uitstraling",
+            "Praktisch formaat voor dagelijks gebruik",
+            "Donkere en gevarieerde houttekening",
+            "Afgeronde randen maken de plank gemakkelijker vast te pakken",
         ],
         "cons": [
-            "Hogere aanschafprijs",
-            "Regelmatig onderhoud vereist",
+            "Niet geschikt voor de vaatwasser",
+            "Regelmatig onderhoud met geschikte olie aanbevolen",
         ],
-        "rating": 4.8,
+        "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 219.00,
-        "price_last_checked": "2026-05-21",
+        "price": 36.59,
+        "price_last_checked": "2026-07-31",
         "currency": "EUR",
-        "availability": "LimitedAvailability",
-        "affiliate_url": "https://woodenamsterdam.com/nl/product/end-grain-cutting-board-walnut/",
-        "price_range": "\u20ac\u20ac\u20ac\u20ac",
-        "verdict": "Luxe en vakmanschap in \u00e9\u00e9n \u2013 de ideale premium snijplank.",
-        "award": "",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.amazon.nl/"
+            "WMF-Snijplank-keukenmessen-anti-slip-1879984500/"
+            "dp/B07TV8S14K/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€",
+        "verdict": (
+            "Een praktische middenklasseplank voor wie een ruim "
+            "dagelijks werkoppervlak van acaciahout zoekt."
+        ),
+        "award": None,
     },
+
+    "continenta_rubberwood_35x25": {
+        "slug": "continenta-rubberwood-35x25",
+        "name": (
+            "Continenta Rubberwood Kopshouten Snijplank "
+            "(35 × 25 × 2 cm)"
+        ),
+        "brand": "Continenta",
+        "material": "Rubberwood in kopshoutconstructie",
+        "features": [
+            "Kopshoutconstructie",
+            "Compact formaat",
+            "35 × 25 × 2 cm",
+        ],
+        "image": "snijplank-continenta.webp",
+        "image_path": "images/products/snijplanken",
+        "description": (
+            "Compacte rubberwood snijplank met kopshouten constructie "
+            "voor dagelijks snijwerk en kleinere bereidingen."
+        ),
+        "pros": [
+            "Betaalbare kennismaking met een kopshouten constructie",
+            "Compact formaat dat weinig werkruimte inneemt",
+            "Kopshouten oppervlak is relatief vriendelijk voor snijranden",
+        ],
+        "cons": [
+            "Beperkt werkoppervlak voor grotere bereidingen",
+            "Regelmatig onderhoud met geschikte olie aanbevolen",
+        ],
+        "rating": 4.1,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 29.95,
+        "price_last_checked": "2026-07-31",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "continenta-snijplank-in-rubberhout-kopshout-"
+            "35x25xh2cm/9300000021506007/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€",
+        "verdict": (
+            "Een compacte en betaalbare kopshouten plank voor "
+            "kleinere keukens en dagelijkse snijtaken."
+        ),
+        "award": None,
+    },
+    
     "hema_beukenhout_24x35": {
         "slug": "hema-beukenhout-24x35",
-        "name": "HEMA Snijplank Beukenhout (24\u00d735 cm)",
+        "name": "HEMA Beukenhouten Snijplank (24 × 35 × 1,5 cm)",
         "brand": "HEMA",
         "material": "Beukenhout",
-        "features": ["Licht", "Compact", "Betaalbaar"],
-        "image": "snijplank05_hema.jpg",
-        "image_path": "images",
-        "description": "Compacte beukenhouten plank \u2013 ideaal als serveerplank of tweede snijoppervlak.",
+        "features": [
+            "Compact formaat",
+            "Licht en handzaam",
+            "24 × 35 × 1,5 cm",
+        ],
+        "image": "snijplank-hema.webp",
+        "image_path": "images/products/snijplanken",
+        "description": (
+            "Compacte beukenhouten plank voor lichte snijtaken, "
+            "serveren of gebruik als tweede snijplank."
+        ),
         "pros": [
-            "Licht van gewicht en eenvoudig te reinigen",
-            "Vlakke randen voor stabiel gebruik",
-            "Vervaardigd uit FSC-gecertificeerd hout",
+            "Lage aanschafprijs",
+            "Compact formaat dat gemakkelijk op te bergen is",
+            "Licht en eenvoudig te verplaatsen",
         ],
         "cons": [
-            "Minder geschikt voor zwaar hakwerk",
-            "Beperkter werkoppervlak voor grotere bereidingen"
-        ],
-        "rating": 3.8,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 9.99,
-        "price_last_checked": "2026-05-21",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://www.hema.nl/koken-tafelen/koken/snijplanken/snijplank-24x35x1.5-beukenhout-80850026.html",
-        "price_range": "\u20ac",
-        "verdict": "Betaalbare keuze voor lichte snijtaken en serveren.",
-        "award": "",
-    },
-    "continenta_rubberwood_30x25": {
-        "slug": "continenta-rubberwood-30x25",
-        "name": "Continenta Snijplank Rubberwood \u2013 30\u00d725 cm",
-        "brand": "Continenta",
-        "material": "Rubberwood kopshout",
-        "features": ["Kopshout (end-grain)", "Mesvriendelijk", "Compact formaat"],
-        "image": "snijplank09_continenta.jpg",
-        "image_path": "images",
-        "description": "Compacte snijplank van duurzaam rubberwood kopshout met mesvriendelijk oppervlak en natuurlijke uitstraling. Geschikt voor dagelijks snijwerk en kleinere bereidingen",
-        "pros": [
-            "Kopshoutconstructie helpt messen langer scherp te houden",
-            "Compact formaat voor dagelijks gebruik",
-            "Duurzaam rubberwood met natuurlijke uitstraling",
-        ],
-        "cons": [
-            "Minder geschikt voor grote bereidingen",
-            "Regelmatig onderhoud met olie aanbevolen"
+            "Beperkt werkoppervlak voor grotere bereidingen",
+            "Dunne uitvoering is minder geschikt als zwaar hakblok",
+            "Niet geschikt voor de vaatwasser",
         ],
         "rating": 3.9,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 29.95,
-        "price_last_checked": "2026-05-21",
+        "price": 9.99,
+        "price_last_checked": "2026-07-31",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "https://www.bol.com/nl/nl/p/continenta-snijplank-in-rubberhout-kopshout-35x25xh2cm/9300000021506007/%22",
-        "price_range": "\u20ac\u20ac",
-        "verdict": "Compacte en mesvriendelijke snijplank die weinig ruimte inneemt en geschikt is voor dagelijks gebruik.",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.hema.nl/koken-tafelen/koken/snijplanken/"
+            "snijplank-24x35x1.5-beukenhout-80850026.html"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€",
+        "verdict": (
+            "Een betaalbare compacte plank voor lichte snijtaken "
+            "of als extra snijoppervlak naast een grotere plank."
+        ),
         "award": None,
-    },
-    "pointvirgule_bamboe_40x30": {
-        "slug": "pointvirgule-bamboe-40x30",
-        "name": "Point-Virgule Bamboe Snijplank \u2013 40\u00d730\u00d71 cm",
-        "brand": "Point-Virgule",
-        "material": "Bamboe",
-        "features": ["Dun ontwerp", "Lichtgewicht", "Milieuvriendelijk"],
-        "image": "snijplank10_pointvirgule.jpg",
-        "image_path": "images",
-        "description": "Dunne, lichtgewicht snijplank van duurzaam bamboe. Ideaal voor dagelijks gebruik en gemakkelijk te reinigen dankzij het gladde oppervlak.",
-        "pros": [
-            "Gemaakt van duurzaam bamboe met natuurlijke uitstraling",
-            "Licht en handzaam \u2014 gemakkelijk op te bergen",
-            "Glad oppervlak",
-        ],
-        "cons": [
-            "Geen sapgeul of handgrepen",
-            "Dunnere uitvoering \u2014 minder geschikt voor zwaar hakwerk",
-        ],
-        "suitable_for": ["snel snijwerk en snacks", "lichtgewicht gebruik", "tweede plank in de keuken"],
-        "rating": 3.8,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": "17.95",
-        "price_last_checked": "2026-05-21",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://www.bol.com/nl/nl/p/point-virgule-snijplank-bamboe-large-40x30x1cm/9300000056867854/",
-        "price_range": "\u20ac\u20ac",
-        "verdict": "Betaalbare, praktische snijplank van duurzaam bamboe voor dagelijks gebruik.",
-        "award": "",
     },
 }

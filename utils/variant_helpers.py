@@ -349,21 +349,30 @@ class ProductLink:
 def resolve_product_link(product, selected_variant=None):
     """Centrale linkresolver: affiliate → retailer → official → geen link.
 
-    Strikte variantregels (zelfde bron-selectie als
-    :func:`resolve_commercial_fields`):
-      - producten met button-varianten gebruiken UITSLUITEND de URL-velden
-        van de geselecteerde displayvariant; een lege URL op de variant
-        valt nooit terug op een andere variant of op productniveau;
+    Variantregels:
+      - producten met button-varianten gebruiken eerst de URL-velden van de
+        geselecteerde displayvariant (volledige prioriteit binnen die
+        variant: affiliate → retailer → official);
+      - heeft de geselecteerde variant géén enkele URL, dan valt de
+        resolver terug op de oorspronkelijke productniveau-velden van het
+        hoofdproduct (de familie-snapshot ``_family_links``, vastgelegd
+        vóór variantprojectie) met dezelfde prioriteit;
+      - de URL van een ANDERE variant wordt nooit gebruikt;
       - producten zonder button-varianten gebruiken productniveau-velden.
     """
     if selected_variant is None:
         selected_variant = product.get("default_variant")
     if product.get("shape_variants") and selected_variant:
-        source = selected_variant
-    else:
-        source = product
+        link = _resolve_source_link(selected_variant)
+        if link.url:
+            return link
+        # Familie-fallback: alleen de oorspronkelijke productniveau-URL's
+        # (snapshot van vóór de variantprojectie), nooit die van een
+        # andere variant.
+        family = product.get("_family_links")
+        return _resolve_source_link(family if family is not None else product)
 
-    return _resolve_source_link(source)
+    return _resolve_source_link(product)
 
 
 def _resolve_source_link(source):
@@ -392,11 +401,38 @@ def resolve_availability_label(product, selected_variant=None):
     if selected_variant is None:
         selected_variant = product.get("default_variant")
     if product.get("shape_variants") and selected_variant:
-        source = selected_variant
-    else:
-        source = product
-    label = source.get("availability_label")
+        label = selected_variant.get("availability_label")
+        if isinstance(label, str) and label.strip():
+            return label.strip()
+        family = product.get("_family_links") or {}
+        fallback = family.get("availability_label", "")
+        return fallback.strip() if isinstance(fallback, str) else ""
+    label = product.get("availability_label")
     return label.strip() if isinstance(label, str) else ""
+
+
+def resolve_swatch_variant_links(product):
+    """Per kleurswatch-variant (variant zonder ``id``) een resolved link.
+
+    Zelfde regels als :func:`resolve_product_link`: eerst de volledige
+    prioriteit binnen de swatch-variant zelf (affiliate → retailer →
+    official), daarna familie-fallback naar de productniveau-link. De URL
+    van een andere swatch wordt nooit gebruikt. Zet daarnaast
+    ``product["swatch_has_any_link"]``."""
+    if product.get("shape_variants"):
+        return
+    fallback = product.get("resolved_link")
+    if fallback is None:
+        fallback = _resolve_source_link(product)
+    has_any = False
+    for v in product.get("variants") or []:
+        if not isinstance(v, dict) or v.get("id"):
+            continue
+        own = _resolve_source_link(v)
+        v["resolved_link"] = own if own.url else fallback
+        if v["resolved_link"].url:
+            has_any = True
+    product["swatch_has_any_link"] = has_any
 
 
 def apply_resolved_link(product, selected_variant=None):
@@ -466,6 +502,18 @@ def prepare_product_variants(product):
     family_name = product.get("name", "")
     product.setdefault("_family_image", product.get("image", ""))
     product.setdefault("_family_image_path", product.get("image_path", ""))
+    # Snapshot van de oorspronkelijke productniveau-links, vastgelegd vóór
+    # de variantprojectie: de familie-fallback van de linkresolver.
+    product.setdefault("_family_links", {
+        "affiliate_url": normalize_optional_url(product.get("affiliate_url")),
+        "retailer_url": normalize_optional_url(product.get("retailer_url")),
+        "official_url": normalize_optional_url(product.get("official_url")),
+        "availability_label": (
+            product["availability_label"].strip()
+            if isinstance(product.get("availability_label"), str)
+            else ""
+        ),
+    })
     prepared = []
     default = None
     for v in variants:
@@ -496,7 +544,13 @@ def prepare_product_variants(product):
             else ""
         )
         pv["availability"] = pv.get("availability") or ""
-        pv["resolved_link"] = _resolve_source_link(pv)
+        # Eigen link van de variant; zonder eigen URL geldt de
+        # familie-fallback (oorspronkelijke productniveau-links).
+        own_link = _resolve_source_link(pv)
+        pv["resolved_link"] = (
+            own_link if own_link.url
+            else _resolve_source_link(product["_family_links"])
+        )
         pv["image_path"] = pv.get("image_path") or product.get("image_path", "")
         pv["image_url"] = (
             static_url(f"{pv['image_path']}/{pv['image']}") if pv.get("image") else ""

@@ -1,0 +1,1180 @@
+[
+  {
+    "source": "vershoudbakjes/pyrex-cookstore-enkel.jpg",
+    "slug": "pyrex-cookstore-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "pyrex_cookstore_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/ikea-365-enkel.jpg",
+    "slug": "ikea-365-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "ikea_365+_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-enkel.jpg",
+    "slug": "mepal-easyclip-glass-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/locknlock-enkel.jpg",
+    "slug": "locknlock-740ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "locknlock_740ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/locknlock-630ml-enkel.jpg",
+    "slug": "locknlock-630ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "locknlock_630ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/locknlock-1l-enkel.jpg",
+    "slug": "locknlock-1l-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "locknlock_1l_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/ikea-365-1l-enkel.jpg",
+    "slug": "ikea-365-1l-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "ikea_365+_1l_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/ikea-365-12l-enkel.jpg",
+    "slug": "ikea-365-12l-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "ikea_365+_1.2l_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-450ml-enkel.jpg",
+    "slug": "mepal-easyclip-glass-450ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_450ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-700ml-enkel.jpg",
+    "slug": "mepal-easyclip-glass-700ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_700ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-1500ml-enkel.jpg",
+    "slug": "mepal-easyclip-glass-1500ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_1500ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-2250ml-enkel.jpg",
+    "slug": "mepal-easyclip-glass-2250ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_2250ml_enkel",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-820ml-enkel.jpg",
+    "slug": "luminarc-purebox-820ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_820ml_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-380ml-enkel.jpg",
+    "slug": "luminarc-purebox-380ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_380ml_enkel",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-1220ml-enkel.jpg",
+    "slug": "luminarc-purebox-1220ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_1220ml_enkel",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-1970ml-enkel.jpg",
+    "slug": "luminarc-purebox-1970ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_1970ml_enkel",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-760ml-vierkant-enkel.jpg",
+    "slug": "luminarc-purebox-760ml-vierkant-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_760ml_vierkant_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-1220ml-vierkant-enkel.jpg",
+    "slug": "luminarc-purebox-1220ml-vierkant-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_1220ml_vierkant_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-420ml-rond-enkel.jpg",
+    "slug": "luminarc-purebox-420ml-rond-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_420ml_rond_enkel",
+    "enabled": true,
+    "variant_id": "round"
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-920ml-rond-enkel.jpg",
+    "slug": "luminarc-purebox-920ml-rond-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_920ml_rond_enkel",
+    "enabled": true,
+    "variant_id": "round"
+  },
+  {
+    "source": "vershoudbakjes/leo-perfect-seal-500ml-enkel.jpg",
+    "slug": "leo-perfect-seal-500ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "leo_perfect_seal_500ml_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/leo-perfect-seal-1100ml-enkel.jpg",
+    "slug": "leo-perfect-seal-1100ml-enkel",
+    "category": "vershoudbakjes",
+    "product_key": "leo_perfect_seal_1100ml_enkel",
+    "enabled": true,
+    "variant_id": "square"
+  },
+  {
+    "source": "vershoudbakjes/pyrex-cookheat-5delig.jpg",
+    "slug": "pyrex-cookheat-5delig",
+    "category": "vershoudbakjes",
+    "product_key": "pyrex_cookheat_5delig",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/igluu-5delig-rond.jpg",
+    "slug": "igluu-5delig-rond",
+    "category": "vershoudbakjes",
+    "product_key": "igluu_5delig_rond",
+    "enabled": true,
+    "variant_id": "round"
+  },
+  {
+    "source": "vershoudbakjes/igluu-5delig-rechthoek.jpg",
+    "slug": "igluu-5delig-rechthoek",
+    "category": "vershoudbakjes",
+    "product_key": "igluu_5delig_rechthoek",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "vershoudbakjes/kitchenbrothers-5delig.jpg",
+    "slug": "kitchenbrothers-5delig",
+    "category": "vershoudbakjes",
+    "product_key": "kitchenbrothers_5delig",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-5delig.jpg",
+    "slug": "luminarc-purebox-5delig",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_5delig",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/mepal-easyclip-glass-3.jpg",
+    "slug": "mepal-easyclip-glass-3",
+    "category": "vershoudbakjes",
+    "product_key": "mepal_easyclip_glass_3",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "vershoudbakjes/vershoudbakjes-bormioli-frigoverre-set-3.jpg",
+    "slug": "bormioli-frigoverre-set-3",
+    "category": "vershoudbakjes",
+    "product_key": "bormioli_frigoverre_set_3",
+    "enabled": true
+  },
+  {
+    "source": "vershoudbakjes/luminarc-purebox-3delig.jpg",
+    "slug": "luminarc-purebox-3delig",
+    "category": "vershoudbakjes",
+    "product_key": "luminarc_purebox_3delig",
+    "enabled": true,
+    "variant_id": "round"
+  },
+  {
+    "source": "vershoudbakjes/glasslock-ovensafe-3delig.jpg",
+    "slug": "glasslock-ovensafe-3delig",
+    "category": "vershoudbakjes",
+    "product_key": "glasslock_ovensafe_3delig",
+    "enabled": true,
+    "variant_id": "rectangle"
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan01-greenpan-barcelona-pro.jpg",
+    "slug": "greenpan-barcelona-pro-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_barcelona_pro_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan02-kochstar-essenz-taupe.jpg",
+    "slug": "kochstar-essenz-28cm-taupe",
+    "category": "keramische-koekenpannen",
+    "product_key": "kochstar_essenz_28cm_taupe",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan02-kochstar-essenz-zwart.jpg",
+    "slug": "kochstar-essenz-28cm-zwart",
+    "category": "keramische-koekenpannen",
+    "product_key": "kochstar_essenz_28cm_zwart",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan-demeyere-alu-pro-5-28.jpg",
+    "slug": "demeyere-alu-pro-5-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "demeyere_alu_pro_5_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan03-habonne-hybrid.jpg",
+    "slug": "habonne-hybrid-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "habonne_hybrid_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan04-greenchef-diamond.jpg",
+    "slug": "greenchef-diamond-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenchef_diamond_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan05-bk-easy-induction.jpg",
+    "slug": "bk-easy-induction-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk_easy_induction_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan06-brabantia-dusk.jpg",
+    "slug": "brabantia-dusk-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "brabantia_dusk_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan07-tefal-renew.jpg",
+    "slug": "tefal-renew-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "tefal_renew_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan08-bk-enjoy.jpg",
+    "slug": "bk-enjoy-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk_enjoy_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/demeyere-alu-pro-5-ceraforce-28cm.jpg",
+    "slug": "demeyere-alu-pro-5-ceraforce-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "demeyere_alu_pro_5_ceraforce_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan10-debuyer-ceranoa.jpg",
+    "slug": "debuyer-ceranoa-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "debuyer_ceranoa_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-mayflower-grijs-28cm.jpg",
+    "slug": "greenpan-mayflower-grijs-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_mayflower_grijs_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-mayflower-blauw-28cm.jpg",
+    "slug": "greenpan-mayflower-blauw-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_mayflower_blauw_28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan01-greenpan-barcelona-pro-24cm.jpg",
+    "slug": "greenpan-barcelona-pro-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_barcelona_pro_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/kochstar-essenz-taupe-24cm.jpg",
+    "slug": "kochstar-essenz-taupe-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "kochstar_essenz_taupe_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/kochstar-essenz-zwart-24cm.jpg",
+    "slug": "kochstar-essenz-zwart-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "kochstar_essenz_zwart_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/demeyere-alu-pro-5-ceraforce-24cm.jpg",
+    "slug": "demeyere-alu-pro-5-ceraforce-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "demeyere_alu_pro_5_ceraforce_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenchef-diamond-24cm.jpg",
+    "slug": "greenchef-diamond-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenchef_diamond_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan05-bk-easy-induction-24cm.jpg",
+    "slug": "bk-easy-induction-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk_easy_induction_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-torino-24cm.jpg",
+    "slug": "greenpan-torino-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_torino_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan07-tefal-renew-24cm.jpg",
+    "slug": "tefal-renew-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "tefal_renew_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan08-bk-enjoy-24cm.jpg",
+    "slug": "bk-enjoy-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk_enjoy_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/ikea-hemlagad-keramisch-24cm.jpg",
+    "slug": "ikea-hemlagad-keramisch-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "ikea_hemlagad_keramisch_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/berndes-b-green-24cm.jpg",
+    "slug": "berndes-b-green-24cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "berndes_b_green_24cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan01-greenpan-barcelona-pro-26cm.jpg",
+    "slug": "greenpan-barcelona-pro-26cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_barcelona_pro_26cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenchef-vintage-26cm.jpg",
+    "slug": "greenchef-vintage-26cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenchef_vintage_26cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/demeyere-alu-pro-5-ceraforce-26cm.jpg",
+    "slug": "demeyere-alu-pro-5-ceraforce-26cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "demeyere_alu_pro_5_ceraforce_26cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/bk-easy-induction-26cm.jpg",
+    "slug": "bk-easy-induction-26cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk_easy_induction_26cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/fissler-cenit-ceramic-26cm.jpg",
+    "slug": "fissler-cenit-ceramic-26cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "fissler_cenit_ceramic_26cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-venice-pro-26cm.jpg",
+    "slug": "greenpan-venice-pro-26cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_venice_pro_26cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/scanpan-ceramic-26cm.jpg",
+    "slug": "scanpan-ceramic-26cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "scanpan_ceramic_26cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/koekenpan01-greenpan-barcelona-pro-20cm.jpg",
+    "slug": "greenpan-barcelona-pro-20cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_barcelona_pro_20cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/kochstar-essenz-taupe-20cm.jpg",
+    "slug": "kochstar-essenz-taupe-20cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "kochstar_essenz_taupe_20cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/kochstar-essenz-zwart-20cm.jpg",
+    "slug": "kochstar-essenz-zwart-20cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "kochstar_essenz_zwart_20cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/demeyere-alu-pro-5-ceraforce-20cm.jpg",
+    "slug": "demeyere-alu-pro-5-ceraforce-20cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "demeyere_alu_pro_5_ceraforce_20cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenchef-diamond-20cm.jpg",
+    "slug": "greenchef-diamond-20cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenchef_diamond_20cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/bk-easy-induction-20cm.jpg",
+    "slug": "bk-easy-induction-20cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk_easy_induction_20cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-mayflower-grijs-20cm.jpg",
+    "slug": "greenpan-mayflower-grijs-20cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_mayflower_grijs_20cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/tefal-renew-20cm.jpg",
+    "slug": "tefal-renew-20cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "tefal_renew_20cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/bk-enjoy-20cm.jpg",
+    "slug": "bk-enjoy-20cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk_enjoy_20cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/hema-milano-20cm.jpg",
+    "slug": "hema-milano-20cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "hema_milano_20cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/berndes-b-green-20cm.jpg",
+    "slug": "berndes-b-green-20cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "berndes_b_green_20cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/kochstar-stein-30cm.jpg",
+    "slug": "kochstar-stein-30cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "kochstar_stein_30cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/demeyere-alu-pro-5-ceraforce-30cm.jpg",
+    "slug": "demeyere-alu-pro-5-ceraforce-30cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "demeyere_alu_pro_5_ceraforce_30cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenchef-diamond-30cm.jpg",
+    "slug": "greenchef-diamond-30cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenchef_diamond_30cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/bk-easy-induction-30cm.jpg",
+    "slug": "bk-easy-induction-30cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk_easy_induction_30cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-torino-30cm.jpg",
+    "slug": "greenpan-torino-30cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_torino_30cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/tefal-renew-30cm.jpg",
+    "slug": "tefal-renew-30cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "tefal_renew_30cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/brabantia-indu-plus-r-30cm.jpg",
+    "slug": "brabantia-indu-plus-r-30cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "brabantia_indu_plus_r_30cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/scanpan-techniq-30cm.jpg",
+    "slug": "scanpan-techniq-30cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "scanpan_techniq_30cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-barcelona-pro-32cm.jpg",
+    "slug": "greenpan-barcelona-pro-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_barcelona_pro_32cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/demeyere-alu-pro-5-ceraforce-32cm.jpg",
+    "slug": "demeyere-alu-pro-5-ceraforce-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "demeyere_alu_pro_5_ceraforce_32cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/combekk-ceramic-pro-32cm.jpg",
+    "slug": "combekk-ceramic-pro-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "combekk_ceramic_pro_32cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/bk-easy-induction-32cm.jpg",
+    "slug": "bk-easy-induction-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk_easy_induction_32cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-torino-32cm.jpg",
+    "slug": "greenpan-torino-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_torino_32cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/tefal-renew-32cm.jpg",
+    "slug": "tefal-renew-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "tefal_renew_32cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/primecook-32cm.jpg",
+    "slug": "primecook-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "primecook_32cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/blue-diamond-32cm.jpg",
+    "slug": "blue-diamond-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "blue_diamond_32cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/ikea-hemlagad-keramisch-32cm.jpg",
+    "slug": "ikea-hemlagad-keramisch-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "ikea_hemlagad_keramisch_32cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/scanpan-ceramic-32cm.jpg",
+    "slug": "scanpan-ceramic-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "scanpan_ceramic_32cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/fissler-essential-26cm.jpg",
+    "slug": "fissler-essential-26cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "fissler_essential_26cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/scanpan-nura-26cm.jpg",
+    "slug": "scanpan-nura-26cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "scanpan_nura_26cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-barcelona-pro-30cm.jpg",
+    "slug": "greenpan-barcelona-pro-30cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan_barcelona_pro_30cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/scanpan-nura-32cm.jpg",
+    "slug": "scanpan-nura-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "scanpan_nura_32cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/combekk-forest-easy-32cm.jpg",
+    "slug": "combekk-forest-easy-32cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "combekk_forest_easy_32cm",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/demeyere-industry-5-24.jpg",
+    "slug": "demeyere-industry-5-24",
+    "category": "rvs-koekenpannen",
+    "product_key": "demeyere_industry_5_24",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/demeyere-multiline-7-24.jpg",
+    "slug": "demeyere-multiline-7-24",
+    "category": "rvs-koekenpannen",
+    "product_key": "demeyere-multiline-7-24",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/bk-superior-tri-ply-24.jpg",
+    "slug": "bk-superior-tri-ply-24",
+    "category": "rvs-koekenpannen",
+    "product_key": "bk_superior_tri_ply_24",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/debuyer-affinity-24.jpg",
+    "slug": "debuyer-affinity-24",
+    "category": "rvs-koekenpannen",
+    "product_key": "debuyer_affinity_24",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/wmf-profi-24.jpg",
+    "slug": "wmf-profi-24",
+    "category": "rvs-koekenpannen",
+    "product_key": "wmf_profi_24",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/demeyere-silverline-7-24.jpg",
+    "slug": "demeyere-silverline-7-24",
+    "category": "rvs-koekenpannen",
+    "product_key": "demeyere_silverline_7_24",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/bk-bright-24.jpg",
+    "slug": "bk-bright-24",
+    "category": "rvs-koekenpannen",
+    "product_key": "bk_bright_24",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/demeyere-industry-5-20.jpg",
+    "slug": "demeyere-industry-5-20",
+    "category": "rvs-koekenpannen",
+    "product_key": "demeyere_industry_5_20",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/demeyere-silverline-7-20.jpg",
+    "slug": "demeyere-silverline-7-20",
+    "category": "rvs-koekenpannen",
+    "product_key": "demeyere_silverline_7_20",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/demeyere-multiline-7-28.jpg",
+    "slug": "demeyere-multiline-7-28",
+    "category": "rvs-koekenpannen",
+    "product_key": "demeyere_multiline_7_28",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/bk-bright-28.jpg",
+    "slug": "bk-bright-28",
+    "category": "rvs-koekenpannen",
+    "product_key": "bk_bright_28",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/bk-superior-tri-ply-20.jpg",
+    "slug": "bk-superior-tri-ply-20",
+    "category": "rvs-koekenpannen",
+    "product_key": "bk_superior_tri_ply_20",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/bk-superior-tri-ply-28.jpg",
+    "slug": "bk-superior-tri-ply-28",
+    "category": "rvs-koekenpannen",
+    "product_key": "bk_superior_tri_ply_28",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/debuyer-affinity-20.jpg",
+    "slug": "debuyer-affinity-20",
+    "category": "rvs-koekenpannen",
+    "product_key": "debuyer_affinity_20",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/debuyer-affinity-28.jpg",
+    "slug": "debuyer-affinity-28",
+    "category": "rvs-koekenpannen",
+    "product_key": "debuyer_affinity_28",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/demeyere-industry-5-28.jpg",
+    "slug": "demeyere-industry-5-28",
+    "category": "rvs-koekenpannen",
+    "product_key": "demeyere_industry_5_28",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/demeyere-multiline-7-20.jpg",
+    "slug": "demeyere-multiline-7-20",
+    "category": "rvs-koekenpannen",
+    "product_key": "demeyere_multiline_7_20",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/demeyere-silverline-7-28.jpg",
+    "slug": "demeyere-silverline-7-28",
+    "category": "rvs-koekenpannen",
+    "product_key": "demeyere_silverline_7_28",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/sola-green-cooking-plus-20.jpg",
+    "slug": "sola-green-cooking-plus-20",
+    "category": "rvs-koekenpannen",
+    "product_key": "sola_green_cooking_plus_20",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/wmf-profi-20.jpg",
+    "slug": "wmf-profi-20",
+    "category": "rvs-koekenpannen",
+    "product_key": "wmf_profi_20",
+    "enabled": true
+  },
+  {
+    "source": "rvs-koekenpannen/wmf-profi-28.jpg",
+    "slug": "wmf-profi-28",
+    "category": "rvs-koekenpannen",
+    "product_key": "wmf_profi_28",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan01.jpg",
+    "slug": "hapjespan-greenpan-barcelona-pro-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_greenpan_barcelona_pro_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-bk-enjoy-28cm.jpg",
+    "slug": "hapjespan-bk-enjoy-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_enjoy_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan03.jpg",
+    "slug": "hapjespan-woll-ecolite-qxr-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_woll_ecolite_qxr_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan04.jpg",
+    "slug": "hapjespan-greenchef-diamond-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_greenchef_diamond_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan02.jpg",
+    "slug": "hapjespan-bk-easy-induction-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_easy_induction_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan06.jpg",
+    "slug": "hapjespan-be-living-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_be_living_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan07.jpg",
+    "slug": "hapjespan-greenpan-torino-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_greenpan_torino_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-bk-enjoy-licht-blauw-28cm.jpg",
+    "slug": "hapjespan-bk-enjoy-licht-blauw-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_enjoy_licht_blauw_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-bk-enjoy-olijf-groen-28cm.jpg",
+    "slug": "hapjespan-bk-enjoy-olijf-groen-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_enjoy_olijf_groen_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-bk-enjoy-oxford-blauw-28cm.jpg",
+    "slug": "hapjespan-bk-enjoy-oxford-blauw-28cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_enjoy_oxford_blauw_28cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/greenpan-barcelona-pro-24cm.jpg",
+    "slug": "hapjespan-greenpan-barcelona-pro-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_greenpan_barcelona_pro_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-bk-brilliant-24cm.jpg",
+    "slug": "hapjespan-bk-brilliant-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_brilliant_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/woll-ecolite-qxr-24cm.jpg",
+    "slug": "hapjespan-woll-ecolite-qxr-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_woll_ecolite_qxr_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/greenchef-prime-24cm.jpg",
+    "slug": "hapjespan-greenchef-prime-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_greenchef_prime_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/bk-balans-plus-24cm.jpg",
+    "slug": "hapjespan-bk-balans-plus-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_bk_balans_plus_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/hapjespan-kochstar-essenz-24cm.jpg",
+    "slug": "hapjespan-kochstar-essenz-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_kochstar_essenz_24cm",
+    "enabled": true
+  },
+  {
+    "source": "hapjespannen/beka-cicla-24cm.jpg",
+    "slug": "hapjespan-beka-cicla-24cm",
+    "category": "hapjespannen",
+    "product_key": "hapjespan_beka_cicla_24cm",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank08-kaamut.jpg",
+    "slug": "snijplank-kaamut",
+    "category": "snijplanken",
+    "product_key": "snijplank_kaamut",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank02-ikea.jpg",
+    "slug": "snijplank-ikea",
+    "category": "snijplanken",
+    "product_key": "snijplank_ikea",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank01-boosblocks.jpg",
+    "slug": "snijplank-boosblocks",
+    "category": "snijplanken",
+    "product_key": "snijplank_boosblocks",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank04-zwilling.jpg",
+    "slug": "snijplank-zwilling",
+    "category": "snijplanken",
+    "product_key": "snijplank_zwilling",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank07-namture.jpg",
+    "slug": "snijplank-namture",
+    "category": "snijplanken",
+    "product_key": "snijplank_namture",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank06-wmf.jpg",
+    "slug": "snijplank-wmf",
+    "category": "snijplanken",
+    "product_key": "snijplank_wmf",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank09-continenta.jpg",
+    "slug": "snijplank-continenta",
+    "category": "snijplanken",
+    "product_key": "snijplank_continenta",
+    "enabled": true
+  },
+  {
+    "source": "snijplanken/snijplank05-hema.jpg",
+    "slug": "snijplank-hema",
+    "category": "snijplanken",
+    "product_key": "snijplank_hema",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-inventum-gf500hld-5l-pfasvrij-keramisch.jpg",
+    "slug": "airfryer-inventum-gf500hld-5l-pfasvrij-keramisch",
+    "category": "airfryers",
+    "product_key": "airfryer-inventum-gf500hld-5l-pfasvrij-keramisch",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-bourgini-slimfit-5l-pfasvrij-keramisch.jpg",
+    "slug": "airfryer-bourgini-slimfit-5l-pfasvrij-keramisch",
+    "category": "airfryers",
+    "product_key": "airfryer-bourgini-slimfit-5l-pfasvrij-keramisch",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-masterpro-rocket-cyclone-500-5l-pfasvrij.jpg",
+    "slug": "airfryer-masterpro-rocket-cyclone-500-5l-pfasvrij",
+    "category": "airfryers",
+    "product_key": "airfryer-masterpro-rocket-cyclone-500-5l-pfasvrij",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-wartmann-wm2312af-5l-pfasvrij.jpg",
+    "slug": "airfryer-wartmann-wm2312af-5l-pfasvrij",
+    "category": "airfryers",
+    "product_key": "airfryer-wartmann-wm2312af-5l-pfasvrij",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-maison-kitchen-5l-pfasvrij.jpg",
+    "slug": "airfryer-maison-kitchen-5l-pfasvrij",
+    "category": "airfryers",
+    "product_key": "airfryer-maison-kitchen-5l-pfasvrij",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-inventum-gf730hldb-7-3l-pfasvrij.jpg",
+    "slug": "airfryer-inventum-gf730hldb-7-3l-pfasvrij",
+    "category": "airfryers",
+    "product_key": "airfryer-inventum-gf730hldb-7-3l-pfasvrij",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-princess-182280-8l-pfasvrij.jpg",
+    "slug": "airfryer-princess-182280-8l-pfasvrij",
+    "category": "airfryers",
+    "product_key": "airfryer-princess-182280-8l-pfasvrij",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-greenpan-bistro-xxl-7-2l-black.jpg",
+    "slug": "airfryer-greenpan-bistro-xxl-7-2l-black",
+    "category": "airfryers",
+    "product_key": "airfryer-greenpan-bistro-xxl-7-2l_black",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-greenpan-bistro-xxl-7-2l-pine-green.jpg",
+    "slug": "airfryer-greenpan-bistro-xxl-7-2l-pine-green",
+    "category": "airfryers",
+    "product_key": "airfryer-greenpan-bistro-xxl-7-2l_pine_green",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-greenpan-bistro-xxl-7-2l-smokey-blue.jpg",
+    "slug": "airfryer-greenpan-bistro-xxl-7-2l-smokey-blue",
+    "category": "airfryers",
+    "product_key": "airfryer-greenpan-bistro-xxl-7-2l_smokey_blue",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-bourgini-slimfit-pure-8l-zwart.jpg",
+    "slug": "airfryer-bourgini-slimfit-pure-8l-zwart",
+    "category": "airfryers",
+    "product_key": "airfryer-bourgini-slimfit-pure-8l_zwart",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-bourgini-slimfit-pure-8l-beige.jpg",
+    "slug": "airfryer-bourgini-slimfit-pure-8l-beige",
+    "category": "airfryers",
+    "product_key": "airfryer-bourgini-slimfit-pure-8l_beige",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-maison-kitchen-8l.jpg",
+    "slug": "airfryer-maison-kitchen-8l",
+    "category": "airfryers",
+    "product_key": "airfryer-maison-kitchen-8l",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-inventum-gf800hld-dual-8l.jpg",
+    "slug": "airfryer-inventum-gf800hld-dual-8l",
+    "category": "airfryers",
+    "product_key": "airfryer-inventum-gf800hld-dual-8l",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-bourgini-duo-8l.jpg",
+    "slug": "airfryer-bourgini-duo-8l",
+    "category": "airfryers",
+    "product_key": "airfryer-bourgini-duo-8l",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-greenpan-bistro-dual-8l.jpg",
+    "slug": "airfryer-greenpan-bistro-dual-8l",
+    "category": "airfryers",
+    "product_key": "airfryer-greenpan-bistro-dual-8l",
+    "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-wartmann-wm2511af-11l.jpg",
+    "slug": "airfryer-wartmann-wm2511af-11l",
+    "category": "airfryers",
+    "product_key": "airfryer-wartmann-wm2511af-11l",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan01.jpg",
+    "slug": "wokpan-greenpan-torino-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-greenpan_torino-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan02.jpg",
+    "slug": "wokpan-hema-milano-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-hema-milano-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan03.jpg",
+    "slug": "wokpan-wmf-durado-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-wmf-durado-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan04.jpg",
+    "slug": "wokpan-greenchef-diamond-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-greenchef-diamond-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/primecook-wok-28.jpg",
+    "slug": "wokpan-primecook-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-primecook-28cm",
+    "enabled": true
+  },
+  {
+    "source": "wokpannen/wokpan06.jpg",
+    "slug": "wokpan-bk-granite-28cm",
+    "category": "wokpannen",
+    "product_key": "wokpan-bk-granite-28cm",
+    "enabled": true
+  }
+]

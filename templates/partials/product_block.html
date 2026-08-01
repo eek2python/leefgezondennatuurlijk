@@ -56,7 +56,10 @@
            style="--swatch: {{ variant.hex }};"
            data-variant-swatch
            data-image="{% static product.image_path|add:'/' %}{{ variant.image }}"
-           {% if variant.affiliate_url %}data-affiliate="{{ variant.affiliate_url }}"{% endif %}
+           data-url="{{ variant.resolved_link.url }}"
+           data-link-type="{{ variant.resolved_link.link_type }}"
+           data-rel="{{ variant.resolved_link.rel }}"
+           data-label="{{ variant.resolved_link.label }}"
            {% if product.price_range_is_derived %}data-price="{{ variant.display_price_range }}"{% elif variant.price_range %}data-price="{{ variant.price_range }}"{% endif %}
            data-name="{{ variant.name }}"
            title="{{ variant.name }}"
@@ -166,18 +169,18 @@
            {% if resolved_link.url %}hidden{% endif %}
 >{{ product.default_variant.availability_label|default:"Link voor deze uitvoering nog niet beschikbaar" }}</span>
 {% endwith %}
-       {% elif product.variants and product.affiliate_url or product.variants.0.affiliate_url %}
-{# Kleurswatch-systeem: bestaand affiliate-wisselgedrag (variants.js) blijft intact. #}
+       {% elif product.variants and product.swatch_has_any_link %}
+{# Kleurswatch-systeem: per swatch resolved link (centrale resolver); variants.js wisselt href/rel/label/type. #}
+       {% with first_link=product.variants.0.resolved_link %}
 <a
-           href="{% if product.variants.0.affiliate_url %}{{ product.variants.0.affiliate_url }}{% else %}{{ product.affiliate_url }}{% endif %}"
+           {% if first_link.url %}href="{{ first_link.url }}"{% else %}hidden{% endif %}
            target="_blank"
-           rel="nofollow sponsored noopener"
-           class="button primary small"
-           data-link-type="affiliate"
-           data-variant-affiliate data-base-affiliate="{{ product.affiliate_url }}"
->
-           Bekijk prijs &amp; reviews →
-</a>
+           {% if first_link.rel %}rel="{{ first_link.rel }}"{% endif %}
+           class="button small{% if first_link.url and first_link.link_type != 'official' %} primary{% endif %}"
+           data-link-type="{{ first_link.link_type }}"
+           data-variant-affiliate
+>{{ first_link.label|default:"Bekijk prijs & reviews →" }}</a>
+       {% endwith %}
        {% elif product.resolved_link.url or product.availability_label %}
        {% include "includes/product_link.html" with resolved_link=product.resolved_link availability_label=product.availability_label link_product=product link_small=True %}
        {% else %}

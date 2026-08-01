@@ -36,20 +36,22 @@ top-picks, variantwissels) gebruiken één resolver:
 
 - Varianten slaan hun eigen `affiliate_url`/`retailer_url`/`official_url`/
   `availability_label` op in hun eigen dict.
-- Bij een geselecteerde variant worden UITSLUITEND de URL-velden van die
-  variant gebruikt; een lege URL valt nooit terug op een andere variant of
-  op verouderde productniveau-data (zelfde strengheid als
-  `resolve_commercial_fields`).
-- Enige gedocumenteerde productniveau-fallback: producten zónder
-  button-varianten resolven op productniveau. De afbeelding kent een aparte
-  familie-fallback; links niet.
-- **Kleurswatch-uitzondering** (airfryers e.d., varianten zonder `id`): het
-  bestaande swatchsysteem (`static/assets/js/variants.js`) toont uitsluitend
-  affiliatelinks en mag per gedocumenteerd familiebeleid terugvallen op de
-  productniveau-`affiliate_url` (`data-base-affiliate`) — kleurvarianten
-  verwijzen naar dezelfde productfamilie. `retailer_url`/`official_url` op
-  een swatch-variant wordt niet gerenderd; de audit `product_links`
-  waarschuwt hiervoor (`swatch_variant_link_field_unsupported`).
+- Bij een geselecteerde variant geldt eerst de volledige prioriteit binnen
+  de variant zelf (affiliate → retailer → official). Heeft de variant géén
+  enkele URL, dan valt de resolver terug op de oorspronkelijke
+  productniveau-velden van het hoofdproduct (familie-snapshot
+  `_family_links`, vastgelegd vóór variantprojectie) met dezelfde
+  prioriteit. Een variant met lege `affiliate_url` maar gevulde
+  `retailer_url` gebruikt dus eerst de eigen `retailer_url` — pas als alle
+  drie de variantvelden leeg zijn volgt de familie-fallback.
+- De URL van een ANDERE variant wordt nooit gebruikt; de audit
+  `product_links` bewaakt dit (`variant_link_fallback_to_other_variant`).
+- **Kleurswatch-varianten** (airfryers e.d., varianten zonder `id`) volgen
+  dezelfde regels via `resolve_swatch_variant_links()`: per swatch een
+  resolved link (eigen prioriteit, daarna familie-fallback), door Django
+  meegegeven als `data-url`/`data-link-type`/`data-rel`/`data-label`;
+  `static/assets/js/variants.js` wisselt href, rel, label, class en
+  `data-link-type` zonder eigen prioriteitslogica.
 - Bij een variantwissel veranderen href, label, rel, class, `data-link-type`,
   zichtbaarheid en `availability_label` mee (en verdwijnt een oude href
   volledig uit de DOM).

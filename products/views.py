@@ -20,6 +20,7 @@ from utils.variant_helpers import (
     resolve_availability_label,
     resolve_commercial_fields,
     resolve_product_link,
+    resolve_swatch_variant_links,
     set_display_variant,
 )
 import copy
@@ -158,6 +159,9 @@ def _enrich_products(products, category=None):
         # alle overige producten resolven hier op productniveau.
         if "resolved_link" not in p:
             apply_resolved_link(p)
+        # Kleurswatch-varianten: per swatch een resolved link (eigen
+        # prioriteit, daarna familie-fallback) voor variants.js.
+        resolve_swatch_variant_links(p)
         _derive_price_levels(p, category)
         if "usage_display" not in p:
             p["usage_display"] = build_usage_display(p.get("usage"))

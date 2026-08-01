@@ -1,546 +1,704 @@
 PRODUCTS = {
+    # 28 CM KERAMISCHE HAPJESPANNEN
+
     "greenpan_barcelona_pro_28": {
         "slug": "greenpan-barcelona-pro-hapjespan-28",
-        "name": "GreenPan Barcelona Pro",
-        "description": "Premium hapjespan van 28 cm met keramische coating, diepe vorm en glazen deksel, geschikt voor bakken, sudderen en complete éénpansgerechten.",
+        "name": "GreenPan Barcelona Pro Hapjespan 28 cm",
+        "description": (
+            "Hapjespan van 28 cm met keramische antiaanbaklaag, "
+            "hoge rand en glazen deksel voor bakken, sudderen "
+            "en éénpansgerechten."
+        ),
         "brand": "GreenPan",
         "diameter": 28,
-        "material": "Aluminium met keramische coating",
+        "material": (
+            "Aluminium met Thermolon Infinity Pro keramische antiaanbaklaag"
+        ),
         "features": [
             "PFAS-vrij",
-            "Thermolon Infinity Pro coating",
-            "Inductie- en ovenbestendig",
-            "Inclusief glazen deksel",
-        ],
-        "rating": 4.8,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 159.90,
-        "price_last_checked": "2026-05-29",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url":"https://www.greenpan.nl/products/barcelona-pro-hapjespan-met-deksel-28cm",
-        "price_range": "€€€€",
-        "image": "hapjespan01.jpg",
-        "image_path": "images/hapjespannen",
-        "pros": [
-            "Diepe vorm geschikt voor grotere porties en sauzen",
-            "Stevige inductiebodem met gelijkmatige warmteverdeling",
-            "Glazen deksel maakt langzaam garen eenvoudig",
-        ],
-        "cons": [
-            "Hogere prijsklasse",
-            "Iets zwaarder door RVS buitenwand",
-        ],
-        "verdict": "De meest complete allround hapjespan voor dagelijks bakken, sudderen en grotere maaltijden.",
-        "award": "🏆 Beste keuze",
-    },
-    "bk_enjoy_28": {
-        "slug": "bk-enjoy-hapjespan-28",
-        "name": "BK Enjoy Keramische Hapjespan",
-        "description": "Toegankelijke keramische hapjespan van 28 cm voor dagelijks koken, pasta's en eenvoudige éénpansgerechten.",
-        "brand": "BK",
-        "diameter": 28,
-        "material": "Aluminium met keramische coating",
-        "features": [
-            "Keramische antiaanbaklaag",
+            "Thermolon Infinity Pro antiaanbaklaag",
             "Geschikt voor inductie",
-        ],
-        "rating": 4.2,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 41.93,
-        "price_last_checked": "2026-05-29",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": "https://www.bol.com/nl/nl/p/bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-zwart-koelgreep-ovenbestendig-tot-160/9300000196237263/",
-        "price_range": "€",
-        "image": "hapjespan_bk_enjoy_28cm.jpg",
-        "image_path": "images/hapjespannen",
-        "pros": [
-            "Toegankelijke prijs",
-            "Diepe vorm voor dagelijkse maaltijden",
-            "Gebruiksvriendelijke antiaanbakprestaties",
-        ],
-        "cons": [
-            "Minder duurzaam dan midden- en premiumklasse",
-            "Niet bedoeld voor intensief of professioneel gebruik",
-        ],
-        "verdict": "Een praktische instapper voor dagelijkse maaltijden zoals pasta's, rijstgerechten en groenteschotels.",
-        "award": "💰 Budget keuze",
-    },
-    "woll_ecolite_qxr_28": {
-        "slug": "woll-ecolite-qxr-28",
-        "name": "WOLL Eco Lite QXR",
-        "description": "Premium PFAS-vrije hapjespan met QXR-keramische antiaanbaklaag, lichtgewicht body en stevige inductiebodem.",
-        "brand": "WOLL",
-        "diameter": 28,
-        "material": "Gerecycled aluminium met keramische coating",
-        "features": [
-            "PFAS-vrij",
-            "QXR-keramische coating",
-            "Lichtgewicht premium constructie",
+            "Ovenbestendig",
+            "Inclusief glazen deksel",
         ],
         "rating": 4.7,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 104.90,
-        "price_last_checked": "2026-05-29",
+        "price": 159.90,
+        "price_last_checked": "2026-06-31",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "",
-        "retailer_url": "https://www.bol.com/nl/nl/p/hapjespan-o-28-cm-3-3-l-gerecycled-aluminium-qxr-non-stick-inductie-woll-ecolite-qxr/9300000180122490/",
-        "price_range": "€€€",
-        "image": "hapjespan03.jpg",
-        "image_path": "images/hapjespannen",
+        "retailer_url": (
+            "https://www.greenpan.nl/products/"
+            "barcelona-pro-hapjespan-met-deksel-28cm"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€€€",
+        "image": "hapjespan-greenpan-barcelona-pro-28cm.webp",
+        "image_path": "images/products/hapjespannen",
         "pros": [
-            "Sterke warmteverdeling voor gelijkmatig garen",
-            "Licht voor een premium hapjespan",
-            "Diepe vorm geschikt voor grotere hoeveelheden",
+            "Hoge rand voor grotere porties en sauzen",
+            "Geschikt voor bakken, sudderen en éénpansgerechten",
+            "Inclusief glazen deksel",
         ],
         "cons": [
-            "Hogere prijsklasse",
-            "Handwas aanbevolen",
+            "Hoge aanschafprijs",
+            "Zwaarder dan eenvoudiger aluminium modellen",
         ],
-        "verdict": "Premium keuze voor wie veel kookt en een lichte maar hoogwaardige hapjespan zoekt.",
-        "award": "💎 Premium keuze",
+        "verdict": (
+            "Onze beste allround keuze door de hoge rand, het deksel "
+            "en de brede inzetbaarheid."
+        ),
+        "award": "🏆 Beste keuze",
     },
-    "greenchef_diamond_28": {
-        "slug": "greenchef-diamond-hapjespan-28",
-        "name": "GreenChef Diamond Induction",
-        "description": "PFAS-vrije keramische hapjespan met diamantversterkte coating en deksel.",
-        "brand": "GreenChef",
-        "diameter": 28,
-        "material": "Aluminium met keramische coating",
-        "features": [
-            "PFAS-vrij",
-            "Diamantversterkte keramische coating",
-            "Inclusief deksel",
-        ],
-        "rating": 4.5,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 52.50,
-        "price_last_checked": "2026-05-29",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": "https://www.bol.com/nl/nl/p/greenchef-diamond-inductie-hapjespan-o28-cm-keramisch-pfas-vrij/9200000131435585/",
-        "price_range": "€€",
-        "award": None,
-        "image": "hapjespan04.jpg",
-        "image_path": "images/hapjespannen",
-        "pros": [
-            "Zeer goede prijs-kwaliteitverhouding",
-            "Diamantversterkte coating",
-            "Inclusief deksel",
-        ],
-        "cons": [
-            "Niet ovenbestendig",
-            "Niet geschikt voor metalen spatels",
-        ],
-        "verdict": "Een sterke middenklasse hapjespan met goede balans tussen gebruiksgemak en prijs.",
-    },
-    "bk_easy_induction_28": {
-        "slug": "bk-easy-induction-hapjespan-28",
-        "name": "BK Easy Induction Ceramic",
-        "description": "Betaalbare PFAS-vrije hapjespan met keramische antiaanbaklaag en stevige koudgreep.",
+
+    "bk_enjoy_28": {
+        "slug": "bk-enjoy-hapjespan-28",
+        "name": "BK Enjoy Keramische Hapjespan 28 cm",
+        "description": (
+            "Toegankelijke aluminium hapjespan met keramische "
+            "antiaanbaklaag en glazen deksel voor dagelijkse maaltijden."
+        ),
         "brand": "BK",
         "diameter": 28,
-        "material": "Aluminium met keramische coating",
+        "material": "Aluminium met keramische antiaanbaklaag",
         "features": [
             "PFAS-vrij",
             "Keramische antiaanbaklaag",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 160 °C",
+            "Vaatwasserbestendig",
+            "Inclusief glazen deksel",
+        ],
+        "rating": 4.1,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 59.90,
+        "price_last_checked": "2026-06-31",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        # "retailer_url": (
+        #     "https://www.bol.com/nl/nl/p/"
+        #     "bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-zwart-"
+        #     "koelgreep-ovenbestendig-tot-160/9300000196237263/"
+        # ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€",
+        "image": "hapjespan-bk-enjoy-28cm.webp",
+        "image_path": "images/products/hapjespannen",
+        "variants": [
+            {
+                "name": "Zwart",
+                "image": "hapjespan-bk-enjoy-28cm.webp",
+                "hex": "#000000",
+                "affiliate_url": "",
+                "retailer_url": (
+                    "https://www.bol.com/nl/nl/p/"
+                    "bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-zwart-"
+                    "koelgreep-ovenbestendig-tot-160/9300000196237263/"
+                ),
+                "price": 59.90,
+                "price_last_checked": "2026-06-31",
+            },
+            {
+                "name": "Licht Blauw",
+                "image": "hapjespan-bk-enjoy-licht-blauw-28cm.webp",
+                "hex": "#8CA9B5",
+                "affiliate_url": "",
+                "retailer_url": (
+                    "https://www.bol.com/nl/nl/p/bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-lichtblauw-koelgrepen-ovenbestendig-tot-160/9300000196237270/"
+                ),
+                "price": 59.90,
+                "price_last_checked": "2026-06-31",
+            },
+            {
+                "name": "Oxford Blauw",
+                "image": "hapjespan-bk-enjoy-oxford-blauw-28cm.webp",
+                "hex": "#002147",
+                "affiliate_url": "",
+                "retailer_url": (
+                    "https://www.bol.com/nl/nl/p/bk-enjoy-hapjespan-28cm-met-deksel-3-4l-pfas-vrije-antikleeflaag-hapjespan-inductie-keramische-pan-ovenbestendig-tot-160-c-koudgrepen-met-glazen-deksel-oxford-blue/9300000311002501/"
+                ),
+                "price": 59.90,
+                "price_last_checked": "2026-06-31",
+            },
+            {
+                "name": "Olijf Groen",
+                "image": "hapjespan-bk-enjoy-olijf-groen-28cm.webp",
+                "hex": "#708238",
+                "affiliate_url": "",
+                "retailer_url": (
+                    "https://www.bol.com/nl/nl/p/bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-lichtblauw-koelgrepen-ovenbestendig-tot-160/9300000196237270/"
+                ),
+                "price": 47.45,
+                "price_last_checked": "2026-06-31",
+            },
+        ],
+        "pros": [
+            "Relatief lage aanschafprijs",
+            "Hoge rand voor dagelijkse éénpansgerechten",
+            "Inclusief glazen deksel",
+        ],
+        "cons": [
+            "Beperkte maximale oventemperatuur",
+            "Kunststof greep beperkt gebruik op hoge temperatuur",
+        ],
+        "verdict": (
+            "Onze budgetkeuze voor wie een complete keramische "
+            "hapjespan met deksel zoekt."
+        ),
+        "award": "💰 Budget keuze",
+    },
+    
+    "woll_ecolite_qxr_28": {
+        "slug": "woll-ecolite-qxr-28",
+        "name": "WOLL Eco Lite QXR Hapjespan 28 cm",
+        "description": (
+            "Hapjespan van gerecycled aluminium met QXR-keramische "
+            "antiaanbaklaag en inductiebodem."
+        ),
+        "brand": "WOLL",
+        "diameter": 28,
+        "material": (
+            "Gerecycled aluminium met QXR keramische antiaanbaklaag"
+        ),
+        "features": [
+            "PFAS-vrij",
+            "QXR keramische antiaanbaklaag",
+            "Geschikt voor inductie",
+        ],
+        "rating": 4.6,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 104.90,
+        "price_last_checked": "2026-07-31",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "hapjespan-o-28-cm-3-3-l-gerecycled-aluminium-qxr-"
+            "non-stick-inductie-woll-ecolite-qxr/9300000180122490/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€€",
+        "image": "hapjespan-woll-ecolite-qxr-28cm.webp",
+        "image_path": "images/products/hapjespannen",
+        "pros": [
+            "Ruime vorm voor grotere hoeveelheden",
+            "Relatief licht uitgevoerd",
+            "Geschikt voor inductie",
+        ],
+        "cons": [
+            "Hoge aanschafprijs",
+            "Handwas aanbevolen",
+        ],
+        "verdict": (
+            "Onze premiumkeuze voor wie een ruime en relatief lichte "
+            "keramische hapjespan zoekt."
+        ),
+        "award": None,
+    },
+    
+        "greenchef_diamond_28": {
+            "slug": "greenchef-diamond-hapjespan-28",
+            "name": "GreenChef Diamond Induction Hapjespan 28 cm",
+            "description": (
+                "Aluminium hapjespan met keramische antiaanbaklaag, "
+                "waaraan volgens de fabrikant diamantdeeltjes zijn toegevoegd."
+            ),
+            "brand": "GreenChef",
+            "diameter": 28,
+            "material": "Aluminium met keramische antiaanbaklaag",
+            "features": [
+                "PFAS-vrij",
+                "Keramische coating met diamantdeeltjes",
+                "Geschikt voor inductie",
+                "Inclusief deksel",
+            ],
+            "rating": 4.3,
+            "rating_count": None,
+            "rating_source": "editorial",
+            "price": 39.99,
+            "price_last_checked": "2026-07-31",
+            "currency": "EUR",
+            "availability": "InStock",
+            "affiliate_url": "",
+            "retailer_url": (
+                "https://www.bol.com/nl/nl/p/"
+                "greenchef-diamond-inductie-hapjespan-o28-cm-keramisch-"
+                "pfas-vrij/9200000131435585/"
+            ),
+            "official_url": "",
+            "availability_label": "",
+            "price_range": "€€",
+            "award": None,
+            "image": "hapjespan-greenchef-diamond-28cm.webp",
+            "image_path": "images/products/hapjespannen",
+            "pros": [
+                "Relatief gunstige prijs inclusief deksel",
+                "Geschikt voor inductie",
+            ],
+            "cons": [
+                "Niet ovenbestendig",
+            ],
+            "verdict": (
+                "Een gunstig geprijsde middenklasseoptie met deksel "
+                "voor dagelijkse maaltijden."
+            ),
+    
+    },
+    
+    "bk_easy_induction_28": {
+        "slug": "bk-easy-induction-hapjespan-28",
+        "name": "BK Easy Induction Ceramic Hapjespan 28 cm",
+        "description": (
+            "Ruime aluminium hapjespan met keramische antiaanbaklaag "
+            "en glazen deksel voor dagelijkse éénpansgerechten."
+        ),
+        "brand": "BK",
+        "diameter": 28,
+        "material": "Aluminium met keramische antiaanbaklaag",
+        "features": [
+            "PFAS-vrij",
+            "Keramische antiaanbaklaag",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 160 °C",
+            "Vaatwasserbestendig",
+            "Inclusief glazen deksel",
+        ],
+        "rating": 4.2,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 62.49,
+        "price_last_checked": "2026-07-31",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "bk-easy-induction-ceramic-hapjespan-met-deksel-o28cm-"
+            "4-6l-inductie-pfas-vrij/9300000032891765/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€€",
+        "image": "hapjespan-bk-easy-induction-28cm.webp",
+        "image_path": "images/products/hapjespannen",
+        "pros": [
+            "Ruime inhoud voor éénpansgerechten",
+            "Inclusief glazen deksel",
+            "Geschikt voor inductie",
+        ],
+        "cons": [
+            "Beperkte maximale oventemperatuur",
+        ],
+        "verdict": (
+            "Een ruime hapjespan met deksel voor dagelijks koken, "
+            "maar met een beperkte maximale oventemperatuur."
+        ),
+        "award": None,
+    },
+    
+    "be_living_28": {
+        "slug": "be-living-28",
+        "name": "BE Living Delight Hapjespan 28 cm",
+        "description": (
+            "Aluminium hapjespan met keramische antiaanbaklaag, "
+            "hoge rand en glazen deksel."
+        ),
+        "brand": "BE Living",
+        "diameter": 28,
+        "material": "Aluminium met keramische antiaanbaklaag",
+        "features": [
+            "PFAS-vrij",
+            "Keramische antiaanbaklaag",
+            "Geschikt voor inductie",
+            "Inclusief glazen deksel",
+        ],
+        "rating": 3.9,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 49.95,
+        "price_last_checked": "2026-07-31",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "be-living-hapjespan-met-deksel-o-28-cm-sauteerpan-"
+            "keramisch-inductie-pfas-vrij-anti-aanbak-delight-series/"
+            "9300000236794346/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€",
+        "image": "hapjespan-be-living-28cm.webp",
+        "image_path": "images/products/hapjespannen",
+        "pros": [
+            "Relatief lage aanschafprijs",
+            "Inclusief glazen deksel",
+        ],
+        "cons": [
+            "Niet geschikt voor de oven",
+        ],
+        "verdict": (
+            "Een voordelige basisoptie met deksel voor gebruik op de "
+            "kookplaat, maar niet geschikt voor bereidingen in de oven."
+        ),
+        "award": None,
+    },
+    
+    "greenpan_torino_28": {
+        "slug": "greenpan-torino-28",
+        "name": "GreenPan Torino Hapjespan 28 cm",
+        "description": (
+            "Aluminium hapjespan met Thermolon keramische "
+            "antiaanbaklaag en glazen deksel."
+        ),
+        "brand": "GreenPan",
+        "diameter": 28,
+        "material": (
+            "Aluminium met Thermolon keramische antiaanbaklaag"
+        ),
+        "features": [
+            "PFAS-vrij",
+            "Thermolon keramische antiaanbaklaag",
+            "Geschikt voor inductie",
             "Inclusief glazen deksel",
         ],
         "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 71.35,
-        "price_last_checked": "2026-05-29",
+        "price": 48.99,
+        "price_last_checked": "2026-07-31",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "",
-        "retailer_url": "https://www.bol.com/nl/nl/p/bk-easy-induction-ceramic-hapjespan-met-deksel-o28cm-4-6l-inductie-pfas-vrij/9300000032891765/",
-        "price_range": "€",
-        "image": "hapjespan02.jpg",
-        "image_path": "images/hapjespannen",
-        "pros": [
-            "Ruime inhoud voor éénpansgerechten",
-            "Glazen deksel voor langzaam garen",
-            "Goede prijs voor complete set",
-        ],
-        "cons": [
-            "Niet ovenbestendig",
-            "Antiaanbakeigenschappen kunnen bij intensief gebruik sneller afnemen",
-        ],
-        "verdict": "Een uitstekende keuze voor dagelijks gebruik tegen een vriendelijke prijs.",
-    },
-    "be_living_28": {
-        "slug": "be-living-28",
-        "name": "BE Living",
-        "description": "Toegankelijke PFAS-vrije hapjespan met glazen deksel en keramische coating.",
-        "brand": "BE Living",
-        "diameter": 28,
-        "material": "Aluminium met keramische coating",
-        "features": [
-            "PFAS-vrij",
-            "Inclusief glazen deksel",
-            "Betaalbaar",
-        ],
-        "rating": 4.1,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 46.95,
-        "price_last_checked": "2026-05-29",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": "https://www.bol.com/nl/nl/p/be-living-hapjespan-met-deksel-o-28-cm-sauteerpan-keramisch-inductie-pfas-vrij-anti-aanbak-delight-series/9300000236794346/",
+        "retailer_url": (
+            "https://www.coolblue.nl/product/819625/"
+            "greenpan-torino-keramische-hapjespan-met-deksel-28-cm.html"
+        ),
+        "official_url": "",
+        "availability_label": "",
         "price_range": "€€",
-        "image": "hapjespan06.jpg",
-        "image_path": "images/hapjespannen",
+        "image": "hapjespan-greenpan-torino-28cm.webp",
+        "image_path": "images/products/hapjespannen",
         "pros": [
-            "Met glazen deksel",
-            "PFAS-vrije coating",
-            "Vriendelijk geprijsd",
-        ],
-        "cons": [
-            "Coating minder duurzaam",
-            "Niet geschikt voor metalen spatels",
-        ],
-        "verdict": "Een voordelige keuze voor wie een complete PFAS-vrije hapjespan zoekt.",
-    },
-    "greenpan_torino_28": {
-        "slug": "greenpan-torino-28",
-        "name": "GreenPan Torino",
-        "description": "Solide PFAS-vrije hapjespan met Thermolon-keramische coating.",
-        "brand": "GreenPan",
-        "diameter": 28,
-        "material": "Aluminium met keramische coating",
-        "features": [
-            "PFAS-vrij",
-            "Thermolon coating",
-            "Lichtgewicht",
-        ],
-        "rating": 4.4,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 54.00,
-        "price_last_checked": "2026-05-29",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": "https://www.coolblue.nl/product/819625/greenpan-torino-keramische-hapjespan-met-deksel-28-cm.html",
-        "price_range": "€€",
-        "image": "hapjespan07.jpg",
-        "image_path": "images/hapjespannen",
-        "pros": [
-            "Goede prijs-kwaliteitverhouding",
-            "Fijne antiaanbakeigenschappen",
-            "Relatief licht",
-        ],
-        "cons": [
-            "Langdurig gebruik op zeer hoge temperaturen kan de antiaanbakeigenschappen sneller verminderen",
-            "Coating vraagt voorzichtig gebruik",
-        ],
-        "verdict": "Een toegankelijke hapjespan voor dagelijkse maaltijden en regelmatig gebruik.",
-    },
-    "beka_cicla_28": {
-        "slug": "beka-cicla-28",
-        "name": "Beka Cicla",
-        "description": "PFAS-vrije hapjespan van gerecycled aluminium met keramische coating en glazen deksel.",
-        "brand": "Beka",
-        "diameter": 28,
-        "material": "Gerecycled aluminium met keramische coating",
-        "features": [
-            "PFAS-vrij",
-            "Gerecycled aluminium",
+            "Relatief gunstig geprijsd",
             "Inclusief glazen deksel",
-        ],
-        "rating": 4.4,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 85.00,
-        "price_last_checked": "2026-05-29",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": "https://www.bol.com/nl/nl/p/beka-cicla-sauteerpan-hapjespan-o-28cm-met-deksel-uit-glas-gerecycleerd-rvs-pfas-vrij-2-stevige-handvaten-geschikt-voor-inductie-vaatwasser/9300000226669764/",
-        "price_range": "€€",
-        "image": "hapjespan10.jpg",
-        "image_path": "images/hapjespannen",
-        "pros": [
-            "PFAS-vrije keramische laag",
-            "Duurzaam materiaal",
-            "Inclusief glazen deksel",
+            "Relatief licht uitgevoerd",
         ],
         "cons": [
-            "Niet geschikt voor metalen spatels",
-            "Gevoelig voor schuurmiddelen",
+            "Coating vraagt gebruik op lage tot middelhoge temperatuur",
+            "Niet geschikt voor metalen kookgerei",
         ],
-        "verdict": "Een duurzame hapjespan voor wie dagelijks kookt en waarde hecht aan gerecyclede materialen.",
+        "verdict": (
+            "Een toegankelijke middenklasseoptie met deksel "
+            "voor dagelijkse maaltijden."
+        ),
+        "award": None,
     },
 
 # 24 CM HAPJESPANNEN
     "greenpan_barcelona_pro_24": {
         "slug": "greenpan-barcelona-pro-hapjespan-24",
-        "name": "GreenPan Barcelona Pro",
-        "description": "Premium 24 cm hapjespan met Thermolon™ Infinity Pro-coating en glazen deksel, geschikt voor bakken, sudderen en complete maaltijden voor 1–3 personen.",
+        "name": "GreenPan Barcelona Pro Hapjespan 24 cm",
+        "description": (
+            "Aluminium hapjespan van 24 cm met keramische antiaanbaklaag "
+            "en glazen deksel voor bakken, sudderen en éénpansgerechten."
+        ),
         "brand": "GreenPan",
         "diameter": 24,
-        "material": "Aluminium met keramische coating",
+        "material": (
+            "Aluminium met Thermolon Infinity Pro keramische antiaanbaklaag"
+        ),
         "features": [
             "PFAS-vrij",
-            "Thermolon Infinity Pro coating",
-            "Inductie- en ovenbestendig",
+            "Thermolon Infinity Pro keramische antiaanbaklaag",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 220 °C",
+            "Vaatwasserbestendig; handwas aanbevolen",
             "Inclusief glazen deksel",
-        ],
-        "rating": 4.8,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 149.90,
-        "price_last_checked": "2026-05-29",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": "https://www.greenpan.nl/products/barcelona-pro-hapjespan-met-deksel-24cm",
-        "price_range": "€€€€",
-        "image": "greenpan-barcelona-pro-24cm.jpg",
-        "image_path": "images/hapjespannen",
-        "pros": [
-            "Diepe vorm geschikt voor pasta's, sauzen en éénpansgerechten",
-            "Stevige inductiebodem met gelijkmatige warmteverdeling",
-            "Glazen deksel maakt langzaam garen eenvoudig",
-        ],
-        "cons": [
-            "Hogere prijsklasse",
-            "Iets zwaarder door RVS buitenwand",
-        ],
-        "verdict": "De meest complete 24 cm hapjespan voor dagelijks koken en kleinere huishoudens.",
-        "award": "🏆 Beste keuze",
-    },
-
-"bk_brilliant_24": {
-   "slug": "bk-brilliant-24",
-   "name": "BK Brilliant Keramische Hapjespan",
-   "description": "PFAS-vrije keramische hapjespan met moderne afwerking en solide bouwkwaliteit, geschikt voor dagelijks gebruik in het 24 cm formaat.",
-   "brand": "BK",
-   "diameter": 24,
-   "material": "Aluminium met keramische coating",
-   "features": [
-       "Keramische antiaanbaklaag",
-       "Geschikt voor inductie",
-   ],
-   "rating": 4.4,
-   "rating_count": None,
-   "rating_source": "editorial",
-   "price": 44.64,
-    "price_last_checked": "2026-05-29",
-   "currency": "EUR",
-   "availability": "InStock",
-   "affiliate_url": "",
-    "retailer_url": "https://www.bol.com/nl/nl/p/bk-brilliant-hapjespan-met-deksel-o24-cm-inductie-anti-aanbak-pfas-vrij/9300000121455778/",
-   "price_range": "€€",
-   "image": "hapjespan_bk_brilliant_24cm.jpg",
-   "image_path": "images/hapjespannen",
-   "pros": [
-       "Goede balans tussen prijs en prestaties",
-       "Praktisch formaat voor dagelijkse maaltijden",
-       "Geschikt voor alle warmtebronnen",
-   ],
-   "cons": [
-       "Warmteverdeling minder verfijnd dan premium modellen",
-       "Niet bedoeld voor zeer hoge temperaturen",
-   ],
-    "verdict": "Een sterke middenklasse keuze voor dagelijks gebruik zonder premium prijs.",
-   "award": None,
-},
-
-"woll_ecolite_qxr_24": {
-        "slug": "woll-ecolite-qxr-24",
-        "name": "WOLL Eco Lite QXR",
-        "description": "Premium lichte hapjespan van gerecycled aluminium met QXR-keramische coating en sterke warmtecontrole.",
-        "brand": "WOLL",
-        "diameter": 24,
-        "material": "Gerecycled aluminium met keramische coating",
-        "features": [
-            "PFAS-vrij",
-            "QXR-keramische coating",
-            "Lichtgewicht premium constructie",
         ],
         "rating": 4.7,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 81.00,
-        "price_last_checked": "2026-05-29",
+        "price": 149.90,
+        "price_last_checked": "2026-07-31",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "",
-        "retailer_url": "https://www.bol.com/nl/nl/p/hapjespan-o-24-cm-2-4-l-gerecycled-aluminium-qxr-non-stick-inductie-woll-ecolite-qxr/9300000180122500/",
-        "price_range": "€€€",
-        "image": "woll_ecolite_qxr_24cm.jpg",
-        "image_path": "images/hapjespannen",
+        "retailer_url": (
+            "https://www.greenpan.nl/products/"
+            "barcelona-pro-hapjespan-met-deksel-24cm"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€€€",
+        "image": "hapjespan-greenpan-barcelona-pro-24cm.webp",
+        "image_path": "images/products/hapjespannen",
         "pros": [
-            "Sterke warmteverdeling voor gelijkmatig garen",
-            "Opvallend licht voor een premium hapjespan",
-            "Diepe vorm geschikt voor grotere maaltijden",
+            "Ovenbestendig tot 220 °C",
+            "Geschikt voor bakken, sudderen en éénpansgerechten",
+            "Inclusief glazen deksel",
         ],
         "cons": [
-            "Hogere prijsklasse",
-            "Handwas aanbevolen",
+            "Hoge aanschafprijs",
+            "RVS handgrepen kunnen tijdens ovengebruik heet worden",
         ],
-        "verdict": "Premium keuze voor intensieve thuiskoks die een lichte maar hoogwaardige hapjespan zoeken.",
-        "award": "💎 Premium keuze",
+        "verdict": (
+            "Onze beste allround keuze door de brede inzetbaarheid, "
+            "het deksel en de hoge maximale oventemperatuur."
+        ),
+        "award": "🏆 Beste keuze",
     },
 
-    "greenchef_prime_24": {
-        "slug": "greenchef-prime-24",
-        "name": "GreenChef Prime Keramische Hapjespan",
-        "description": "Hoogwaardige PFAS-vrije keramische hapjespan met duurzame Thermolon™-coating, ontworpen voor dagelijks gebruik met betere slijtvastheid dan instapmodellen.",
-        "brand": "GreenChef",
+    "bk_brilliant_24": {
+        "slug": "bk-brilliant-24",
+        "name": "BK Brilliant Keramische Hapjespan 24 cm",
+        "description": (
+            "Aluminium hapjespan met een inhoud van 2,65 liter, keramische antiaanbaklaag, "
+            "en glazen deksel."
+        ),
+        "brand": "BK",
         "diameter": 24,
-        "material": "Aluminium met keramische coating",
-        "features": [
-            "Thermolon™ keramische coating",
-            "Geschikt voor inductie",
-        ],
-        "rating": 4.5,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 49.90,
-        "price_last_checked": "2026-05-29",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": "https://www.bol.com/nl/nl/p/greenchef-prime-stoofpan-24cm-pfas-vrij-hapjespan-met-deksel-geschikt-voor-inductie/9300000223447989/",
-        "price_range": "€€",
-        "image": "greenchef_prime_24cm.jpg",
-        "image_path": "images/hapjespannen",
-        "pros": [
-            "Gelijkmatige warmteverdeling",
-            "Geschikt voor dagelijkse éénpansgerechten",
-            "Betere slijtvastheid dan veel instapmodellen",
-        ],
-        "cons": [
-            "Hoger geprijsd dan budgetalternatieven",
-            "Niet bedoeld voor extreem hoge temperaturen",
-        ],
-        "verdict": "Een sterke keuze voor wie iets meer kwaliteit wil dan een instapmodel zonder premium prijzen.",
-    },
-
-    "bk_balans_plus_24": {
-       "slug": "bk-balans-plus-24",
-       "name": "BK Balans+ Keramische Hapjespan",
-       "description": "PFAS-vrije keramische hapjespan van 24 cm met stevige inductiebodem, glazen deksel en een goede balans tussen gebruiksgemak, duurzaamheid en prijs.",
-       "brand": "BK",
-       "diameter": 24,
-       "material": "Keramisch",
-       "features": [
-           "PFAS-vrije keramische coating",
-           "Geschikt voor inductie",
-           "Inclusief glazen deksel",
-           "Gerecycled aluminium"
-       ],
-       "rating": 4.5,
-       "rating_count": None,
-       "rating_source": "editorial",
-       "price": 49.90,
-       "price_last_checked": "2026-05-29",
-       "currency": "EUR",
-       "availability": "InStock",
-       "affiliate_url": "",
-        "retailer_url": "https://bk.nl/products/balans-hapjespan",
-       "price_range": "€€",
-       "image": "bk_balans_plus_24cm.jpg",
-       "image_path": "images/hapjespannen",
-       "pros": [
-           "PFAS-vrije keramische coating",
-           "Stevige inductiebodem met gelijkmatige warmteverdeling",
-           "Inclusief glazen deksel",
-           "Goede prijs-kwaliteitverhouding"
-       ],
-       "cons": [
-           "Niet geschikt voor metalen spatels",
-           "Keramische eigenschappen nemen op termijn af bij intensief gebruik"
-       ],
-       "verdict": "Een van de meest uitgebalanceerde PFAS-vrije hapjespannen in het middensegment. Ideaal voor dagelijks gebruik, sauzen, pasta's en kleinere eenpansgerechten.",
-    },
-
-
-"kochstar_essenz_24": {
-   "slug": "kochstar-essenz-hapjespan-24",
-   "name": "Kochstar Essenz Keramische Hapjespan",
-   "description": "Betaalbare PFAS-vrije keramische hapjespan in 24 cm, geschikt voor dagelijks gebruik en kleinere huishoudens.",
-   "brand": "Kochstar",
-   "diameter": 24,
-   "material": "Aluminium met keramische coating",
-   "features": [
-       "Keramische antiaanbaklaag",
-       "Geschikt voor inductie",
-   ],
-   "rating": 4.0,
-   "rating_count": None,
-   "rating_source": "editorial",
-   "price": 19.99,
-   "price_last_checked": "2026-05-29",
-   "currency": "EUR",
-   "availability": "OutOfStock",
-   "affiliate_url": "",
-    "retailer_url": "https://www.bol.com/nl/nl/p/kochstar-essenz-keramische-inductie-kookpan-met-deksel-24cm-3-5l-pfas-vrij-inductie-kookpan-keramische-anti-aanbaklaag-koelgreep-zwart/9300000231848098/",
-   "price_range": "€",
-   "image": "hapjespan_kochstar_essenz_24cm.jpg",
-   "image_path": "images/hapjespannen",
-   "pros": [
-       "Zeer toegankelijke prijs",
-       "Compact formaat voor kleinere huishoudens",
-       "Eenvoudig in gebruik",
-   ],
-   "cons": [
-       "Eenvoudigere constructie dan duurdere modellen",
-       "Niet bedoeld voor intensief of professioneel gebruik",
-   ],
-    "verdict": "Een eenvoudige instapper voor kleinere huishoudens of incidenteel gebruik.",
-    "award":"💰 Budget keuze",
-},
-
-
-"beka_cicla_24": {
-        "slug": "beka-cicla-24",
-        "name": "Beka Cicla",
-        "description": "PFAS-vrije hapjespan van gerecycled aluminium met keramische coating en glazen deksel.",
-        "brand": "Beka",
-        "diameter": 24,
-        "material": "Gerecycled aluminium met keramische coating",
+        "material": "Aluminium met keramische antiaanbaklaag",
         "features": [
             "PFAS-vrij",
-            "Gerecycled aluminium",
+            "Keramische antiaanbaklaag",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 160 °C",
             "Inclusief glazen deksel",
         ],
         "rating": 4.4,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 74.95,
+        "price": 56.00,
+        "price_last_checked": "2026-07-31",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "",
-        "retailer_url": "https://www.bol.com/nl/nl/p/beka-cicla-sauteerpan-hapjespan-o-24cm-met-deksel-uit-glas-gerecycleerd-rvs-pfas-vrij-geschikt-voor-inductie-vaatwasser/9300000226669762/",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "bk-brilliant-hapjespan-met-deksel-o24-cm-inductie-"
+            "anti-aanbak-pfas-vrij/9300000121455778/"
+        ),
+        "official_url": "",
+        "availability_label": "",
         "price_range": "€€",
-        "image": "beka_cicla_24cm.jpg",
-        "image_path": "images/hapjespannen",
+        "image": "hapjespan-bk-brilliant-24cm.webp",
+        "image_path": "images/products/hapjespannen",
         "pros": [
-            "Gemaakt van gerecycled aluminium",
-            "Glazen deksel voor langzaam garen",
-            "Stevige constructie voor dagelijks gebruik",
+            "Inclusief glazen deksel",
+            "Ovenbestendig tot 160 °C",
         ],
         "cons": [
-            "Niet geschikt voor metalen spatels",
-            "Gevoelig voor schuurmiddelen",
+            "Beperkte maximale oventemperatuur",
+            "Kunststof greep beperkt gebruik bij hogere temperaturen",
         ],
-        "verdict": "Een duurzame hapjespan voor wie dagelijks kookt en waarde hecht aan gerecyclede materialen.",
+        "verdict": (
+            "Een complete middenklasseoptie voor dagelijkse bereidingen "
+            "en kleinere éénpansgerechten."
+        ),
+        "award": None,
     },
+
+    "woll_ecolite_qxr_24": {
+        "slug": "woll-ecolite-qxr-24",
+        "name": "WOLL Eco Lite QXR Hapjespan 24 cm",
+        "description": (
+            "Hapjespan gemaakt van gerecycled "
+            "aluminium met QXR keramische antiaanbaklaag en inhoud van 2,4 liter."
+        ),
+        "brand": "WOLL",
+        "diameter": 24,
+        "material": (
+            "Gerecycled aluminium met QXR keramische antiaanbaklaag"
+        ),
+        "features": [
+            "PFAS-vrij",
+            "QXR keramische antiaanbaklaag",
+            "Geschikt voor inductie",
+        ],
+        "rating": 4.6,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 81.00,
+        "price_last_checked": "2026-07-31",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "hapjespan-o-24-cm-2-4-l-gerecycled-aluminium-qxr-"
+            "non-stick-inductie-woll-ecolite-qxr/9300000180122500/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€€",
+        "image": "hapjespan-woll-ecolite-qxr-24cm.webp",
+        "image_path": "images/products/hapjespannen",
+        "pros": [
+            "Relatief licht uitgevoerd",
+            "Geschikt voor inductie",
+        ],
+        "cons": [
+            "Hoge aanschafprijs",
+            "Afwassen met de hand aanbevolen",
+        ],
+        "verdict": (
+            "Onze premiumkeuze voor wie een relatief lichte hapjespan "
+            "van gerecycled aluminium zoekt."
+        ),
+        "award": "💎 Premium keuze",
+    },
+
+
+    "greenchef_prime_24": {
+        "slug": "greenchef-prime-24",
+        "name": "GreenChef Prime Keramische Hapjespan 24 cm",
+        "description": (
+            "Hapjespan van gerecycled aluminium met keramische "
+            "antiaanbaklaag, glazen deksel en een inhoud van 2,65 liter."
+        ),
+        "brand": "GreenChef",
+        "diameter": 24,
+        "material": (
+            "Gerecycled aluminium met Thermolon keramische antiaanbaklaag"
+        ),
+        "features": [
+            "PFAS-vrij",
+            "Thermolon keramische antiaanbaklaag",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 160 °C",
+            "Vaatwasserbestendig",
+            "Inclusief glazen deksel",
+        ],
+        "rating": 4.3,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 49.90,
+        "price_last_checked": "2026-07-31",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "greenchef-prime-stoofpan-24cm-pfas-vrij-hapjespan-"
+            "met-deksel-geschikt-voor-inductie/9300000223447989/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€€",
+        "image": "hapjespan-greenchef-prime-24cm.webp",
+        "image_path": "images/products/hapjespannen",
+        "pros": [
+            "Relatief gunstige prijs inclusief deksel",
+            "Geschikt voor inductie en vaatwasser",
+        ],
+        "cons": [
+            "Beperkte maximale oventemperatuur",
+        ],
+        "verdict": (
+            "Onze budgetkeuze door de complete uitrusting, het deksel "
+            "en de relatief gunstige prijs."
+        ),
+        "award": "💰 Budget keuze",
+    },
+
+    "kochstar_essenz_24": {
+        "slug": "kochstar-essenz-hapjespan-24",
+        "name": "Kochstar Essenz Keramische Hapjespan 24 cm",
+        "description": (
+            "Aluminium hapjespan met keramische "
+            "antiaanbaklaag, glazen deksel en een inhoud van 3,5 liter."
+        ),
+        "brand": "Kochstar",
+        "diameter": 24,
+        "material": "Aluminium met keramische antiaanbaklaag",
+        "features": [
+            "PFAS-vrij",
+            "Keramische antiaanbaklaag",
+            "Geschikt voor inductie",
+            "Inclusief glazen deksel",
+            "Koelgreep",
+        ],
+        "rating": 4.0,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 19.99,
+        "price_last_checked": "2026-07-31",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "kochstar-essenz-keramische-inductie-kookpan-met-deksel-"
+            "24cm-3-5l-pfas-vrij-inductie-kookpan-keramische-"
+            "anti-aanbaklaag-koelgreep-zwart/9300000231848098/"
+        ),
+        "official_url": "",
+        "availability_label": "",
+        "price_range": "€",
+        "image": "hapjespan-kochstar-essenz-24cm.webp",
+        "image_path": "images/products/hapjespannen",
+        "pros": [
+            "Zeer lage aanschafprijs",
+            "Ruime inhoud van 3,5 liter",
+            "Inclusief glazen deksel",
+        ],
+        "cons": [
+            "Beperkt ovenbestendig tot 130 °C",
+            "Niet vaatwasbestendig",
+        ],
+        "verdict": (
+            "Een zeer voordelige hapjespan met deksel en ruime inhoud, "
+            "maar met beperkte ovenbestendigheid en alleen geschikt voor handwas."
+        ),
+        "award": None,
+    },
+
+
+# "beka_cicla_24": {
+#         "slug": "beka-cicla-24",
+#         "name": "Beka Cicla",
+#         "description": "PFAS-vrije hapjespan van gerecycled aluminium met keramische coating en glazen deksel.",
+#         "brand": "Beka",
+#         "diameter": 24,
+#         "material": "Gerecycled aluminium met keramische coating",
+#         "features": [
+#             "PFAS-vrij",
+#             "Gerecycled aluminium",
+#             "Inclusief glazen deksel",
+#         ],
+#         "rating": 4.4,
+#         "rating_count": None,
+#         "rating_source": "editorial",
+#         "price": 74.95,
+#         "currency": "EUR",
+#         "availability": "InStock",
+#         "affiliate_url": "",
+#         "retailer_url": "https://www.bol.com/nl/nl/p/beka-cicla-sauteerpan-hapjespan-o-24cm-met-deksel-uit-glas-gerecycleerd-rvs-pfas-vrij-geschikt-voor-inductie-vaatwasser/9300000226669762/",
+#         "price_range": "€€",
+#         "image": "hapjespan_beka_cicla_24cm.webp",
+#     "image_path": "images/products/hapjespannen",
+#         "pros": [
+#             "Gemaakt van gerecycled aluminium",
+#             "Glazen deksel voor langzaam garen",
+#             "Stevige constructie voor dagelijks gebruik",
+#         ],
+#         "cons": [
+#             "Niet geschikt voor metalen spatels",
+#             "Gevoelig voor schuurmiddelen",
+#         ],
+#         "verdict": "Een duurzame hapjespan voor wie dagelijks kookt en waarde hecht aan gerecyclede materialen.",
+#     },
 
 
 # 30 CM HAPJESPANNEN
@@ -566,7 +724,7 @@ PRODUCTS = {
         "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-barcelona-infinity-pro-hapjespan-met-deksel-30cm-zwart-inductie-pfas-vrij/9200000091127472/",
         "price_range": "€€",
         "image": "greenpan-barcelona-pro-30cm.jpg",
-        "image_path": "images/hapjespannen",
+        "image_path": "images/products/hapjespannen",
         "pros": [
             "Zeer duurzame keramische coating",
             "Met glazen deksel",

@@ -7,11 +7,11 @@
         if (!img || !swatches.length) {
             return;
         }
-        var affiliate = card.querySelector("[data-variant-affiliate]");
+        var link = card.querySelector("[data-variant-affiliate]");
         var priceEl = card.querySelector("[data-variant-price]");
         var baseAlt = img.getAttribute("data-base-alt") || img.alt || "";
-        var baseAffiliate = affiliate ? affiliate.getAttribute("data-base-affiliate") || "" : "";
         var basePrice = priceEl ? priceEl.getAttribute("data-base-price") || "" : "";
+        var defaultLabel = link ? link.textContent.trim() : "";
         var requestId = 0;
 
         function activate(swatch) {
@@ -20,7 +20,14 @@
             }
 
             var src = swatch.getAttribute("data-image");
-            var url = swatch.getAttribute("data-affiliate") || baseAffiliate;
+            // Resolved linkgegevens per swatch komen uit Django (centrale
+            // resolver, incl. gedocumenteerde familie-fallback naar de
+            // productniveau-link). Geen eigen prioriteitslogica in JS en
+            // nooit de URL van een andere swatch.
+            var url = swatch.getAttribute("data-url") || "";
+            var linkType = swatch.getAttribute("data-link-type") || "none";
+            var rel = swatch.getAttribute("data-rel") || "";
+            var label = swatch.getAttribute("data-label") || "";
             // Afgeleide niveaus zetten het attribuut altijd (ook leeg):
             // een aanwezige lege data-price wist het oude niveau expliciet
             // en valt nooit terug op productniveau. Alleen swatches zonder
@@ -51,16 +58,27 @@
                 preload.src = src;
             }
 
-            // Expliciet zetten óf wissen: geen stale waarde van een vorige
-            // swatch laten staan. Fallback naar de basiswaarde van het
-            // product (data-base-*) is gedocumenteerd familiebeleid.
-            if (affiliate) {
+            // Expliciet zetten óf wissen: geen stale href/rel/label van een
+            // vorige swatch laten staan.
+            if (link) {
                 if (url) {
-                    affiliate.setAttribute("href", url);
-                    affiliate.hidden = false;
+                    link.setAttribute("href", url);
+                    if (rel) {
+                        link.setAttribute("rel", rel);
+                    } else {
+                        link.removeAttribute("rel");
+                    }
+                    link.setAttribute("data-link-type", linkType);
+                    link.textContent = label || defaultLabel;
+                    link.classList.toggle("primary", linkType !== "official");
+                    link.hidden = false;
                 } else {
-                    affiliate.removeAttribute("href");
-                    affiliate.hidden = true;
+                    link.removeAttribute("href");
+                    link.removeAttribute("rel");
+                    link.setAttribute("data-link-type", "none");
+                    link.textContent = "";
+                    link.classList.remove("primary");
+                    link.hidden = true;
                 }
             }
 

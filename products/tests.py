@@ -309,10 +309,10 @@ class VariantPageTests(TestCase):
             if "Igluu" in e["item"]["name"]
         ]
         self.assertEqual(len(igluu), 1)  # one Product entity, not one per shape
-        offer = igluu[0]["offers"]
-        self.assertEqual(offer["url"], "https://www.amazon.nl/dp/B08DYF9GXP/?th=1")
-        self.assertEqual(offer["price"], 24.95)
-        self.assertEqual(offer["availability"], "https://schema.org/InStock")
+        # Beleid: alleen affiliate_url levert een Offer. De Igluu-links
+        # zijn naar retailer_url gemigreerd, dus geen Offer meer — en zeker
+        # geen lege of retailer-URL in structured data.
+        self.assertNotIn("offers", igluu[0])
 
     def test_igluu_detail_page_uses_default_variant(self):
         response = self.client.get("/product/igluu-meal-prep-3delig/")
@@ -1090,10 +1090,13 @@ class VariantAuditCommandTests(TestCase):
         output = self._run()
         self.assertIn("Structurele fouten: 0", output)
 
-    def test_command_detects_known_airfryer_jsonld_mismatch(self):
+    def test_command_reports_airfryer_swatch_category(self):
+        # De eerder bekende inconsistent_jsonld_variant-melding is verdwenen
+        # doordat de affiliate-URL's naar retailer_url zijn gemigreerd; de
+        # audit moet de swatchcategorie nog steeds volledig rapporteren.
         output = self._run("--category", "airfryers")
-        self.assertIn("inconsistent_jsonld_variant", output)
-        self.assertIn("greenpan_silhouette_xl_5l", output)
+        self.assertIn("Variantproducten (kleurswatches): 2", output)
+        self.assertIn("greenpan_bistro_xxl_7_2l", output)
 
     def test_command_does_not_mutate_source_data(self):
         import copy as _copy
@@ -1233,7 +1236,8 @@ class LockNLockCapacityVariantTests(TestCase):
         product = self._product()
         self.assertEqual(product["capacities"], [630])
         self.assertEqual(product["price"], 9.95)
-        self.assertIn("630-ml", product["affiliate_url"])
+        self.assertIn("630-ml", product["retailer_url"])
+        self.assertEqual(product["affiliate_url"], "")
         self.assertEqual(product["image"], "locknlock-630ml-enkel.webp")
 
     def test_capacity_formatting(self):
@@ -1297,13 +1301,13 @@ class LockNLockCapacityVariantTests(TestCase):
         self.assertNotIn("€0", html)
         self.assertNotIn(">None<", html)
 
-    def test_each_variant_keeps_own_affiliate_link(self):
+    def test_each_variant_keeps_own_link(self):
         product = self._product()
-        urls = [v["affiliate_url"] for v in product["shape_variants"]]
+        urls = [v["resolved_link"].url for v in product["shape_variants"]]
         self.assertEqual(len(urls), len(set(urls)))
         json_data = product["variant_json_data"]
         self.assertEqual(
-            [v["affiliate_url"] for v in json_data["variants"]], urls
+            [v["resolved_url"] for v in json_data["variants"]], urls
         )
 
     def test_default_renders_serverside_without_js(self):
@@ -1330,9 +1334,9 @@ class LockNLockCapacityVariantTests(TestCase):
             if "Lock&Lock" in e["item"]["name"]
         ]
         self.assertEqual(len(entries), 1)
-        offer = entries[0]["offers"]
-        self.assertEqual(offer["price"], 9.95)
-        self.assertIn("630-ml", offer["url"])
+        # Retailer-only product: geen Offer (affiliate-only beleid) en
+        # geen lege/retailer-URL in structured data.
+        self.assertNotIn("offers", entries[0])
         positions = [e["position"] for e in itemlist["itemListElement"]]
         self.assertEqual(len(positions), len(set(positions)))
 
@@ -1705,25 +1709,111 @@ class ProductLinkResolverTests(TestCase):
         self.assertEqual(link.url, "https://a.example/v1")
         self.assertEqual(link.link_type, "affiliate")
 
-    def test_variant_without_link_never_falls_back(self):
+    def _two_variant_product(self, product_extra=None, v1_extra=None,
+                             v2_extra=None):
         product = {
             "slug": "test-product",
             "name": "Testproduct",
-            "affiliate_url": "https://a.example/family",
             "variant_selectors": [{"key": "shape", "label": "Vorm"}],
             "variants": [
                 {"id": "v1", "options": {"shape": "rond"},
-                 "option_labels": {"shape": "Rond"},
-                 "affiliate_url": "https://a.example/v1", "is_default": True},
+                 "option_labels": {"shape": "Rond"}, "is_default": True,
+                 **(v1_extra or {})},
                 {"id": "v2", "options": {"shape": "vierkant"},
-                 "option_labels": {"shape": "Vierkant"}},
+                 "option_labels": {"shape": "Vierkant"}, **(v2_extra or {})},
             ],
         }
+        product.update(product_extra or {})
         prepare_product_variants(product)
-        v2 = product["shape_variants"][1]
-        link = resolve_product_link(product, v2)
+        return product
+
+    def test_variant_without_link_falls_back_to_family_affiliate(self):
+        product = self._two_variant_product(
+            product_extra={"affiliate_url": "https://a.example/family"},
+            v1_extra={"affiliate_url": "https://a.example/v1"},
+        )
+        link = resolve_product_link(product, product["shape_variants"][1])
+        self.assertEqual(link.url, "https://a.example/family")
+        self.assertEqual(link.link_type, "affiliate")
+        self.assertIn("sponsored", link.rel)
+
+    def test_variant_without_link_falls_back_to_family_retailer(self):
+        product = self._two_variant_product(
+            product_extra={"retailer_url": "https://shop.example/family"},
+            v1_extra={"affiliate_url": "https://a.example/v1"},
+        )
+        link = resolve_product_link(product, product["shape_variants"][1])
+        self.assertEqual(link.url, "https://shop.example/family")
+        self.assertEqual(link.link_type, "retailer")
+        self.assertNotIn("sponsored", link.rel)
+
+    def test_variant_without_link_falls_back_to_family_official(self):
+        product = self._two_variant_product(
+            product_extra={"official_url": "https://brand.example/family"},
+        )
+        link = resolve_product_link(product, product["shape_variants"][1])
+        self.assertEqual(link.url, "https://brand.example/family")
+        self.assertEqual(link.link_type, "official")
+        self.assertEqual(link.rel, "noopener")
+
+    def test_variant_own_retailer_beats_family_affiliate(self):
+        """Eerst de volledige prioriteit binnen de variant zelf; pas
+        daarna de familie-fallback."""
+        product = self._two_variant_product(
+            product_extra={"affiliate_url": "https://a.example/family"},
+            v2_extra={"retailer_url": "https://shop.example/v2"},
+        )
+        link = resolve_product_link(product, product["shape_variants"][1])
+        self.assertEqual(link.url, "https://shop.example/v2")
+        self.assertEqual(link.link_type, "retailer")
+
+    def test_variant_and_family_without_urls_gives_no_link(self):
+        product = self._two_variant_product()
+        link = resolve_product_link(product, product["shape_variants"][1])
         self.assertEqual(link.url, "")
         self.assertEqual(link.link_type, "none")
+
+    def test_fallback_never_uses_other_variant_url(self):
+        product = self._two_variant_product(
+            v1_extra={"affiliate_url": "https://a.example/v1"},
+        )
+        link = resolve_product_link(product, product["shape_variants"][1])
+        self.assertEqual(link.url, "")
+
+    def test_family_fallback_ignores_empty_strings_and_none(self):
+        product = self._two_variant_product(
+            product_extra={
+                "affiliate_url": None,
+                "retailer_url": "  ",
+                "official_url": "https://brand.example/family",
+            },
+        )
+        link = resolve_product_link(product, product["shape_variants"][1])
+        self.assertEqual(link.url, "https://brand.example/family")
+
+    def test_variant_json_payload_uses_family_fallback(self):
+        product = self._two_variant_product(
+            product_extra={"retailer_url": "https://shop.example/family"},
+            v1_extra={"affiliate_url": "https://a.example/v1"},
+        )
+        payloads = product["variant_json_data"]["variants"]
+        self.assertEqual(payloads[0]["resolved_url"], "https://a.example/v1")
+        self.assertEqual(payloads[0]["resolved_link_type"], "affiliate")
+        self.assertEqual(payloads[1]["resolved_url"], "https://shop.example/family")
+        self.assertEqual(payloads[1]["resolved_link_type"], "retailer")
+        self.assertNotIn("sponsored", payloads[1]["resolved_rel"])
+
+    def test_switching_variants_updates_resolved_link_types(self):
+        product = self._two_variant_product(
+            v1_extra={"retailer_url": "https://shop.example/v1"},
+            v2_extra={"affiliate_url": "https://a.example/v2"},
+        )
+        self.assertEqual(product["resolved_link"].link_type, "retailer")
+        set_display_variant(product, product["shape_variants"][1])
+        self.assertEqual(product["resolved_link"].link_type, "affiliate")
+        self.assertEqual(product["resolved_link"].url, "https://a.example/v2")
+        set_display_variant(product, product["shape_variants"][0])
+        self.assertEqual(product["resolved_link"].link_type, "retailer")
 
     def test_variant_retailer_url(self):
         product = self._variant_product({"retailer_url": "https://shop.example/v1"})
@@ -1832,3 +1922,72 @@ class ProductLinkPartialTests(TestCase):
             "official_url": "https://brand.example/x",
             "price": 99, "currency": "EUR", "availability": "InStock",
         }))
+
+
+class SwatchVariantLinkTests(TestCase):
+    """Per-swatch resolved links (kleurswatch-systeem, variants zonder id)."""
+
+    def _product(self, product_extra=None, swatches=None):
+        from utils.variant_helpers import (
+            apply_resolved_link, resolve_swatch_variant_links,
+        )
+        product = {
+            "slug": "swatch-product",
+            "name": "Swatchproduct",
+            "variants": swatches or [],
+        }
+        product.update(product_extra or {})
+        apply_resolved_link(product)
+        resolve_swatch_variant_links(product)
+        return product
+
+    def test_swatch_retailer_url_used_without_sponsored(self):
+        product = self._product(swatches=[
+            {"name": "Zwart", "retailer_url": "https://shop.example/zwart"},
+        ])
+        link = product["variants"][0]["resolved_link"]
+        self.assertEqual(link.url, "https://shop.example/zwart")
+        self.assertEqual(link.link_type, "retailer")
+        self.assertNotIn("sponsored", link.rel)
+        self.assertTrue(product["swatch_has_any_link"])
+
+    def test_swatch_priority_within_own_fields(self):
+        product = self._product(swatches=[
+            {"name": "Zwart",
+             "affiliate_url": "https://a.example/zwart",
+             "retailer_url": "https://shop.example/zwart"},
+        ])
+        link = product["variants"][0]["resolved_link"]
+        self.assertEqual(link.link_type, "affiliate")
+        self.assertIn("sponsored", link.rel)
+
+    def test_swatch_without_url_falls_back_to_product_level(self):
+        product = self._product(
+            product_extra={"official_url": "https://brand.example/fam"},
+            swatches=[
+                {"name": "Zwart", "affiliate_url": "https://a.example/zwart"},
+                {"name": "Beige"},
+            ],
+        )
+        beige = product["variants"][1]["resolved_link"]
+        self.assertEqual(beige.url, "https://brand.example/fam")
+        self.assertEqual(beige.link_type, "official")
+        self.assertEqual(beige.rel, "noopener")
+        # Nooit de URL van een andere swatch.
+        self.assertNotEqual(beige.url, "https://a.example/zwart")
+
+    def test_swatch_and_product_without_urls(self):
+        product = self._product(swatches=[{"name": "Zwart"}])
+        self.assertEqual(product["variants"][0]["resolved_link"].url, "")
+        self.assertFalse(product["swatch_has_any_link"])
+
+    def test_airfryers_xl_page_renders_swatch_link_data(self):
+        # De swatchproducten (GreenPan Bistro XXL, Bourgini Pure) staan in
+        # het xl-formaat, niet in de compact-default.
+        html = self.client.get("/airfryers/xl/").content.decode()
+        self.assertIn("data-variant-swatch", html)
+        self.assertIn('data-url="', html)
+        # Swatches met retailer_url: resolved zonder sponsored-rel.
+        self.assertIn('data-rel="nofollow noopener"', html)
+        swatch_area = html[html.find("variant-swatches"):]
+        self.assertIn('data-link-type="retailer"', swatch_area)

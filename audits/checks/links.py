@@ -29,9 +29,11 @@ from audits.result import (
 from audits.checks.variants import CATEGORY_SOURCES
 from utils.variant_helpers import (
     LINK_TYPE_OFFICIAL,
+    apply_resolved_link,
     normalize_optional_url,
     prepare_product_variants,
     resolve_product_link,
+    resolve_swatch_variant_links,
     set_display_variant,
 )
 
@@ -147,6 +149,21 @@ def _check_source(issues, category, slug, source, variant_id=None):
     return urls
 
 
+def _family_link_urls(product):
+    """Oorspronkelijke productniveau-URL's (familie-fallbackbron)."""
+    family = product.get("_family_links")
+    source = family if family is not None else product
+    return {f: normalize_optional_url(source.get(f)) for f in _URL_FIELDS}
+
+
+def _expected_fallback_url(family_urls):
+    """De URL die de familie-fallback volgens de vaste prioriteit oplevert."""
+    for field_name in _URL_FIELDS:
+        if family_urls[field_name]:
+            return family_urls[field_name]
+    return ""
+
+
 def _check_resolved(issues, category, slug, product, variant, urls, variant_id):
     """Controleer het resolverresultaat voor één bron (rel, label,
     variantveiligheid)."""
@@ -154,18 +171,25 @@ def _check_resolved(issues, category, slug, product, variant, urls, variant_id):
     source_has_url = any(urls.values())
 
     if link.url and not source_has_url:
-        issues.append(AuditIssue(
-            code="variant_link_fallback_to_other_variant",
-            severity=SEVERITY_ERROR,
-            message=(
-                "Resolver leverde een URL terwijl de geselecteerde bron "
-                "zelf geen URL-velden heeft — verboden fallback."
-            ),
-            category=category,
-            product_slug=slug,
-            variant_id=variant_id,
-            actual=link.url,
-        ))
+        # Toegestaan is uitsluitend de gedocumenteerde familie-fallback
+        # naar de oorspronkelijke productniveau-URL's; elke andere URL
+        # (bijv. van een andere variant) is een verboden fallback.
+        expected = _expected_fallback_url(_family_link_urls(product))
+        if link.url != expected:
+            issues.append(AuditIssue(
+                code="variant_link_fallback_to_other_variant",
+                severity=SEVERITY_ERROR,
+                message=(
+                    "Resolver leverde een URL die niet van de geselecteerde "
+                    "variant en niet van de familie-fallback "
+                    "(productniveau) afkomstig is — verboden fallback."
+                ),
+                category=category,
+                product_slug=slug,
+                variant_id=variant_id,
+                expected=expected,
+                actual=link.url,
+            ))
 
     if link.url:
         if link.link_type in ("retailer", "official") and "sponsored" in link.rel:
@@ -197,6 +221,9 @@ def _check_resolved(issues, category, slug, product, variant, urls, variant_id):
             ))
     else:
         label = urls_source_availability(variant if variant is not None else product)
+        if not label and variant is not None:
+            family = product.get("_family_links") or {}
+            label = urls_source_availability(family)
         if not label:
             issues.append(AuditIssue(
                 code="missing_link_with_empty_button",
@@ -252,18 +279,22 @@ def _check_variant_projection(issues, category, slug, raw_product):
                 ))
         resolved = product.get("resolved_link")
         own = resolve_product_link({"shape_variants": [pv]}, pv)
-        if resolved and resolved.url != own.url:
+        expected_url = own.url or _expected_fallback_url(
+            _family_link_urls(product)
+        )
+        if resolved and resolved.url != expected_url:
             issues.append(AuditIssue(
                 code="variant_link_fallback_to_other_variant",
                 severity=SEVERITY_ERROR,
                 message=(
                     "resolved_link na variantwissel is niet de eigen link "
-                    "van de geselecteerde variant."
+                    "van de geselecteerde variant en ook niet de "
+                    "familie-fallback (productniveau)."
                 ),
                 category=category,
                 product_slug=slug,
                 variant_id=pv.get("id"),
-                expected=own.url,
+                expected=expected_url,
                 actual=resolved.url,
             ))
 
@@ -302,33 +333,61 @@ def run_product_link_check(category=None, params=None):
             else:
                 urls = _check_source(issues, cat, slug, product)
                 _check_resolved(issues, cat, slug, product, None, urls, None)
-                # Kleurswatch-varianten (zonder id): alleen statische checks.
+                # Kleurswatch-varianten (zonder id): statische checks plus
+                # controle van de per-swatch resolved link (eigen
+                # prioriteit, daarna familie-fallback — nooit een andere
+                # swatch).
+                apply_resolved_link(product)
+                resolve_swatch_variant_links(product)
+                family_urls = {
+                    f: normalize_optional_url(product.get(f))
+                    for f in _URL_FIELDS
+                }
                 for sv in product.get("variants") or []:
                     if isinstance(sv, dict) and not sv.get("id"):
                         variants_checked += 1
                         sv_id = sv.get("name") or "kleurvariant"
-                        _check_source(issues, cat, slug, sv, variant_id=sv_id)
-                        # Het kleurswatch-systeem toont uitsluitend
-                        # affiliatelinks (gedocumenteerd familiebeleid);
-                        # retailer_url/official_url op een swatch-variant
-                        # wordt in de UI niet gerenderd.
-                        for field_name in ("retailer_url", "official_url"):
-                            if normalize_optional_url(sv.get(field_name)):
-                                issues.append(AuditIssue(
-                                    code="swatch_variant_link_field_unsupported",
-                                    severity=SEVERITY_WARNING,
-                                    message=(
-                                        f"{field_name} op een kleurswatch-"
-                                        "variant wordt niet getoond; het "
-                                        "swatchsysteem ondersteunt alleen "
-                                        "affiliate_url (of zet de link op "
-                                        "productniveau)."
-                                    ),
-                                    category=cat,
-                                    product_slug=slug,
-                                    variant_id=sv_id,
-                                    field=field_name,
-                                ))
+                        sv_urls = _check_source(
+                            issues, cat, slug, sv, variant_id=sv_id
+                        )
+                        link = sv.get("resolved_link")
+                        if link is None:
+                            continue
+                        # Verwacht resultaat voor ELKE swatch: eerst de
+                        # eigen prioriteit, anders de familie-fallback.
+                        expected = _expected_fallback_url(sv_urls) or \
+                            _expected_fallback_url(family_urls)
+                        if link.url != expected:
+                            issues.append(AuditIssue(
+                                code="variant_link_fallback_to_other_variant",
+                                severity=SEVERITY_ERROR,
+                                message=(
+                                    "Swatch-resolved link is niet de eigen "
+                                    "link van de swatch en ook niet de "
+                                    "familie-fallback (productniveau)."
+                                ),
+                                category=cat,
+                                product_slug=slug,
+                                variant_id=sv_id,
+                                expected=expected,
+                                actual=link.url,
+                            ))
+                        if link.url and link.link_type in (
+                            "retailer", "official"
+                        ) and "sponsored" in link.rel:
+                            issues.append(AuditIssue(
+                                code=f"{link.link_type}_url_with_sponsored_rel",
+                                severity=SEVERITY_ERROR,
+                                message=(
+                                    f"Swatch-{link.link_type}-link krijgt rel "
+                                    "met 'sponsored'; alleen affiliatelinks "
+                                    "mogen sponsored zijn."
+                                ),
+                                category=cat,
+                                product_slug=slug,
+                                variant_id=sv_id,
+                                actual=link.rel,
+                            ))
 
     metadata = {
         "categories": categories,

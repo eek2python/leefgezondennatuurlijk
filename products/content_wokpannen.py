@@ -1,153 +1,436 @@
 CONTENT = {
-        "hero": {
-        "h1": "Top {product_count} PFAS-vrije Wokpannen \u2013 Gezond, Duurzaam & Stijlvol",
+    "hero": {
+        "h1": (
+            "De {product_count} beste PFAS-vrije wokpannen "
+            "van {selected_size} cm"
+        ),
         "paragraphs": [
-            "Veel consumenten kiezen tegenwoordig bewust voor PFAS-vrije wokpannen. Omdat wokken vaak op hogere temperaturen gebeurt dan normaal bakken, kiezen sommige gebruikers liever voor materialen zonder klassieke fluorhoudende antiaanbaklagen.",
-            "Gelukkig bestaan er uitstekende alternatieven die volledig vrij zijn van PFAS. Denk aan keramisch gecoate wokpannen, koolstofstaal of hoogwaardige "
-            "roestvrijstalen modellen. Deze materialen zijn niet alleen veiliger, maar zorgen ook voor krachtige bakresultaten, goede bakprestaties en gebruiksgemak.",
-            "PFAS-vrije wokpannen zijn duurzaam, robuust en ideaal voor dagelijks gebruik. Ze combineren moderne veiligheid met traditionele kookprestaties en "
-            "zijn geschikt voor elk type fornuis \u2014 van gas tot inductie. Of je nu roerbakgerechten bereidt, ingredi\u00ebnten stoomt of snel wilt frituren, "
-            "een PFAS-vrije wokpan levert betrouwbare prestaties zonder schadelijke stoffen.",
-            "Bekijk hieronder onze zorgvuldig geselecteerde top\u00a0{product_count} met veilige, niet-giftige wokpannen die passen bij elke keuken en kookstijl:",
+            (
+                "Een keramisch gecoate wokpan met vlakke bodem is geschikt "
+                "voor roerbakgerechten, groenten, rijst, noedels en andere "
+                "dagelijkse bereidingen op een huishoudelijke kookplaat."
+            ),
+            (
+                "De modellen in deze selectie hebben een PFAS-vrije "
+                "keramische antiaanbaklaag en zijn geschikt voor inductie. "
+                "Ze verschillen onder meer in basismateriaal, inhoud, gewicht, "
+                "handgreep, ovenbestendigheid en onderhoud."
+            ),
+            (
+                "Deze wokpannen zijn vooral bedoeld voor gecontroleerd "
+                "roerbakken op lage tot middelhoge of middelhoge temperatuur. "
+                "Ze werken anders dan een dunne koolstofstalen wok, die is "
+                "ontworpen voor zeer snelle temperatuurreacties en "
+                "traditionele woktechnieken op hoge hitte."
+            ),
         ],
     },
+
     "why_choose": {
-        "title": "Waarom kiezen voor een PFAS-vrije wokpan?",
+        "title": "Waarom kiezen voor een PFAS-vrije keramische wokpan?",
         "intro": (
-            "Steeds meer consumenten kiezen bewust voor PFAS-vrije pannen, en dat is niet zonder reden. Traditionele antiaanbaklagen bevatten "
-            "fluorverbindingen die langdurig in het milieu achterblijven en in sommige gevallen gezondheidsrisico\u2019s kunnen vormen. "
-            "PFAS-vrije wokpannen bieden een veilig en duurzaam alternatief."
+            "Een keramisch gecoate wokpan combineert hoge, schuin oplopende "
+            "randen met een vlakke bodem en direct antiaanbakgemak. Daardoor "
+            "is dit type pan praktisch voor dagelijks roerbakken op gas, "
+            "elektrisch, keramisch of inductie."
         ),
         "bullets": [
-            "<strong>Geschikt voor hoge temperaturen:</strong> belangrijk voor krachtig roerbakken en snelle bereidingen.",
-            "<strong>Bewuste materiaalkeuze:</strong> interessant voor gebruikers die zonder klassieke fluorhoudende coatings willen koken.",
-            "<strong>Snelle warmteopbouw:</strong> belangrijk voor groenten, vlees en authentieke wokgerechten.",
-            "<strong>Geschikt voor moderne keukens:</strong> de meeste modellen werken op inductie, gas en elektrisch.",
-            "<strong>Veelzijdig:</strong> bruikbaar voor roerbakken, stomen en dagelijkse maaltijden."
+            (
+                "<strong>PFAS-vrije coating:</strong> de geselecteerde "
+                "modellen hebben een keramische antiaanbaklaag waarvoor "
+                "PFAS-vrijheid productspecifiek is vermeld."
+            ),
+            (
+                "<strong>Geschikt voor dagelijks roerbakken:</strong> "
+                "praktisch voor groenten, rijst, noedels en kleinere "
+                "stukken vlees of vis."
+            ),
+            (
+                "<strong>Hoge schuine rand:</strong> biedt ruimte om "
+                "ingrediënten te roeren en helpt morsen tijdens de "
+                "bereiding te beperken."
+            ),
+            (
+                "<strong>Vlakke bodem:</strong> geschikt voor huishoudelijke "
+                "kookplaten en, bij de modellen in deze selectie, voor "
+                "inductie."
+            ),
+            (
+                "<strong>Direct antiaanbakgemak:</strong> een keramische "
+                "coating hoeft niet te worden ingebrand zoals doorgaans "
+                "wel nodig is bij een koolstofstalen wok."
+            ),
         ],
-        "outro": "Een PFAS-vrije wokpan is dus niet alleen een gezonde keuze, maar ook een logische stap richting een duurzamere keuken en betere kookervaring.",
+        "outro": (
+            "Kijk bij je keuze niet alleen naar de diameter. Ook inhoud, "
+            "bodemdiameter, gewicht, materiaalopbouw, handgreep en maximale "
+            "oventemperatuur bepalen hoe praktisch een wokpan is."
+        ),
     },
+
     "wok_behavior": {
-       "title":"Waar letten wij op bij wokpannen?",
-       "intro":"Bij een wokpan draait het niet alleen om een coating of materiaal. Een goede wok moet snel reageren op warmte en prettig werken tijdens roerbakken.",
-       "bullets":[
-           "<strong>Snelle warmteopbouw:</strong> belangrijk voor korte bereidingen op hogere temperaturen.",
-           "<strong>Gewicht en balans:</strong> lichtere wokpannen bewegen makkelijker tijdens roerbakken.",
-           "<strong>Warmteverdeling:</strong> voorkomt koude plekken bij grotere porties.",
-           "<strong>Geschiktheid voor hoge temperaturen:</strong> relevant voor schroeien en klassieke woktechnieken.",
-           "<strong>Gebruiksgemak:</strong> hoe prettig blijft de pan in dagelijks gebruik."
-       ]
-    },
-    "size_guide": None,
-    "products_section": {
-        "h2": "De {product_count} beste wokpannen van 2026 \u2013 {selected_size}\u00a0cm",
-        "comparison_title": "Vergelijkingstabel \u2013 Top {product_count} PFAS-vrije Wokpannen ({selected_size}\u00a0cm)",
-    },
-    "tips": {
-        "title": "Onderhoudstips voor PFAS-vrije wokpannen",
+        "title": "Waar letten we op bij keramische wokpannen?",
         "intro": (
-            "Met de juiste verzorging gaat een PFAS-vrije wokpan jarenlang mee en behoudt hij zijn anti-aanbakprestaties en veiligheid. "
-            "Gebruik onderstaande tips om jouw keramische of koolstofstalen wok optimaal te onderhouden."
+            "Bij een keramische wokpan zijn niet alleen diameter en coating "
+            "belangrijk. Ook materiaalopbouw, inhoud, gewicht, bodemvorm en "
+            "temperatuurlimieten bepalen hoe praktisch de pan is."
         ),
         "bullets": [
-            "Laat de pan volledig afkoelen voordat je hem schoonmaakt om thermische schokken te voorkomen.",
-            "Gebruik warm water en een zachte spons; vermijd schuurmiddelen en metalen borstels.",
-            "Hoewel sommige modellen vaatwasbestendig zijn, raden veel fabrikanten handwas aan om de levensduur van de coating te verlengen.",
-            "Gebruik houten of siliconen spatels om beschadigingen aan de coating te voorkomen.",
-            "Bij keramische pannen: kook af en toe water met een beetje azijn om aangekoekte resten los te maken.",
-            "Bij koolstofstalen pannen (zoals De Buyer): regelmatig opnieuw inbranden voor optimale prestaties.",
-            "Bewaar de pan niet met andere pannen direct er bovenop \u2014 gebruik eventueel een vilten protector.",
+            (
+                "<strong>Materiaalopbouw:</strong> aluminium, geanodiseerd "
+                "aluminium, gegoten aluminium of RVS met een aluminium kern."
+            ),
+            (
+                "<strong>Inhoud en vorm:</strong> de hoogte van de rand, "
+                "inhoud in liters en het vlakke bodemoppervlak bepalen hoeveel "
+                "ingrediënten je praktisch kunt bereiden."
+            ),
+            (
+                "<strong>Gewicht en handgrepen:</strong> een lichtere pan is "
+                "gemakkelijker op te tillen, terwijl een extra handgreep helpt "
+                "bij grotere en zwaardere modellen."
+            ),
+            (
+                "<strong>Warmtebroncompatibiliteit:</strong> geschiktheid "
+                "voor inductie, gas, elektrisch en eventueel gebruik in de "
+                "oven."
+            ),
+            (
+                "<strong>Temperatuurlimieten:</strong> de coating en het type "
+                "handgreep bepalen welke kook- en oventemperaturen zijn "
+                "toegestaan."
+            ),
+            (
+                "<strong>Onderhoud:</strong> vaatwassergeschiktheid, "
+                "handwasadvies en beperkingen voor kookgerei verschillen "
+                "per model."
+            ),
         ],
-        "outro": None,
+        "outro": (
+            "Een keramische wokpan is vooral bedoeld voor gecontroleerd "
+            "roerbakken. Voor langdurige bereidingen op zeer hoge temperatuur "
+            "is een ongecoate koolstofstalen wok doorgaans geschikter."
+        ),
     },
+
+    "size_guide": None,
+
+    "products_section": {
+        "h2": (
+            "De {product_count} beste PFAS-vrije wokpannen "
+            "van 2026 – {selected_size} cm"
+        ),
+        "comparison_title": (
+            "Vergelijkingstabel – PFAS-vrije wokpannen "
+            "van {selected_size} cm"
+        ),
+    },
+
+    "tips": {
+        "title": "Onderhoudstips voor keramische wokpannen",
+        "intro": (
+            "Voorzichtig gebruik en passend onderhoud helpen om de "
+            "antiaanbakeigenschappen en afwerking van een keramische "
+            "wokpan zo lang mogelijk te behouden."
+        ),
+        "bullets": [
+            (
+                "<strong>Laat de pan afkoelen:</strong> spoel een hete pan "
+                "niet direct af met koud water om sterke "
+                "temperatuurwisselingen te voorkomen."
+            ),
+            (
+                "<strong>Geef handwas de voorkeur:</strong> ook wanneer een "
+                "model vaatwasserbestendig is, kan handwas met warm water en "
+                "een zachte spons milder zijn voor coating en afwerking."
+            ),
+            (
+                "<strong>Gebruik een mild afwasmiddel:</strong> vermijd "
+                "schuurmiddelen, staalwol en agressieve reinigers."
+            ),
+            (
+                "<strong>Laat resten eerst weken:</strong> gebruik bij "
+                "aangekoekte etensresten warm water en een zachte spons. "
+                "Volg bij hardnekkige resten de instructies van de fabrikant."
+            ),
+            (
+                "<strong>Gebruik passend kookgerei:</strong> houten of "
+                "siliconen kookgerei is doorgaans de veiligste keuze voor "
+                "de coating. Gebruik metaal alleen wanneer de fabrikant dit "
+                "expliciet toestaat."
+            ),
+            (
+                "<strong>Voorkom langdurige oververhitting:</strong> laat "
+                "de pan niet langdurig leeg op een hoge kookstand staan."
+            ),
+            (
+                "<strong>Gebruik lage tot middelhoge temperatuur:</strong> "
+                "keramische antiaanbaklagen zijn doorgaans niet bedoeld voor "
+                "langdurig traditioneel wokken op maximale hitte."
+            ),
+            (
+                "<strong>Bescherm de coating bij opslag:</strong> gebruik "
+                "een panbeschermer wanneer andere pannen in de wokpan worden "
+                "gestapeld."
+            ),
+            (
+                "<strong>Controleer ovengebruik:</strong> de maximale "
+                "oventemperatuur kan worden beperkt door de handgreep, "
+                "hulpgreep of andere onderdelen."
+            ),
+        ],
+        "outro": (
+            "Volg altijd de onderhouds- en temperatuurinstructies van de "
+            "fabrikant, omdat deze per materiaal, coating en uitvoering "
+            "verschillen."
+        ),
+    },
+
     "conclusies": {
         28: {
-            "title": "Conclusie \u2013 Onze aanbeveling",
+            "title": "Conclusie – welke wokpan van 28 cm past het best?",
             "text": (
-                "Voor wie een betrouwbare, duurzame en PFAS-vrije wokpan zoekt, is de "
-                "<strong>GreenPan Torino Wokpan 28\u00a0cm</strong> onze beste allround keuze. "
-                "Deze pan combineert gebruiksgemak, veilige materialen en uitstekende prestaties voor dagelijks koken. "
-                "Wil je zo min mogelijk uitgeven maar toch veilig en gezond wokken? Dan is de "
-                "<strong>HEMA Milano Keramische Wokpan 28\u00a0cm</strong> een uitstekende budgetoptie: eenvoudig, betaalbaar en perfect geschikt als eerste PFAS-vrije wok. "
-                "Voor wie het beste van het beste zoekt, bevelen we de "
-                "<strong>WMF Durado Keramische Wokpan 28\u00a0cm</strong> aan. Deze premium pan biedt superieure warmteverdeling, een solide bouwkwaliteit en lange levensduur. "
-                "Welke wokpan je ook kiest, met een PFAS-vrij model kook je niet alleen gezonder, maar draag je ook bij aan een duurzamere keuken."
+                "Een wokpan van <strong>28 cm</strong> is een praktisch "
+                "formaat voor dagelijkse roerbakgerechten en normale porties. "
+                "De <strong>GreenPan Torino</strong> is onze beste allround "
+                "keuze door het relatief lage gewicht, de inductie- en "
+                "ovengeschiktheid en de gunstige prijs binnen de selectie. "
+                "De <strong>HEMA Milano</strong> is onze budgetkeuze voor wie "
+                "een betaalbare wokpan voor gebruik op de kookplaat zoekt; "
+                "dit model is niet ovenbestendig. De "
+                "<strong>WMF Durado</strong> is onze premiumkeuze door de "
+                "RVS constructie, TransTherm-bodem en ovenbestendigheid tot "
+                "250 °C. De <strong>GreenPan Cambridge</strong> biedt met "
+                "3,7 liter meer inhoud, terwijl de "
+                "<strong>BergHOFF LEO Phantom</strong> zich onderscheidt "
+                "door de full-diskbodem en constructie van gerecycled "
+                "gegoten aluminium."
             ),
         },
+
         30: {
-            "title": "Conclusie \u2013 Onze aanbeveling",
+            "title": "Conclusie – welke wokpan van 30 cm past het best?",
             "text": (
-               "Zoek je een ruime wokpan voor grotere porties of koken voor het hele gezin, dan is een 30 cm wokpan een veelzijdige keuze. "
-               "De GreenPan Barcelona Evershine springt eruit als beste allround keuze dankzij de combinatie van stabiele constructie, ruime capaciteit en sterke prestaties op inductie. "
-               "Zoek je een toegankelijke instapoptie, dan blijft de BK Easy Induction Ceramic een interessante budgetkeuze. "
-               "Voor gebruikers die een stap hoger willen in afwerking en dagelijks gebruiksgemak bieden de GreenPan Copenhagen en BK Superior sterke middenklasse-opties."
+                "Een wokpan van <strong>30 cm</strong> biedt extra ruimte "
+                "voor grotere porties en wokgerechten met veel groenten. "
+                "De <strong>GreenPan Barcelona Evershine</strong> is onze "
+                "beste keuze wanneer deze verkrijgbaar is. De drielaagse "
+                "RVS constructie met aluminium kern en ovenbestendigheid tot "
+                "220 °C maken dit het meest uitgebreid uitgevoerde model, "
+                "maar ook verreweg het duurste. De "
+                "<strong>BK Easy Induction Ceramic</strong> is de "
+                "budgetkeuze binnen deze maat. De "
+                "<strong>BK Superior Ceramic</strong> combineert een inhoud "
+                "van 5 liter met ovenbestendigheid tot 230 °C. De "
+                "<strong>GreenPan Copenhagen</strong> heeft een extra "
+                "handgreep, 4,8 liter inhoud en ovengebruik tot 220 °C. "
+                "Voor de grootste bevestigde inhoud is de "
+                "<strong>BergHOFF LEO Phantom</strong> van 5,2 liter een "
+                "interessante optie."
             ),
         },
     },
+
     "faq": {
         "title": "Veelgestelde vragen over PFAS-vrije wokpannen",
         "items": [
             {
-                "q": "Zijn keramische wokpannen volledig PFAS-vrij?",
-                "a": "De meeste moderne keramische anti-aanbaklagen worden geproduceerd zonder PFAS, PFOA en PTFE. Controleer bij aankoop altijd de productspecificaties van de fabrikant.",
+                "q": "Wat betekent PFAS-vrij bij een wokpan?",
+                "a": (
+                    "PFAS-vrij betekent dat de fabrikant aangeeft dat de "
+                    "antiaanbaklaag zonder PFAS is geproduceerd. Dat zegt op "
+                    "zichzelf niets over de kwaliteit, gebruiksduur of "
+                    "volledige samenstelling van de pan. Controleer daarom "
+                    "altijd de specificaties van het exacte model."
+                ),
             },
             {
-                "q": "Hoe lang gaat een PFAS-vrije wokpan mee?",
-                "a": "Bij normaal gebruik gaan keramische wokpannen gemiddeld 2 tot 5 jaar mee. Premium modellen met dikkere coating en stevige bodem gaan vaak langer mee, vooral bij voorzichtig gebruik en regelmatig onderhoud.",
+                "q": "Zijn alle keramische wokpannen PFAS-vrij?",
+                "a": (
+                    "Niet iedere keramische of als keramisch omschreven "
+                    "wokpan hoeft automatisch dezelfde samenstelling te "
+                    "hebben. Controleer daarom of de fabrikant PFAS-vrijheid "
+                    "expliciet bevestigt voor het exacte model. De producten "
+                    "in deze selectie zijn opgenomen op basis van een "
+                    "productspecifieke PFAS-vrijvermelding."
+                ),
             },
             {
-                "q": "Zijn PFAS-vrije wokpannen geschikt voor inductie?",
-                "a": "Ja, de meeste moderne PFAS-vrije wokpannen zijn geschikt voor inductie. Let wel op dat de pan een magnetiseerbare bodem heeft; dit staat bijna altijd vermeld door de fabrikant.",
+                "q": "Hoe lang gaat een keramische wokpan mee?",
+                "a": (
+                    "Daar is geen vaste gebruiksduur voor te geven. De "
+                    "antiaanbakeigenschappen worden onder meer beïnvloed door "
+                    "baktemperatuur, reiniging, kookgerei, gebruiksfrequentie "
+                    "en de specifieke coating."
+                ),
             },
             {
-                "q": "Wat is beter: keramisch of koolstofstaal?",
-                "a": "Dat hangt af van je kookstijl. Keramische pannen zijn gebruiksvriendelijk, licht en ideaal voor dagelijks koken. Koolstofstaal presteert geweldig op hoge temperaturen en gaat extreem lang mee, maar vraagt meer onderhoud.",
+                "q": "Zijn de wokpannen in deze selectie geschikt voor inductie?",
+                "a": (
+                    "Ja. De modellen in deze selectie hebben een vlakke, "
+                    "inductiegeschikte bodem. Controleer wel of de diameter "
+                    "van het vlakke bodemoppervlak aansluit bij de gebruikte "
+                    "kookzone."
+                ),
             },
             {
-                "q": "Wat is het beste formaat voor een wokpan?",
-                "a": "Voor 1–2 personen volstaat een wok van 28\u00a0cm. Voor gezinnen of grotere porties is 30–32\u00a0cm de ideale maat. Houd rekening met de afmeting van je inductiezone.",
+                "q": "Wat is het verschil tussen keramisch en koolstofstaal?",
+                "a": (
+                    "Een keramisch gecoate wokpan biedt direct "
+                    "antiaanbakgemak en hoeft niet te worden ingebrand. "
+                    "Koolstofstaal is geschikt voor hogere temperaturen en "
+                    "traditionelere woktechnieken, maar vraagt een inbrandlaag "
+                    "en zorgvuldig drogen om roest te voorkomen."
+                ),
             },
             {
-                "q": "Mag een PFAS-vrije wokpan in de vaatwasser?",
-                "a": "Het wordt afgeraden. Handwas met warm water en milde zeep verlengt de levensduur van de coating en voorkomt verkleuring of dofheid van het oppervlak.",
+                "q": "Welk formaat wokpan heb ik nodig?",
+                "a": (
+                    "Een wokpan van 28 cm is geschikt voor kleinere tot "
+                    "normale porties. Een model van 30 cm biedt meer ruimte "
+                    "voor grotere hoeveelheden. Kijk naast de diameter ook "
+                    "naar de inhoud in liters, de bodemdiameter, randhoogte "
+                    "en het gewicht."
+                ),
             },
             {
-                "q": "Hoe brand ik een koolstofstalen wok in?",
-                "a": "Verwarm de wok op hoog vuur tot er een blauwgele kleurverandering optreedt, smeer dun in met olie met een hoog rookpunt en herhaal dit 3–4 keer. "
-                     "Dit creëert een natuurlijke, glanzende antiaanbaklaag (patina) die met elke kookbeurt beter wordt.",
+                "q": "Mag een keramische wokpan in de vaatwasser?",
+                "a": (
+                    "Dat verschilt per model. Sommige fabrikanten staan "
+                    "vaatwassergebruik toe, terwijl andere uitsluitend "
+                    "handwas adviseren. Ook bij vaatwasserbestendige modellen "
+                    "wordt handwas vaak aanbevolen om coating en afwerking "
+                    "te ontzien."
+                ),
             },
             {
-                "q": "Welke spatels gebruik ik in een PFAS-vrije wokpan?",
-                "a": "Gebruik bij keramische coatings altijd houten of siliconen spatels om krassen te voorkomen. Bij koolstofstaal of RVS mag ook metalen wokgerei gebruikt worden.",
+                "q": "Welk kookgerei gebruik ik in een keramische wokpan?",
+                "a": (
+                    "Houten of siliconen kookgerei is doorgaans de veiligste "
+                    "keuze voor de coating. Gebruik metalen kookgerei alleen "
+                    "wanneer de fabrikant dit voor het exacte model "
+                    "expliciet toestaat."
+                ),
             },
             {
-                "q": "Wat is het verschil tussen een traditionele wok en een wokpan?",
-                "a": "Een traditionele Aziatische wok heeft een ronde bodem en hoge, schuin oplopende wanden — ideaal voor het 'tossen' van ingrediënten op een gasbrander. Een wokpan heeft een platte bodem en is daardoor wel geschikt voor inductie en moderne kookplaten, maar minder geschikt voor de klassieke wok­techniek.",
+                "q": "Moet een keramische wokpan worden voorverwarmd?",
+                "a": (
+                    "Een korte voorverwarming op lage tot middelhoge stand "
+                    "kan passend zijn, maar laat de pan niet langdurig leeg "
+                    "heet worden. Volg de temperatuur- en gebruiksinstructies "
+                    "van de fabrikant."
+                ),
             },
             {
-                "q": "Moet je een keramische wokpan voorverwarmen?",
-                "a": "Ja, maar voorzichtig. Verhit de wok op laag tot middelhoog vuur gedurende 1-2 minuten vóór je olie toevoegt. Te snel op hoog vuur kan de coating beschadigen en thermische schokken veroorzaken — anders dan bij koolstofstalen woks, die juist tegen extreme hitte kunnen.",
+                "q": "Kan een keramische wokpan op hoog vuur worden gebruikt?",
+                "a": (
+                    "Keramisch gecoate wokpannen zijn doorgaans bedoeld voor "
+                    "gecontroleerd gebruik op lage tot middelhoge of "
+                    "middelhoge temperatuur. Langdurig gebruik op maximale "
+                    "hitte kan de antiaanbakeigenschappen beïnvloeden. Voor "
+                    "traditioneel wokken op zeer hoge temperatuur is "
+                    "koolstofstaal meestal geschikter."
+                ),
             },
             {
-                "q": "Welke wokpan is geschikt voor inductie?",
-                "a": "Alleen wokpannen met een platte, magnetische bodem werken op inductie. De meeste moderne PFAS-vrije keramische wokpannen (BK, GreenPan, BergHOFF) hebben standaard een induc­tiebodem. Traditionele rondbodem-woks werken niet op inductie zonder speciale wokring.",
+                "q": (
+                    "Wat is het verschil tussen een traditionele wok "
+                    "en een wokpan?"
+                ),
+                "a": (
+                    "Een traditionele wok is meestal dunwandig en ontworpen "
+                    "voor snelle temperatuurreacties op een krachtige "
+                    "warmtebron. Veel uitvoeringen hebben een ronde bodem. "
+                    "De wokpannen in deze selectie hebben een vlakke bodem "
+                    "en keramische coating. Daardoor zijn ze geschikt voor "
+                    "huishoudelijke kookplaten en inductie, maar minder "
+                    "geschikt voor langdurig wokken op extreem hoge "
+                    "temperatuur."
+                ),
             },
             {
-            "q":"Waarom hebben wokpannen hoge schuine randen?",
-            "a":"De hoge schuine randen maken het makkelijker om ingrediënten te bewegen en snel te roerbakken. Hierdoor ontstaat een gelijkmatige bereiding en blijft meer structuur behouden."
+                "q": "Waarom hebben wokpannen hoge, schuine randen?",
+                "a": (
+                    "De hoge en schuin oplopende randen bieden ruimte om "
+                    "ingrediënten tijdens het roerbakken te bewegen. De "
+                    "vorm helpt ook om ingrediënten vanaf de bodem naar de "
+                    "koelere zijkanten te verplaatsen."
+                ),
+            },
+            {
+                "q": "Is een grote diameter altijd beter?",
+                "a": (
+                    "Nee. Een grotere wokpan biedt meer inhoud, maar is ook "
+                    "zwaarder en vraagt meer ruimte op de kookplaat en in de "
+                    "kast. Op inductie is bovendien het formaat van het vlakke "
+                    "bodemoppervlak belangrijker dan alleen de diameter aan "
+                    "de bovenrand."
+                ),
+            },
+            {
+                "q": "Kan een keramische wokpan in de oven?",
+                "a": (
+                    "Dat verschilt per model. Sommige wokpannen in deze "
+                    "selectie zijn niet ovenbestendig, terwijl andere "
+                    "temperaturen van meer dan 200 °C aankunnen. De handgreep "
+                    "en materiaalconstructie bepalen vaak de maximale "
+                    "temperatuur. Controleer daarom altijd de specificaties "
+                    "van de exacte uitvoering."
+                ),
+            },
+            {
+                "q": "Moet een koolstofstalen wok worden ingebrand?",
+                "a": (
+                    "Meestal wel, tenzij de wok vooraf is ingebrand of een "
+                    "andere fabrieksafwerking heeft. Volg hiervoor altijd "
+                    "de instructies van de fabrikant, omdat de methode per "
+                    "wok kan verschillen."
+                ),
             },
         ],
     },
-"how_we_test": {
-    "title": "Hoe wij wokpannen beoordelen",
-    "intro": "Bij wokpannen selecteren we op criteria die tellen voor krachtig, veilig en duurzaam koken op hoge temperaturen.",
-    "bullets": [
-        "Materiaalveiligheid: geen PFAS of klassieke antiaanbakrisico\'s bij hoge temperatuur.",
-        "Bakprestaties op hoog vuur: geschikt voor snel en krachtig roerbakken.",
-        "Warmteverdeling: snelle en gelijkmatige hittespreiding over de wok.",
-        "Gebruiksgemak: gewicht, hendel en dagelijks onderhoud.",
-        "Prijs-kwaliteit: eerlijke vergelijking over alle prijsklassen heen.",
-    ],
-    "outro": None,
-},
+
+    "how_we_test": {
+        "title": "Hoe wij wokpannen beoordelen",
+        "intro": (
+            "Onze beoordeling is redactioneel en gebaseerd op "
+            "productspecificaties, materiaalopbouw, inhoud, "
+            "gebruiksmogelijkheden, prijs en beschikbaarheid. Tenzij "
+            "expliciet vermeld, voeren wij geen laboratorium- of langdurige "
+            "gebruikstest uit."
+        ),
+        "bullets": [
+            (
+                "<strong>PFAS-status:</strong> is PFAS-vrijheid voor het "
+                "exacte model duidelijk bevestigd?"
+            ),
+            (
+                "<strong>Materiaal en constructie:</strong> basismateriaal, "
+                "keramische coating, bodemopbouw en type handgreep."
+            ),
+            (
+                "<strong>Formaat en inhoud:</strong> diameter, inhoud in "
+                "liters, hoogte en geschiktheid voor verschillende porties."
+            ),
+            (
+                "<strong>Gebruiksmogelijkheden:</strong> inductie, oven, "
+                "vaatwasser en maximale temperaturen."
+            ),
+            (
+                "<strong>Gebruiksgemak:</strong> gewicht, extra handgreep, "
+                "onderhoud en beperkingen voor kookgerei."
+            ),
+            (
+                "<strong>Prijs-kwaliteit:</strong> verhouding tussen prijs, "
+                "constructie, inhoud en praktische mogelijkheden."
+            ),
+            (
+                "<strong>Beschikbaarheid:</strong> is de exacte maat en "
+                "uitvoering daadwerkelijk verkrijgbaar?"
+            ),
+        ],
+        "outro": (
+            "Prijzen en beschikbaarheid kunnen tussentijds veranderen."
+        ),
+    },
 }
