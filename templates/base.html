@@ -1,4 +1,4 @@
-{% load static %}
+{% load static static_version %}
 <!DOCTYPE HTML>
 <html lang="nl">
 <head>
@@ -6,7 +6,7 @@
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
    {% block meta %}<meta name="description" content="Bezoek onze website voor ondersteuning bij het maken van weloverwogen en gezondere keuzes van niet-giftige, milieuvriendelijke producten voor elke hoek van je huis.">{% endblock %}
-   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}?v=19" />
+   <link rel="stylesheet" href="{% static_v 'assets/css/main.css' %}" />
    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
    {% if GA_MEASUREMENT_ID %}
    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_MEASUREMENT_ID }}"></script>
@@ -96,13 +96,13 @@
    </div>
 
    <!-- Scripts -->
-   <script src="{% static 'assets/js/jquery.min.js' %}"></script>
-   <script src="{% static 'assets/js/browser.min.js' %}"></script>
-   <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
-   <script src="{% static 'assets/js/util.js' %}"></script>
-   <script src="{% static 'assets/js/main.js' %}"></script>
-   <script src="{% static 'assets/js/variants.js' %}?v=7" defer></script>
-   <script src="{% static 'assets/js/variant-selector.js' %}?v=6" defer></script>
+   <script src="{% static_v 'assets/js/jquery.min.js' %}"></script>
+   <script src="{% static_v 'assets/js/browser.min.js' %}"></script>
+   <script src="{% static_v 'assets/js/breakpoints.min.js' %}"></script>
+   <script src="{% static_v 'assets/js/util.js' %}"></script>
+   <script src="{% static_v 'assets/js/main.js' %}"></script>
+   <script src="{% static_v 'assets/js/variants.js' %}" defer></script>
+   <script src="{% static_v 'assets/js/variant-selector.js' %}" defer></script>
 
    <script>
       document.getElementById("year").textContent = new Date().getFullYear();
