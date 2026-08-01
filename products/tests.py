@@ -1991,3 +1991,20 @@ class SwatchVariantLinkTests(TestCase):
         self.assertIn('data-rel="nofollow noopener"', html)
         swatch_area = html[html.find("variant-swatches"):]
         self.assertIn('data-link-type="retailer"', swatch_area)
+
+
+class SnijplankenCountTests(TestCase):
+    """Dynamisch {product_count} op de snijplankenpagina (view + meta)."""
+
+    def test_all_counts_match_ranking_length(self):
+        from products.rankings_snijplanken import RANKINGS
+        count = len(RANKINGS)
+        html = self.client.get("/snijplanken/").content.decode()
+        self.assertNotIn("{product_count}", html)
+        self.assertIn(f"<h1>De {count} beste houten snijplanken van 2026</h1>", html)
+        self.assertIn(f"Top {count} Houten Snijplanken", html)
+        self.assertIn(f"Ontdek de {count} beste houten snijplanken", html)
+        self.assertIn(f"Bekijk de {count} beste houten snijplanken", html)
+        self.assertNotIn("10 beste houten snijplanken", html)
+        self.assertNotIn("Top 10 Houten Snijplanken", html)
+        self.assertIn(f"Top {count} Houten Snijplanken zonder Plastic", html)

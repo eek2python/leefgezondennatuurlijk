@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Top 10 Houten Snijplanken – Gezond, Duurzame & Stijlvol | Leef Natuurlijk & Gezond{% endblock %}
+{% block title %}Top {{ product_count }} Houten Snijplanken – Gezond, Duurzame & Stijlvol | Leef Natuurlijk & Gezond{% endblock %}
 
 {% block meta %}
-<meta name="description" content="Ontdek de 10 beste houten snijplanken van 2026 – duurzaam, hygiënisch en stijlvol. Vergelijk materialen, prijzen en kwaliteit voor jouw keuken.">
+<meta name="description" content="Ontdek de {{ product_count }} beste houten snijplanken van 2026 – duurzaam, hygiënisch en stijlvol. Vergelijk materialen, prijzen en kwaliteit voor jouw keuken.">
 
 <!-- 🔹 Open Graph -->
-<meta property="og:title" content="Top 10 Houten Snijplanken van 2026 – Duurzaam, Hygiënisch & Stijlvol">
-<meta property="og:description" content="Bekijk de 10 beste houten snijplanken van 2026. Duurzaam, antibacterieel en vrij van plastic – ontdek welke snijplank het beste past bij jouw keuken.">
+<meta property="og:title" content="Top {{ product_count }} Houten Snijplanken van 2026 – Duurzaam, Hygiënisch & Stijlvol">
+<meta property="og:description" content="Bekijk de {{ product_count }} beste houten snijplanken van 2026. Duurzaam, antibacterieel en vrij van plastic – ontdek welke snijplank het beste past bij jouw keuken.">
 <meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/cutting_boards.jpg">
 <meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/snijplanken/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
 <!-- 🔹 Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Top 10 Houten Snijplanken van 2026 – Duurzaam & Hygiënisch">
+<meta name="twitter:title" content="Top {{ product_count }} Houten Snijplanken van 2026 – Duurzaam & Hygiënisch">
 <meta name="twitter:description" content="Ontdek de beste houten snijplanken van 2026 – duurzaam, antibacterieel en stijlvol. Bekijk onze topselectie voor een gezonde keuken.">
 <link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/snijplanken/">
 <meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/cutting_boards.jpg">

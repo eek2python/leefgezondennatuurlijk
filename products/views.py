@@ -356,15 +356,15 @@ def _build_itemlist_ld(request, name, description, products):
 
 def snijplanken(request):
     products = [copy.deepcopy(SNIJPLANKEN_PRODUCTS[k]) for k in SNIJPLANKEN_RANKINGS]
-    content = SNIJPLANKEN_CONTENT
     _enrich_products(products, category="snijplanken")
     product_count = len(products)
+    content = _format_content(SNIJPLANKEN_CONTENT, product_count=product_count)
     conclusie = content["conclusies"]["default"]
     faq_ld = _build_faq_ld(content["faq"]["items"])
     json_ld = _build_itemlist_ld(
         request,
-        "Top 10 Houten Snijplanken zonder Plastic (PFAS-vrij)",
-        "De 10 beste houten snijplanken van 2026 \u2013 duurzaam, voedselveilig en PFAS-vrij.",
+        f"Top {product_count} Houten Snijplanken zonder Plastic (PFAS-vrij)",
+        f"De {product_count} beste houten snijplanken van 2026 \u2013 duurzaam, voedselveilig en PFAS-vrij.",
         products,
     )
     breadcrumbs = [{"label": "Snijplanken", "url": "/snijplanken/"}]
