@@ -4,40 +4,54 @@
         <h2>Ontdek andere categorieën</h2>
     </header>
     <div class="category-grid">
+        {% if current_category != 'snijplanken' %}
         <a href="{% url 'snijplanken' %}" class="category-card">
             <img src="{% static 'images/thumbnails/cutting_boards.webp' %}" alt="Houten snijplanken" loading="lazy" width="600" height="551">
             <span>Houten Snijplanken</span>
             <small>Duurzaam &amp; mesbesparend</small>
         </a>
+        {% endif %}
+        {% if current_category != 'koekenpannen' %}
         <a href="{% url 'koekenpannen' %}" class="category-card">
             <img src="{% static 'images/thumbnails/koekenpan.webp' %}" alt="Keramische koekenpannen" loading="lazy" width="600" height="600">
             <span>Keramische Koekenpannen</span>
             <small>PFAS-vrij bakken</small>
         </a>
+        {% endif %}
+        {% if current_category != 'rvs_koekenpannen' %}
         <a href="{% url 'rvs_koekenpannen' %}" class="category-card">
             <img src="{% static 'images/thumbnails/rvs-pan-bakken-zonder-aanbakken.webp' %}" alt="RVS koekenpannen" loading="lazy" width="800" height="450">
             <span>RVS Koekenpannen</span>
             <small>Bakken zonder coating</small>
         </a>
+        {% endif %}
+        {% if current_category != 'hapjespannen' %}
         <a href="{% url 'hapjespannen' %}" class="category-card">
             <img src="{% static 'images/thumbnails/hapjespan.webp' %}" alt="PFAS-vrije hapjespannen" loading="lazy" width="600" height="600">
             <span>PFAS-vrije Hapjespannen</span>
             <small>Stoofgerechten &amp; sauzen</small>
         </a>
+        {% endif %}
+        {% if current_category != 'wokpannen' %}
         <a href="{% url 'wokpannen' %}" class="category-card">
             <img src="{% static 'images/thumbnails/wokpan.webp' %}" alt="PFAS-vrije wokpannen" loading="lazy" width="600" height="600">
             <span>PFAS-vrije Wokpannen</span>
             <small>Gezond roerbakken</small>
         </a>
+        {% endif %}
+        {% if current_category != 'airfryers' %}
         <a href="{% url 'airfryers' %}" class="category-card">
             <img src="{% static 'images/thumbnails/airfryer.webp' %}" alt="PFAS-vrije airfryers" loading="lazy" width="600" height="877">
             <span>PFAS-vrije Airfryers</span>
             <small>Krokant zonder veel vet</small>
         </a>
+        {% endif %}
+        {% if current_category != 'vershoudcontainers' %}
         <a href="{% url 'vershoudcontainers' %}" class="category-card">
             <img src="{% static 'images/thumbnails/vershoudbakje.webp' %}" alt="Glazen vershoudbakjes" loading="lazy" width="600" height="600">
             <span>Glazen Vershoudbakjes</span>
             <small>Glas &amp; voedselveilig</small>
         </a>
+        {% endif %}
     </div>
 </section>
