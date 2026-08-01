@@ -4908,3 +4908,24 @@ table.product-table .product-badge {
 		}
 
 	}
+
+/* Custom: productfoto's nooit groter dan het productblok.
+   flow-root laat het blok de gefloatte afbeelding omsluiten; de foto
+   zelf wordt begrensd in hoogte en schaalt proportioneel mee. */
+	.product-block {
+		display: flow-root;
+	}
+
+	.product-block .image.right {
+		max-height: 24em;
+		overflow: hidden;
+	}
+
+	.product-block .image.right img {
+		width: auto;
+		max-width: 100%;
+		max-height: 24em;
+		object-fit: contain;
+		display: block;
+		margin: 0 auto;
+	}
