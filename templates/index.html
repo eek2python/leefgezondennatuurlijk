@@ -1,53 +1,105 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Leef Natuurlijk & Gezond | PFAS-vrije en niet-toxische keukenproducten{% endblock %}
+{% block title %}
+Leef Natuurlijk & Gezond | PFAS-vrije en bewuste keukenproducten
+{% endblock %}
 
 {% block meta %}
-<meta name="description" content="Vergelijk PFAS-vrije en niet-toxische keukenproducten zoals koekenpannen, wokpannen, snijplanken en glazen vershoudbakjes. Onafhankelijk geselecteerd op materiaalveiligheid, duurzaamheid en dagelijks gebruik.">
-<meta property="og:title" content="PFAS-vrije & niet-toxische keukenproducten">
-<meta property="og:description" content="Ontdek PFAS-vrije en niet-giftige keukenproducten voor een gezonder thuis. Vergelijk koekenpannen, airfryers, snijplanken en meer.">
-<meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/keuken.jpg">
-<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/">
+<meta
+    name="description"
+    content="Vergelijk PFAS-vrije pannen en airfryers, ongecoate RVS-pannen, houten snijplanken en glazen vershoudbakjes. Onafhankelijk geselecteerd op materiaal, eigenschappen, onderhoud en prijs."
+>
+
+<meta
+    property="og:title"
+    content="PFAS-vrije en bewust gekozen keukenproducten"
+>
+
+<meta
+    property="og:description"
+    content="Vergelijk pannen, airfryers, snijplanken en vershoudbakjes op materiaal, PFAS-status, functies, onderhoud en prijs."
+>
+
+<meta
+    property="og:image"
+    content="https://www.leefnatuurlijkengezond.nl/static/images/keuken.jpg"
+>
+
+<meta
+    property="og:url"
+    content="https://www.leefnatuurlijkengezond.nl/"
+>
+
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
+
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Leef Natuurlijk & Gezond – Veilige Keukenproducten voor een Gezond Thuis">
-<meta name="twitter:description" content="Ontdek PFAS-vrije en niet-giftige keukenproducten voor een gezonder thuis. Vergelijk koekenpannen, airfryers, snijplanken en meer.">
-<meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/keuken.jpg">
-<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/">
+
+<meta
+    name="twitter:title"
+    content="Leef Natuurlijk & Gezond | Bewust gekozen keukenproducten"
+>
+
+<meta
+    name="twitter:description"
+    content="Vergelijk PFAS-vrije pannen en airfryers, RVS-pannen, houten snijplanken en glazen vershoudbakjes."
+>
+
+<meta
+    name="twitter:image"
+    content="https://www.leefnatuurlijkengezond.nl/static/images/keuken.jpg"
+>
+
+<link
+    rel="canonical"
+    href="https://www.leefnatuurlijkengezond.nl/"
+>
 {% endblock %}
 
 {% block content %}
            <!-- HERO BANNER -->
-        <div class="hero-banner">
-        <img src="{% static 'images/keuken.jpg' %}"
-                alt="PFAS-vrije en niet-toxische keukenproducten"
-                class="hero-image">
-        <div class="hero-overlay">
+<div class="hero-banner">
+    <img
+        src="{% static 'images/keuken.jpg' %}"
+        alt="Keuken met pannen, snijplanken en glazen bewaarbakjes"
+        class="hero-image"
+    >
+    <div class="hero-overlay">
         <h1>Leef Natuurlijk & Gezond</h1>
-        <p>Onafhankelijke gids voor PFAS-vrije en niet-toxische keukenproducten</p>
-        </div>
-        </div>
+        <p>
+            Onafhankelijke gids voor PFAS-vrije en bewust gekozen
+            keukenproducten
+        </p>
+    </div>
+</div>
 
         <!-- WELKOM SECTIE -->
         <section class="intro-section">
         <div class="intro-container">
-        <h2>Bewust kiezen voor veilige keukenmaterialen</h2>
+        <h2>Bewust kiezen voor keukenmaterialen</h2>
         <p>
-                   Veel keukenproducten komen dagelijks in contact met eten en drinken. Daarom kiezen steeds meer mensen bewust voor materialen zoals RVS, hout, glas en PFAS-vrije keramische coatings.
+            Keukenproducten komen regelmatig in contact met eten en drinken.
+            Daarom letten steeds meer consumenten op materialen, coatings,
+            onderhoud en gebruikseigenschappen.
         </p>
         <p>
-                   Op Leef Natuurlijk & Gezond vergelijken we keukenproducten op materiaalkeuze, gebruiksgemak, duurzaamheid en voedselveiligheid. Denk aan PFAS-vrije koekenpannen, houten snijplanken, glazen vershoudbakjes en andere producten voor een bewustere keuken.
+            Op Leef Natuurlijk & Gezond vergelijken we keukenproducten op
+            materiaal, coating, functies, onderhoud, prijs en beschikbaarheid.
+            Denk aan PFAS-vrije pannen en airfryers, ongecoate RVS-pannen,
+            houten snijplanken en glazen vershoudbakjes.
         </p>
-           <p>
-                              Geen overdreven claims of onrealistische “gezondheidswonderen”, maar praktische koopgidsen voor producten die prettig zijn in dagelijks gebruik en passen bij een moderne, bewuste keuken.
-           </p>
+        <p>
+            We richten ons op controleerbare productspecificaties en praktische
+            koopinformatie. Waar mogelijk gebruiken we informatie van fabrikanten
+            en verkooppartners en maken we duidelijk wanneer een beoordeling
+            redactioneel is.
+        </p>
         </div>
         </section>
 
         <!-- CATEGORIE THUMBNAILS -->
         <section class="category-section">
-        <h2>Vergelijk PFAS-vrije en niet-toxische keukenproducten</h2>
+        <h2>Vergelijk bewust gekozen keukenproducten</h2>
         <div class="category-grid">
 
                 <a href="/snijplanken/" class="category-card">
@@ -57,27 +109,32 @@
 
                 <a href="/koekenpannen/" class="category-card">
                 <img src="{% static 'images/thumbnails/koekenpan.webp' %}" alt="PFAS-vrije koekenpannen" loading="lazy" width="600" height="600">
-                <span>PFAS-vrije Koekenpannen</span>
+                <span>PFAS-vrije keramische koekenpannen</span>
                 </a>
+
+                <a href="/rvs-koekenpannen/" class="category-card">
+                        <img src="{% static 'images/thumbnails/rvs-pan-bakken-zonder-aanbakken.webp' %}" alt="PFAS-vrije koekenpannen" loading="lazy" width="600" height="600">
+                        <span>PFAS-vrije rvs-koekenpannen</span>
+                        </a>
 
                 <a href="/hapjespannen/" class="category-card">
                 <img src="{% static 'images/thumbnails/hapjespan.webp' %}" alt="PFAS-vrije hapjespannen" loading="lazy" width="600" height="600">
-                <span>PFAS-vrije Hapjespannen</span>
+                <span>PFAS-vrije hapjespannen</span>
                 </a>
 
                  <a href="/wokpannen/" class="category-card">
                 <img src="{% static 'images/thumbnails/wokpan.webp' %}" alt="PFAS-vrije wokpannen" loading="lazy" width="600" height="600">
-                <span>PFAS-vrije Wokpannen</span>
+                <span>PFAS-vrije wokpannen</span>
                 </a>
 
                 <a href="/airfryers/" class="category-card">
                 <img src="{% static 'images/thumbnails/airfryer.webp' %}" alt="PFAS-vrije airfryers" loading="lazy" width="600" height="877">
-                <span>PFAS-vrije Airfryers</span>
+                <span>PFAS-vrije airfryers</span>
                 </a>
 
                 <a href="/vershoudcontainers/" class="category-card">
                 <img src="{% static 'images/thumbnails/vershoudbakje.webp' %}" alt="Glazen vershoudbakjes" loading="lazy" width="600" height="600">
-                <span>Glazen Vershoudbakjes</span>
+                <span>Glazen vershoudbakjes</span>
                 </a>
 
 <!--                <a href="/alternatieven-bakpapier/" class="category-card">-->
@@ -94,18 +151,50 @@
         </section>
 
 <section class="home-links">
-                   <h2>Populaire categorieën</h2>
-           <p>
-              Ontdek zorgvuldig geselecteerde keukenproducten op basis van materiaalveiligheid,
-              duurzaamheid en dagelijks gebruiksgemak.
-           </p>
-                   <ul>
-                   <li><a href="/koekenpannen/">PFAS-vrije koekenpannen vergelijken</a></li>
-                   <li><a href="/hapjespannen/">Beste PFAS-vrije hapjespannen</a></li>
-                   <li><a href="/wokpannen/">PFAS-vrije wokpannen voor inductie</a></li>
-                   <li><a href="/snijplanken/">Beste houten snijplanken</a></li>
-                   <li><a href="/vershoudcontainers/">Glazen vershoudbakjes vergelijken</a></li>
-                   </ul>
-                   </section>
+        <h2>Populaire vergelijkingen</h2>
+
+        <p>
+            Bekijk onze populairste vergelijkingen op basis van materiaal,
+            productspecificaties, gebruiksgemak, prijs en beschikbaarheid.
+        </p>
+
+        <ul>
+            <li>
+                <a href="/koekenpannen/">
+                    Beste PFAS-vrije keramische koekenpannen
+                </a>
+            </li>
+            <li>
+                <a href="/rvs-koekenpannen/">
+                    Beste PFAS-vrije rvs-koekenpannen
+                </a>
+            </li>
+            <li>
+                <a href="/hapjespannen/">
+                    Beste PFAS-vrije hapjespannen
+                </a>
+            </li>
+            <li>
+                <a href="/wokpannen/">
+                    Beste PFAS-vrije wokpannen
+                </a>
+            </li>
+            <li>
+                <a href="/airfryers/">
+                    Beste PFAS-vrije airfryers
+                </a>
+            </li>
+            <li>
+                <a href="/snijplanken/">
+                    Beste houten snijplanken
+                </a>
+            </li>
+            <li>
+                <a href="/vershoudcontainers/">
+                    Beste glazen vershoudbakjes
+                </a>
+            </li>
+        </ul>
+    </section>
 
 {% endblock %}

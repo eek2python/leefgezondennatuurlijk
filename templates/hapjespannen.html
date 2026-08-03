@@ -1,31 +1,72 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Top 10 PFAS-vrije Hapjespannen– Gezond, Duurzame & Stijlvol | Leef Natuurlijk & Gezond{% endblock %}
+{% block title %}Beste PFAS-vrije hapjespannen van {{ selected_size }} cm | Leef Natuurlijk & Gezond{% endblock %}
 
 {% block meta %}
-<meta name="description" content="Ontdek de 10 beste PFAS-vrije hapjespannen van 2026 – gezond, duurzaam en zonder schadelijke stoffen. Vergelijk formaten, merken en prestaties.">
+<meta
+    name="description"
+    content="Vergelijk de beste PFAS-vrije hapjespannen van 2026 op formaat, materiaal, coating, inhoud, inductiegeschiktheid, ovengebruik, onderhoud en prijs."
+>
+
 <!-- Open Graph -->
-<meta property="og:title" content="Top 10 PFAS-vrije Hapjespannen – Beste Gezonde Keuzes van 2026">
-<meta property="og:description" content="Bekijk de beste 10 PFAS-vrije hapjespannen in diverse formaten. Vergelijk keramische en natuurlijke pannen, inclusief reviews, prijzen en onze topaanbevelingen.">
+<meta
+    property="og:title"
+    content="Beste PFAS-vrije hapjespannen van 2026"
+>
+
+<meta
+    property="og:description"
+    content="Vergelijk PFAS-vrije hapjespannen op formaat, materiaal, inhoud, inductiegeschiktheid, ovengebruik, onderhoud en prijs."
+>
+
+<meta
+    property="og:image"
+    content="https://www.leefnatuurlijkengezond.nl/static/images/hapjespannen.jpg"
+>
+
+<meta
+    property="og:url"
+    content="https://www.leefnatuurlijkengezond.nl/hapjespannen/"
+>
+
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/hapjespannen/">
-<meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/hapjespannen.jpg">
 <meta property="og:locale" content="nl_NL">
-<!-- Twitter Card -->
+
+<link
+    rel="canonical"
+    href="https://www.leefnatuurlijkengezond.nl/hapjespannen/"
+>
+
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Top 10 PFAS-vrije Hapjespannen – Beste Gezonde Keuzes van 2026">
-<meta name="twitter:description" content="Ontdek onze top 10 PFAS-vrije hapjespannen voor gezond koken. Vergelijk coatings, warmtebronnen en prijsniveaus.">
-<meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/hapjespannen.jpg">
-<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/hapjespannen/">
-<!-- 🔹 Structured Data – Product ItemList -->
+
+<meta
+    name="twitter:title"
+    content="Beste PFAS-vrije hapjespannen van 2026"
+>
+
+<meta
+    name="twitter:description"
+    content="Vergelijk PFAS-vrije hapjespannen op formaat, materiaal, inhoud, functies, onderhoud en prijs."
+>
+
+<meta
+    name="twitter:image"
+    content="https://www.leefnatuurlijkengezond.nl/static/images/hapjespannen.jpg"
+>
+
+{% if json_ld %}
 <script type="application/ld+json">
     {{ json_ld|safe }}
 </script>
-<!-- FAQPage Structured Data -->
+{% endif %}
+
+{% if faq_ld %}
 <script type="application/ld+json">
-{{ faq_ld|safe }}
+    {{ faq_ld|safe }}
 </script>
+{% endif %}
 {% endblock %}
 
 {% block content %}

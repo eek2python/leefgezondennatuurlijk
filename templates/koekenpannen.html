@@ -1,32 +1,72 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Top {{ product_count }} Gezonde Koekenpannen zonder Giftige Coating | Leef Natuurlijk & Gezond{% endblock %}
+{% block title %}Beste keramische koekenpannen van {{ selected_size }} cm | Leef Natuurlijk & Gezond{% endblock %}
 
 {% block meta %}
-<meta name="description" content="Ontdek de 10 beste PFAS-vrije koekenpannen van 2026 – gezond, duurzaam en zonder schadelijke stoffen. Vergelijk merken, prijzen en prestaties.">
+<meta
+    name="description"
+    content="Vergelijk de beste PFAS-vrije keramische koekenpannen van 2026 op formaat, materiaal, coating, inductiegeschiktheid, ovengebruik, onderhoud en prijs."
+>
 
-<!-- 🔹 Open Graph -->
-<meta property="og:title" content="Top 10 PFAS-vrije Koekenpannen van 2026 – Gezond & Veilig Bakken">
-<meta property="og:description" content="Bekijk de beste PFAS-vrije koekenpannen van 2026 – vrij van schadelijke stoffen en duurzaam voor dagelijks gebruik.">
-<meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/pannen.jpg">
-<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/koekenpannen/">
+<!-- Open Graph -->
+<meta
+    property="og:title"
+    content="Beste PFAS-vrije keramische koekenpannen van 2026"
+>
+
+<meta
+    property="og:description"
+    content="Vergelijk keramische koekenpannen op formaat, materiaal, inductiegeschiktheid, ovengebruik, onderhoud en prijs."
+>
+
+<meta
+    property="og:image"
+    content="https://www.leefnatuurlijkengezond.nl/static/images/pannen.jpg"
+>
+
+<meta
+    property="og:url"
+    content="https://www.leefnatuurlijkengezond.nl/koekenpannen/"
+>
+
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/koekenpannen/">
 <meta property="og:locale" content="nl_NL">
-<!-- 🔹 Twitter -->
+
+<link
+    rel="canonical"
+    href="https://www.leefnatuurlijkengezond.nl/koekenpannen/"
+>
+
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Top 10 PFAS-vrije Koekenpannen van 2026 – Gezond & Veilig Bakken">
-<meta name="twitter:description" content="Ontdek de beste PFAS-vrije koekenpannen van 2026 – duurzaam, gezond en stijlvol. Vergelijk direct prijzen en prestaties.">
-<meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/pannen.jpg">
-<!-- 🔹 Structured Data – Product ItemList -->
+
+<meta
+    name="twitter:title"
+    content="Beste PFAS-vrije keramische koekenpannen van 2026"
+>
+
+<meta
+    name="twitter:description"
+    content="Vergelijk PFAS-vrije keramische koekenpannen op formaat, materiaal, functies, onderhoud en prijs."
+>
+
+<meta
+    name="twitter:image"
+    content="https://www.leefnatuurlijkengezond.nl/static/images/pannen.jpg"
+>
+
+{% if json_ld %}
 <script type="application/ld+json">
-{{ json_ld|safe }}
+    {{ json_ld|safe }}
 </script>
-<!-- 🔹 Structured Data – FAQPage -->
+{% endif %}
+
+{% if faq_ld %}
 <script type="application/ld+json">
-{{ faq_ld|safe }}
+    {{ faq_ld|safe }}
 </script>
+{% endif %}
 {% endblock %}
 
 {% block content %}

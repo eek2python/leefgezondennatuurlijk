@@ -1,29 +1,71 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Top 10 PFAS-vrije Wokpannen – Gezond, Duurzame & Stijlvol | Leef Natuurlijk & Gezond{% endblock %}
+{% block title %}
+Beste PFAS-vrije wokpannen van {{ selected_size }} cm | Leef Natuurlijk & Gezond
+{% endblock %}
 
 {% block meta %}
-<meta name="description" content="Ontdek de 10 beste PFAS-vrije wokpannen van 2026 – gezond, duurzaam en geschikt voor alle warmtebronnen. Vergelijk keramische en stalen wokpannen.">
-<!-- 🔹 Open Graph -->
-<meta property="og:title" content="Top 10 PFAS-vrije Wokpannen – Veilig & Gezond Wokken">
-<meta property="og:description" content="Bekijk de beste PFAS-vrije wokpannen van 2026. Gezond, duurzaam en geschikt voor alle warmtebronnen.">
+<meta
+    name="description"
+    content="Vergelijk de beste PFAS-vrije wokpannen van 2026 op formaat, materiaal, coating, inductiegeschiktheid, ovengebruik, prijs en onderhoud."
+>
+
+<!-- Open Graph -->
+<meta
+    property="og:title"
+    content="Beste PFAS-vrije wokpannen van 2026"
+>
+
+<meta
+    property="og:description"
+    content="Vergelijk PFAS-vrije wokpannen van 28 en 30 cm op materiaal, inhoud, inductiegeschiktheid, ovengebruik en prijs."
+>
+
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/wokpannen/">
+
+<meta
+    property="og:url"
+    content="https://www.leefnatuurlijkengezond.nl/wokpannen/"
+>
+
 <meta property="og:locale" content="nl_NL">
-<meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/wokpannen.jpg">
-<!-- 🔹 Twitter -->
-<meta name="twitter:title" content="Top 10 PFAS-vrije Wokpannen – Veilig & Gezond">
-<meta name="twitter:description" content="Vergelijk de beste PFAS-vrije wokpannen van 2026 met beoordelingen, prijzen en gebruikstips.">
+
+<meta
+    property="og:image"
+    content="https://www.leefnatuurlijkengezond.nl/static/images/wokpannen.jpg"
+>
+
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/wokpannen.jpg">
-<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/wokpannen/">
-<!-- 🔹 Structured Data – Product ItemList -->
+
+<meta
+    name="twitter:title"
+    content="Beste PFAS-vrije wokpannen van 2026"
+>
+
+<meta
+    name="twitter:description"
+    content="Vergelijk PFAS-vrije wokpannen op formaat, materiaal, functies, prijs en onderhoud."
+>
+
+<meta
+    name="twitter:image"
+    content="https://www.leefnatuurlijkengezond.nl/static/images/wokpannen.jpg"
+>
+
+<link
+    rel="canonical"
+    href="https://www.leefnatuurlijkengezond.nl/wokpannen/"
+>
+
+<!-- Structured Data – Product ItemList -->
 <script type="application/ld+json">
-        {{ json_ld|safe }}
+    {{ json_ld|safe }}
 </script>
+
 <!-- FAQPage Structured Data -->
 <script type="application/ld+json">
-{{ faq_ld|safe }}
+    {{ faq_ld|safe }}
 </script>
 {% endblock %}
 

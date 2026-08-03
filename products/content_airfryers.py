@@ -33,7 +33,7 @@ CONTENT = {
             ),
             "meta_title": (
                 "Beste compacte PFAS-vrije airfryers "
-                "(3–5 L) 2026 | Leef Natuurlijk & Gezond"
+                "(3–5 L) van 2026 | Leef Natuurlijk & Gezond"
             ),
             "meta_description": (
                 "Vergelijk compacte PFAS-vrije airfryers van 2026 "
@@ -71,7 +71,7 @@ CONTENT = {
             ),
             "meta_title": (
                 "Beste XL PFAS-vrije airfryers "
-                "(6–8 L) 2026 | Leef Natuurlijk & Gezond"
+                "(6–8 L) van 2026 | Leef Natuurlijk & Gezond"
             ),
             "meta_description": (
                 "Vergelijk XL PFAS-vrije airfryers van 6–8 liter "
@@ -108,7 +108,7 @@ CONTENT = {
                 "De beste dual-zone PFAS-vrije airfryers van 2026"
             ),
             "meta_title": (
-                "Beste dual-zone PFAS-vrije airfryers "
+                "Beste dual-zone PFAS-vrije airfryers van "
                 "2026 | Leef Natuurlijk & Gezond"
             ),
             "meta_description": (
