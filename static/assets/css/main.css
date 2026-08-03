@@ -4979,3 +4979,17 @@ table.product-table .product-badge {
 		object-fit: contain;
 		margin: 0 auto;
 	}
+
+/* Custom: hamburger altijd zichtbaar wanneer het menu is uitgeklapt op
+   smalle schermen. Standaard staat de toggle op left: 26em (rechts náást
+   de sidebar); op schermen smaller dan de sidebar valt hij daardoor buiten
+   beeld zodra het menu open is. Zolang het menu open is (#sidebar zonder
+   .inactive) pinnen we de toggle rechtsboven in het viewport. */
+@media screen and (max-width: 736px) {
+	#sidebar:not(.inactive) .toggle {
+		position: fixed;
+		left: auto;
+		right: 0;
+		top: 0;
+	}
+}
