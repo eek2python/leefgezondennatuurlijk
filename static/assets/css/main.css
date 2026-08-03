@@ -4014,12 +4014,16 @@ table.product-table .product-badge {
                                 -ms-flex-item-align: start;
                                 align-self: flex-start;
                                 max-height: 100vh;
-                                overflow-y: auto;
-                                overscroll-behavior: contain;
+                                /* Geen overflow op #sidebar zelf: dat knipt de
+                                   hamburger-toggle af (die hangt via left: 24em
+                                   buiten de sidebar). Scrollen gebeurt in .inner. */
                         }
 
                                 #sidebar > .inner {
                                         min-height: 0;
+                                        max-height: 100vh;
+                                        overflow-y: auto;
+                                        overscroll-behavior: contain;
                                 }
 
                 }
