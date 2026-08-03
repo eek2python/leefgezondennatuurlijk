@@ -8,7 +8,6 @@ PRODUCTS = {
         "diameter": 24,
         "material": "Vijflaags materiaal met RVS buitenlagen en aluminium kern",
         "features": [
-            "Vijflaags materiaal tot aan de rand",
             "Geschikt voor inductie",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -39,7 +38,6 @@ PRODUCTS = {
         ],
         "cons": [
             "Hoge aanschafprijs",
-            "RVS vraagt enige gewenning om aanbakken te beperken",
         ],
         "verdict": (
             "Onze beste allround keuze door de volledige meerlaagse "
@@ -61,7 +59,6 @@ PRODUCTS = {
             "Drielaags materiaal met RVS buitenlagen en aluminium kern"
         ),
         "features": [
-            "Volledige drielaagse constructie",
             "Geschikt voor inductie",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -112,7 +109,6 @@ PRODUCTS = {
             "Vijflaags materiaal met RVS buitenlagen en aluminium kern"
         ),
         "features": [
-            "Vijflaagse constructie",
             "Geschikt voor alle warmtebronnen",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -164,8 +160,6 @@ PRODUCTS = {
             "Cromargan 18/10 RVS met TransTherm sandwichbodem"
         ),
         "features": [
-            "Cromargan 18/10 RVS",
-            "TransTherm sandwichbodem",
             "Geschikt voor alle warmtebronnen",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -220,8 +214,6 @@ PRODUCTS = {
             "en gestructureerd NanoTouch-oppervlak"
         ),
         "features": [
-            "Zevenlaags materiaal",
-            "NanoTouch-bakoppervlak",
             "Geschikt voor inductie",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -325,7 +317,6 @@ PRODUCTS = {
             "Vijflaags materiaal met RVS buitenlagen en aluminium kern"
         ),
         "features": [
-            "Vijflaags materiaal tot aan de rand",
             "Geschikt voor inductie",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -377,8 +368,6 @@ PRODUCTS = {
             "en gestructureerd NanoTouch-oppervlak"
         ),
         "features": [
-            "Zevenlaags materiaal",
-            "NanoTouch-bakoppervlak",
             "Geschikt voor inductie",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -429,7 +418,6 @@ PRODUCTS = {
             "Vijflaags materiaal met RVS buitenlagen en drie aluminiumlagen"
         ),
         "features": [
-            "Vijflaagse constructie",
             "Geschikt voor alle warmtebronnen",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -481,8 +469,6 @@ PRODUCTS = {
             "Cromargan 18/10 RVS met TransTherm sandwichbodem"
         ),
         "features": [
-            "Cromargan 18/10 RVS",
-            "TransTherm sandwichbodem",
             "Geschikt voor alle warmtebronnen",
             "Ovenbestendig tot 250 °C",
             "Vaatwasserbestendig",
@@ -534,7 +520,6 @@ PRODUCTS = {
             "Drielaags materiaal met RVS buitenlagen en aluminium kern"
         ),
         "features": [
-            "Volledige drielaagse constructie",
             "Geschikt voor inductie",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -584,7 +569,6 @@ PRODUCTS = {
         "diameter": 28,
         "material": "RVS met samengestelde inductiebodem",
         "features": [
-            "Ongecoat RVS-bakoppervlak",
             "Geschikt voor inductie",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -637,7 +621,6 @@ PRODUCTS = {
             "Vijflaags materiaal met RVS buitenlagen en aluminium kern"
         ),
         "features": [
-            "Vijflaags materiaal tot aan de rand",
             "Geschikt voor inductie",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -688,7 +671,6 @@ PRODUCTS = {
             "Drielaags materiaal met RVS buitenlagen en aluminium kern"
         ),
         "features": [
-            "Volledige drielaagse constructie",
             "Geschikt voor inductie",
             "Ovenbestendig tot 230 °C",
             "Vaatwasserbestendig",
@@ -739,7 +721,6 @@ PRODUCTS = {
             "Drielaags materiaal met RVS buitenlagen en aluminium kern"
         ),
         "features": [
-            "Volledige drielaagse constructie",
             "Geschikt voor alle warmtebronnen",
             "Ovenbestendig tot 200 °C",
             "Vaatwasserbestendig",
@@ -791,8 +772,6 @@ PRODUCTS = {
             "Cromargan 18/10 RVS met TransTherm sandwichbodem"
         ),
         "features": [
-            "Cromargan 18/10 RVS",
-            "TransTherm sandwichbodem",
             "Geschikt voor alle warmtebronnen",
             "Ovenbestendig tot 250 °C",
             "Vaatwasserbestendig",
@@ -844,7 +823,6 @@ PRODUCTS = {
             "Vijflaags materiaal met RVS buitenlagen en drie aluminiumlagen"
         ),
         "features": [
-            "Vijflaagse constructie",
             "Geschikt voor alle warmtebronnen",
             "Ovenbestendig",
             "Vaatwasserbestendig",
@@ -897,8 +875,6 @@ PRODUCTS = {
             "en gestructureerd NanoTouch-oppervlak"
         ),
         "features": [
-            "Zevenlaags materiaal tot aan de rand",
-            "NanoTouch-bakoppervlak",
             "Geschikt voor alle warmtebronnen",
             "Ovenbestendig tot 350 °C",
             "Vaatwasserbestendig; handwas aanbevolen",

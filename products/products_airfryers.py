@@ -8,7 +8,6 @@ PRODUCTS = {
         ),
         "features": [
             "5 liter",
-            "PFAS-vrije antiaanbaklaag",
             "1700 watt",
             "8 automatische programma’s",
             "Temperatuur instelbaar van 80 tot 200 °C",
@@ -66,7 +65,6 @@ PRODUCTS = {
         ),
         "features": [
             "5 liter",
-            "PFAS-vrije keramische antiaanbaklaag",
             "1500 watt",
             "4 snelkeuzeprogramma’s",
             "Digitaal touchscreen",
@@ -83,7 +81,6 @@ PRODUCTS = {
         ),
         "pros": [
             "Smal ontwerp neemt relatief weinig aanrechtruimte in",
-            "PFAS-vrije keramische antiaanbaklaag",
             "Losse pan en rek zijn als reserveonderdeel verkrijgbaar",
         ],
         "cons": [
@@ -124,7 +121,6 @@ PRODUCTS = {
         ),
         "features": [
             "5 liter",
-            "PFAS-vrije keramische antiaanbaklaag",
             "1500 watt",
             "Digitaal bedieningspaneel",
             "8 automatische programma’s en handmatige stand",
@@ -142,7 +138,6 @@ PRODUCTS = {
         "pros": [
             "Kijkvenster om de bereiding te volgen",
             "Acht programma’s en een handmatige stand",
-            "PFAS-vrije keramische antiaanbaklaag",
         ],
         "cons": [
             "Relatief hoge aanschafprijs",
@@ -176,13 +171,12 @@ PRODUCTS = {
         "name": "Wartmann WM-2312 AF \u2013 5 L",
         "brand": "Wartmann",
         "material": "Keramische binnenmand",
-        "features": ["5 L", "PFAS-vrije keramische binnenmand", "Extra stille werking", "Kijkvenster"],
+        "features": ["5 L", "Extra stille werking", "Kijkvenster"],
         "image": "airfryer-wartmann-wm2312af-5l-pfasvrij.webp",
         "image_path": "images/products/airfryers",
         "description": "Krachtige PFAS-vrije airfryer met een duurzame keramische binnenmand en stille werking. Ideaal voor dagelijks gebruik in middelgrote keukens.",
         "pros": [
             "Opvallend stil tijdens gebruik",
-            "Keramische binnenmand zonder PFAS",
             "Stevige en stabiele bouwkwaliteit",
         ],
         "cons": [
@@ -211,7 +205,6 @@ PRODUCTS = {
         ),
         "features": [
             "5 liter",
-            "PFAS-vrije antiaanbaklaag",
             "1500 watt",
             "Temperatuur instelbaar van 80 tot 200 °C",
             "Digitaal display met touchbediening",
@@ -223,7 +216,7 @@ PRODUCTS = {
             "1500 watt vermogen en digitale touchbediening."
         ),
         "pros": [
-            "Laagste aanschafprijs binnen de selectie",
+            "Relatief lage aanschafprijs",
             "Temperatuur instelbaar van 80 tot 200 °C",
             "Digitaal display met touchbediening",
         ],
@@ -263,7 +256,6 @@ PRODUCTS = {
         ),
         "features": [
             "7,3 liter",
-            "PFAS-vrije antiaanbaklaag",
             "8 automatische programma’s",
             "Stoomfunctie",
             "Crispyfunctie",
@@ -322,7 +314,7 @@ PRODUCTS = {
         ),
         "features": [
             "8 liter",
-            "PFAS- en BPA-vrij",
+            "BPA-vrij",
             "2000 watt",
             "Dubbel verwarmingselement",
             "8 automatische programma’s",
@@ -386,7 +378,6 @@ PRODUCTS = {
         ),
         "features": [
             "7,2 liter",
-            "PFAS-vrije keramische antiaanbaklaag",
             "1650 watt",
             "11 automatische programma’s",
             "Digitaal led-touchscreen",
@@ -457,7 +448,6 @@ PRODUCTS = {
         ),
         "pros": [
             "Elf automatische programma’s",
-            "PFAS-vrije keramische antiaanbaklaag",
             "Verkrijgbaar in meerdere kleuruitvoeringen",
         ],
         "cons": [
@@ -499,7 +489,6 @@ PRODUCTS = {
         ),
         "features": [
             "8 liter",
-            "PFAS-vrije keramische antiaanbaklaag",
             "Touchscreenbediening",
             "4 snelkeuzeprogramma’s",
             "Temperatuur instelbaar van 80 tot 200 °C",
@@ -588,7 +577,6 @@ PRODUCTS = {
         ),
         "features": [
             "8 liter",
-            "PFAS-vrije antiaanbaklaag",
             "1800 watt",
             "Temperatuur instelbaar van 80 tot 200 °C",
             "Digitaal display met touchbediening",
@@ -640,7 +628,6 @@ PRODUCTS = {
         ),
         "features": [
             "2 x 4 liter",
-            "PFAS-vrije antiaanbaklaag",
             "1700 watt",
             "8 automatische programma’s",
             "Dual Cook-functie",
@@ -702,7 +689,6 @@ PRODUCTS = {
         ),
         "features": [
             "2 x 4 liter",
-            "PFAS-vrije keramische antiaanbaklaag",
             "2600 watt",
             "Twee afzonderlijke bakzones",
             "Digitaal touchscreen",
@@ -718,7 +704,6 @@ PRODUCTS = {
         ),
         "pros": [
             "Twee afzonderlijke manden van elk 4 liter",
-            "PFAS-vrije keramische antiaanbaklaag",
             "Vervangende manden en bakrekken zijn afzonderlijk verkrijgbaar",
         ],
         "cons": [
@@ -761,7 +746,6 @@ PRODUCTS = {
         ),
         "features": [
             "2 x 4 liter",
-            "PFAS-vrije keramische antiaanbaklaag",
             "3000 watt",
             "Twee afzonderlijk instelbare bakzones",
             "Sync Air-synchronisatiefunctie",
@@ -823,7 +807,6 @@ PRODUCTS = {
         ),
         "features": [
             "2 x 5,5 liter",
-            "PFAS-vrije keramische antiaanbaklaag",
             "2850 watt",
             "Infraroodverwarming",
             "8 automatische programma’s",

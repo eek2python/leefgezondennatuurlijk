@@ -35,6 +35,7 @@ existing swatch system in ``templates/partials/product_block.html``.
 
 import logging
 from dataclasses import dataclass
+from urllib.parse import urlparse
 
 from django.templatetags.static import static as static_url
 
@@ -334,6 +335,45 @@ LINK_LABEL = {
     LINK_TYPE_OFFICIAL: "Bekijk productspecificaties →",
 }
 
+#: Knoplabel voor Nederlandse bol.com-productlinks (alleen affiliate/retailer).
+LINK_LABEL_BOL = "Bekijk prijs en reviews bij bol →"
+
+#: Hostnamen die als bol.com gelden voor de bol-knoptekst.
+_BOL_HOSTNAMES = {"bol.com", "www.bol.com"}
+
+
+def is_bol_nl_url(url):
+    """True wanneer ``url`` een Nederlandse bol.com-link is.
+
+    Robuuste detectie via URL-parsing (geen substringcontrole):
+      - hostname exact ``bol.com`` of ``www.bol.com`` (hoofdletterongevoelig,
+        eventuele trailing dot genegeerd);
+      - pad begint met ``/nl/``.
+    Zo matchen misleidende domeinen (``bol.com.example.com``) of
+    querystring-URL's (``example.com/?url=https://www.bol.com/nl/``) nooit,
+    en telt ``/be/`` niet als Nederlandse link.
+    """
+    if not url or not isinstance(url, str):
+        return False
+    try:
+        parsed = urlparse(url.strip())
+    except (TypeError, ValueError):
+        return False
+    hostname = (parsed.hostname or "").lower().rstrip(".")
+    path = parsed.path or ""
+    return hostname in _BOL_HOSTNAMES and path.startswith("/nl/")
+
+
+def link_label_for(url, link_type):
+    """Knoplabel voor de daadwerkelijk geselecteerde URL (na fallback).
+
+    Nederlandse bol.com-links met linktype affiliate of retailer krijgen de
+    bol-knoptekst; deze regel wijzigt het linktype en rel-attribuut NIET.
+    Overige links gebruiken het standaardlabel per linktype."""
+    if link_type in (LINK_TYPE_AFFILIATE, LINK_TYPE_RETAILER) and is_bol_nl_url(url):
+        return LINK_LABEL_BOL
+    return LINK_LABEL[link_type]
+
 
 @dataclass(frozen=True)
 class ProductLink:
@@ -388,7 +428,7 @@ def _resolve_source_link(source):
             return ProductLink(
                 url=url,
                 link_type=link_type,
-                label=LINK_LABEL[link_type],
+                label=link_label_for(url, link_type),
                 rel=LINK_REL[link_type],
                 is_commercial=is_commercial,
             )

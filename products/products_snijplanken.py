@@ -8,7 +8,6 @@ PRODUCTS = {
         "brand": "KAAMUT",
         "material": "Zwarte walnoot in kopshoutconstructie",
         "features": [
-            "Kopshoutconstructie",
             "Sapgeul",
             "Antislipvoetjes",
             "Handgrepen",
@@ -110,7 +109,6 @@ PRODUCTS = {
         "brand": "BoosBlocks",
         "material": "Noord-Amerikaans esdoorn in kopshoutconstructie",
         "features": [
-            "Kopshoutconstructie",
             "Omkeerbaar",
             "Verzonken handgrepen",
             "51 × 38 × 6 cm",
@@ -161,7 +159,6 @@ PRODUCTS = {
         "material": "Massief beukenhout",
         "features": [
             "Extra groot werkoppervlak",
-            "Massief beukenhout",
             "60 × 40 × 3,5 cm",
         ],
         "image": "snijplank-zwilling.webp",
@@ -227,7 +224,6 @@ PRODUCTS = {
             "Donkere en gevarieerde houttekening",
         ],
         "cons": [
-            "Niet geschikt voor de vaatwasser",
             "Regelmatig onderhoud met geschikte olie aanbevolen",
             "Zwaarder dan dunne dagelijkse snijplanken",
         ],
@@ -278,7 +274,6 @@ PRODUCTS = {
             "Afgeronde randen maken de plank gemakkelijker vast te pakken",
         ],
         "cons": [
-            "Niet geschikt voor de vaatwasser",
             "Regelmatig onderhoud met geschikte olie aanbevolen",
         ],
         "rating": 4.3,
@@ -313,7 +308,6 @@ PRODUCTS = {
         "brand": "Continenta",
         "material": "Rubberwood in kopshoutconstructie",
         "features": [
-            "Kopshoutconstructie",
             "Compact formaat",
             "35 × 25 × 2 cm",
         ],
@@ -326,7 +320,7 @@ PRODUCTS = {
         "pros": [
             "Betaalbare kennismaking met een kopshouten constructie",
             "Compact formaat dat weinig werkruimte inneemt",
-            "Kopshouten oppervlak is relatief vriendelijk voor snijranden",
+            "Kopshouten oppervlak is relatief vriendelijk voor messen",
         ],
         "cons": [
             "Beperkt werkoppervlak voor grotere bereidingen",
@@ -379,7 +373,6 @@ PRODUCTS = {
         "cons": [
             "Beperkt werkoppervlak voor grotere bereidingen",
             "Dunne uitvoering is minder geschikt als zwaar hakblok",
-            "Niet geschikt voor de vaatwasser",
         ],
         "rating": 3.9,
         "rating_count": None,

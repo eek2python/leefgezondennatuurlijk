@@ -1,0 +1,269 @@
+Controleer en verbeter de knoptekstlogica voor externe productlinks.
+
+Context
+De productdata kan de volgende URL-velden bevatten:
+
+- affiliate_url
+- retailer_url
+- official_url
+
+Deze velden kunnen zowel op hoofdproductniveau als binnen `variants` voorkomen.
+
+De URL-selectielogica gebruikt deze prioriteit:
+
+1. affiliate_url
+2. retailer_url
+3. official_url
+4. geen knop wanneer alle URL-velden leeg zijn
+
+Bij producten met varianten geldt:
+
+1. geselecteerde variant affiliate_url
+2. geselecteerde variant retailer_url
+3. geselecteerde variant official_url
+4. hoofdproduct affiliate_url
+5. hoofdproduct retailer_url
+6. hoofdproduct official_url
+7. geen knop
+
+Nieuwe gewenste knoptekst voor bol.com
+Wanneer de uiteindelijk geselecteerde URL begint met:
+
+https://www.bol.com/nl/
+
+moet de knoptekst altijd zijn:
+
+"Bekijk prijs en reviews bij bol"
+
+Dit geldt voor zowel:
+
+- affiliate_url
+- retailer_url
+
+De knoptekst moet dus worden bepaald op basis van de URL die na toepassing van de volledige fallbacklogica daadwerkelijk wordt gebruikt.
+
+Voorbeelden:
+
+- affiliate_url =
+  "https://www.bol.com/nl/nl/p/product/123/"
+  → "Bekijk prijs en reviews bij bol"
+
+- retailer_url =
+  "https://www.bol.com/nl/nl/p/product/123/"
+  → "Bekijk prijs en reviews bij bol"
+
+- geselecteerde variant heeft een lege affiliate_url, maar een retailer_url
+  naar bol.com
+  → "Bekijk prijs en reviews bij bol"
+
+- geselecteerde variant heeft geen URL en valt terug op een bol.com-URL
+  van het hoofdproduct
+  → "Bekijk prijs en reviews bij bol"
+
+Standaardknopteksten
+Gebruik voor overige URL’s voorlopig:
+
+- affiliate_url:
+  "Bekijk prijs en reviews"
+
+- retailer_url:
+  "Bekijk prijs en reviews"
+
+- official_url:
+  "Bekijk productspecificaties"
+
+De bol.com-regel heeft voor affiliate_url en retailer_url voorrang op de
+standaardknoptekst.
+
+URL-detectie
+Implementeer de detectie robuust.
+
+Accepteer minimaal URL’s met deze host:
+
+- www.bol.com
+
+En met een pad dat begint met:
+
+- /nl/
+
+Controleer de URL bij voorkeur met URL-parsing in plaats van alleen met een
+losse substringcontrole.
+
+Een URL geldt als Nederlandse bol.com-productlink wanneer:
+
+- hostname gelijk is aan `www.bol.com` of `bol.com`;
+- pathname begint met `/nl/`.
+
+Gebruik geen simpele controle zoals:
+
+```python
+if "bol.com" in url:
+
+want die kan ook ongeldige of misleidende domeinen matchen, zoals:
+
+https://bol.com.example.com/
+https://example.com/?url=https://www.bol.com/nl/
+
+Voorkeurslogica in Python
+Centraliseer de bepaling van URL, linktype, knoptekst en rel-attribuut bij
+voorkeur in één herbruikbare helper.
+
+from urllib.parse import urlparse
+
+
+def is_bol_nl_url(url):
+    if not url or not isinstance(url, str):
+        return False
+
+    try:
+        parsed = urlparse(url.strip())
+    except (TypeError, ValueError):
+        return False
+
+    hostname = (parsed.hostname or "").lower().rstrip(".")
+    path = parsed.path or ""
+
+    return (
+        hostname in {"bol.com", "www.bol.com"}
+        and path.startswith("/nl/")
+    )
+
+
+def get_link_metadata(url, link_type):
+    if not url:
+        return None
+
+    if (
+        link_type in {"affiliate_url", "retailer_url"}
+        and is_bol_nl_url(url)
+    ):
+        label = "Bekijk prijs en reviews bij bol"
+    elif link_type == "affiliate_url":
+        label = "Bekijk prijs en reviews"
+    elif link_type == "retailer_url":
+        label = "Bekijk prijs en reviews"
+    elif link_type == "official_url":
+        label = "Bekijk productspecificaties"
+    else:
+        return None
+
+    rel_by_type = {
+        "affiliate_url": "nofollow sponsored noopener",
+        "retailer_url": "nofollow noopener",
+        "official_url": "noopener",
+    }
+
+    return {
+        "url": url,
+        "type": link_type,
+        "label": label,
+        "rel": rel_by_type[link_type],
+    }
+
+Pas deze voorbeeldcode aan de bestaande projectarchitectuur aan. Maak geen
+onnodige tweede URL-resolver wanneer er al een centrale helper bestaat.
+
+Client-side variantselectie
+Wanneer varianten via JavaScript worden geselecteerd:
+
+geef per variant alle URL-velden of vooraf opgeloste linkmetadata mee;
+laat de knop na iedere variantwissel opnieuw de juiste URL, tekst en
+rel-waarde tonen;
+pas ook de bol.com-detectie toe op de URL die na fallback daadwerkelijk
+is geselecteerd;
+voorkom dat de tekst van de vorige variant blijft staan;
+voorkom dat een bol.com-knoptekst wordt gebruikt bij een niet-bol.com-URL.
+
+Een variantobject kan bijvoorbeeld deze opgeloste velden bevatten:
+
+{
+  "resolved_url": "https://www.bol.com/nl/nl/p/product/123/",
+  "resolved_url_type": "retailer_url",
+  "resolved_label": "Bekijk prijs en reviews bij bol",
+  "resolved_rel": "nofollow noopener"
+}
+
+Controleer alle weergaveplaatsen
+Zoek in het volledige project naar plaatsen waar externe productlinks en
+knopteksten worden opgebouwd, waaronder:
+
+productkaarten;
+productdetailpagina’s;
+vergelijkingstabellen;
+variantselectors;
+JavaScript voor kleur- of uitvoeringselectie;
+mobiele templates;
+aanbevolen-productblokken;
+template tags en inclusion tags;
+views of serializers die linkmetadata voorbereiden.
+
+Zorg dat overal dezelfde centrale logica wordt gebruikt.
+
+Testgevallen
+Test minimaal:
+
+affiliate_url naar https://www.bol.com/nl/...
+→ "Bekijk prijs en reviews bij bol"
+retailer_url naar https://www.bol.com/nl/...
+→ "Bekijk prijs en reviews bij bol"
+affiliate_url naar een andere retailer
+→ "Bekijk prijs en reviews"
+retailer_url naar een andere retailer
+→ "Bekijk prijs en reviews"
+official_url naar bol.com
+→ "Bekijk productspecificaties"
+De bol-knoptekst geldt alleen voor affiliate_url en retailer_url.
+variant met een bol.com-retailer_url en een lege affiliate_url
+→ bol-knoptekst
+variant zonder URL die terugvalt op de bol.com-affiliate_url van het
+hoofdproduct
+→ bol-knoptekst
+wisselen van een bol.com-variant naar een niet-bol.com-variant
+→ knoptekst wordt direct teruggezet naar de standaardtekst
+wisselen van een niet-bol.com-variant naar een bol.com-variant
+→ knoptekst wordt direct aangepast naar de bol-tekst
+URL met host bol.com zonder www
+en pad /nl/...
+→ bol-knoptekst
+URL als https://bol.com.example.com/nl/...
+→ niet herkennen als bol.com
+URL als https://www.bol.com/be/...
+→ niet herkennen als Nederlandse bol.com-link
+lege string, None of ontbrekend URL-veld
+→ niet als link renderen
+URL met hoofdletters in de hostname
+→ correct herkennen
+URL met queryparameters of trackingparameters
+→ correct herkennen zolang host en pad kloppen
+
+Rel-attributen
+Behoud de bestaande rel-logica:
+
+affiliate_url:
+rel="nofollow sponsored noopener"
+retailer_url:
+rel="nofollow noopener"
+official_url:
+rel="noopener"
+
+De bol.com-knoptekst mag het linktype of het rel-attribuut niet veranderen.
+
+Structured data
+Verander geen JSON-LD-knoptekst, tenzij de huidige implementatie deze tekst
+daar onterecht in opneemt. Structured data moet de URL zelf gebruiken en
+niet afhankelijk zijn van de zichtbare knoptekst.
+
+Uitvoering
+Voer de wijziging direct door en rapporteer daarna:
+
+welke bestanden zijn aangepast;
+waar de knoptekst voorheen werd bepaald;
+of er dubbele of afwijkende knoptekstlogica bestond;
+hoe de bol.com-detectie nu werkt;
+hoe dit bij varianten en fallback-URL’s werkt;
+welke tests zijn toegevoegd of uitgevoerd;
+of alle productkaarten, detailpagina’s en vergelijkingstabellen nu
+dezelfde uitkomst geven.
+
+Verander geen productdata en geen bestaande URL’s. Pas uitsluitend de
+selectie- en presentatielogica voor URL’s en knopteksten aan.

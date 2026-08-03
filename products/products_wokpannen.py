@@ -10,7 +10,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Thermolon keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 180 °C",
             "Vaatwasserbestendig; handwas aanbevolen",
@@ -63,10 +62,8 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Vaatwasserbestendig; handwas aanbevolen",
-            "Siliconen handgreep",
         ],
         "description": (
             "RVS wokpan van 28 cm met keramische antiaanbaklaag en "
@@ -96,7 +93,6 @@ PRODUCTS = {
         ],
         "cons": [
             "Niet geschikt voor gebruik in de oven",
-            "Geen deksel meegeleverd",
         ],
         "verdict": (
             "Onze budgetkeuze voor wie een betaalbare keramische "
@@ -116,7 +112,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrije keramische antiaanbaklaag",
-            "TransTherm-bodem",
             "Geschikt voor inductie",
             "Ovenbestendig tot 250 °C",
             "Brede schenkrand",
@@ -221,7 +216,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Ecoshield antiaanbaklaag",
             "Geschikt voor inductie",
             "Geschikt voor gebruik in de oven",
             "Vaatwasserbestendig; handwas aanbevolen",
@@ -278,7 +272,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 160 °C",
             "Vaatwasserbestendig",
@@ -332,7 +325,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Vaatwasserbestendig; handwas aanbevolen",
             "Bakelieten handgreep met duimsteun",
@@ -392,7 +384,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Thermolon Infinity Pro keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 180 °C",
             "Vaatwasserbestendig; handwas aanbevolen",
@@ -447,7 +438,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 160 °C",
             "Vaatwasserbestendig",
@@ -501,7 +491,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "CeraGreen keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Full-diskbodem",
             "Handwas aanbevolen",
@@ -564,7 +553,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Thermolon Infinity Pro keramische antiaanbaklaag",
             "Drielaags RVS met aluminium kern",
             "Geschikt voor inductie",
             "Ovenbestendig tot 220 °C",
@@ -615,7 +603,6 @@ PRODUCTS = {
         "material": "Aluminium met keramische antiaanbaklaag",
         "features": [
             "PFAS-vrij",
-            "Keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 160 °C",
             "Vaatwasserbestendig",
@@ -643,7 +630,7 @@ PRODUCTS = {
         "image": "wokpan-bk-easy-induction-30cm.webp",
         "image_path": "images/products/wokpannen",
         "pros": [
-            "Laagste prijs binnen deze 30 cm-selectie",
+            "Relatief lage aanschafprijs",
             "Ovenbestendig tot 160 °C",
             "Geschikt voor inductie en vaatwasser",
         ],
@@ -672,7 +659,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 230 °C",
             "Vaatwasserbestendig",
@@ -731,7 +717,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Thermolon Infinity Pro keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 220 °C",
             "Vaatwasserbestendig; handwas aanbevolen",
@@ -790,7 +775,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "CeraGreen keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Inhoud van 5,2 liter",
             "Full-diskbodem",

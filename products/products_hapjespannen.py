@@ -16,7 +16,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Thermolon Infinity Pro antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig",
             "Inclusief glazen deksel",
@@ -66,7 +65,6 @@ PRODUCTS = {
         "material": "Aluminium met keramische antiaanbaklaag",
         "features": [
             "PFAS-vrij",
-            "Keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 160 °C",
             "Vaatwasserbestendig",
@@ -168,7 +166,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "QXR keramische antiaanbaklaag",
             "Geschikt voor inductie",
         ],
         "rating": 4.6,
@@ -266,7 +263,6 @@ PRODUCTS = {
         "material": "Aluminium met keramische antiaanbaklaag",
         "features": [
             "PFAS-vrij",
-            "Keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 160 °C",
             "Vaatwasserbestendig",
@@ -317,7 +313,6 @@ PRODUCTS = {
         "material": "Aluminium met keramische antiaanbaklaag",
         "features": [
             "PFAS-vrij",
-            "Keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Inclusief glazen deksel",
         ],
@@ -368,7 +363,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Thermolon keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Inclusief glazen deksel",
         ],
@@ -420,7 +414,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Thermolon Infinity Pro keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 220 °C",
             "Vaatwasserbestendig; handwas aanbevolen",
@@ -471,7 +464,6 @@ PRODUCTS = {
         "material": "Aluminium met keramische antiaanbaklaag",
         "features": [
             "PFAS-vrij",
-            "Keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 160 °C",
             "Inclusief glazen deksel",
@@ -523,7 +515,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "QXR keramische antiaanbaklaag",
             "Geschikt voor inductie",
         ],
         "rating": 4.6,
@@ -574,7 +565,6 @@ PRODUCTS = {
         ),
         "features": [
             "PFAS-vrij",
-            "Thermolon keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Ovenbestendig tot 160 °C",
             "Vaatwasserbestendig",
@@ -624,7 +614,6 @@ PRODUCTS = {
         "material": "Aluminium met keramische antiaanbaklaag",
         "features": [
             "PFAS-vrij",
-            "Keramische antiaanbaklaag",
             "Geschikt voor inductie",
             "Inclusief glazen deksel",
             "Koelgreep",
@@ -711,7 +700,6 @@ PRODUCTS = {
         "material": "Keramisch",
         "features": [
             "PFAS-vrij",
-            "Thermolon Infinity Pro coating",
             "Inductie- en ovenbestendig",
             "Inclusief glazen deksel",
         ],

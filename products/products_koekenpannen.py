@@ -191,7 +191,7 @@ PRODUCTS = {
         "brand": "Tefal",
         "diameter": 28,
         "material": "Gerecycled aluminium met keramische antiaanbaklaag",
-        "features": ["Gerecycled aluminium", "Thermo-Signal"],
+        "features": ["Thermo-Signal"],
         "rating": 4.2,
         "rating_count": None,
         "rating_source": "editorial",
@@ -225,7 +225,7 @@ PRODUCTS = {
         "brand": "BK",
         "diameter": 28,
         "material": "Aluminium met keramische antiaanbaklaag",
-        "features": ["Lichtgewicht", "Eenvoudig schoon te maken"],
+        "features": ["Lichtgewicht"],
         "rating": 4.1,
         "rating_count": None,
         "rating_source": "editorial",
@@ -258,7 +258,6 @@ PRODUCTS = {
         "diameter": 28,
         "material": "Aluminium met Ceraforce keramische antiaanbaklaag",
         "features": [
-            "Ceraforce keramische coating",
             "Geschikt voor inductie",
             "Dikke aluminium bodem",
         ],
@@ -276,8 +275,9 @@ PRODUCTS = {
         "image": "demeyere-alu-pro-5-ceraforce-28cm.webp",
         "image_path": "images/products/keramische-koekenpannen",
         "pros": [
-            "Hoge aanschafprijs",
-            "Relatief zwaar",
+            "Zeer gelijkmatige warmteverdeling",
+            "Stevige handgreep en afwerking",
+            "Geschikt voor intensief dagelijks gebruik",
         ],
         "cons": [
             "Hogere prijsklasse",
@@ -309,7 +309,7 @@ PRODUCTS = {
         "image_path": "images/products/keramische-koekenpannen",
         "pros": [
             "Gelijkmatige warmteverdeling",
-            "Hoogwaardig afgewerkte keramische antiaanbaklaag"
+            "Hoogwaardig afgewerkte keramische antiaanbaklaag",
             "Ergonomisch handvat",
         ],
         "cons": [
@@ -327,7 +327,6 @@ PRODUCTS = {
         "diameter": 28,
         "material": "Aluminium met Thermolon keramische antiaanbaklaag",
         "features": [
-            "Thermolon™ PFAS-vrije coating",
             "Geschikt voor inductie",
             "Goede warmteverdeling",
         ],
@@ -473,8 +472,7 @@ PRODUCTS = {
         "brand": "Demeyere",
         "diameter": 24,
         "material": "Aluminium met Ceraforce keramische antiaanbaklaag",
-        "features": ["Ceraforce keramische coating",
-                    "Geschikt voor inductie",
+        "features": ["Geschikt voor inductie",
                     "Stevige aluminium constructie",],
         "rating": 4.6,
         "rating_count": None,
@@ -611,8 +609,7 @@ PRODUCTS = {
         "brand": "Tefal",
         "diameter": 24,
         "material": "Gerecycled aluminium met keramische antiaanbaklaag",
-        "features": ["Gerecycled aluminium",
-                    "Hitte-indicator",],
+        "features": ["Hitte-indicator",],
         "rating": 4.2,
         "rating_count": None,
         "rating_source": "editorial",
@@ -646,7 +643,7 @@ PRODUCTS = {
         "brand": "BK",
         "diameter": 24,
         "material": "Aluminium met keramische antiaanbaklaag",
-        "features": ["Lichtgewicht", "Eenvoudig schoon te maken"],
+        "features": ["Lichtgewicht"],
         "rating": 4.1,
         "rating_count": None,
         "rating_source": "editorial",
@@ -662,7 +659,6 @@ PRODUCTS = {
         "pros": [
             "Licht en gemakkelijk hanteerbaar",
             "Goede warmtegeleiding",
-            "Eenvoudig schoon te maken",
         ],
         "cons": [
             "Niet geschikt voor oven",
@@ -680,7 +676,6 @@ PRODUCTS = {
         "material": "Aluminium met keramische antiaanbaklaag",
         "features": [
             "Geschikt voor inductie",
-            "Keramische antiaanbaklaag",
         ],
         "rating": 3.9,
         "rating_count": None,
@@ -821,8 +816,7 @@ PRODUCTS = {
         "brand": "Demeyere",
         "diameter": 26,
         "material": "Aluminium met Ceraforce keramische antiaanbaklaag",
-        "features": ["Geschikt voor inductie",
-                    "Ceraforce keramische coating",],
+        "features": ["Geschikt voor inductie",],
         "rating": 4.6,
         "rating_count": None,
         "rating_source": "editorial",
@@ -1115,7 +1109,6 @@ PRODUCTS = {
         "diameter": 20,
         "material": "Aluminium met Ceraforce keramische antiaanbaklaag",
         "features": ["Geschikt voor inductie",
-                    "Ceraforce keramische coating",
                     "Stevige aluminium constructie",],
         "rating": 4.6,
         "rating_count": None,
@@ -1258,8 +1251,7 @@ PRODUCTS = {
         "brand": "Tefal",
         "diameter": 20,
         "material": "Gerecycled aluminium met keramische antiaanbaklaag",
-        "features": [ "Gerecycled aluminium",
-                    "Thermo-Signal hitte-indicator",
+        "features": ["Thermo-Signal hitte-indicator",
                     "Geschikt voor inductie",],
         "rating": 4.2,
         "rating_count": None,
@@ -1277,7 +1269,7 @@ PRODUCTS = {
         "pros": [
             "Pan gemaakt van gerecycled materiaal",
             "Goede warmtegeleiding",
-            "Thermo-Spot-hitte-indicator",
+            "Thermo-Signal-hitte-indicator",
         ],
         "cons": [
             "Niet ovenbestendig",
@@ -1363,7 +1355,6 @@ PRODUCTS = {
         "diameter": 20,
         "material": "100% gerecycled aluminium met b.nature kwarts-antiaanbaklaag",
         "features": ["Geschikt voor inductie",
-                    "Panlichaam van gerecycled aluminium",
                     "Vaatwasserbestendig",],
         "rating": 4.3,
         "rating_count": None,
@@ -1475,7 +1466,6 @@ PRODUCTS = {
         "diameter": 30,
         "material": "Aluminium met Ceraforce keramische antiaanbaklaag",
         "features": ["Geschikt voor inductie",
-                    "Ceraforce keramische coating",
                     "Ovenbestendig tot 230 °C",],
         "rating": 4.6,
         "rating_count": None,
@@ -1528,7 +1518,6 @@ PRODUCTS = {
         "pros": [
             "Toegankelijke aanschafprijs",
             "Goede warmteverdeling",
-            "Eenvoudig schoon te maken",
         ],
         "cons": [
             "Niet ovenbestendig",
@@ -1563,7 +1552,7 @@ PRODUCTS = {
         "pros": [
             "Snelle en gelijkmatige opwarming",
             "Koel blijvende handgreep",
-            "Geschikt voor oven en vaatwasser",
+            "Geschikt voor vaatwasser",
         ],
         "cons": [
             "Beperkte maximale oventemperatuur van 160 °C",
@@ -1614,7 +1603,7 @@ PRODUCTS = {
         "brand": "Tefal",
         "diameter": 30,
         "material": "Gerecycled aluminium met keramische antiaanbaklaag",
-        "features": ["Gerecycled aluminium", "Thermo-Signal hitte-indicator", "Geschikt voor inductie",],
+        "features": ["Thermo-Signal hitte-indicator", "Geschikt voor inductie",],
         "rating": 4.2,
         "rating_count": None,
         "rating_source": "editorial",
@@ -1734,7 +1723,6 @@ PRODUCTS = {
         "material": "Aluminium met Ceraforce keramische antiaanbaklaag",
         "features": [
             "Geschikt voor inductie",
-            "Ceraforce keramische coating",
             "Ruim bakoppervlak",
         ],
         "rating": 4.6,
@@ -1832,7 +1820,6 @@ PRODUCTS = {
         "features": [
             "Geschikt voor alle warmtebronnen",
             "Thermo-Signal hitte-indicator",
-            "Pan gemaakt van gerecycled aluminium",
         ],
         "rating": 4.2,
         "rating_count": None,
@@ -1878,7 +1865,6 @@ PRODUCTS = {
         "diameter": 32,
         "material": "Aluminium met Excilon-antiaanbaklaag op keramische basis",
         "features": [
-            "Excilon-coating op keramische basis",
             "Geschikt voor alle warmtebronnen",
             "Geschikt voor ovengebruik",
         ],

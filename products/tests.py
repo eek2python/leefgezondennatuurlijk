@@ -1829,6 +1829,83 @@ class ProductLinkResolverTests(TestCase):
         self.assertEqual(link.link_type, "official")
         self.assertIn("productspecificaties", link.label.lower())
 
+    # ---- bol.com-knoptekst (label bepaald op de daadwerkelijk gekozen URL) ----
+
+    BOL = "https://www.bol.com/nl/nl/p/product/123/"
+
+    def test_bol_affiliate_url_gets_bol_label(self):
+        link = resolve_product_link({"affiliate_url": self.BOL})
+        self.assertEqual(link.label, "Bekijk prijs en reviews bij bol →")
+        self.assertEqual(link.link_type, "affiliate")
+        self.assertIn("sponsored", link.rel)
+
+    def test_bol_retailer_url_gets_bol_label(self):
+        link = resolve_product_link({"retailer_url": self.BOL})
+        self.assertEqual(link.label, "Bekijk prijs en reviews bij bol →")
+        self.assertEqual(link.link_type, "retailer")
+        self.assertNotIn("sponsored", link.rel)
+
+    def test_non_bol_affiliate_and_retailer_keep_default_label(self):
+        for field in ("affiliate_url", "retailer_url"):
+            link = resolve_product_link({field: "https://shop.example/x"})
+            self.assertEqual(link.label, "Bekijk prijs & reviews →")
+
+    def test_bol_official_url_keeps_specs_label(self):
+        link = resolve_product_link({"official_url": self.BOL})
+        self.assertIn("productspecificaties", link.label.lower())
+        self.assertNotIn("bij bol", link.label)
+
+    def test_variant_bol_retailer_with_empty_affiliate_gets_bol_label(self):
+        product = self._variant_product(
+            {"affiliate_url": "", "retailer_url": self.BOL}
+        )
+        prepare_product_variants(product)
+        self.assertEqual(
+            product["resolved_link"].label, "Bekijk prijs en reviews bij bol →"
+        )
+
+    def test_variant_family_fallback_to_bol_gets_bol_label(self):
+        product = self._variant_product({})
+        product["affiliate_url"] = self.BOL
+        prepare_product_variants(product)
+        link = product["default_variant"]["resolved_link"]
+        self.assertEqual(link.url, self.BOL)
+        self.assertEqual(link.label, "Bekijk prijs en reviews bij bol →")
+
+    def test_switching_between_bol_and_non_bol_updates_label(self):
+        product = self._two_variant_product(
+            v1_extra={"retailer_url": self.BOL},
+            v2_extra={"retailer_url": "https://shop.example/v2"},
+        )
+        self.assertEqual(
+            product["resolved_link"].label, "Bekijk prijs en reviews bij bol →"
+        )
+        set_display_variant(product, product["shape_variants"][1])
+        self.assertEqual(product["resolved_link"].label, "Bekijk prijs & reviews →")
+        set_display_variant(product, product["shape_variants"][0])
+        self.assertEqual(
+            product["resolved_link"].label, "Bekijk prijs en reviews bij bol →"
+        )
+
+    def test_is_bol_nl_url_detection(self):
+        from utils.variant_helpers import is_bol_nl_url
+        self.assertTrue(is_bol_nl_url("https://www.bol.com/nl/nl/p/x/1/"))
+        self.assertTrue(is_bol_nl_url("https://bol.com/nl/nl/p/x/1/"))
+        self.assertTrue(is_bol_nl_url("HTTPS://WWW.BOL.COM/nl/p/x/1/"))
+        self.assertTrue(is_bol_nl_url("https://www.bol.com./nl/p/x/1/"))
+        self.assertTrue(
+            is_bol_nl_url("https://www.bol.com/nl/p/x/1/?utm_source=tracking")
+        )
+        self.assertFalse(is_bol_nl_url("https://bol.com.example.com/nl/x"))
+        self.assertFalse(
+            is_bol_nl_url("https://example.com/?url=https://www.bol.com/nl/")
+        )
+        self.assertFalse(is_bol_nl_url("https://www.bol.com/be/nl/p/x/1/"))
+        self.assertFalse(is_bol_nl_url("https://www.bol.com/"))
+        self.assertFalse(is_bol_nl_url(""))
+        self.assertFalse(is_bol_nl_url(None))
+        self.assertFalse(is_bol_nl_url(123))
+
     def test_variant_switch_clears_stale_link(self):
         product = {
             "slug": "test-product",
