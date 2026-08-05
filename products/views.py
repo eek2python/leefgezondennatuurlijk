@@ -278,61 +278,75 @@ def _build_product_ld(request, p):
     return product_ld
 
 
+_AVAILABILITY_MAP = {
+    "InStock":      "https://schema.org/InStock",
+    "OutOfStock":   "https://schema.org/OutOfStock",
+    "PreOrder":     "https://schema.org/PreOrder",
+    "BackOrder":    "https://schema.org/BackOrder",
+    "Discontinued": "https://schema.org/Discontinued",
+}
+
+
 def _build_offer_ld(p):
-    # Nooit een Offer zonder geldige prijs én URL (en munteenheid /
-    # beschikbaarheid): een displayvariant zonder eigen commerciële data
-    # levert géén Offer op — er wordt niet teruggevallen op een andere
-    # variant.
-    if (
-        not p.get("affiliate_url")
-        or p.get("price") in (None, "")
-        or not p.get("currency")
-        or not p.get("availability")
-    ):
+    # URL-prioriteit: affiliate_url → retailer_url. official_url is nooit
+    # een Offer-URL (fabrikantpagina biedt niet altijd een aankoopmogelijkheid).
+    product_url = p.get("affiliate_url") or p.get("retailer_url") or ""
+    price = p.get("price")
+    if not product_url or price in (None, ""):
         return None
-    return {
-                        "@type": "Offer",
-                        "url": p["affiliate_url"],
-                        "price": p["price"],
-                        "priceCurrency": p["currency"],
-                        "availability": f"https://schema.org/{p['availability']}",
-                        "hasMerchantReturnPolicy": {
-                            "@type": "MerchantReturnPolicy",
-                            "applicableCountry": "NL",
-                            "returnPolicyCountry": "NL",
-                            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-                            "merchantReturnDays": 14,
-                            "returnMethod": "https://schema.org/ReturnByMail",
-                            "returnFees": "https://schema.org/FreeReturn",
-                        },
-                        "shippingDetails": {
-                            "@type": "OfferShippingDetails",
-                            "shippingDestination": {
-                                "@type": "DefinedRegion",
-                                "addressCountry": "NL",
-                            },
-                            "shippingRate": {
-                                "@type": "MonetaryAmount",
-                                "value": "0.00",
-                                "currency": p["currency"],
-                            },
-                            "deliveryTime": {
-                                "@type": "ShippingDeliveryTime",
-                                "handlingTime": {
-                                    "@type": "QuantitativeValue",
-                                    "minValue": 0,
-                                    "maxValue": 1,
-                                    "unitCode": "DAY",
-                                },
-                                "transitTime": {
-                                    "@type": "QuantitativeValue",
-                                    "minValue": 1,
-                                    "maxValue": 2,
-                                    "unitCode": "DAY",
-                                },
-                            },
-                        },
-                    }
+
+    currency = p.get("currency") or "EUR"
+    availability_raw = p.get("availability", "")
+    mapped_availability = _AVAILABILITY_MAP.get(availability_raw)
+
+    offer = {
+        "@type": "Offer",
+        "url": product_url,
+        "price": f"{float(price):.2f}",
+        "priceCurrency": currency,
+    }
+    if mapped_availability:
+        offer["availability"] = mapped_availability
+
+    offer.update({
+        "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "NL",
+            "returnPolicyCountry": "NL",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 14,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn",
+        },
+        "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "NL",
+            },
+            "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0.00",
+                "currency": currency,
+            },
+            "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 0,
+                    "maxValue": 1,
+                    "unitCode": "DAY",
+                },
+                "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 1,
+                    "maxValue": 2,
+                    "unitCode": "DAY",
+                },
+            },
+        },
+    })
+    return offer
 
 
 def _build_itemlist_ld(request, name, description, products):

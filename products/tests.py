@@ -309,10 +309,11 @@ class VariantPageTests(TestCase):
             if "Igluu" in e["item"]["name"]
         ]
         self.assertEqual(len(igluu), 1)  # one Product entity, not one per shape
-        # Beleid: alleen affiliate_url levert een Offer. De Igluu-links
-        # zijn naar retailer_url gemigreerd, dus geen Offer meer — en zeker
-        # geen lege of retailer-URL in structured data.
-        self.assertNotIn("offers", igluu[0])
+        # Beleid: affiliate_url → retailer_url als fallback. Igluu heeft
+        # retailer_url (amazon.nl), dus krijgt wél een Offer.
+        self.assertIn("offers", igluu[0])
+        self.assertEqual(igluu[0]["offers"]["@type"], "Offer")
+        self.assertIn("amazon.nl", igluu[0]["offers"]["url"])
 
     def test_igluu_detail_page_uses_default_variant(self):
         response = self.client.get("/product/igluu-meal-prep-3delig/")
@@ -769,10 +770,40 @@ class DisplayVariantHardeningTests(TestCase):
             "availability": "InStock",
         }
         self.assertIsNotNone(_build_offer_ld(base))
-        for missing in ("affiliate_url", "price", "currency", "availability"):
-            broken = dict(base)
-            broken[missing] = None
-            self.assertIsNone(_build_offer_ld(broken), missing)
+
+        # Zonder URL (affiliate én retailer leeg/afwezig) → geen Offer.
+        no_url = dict(base)
+        no_url["affiliate_url"] = None
+        self.assertIsNone(_build_offer_ld(no_url), "affiliate_url only, no retailer_url")
+
+        # Zonder prijs → geen Offer.
+        no_price = dict(base)
+        no_price["price"] = None
+        self.assertIsNone(_build_offer_ld(no_price), "price")
+
+        # currency is optioneel: ontbrekend → valt terug op EUR, Offer wordt wél aangemaakt.
+        no_currency = dict(base)
+        no_currency["currency"] = None
+        offer = _build_offer_ld(no_currency)
+        self.assertIsNotNone(offer, "currency defaults to EUR")
+        self.assertEqual(offer["priceCurrency"], "EUR")
+
+        # availability is optioneel: ontbrekend of onbekend → Offer zonder availability-veld.
+        no_avail = dict(base)
+        no_avail["availability"] = None
+        offer_no_avail = _build_offer_ld(no_avail)
+        self.assertIsNotNone(offer_no_avail, "availability is optional")
+        self.assertNotIn("availability", offer_no_avail)
+
+        # retailer_url als enige URL → Offer wordt wél aangemaakt.
+        retailer_only = {
+            "affiliate_url": "",
+            "retailer_url": "https://example.com/retailer",
+            "price": 9.99,
+        }
+        offer_retailer = _build_offer_ld(retailer_only)
+        self.assertIsNotNone(offer_retailer, "retailer_url fallback")
+        self.assertEqual(offer_retailer["url"], "https://example.com/retailer")
 
 
 class EditorialRatingDisplayTests(TestCase):
@@ -1334,9 +1365,11 @@ class LockNLockCapacityVariantTests(TestCase):
             if "Lock&Lock" in e["item"]["name"]
         ]
         self.assertEqual(len(entries), 1)
-        # Retailer-only product: geen Offer (affiliate-only beleid) en
-        # geen lege/retailer-URL in structured data.
-        self.assertNotIn("offers", entries[0])
+        # Beleid: affiliate_url → retailer_url als fallback. Lock&Lock heeft
+        # een retailer_url (locklock.nl), dus krijgt wél een Offer.
+        self.assertIn("offers", entries[0])
+        self.assertEqual(entries[0]["offers"]["@type"], "Offer")
+        self.assertIn("locklock.nl", entries[0]["offers"]["url"])
         positions = [e["position"] for e in itemlist["itemListElement"]]
         self.assertEqual(len(positions), len(set(positions)))
 

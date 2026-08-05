@@ -1,0 +1,89 @@
+Zoek in het Django-project waar de templatevariabele `json_ld` voor de
+vershoudbakjespagina wordt opgebouwd.
+
+De template zelf bevat alleen:
+
+{% if json_ld %}
+<script type="application/ld+json">
+{{ json_ld|safe }}
+</script>
+{% endif %}
+
+Pas dus niet primair de template aan, maar de Python-code die `json_ld`
+genereert.
+
+Probleem
+Google meldt bij de Product-objecten:
+
+Either "offers", "review", or "aggregateRating" should be specified
+
+De Product-objecten bevatten nu onder andere:
+
+- name
+- description
+- image
+- brand
+- material
+
+maar geen `offers`.
+
+Gewenste minimale oplossing
+Voeg aan ieder Product-object een geldig `offers`-object toe wanneer:
+
+- `price` beschikbaar is;
+- `currency` beschikbaar is of standaard EUR kan worden gebruikt;
+- een `affiliate_url` of `retailer_url` beschikbaar is.
+
+URL-prioriteit voor een Offer:
+
+1. affiliate_url
+2. retailer_url
+3. geen Offer
+
+Gebruik `official_url` niet als Offer-URL, omdat een fabrikantpagina niet
+altijd een concrete aankoopmogelijkheid biedt.
+
+Voorbeeld:
+
+product_url = (
+    product.get("affiliate_url")
+    or product.get("retailer_url")
+)
+
+if product_url and product.get("price") is not None:
+    product_schema["offers"] = {
+        "@type": "Offer",
+        "url": product_url,
+        "priceCurrency": product.get("currency", "EUR"),
+        "price": f"{product['price']:.2f}",
+        "availability": mapped_availability,
+    }
+
+Map beschikbaarheid minimaal als volgt:
+
+- InStock → https://schema.org/InStock
+- OutOfStock → https://schema.org/OutOfStock
+- PreOrder → https://schema.org/PreOrder
+- BackOrder → https://schema.org/BackOrder
+- Discontinued → https://schema.org/Discontinued
+
+Voeg `availability` alleen toe wanneer een geldige mapping bestaat.
+
+Belangrijk:
+- maak geen `aggregateRating` van de redactionele score;
+- gebruik geen verzonnen reviewCount;
+- voeg geen leeg Offer-object toe;
+- genereer geen href of Offer-URL vanuit official_url;
+- zorg dat de prijs als decimaal met punt wordt uitgevoerd;
+- controleer dat de prijs en aanbieding zichtbaar zijn op de pagina;
+- behoud de bestaande ItemList-structuur;
+- controleer ook andere categoriepagina’s die dezelfde Product-schemahelper
+  gebruiken.
+
+Rapporteer na afloop:
+1. in welk bestand `json_ld` werd opgebouwd;
+2. welke functie de Product-objecten genereert;
+3. welke wijziging is aangebracht;
+4. hoe producten zonder prijs of kooplink worden behandeld;
+5. een voorbeeld van de uiteindelijke JSON-LD voor één product;
+6. of de wijziging ook andere productcategorieën beïnvloedt.
