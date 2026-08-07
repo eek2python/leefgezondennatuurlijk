@@ -4744,7 +4744,19 @@ table.product-table .product-badge {
     margin: 0;
     flex-grow: 1;
 }
-.top-pick-card .button { margin-top: auto; text-align: center; }
+.top-pick-card .button {
+    margin-top: auto;
+    text-align: center;
+    /* Knoptekst mag afbreken wanneer de kaart smaller is dan de tekst breed
+       (bijv. "Bekijk prijs en reviews bij Bol →"). De vaste hoogte en
+       line-height uit het thema worden vervangen door padding, zodat de knop
+       meeschaalt met de tekst. */
+    white-space: normal;
+    height: auto;
+    line-height: 1.4;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+}
 .how-we-link { margin-top: 0.8em; font-size: 0.9em; }
 .how-we-link a { color: #2f7d4e; font-weight: 600; }
 @media (max-width: 480px) {
