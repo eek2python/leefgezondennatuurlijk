@@ -1,0 +1,302 @@
+Controleer en pas de knoptekstlogica voor bol.com-links aan.
+
+Context
+De website gebruikt verschillende externe URL-velden:
+
+- affiliate_url
+- retailer_url
+- official_url
+
+Voor bol.com-links moet de knoptekst zijn:
+
+"Bekijk prijs en reviews bij Bol"
+
+Dit werkt momenteel voor gewone bol.com-productlinks, bijvoorbeeld:
+
+https://www.bol.com/nl/...
+
+Maar affiliate-links van bol.com beginnen vaak met:
+
+https://partner.bol.com/...
+
+Daardoor wordt de speciale bol.com-knoptekst nu waarschijnlijk niet toegepast.
+
+Doel
+Zorg dat zowel gewone bol.com-productlinks als bol.com-affiliate-links
+worden herkend als Bol-links.
+
+De knoptekst moet zijn:
+
+"Bekijk prijs en reviews bij Bol"
+
+wanneer de uiteindelijk geselecteerde URL afkomstig is van:
+
+- www.bol.com
+- bol.com
+- partner.bol.com
+
+Dit geldt alleen wanneer de URL afkomstig is uit:
+
+- affiliate_url
+- retailer_url
+
+Voor `official_url` blijft de knoptekst:
+
+"Bekijk productspecificaties"
+
+Bestaande standaardteksten voor andere retailers blijven:
+
+- affiliate_url:
+  "Bekijk prijs en reviews"
+
+- retailer_url:
+  "Bekijk prijs en reviews"
+
+- official_url:
+  "Bekijk productspecificaties"
+
+
+GEWENSTE DETECTIE
+
+Controleer eerst waar de bestaande bol.com-detectie is geïmplementeerd.
+Er bestaat mogelijk al een helper zoals:
+
+- is_bol_url
+- is_bol_nl_url
+- get_link_metadata
+- resolve_product_link
+- get_product_url
+- product_link_label
+
+Breid bestaande centrale logica uit in plaats van nieuwe dubbele logica
+toe te voegen.
+
+Gebruik bij voorkeur URL-parsing.
+
+Een URL moet als Bol-link worden herkend wanneer de hostname exact één van
+de volgende waarden is:
+
+- bol.com
+- www.bol.com
+- partner.bol.com
+
+Voor gewone productlinks op bol.com mag eventueel de bestaande controle
+blijven gelden dat het pad met `/nl/` begint.
+
+Voor `partner.bol.com` mag die `/nl/`-voorwaarde NIET worden vereist,
+omdat affiliate-links een andere URL-structuur kunnen hebben.
+
+Een veilige helper kan bijvoorbeeld ongeveer zo werken:
+
+```python
+from urllib.parse import urlparse
+
+
+def is_bol_url(url):
+    if not url or not isinstance(url, str):
+        return False
+
+    try:
+        parsed = urlparse(url.strip())
+    except (TypeError, ValueError):
+        return False
+
+    hostname = (parsed.hostname or "").lower().rstrip(".")
+
+    if hostname == "partner.bol.com":
+        return True
+
+    if hostname in {"bol.com", "www.bol.com"}:
+        return (parsed.path or "").startswith("/nl/")
+
+    return False
+
+Gebruik geen simpele controles zoals:
+
+if (
+    link_type in {"affiliate_url", "retailer_url"}
+    and is_bol_url(url)
+):
+    label = "Bekijk prijs en reviews bij Bol"
+
+elif link_type == "affiliate_url":
+    label = "Bekijk prijs en reviews"
+
+elif link_type == "retailer_url":
+    label = "Bekijk prijs en reviews"
+
+elif link_type == "official_url":
+    label = "Bekijk productspecificaties"
+
+Behoud de bestaande rel-attributen:
+
+affiliate_url:
+rel="nofollow sponsored noopener"
+retailer_url:
+rel="nofollow noopener"
+official_url:
+rel="noopener"
+
+VARIANTEN
+
+Controleer ook producten met variants.
+
+De bestaande URL-prioriteit moet behouden blijven:
+
+geselecteerde variant affiliate_url
+geselecteerde variant retailer_url
+geselecteerde variant official_url
+hoofdproduct affiliate_url
+hoofdproduct retailer_url
+hoofdproduct official_url
+geen knop
+
+Pas pas NA deze selectie de knoptekst toe.
+
+Voorbeelden:
+
+variant affiliate_url:
+https://partner.bol.com/...
+
+→ knoptekst:
+"Bekijk prijs en reviews bij Bol"
+
+variant affiliate_url leeg
+
+variant retailer_url:
+https://www.bol.com/nl/nl/p/...
+
+→ knoptekst:
+"Bekijk prijs en reviews bij Bol"
+
+variant heeft geen URL
+
+hoofdproduct affiliate_url:
+https://partner.bol.com/...
+
+→ knoptekst:
+"Bekijk prijs en reviews bij Bol"
+
+affiliate_url:
+https://www.amazon.nl/...
+
+→ knoptekst:
+"Bekijk prijs en reviews"
+
+official_url:
+https://www.bol.com/nl/...
+
+→ knoptekst:
+"Bekijk productspecificaties"
+
+De speciale Bol-knoptekst geldt dus NIET voor official_url.
+
+CLIENT-SIDE VARIANTSELECTIE
+
+Wanneer variantselectie via JavaScript plaatsvindt:
+
+controleer of de knoptekst daar apart wordt bepaald;
+zorg dat partner.bol.com daar eveneens als Bol wordt herkend;
+voorkom dubbele domeinlogica in Python en JavaScript waar mogelijk;
+geef eventueel de reeds opgeloste label, url, type en rel
+vanuit de backend mee aan de variantdata.
+
+Bijvoorbeeld:
+
+{
+  "resolved_url": "https://partner.bol.com/...",
+  "resolved_url_type": "affiliate_url",
+  "resolved_label": "Bekijk prijs en reviews bij Bol",
+  "resolved_rel": "nofollow sponsored noopener"
+}
+
+Bij wisselen van variant moeten URL, knoptekst en rel-attribuut tegelijk
+worden bijgewerkt.
+
+CONTROLEER ALLE PLEKKEN
+
+Zoek projectbreed naar de logica voor externe productlinks en knopteksten,
+waaronder:
+
+productkaarten
+vergelijkingstabellen
+productdetailpagina’s
+variantselectors
+JavaScript voor varianten
+mobiele templates
+aanbevolen producten
+template tags
+inclusion tags
+views
+serializers/helpers
+
+Zoek ook letterlijk op:
+
+"Bekijk prijs en reviews"
+"Bekijk prijs en reviews bij Bol"
+"bol.com"
+"partner.bol.com"
+
+Controleer of er meerdere implementaties bestaan en centraliseer waar
+redelijk mogelijk.
+
+TEST MINIMAAL DEZE GEVALLEN
+
+affiliate_url:
+https://partner.bol.com/...
+→ "Bekijk prijs en reviews bij Bol"
+affiliate_url:
+https://www.bol.com/nl/nl/p/...
+→ "Bekijk prijs en reviews bij Bol"
+retailer_url:
+https://www.bol.com/nl/nl/p/...
+→ "Bekijk prijs en reviews bij Bol"
+retailer_url:
+https://partner.bol.com/...
+→ "Bekijk prijs en reviews bij Bol"
+affiliate_url naar Amazon
+→ "Bekijk prijs en reviews"
+retailer_url naar Expert
+→ "Bekijk prijs en reviews"
+official_url naar fabrikant
+→ "Bekijk productspecificaties"
+URL:
+https://partner.bol.com.evil-example.com/...
+→ NIET herkennen als Bol
+URL:
+https://bol.com.example.com/...
+→ NIET herkennen als Bol
+variant met partner.bol.com-affiliate_url
+→ Bol-knoptekst
+variant zonder eigen URL die terugvalt op partner.bol.com op
+hoofdproductniveau
+→ Bol-knoptekst
+wisselen van Bol-variant naar niet-Bol-variant
+→ knoptekst verandert terug naar standaardtekst
+wisselen van niet-Bol-variant naar partner.bol.com-variant
+→ knoptekst verandert naar "Bekijk prijs en reviews bij Bol"
+lege string, None of ontbrekend URL-veld
+→ geen fout en geen lege knop
+
+BELANGRIJK
+
+Verander geen productdata.
+Verander geen bestaande affiliate-URL’s.
+Verander de URL-prioriteit niet.
+Verander de bestaande tracking niet.
+partner.bol.com moet het linktype affiliate_url blijven houden.
+De speciale knoptekst mag het rel-attribuut niet wijzigen.
+De wijziging moet gelden voor zowel producten zonder varianten als
+producten met varianten.
+
+RAPPORTAGE NA AFLOOP
+
+Geef na de wijziging kort aan:
+
+in welk bestand de Bol-detectie stond;
+hoe deze vóór de wijziging werkte;
+hoe partner.bol.com nu wordt herkend;
+welke templates of JavaScript-bestanden zijn aangepast;
+of de logica centraal is gemaakt;
+welke tests zijn uitgevoerd;
+of gewone www.bol.com/nl/...-links nog steeds correct werken.

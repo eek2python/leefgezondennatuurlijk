@@ -335,23 +335,24 @@ LINK_LABEL = {
     LINK_TYPE_OFFICIAL: "Bekijk productspecificaties →",
 }
 
-#: Knoplabel voor Nederlandse bol.com-productlinks (alleen affiliate/retailer).
-LINK_LABEL_BOL = "Bekijk prijs en reviews bij bol →"
+#: Knoplabel voor bol.com-links (affiliate of retailer, incl. partner.bol.com).
+LINK_LABEL_BOL = "Bekijk prijs en reviews bij Bol →"
 
 #: Hostnamen die als bol.com gelden voor de bol-knoptekst.
-_BOL_HOSTNAMES = {"bol.com", "www.bol.com"}
+#: partner.bol.com = affiliate-tracking-domein; hoeft niet met /nl/ te beginnen.
+_BOL_HOSTNAMES_NL = {"bol.com", "www.bol.com"}
+_BOL_HOSTNAME_PARTNER = "partner.bol.com"
 
 
 def is_bol_nl_url(url):
-    """True wanneer ``url`` een Nederlandse bol.com-link is.
+    """True wanneer ``url`` een bol.com-link is die de Bol-knoptekst verdient.
 
     Robuuste detectie via URL-parsing (geen substringcontrole):
-      - hostname exact ``bol.com`` of ``www.bol.com`` (hoofdletterongevoelig,
-        eventuele trailing dot genegeerd);
-      - pad begint met ``/nl/``.
-    Zo matchen misleidende domeinen (``bol.com.example.com``) of
-    querystring-URL's (``example.com/?url=https://www.bol.com/nl/``) nooit,
-    en telt ``/be/`` niet als Nederlandse link.
+      - ``partner.bol.com``: altijd Bol (affiliate-URLs hebben geen /nl/-pad).
+      - ``bol.com`` / ``www.bol.com``: Bol wanneer pad begint met ``/nl/``
+        (sluit /be/ en losse startpagina uit).
+    Misleidende domeinen (``bol.com.example.com``) en querystring-embeds
+    (``example.com/?url=https://bol.com/nl/``) matchen nooit.
     """
     if not url or not isinstance(url, str):
         return False
@@ -360,8 +361,10 @@ def is_bol_nl_url(url):
     except (TypeError, ValueError):
         return False
     hostname = (parsed.hostname or "").lower().rstrip(".")
+    if hostname == _BOL_HOSTNAME_PARTNER:
+        return True
     path = parsed.path or ""
-    return hostname in _BOL_HOSTNAMES and path.startswith("/nl/")
+    return hostname in _BOL_HOSTNAMES_NL and path.startswith("/nl/")
 
 
 def link_label_for(url, link_type):

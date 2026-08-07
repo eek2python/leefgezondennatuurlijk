@@ -1,0 +1,112 @@
+Controleer en pas de knoptekstlogica voor bol.com-links aan.
+
+Context
+De website gebruikt verschillende externe URL-velden:
+
+- affiliate_url
+- retailer_url
+- official_url
+
+Voor bol.com-links moet de knoptekst zijn:
+
+"Bekijk prijs en reviews bij Bol"
+
+Dit werkt momenteel voor gewone bol.com-productlinks, bijvoorbeeld:
+
+https://www.bol.com/nl/...
+
+Maar affiliate-links van bol.com beginnen vaak met:
+
+https://partner.bol.com/...
+
+Daardoor wordt de speciale bol.com-knoptekst nu waarschijnlijk niet toegepast.
+
+Doel
+Zorg dat zowel gewone bol.com-productlinks als bol.com-affiliate-links
+worden herkend als Bol-links.
+
+De knoptekst moet zijn:
+
+"Bekijk prijs en reviews bij Bol"
+
+wanneer de uiteindelijk geselecteerde URL afkomstig is van:
+
+- www.bol.com
+- bol.com
+- partner.bol.com
+
+Dit geldt alleen wanneer de URL afkomstig is uit:
+
+- affiliate_url
+- retailer_url
+
+Voor `official_url` blijft de knoptekst:
+
+"Bekijk productspecificaties"
+
+Bestaande standaardteksten voor andere retailers blijven:
+
+- affiliate_url:
+  "Bekijk prijs en reviews"
+
+- retailer_url:
+  "Bekijk prijs en reviews"
+
+- official_url:
+  "Bekijk productspecificaties"
+
+
+GEWENSTE DETECTIE
+
+Controleer eerst waar de bestaande bol.com-detectie is geïmplementeerd.
+Er bestaat mogelijk al een helper zoals:
+
+- is_bol_url
+- is_bol_nl_url
+- get_link_metadata
+- resolve_product_link
+- get_product_url
+- product_link_label
+
+Breid bestaande centrale logica uit in plaats van nieuwe dubbele logica
+toe te voegen.
+
+Gebruik bij voorkeur URL-parsing.
+
+Een URL moet als Bol-link worden herkend wanneer de hostname exact één van
+de volgende waarden is:
+
+- bol.com
+- www.bol.com
+- partner.bol.com
+
+Voor gewone productlinks op bol.com mag eventueel de bestaande controle
+blijven gelden dat het pad met `/nl/` begint.
+
+Voor `partner.bol.com` mag die `/nl/`-voorwaarde NIET worden vereist,
+omdat affiliate-links een andere URL-structuur kunnen hebben.
+
+Een veilige helper kan bijvoorbeeld ongeveer zo werken:
+
+```python
+from urllib.parse import urlparse
+
+
+def is_bol_url(url):
+    if not url or not isinstance(url, str):
+        return False
+
+    try:
+        parsed = urlparse(url.strip())
+    except (TypeError, ValueError):
+        return False
+
+    hostname = (parsed.hostname or "").lower().rstrip(".")
+
+    if hostname == "partner.bol.com":
+        return True
+
+    if hostname in {"bol.com", "www.bol.com"}:
+        return (parsed.path or "").startswith("/nl/")
+
+    return False
