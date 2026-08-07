@@ -90,11 +90,11 @@ PRODUCTS = {
         "rating": 4.1,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 77.01,
-        "price_last_checked": "2026-07-31",
+        "price": 99.99,
+        "price_last_checked": "2026-08-07",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbourgini-slimfit-airfryer-xl-hetelucht-friteuse-5-liter-1500w%2F9300000163583334%2F&name=Bourgini%20Slimfit%20Airfryer%20Pure%20XL%20-%20Heteluchtfriteuse%20-%205%20liter%20-%20PFAS%20vrij",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bourgini-slimfit-airfryer-xl-hetelucht-"
@@ -343,11 +343,11 @@ PRODUCTS = {
         "rating": 4.5,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 45.99,
-        "price_last_checked": "2026-07-31",
+        "price": 54.99,
+        "price_last_checked": "2026-08-07",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fprincess-182280-digitale-airfryer-8l-dual-heating-digitaal-led-touchscreen-pfas-vrij-makkelijk-schoon-te-maken%2F9300000221571449%2F&name=Princess%20Digitale%20Airfryer%208L%20-%20Dual%20heating%20-%20LED-touchscreen%20-%20PFAS-vrij%20-%20182280",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "princess-182280-digitale-airfryer-8l-dual-heating-"
@@ -398,15 +398,15 @@ PRODUCTS = {
                     "airfryer-greenpan-bistro-xxl-7-2l-black.webp"
                 ),
                 "hex": "#000000",
-                "affiliate_url": "",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-bistro-xl-airfryer-7-2l-11-programma-s-zwart-pfas-vrij%2F9300000157443808%2F&name=GreenPan%20Bistro%20XL%20Airfryer%20-%207.2L%20-%2011%20programma%27s%20-%20PFAS-vrij",
                 "retailer_url": (
                     "https://www.bol.com/nl/nl/p/"
                     "greenpan-bistro-xl-airfryer-7-2l-"
                     "11-programma-s-zwart-pfas-vrij/"
                     "9300000157443808/"
                 ),
-                "price": 128.13,
-                "price_last_checked": "2026-07-31",
+                "price": 126.99,
+                "price_last_checked": "2026-08-07",
             },
             {
                 "name": "Pine Green",
@@ -414,14 +414,14 @@ PRODUCTS = {
                     "airfryer-greenpan-bistro-xxl-7-2l-pine-green.webp"
                 ),
                 "hex": "#01796F",
-                "affiliate_url": "",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-bistro-xxl-airfryer-pine-green-cc008959-001%2F9300000224669079%2F&name=GreenPan%20Bistro%20XL%20Airfryer%207%2C2L%20-%20PFAS%20vrij%20Pine%20Green",
                 "retailer_url": (
                     "https://www.bol.com/nl/nl/p/"
                     "greenpan-bistro-xxl-airfryer-pine-green-"
                     "cc008959-001/9300000224669079/"
                 ),
-                "price": 143.99,
-                "price_last_checked": "2026-07-31",
+                "price": 150.99,
+                "price_last_checked": "2026-08-07",
             },
             {
                 "name": "Smokey Blue",
@@ -461,7 +461,7 @@ PRODUCTS = {
         "price_last_checked": "2026-07-31",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-bistro-xl-airfryer-7-2l-11-programma-s-zwart-pfas-vrij%2F9300000157443808%2F&name=GreenPan%20Bistro%20XL%20Airfryer%20-%207.2L%20-%2011%20programma%27s%20-%20PFAS-vrij",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "greenpan-bistro-xl-airfryer-7-2l-"
@@ -658,10 +658,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 89.99,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-07",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Finventum-gf800hld-dubbele-airfryer-heteluchtfriteuse-inhoud-2-x-4-liter-zwart-rvs%2F9300000118712931%2F&name=Inventum%20Dubbele%20Airfryer%20GF800HLD%20-%20Hetelucht%20friteuse%20-%202%20x%204%20liter%20-%20PFAS%20vrij%20-%20RVS",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "inventum-gf800hld-dubbele-airfryer-heteluchtfriteuse-"
@@ -713,11 +713,11 @@ PRODUCTS = {
         "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 72.00,
-        "price_last_checked": "2026-07-31",
+        "price": 105.00,
+        "price_last_checked": "2026-08-07",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbourgini-duo-heteluchtfriteuse-2-x-4-0l-pfas-vrij-airfryer-xxl-2-laden-met-synchronisatie-functie-touchscreen-8l-2600w-zwart%2F9300000237172411%2F&name=Bourgini%20Duo%20Heteluchtfriteuse%20-%20Airfryer%20XXL%20-%202%20laden%20-%208.0L%20-%20PFAS%20vrij",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bourgini-duo-heteluchtfriteuse-2-x-4-0l-pfas-vrij-"
@@ -776,10 +776,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 129.99,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-07",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-bistro-dubbele-airfryer-4l-4l-9-programma-s-zwart-pfas-vrij%2F9300000157443810%2F&name=GreenPan%20Bistro%20Dual%20Zone%20Airfryer%20-%204L%2B4L%20-%209%20programma%27s%20-%20PFAS-vrij",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "greenpan-bistro-dubbele-airfryer-4l-4l-"
@@ -837,10 +837,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 195.00,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-07",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdubbele-airfryer-xxl-11l-pfas-vrije-heteluchtfriteuse-infrarood-dual-zone-2-x-5-5l-40-200-c-8-kookprogramma-s-2850w-wm-2511-af-zwart%2F9300000264941766%2F&name=Dubbele%20Airfryer%20XXL%2011L%20-%20PFAS-vrije%20Heteluchtfriteuse%20-%20Infrarood%20-%20Dual%20Zone%20-%202%20x...",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "dubbele-airfryer-xxl-11l-pfas-vrije-heteluchtfriteuse-"

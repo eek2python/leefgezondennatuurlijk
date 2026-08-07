@@ -32,10 +32,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 129.00,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-07",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fkaamut-professionele-snijplank-massief-kopshout-van-zwarte-walnoot-40x27-5x3-5-cm-extra-dik-duurzaam-sapgeul-en-handvaten-bijgeleverde-antislip-voetjes-luxe-geschenkdoos%2F9300000196972499%2F&name=Kaamut%20Luxe%20Snijplank%20-%20Kopshout%20zwarte%20walnoot%20-%2040x27.5x3.5%20cm%20-%20Sapgeul",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "kaamut-professionele-snijplank-massief-kopshout-van-"
@@ -231,10 +231,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 69.99,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-07",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fnamture-hakblok-acacia-classic-snijplank-hout-45x30-cm-extra-dik-4-cm-premium-acaciahout-antislip-snijplank-serveerplank-borrelplank-tapasplank-luxe-geschenkdoos%2F9300000236075401%2F&name=Namture%20-%20Snijplank%20Hout%20-%20Premium%20Olie%20-%2045x30x4%20cm%20-%20Anti-slip%20-%20Hakblok%20Kopshout%20-...",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "namture-hakblok-acacia-classic-snijplank-hout-"
@@ -329,11 +329,11 @@ PRODUCTS = {
         "rating": 4.1,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 29.95,
+        "price": 26.96,
         "price_last_checked": "2026-07-31",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fcontinenta-snijplank-in-rubberhout-kopshout-35x25xh2cm%2F9300000021506007%2F&name=Continenta%20Snijplank%20-%20Rubberhout%20kopshout%20-%2035x25x2%20cm%20-%20Massief%20hout",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "continenta-snijplank-in-rubberhout-kopshout-"
