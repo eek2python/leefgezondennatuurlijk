@@ -1,0 +1,482 @@
+Do not implement the proposed solution yet.
+
+The pre-implementation finding changes the architecture of this task.
+
+The current proposal says:
+
+> The Django Product model does not contain price, availability or price_last_checked. These values currently live in Python product data files. The implementation would add the fields to the database, but the website would continue rendering price and availability from the Python files.
+
+This would create two sources of truth and is NOT acceptable.
+
+If price or availability is edited in Django Admin, that change must also be reflected on the public website.
+
+## Revised goal
+
+Implement a safe incremental migration where:
+
+* the existing `products/products_*.py` files can continue to contain the general/static product information;
+* dynamic affiliate-maintenance fields are stored in Django/database;
+* the public website reads the database values for those dynamic fields;
+* existing Python values can temporarily be used as fallback during migration.
+
+The dynamic maintenance fields are:
+
+* `price`
+* `availability`
+* `price_last_checked`
+
+Also investigate whether the effective affiliate/product URL should be database-managed or whether the existing URL architecture should remain unchanged.
+
+Do not migrate all product content to the database as part of this task unless technically necessary.
+
+---
+
+# 1. First inspect the current architecture more deeply
+
+Before making changes, determine:
+
+1. What is the existing Django `Product` model currently used for?
+2. How are Python products linked to Django Product records?
+
+   * slug?
+   * product ID?
+   * name?
+   * another key?
+3. How does the public website currently retrieve:
+
+   * price
+   * availability
+   * affiliate URL
+4. Which templates/views/helpers consume these values?
+5. Are price and availability used in:
+
+   * product detail pages;
+   * category/list pages;
+   * quick-choice sections;
+   * comparison tables;
+   * structured data / JSON-LD;
+   * availability badges;
+   * CTA logic;
+   * sorting/filtering?
+6. Are there multiple product dictionaries representing the same product in different places?
+7. What exact availability values are currently used?
+8. Where does code compare explicitly against:
+
+   * `OutOfStock`
+   * `OutofStock`
+   * `InStock`
+   * or other values?
+
+Report these findings before implementation.
+
+---
+
+# 2. Avoid two sources of truth
+
+After migration, Django/database must become the authoritative source for:
+
+```text
+price
+availability
+price_last_checked
+```
+
+The Python files may temporarily still contain `price` and `availability`, but these values should become fallback/initialization values rather than the authoritative runtime values.
+
+The public website should use:
+
+```python
+database value if available
+else existing Python value
+```
+
+for `price` and `availability`.
+
+Do NOT create a situation where Admin displays one price while the public website displays another.
+
+---
+
+# 3. Database fields
+
+If appropriate after inspecting the existing model, add:
+
+```python
+price
+availability
+price_last_checked
+```
+
+to the existing Django Product model.
+
+Use field types compatible with the current data.
+
+For example, likely:
+
+```python
+price = DecimalField(...)
+availability = CharField(...)
+price_last_checked = DateField(null=True, blank=True)
+```
+
+But inspect existing formats before deciding exact field definitions.
+
+Do not unnecessarily convert prices between strings and decimals if that could break current presentation.
+
+---
+
+# 4. Initial data migration
+
+Create a safe one-time migration/import process that initializes the new database fields from the current Python product files.
+
+Requirements:
+
+* match products using a stable identifier;
+* do NOT rely only on product name if a more reliable identifier exists;
+* detect unmatched products;
+* detect duplicates;
+* do not silently overwrite ambiguous matches.
+
+Produce a report such as:
+
+```text
+Products found in Python data: 54
+Matched to database: 54
+Unmatched: 0
+Duplicate/ambiguous matches: 0
+Prices imported: 54
+Availability values imported: 54
+```
+
+Do not remove the existing Python values yet.
+
+---
+
+# 5. Runtime integration
+
+Modify the product-loading/rendering layer so that database values override the equivalent Python values.
+
+Prefer implementing this in ONE central place rather than adding database lookups separately to many templates.
+
+For example, if the project has a product service/helper/normalization layer, enrich each product there:
+
+Conceptually:
+
+```python
+runtime_product["price"] = db_product.price or python_product["price"]
+runtime_product["availability"] = (
+    db_product.availability or python_product["availability"]
+)
+```
+
+Use proper logic so valid values such as `0` are not accidentally treated as missing.
+
+`price_last_checked` does not need to exist in the Python files.
+
+---
+
+# 6. Prevent excessive database queries
+
+Do not introduce an N+1 query problem.
+
+Category pages may render many products.
+
+If database overrides are needed for multiple products, retrieve them efficiently using:
+
+* one queryset;
+* `in_bulk()`;
+* mapping by slug/id;
+* or another appropriate bulk-loading approach.
+
+Do not execute one database query per product.
+
+---
+
+# 7. Verify every public representation
+
+After integration, confirm that updated database values are used everywhere relevant, including where applicable:
+
+* product detail pages;
+* category/product lists;
+* quick-choice blocks;
+* comparison tables;
+* prices displayed in cards;
+* availability badges;
+* structured data / JSON-LD;
+* CTA logic.
+
+There must be no remaining public location where stale Python price/availability overrides the database value.
+
+---
+
+# 8. Availability normalization
+
+You found both:
+
+```text
+OutOfStock
+OutofStock
+```
+
+Do not simply normalize this without checking all consumers.
+
+First search the entire codebase for:
+
+```text
+OutOfStock
+OutofStock
+InStock
+availability
+```
+
+Determine which spelling the frontend and structured-data logic expect.
+
+Then define one canonical internal value.
+
+Preferred canonical value, if compatible with existing logic:
+
+```text
+OutOfStock
+```
+
+because it matches Schema.org availability terminology.
+
+Normalize legacy values when importing.
+
+Update comparisons throughout the codebase where necessary so there is one consistent representation.
+
+Do not cause products currently recognized as unavailable to accidentally become available because of a case/spelling mismatch.
+
+---
+
+# 9. Affiliate URL
+
+Do NOT automatically migrate affiliate URLs into the database.
+
+First investigate how URLs currently work.
+
+The site recently introduced Bol.com affiliate URLs including:
+
+```text
+https://partner.bol.com/...
+```
+
+There may also be other retailers.
+
+Determine:
+
+* where the effective URL is stored;
+* whether there are multiple URLs per product;
+* whether URL selection depends on retailer;
+* whether there is existing affiliate tracking logic.
+
+For the maintenance admin page, display the actual URL currently used by the website.
+
+If this can safely be derived from the existing product data, keep that architecture.
+
+Only propose migrating URLs to the database if there is a clear benefit.
+
+---
+
+# 10. Affiliate maintenance admin
+
+Once the runtime integration is correct, create the maintenance workflow requested earlier.
+
+The overview should contain at least:
+
+* checkbox
+* product name
+* price
+* price_last_checked
+* availability
+* current effective affiliate URL
+
+The URL should be clickable and open in a new tab.
+
+---
+
+# 11. Default review filter
+
+Default:
+
+```text
+price_last_checked is NULL
+OR
+price_last_checked is older than one month
+OR
+availability == OutOfStock
+```
+
+Allow the administrator to remove the filter and display all products.
+
+---
+
+# 12. Editing and confirmation workflow
+
+Allow:
+
+* price editing;
+* availability editing.
+
+Add a bulk action:
+
+```text
+Mark selected products as checked
+```
+
+For selected products:
+
+* save changed price when supplied;
+* otherwise retain existing price;
+* save changed availability;
+* set `price_last_checked` to the current date.
+
+For unselected products:
+
+* change nothing.
+
+Opening the page must not update anything.
+
+---
+
+# 13. Important runtime test
+
+Add a test covering the architectural requirement that triggered this correction.
+
+Example:
+
+Initial Python data:
+
+```text
+price = 49.95
+availability = InStock
+```
+
+Database after Admin update:
+
+```text
+price = 44.95
+availability = OutOfStock
+```
+
+Public rendered product must show:
+
+```text
+44.95
+OutOfStock
+```
+
+NOT:
+
+```text
+49.95
+InStock
+```
+
+Test this through the actual product-loading/rendering path, not merely by testing the database model.
+
+---
+
+# 14. Fallback test
+
+For a product that has not yet received database maintenance values:
+
+Python:
+
+```text
+price = 49.95
+availability = InStock
+```
+
+Database:
+
+```text
+price = NULL
+availability = NULL
+```
+
+The public website should temporarily continue to show:
+
+```text
+49.95
+InStock
+```
+
+This fallback allows a safe incremental migration.
+
+---
+
+# 15. Regression testing
+
+Specifically verify that this change does NOT break:
+
+* category pages;
+* product detail pages;
+* comparison tables;
+* quick-choice sections;
+* Bol.com affiliate links;
+* `partner.bol.com` CTA labels;
+* JSON-LD structured data;
+* availability display;
+* existing product admin;
+* product slugs/URLs.
+
+Run the existing full test suite.
+
+---
+
+# 16. Do not remove Python fields yet
+
+Do NOT remove `price` or `availability` from the existing `products_*.py` files in this task.
+
+They should remain available as fallback until the database migration has been validated in production.
+
+Removal can be considered as a separate later cleanup task.
+
+---
+
+# 17. Stop after architecture report first
+
+Before implementing, give me a concise architecture report containing:
+
+### Current architecture
+
+* existing Product model;
+* relationship between Product model and Python product entries;
+* how runtime products are assembled;
+* where price/availability are consumed;
+* affiliate URL architecture;
+* exact availability values found.
+
+### Proposed architecture
+
+Show clearly:
+
+```text
+Python product data
+        ↓
+product loading/service layer
+        +
+Django Product DB overrides
+        ↓
+effective runtime product
+        ↓
+templates / JSON-LD / comparison tables
+```
+
+### Database migration
+
+Explain:
+
+* how products will be matched;
+* number of products expected to migrate;
+* fallback behaviour.
+
+### Files to modify
+
+List the exact files.
+
+### Risks
+
+Identify any possible regressions.
+
+Do not implement until this architecture investigation is complete.
