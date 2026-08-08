@@ -1,0 +1,494 @@
+## Task — Add efficient affiliate product maintenance workflow to Django Admin
+
+I want to make ongoing affiliate product maintenance as efficient as possible.
+
+Please first inspect the existing Django project and determine:
+
+* which model contains the products shown on the website;
+* the exact existing field names and field types for:
+
+  * `price`
+  * `price_last_checked`
+  * `availability`
+  * affiliate/product URL;
+* whether there are already custom Django Admin classes, admin actions, filters, forms, templates, or product maintenance utilities that should be reused;
+* which availability values are currently used in the database, especially the exact value representing `OutOfStock`.
+
+Do not create duplicate fields or parallel product-maintenance logic if equivalent functionality already exists.
+
+### Goal
+
+Add a dedicated product-maintenance view to Django Admin where I can quickly review products whose affiliate information needs checking.
+
+The workflow should focus primarily on:
+
+1. products where `price_last_checked` is more than one month old; and/or
+2. products whose current `availability` is `OutOfStock`.
+
+---
+
+## 1. Product maintenance overview
+
+Create a dedicated admin page or appropriately customized Product admin changelist for affiliate maintenance.
+
+The overview should show at least:
+
+* Select checkbox
+* Product name
+* Price
+* Price last checked
+* Availability
+* Current applicable affiliate/product URL
+
+If useful, also show the retailer/merchant, but only if this already exists in the current data model.
+
+The URL should preferably be clickable and open in a new browser tab so I can quickly check the current retailer product page.
+
+Do not modify the stored URL merely by opening or displaying it.
+
+---
+
+## 2. Default filter
+
+When opening this maintenance page, the default view should show only products where:
+
+```text
+price_last_checked is older than one month
+OR
+availability == OutOfStock
+```
+
+Products satisfying either condition must appear.
+
+Products satisfying both conditions obviously appear only once.
+
+### Date logic
+
+Use proper timezone-aware Django date handling.
+
+Interpret "older than one month" consistently and document the implementation chosen.
+
+Prefer calendar-month logic if straightforward. If the project already has a standard definition for stale price data, reuse that instead.
+
+Products where `price_last_checked` is `NULL`/empty should also be treated as requiring review.
+
+---
+
+## 3. Filters
+
+Although the default view should show only products requiring review, I also want to be able to inspect other products.
+
+Add useful Django Admin filters such as:
+
+* Requires review
+* Availability
+* Price last checked / stale status
+* Retailer, if such a field already exists
+
+The default should remain:
+
+> Requires review = Yes
+
+But it must be possible to remove this filter and see all products.
+
+---
+
+## 4. Editable fields
+
+From this maintenance workflow I need to be able to update, where necessary:
+
+* `price`
+* `availability`
+
+Prefer a solution that minimizes clicks.
+
+If safe and compatible with the current admin implementation, use Django Admin `list_editable`.
+
+Otherwise implement a dedicated bulk-edit form.
+
+Do not allow editing of fields unrelated to this maintenance workflow from this special overview unless they are already part of the standard Product admin.
+
+---
+
+## 5. Confirm checked products
+
+Add a bulk admin action with a clear name such as:
+
+```text
+Mark selected products as checked
+```
+
+or:
+
+```text
+Save updates and mark selected products as checked
+```
+
+The intended workflow is:
+
+1. I open the retailer URL for each product.
+2. I check whether the price and availability are still correct.
+3. Where necessary, I enter a new price and/or change availability.
+4. I select the products I have checked.
+5. I execute the bulk action.
+
+For every selected product:
+
+### Price
+
+If I entered a new price:
+
+* save the new price.
+
+If I did NOT enter a new price:
+
+* keep the existing price unchanged.
+
+An empty price input must therefore NOT accidentally overwrite an existing price unless the existing application explicitly supports intentionally clearing prices.
+
+### Availability
+
+If availability was changed:
+
+* save the new value.
+
+Otherwise:
+
+* keep the existing availability value.
+
+### price_last_checked
+
+Regardless of whether the price itself changed, for every selected and confirmed product:
+
+```python
+price_last_checked = current date
+```
+
+because selecting and confirming the product means I have manually verified the current information.
+
+Use the existing field type correctly:
+
+* `timezone.localdate()` if it is a `DateField`;
+* `timezone.now()` if it is a `DateTimeField`.
+
+Do not change the model field type unnecessarily.
+
+---
+
+## 6. Important selection behaviour
+
+Only selected products may have their `price_last_checked` updated.
+
+Simply opening the admin page must NEVER update `price_last_checked`.
+
+Simply viewing or filtering products must NEVER update it.
+
+Products that appear in the stale/OutOfStock list but are not selected must remain unchanged.
+
+Example:
+
+There are 20 products requiring review.
+
+I manually check 8 products and select those 8.
+
+After executing the action:
+
+* those 8 get today's `price_last_checked`;
+* any price/availability changes I entered for those 8 are saved;
+* the remaining 12 remain unchanged and continue to appear in the review queue.
+
+---
+
+## 7. Products still OutOfStock
+
+A product can be manually checked and still remain `OutOfStock`.
+
+In that case:
+
+* update `price_last_checked` to today;
+* keep `availability = OutOfStock`;
+* the product should continue appearing in the default maintenance queue because the default condition is:
+
+```text
+stale price check OR OutOfStock
+```
+
+This is intentional.
+
+This makes it possible to keep checking unavailable products regularly.
+
+---
+
+## 8. Optional distinction for OutOfStock checking
+
+Please inspect whether the current data model has only `price_last_checked` or also an availability-specific checked timestamp.
+
+Do NOT automatically introduce another database field unless clearly useful.
+
+For this task, it is acceptable that manually checking an OutOfStock product updates `price_last_checked`, since this field represents the last manual affiliate product verification.
+
+If the existing project semantics clearly define `price_last_checked` as price-only, report this before changing the meaning and propose a cleaner alternative such as:
+
+```text
+affiliate_last_checked
+```
+
+But do not implement a new field unless necessary.
+
+---
+
+## 9. URL handling
+
+Display the URL that is currently applicable to the product.
+
+Please inspect how URLs currently work because the project may contain:
+
+* direct retailer URLs;
+* Bol.com affiliate URLs;
+* `partner.bol.com` affiliate URLs;
+* retailer-specific fields;
+* general product URLs;
+* URL transformation logic.
+
+Reuse the URL that the public website currently uses for the CTA/link whenever possible.
+
+The admin maintenance page should therefore allow me to verify the actual destination currently used by the site.
+
+Do not break or bypass existing affiliate tracking.
+
+---
+
+## 10. Visual indicators
+
+Make the overview easy to scan.
+
+Use subtle admin formatting to highlight:
+
+* stale `price_last_checked`;
+* `OutOfStock` products;
+* missing `price_last_checked`;
+* optionally missing URLs.
+
+For example:
+
+* stale date → orange/red indicator;
+* OutOfStock → red;
+* current/checked → normal or green.
+
+Keep this simple and compatible with Django Admin.
+
+---
+
+## 11. Sorting
+
+Useful default ordering:
+
+1. OutOfStock products and/or oldest checks requiring attention first;
+2. then `price_last_checked` ascending.
+
+Products with no `price_last_checked` should appear prominently.
+
+If Django/database differences make null sorting cumbersome, implement the cleanest reliable alternative.
+
+---
+
+## 12. Safety
+
+Do not:
+
+* overwrite prices with blanks;
+* update unselected products;
+* automatically mark products checked merely because their page was loaded;
+* change affiliate URLs;
+* change unrelated product information;
+* silently normalize availability values in a way that breaks existing frontend logic;
+* bypass existing model validation.
+
+Use transactions where appropriate for bulk updates.
+
+---
+
+## 13. Admin feedback
+
+After executing the action, show a Django Admin success message such as:
+
+```text
+8 products marked as checked. 3 prices and 2 availability values were updated.
+```
+
+If possible, distinguish:
+
+* number of selected products;
+* number of price changes;
+* number of availability changes.
+
+If some updates fail validation, do not silently ignore them.
+
+---
+
+## 14. Tests
+
+Add automated tests for at least:
+
+### Filtering
+
+1. Product checked >1 month ago → appears.
+2. Product checked recently + InStock → does not appear.
+3. Product checked recently + OutOfStock → appears.
+4. Product with null `price_last_checked` → appears.
+5. Product stale + OutOfStock → appears only once.
+
+### Bulk action
+
+6. Selected product with changed price:
+
+   * price changes;
+   * `price_last_checked` becomes today.
+
+7. Selected product without changed price:
+
+   * existing price remains unchanged;
+   * `price_last_checked` becomes today.
+
+8. Selected product with availability change:
+
+   * availability changes;
+   * `price_last_checked` becomes today.
+
+9. Unselected stale product:
+
+   * nothing changes.
+
+10. Selected product remaining OutOfStock:
+
+* gets new `price_last_checked`;
+* remains OutOfStock;
+* still appears in default review view.
+
+11. Merely loading the admin maintenance page:
+
+* changes no data.
+
+12. Existing affiliate URL remains unchanged.
+
+Also run the existing test suite to ensure there are no regressions.
+
+---
+
+## 15. UX preference
+
+The intended workflow should require as few clicks as reasonably possible.
+
+Ideal flow:
+
+```text
+Admin
+→ Affiliate product maintenance
+→ default list of products needing review
+→ open retailer links
+→ edit price / availability where necessary
+→ select checked rows
+→ “Mark selected products as checked”
+→ processed rows with normal availability disappear from review queue
+```
+
+Products remaining OutOfStock stay visible for future checking.
+
+---
+
+## 16. Implementation preference
+
+Prefer standard Django functionality:
+
+* `ModelAdmin`
+* `SimpleListFilter`
+* `list_display`
+* `list_editable` where appropriate
+* admin actions
+* custom admin URLs/templates only when needed
+
+Avoid building a separate frontend or complex custom dashboard if Django Admin can support the workflow cleanly.
+
+Keep the implementation maintainable and minimize custom JavaScript.
+
+---
+
+## 17. Before implementation
+
+First report briefly:
+
+1. Product model involved.
+2. Exact relevant existing fields and types.
+3. Current availability choices / exact OutOfStock value.
+4. How the effective affiliate URL is currently determined.
+5. Existing Product admin customizations that can be reused.
+6. Proposed implementation approach.
+7. Files that will be changed.
+8. Any potential conflict with existing behaviour.
+
+Then implement the feature.
+
+---
+
+## 18. Final verification report
+
+After implementation, report:
+
+### Implementation
+
+* files changed;
+* filters added;
+* fields displayed/editable;
+* bulk action implemented;
+* exact stale-date logic used;
+* how effective URLs are determined.
+
+### Verification
+
+* tests added;
+* test results;
+* existing tests results;
+* confirmation that unselected records are not modified;
+* confirmation that blank price input cannot accidentally erase an existing price;
+* confirmation that affiliate URLs are untouched.
+
+### Example workflow
+
+Give one concrete example such as:
+
+```text
+Product A
+price = €49.95
+price_last_checked = 2026-06-15
+availability = InStock
+
+Admin verifies retailer page on 2026-08-08.
+Price is still €49.95.
+No new price is entered.
+Product A is selected and confirmed.
+
+Result:
+price = €49.95
+price_last_checked = 2026-08-08
+availability = InStock
+
+Product A no longer appears in the default maintenance queue.
+```
+
+And:
+
+```text
+Product B
+price_last_checked = 2026-08-01
+availability = OutOfStock
+
+Admin checks it on 2026-08-08.
+It is still OutOfStock.
+Product B is selected and confirmed.
+
+Result:
+price_last_checked = 2026-08-08
+availability = OutOfStock
+
+Product B continues to appear in the maintenance queue because it remains OutOfStock.
+```
