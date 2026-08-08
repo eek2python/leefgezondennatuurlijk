@@ -3,3 +3,4 @@
 - [Audit dashboard architecture](audit-dashboard-architecture.md) — all audit logic in audits/checks/, shared by commands and admin; never duplicate checks or parse console output.
 - [Product link resolution](product-link-resolution.md) — one central resolver (affiliate→retailer→official→status), variant-first then family fallback; templates/JS never pick URL fields themselves.
 - [Server herstart nodig](server-restart-required.md) — runserver picks up code changes unreliably; after Python edits always restart the workflow before verifying pages via curl.
+- [Affiliate maintenance admin](affiliate-maintenance-admin.md) — AffiliateProductState model, runtime overlay order, sync command quirks, admin single-POST changelist design, test coverage.

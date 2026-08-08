@@ -1,7 +1,7 @@
 import os
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
-from .models import Product, Click
+from .models import Product, Click, AffiliateProductState
 import logging
 from utils.product_helpers import (
     get_capacity_display,
@@ -108,6 +108,63 @@ def privacy(request):
     })
 
 
+# Kanonieke Nederlandse label per beschikbaarheidsstatus voor DB-overrides.
+# InStock → leeg: de knop is zichtbaar en er is geen label nodig.
+_CANONICAL_AVAILABILITY_LABELS: dict[str, str] = {
+    "InStock": "",
+    "OutOfStock": "Tijdelijk uitverkocht",
+    "PreOrder": "Binnenkort beschikbaar",
+    "BackOrder": "Nabestelling mogelijk",
+    "Discontinued": "Niet meer leverbaar",
+}
+
+
+def _apply_affiliate_maintenance_override(product: dict, state) -> None:
+    """Overlay AffiliateProductState DB-waarden op een al-verrijkt productdict.
+
+    Wordt aangeroepen NADAT ``prepare_product_variants()`` klaar is zodat
+    variantprojectie de DB-waarden niet kan overschrijven.
+
+    Overlay-volgorde (per spec):
+      deepcopy → prepare_product_variants() → [hier] → apply_resolved_link()
+      → derive_price_levels()
+    """
+    default_variant = product.get("default_variant")
+
+    # ── Prijs ──────────────────────────────────────────────────────────────
+    if state.price is not None:
+        price_float = float(state.price)
+        product["price"] = price_float
+        if default_variant is not None:
+            default_variant["price"] = price_float
+
+    # ── Beschikbaarheid ────────────────────────────────────────────────────
+    if state.availability:
+        canonical_label = _CANONICAL_AVAILABILITY_LABELS.get(
+            state.availability, ""
+        )
+        product["availability"] = state.availability
+        product["availability_label"] = canonical_label
+
+        if default_variant is not None:
+            default_variant["availability"] = state.availability
+            default_variant["availability_label"] = canonical_label
+
+        # Bijwerken van de familie-fallback-links zodat resolve_availability_label
+        # ook via het _family_links-pad de juiste waarde teruggeeft.
+        family_links = product.get("_family_links")
+        if isinstance(family_links, dict):
+            family_links["availability_label"] = canonical_label
+
+        # Herroep apply_resolved_link zodat product["availability_label"]
+        # consistent is met de DB-waarde (ook voor shape_variant-producten
+        # waarbij resolved_link al was ingesteld binnen prepare_product_variants).
+        apply_resolved_link(product, default_variant)
+
+    # ── Controlledatum ─────────────────────────────────────────────────────
+    product["price_last_checked"] = state.price_last_checked
+
+
 def _derive_price_levels(p, category):
     """Zet ``display_price_range`` op product- (en swatchvariant-)niveau.
 
@@ -152,8 +209,23 @@ def _derive_price_levels(p, category):
 
 
 def _enrich_products(products, category=None):
+    # Bulk-load maintenance overrides in één query (geen N+1).
+    slugs = [p.get("slug") for p in products if p.get("slug")]
+    maintenance_states: dict = (
+        AffiliateProductState.objects.in_bulk(slugs, field_name="slug")
+        if slugs
+        else {}
+    )
+
     for p in products:
         prepare_product_variants(p)
+
+        # DB maintenance-override: NADAT prepare_product_variants() klaar is,
+        # zodat variantprojectie de DB-waarden niet kan overschrijven.
+        slug = p.get("slug")
+        if slug and slug in maintenance_states:
+            _apply_affiliate_maintenance_override(p, maintenance_states[slug])
+
         # Centrale linkresolutie: producten met button-varianten kregen hun
         # resolved_link al in prepare_product_variants (displayvariant);
         # alle overige producten resolven hier op productniveau.

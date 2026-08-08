@@ -1,0 +1,721 @@
+# Architecture correction — Affiliate Product Maintenance
+
+Do not implement the previous architecture yet.
+
+The architecture report revealed that the existing Django `Product` model is NOT the actual product catalogue:
+
+* `Product.objects.count() == 0`
+* all 138 live products come from `products_*.py`
+* the existing `Product` model also has static/catalogue fields and a `Category` FK
+* it is already referenced by separate DB views, fallback logic and click tracking
+
+Because of this, I do NOT want to repurpose/populate the existing `Product` model with 138 records merely to store affiliate maintenance state.
+
+Implement the maintenance data as a separate model instead.
+
+---
+
+## 1. Create a dedicated maintenance model
+
+Create a model with a clear name such as:
+
+```python
+class AffiliateProductState(models.Model):
+    slug = models.SlugField(unique=True)
+    price = models.DecimalField(...)
+    availability = models.CharField(...)
+    price_last_checked = models.DateField(null=True, blank=True)
+```
+
+Exact field definitions should follow the existing product data formats.
+
+The `slug` is the stable link to `ALL_PRODUCTS_BY_SLUG`.
+
+Do NOT create a ForeignKey to the existing `Product` model because the live Python catalogue does not currently have corresponding `Product` database records.
+
+Do NOT create 138 records in the existing `Product` model.
+
+The architecture should become:
+
+```text
+products_*.py
+    |
+    | static/base product information
+    v
+prepare_product_variants()
+    |
+    +-----------------------------+
+    |                             |
+    |                    AffiliateProductState DB
+    |                    matched by unique slug
+    |                             |
+    +---------- effective override+
+                  |
+                  v
+         effective runtime product
+                  |
+                  v
+         apply_resolved_link()
+                  |
+                  v
+         derive price levels
+                  |
+                  v
+templates / JSON-LD / comparison tables / quick picks
+```
+
+The Python product files remain the source for static product information.
+
+`AffiliateProductState` becomes the authoritative runtime source for:
+
+* price
+* availability
+* price_last_checked
+
+after a maintenance record exists.
+
+---
+
+# 2. Important: change the overlay order
+
+The previously proposed order was:
+
+```text
+_overlay_db_values()
+→ prepare_product_variants()
+```
+
+This is unsafe.
+
+The architecture report confirms that `prepare_product_variants()` projects the default variant commercial fields onto the family-level product.
+
+Therefore it could overwrite the database-maintained price and availability.
+
+Use this order instead:
+
+```python
+product = deepcopy(python_product)
+
+prepare_product_variants(product)
+
+apply_affiliate_maintenance_override(product)
+
+apply_resolved_link(product)
+
+derive_price_levels(product)
+```
+
+Or the equivalent order supported by the existing code.
+
+The important rule is:
+
+> AffiliateProductState must override the final effective/default variant commercial values, not the other way around.
+
+Add a regression test proving this for a product with `shape_variants`.
+
+---
+
+# 3. Availability label must remain consistent
+
+The report shows that the frontend primarily displays:
+
+```text
+availability_label
+```
+
+rather than directly displaying:
+
+```text
+availability
+```
+
+This creates an important consistency requirement.
+
+Example:
+
+Python data:
+
+```text
+availability = OutOfStock
+availability_label = "Tijdelijk uitverkocht"
+```
+
+Admin changes DB maintenance value to:
+
+```text
+availability = InStock
+```
+
+The public website must NOT produce:
+
+```text
+availability = InStock
+availability_label = "Tijdelijk uitverkocht"
+```
+
+Therefore inspect `resolve_availability_label()` and `apply_resolved_link()` and make the effective label follow the effective database availability where a DB override exists.
+
+Prefer one central normalization function.
+
+Conceptually:
+
+```python
+AVAILABILITY_LABELS = {
+    "InStock": "...existing appropriate available label...",
+    "OutOfStock": "...existing appropriate unavailable label...",
+}
+```
+
+However, reuse the site's existing wording and CTA behaviour instead of inventing new labels.
+
+If the Python product does NOT yet have a database maintenance override, retain the current Python behaviour.
+
+Add tests for:
+
+```text
+Python OutOfStock
+DB InStock
+→ frontend and JSON-LD both behave as InStock
+```
+
+and:
+
+```text
+Python InStock
+DB OutOfStock
+→ frontend and JSON-LD both behave as OutOfStock
+```
+
+---
+
+# 4. Canonical availability values
+
+Use canonical internal availability values.
+
+Current values found:
+
+```text
+InStock
+OutOfStock
+OutofStock
+None
+```
+
+Normalize:
+
+```text
+OutofStock → OutOfStock
+```
+
+during initial maintenance-state import.
+
+Do NOT modify all Python files as part of this task unless necessary.
+
+The runtime overlay should expose the canonical value.
+
+JSON-LD already supports canonical:
+
+```text
+OutOfStock
+```
+
+so this should improve the existing malformed `OutofStock` cases.
+
+---
+
+# 5. Initial synchronization
+
+Create a management command, for example:
+
+```bash
+python manage.py sync_affiliate_product_states
+```
+
+It should loop over `ALL_PRODUCTS_BY_SLUG`.
+
+For each unique slug:
+
+* create an `AffiliateProductState` record if it does not exist;
+* initialize `price` from the effective/default Python price;
+* initialize `availability` from the effective/default Python availability;
+* normalize legacy availability values;
+* import a genuine existing `price_last_checked` if one exists.
+
+IMPORTANT:
+
+If the Python product has no real `price_last_checked`, store:
+
+```python
+price_last_checked = None
+```
+
+Do NOT initialize it to today's date.
+
+Running the sync command does not mean that the product has actually been manually checked.
+
+A NULL `price_last_checked` should therefore put the product into the maintenance queue.
+
+The command must be idempotent.
+
+Running it a second time must NOT overwrite manually maintained database price/availability values by default.
+
+Suggested behaviour:
+
+```text
+missing state record
+→ create and initialize from Python
+
+existing state record
+→ leave manually maintained commercial values untouched
+```
+
+If useful, an explicit `--force` option may be added for development/testing, but ordinary production sync must never overwrite admin-maintained values.
+
+Report:
+
+```text
+Python products found: 138
+Unique slugs: ...
+Maintenance records created: ...
+Existing records retained: ...
+Missing prices: ...
+Missing availability: ...
+Legacy OutofStock normalized: ...
+Duplicate slugs: ...
+Errors: ...
+```
+
+---
+
+# 6. Affiliate URLs remain outside the maintenance table
+
+Do NOT store another affiliate URL in `AffiliateProductState`.
+
+Continue using the existing runtime logic:
+
+```text
+affiliate_url
+→ retailer_url
+→ official_url
+```
+
+The maintenance admin should derive and display the actual effective URL from the Python product catalogue using the same resolver as the public website.
+
+This ensures the maintenance screen shows the exact destination currently used by the public site.
+
+Do not create another source of truth for URLs.
+
+---
+
+# 7. Dedicated affiliate maintenance admin
+
+Register `AffiliateProductState` in Django Admin with a clear human-readable name such as:
+
+```text
+Affiliate product maintenance
+```
+
+The page should show:
+
+* select checkbox
+* product name
+* category if easy to derive
+* price
+* price_last_checked
+* availability
+* effective affiliate/product URL
+
+The product name and effective URL may be derived from `ALL_PRODUCTS_BY_SLUG` using the record's slug.
+
+The URL should:
+
+* be clickable;
+* open in a new tab;
+* use `rel="noopener noreferrer"` where applicable.
+
+If the Python product cannot be found for a maintenance slug, show this clearly as a data-integrity warning.
+
+---
+
+# 8. Do NOT rely on normal list_editable + admin action
+
+The intended workflow is:
+
+```text
+Open maintenance page
+→ open retailer URL
+→ optionally edit price
+→ optionally edit availability
+→ select checked products
+→ click one confirmation action/button
+→ edited values are saved
+→ selected rows get price_last_checked = today
+```
+
+Standard Django `list_editable` saving and admin actions are separate POST workflows.
+
+Therefore do NOT assume that unsaved list-editable values will automatically be persisted when a normal admin action is executed.
+
+Implement a small dedicated changelist form / custom admin view that processes:
+
+* editable price;
+* editable availability;
+* row selection;
+* confirmation;
+
+in ONE atomic POST.
+
+Keep this as close to standard Django Admin as possible.
+
+Avoid building a separate frontend application.
+
+Minimal custom admin template/form logic is acceptable and preferable to a confusing two-step:
+
+```text
+Save
+→ select again
+→ run action
+```
+
+---
+
+# 9. Confirmation behaviour
+
+For every SELECTED row:
+
+### Price
+
+If the submitted price differs from the stored price:
+
+```text
+save new price
+```
+
+If it is unchanged:
+
+```text
+retain current price
+```
+
+Do not interpret an accidentally blank input as an instruction to delete an existing price.
+
+### Availability
+
+If changed:
+
+```text
+save new availability
+```
+
+Otherwise:
+
+```text
+retain existing availability
+```
+
+### Check date
+
+For every selected and successfully validated product:
+
+```python
+price_last_checked = timezone.localdate()
+```
+
+assuming this is implemented as a `DateField`.
+
+---
+
+# 10. Unselected rows
+
+This requirement is strict.
+
+If 20 rows are visible and only 8 are selected:
+
+```text
+8 selected:
+- save edits
+- update price_last_checked
+
+12 unselected:
+- modify nothing
+```
+
+Even if editable form controls for an unselected row were accidentally changed, they must NOT be persisted by the "confirm checked products" operation.
+
+Add a specific regression test for this.
+
+---
+
+# 11. Default maintenance filter
+
+Default page contents:
+
+```text
+price_last_checked IS NULL
+OR
+price_last_checked < one month ago
+OR
+availability = OutOfStock
+```
+
+Use proper timezone-aware date logic.
+
+Prefer a true calendar-month threshold if straightforward.
+
+The filter must be removable so that all maintenance records can be viewed.
+
+Useful additional filters:
+
+* Requires review
+* Availability
+* Price-check age
+
+---
+
+# 12. OutOfStock behaviour
+
+Retain the requirement that a recently checked product that remains:
+
+```text
+OutOfStock
+```
+
+continues to appear in the default queue.
+
+Example:
+
+```text
+2026-08-08
+Product checked
+availability remains OutOfStock
+price_last_checked becomes 2026-08-08
+```
+
+It still appears because:
+
+```text
+availability = OutOfStock
+```
+
+This is intentional for this first version.
+
+Do not introduce `availability_last_checked` yet.
+
+---
+
+# 13. Runtime query efficiency
+
+Do not query `AffiliateProductState` separately for each product.
+
+For a category/page request:
+
+1. collect relevant slugs;
+2. load maintenance states in one query;
+3. construct a mapping;
+4. apply overrides in memory.
+
+Use something equivalent to:
+
+```python
+AffiliateProductState.objects.in_bulk(slugs, field_name="slug")
+```
+
+No N+1 query pattern.
+
+Add a query-count test if practical.
+
+---
+
+# 14. Variant regression test
+
+This is especially important.
+
+Create a fixture/model based on an existing product with `shape_variants`.
+
+Example conceptual state:
+
+```text
+Python family/default variant:
+price = 59.95
+availability = InStock
+
+AffiliateProductState:
+price = 54.95
+availability = OutOfStock
+```
+
+After:
+
+```text
+prepare_product_variants()
+→ maintenance override
+→ remaining enrichment
+```
+
+the final runtime product MUST contain:
+
+```text
+price = 54.95
+availability = OutOfStock
+```
+
+The Python variant projection must not change those values back to:
+
+```text
+59.95
+InStock
+```
+
+Also verify corresponding JSON-LD.
+
+---
+
+# 15. Public-site regression tests
+
+Verify maintenance overrides on:
+
+* normal category cards;
+* product detail page;
+* quick picks;
+* comparison tables where applicable;
+* JSON-LD Offer price;
+* JSON-LD availability;
+* availability label;
+* CTA behaviour.
+
+Also test fallback:
+
+```text
+No AffiliateProductState record
+→ current Python behaviour remains exactly unchanged
+```
+
+---
+
+# 16. Existing Product model must remain unaffected
+
+Do not populate or repurpose the existing:
+
+```python
+products.models.Product
+```
+
+as part of this task.
+
+Specifically verify after the maintenance sync:
+
+```python
+Product.objects.count()
+```
+
+has not been increased merely because maintenance records were created.
+
+Existing:
+
+* DB product list view;
+* product-detail fallback;
+* click registration logic;
+
+must behave exactly as before.
+
+The new model should be independent.
+
+---
+
+# 17. Django version check
+
+Report the exact installed Django version.
+
+Because this implementation touches Django Admin changelist editing, ensure the installed Django version is currently supported and has relevant admin security patches.
+
+Do not perform an unrelated major-version upgrade automatically.
+
+If the installed version is outdated or vulnerable, report that separately before modifying dependencies.
+
+---
+
+# 18. Tests
+
+At minimum cover:
+
+### Synchronization
+
+1. Creates state for Python product.
+2. Uses slug as unique key.
+3. Imports effective default-variant price.
+4. Imports availability.
+5. Normalizes `OutofStock`.
+6. Does not fake `price_last_checked`.
+7. Second sync does not overwrite manual DB values.
+8. Existing Product model remains untouched.
+
+### Runtime
+
+9. DB price overrides Python price.
+10. DB availability overrides Python availability.
+11. No maintenance state → Python fallback.
+12. Variant projection cannot overwrite maintenance override.
+13. Effective availability label follows DB availability.
+14. JSON-LD price follows DB.
+15. JSON-LD availability follows DB.
+16. Affiliate URL remains resolved by existing URL logic.
+
+### Admin
+
+17. NULL price_last_checked appears.
+18. Older-than-one-month appears.
+19. Recent InStock does not appear.
+20. Recent OutOfStock appears.
+21. Changed selected price saves.
+22. Unchanged selected price remains.
+23. Selected availability change saves.
+24. Selected row gets today's checked date.
+25. Unselected row remains completely untouched.
+26. Blank input cannot accidentally erase existing price.
+27. Simply opening/filtering the page changes no data.
+
+---
+
+# 19. Implementation report
+
+After implementation provide:
+
+## Data
+
+* number of Python products;
+* number of state records;
+* normalized availability counts;
+* missing price count;
+* missing availability count;
+* NULL price_last_checked count.
+
+## Architecture
+
+* exact overlay location;
+* how variant products are handled;
+* how availability labels are synchronized;
+* how URLs are resolved.
+
+## Admin
+
+* URL/path to the maintenance screen;
+* default filter behaviour;
+* edit/selection workflow.
+
+## Tests
+
+* tests added;
+* test results;
+* full regression suite results.
+
+## Safety confirmation
+
+Explicitly confirm:
+
+* existing Product records were not created/changed;
+* Python product files were not rewritten;
+* affiliate URLs were not migrated;
+* manual DB maintenance values cannot be overwritten by normal sync;
+* unselected products cannot be changed by confirmation;
+* DB values are visible on the public website;
+* variant projection cannot overwrite DB maintenance values.

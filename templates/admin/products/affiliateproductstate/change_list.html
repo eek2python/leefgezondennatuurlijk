@@ -1,0 +1,192 @@
+{% extends "admin/change_list.html" %}
+{% load i18n %}
+
+{% block result_list %}
+<style>
+/* ── Maintenance changelist styling ───────────────────────────────── */
+#maintenance-form table#result_list {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+#maintenance-form table#result_list thead th {
+    background: #417690;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: left;
+    white-space: nowrap;
+}
+#maintenance-form table#result_list tbody tr:nth-child(even) {
+    background: #f8f8f8;
+}
+#maintenance-form table#result_list tbody tr:hover {
+    background: #e8f4fd;
+}
+#maintenance-form table#result_list td {
+    padding: 6px 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+}
+/* Stijlindicatoren */
+.plc-missing { color: #c0392b; font-weight: bold; }
+.plc-stale   { color: #e67e22; font-weight: bold; }
+.plc-ok      { color: #27ae60; }
+.avail-outofstock { color: #c0392b; font-weight: bold; }
+.no-url      { color: #999; }
+.url-link    { text-decoration: none; font-size: 0.85em; }
+.product-missing { opacity: 0.5; font-style: italic; }
+/* Compacte forminputs */
+input.price-input {
+    width: 6em;
+    padding: 3px 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 0.95em;
+}
+select.avail-select {
+    padding: 3px 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 0.85em;
+    max-width: 14em;
+}
+/* Actiebalk */
+.maintenance-action-bar {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 10px 0;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+.maintenance-action-bar .button {
+    background: #417690;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95em;
+}
+.maintenance-action-bar .button:hover { background: #205070; }
+#selected-count { color: #555; font-size: 0.9em; }
+</style>
+
+<form method="post" id="maintenance-form" action="{{ request.get_full_path }}">
+{% csrf_token %}
+
+<div class="maintenance-action-bar">
+    <button type="submit" name="_confirm_checked" class="button">
+        ✓ Geselecteerde producten markeren als gecontroleerd
+    </button>
+    <span id="selected-count"></span>
+    <small style="color:#777;">
+        Vul prijs en beschikbaarheid in, selecteer rijen en klik op de knop — alles wordt in één stap opgeslagen.
+    </small>
+</div>
+
+<table id="result_list">
+    <thead>
+        <tr>
+            <th><input type="checkbox" id="select-all" title="Alles selecteren / deselecteren"></th>
+            <th>Product</th>
+            <th>Categorie</th>
+            <th>Prijs (€)</th>
+            <th>Beschikbaarheid</th>
+            <th>Gecontroleerd op</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in maintenance_rows %}
+        <tr class="{% if row.needs_review %}needs-review{% endif %}">
+            <td style="width:2em">
+                <input type="checkbox" name="selected_ids" value="{{ row.pk }}"
+                       class="row-checkbox">
+            </td>
+            <td>
+                {% if row.missing_python %}
+                    <span class="product-missing" title="Niet gevonden in Python-catalogus">
+                        {{ row.product_name }}
+                    </span>
+                {% else %}
+                    <strong>{{ row.product_name }}</strong>
+                    <br><small style="color:#888">{{ row.slug }}</small>
+                {% endif %}
+            </td>
+            <td style="white-space:nowrap">{{ row.category }}</td>
+            <td>
+                <input type="text" name="price_{{ row.pk }}"
+                       value="{{ row.price_display }}"
+                       class="price-input"
+                       placeholder="—"
+                       inputmode="decimal">
+            </td>
+            <td>
+                <select name="avail_{{ row.pk }}" class="avail-select {{ row.avail_class }}">
+                    <option value="">— onbekend —</option>
+                    {% for val, label in availability_choices %}
+                    <option value="{{ val }}"
+                        {% if val == row.availability %}selected{% endif %}>
+                        {{ label }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </td>
+            <td class="{{ row.date_class }}" style="white-space:nowrap">
+                {{ row.date_display }}
+            </td>
+            <td>{{ row.url_html }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="7" style="text-align:center;padding:20px;color:#666;">
+                Geen producten gevonden voor de huidige filter.
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</form>
+
+<script>
+(function () {
+    var selectAll = document.getElementById("select-all");
+    var countEl   = document.getElementById("selected-count");
+
+    function updateCount() {
+        var n = document.querySelectorAll(".row-checkbox:checked").length;
+        countEl.textContent = n ? n + " geselecteerd" : "";
+        // Sync the "select all" checkbox state
+        var total = document.querySelectorAll(".row-checkbox").length;
+        selectAll.indeterminate = n > 0 && n < total;
+        selectAll.checked = total > 0 && n === total;
+    }
+
+    if (selectAll) {
+        selectAll.addEventListener("change", function () {
+            document.querySelectorAll(".row-checkbox").forEach(function (cb) {
+                cb.checked = selectAll.checked;
+            });
+            updateCount();
+        });
+    }
+
+    document.querySelectorAll(".row-checkbox").forEach(function (cb) {
+        cb.addEventListener("change", updateCount);
+    });
+
+    // Confirm before submitting if nothing selected
+    var form = document.getElementById("maintenance-form");
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            var selected = document.querySelectorAll(".row-checkbox:checked").length;
+            if (selected === 0) {
+                e.preventDefault();
+                alert("Selecteer eerst één of meer producten om te markeren.");
+            }
+        });
+    }
+})();
+</script>
+{% endblock %}
