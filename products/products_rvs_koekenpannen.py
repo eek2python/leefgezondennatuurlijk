@@ -16,10 +16,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 117.00,
-        "price_last_checked": "2026-07-30",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdemeyere-industry-5-rvs-koekenpan-koekenpan-inductie-24-cm-ptfe-vrij%2F9200000011477842%2F&name=Demeyere%20Industry%205%20Koekenpan%2024%20cm%20-%20RVS%20-%20Geschikt%20voor%20alle%20kookplaten",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "demeyere-industry-5-rvs-koekenpan-koekenpan-inductie-"
@@ -117,10 +117,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 125.32,
-        "price_last_checked": "2026-07-30",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdebuyer-affinity-koekenpan-o-24-cm%2F9200000015324056%2F&name=De%20Buyer%20Affinity%20Koekenpan%20-%2024%20cm%20-%20Geschikt%20voor%20alle%20warmtebronnen",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "debuyer-affinity-koekenpan-o-24-cm/"
@@ -168,10 +168,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 54.18,
-        "price_last_checked": "2026-07-30",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fwmf-profi-koekenpan-o-24-cm%2F9200000077125803%2F&name=WMF%20Profi%20koekenpan%20-%20RVS%20-%2024%20cm%20-%20Geschikt%20voor%20alle%20warmtebronnen",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "wmf-profi-koekenpan-o-24-cm/"
@@ -273,10 +273,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 35.26,
-        "price_last_checked": "2026-07-30",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-bright-koekenpan-24-cm-rvs%2F9300000111921944%2F&name=BK%20Bright%20koekenpan%20-%2024%20cm",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bk-bright-koekenpan-24-cm-rvs/"
@@ -425,11 +425,11 @@ PRODUCTS = {
         "rating": 4.6,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 142.00,
-        "price_last_checked": "2026-07-30",
+        "price": 141.00,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdebuyer-affinity-koekenpan-o-28-cm%2F9200000015324060%2F&name=DeBuyer%20Affinity%20Koekenpan%20-%20RVS-%2028%20cm%20-%20PFAS-vrij",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "debuyer-affinity-koekenpan-o-28-cm/"
@@ -476,11 +476,11 @@ PRODUCTS = {
         "rating": 4.4,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 53.08,
-        "price_last_checked": "2026-07-30",
+        "price": 63.99,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fwmf-profi-koekenpan-o-28-cm%2F9200000055361082%2F&name=WMF%20Profi%20koekenpan%20-%20%C3%98%2028%20cm%20-%20Cromargan%20roestvrij%20staal%20-%20Inductie",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "wmf-profi-koekenpan-o-28-cm/"
@@ -577,10 +577,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 38.81,
-        "price_last_checked": "2026-07-30",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-bright-koekenpan-28-cm-rvs%2F9300000111596418%2F&name=BK%20Bright%20koekenpan%20-%2028%20cm",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bk-bright-koekenpan-28-cm-rvs/"
@@ -629,10 +629,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 132.40,
-        "price_last_checked": "2026-07-30",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdemeyere-industry-5-koekenpan-20-cm%2F9300000185199285%2F&name=Demeyere%20Industry%205%20Koekenpan%20-%2020cm%20-%205-laags%20RVS%20-%20Silvinox%20-%20Inductie",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "demeyere-industry-5-koekenpan-20-cm/"
@@ -678,11 +678,11 @@ PRODUCTS = {
         "rating": 4.5,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 60.98,
-        "price_last_checked": "2026-07-30",
+        "price": 59.95,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-koekenpan-superior-tri-ply-o-20-cm-zonder-anti-aanbaklaag%2F9300000113331181%2F&name=BK%20Superior%20Tri-Ply%20koekenpan%2020%20cm",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bk-koekenpan-superior-tri-ply-o-20-cm-zonder-"
@@ -729,10 +729,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 42.95,
-        "price_last_checked": "2026-07-30",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fsola-koekenpan-green-cooking-o-20-cm-zilver-rvs-dubbelwandige-bodem%2F9300000038159469%2F&name=Sola%20Green%20Cooking%20koekenpan%20-%20%C3%98%2020%20cm%20-%20Zilver%20-%20Geschikt%20voor%20alle%20warmtebronnen",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "sola-koekenpan-green-cooking-o-20-cm-zilver-rvs-"
@@ -779,11 +779,11 @@ PRODUCTS = {
         "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 37.90,
-        "price_last_checked": "2026-07-30",
+        "price": 41.99,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fwmf-profi-koekenpan-o-20-cm%2F9200000131544211%2F&name=WMF%20Profi%20Koekenpan%20-%2020%20cm%20-%20RVS%20-%20Inductie%20-%20Vaatwasmachinebestendig",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "wmf-profi-koekenpan-o-20-cm/"
@@ -831,10 +831,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 110.00,
-        "price_last_checked": "2026-07-30",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdebuyer-affinity-koekenpan-o-20-cm%2F9200000015324040%2F&name=DeBuyer%20Affinity%20Koekenpan%20-%20RVS-%2020%20cm%20-%20PFAS-vrij",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "debuyer-affinity-koekenpan-o-20-cm/"

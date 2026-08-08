@@ -21,11 +21,11 @@ PRODUCTS = {
         "rating": 4.6,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 47.02,
-        "price_last_checked": "2026-07-31",
+        "price": 46.88,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-torino-keramische-wokpan-28-cm%2F9300000003247573%2F&name=GreenPan%20Torino%20Wok%20-%2028%20cm%20-%20Groter%20bakoppervlak%20-%20Voor%20het%20hele%20gezin",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "greenpan-torino-keramische-wokpan-28-cm/"
@@ -229,10 +229,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 69.60,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fprimecook-wok-o-28-cm-pfas-vrij-inductie-veilige-en-slijtvaste-antiaanbaklaag%2F9300000050781201%2F&name=Primecook%20Wokpan%20-%20%C3%98%2028%20cm%20-%20PFAS-vrij%20-%20inductie%20-%20veilige%20antiaanbaklaag",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "primecook-wok-o-28-cm-pfas-vrij-inductie-"
@@ -285,11 +285,11 @@ PRODUCTS = {
         "rating": 4.2,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 49.55,
-        "price_last_checked": "2026-07-31",
+        "price": 49.99,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-blue-label-granite-wokpan-o-28-cm-keramisch%2F9300000073952667%2F&name=BK%20Blue%20Label%20Granite%20Wokpan%20-%20Keramische%20antiaanbak%20-%20PFAS-vrij%20-%2028cm",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bk-blue-label-granite-wokpan-o-28-cm-keramisch/"
@@ -338,10 +338,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 40.00,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbrabantia-indu-r-wokpan-o-28-cm-100-gerecycled-aluminium-keramische-antiaanbaklaag-ergonomisch-en-licht-ook-geschikt-voor-inductie-100-pfas-vrij-kleur-grijs%2F9300000183634537%2F&name=Brabantia%20INDU%2B%20R%20Wokpan%20-%20%C3%98%2028%20cm%20-%20100%25%20gerecycled%20-%20PFAS-vrij%20-%20Grijs",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "brabantia-indu-r-wokpan-o-28-cm-100-gerecycled-"
@@ -396,11 +396,11 @@ PRODUCTS = {
         "rating": 4.5,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 54.90,
-        "price_last_checked": "2026-07-31",
+        "price": 49.82,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-cambridge-wokpan-28cm-zwart-inductie-pfas-vrij%2F9200000083444325%2F&name=GreenPan%20Cambridge%20Keramische%20Wokpan%20-%2028%20cm%20-%20Inductie%20-%20PFAS-vrij",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "greenpan-cambridge-wokpan-28cm-zwart-inductie-"
@@ -451,10 +451,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 49.90,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-easy-basic-ceramic-wokpan-28-cm%2F9300000179956149%2F&name=BK%20Easy%20Basic%20Ceramic%20wokpan%2028%20cm%20-%204.2l%20-%20PFAS-vrij%20-%20Inductie",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bk-easy-basic-ceramic-wokpan-28-cm/"
@@ -503,10 +503,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 59.95,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fphantom-wokpan-28-cm%2F9300000160900449%2F&name=LEO%20Wok%20antikleef%20Phantom%20-%20%C3%98%2028cm%20-%20Zwart%20-%20PFAS-vrij",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "phantom-wokpan-28-cm/9300000160900449/"
@@ -611,11 +611,11 @@ PRODUCTS = {
         "rating": 4.1,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 57.99,
+        "price": 66.17,
         "price_last_checked": "2026-07-31",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-easy-induction-ceramic-wok-o-30-cm-inductie-pfas-vrij%2F9300000032891769%2F&name=BK%20Easy%20Induction%20Ceramic%20Wokpan%20-%20%C3%9830cm%20-%204.2L%20-%20PFAS-vrij%20-%20Ovenbestendig",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bk-easy-induction-ceramic-wok-o-30-cm-"
@@ -669,10 +669,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 73.87,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-superior-wok-o-30-cm-keramisch-inductie%2F9300000022010093%2F&name=BK%20Superior%20Wok%2030%20cm%20-%20Geanodiseerd%20aluminium%20-%20Keramische%20antiaanbaklaag",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bk-superior-wok-o-30-cm-keramisch-inductie/"
@@ -727,11 +727,11 @@ PRODUCTS = {
         "rating": 4.5,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 66.29,
-        "price_last_checked": "2026-07-31",
+        "price": 68.20,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-copenhagen-wok-met-extra-handvat-30cm-4-8l%2F9300000022010206%2F&name=GreenPan%20Copenhagen%20wokpan%20-%2030cm%20-%204.8L%20-%20PFAS-vrij%20-%20Gehard%20aluminium",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "greenpan-copenhagen-wok-met-extra-handvat-"
@@ -784,10 +784,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 74.95,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fphantom-wokpan-30-cm-5-2-l-gerecycled-aluminium-berghoff-leo-line%2F9300000160900434%2F&name=LEO%20Wok%20antikleef%20Phantom%20-%20%C3%98%2030cm%20-%20Zwart%20-%20PFAS-vrij",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "phantom-wokpan-30-cm-5-2-l-gerecycled-"

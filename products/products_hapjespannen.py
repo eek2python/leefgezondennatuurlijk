@@ -77,7 +77,7 @@ PRODUCTS = {
         "price_last_checked": "2026-06-31",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-zwart-koelgreep-ovenbestendig-tot-160%2F9300000196237263%2F&name=BK%20Enjoy%20Hapjespan%20-%20Keramische%20antiaanbaklaag%20-%20Vaatwasserbestendig%20-%203.4L",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-zwart-"
@@ -93,47 +93,47 @@ PRODUCTS = {
                 "name": "Zwart",
                 "image": "hapjespan-bk-enjoy-28cm.webp",
                 "hex": "#000000",
-                "affiliate_url": "",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-zwart-koelgreep-ovenbestendig-tot-160%2F9300000196237263%2F&name=BK%20Enjoy%20Hapjespan%20-%20Keramische%20antiaanbaklaag%20-%20Vaatwasserbestendig%20-%203.4L",
                 "retailer_url": (
                     "https://www.bol.com/nl/nl/p/"
                     "bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-zwart-"
                     "koelgreep-ovenbestendig-tot-160/9300000196237263/"
                 ),
                 "price": 59.90,
-                "price_last_checked": "2026-06-31",
+                "price_last_checked": "2026-08-08",
             },
             {
                 "name": "Licht Blauw",
                 "image": "hapjespan-bk-enjoy-licht-blauw-28cm.webp",
                 "hex": "#8CA9B5",
-                "affiliate_url": "",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-lichtblauw-koelgrepen-ovenbestendig-tot-160%2F9300000196237270%2F&name=BK%20Enjoy%20Hapjespan%20-%20Inductie%20-%20Keramische%20antiaanbaklaag%20-%203.4L%20-%20%C3%98%2028cm",
                 "retailer_url": (
                     "https://www.bol.com/nl/nl/p/bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-lichtblauw-koelgrepen-ovenbestendig-tot-160/9300000196237270/"
                 ),
                 "price": 59.90,
-                "price_last_checked": "2026-06-31",
+                "price_last_checked": "2026-08-08",
             },
             {
                 "name": "Oxford Blauw",
                 "image": "hapjespan-bk-enjoy-oxford-blauw-28cm.webp",
                 "hex": "#002147",
-                "affiliate_url": "",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-enjoy-hapjespan-28cm-met-deksel-3-4l-pfas-vrije-antikleeflaag-hapjespan-inductie-keramische-pan-ovenbestendig-tot-160-c-koudgrepen-met-glazen-deksel-oxford-blue%2F9300000311002501%2F&name=BK%20Enjoy%20Hapjespan%2028cm%20met%20deksel%20%E2%80%93%203.4L%20%E2%80%93%20PFAS-vrije%20antikleeflaag%20%E2%80%93%20Hapjespan...",
                 "retailer_url": (
                     "https://www.bol.com/nl/nl/p/bk-enjoy-hapjespan-28cm-met-deksel-3-4l-pfas-vrije-antikleeflaag-hapjespan-inductie-keramische-pan-ovenbestendig-tot-160-c-koudgrepen-met-glazen-deksel-oxford-blue/9300000311002501/"
                 ),
                 "price": 59.90,
-                "price_last_checked": "2026-06-31",
+                "price_last_checked": "2026-08-08",
             },
             {
                 "name": "Olijf Groen",
                 "image": "hapjespan-bk-enjoy-olijf-groen-28cm.webp",
                 "hex": "#708238",
-                "affiliate_url": "",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-olijfgroen-koelgrepen-ovenbestendig-tot-160%2F9300000196237266%2F&name=BK%20Enjoy%20Hapjespan%20-%20Keramische%20antiaanbaklaag%20-%20Ovenbestendig%20-%20Vaatwasserbestendig",
                 "retailer_url": (
                     "https://www.bol.com/nl/nl/p/bk-enjoy-hapjespan-o-28cm-deksel-pfas-vrij-olijfgroen-koelgrepen-ovenbestendig-tot-160/9300000196237266/"
                 ),
                 "price": 47.45,
-                "price_last_checked": "2026-06-31",
+                "price_last_checked": "2026-08-08",
             },
         ],
         "pros": [
@@ -172,10 +172,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 104.90,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fhapjespan-o-28-cm-3-3-l-gerecycled-aluminium-qxr-non-stick-inductie-woll-ecolite-qxr%2F9300000180122490%2F&name=WOLL%20EcoLite%20QXR%20Hapjespan%20inductie%20met%20afneembare%20greep%20-%20%C3%98280mm%20-%20H%2070mm%20-%20Zwart",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "hapjespan-o-28-cm-3-3-l-gerecycled-aluminium-qxr-"
@@ -222,10 +222,10 @@ PRODUCTS = {
             "rating_count": None,
             "rating_source": "editorial",
             "price": 39.99,
-            "price_last_checked": "2026-07-31",
+            "price_last_checked": "2026-08-08",
             "currency": "EUR",
             "availability": "InStock",
-            "affiliate_url": "",
+            "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenchef-diamond-inductie-hapjespan-o28-cm-keramisch-pfas-vrij%2F9200000131435585%2F&name=GreenChef%20Diamond%20Hapjespan%20-%2028%20cm%20-%20Keramisch%20-%20PFAS-vrij%20-%20Inductie",
             "retailer_url": (
                 "https://www.bol.com/nl/nl/p/"
                 "greenchef-diamond-inductie-hapjespan-o28-cm-keramisch-"
@@ -271,11 +271,11 @@ PRODUCTS = {
         "rating": 4.2,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 62.49,
-        "price_last_checked": "2026-07-31",
+        "price": 63.58,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-easy-induction-ceramic-hapjespan-met-deksel-o28cm-4-6l-inductie-pfas-vrij%2F9300000032891765%2F&name=BK%20Easy%20Induction%20Ceramic%20Hapjespan%20-%20PFAS-vrij%20-%2028cm%20-%204.6L%20-%20Zwart",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bk-easy-induction-ceramic-hapjespan-met-deksel-o28cm-"
@@ -319,11 +319,11 @@ PRODUCTS = {
         "rating": 3.9,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 49.95,
-        "price_last_checked": "2026-07-31",
+        "price": 44.95,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbe-living-hapjespan-met-deksel-o-28-cm-sauteerpan-keramisch-inductie-pfas-vrij-anti-aanbak-delight-series%2F9300000236794346%2F&name=BE%20Living%20Hapjespan%20-%20Inductie%20-%20PFAS%20vrij%20-%20Keramisch%20-%20%C3%98%2028%20cm",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "be-living-hapjespan-met-deksel-o-28-cm-sauteerpan-"
@@ -471,11 +471,11 @@ PRODUCTS = {
         "rating": 4.4,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 56.00,
-        "price_last_checked": "2026-07-31",
+        "price": 55.99,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-brilliant-hapjespan-met-deksel-o24-cm-inductie-anti-aanbak-pfas-vrij%2F9300000121455778%2F&name=BK%20Brilliant%20Hapjespan%20met%20deksel%20-%20Keramische%20antiaanbaklaag%20-%20PFAS-vrij%20-%2024cm",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "bk-brilliant-hapjespan-met-deksel-o24-cm-inductie-"
@@ -521,10 +521,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 81.00,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fhapjespan-o-24-cm-2-4-l-gerecycled-aluminium-qxr-non-stick-inductie-woll-ecolite-qxr%2F9300000180122500%2F&name=Woll%20Eco%20Lite%20Hapjespan%2024%20cm",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "hapjespan-o-24-cm-2-4-l-gerecycled-aluminium-qxr-"
@@ -573,11 +573,11 @@ PRODUCTS = {
         "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 49.90,
-        "price_last_checked": "2026-07-31",
+        "price": 43.38,
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenchef-prime-stoofpan-24cm-pfas-vrij-hapjespan-met-deksel-geschikt-voor-inductie%2F9300000223447989%2F&name=GreenChef%20Prime%20hapjespan%20-%20Inductie%20pan%20met%20deksel%20-%2024cm%20-%20PFAS-vrij",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "greenchef-prime-stoofpan-24cm-pfas-vrij-hapjespan-"
@@ -622,10 +622,10 @@ PRODUCTS = {
         "rating_count": None,
         "rating_source": "editorial",
         "price": 19.99,
-        "price_last_checked": "2026-07-31",
+        "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fkochstar-essenz-keramische-inductie-kookpan-met-deksel-24cm-3-5l-pfas-vrij-inductie-kookpan-keramische-anti-aanbaklaag-koelgreep-zwart%2F9300000231848098%2F&name=Kochstar%20Essenz%20Keramische%20Kookpan%20met%20deksel%20-%2024cm%20-%203.5L%20-%20PFAS-vrij%20-%20Inductie...",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "kochstar-essenz-keramische-inductie-kookpan-met-deksel-"
