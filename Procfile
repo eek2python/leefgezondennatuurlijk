@@ -1,1 +1,1 @@
-web: gunicorn LeefNatuurlijkenGezond.wsgi
+web: gunicorn --error-logfile - --access-logfile - --capture-output LeefNatuurlijkenGezond.wsgi:application

@@ -4,3 +4,4 @@
 - [Product link resolution](product-link-resolution.md) — one central resolver (affiliate→retailer→official→status), variant-first then family fallback; templates/JS never pick URL fields themselves.
 - [Server herstart nodig](server-restart-required.md) — runserver picks up code changes unreliably; after Python edits always restart the workflow before verifying pages via curl.
 - [Affiliate maintenance admin](affiliate-maintenance-admin.md) — AffiliateProductState model, runtime overlay order, sync command quirks, admin single-POST changelist design, test coverage.
+- [Render migration discipline](render-migration-discipline.md) — catalogue rendering depends on migrated maintenance schema; verify/apply migrations as an explicit Render release step.

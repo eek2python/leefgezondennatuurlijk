@@ -97,6 +97,36 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'LeefNatuurlijkenGezond.wsgi.application'
 
+# Keep production request failures observable without exposing Django debug
+# pages.  Explicitly configuring django.request avoids its default
+# DEBUG-gated console handler while preserving the exception traceback on
+# stderr for process log collectors such as Render.
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "django_request": {
+            "format": "{levelname} {asctime} {name} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "django_request_console": {
+            "class": "logging.StreamHandler",
+            "level": "ERROR",
+            "formatter": "django_request",
+            "stream": "ext://sys.stderr",
+        },
+    },
+    "loggers": {
+        "django.request": {
+            "handlers": ["django_request_console"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+    },
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
