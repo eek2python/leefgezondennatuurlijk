@@ -1,0 +1,572 @@
+We have completed the production database architecture audit for the Django website **Leef Natuurlijk & Gezond**.
+
+The audit concluded that the repository should first be prepared for PostgreSQL before any Render PostgreSQL database is created or connected.
+
+## Current situation
+
+The current Django configuration hardcodes SQLite:
+
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+```
+
+Important findings from the audit:
+
+* Production currently uses filesystem SQLite.
+* Render does not appear to have a Persistent Disk.
+* `DATABASE_URL` is currently ignored by Django.
+* `psycopg2-binary==2.9.10` is already installed.
+* `dj-database-url` is not installed.
+* Replit currently exposes a `DATABASE_URL` environment variable even though Django ignores it.
+* Local development currently uses SQLite.
+* `AffiliateProductState` can be seeded deterministically with:
+
+```bash
+python manage.py sync_affiliate_product_states
+```
+
+* The production `AffiliateProductState` table currently contains 0 records.
+* No repository-specific PostgreSQL incompatibilities were found.
+* Production PostgreSQL must **not** be created or connected during this task.
+
+## Objective
+
+Prepare the repository so it is safely capable of using:
+
+```text
+Production:
+Django → Render PostgreSQL
+
+Development/Replit:
+Django → SQLite
+```
+
+This is a **repository preparation task only**.
+
+Do NOT:
+
+* deploy to Render;
+* create a Render PostgreSQL database;
+* change Render environment variables;
+* change production configuration;
+* run production migrations;
+* copy any database data;
+* restart the Render service;
+* modify production data;
+* automatically deploy after completing the task.
+
+---
+
+# Phase 1 — Implement explicit database selection
+
+Refactor the Django database configuration so database selection is explicit and deterministic.
+
+Use these environment concepts:
+
+```text
+DJANGO_ENV
+DJANGO_DB_BACKEND
+DATABASE_URL
+```
+
+Desired behavior:
+
+## Development / Replit
+
+Default development behavior must remain SQLite.
+
+For example:
+
+```text
+DJANGO_ENV=development
+DJANGO_DB_BACKEND=sqlite
+```
+
+must use:
+
+```python
+django.db.backends.sqlite3
+```
+
+with:
+
+```python
+BASE_DIR / "db.sqlite3"
+```
+
+This is important because the Replit environment currently contains a `DATABASE_URL`.
+
+A stray or automatically injected `DATABASE_URL` must therefore **not silently switch Replit development from SQLite to PostgreSQL**.
+
+## Production
+
+Production must require PostgreSQL.
+
+For example:
+
+```text
+DJANGO_ENV=production
+DJANGO_DB_BACKEND=postgres
+DATABASE_URL=<valid PostgreSQL URL>
+```
+
+Production must:
+
+* use `DATABASE_URL`;
+* use the PostgreSQL Django backend;
+* fail clearly if `DATABASE_URL` is missing;
+* fail clearly if `DATABASE_URL` is malformed;
+* never silently fall back to SQLite.
+
+A production configuration such as:
+
+```text
+DJANGO_ENV=production
+```
+
+without a valid PostgreSQL database configuration must raise:
+
+```python
+django.core.exceptions.ImproperlyConfigured
+```
+
+or an equivalent clear startup configuration error.
+
+---
+
+# Phase 2 — Add dj-database-url
+
+Add a suitable pinned version of:
+
+```text
+dj-database-url
+```
+
+to the project dependency file.
+
+Keep:
+
+```text
+psycopg2-binary==2.9.10
+```
+
+for this migration unless repository compatibility analysis identifies a concrete reason not to.
+
+Do not combine this task with a migration from psycopg2 to Psycopg 3.
+
+That would unnecessarily increase the scope of this infrastructure change.
+
+---
+
+# Phase 3 — Implement production-safe PostgreSQL configuration
+
+Use `dj-database-url` to parse `DATABASE_URL`.
+
+The configuration should support:
+
+* reasonable connection reuse;
+* connection health checking if supported by the installed Django/dj-database-url versions;
+* SSL in production where required for Render PostgreSQL;
+* clear configuration errors;
+* local SQLite development.
+
+Prefer something architecturally equivalent to:
+
+```python
+DJANGO_ENV = os.getenv("DJANGO_ENV", "development").lower()
+DJANGO_DB_BACKEND = os.getenv("DJANGO_DB_BACKEND", "sqlite").lower()
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if DJANGO_ENV == "production":
+    if DJANGO_DB_BACKEND != "postgres":
+        raise ImproperlyConfigured(
+            "Production must use PostgreSQL."
+        )
+
+    if not DATABASE_URL:
+        raise ImproperlyConfigured(
+            "DATABASE_URL must be configured in production."
+        )
+
+    # parse DATABASE_URL safely
+
+elif DJANGO_DB_BACKEND == "postgres":
+    if not DATABASE_URL:
+        raise ImproperlyConfigured(
+            "DATABASE_URL is required when PostgreSQL is selected."
+        )
+
+    # PostgreSQL configuration
+
+elif DJANGO_DB_BACKEND == "sqlite":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
+else:
+    raise ImproperlyConfigured(
+        f"Unsupported DJANGO_DB_BACKEND: {DJANGO_DB_BACKEND}"
+    )
+```
+
+This is illustrative, not mandatory.
+
+Implement the cleanest version consistent with the existing settings architecture.
+
+Do not duplicate configuration unnecessarily.
+
+---
+
+# Phase 4 — Preserve development workflow
+
+Verify that normal Replit development continues using the existing SQLite database.
+
+The presence of an unrelated `DATABASE_URL` environment variable must not alter development behavior when:
+
+```text
+DJANGO_DB_BACKEND=sqlite
+```
+
+is selected.
+
+Determine whether `.replit`, `.env.example`, README documentation, or another development configuration should explicitly set:
+
+```text
+DJANGO_ENV=development
+DJANGO_DB_BACKEND=sqlite
+```
+
+If you change development configuration, do not include secrets or actual database URLs.
+
+Do not commit `.env`.
+
+---
+
+# Phase 5 — Add configuration tests
+
+Add focused regression tests for database selection.
+
+At minimum cover:
+
+## Test 1 — development SQLite
+
+Given:
+
+```text
+DJANGO_ENV=development
+DJANGO_DB_BACKEND=sqlite
+```
+
+verify Django selects:
+
+```text
+django.db.backends.sqlite3
+```
+
+even when an unrelated `DATABASE_URL` exists.
+
+This test is important because Replit currently exposes a `DATABASE_URL`.
+
+## Test 2 — PostgreSQL explicitly selected
+
+Given:
+
+```text
+DJANGO_ENV=development
+DJANGO_DB_BACKEND=postgres
+DATABASE_URL=postgresql://...
+```
+
+verify PostgreSQL configuration is produced.
+
+Do not actually connect to an external database for this unit test.
+
+## Test 3 — production PostgreSQL
+
+Given:
+
+```text
+DJANGO_ENV=production
+DJANGO_DB_BACKEND=postgres
+DATABASE_URL=<valid PostgreSQL URL>
+```
+
+verify the PostgreSQL Django backend is selected.
+
+## Test 4 — production without DATABASE_URL
+
+Verify startup/configuration fails clearly.
+
+## Test 5 — malformed DATABASE_URL
+
+Verify configuration fails clearly rather than falling back to SQLite.
+
+## Test 6 — unsupported backend
+
+Example:
+
+```text
+DJANGO_DB_BACKEND=mysql
+```
+
+must fail clearly.
+
+---
+
+# Phase 6 — Regression-test normal application behavior
+
+Ensure the database settings changes do not affect normal local functionality.
+
+Using SQLite development configuration, verify representative routes including:
+
+```text
+/product/greenpan-barcelona-pro-hapjespan-28/
+/product/ninja-crispi-4-in-1/
+/koekenpannen/
+/vershoudcontainers/?uitvoering=3-delig
+```
+
+Also test representative product structures such as:
+
+* flat product;
+* swatch variants;
+* button variants;
+* product with AffiliateProductState override;
+* product without AffiliateProductState override.
+
+Expected result:
+
+```text
+HTTP 200
+```
+
+for valid routes.
+
+---
+
+# Phase 7 — AffiliateProductState safeguards
+
+Verify these behaviors remain intact:
+
+1. Empty `AffiliateProductState` table does not break product rendering.
+2. Existing AffiliateProductState records override catalogue price/availability correctly.
+3. Missing state records simply use the catalogue defaults.
+4. Database exceptions are not silently swallowed.
+5. The existing:
+
+```bash
+python manage.py sync_affiliate_product_states
+```
+
+command remains idempotent.
+
+Do not modify the sync command unless a concrete defect is found.
+
+Do NOT run the command against production.
+
+---
+
+# Phase 8 — PostgreSQL compatibility test
+
+If feasible without modifying production, validate the repository against a disposable local or temporary test PostgreSQL database.
+
+This must not be the production Render database.
+
+At minimum verify:
+
+```bash
+python manage.py migrate --noinput
+python manage.py check
+python manage.py sync_affiliate_product_states
+```
+
+and representative route tests.
+
+If a disposable PostgreSQL instance is unavailable, do not block the task.
+
+Instead clearly report that live PostgreSQL execution still needs validation before production cutover.
+
+---
+
+# Phase 9 — Do not automate production sync yet
+
+Do NOT modify the Render production deployment flow during this task.
+
+In particular, do not yet implement this as an automatic production pre-deploy command:
+
+```bash
+python manage.py migrate --noinput && python manage.py sync_affiliate_product_states
+```
+
+The eventual target may use this or a similar deployment flow, but the first PostgreSQL cutover must be performed as controlled separate steps:
+
+```text
+migrate
+↓
+verify schema
+↓
+sync affiliate states
+↓
+verify state count
+↓
+smoke-test application
+```
+
+Only after that first successful PostgreSQL cutover should we decide whether the sync command belongs permanently in Render's pre-deploy step.
+
+---
+
+# Phase 10 — Do not change Render infrastructure
+
+This task must make no external Render changes.
+
+Do NOT:
+
+* create PostgreSQL;
+* add `DATABASE_URL` to Render;
+* add `DJANGO_ENV` to Render;
+* add `DJANGO_DB_BACKEND` to Render;
+* configure a Render pre-deploy command;
+* change Render build settings;
+* restart Render;
+* trigger a deploy.
+
+Repository changes only.
+
+---
+
+# Verification
+
+Run at minimum:
+
+```bash
+python manage.py check
+python manage.py makemigrations --check --dry-run
+python manage.py showmigrations
+```
+
+Run the relevant new tests.
+
+Also run the existing maintenance/product regression tests.
+
+If the complete test suite is practical, run it as well.
+
+Important:
+
+There were already two known pre-existing stale catalogue test failures before this PostgreSQL preparation task:
+
+```text
+SnijplankenCountTests.test_all_counts_match_ranking_length
+VariantAuditCommandTests.test_command_reports_airfryer_swatch_category
+```
+
+Do not change unrelated catalogue behavior merely to make those two tests pass as part of this task.
+
+Report them separately if they remain.
+
+---
+
+# Scope discipline
+
+Do not combine this task with:
+
+* Render infrastructure changes;
+* production deployment;
+* production database migration;
+* catalogue cleanup;
+* test-suite catalogue maintenance;
+* psycopg2 → Psycopg 3 migration;
+* audit-history migration;
+* admin-user migration;
+* unrelated refactoring.
+
+Keep the implementation small and reviewable.
+
+---
+
+# Final report
+
+At completion provide:
+
+## A. Implementation summary
+
+What was changed and why.
+
+## B. Database selection contract
+
+Explicitly show the resulting behavior for:
+
+```text
+development + sqlite
+development + postgres
+production + postgres
+production without database config
+```
+
+## C. Exact settings changes
+
+Show the relevant final configuration.
+
+## D. Dependency changes
+
+Exact package/version added.
+
+## E. Replit behavior
+
+Confirm whether Replit continues using SQLite even though its environment contains a `DATABASE_URL`.
+
+## F. Tests added
+
+List each new test and what it protects.
+
+## G. Test results
+
+Include commands and results.
+
+## H. PostgreSQL compatibility validation
+
+State whether migrations were actually tested against PostgreSQL or only configuration-level tests were possible.
+
+## I. Files changed
+
+List each file and explain the modification.
+
+## J. Deployment impact
+
+Confirm explicitly:
+
+```text
+No production deployment performed.
+No Render settings changed.
+No production database changed.
+```
+
+## K. Remaining production steps
+
+List, but do not execute, the subsequent cutover steps:
+
+1. review this repository change;
+2. merge/apply it;
+3. create Render PostgreSQL;
+4. inventory/backup current SQLite production state;
+5. configure Render database variables;
+6. run PostgreSQL migrations;
+7. verify schema;
+8. run AffiliateProductState sync;
+9. verify approximately 138 state records;
+10. smoke-test representative routes;
+11. configure permanent deployment migration automation only after successful cutover.
+
+## L. Recommendation
+
+State whether the repository is now technically ready for the controlled Render PostgreSQL cutover.
+
+Do not perform that cutover until explicitly approved.
