@@ -13,6 +13,8 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
+from .database_config import build_database_config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
@@ -131,12 +133,15 @@ LOGGING = {
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DJANGO_ENV = os.getenv("DJANGO_ENV", "development").strip().lower()
+DJANGO_DB_BACKEND = os.getenv("DJANGO_DB_BACKEND", "sqlite").strip().lower()
+
+DATABASES = build_database_config(
+    base_dir=BASE_DIR,
+    django_env=DJANGO_ENV,
+    database_backend=DJANGO_DB_BACKEND,
+    database_url=os.getenv("DATABASE_URL"),
+)
 
 
 # Password validation
