@@ -1,0 +1,100 @@
+We have a production-only Django Server Error (500) on leefnatuurlijkengezond.nl after the latest airfryer deployment.
+
+Important observations:
+
+- The Replit preview works correctly.
+- Production on Render returns HTTP 500 for individual product detail pages.
+- Example:
+  /product/greenpan-barcelona-pro-hapjespan-28/
+- Render currently only shows the Gunicorn access log:
+  "GET /product/greenpan-barcelona-pro-hapjespan-28/ HTTP/1.1" 500
+- No Python traceback or Django exception is currently visible.
+- Some category pages work, while others return 500.
+- Do NOT enable DEBUG=True in production.
+
+Please investigate this systematically.
+
+PHASE 1 — Audit before changing behavior
+
+1. Inspect the Django production logging configuration.
+2. Determine why unhandled request exceptions / HTTP 500 exceptions are not producing a traceback in Render stdout/stderr.
+3. Inspect the current Render/Gunicorn start configuration if it exists in the repo.
+4. Inspect the product detail view and all shared enrichment/rendering code called by it, particularly:
+   - product_detail
+   - _enrich_products
+   - prepare_product_variants
+   - apply_resolved_link
+   - structured data / JSON-LD generation
+   - template context construction
+5. Compare product data structures used by working and failing category/product pages.
+6. Check for:
+   - KeyError / missing dictionary fields
+   - None handling
+   - variant-related assumptions
+   - JSON serialization failures
+   - database schema/model mismatches
+   - unapplied migrations
+   - environment-variable differences
+   - production-only database queries
+   - imports/data files that may differ between local and production
+7. Run the application locally with production-like settings, especially DEBUG=False, and try to reproduce the failing product URL.
+
+PHASE 2 — Ensure production exceptions are logged
+
+If the current logging configuration does not reliably send Django request exceptions and tracebacks to stdout/stderr, make the smallest safe change necessary.
+
+Configure a console StreamHandler and ensure at minimum:
+- django.request ERROR messages go to console
+- exception tracebacks are preserved
+- existing logging is not disabled
+
+Do not expose traceback information to website visitors.
+Do not set DEBUG=True.
+
+If useful, also ensure Gunicorn sends its error output to stderr/stdout.
+
+PHASE 3 — Diagnose root cause
+
+After logging/reproduction is available, identify the exact exception causing the HTTP 500.
+
+Do not simply add broad try/except blocks or suppress the error.
+
+Determine:
+- exact exception type
+- exact file and line
+- exact product/data condition triggering it
+- why Replit preview works while Render fails
+- whether the latest airfryer change introduced the regression
+
+PHASE 4 — Fix
+
+Only after identifying the root cause:
+- implement the smallest robust fix
+- preserve current product behavior
+- do not remove functionality as a workaround
+- make old and new product records/data structures backward compatible where appropriate
+
+Add regression tests covering:
+1. greenpan-barcelona-pro-hapjespan-28 product detail
+2. at least one airfryer product
+3. at least one product from each relevant product data structure/variant type
+4. DEBUG=False behavior where practical
+
+Also run:
+python manage.py check
+python manage.py showmigrations
+python manage.py test
+
+Do not deploy automatically yet.
+
+At the end, give me a report containing:
+
+A. Root cause
+B. Exact failing code path
+C. Why Replit preview worked
+D. Why Render production failed
+E. Files changed
+F. Logging change made
+G. Tests added and results
+H. Whether a database migration is required
+I. Whether it is safe to deploy
