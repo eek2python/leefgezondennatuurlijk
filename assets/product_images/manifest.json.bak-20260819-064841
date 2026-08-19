@@ -1281,12 +1281,5 @@
     "category": "airfryers",
     "product_key": "airfryer-ninja-crispi-pro-xl-5-7l-gebroken-wit",
     "enabled": true
-  },
-  {
-    "source": "airfryers/airfryer-ninja-crispi-pro-xl-5-7l-rose.jpeg",
-    "slug": "airfryer-ninja-crispi-pro-xl-5-7l-rose",
-    "category": "airfryers",
-    "product_key": "airfryer-ninja-crispi-pro-xl-5-7l-rose",
-    "enabled": true
   }
 ]

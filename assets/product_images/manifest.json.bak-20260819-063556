@@ -1253,40 +1253,5 @@
     "category": "airfryers",
     "product_key": "airfryer-ninja-crispi-4in1_groen",
     "enabled": true
-  },
-  {
-    "source": "airfryers/airfryer-ninja-crispi-4in1-groen-stone.jpeg",
-    "slug": "airfryer-ninja-crispi-4in1-stone",
-    "category": "airfryers",
-    "product_key": "airfryer-ninja-crispi-4in1_stone",
-    "enabled": true
-  },
-  {
-    "source": "airfryers/airfryer-ninja-crispi-pro-xl-5-7l-marineblauw.jpg",
-    "slug": "airfryer-ninja-crispi-pro-xl-5-7l-marineblauw",
-    "category": "airfryers",
-    "product_key": "airfryer-ninja-crispi-pro-xl-5-7l-marineblauw",
-    "enabled": true
-  },
-  {
-    "source": "airfryers/airfryer-ninja-crispi-pro-xl-5-7l-asgrijs.jpeg",
-    "slug": "airfryer-ninja-crispi-pro-xl-5-7l-asgrijs",
-    "category": "airfryers",
-    "product_key": "airfryer-ninja-crispi-pro-xl-5-7l-asgrijs",
-    "enabled": true
-  },
-  {
-    "source": "airfryers/airfryer-ninja-crispi-pro-xl-5-7l-gebroken-wit.jpeg",
-    "slug": "airfryer-ninja-crispi-pro-xl-5-7l-gebroken-wit",
-    "category": "airfryers",
-    "product_key": "airfryer-ninja-crispi-pro-xl-5-7l-gebroken-wit",
-    "enabled": true
-  },
-  {
-    "source": "airfryers/airfryer-ninja-crispi-pro-xl-5-7l-rose.jpeg",
-    "slug": "airfryer-ninja-crispi-pro-xl-5-7l-rose",
-    "category": "airfryers",
-    "product_key": "airfryer-ninja-crispi-pro-xl-5-7l-rose",
-    "enabled": true
   }
 ]

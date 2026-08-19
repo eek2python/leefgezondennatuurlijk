@@ -15,11 +15,13 @@ CONTENT = {
                 "laden."
             ),
             (
-                "De geselecteerde modellen verschillen in coatingtype, "
-                "inhoud, vermogen, programma’s, onderhoud en beschikbare "
-                "functies. Sommige hebben een expliciet bevestigde keramische "
-                "coating; bij andere modellen bevestigt de fabrikant alleen "
-                "dat de antiaanbaklaag PFAS-vrij is."
+                "De geselecteerde modellen verschillen in materiaal, coatingtype, "
+                "inhoud, vermogen, programma’s, onderhoud en beschikbare functies. "
+                "Sommige hebben een expliciet bevestigde keramische coating, bij "
+                "andere modellen bevestigt de fabrikant alleen dat de antiaanbaklaag "
+                "PFAS-vrij is. Er zijn daarnaast modellen met glazen "
+                "bereidingsschalen, waarbij het voedsel grotendeels in contact komt "
+                "met glas in plaats van een traditioneel gecoate frituurmand."
             ),
         ],
     },
@@ -64,14 +66,14 @@ CONTENT = {
         },
 
         "xl": {
-            "label": "XL (6–8 L)",
+            "label": "XL (ca. 6–8 L)",
             "h1": (
                 "De beste XL PFAS-vrije airfryers "
-                "(6–8 L) van 2026"
+                "(ca. 6–8 L) van 2026"
             ),
             "meta_title": (
                 "Beste XL PFAS-vrije airfryers "
-                "(6–8 L) van 2026 | Leef Natuurlijk & Gezond"
+                "(ca. 6–8 L) van 2026 | Leef Natuurlijk & Gezond"
             ),
             "meta_description": (
                 "Vergelijk XL PFAS-vrije airfryers van 6–8 liter "
@@ -79,7 +81,7 @@ CONTENT = {
             ),
             "og_title": (
                 "Beste XL PFAS-vrije airfryers "
-                "(6–8 L) van 2026"
+                "(ca. 6–8 L) van 2026"
             ),
             "og_description": (
                 "Ruime PFAS-vrije airfryers voor grotere porties "
@@ -94,7 +96,7 @@ CONTENT = {
             ),
             "itemlist_name": (
                 "Top {product_count} XL PFAS-vrije airfryers "
-                "(6–8 L) van 2026"
+                "(ca. 6–8 L) van 2026"
             ),
             "itemlist_description": (
                 "De {product_count} beste XL PFAS-vrije airfryers "
@@ -144,11 +146,12 @@ CONTENT = {
     "why_choose": {
         "title": "Waarom kiezen voor een PFAS-vrije airfryer?",
         "intro": (
-            "Een PFAS-vrije airfryer is interessant voor consumenten "
-            "die een antiaanbaklaag zonder PFAS verkiezen. De exacte "
-            "samenstelling verschilt per model: sommige fabrikanten "
-            "bevestigen een keramische coating, terwijl andere alleen "
-            "vermelden dat de antiaanbaklaag PFAS-vrij is."
+            "Een PFAS-vrije airfryer is interessant voor consumenten die "
+            "bewust letten op het materiaal dat met voedsel in contact komt. "
+            "De uitvoering verschilt per model: sommige fabrikanten gebruiken "
+            "een keramische antiaanbaklaag, andere een niet nader gespecificeerde "
+            "PFAS-vrije coating en er zijn ook modellen met glazen "
+            "bereidingsschalen."
         ),
         "bullets": [
             (
@@ -157,10 +160,12 @@ CONTENT = {
                 "binnenpan of coating vermeld."
             ),
             (
-                "<strong>Keuze uit verschillende coatings:</strong> "
+                "<strong>Verschillende materiaaloplossingen:</strong> "
                 "sommige modellen hebben een bevestigde keramische "
                 "antiaanbaklaag, andere een niet nader gespecificeerde "
-                "PFAS-vrije coating."
+                "PFAS-vrije coating. Er zijn ook airfryers met glazen "
+                "bereidingsschalen als alternatief voor een traditionele "
+                "gecoate frituurmand."
             ),
             (
                 "<strong>Verschillende formaten:</strong> er zijn "
@@ -281,8 +286,10 @@ CONTENT = {
                 "fabrikant dit voor het exacte model toestaat."
             ),
             (
-                "Vermijd staalwol, schuurmiddelen, metalen borstels en "
-                "scherpe voorwerpen op antiaanbaklagen."
+                "Vermijd staalwol, schuurmiddelen en scherpe voorwerpen op "
+                "antiaanbaklagen. Glazen schalen kunnen andere "
+                "reinigingsvoorschriften hebben; volg daarvoor de instructies "
+                "van de fabrikant."
             ),
             (
                 "Gebruik houten, kunststof of siliconen gerei wanneer "
@@ -322,19 +329,20 @@ CONTENT = {
             ),
             "text": (
                 "De <strong>Inventum GF500HLD</strong> is onze beste "
-                "allround keuze door de inhoud van 5 liter, acht "
-                "programma’s, meegeleverde accessoires en "
-                "vaatwasserbestendige onderdelen. De "
-                "<strong>Bourgini Slimfit Airfryer Pure XL</strong> "
-                "is onze budgetaanbeveling wanneer je een smalle "
-                "behuizing en een expliciet bevestigde keramische "
-                "PFAS-vrije coating zoekt. De "
-                "<strong>MasterPRO Rocket Cyclone 500</strong> "
-                "onderscheidt zich door acht programma’s en een "
-                "kijkvenster, maar is duurder. De "
-                "<strong>Maison & Kitchen 5 L</strong> heeft de "
-                "laagste aanschafprijs, al zijn de technische "
-                "specificaties minder uitgebreid gedocumenteerd. "
+                "allround keuze door de inhoud van 5 liter, acht programma’s, "
+                "meegeleverde accessoires en vaatwasserbestendige onderdelen. "
+                "De <strong>Bourgini Slimfit Airfryer Pure XL</strong> is "
+                "onze budgetaanbeveling wanneer je een smalle behuizing en "
+                "een expliciet bevestigde keramische PFAS-vrije coating zoekt. "
+                "De <strong>Ninja CRISPi 4-in-1</strong> is de meest "
+                "onderscheidende keuze voor wie liever in glas bereidt: het "
+                "modulaire systeem gebruikt glazen bereidingsschalen die ook "
+                "voor serveren en bewaren kunnen worden gebruikt. De "
+                "<strong>MasterPRO Rocket Cyclone 500</strong> biedt acht "
+                "programma’s en een kijkvenster, maar is relatief duur. De "
+                "<strong>Maison & Kitchen 5 L</strong> heeft een lage "
+                "aanschafprijs, al zijn de technische specificaties minder "
+                "uitgebreid gedocumenteerd. "
                 'Wil je grotere porties kunnen bereiden? Bekijk dan onze '
                 '<a href="/airfryers/xl/">XL-airfryers</a> of '
                 '<a href="/airfryers/dual/">dual-zoneairfryers</a>.'
@@ -345,23 +353,26 @@ CONTENT = {
             "title": "Conclusie – welke XL-airfryer past het best?",
             "text": (
                 "De <strong>Inventum GF730HLDB</strong> is onze beste "
-                "allround keuze door de inhoud van 7,3 liter, "
-                "stoomfunctie, crispyfunctie en acht automatische "
-                "programma’s. De <strong>Princess 182280</strong> is "
-                "onze budgetkeuze door de inhoud van 8 liter, het "
-                "dubbele verwarmingselement en het vermogen van "
-                "2000 watt. De <strong>GreenPan Bistro XXL</strong> "
-                "is de premiumkeuze voor wie specifiek een keramische "
-                "PFAS-vrije coating, elf programma’s en meerdere "
-                "kleuruitvoeringen zoekt. De "
-                "<strong>Bourgini Slimfit Pure XXL</strong> combineert "
-                "8 liter inhoud met een relatief smalle behuizing. De "
-                "<strong>Maison & Kitchen 8 L</strong> is een "
-                "voordeliger alternatief, maar heeft minder uitgebreid "
+                "allround keuze door de inhoud van 7,3 liter, stoomfunctie, "
+                "crispyfunctie en acht automatische programma’s. De "
+                "<strong>Princess 182280</strong> is onze budgetkeuze door "
+                "de inhoud van 8 liter, het dubbele verwarmingselement en het "
+                "vermogen van 2000 watt. De "
+                "<strong>GreenPan Bistro XXL</strong> is de premiumkeuze "
+                "voor wie specifiek een keramische PFAS-vrije coating, elf "
+                "programma’s en meerdere kleuruitvoeringen zoekt. De "
+                "<strong>Ninja CRISPi Pro XL</strong> biedt een duidelijk "
+                "ander concept met een glazen hoofdschaal van 5,7 liter, een "
+                "extra glazen schaal en zeven bereidingsfuncties. Daarmee is "
+                "dit onze onderscheidende keuze voor wie liever in glas "
+                "bereidt. De <strong>Bourgini Slimfit Pure XXL</strong> "
+                "combineert 8 liter inhoud met een relatief smalle behuizing, "
+                "terwijl de <strong>Maison & Kitchen 8 L</strong> een "
+                "voordeliger alternatief is met minder uitgebreid "
                 "gedocumenteerde productspecificaties. "
                 'Voor kleinere porties bekijk je onze '
-                '<a href="/airfryers/">compacte airfryers</a>; voor '
-                'twee afzonderlijke bereidingen de '
+                '<a href="/airfryers/">compacte airfryers</a>; voor twee '
+                'afzonderlijke bereidingen de '
                 '<a href="/airfryers/dual/">dual-zoneairfryers</a>.'
             ),
         },
@@ -406,6 +417,17 @@ CONTENT = {
                     "het exacte model expliciet vermeldt dat de "
                     "keramische coating PFAS-vrij is. Alleen de term "
                     "‘keramisch’ is onvoldoende als bevestiging."
+                ),
+            },
+            {
+                "q": "Wat is het voordeel van een airfryer met glazen schaal?",
+                "a": (
+                    "Bij een airfryer met glazen bereidingsschaal komt het voedsel "
+                    "hoofdzakelijk in contact met glas in plaats van met een "
+                    "traditioneel gecoate frituurmand. Glas maakt het bovendien "
+                    "mogelijk om de inhoud tijdens de bereiding te bekijken. "
+                    "Let wel op de overige onderdelen: roosters of crispplaten "
+                    "kunnen nog steeds een afzonderlijke antiaanbaklaag hebben."
                 ),
             },
             {
@@ -493,17 +515,15 @@ CONTENT = {
                 ),
             },
             {
-                "q": (
-                    "Welke airfryer heeft geen klassieke "
-                    "PTFE-coating?"
-                ),
+                "q": "Welke alternatieven zijn er voor een klassieke PTFE-gecoate mand?",
                 "a": (
-                    "Kijk naar modellen waarbij de fabrikant expliciet "
-                    "een PFAS-vrije keramische coating bevestigt, zoals "
-                    "bepaalde uitvoeringen van GreenPan en Bourgini. "
-                    "Bij andere merken wordt soms alleen een PFAS-vrije "
-                    "antiaanbaklaag vermeld zonder het exacte coatingtype "
-                    "te specificeren."
+                    "Er zijn verschillende oplossingen. Sommige airfryers gebruiken "
+                    "een expliciet PFAS-vrije keramische antiaanbaklaag, zoals bepaalde "
+                    "modellen van GreenPan en Bourgini. Andere modellen hebben een "
+                    "PFAS-vrije coating waarvan het exacte type niet wordt vermeld. "
+                    "Daarnaast bestaan er airfryers met glazen bereidingsschalen, zoals "
+                    "de Ninja CRISPi-serie. Controleer daarbij ook het materiaal van "
+                    "losse roosters en crispplaten."
                 ),
             },
             {
@@ -570,9 +590,11 @@ CONTENT = {
                 "PFAS-vrij is?"
             ),
             (
-                "<strong>Coatingtype:</strong> wordt een keramische "
-                "coating expliciet bevestigd of alleen een algemene "
-                "PFAS-vrije antiaanbaklaag?"
+                "<strong>Materiaal en coating:</strong> met welk materiaal komt "
+                "het voedsel in contact? We onderscheiden onder meer glazen "
+                "bereidingsschalen, expliciet keramische antiaanbaklagen en "
+                "andere PFAS-vrije coatings waarvan de samenstelling niet nader "
+                "is gespecificeerd."
             ),
             (
                 "<strong>Capaciteit:</strong> totale inhoud, inhoud per "

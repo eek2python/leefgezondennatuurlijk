@@ -245,6 +245,99 @@ PRODUCTS = {
         ),
         "award": None,
     },
+    "ninja_crispi_4in1": {
+        "slug": "ninja-crispi-4-in-1",
+        "name": "Ninja CRISPi 4-in-1 Airfryer",
+        "brand": "Ninja",
+        "material": (
+            "TempWare glazen bereidingsschalen met keramisch "
+            "gecoate crispplaten"
+        ),
+        "features": [
+            "Glazen schalen van 1,4 en 3,8 liter",
+            "1700 watt",
+            "4 functies: Air Fry, Roast, Keep Warm en Recrisp",
+            "Vaatwasserbestendige glazen schalen",
+            "Afsluitdeksels voor beide schalen",
+            "Modulair en draagbaar PowerPod-systeem",
+        ],
+        "image": "airfryer-ninja-crispi-4in1.webp",
+        "image_path": "images/products/airfryers",
+        "variants": [
+            {
+                "name": "Marineblauw",
+                "image": (
+                    "airfryer-ninja-crispi-4in1.webp"
+                ),
+                "hex": "#043A63",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fninja-crispi-4-in-1-compacte-glazen-airfryer-blauw-fn101eugy%2F9300000236296742%2F&name=Ninja%20CRISPi%204-in-1%20Airfryer%20-%20Glazen%20kooksysteem%20-%203.8L%20en%201.4L%20schalen",
+                "retailer_url": "https://www.bol.com/nl/nl/p/ninja-crispi-4-in-1-compacte-glazen-airfryer-blauw-fn101eugy/9300000236296742/",
+                "official_url": "https://www.sharkninja.nl/ninja-crispi-4-in-1-airfryer-met-glazen-vershoudschalen-antraciet/FN101EUGY.html?dwvar_FN101EUGY_color=666e7c",
+                "price": 109.00,
+                "price_last_checked": "2026-08-18",
+            },
+            {
+                "name": "Groen",
+                "image": (
+                    "airfryer-ninja-crispi-4in1-groen.webp"
+                ),
+                "hex": "#808A68",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fninja-crispi-4-in-1-compacte-glazen-airfryer-groen-fn101eusg%2F9300000236187102%2F&name=Ninja%20CRISPi%20Glazen%20Airfryer%20-%204-in-1%20-%203.8L%20%26%201.4L%20schalen%20-%20FN101EUSG",
+                "retailer_url": "https://www.bol.com/nl/nl/p/ninja-crispi-4-in-1-compacte-glazen-airfryer-groen-fn101eusg/9300000236187102/",
+                "official_url": "https://www.sharkninja.nl/ninja-crispi-4-in-1-airfryer-met-glazen-vershoudschalen-groen/FN101EUSG.html?dwvar_FN101EUSG_color=afbebb",
+                "price": 109.00,
+                "price_last_checked": "2026-08-18",
+            },
+            {
+                "name": "Stone",
+                "image": (
+                    "airfryer-ninja-crispi-4in1-stone.webp"
+                ),
+                "hex": "#b9b0a4",
+                "affiliate_url": "",
+                "retailer_url": "",
+                "official_url": "https://www.sharkninja.nl/ninja-crispi-4-in-1-airfryer-met-glazen-vershoudschalen-beige/FN101EUST.html?dwvar_FN101EUST_color=c5beb6",
+                "price": 109.00,
+                "price_last_checked": "2026-08-18",
+            },
+        ],
+        "description": (
+            "Modulaire airfryer met glazen bereidingsschalen van 1,4 en "
+            "3,8 liter, een losse 1700 watt PowerPod en vier kookfuncties."
+        ),
+        "pros": [
+            "Bereiden, serveren en bewaren in dezelfde glazen schaal",
+            "Twee verschillende formaten glazen schaal meegeleverd",
+            "Glazen schalen en losse accessoires zijn afzonderlijk verkrijgbaar",
+        ],
+        "cons": [
+            "Duurder dan verschillende traditionele 5-literairfryers",
+            "Grootste meegeleverde schaal heeft een inhoud van 3,8 liter",
+            "Slechts vier kookfuncties",
+        ],
+        "rating": 4.5,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 109.00,
+        "price_last_checked": "2026-08-15",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fninja-crispi-4-in-1-compacte-glazen-airfryer-blauw-fn101eugy%2F9300000236296742%2F&name=Ninja%20CRISPi%204-in-1%20Airfryer%20-%20Glazen%20kooksysteem%20-%203.8L%20en%201.4L%20schalen",
+        "retailer_url": "https://www.bol.com/nl/nl/p/ninja-crispi-4-in-1-compacte-glazen-airfryer-blauw-fn101eugy/9300000236296742/",
+        "official_url": (
+            "https://ninjakitchen.nl/product/"
+            "ninja-crispi-4-in-1-airfryer-met-glazen-"
+            "vershoudschalen-antraciet-fn101eugy-zidFN101EUGY"
+        ),
+        "availability_label": "Tijdelijk uitverkocht bij de fabrikant",
+        "price_range": "€€",
+        "verdict": (
+            "Een onderscheidende compacte airfryer voor wie liever in glas "
+            "bereidt en dezelfde schalen ook wil gebruiken voor serveren "
+            "en bewaren."
+        ),
+        "award": "🫙 Beste glazen keuze",
+    },
 
 # XL PFAS-VRIJE AIRFRYERS
     "inventum_gf730hldb_7_3l": {
@@ -616,6 +709,124 @@ PRODUCTS = {
             "minder uitgebreide productspecificaties dan de bekende merken."
         ),
         "award": None,
+    },
+    "ninja_crispi_pro_xl_5_7l": {
+        "slug": "ninja-crispi-pro-xl-5-7l",
+        "name": "Ninja CRISPi Pro XL 7-in-1 Airfryer",
+        "brand": "Ninja",
+        "material": (
+            "CleanCrisp glazen bereidingsschalen met crispplaten"
+        ),
+        "features": [
+            "Glazen schalen van 5,7 en 2,3 liter",
+            "PFAS-vrije glazen bereidingsschalen",
+            "2050 watt",
+            "7 functies",
+            "Max Crisp",
+            "Air Fry",
+            "Bake",
+            "Prove",
+            "Roast",
+            "Dehydrate",
+            "Re-crisp",
+            "Temperatuur instelbaar tot 230 °C",
+            "Vaatwasserbestendige glazen schalen",
+            "Afneembare modulaire basis",
+            "Afsluitdeksels voor beide schalen",
+        ],
+        "image": "airfryer-ninja-crispi-pro-xl-5-7l-marineblauw.webp",
+        "image_path": "images/products/airfryers",
+        "variants": [
+            {
+                "name": "Asgrijs",
+                "image": (
+                    "airfryer-ninja-crispi-pro-xl-5-7l-asgrijs.webp"
+                ),
+                "hex": "#808080",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fninja-crispi-pro-7-in-1-glazen-airfryer-met-7-functies-airfryen-bakken-braden-rijzen-drogen-max-crisp-en-opnieuw-krokant-maken-2-3-liter-en-5-7-liter-glazen-schaal-pfas-vrij-koken-grijsgroen-as101eugy%2F9300000271107787%2F&name=Ninja%20CRISPi%20PRO%20XL%20Glazen%20Airfryer%20met%207%20kookfuncties%20-%20Airfryen%2C%20Bakken%2C%20Braden%2C...",
+                "retailer_url": "https://www.bol.com/nl/nl/p/ninja-crispi-pro-7-in-1-glazen-airfryer-met-7-functies-airfryen-bakken-braden-rijzen-drogen-max-crisp-en-opnieuw-krokant-maken-2-3-liter-en-5-7-liter-glazen-schaal-pfas-vrij-koken-grijsgroen-as101eugy/9300000271107787/",
+                "official_url": "https://www.sharkninja.nl/ninja-crispi-pro---7-in-1-airfryer-met-glazen-vershoudschalen---asgrijs/AS101EUGY.html?dwvar_AS101EUGY_color=5B6A69",
+                "price": 249.00,
+                "price_last_checked": "2026-08-18",
+            },
+            {
+                "name": "Marineblauw",
+                "image": (
+                    "airfryer-ninja-crispi-pro-xl-5-7l-marineblauw.webp"
+                ),
+                "hex": "#000000",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fninja-crispi-pro-7-in-1-glazen-airfryer-met-7-functies-airfryen-bakken-braden-rijzen-drogen-max-crisp-en-opnieuw-krokant-maken-2-3-liter-en-5-7-liter-glazen-schaal-pfas-vrij-koken-cyberspace-as101eucy%2F9300000269998069%2F&name=Ninja%20CRISPi%20PRO%20XL%20Glazen%20Airfryer%20met%207%20kookfuncties%20-%20Airfryen%2C%20Bakken%2C%20Braden%2C...",
+                "retailer_url": "https://www.bol.com/nl/nl/p/ninja-crispi-pro-7-in-1-glazen-airfryer-met-7-functies-airfryen-bakken-braden-rijzen-drogen-max-crisp-en-opnieuw-krokant-maken-2-3-liter-en-5-7-liter-glazen-schaal-pfas-vrij-koken-cyberspace-as101eucy/9300000269998069/",
+                "official_url": (
+                    "https://ninjakitchen.nl/product/"
+                    "ninja-crispi-pro-xl-7-in-1-glazen-airfryer-"
+                    "marineblauw-zidAS101EUCY"
+                ),
+                "price": 219.00,
+                "price_last_checked": "2026-08-18",
+            },
+            {
+                "name": "Gebroken Wit",
+                "image": (
+                    "airfryer-ninja-crispi-pro-xl-5-7l-gebroken-wit.webp"
+                ),
+                "hex": "#ECE9DF",
+                "affiliate_url": "",
+                "retailer_url": "",
+                "official_url": "https://www.sharkninja.nl/ninja-crispi-pro---7-in-1-airfryer-met-glazen-vershoudschalen---gebroken-wit/AS101EULG.html?dwvar_AS101EULG_color=bebfbd",
+                "price": 249.00,
+                "price_last_checked": "2026-08-18",
+            },
+            {
+                "name": "Rose",
+                "image": (
+                    "airfryer-ninja-crispi-pro-xl-5-7l-rose.webp"
+                ),
+                "hex": "#FDDDE6",
+                "affiliate_url": "",
+                "retailer_url": "",
+                "official_url": "https://www.sharkninja.nl/ninja-crispi-pro---7-in-1-airfryer-met-glazen-vershoudschalen---rose/AS101EURS.html?dwvar_AS101EURS_color=e4bdbf",
+                "price": 249.00,
+                "price_last_checked": "2026-08-18",
+            },
+        ],
+        "description": (
+            "Modulaire glazen airfryer met een ruime schaal van 5,7 liter, "
+            "een kleinere schaal van 2,3 liter, 2050 watt vermogen en "
+            "zeven kookfuncties."
+        ),
+        "pros": [
+            "Ruime glazen hoofdschaal van 5,7 liter",
+            "Zeven functies en temperatuurregeling tot 230 °C",
+            "Extra glazen schaal van 2,3 liter meegeleverd",
+        ],
+        "cons": [
+            "Hoge aanschafprijs",
+            "Zwaarder en duurder dan de standaard CRISPi 4-in-1",
+            "Geen twee onafhankelijk werkende bakzones",
+        ],
+        "rating": 4.7,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 219.00,
+        "price_last_checked": "2026-08-15",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fninja-crispi-pro-7-in-1-glazen-airfryer-met-7-functies-airfryen-bakken-braden-rijzen-drogen-max-crisp-en-opnieuw-krokant-maken-2-3-liter-en-5-7-liter-glazen-schaal-pfas-vrij-koken-cyberspace-as101eucy%2F9300000269998069%2F&name=Ninja%20CRISPi%20PRO%20XL%20Glazen%20Airfryer%20met%207%20kookfuncties%20-%20Airfryen%2C%20Bakken%2C%20Braden%2C...",
+        "retailer_url": "https://www.bol.com/nl/nl/p/ninja-crispi-pro-7-in-1-glazen-airfryer-met-7-functies-airfryen-bakken-braden-rijzen-drogen-max-crisp-en-opnieuw-krokant-maken-2-3-liter-en-5-7-liter-glazen-schaal-pfas-vrij-koken-cyberspace-as101eucy/9300000269998069/",
+        "official_url": (
+            "https://ninjakitchen.nl/product/"
+            "ninja-crispi-pro-xl-7-in-1-glazen-airfryer-"
+            "marineblauw-zidAS101EUCY"
+        ),
+        "availability_label": "",
+        "price_range": "€€€€",
+        "verdict": (
+            "Een veelzijdige premium airfryer voor wie een ruime glazen "
+            "bereidingsschaal wil combineren met zeven functies en een "
+            "maximale temperatuur van 230 °C."
+        ),
+        "award": "🫙 Beste glazen keuze",
     },
 
 # DUAL-LADE PFAS-VRIJE AIRFRYERS
