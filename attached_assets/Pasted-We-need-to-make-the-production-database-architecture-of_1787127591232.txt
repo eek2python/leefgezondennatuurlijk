@@ -1,0 +1,422 @@
+We need to make the production database architecture of the Django website **Leef Natuurlijk & Gezond** durable and deployment-safe.
+
+## Context
+
+A production incident occurred after a deployment.
+
+The Render production site returned HTTP 500 on product pages because Django code queried:
+
+`AffiliateProductState.objects.in_bulk(...)`
+
+but the Render SQLite database had not been migrated.
+
+The exact production error was:
+
+`django.db.utils.OperationalError: no such table: products_affiliateproductstate`
+
+We manually ran on Render:
+
+```bash
+python manage.py migrate --noinput
+```
+
+After that:
+
+```text
+products
+[X] 0001_initial
+[X] 0002_affiliateproductstate
+```
+
+and the website worked again.
+
+However, the current Render setup appears to use **SQLite without a Persistent Disk**.
+
+`AffiliateProductState.objects.count()` currently returns:
+
+```text
+0
+```
+
+The local Replit database contains approximately 138 `AffiliateProductState` records.
+
+This means the immediate incident is resolved, but the production database architecture is not durable. A future Render deployment/restart may recreate or lose the SQLite database.
+
+The preferred target architecture is:
+
+```text
+Django on Render
+      ↓
+Render PostgreSQL
+      ↓
+persistent production data
+```
+
+with database migrations automatically executed as part of the Render deployment process.
+
+## Objective
+
+Create a **migration and deployment plan only** for moving the production environment from SQLite to Render PostgreSQL.
+
+Do **not** deploy anything.
+Do **not** create or modify the Render database.
+Do **not** change production environment variables.
+Do **not** delete or overwrite production data.
+
+You may inspect and, if useful, make code/configuration changes locally that prepare the repository for PostgreSQL, but clearly separate:
+
+* analysis
+* proposed changes
+* changes actually made locally
+* production actions still required
+
+## Phase 1 — Audit current database configuration
+
+Inspect the repository and determine exactly how Django currently configures the database.
+
+Review at minimum:
+
+* `LeefNatuurlijkenGezond/settings.py`
+* environment variable handling
+* `.env` assumptions
+* Render-related configuration
+* `Procfile`
+* `.replit`
+* `requirements.txt`, `pyproject.toml`, or equivalent dependency files
+* any deployment scripts
+* any database helper/config modules
+
+Determine:
+
+1. What database backend is used when no database environment variable exists.
+2. Exact SQLite database path.
+3. Whether `DATABASE_URL` is currently supported.
+4. Whether `dj-database-url` or equivalent is installed.
+5. Whether a PostgreSQL driver is installed.
+6. Whether Render environment variables are referenced anywhere.
+7. Whether any code assumes SQLite-specific behavior.
+
+Search the codebase for SQLite-specific constructs such as:
+
+* `sqlite3`
+* `db.sqlite3`
+* SQLite pragmas
+* filesystem database paths
+* database vendor checks
+* SQL that may not be PostgreSQL-compatible
+
+## Phase 2 — Inventory persistent application data
+
+Identify every Django model currently stored in the database.
+
+At minimum inspect:
+
+* `products`
+* `audits`
+* Django auth/admin/session models
+* any other installed app containing models
+
+For each application model, determine:
+
+* whether it is currently used in production runtime
+* whether it contains durable business data
+* whether it can safely start empty
+* whether it can be reconstructed
+* whether existing data must be migrated from SQLite
+
+Pay special attention to:
+
+`AffiliateProductState`
+
+Determine exactly:
+
+1. What the approximately 138 local records represent.
+2. How they were created.
+3. Whether they are generated automatically from the Python product catalogue.
+4. Whether they contain manually maintained/admin state.
+5. Whether they can be recreated deterministically.
+6. Whether production should initially contain the same records.
+7. Whether a seeding/synchronisation mechanism already exists.
+
+Also inspect:
+
+* `Product`
+* `Category`
+* `Click`
+* `ProductAuditRun`
+* `ProductAuditIssue`
+
+Determine whether any production data in these models needs preservation.
+
+## Phase 3 — Assess PostgreSQL compatibility
+
+Check whether all current migrations and models are PostgreSQL-compatible.
+
+Run or inspect where appropriate:
+
+```bash
+python manage.py makemigrations --check --dry-run
+python manage.py showmigrations
+python manage.py check
+```
+
+Identify any potential differences between SQLite and PostgreSQL involving:
+
+* null handling
+* unique constraints
+* date/datetime fields
+* booleans
+* JSON fields
+* indexes
+* case sensitivity
+* ordering
+* implicit type coercion
+* transactions
+* raw SQL
+* migration behavior
+
+Do not speculate generically. Only report issues relevant to this repository.
+
+## Phase 4 — Design target database configuration
+
+Propose a production-safe Django database configuration.
+
+Preferred behavior:
+
+### Production
+
+If `DATABASE_URL` exists:
+
+```text
+Django → PostgreSQL via DATABASE_URL
+```
+
+### Local/Replit development
+
+If `DATABASE_URL` does not exist:
+
+```text
+Django → local SQLite database
+```
+
+The production configuration must:
+
+* support Render PostgreSQL
+* use SSL where required by Render
+* use connection health checks or appropriate connection lifetime settings if useful
+* never silently fall back to SQLite in production if `DATABASE_URL` is expected but malformed
+* preserve convenient SQLite development locally
+
+Determine which dependency is preferable for this project, for example:
+
+* `dj-database-url`
+* direct parsing/configuration
+
+and which PostgreSQL driver should be used, for example:
+
+* `psycopg`
+* `psycopg2-binary`
+
+Prefer the simplest currently maintained approach compatible with the project's Django/Python versions.
+
+## Phase 5 — Design safe data migration
+
+Determine whether production SQLite currently contains meaningful data.
+
+If production data exists that must be retained, design a safe migration method.
+
+Consider Django-native approaches such as:
+
+```bash
+python manage.py dumpdata
+python manage.py loaddata
+```
+
+but evaluate carefully whether that is appropriate for:
+
+* contenttypes
+* permissions
+* auth
+* admin
+* sessions
+* application models
+
+Do not blindly recommend dumping the entire database if application-only export is safer.
+
+If `AffiliateProductState` can be regenerated from catalogue data, prefer a deterministic seed/sync process over copying stale SQLite state.
+
+If the local 138 records should become the initial production state, explain exactly how to transfer them safely and reproducibly.
+
+The migration plan must avoid:
+
+* duplicate records
+* conflicting contenttypes
+* inconsistent primary keys
+* stale session data
+* overwriting newer production data
+
+## Phase 6 — Render deployment design
+
+Inspect the current Render deployment setup and propose the safest deployment flow.
+
+Target:
+
+```text
+Git push / deploy
+      ↓
+Render build
+      ↓
+database migration
+      ↓
+application start
+```
+
+Determine whether the project should use:
+
+* Render Pre-Deploy Command
+* build command
+* start command
+* `render.yaml`
+* another Render-supported mechanism
+
+Preferred migration command:
+
+```bash
+python manage.py migrate --noinput
+```
+
+but verify whether any project-specific setup must run before or after it.
+
+The migration step must occur against PostgreSQL, not an ephemeral SQLite database.
+
+Also ensure Gunicorn logging remains configured so production Django exceptions reach Render logs.
+
+## Phase 7 — Failure-safety analysis
+
+Describe what happens in these scenarios:
+
+1. PostgreSQL exists but migration has not yet run.
+2. Migration fails.
+3. `DATABASE_URL` is missing.
+4. `DATABASE_URL` is malformed.
+5. Render deploys new code requiring a newer schema.
+6. PostgreSQL temporarily becomes unavailable.
+7. A migration needs rollback.
+8. `AffiliateProductState` is empty after initial PostgreSQL migration.
+
+For each, explain what safeguard should exist.
+
+## Phase 8 — Tests
+
+Propose or implement locally appropriate regression tests for:
+
+### Database configuration
+
+* SQLite selected in local development without `DATABASE_URL`
+* PostgreSQL configuration selected when `DATABASE_URL` exists
+* malformed production DB configuration fails clearly
+
+### Application behavior
+
+Verify representative routes continue working:
+
+* `/product/greenpan-barcelona-pro-hapjespan-28/`
+* one current Ninja airfryer product
+* at least one category page
+* representative variant types
+
+### Maintenance state
+
+Verify:
+
+* empty `AffiliateProductState` table does not break catalogue rendering
+* existing maintenance records override catalogue state correctly
+* database failures are not silently swallowed
+
+Do not require an actual Render PostgreSQL instance for unit tests if the behavior can be tested safely through configuration/unit tests.
+
+## Phase 9 — Do not migrate production yet
+
+Do not:
+
+* create Render PostgreSQL
+* change `DATABASE_URL`
+* run production migrations
+* restart production
+* delete SQLite
+* copy local data into production
+* deploy automatically
+
+This phase is for architecture, preparation and verification only.
+
+## Final report
+
+Return a structured report with:
+
+### A. Current database architecture
+
+Exact current configuration and SQLite path.
+
+### B. Why the current Render architecture is unsafe
+
+Repository-specific explanation.
+
+### C. Database model inventory
+
+Which models contain persistent state and whether each requires migration.
+
+### D. AffiliateProductState analysis
+
+Explain the 138 local records and whether they should be migrated or regenerated.
+
+### E. PostgreSQL compatibility assessment
+
+Any actual issues found.
+
+### F. Recommended Django database configuration
+
+Include the proposed code/configuration.
+
+### G. Required dependencies
+
+List exact packages to add/remove/change.
+
+### H. Render configuration
+
+Exact recommended:
+
+* build command
+* pre-deploy command
+* start command
+* required environment variables
+
+### I. Data migration plan
+
+Exact sequence for moving any required SQLite data safely.
+
+### J. Cutover procedure
+
+Provide an ordered production runbook, including verification and rollback points.
+
+### K. Tests performed
+
+Commands and results.
+
+### L. Files changed locally
+
+Explain every change.
+
+### M. Risks
+
+Rank as:
+
+* critical
+* high
+* medium
+* low
+
+### N. Recommendation
+
+State explicitly whether we are ready to create Render PostgreSQL and perform the production migration.
+
+Do not perform the production migration until I explicitly approve it.
