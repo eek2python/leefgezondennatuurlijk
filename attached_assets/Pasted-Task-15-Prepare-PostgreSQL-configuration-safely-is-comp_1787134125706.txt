@@ -1,0 +1,687 @@
+Task #15 — **Prepare PostgreSQL configuration safely** — is complete and approved.
+
+The repository is now technically prepared to support:
+
+```text
+Development/Replit → SQLite
+Production/Render   → PostgreSQL
+```
+
+The new database configuration has been validated against a disposable PostgreSQL instance.
+
+However, the live Render service is **still running on the existing SQLite production database**.
+
+The next phase is to inventory and safeguard the current production database and prepare an exact PostgreSQL cutover runbook.
+
+## Critical scope rule
+
+This task is **pre-cutover only**.
+
+Do NOT:
+
+* create a Render PostgreSQL database;
+* change Render environment variables;
+* deploy the Task #15 code to Render;
+* restart the Render web service;
+* change the Render build/start command;
+* run migrations against production PostgreSQL;
+* sync `AffiliateProductState` to production PostgreSQL;
+* delete or replace the current SQLite database;
+* modify production application data.
+
+The live website is currently working after the earlier manual SQLite migration. Do not disturb that state.
+
+---
+
+# Context
+
+A previous production incident occurred because Render was running an unmigrated filesystem SQLite database.
+
+We manually repaired the live database with:
+
+```bash
+python manage.py migrate --noinput
+```
+
+The website then recovered.
+
+At that time:
+
+```text
+products.0001_initial                [X]
+products.0002_affiliateproductstate [X]
+```
+
+and:
+
+```python
+AffiliateProductState.objects.count()
+```
+
+returned:
+
+```text
+0
+```
+
+Task #15 subsequently prepared the repository for PostgreSQL, but those changes have not yet been deployed to Render.
+
+The current local catalogue sync now creates approximately **140 AffiliateProductState records**.
+
+Do not hard-code 138 or 140 as a permanent invariant.
+
+The correct expected state count should be derived from the **current catalogue/product slug set** at cutover time.
+
+---
+
+# Objective
+
+Prepare a safe, evidence-based production cutover by answering four questions:
+
+1. What data currently exists in the live Render SQLite database?
+2. Which of that data must be preserved?
+3. How do we create a reliable backup before switching databases?
+4. What exact sequence should be followed for the first Render PostgreSQL cutover?
+
+Do not perform the cutover during this task.
+
+---
+
+# Phase 1 — Inspect current database architecture
+
+Review the current repository state after Task #15.
+
+Confirm:
+
+* current SQLite path;
+* new PostgreSQL configuration behavior;
+* required production variables;
+* migration files;
+* relevant database models;
+* affiliate-state sync behavior;
+* existing Render/Gunicorn logging configuration.
+
+Also confirm that there are **no new migrations** after Task #15.
+
+Run locally:
+
+```bash
+python manage.py makemigrations --check --dry-run
+python manage.py check
+python manage.py showmigrations
+```
+
+---
+
+# Phase 2 — Create an exact production inventory procedure
+
+We need to inspect the **current live Render SQLite database** before changing anything.
+
+Design exact read-only Render Shell commands to capture:
+
+## Database identity
+
+Report:
+
+* Django database backend;
+* database file/path;
+* whether the database file exists;
+* SQLite file size;
+* migration status.
+
+Suggested information includes the equivalent of:
+
+```python
+from django.conf import settings
+from django.db import connection
+
+print(connection.vendor)
+print(settings.DATABASES["default"]["ENGINE"])
+print(settings.DATABASES["default"]["NAME"])
+```
+
+Do not expose secrets.
+
+## Application record counts
+
+Collect counts for at least:
+
+```text
+products.AffiliateProductState
+products.Category
+products.Product
+products.Click
+
+audits.ProductAuditRun
+audits.ProductAuditIssue
+
+auth.User
+auth.Group
+
+admin.LogEntry
+sessions.Session
+```
+
+The commands must be read-only.
+
+## AffiliateProductState contents
+
+If the production table is no longer empty, inspect enough metadata to determine whether the records contain actual manually maintained overrides.
+
+Report, without dumping unnecessary data:
+
+* total count;
+* count with price populated;
+* count with availability populated;
+* count with `price_last_checked`;
+* oldest/newest checked dates if applicable;
+* sample slugs;
+* whether any values differ from the current catalogue baseline.
+
+Do not modify or sync anything.
+
+---
+
+# Phase 3 — Determine current catalogue baseline
+
+Using the current repository/catalogue:
+
+1. Determine the number of unique current catalogue slugs.
+2. Determine how many `AffiliateProductState` rows:
+
+```bash
+python manage.py sync_affiliate_product_states
+```
+
+would create in a completely empty database.
+
+Do this locally or against a disposable test database only.
+
+Do not modify production.
+
+Explain why this count can change as catalogue products are added or removed.
+
+The cutover verification should therefore use:
+
+```text
+AffiliateProductState count after sync
+≈ current eligible catalogue slug count
+```
+
+rather than a permanently hard-coded value such as 138 or 140.
+
+Also verify whether archived/inactive/variant-only product slugs are included or excluded by the sync command.
+
+---
+
+# Phase 4 — Classify production data
+
+For every relevant model, classify production data into one of:
+
+```text
+A. Regenerate
+B. Preserve
+C. Optional history
+D. Discard / do not migrate
+```
+
+At minimum assess:
+
+## AffiliateProductState
+
+Determine:
+
+* whether live production contains any records;
+* whether records contain manual overrides;
+* whether an empty state can simply be regenerated;
+* how manually changed records would be preserved safely.
+
+## Product / Category
+
+Determine whether these are still effectively legacy models or contain production business data.
+
+## Click
+
+Determine whether production click history exists and whether it is worth preserving.
+
+Do not assume local count `0` means production count `0`.
+
+## ProductAuditRun / ProductAuditIssue
+
+Determine whether production audit history exists.
+
+Classify it as:
+
+* operationally required;
+* useful history;
+* safe to leave behind.
+
+## auth.User
+
+Determine whether production admin/superuser accounts exist and should be recreated or migrated.
+
+Do not print password hashes, tokens, email addresses, or other sensitive account values in the report.
+
+Only counts and migration recommendations are required.
+
+## Sessions
+
+Do not plan to migrate active Django sessions unless there is a compelling repository-specific reason.
+
+A forced login after cutover is acceptable.
+
+---
+
+# Phase 5 — Design a safe SQLite backup procedure
+
+Create an exact backup procedure for the current Render SQLite database.
+
+The backup must be taken **before** changing Render database configuration.
+
+Prefer a robust SQLite-consistent backup method rather than relying only on copying a potentially active database file.
+
+Assess whether one of these is preferable:
+
+```bash
+sqlite3 db.sqlite3 ".backup /tmp/..."
+```
+
+or Python's SQLite backup API.
+
+If `sqlite3` CLI availability on Render cannot be assumed, provide a Python alternative.
+
+The procedure should:
+
+1. identify the exact production database path;
+2. create a consistent backup;
+3. verify that the backup opens successfully;
+4. report its size;
+5. optionally verify important record counts in the backup;
+6. explain how the user can preserve/export the file outside the ephemeral Render filesystem.
+
+Important:
+
+A backup stored only on Render's ephemeral filesystem is **not sufficient**.
+
+Explain the safest practical way to transfer/store that backup before proceeding.
+
+Do not actually export or copy production data during this task.
+
+---
+
+# Phase 6 — Design scoped data export if needed
+
+Do not recommend blindly dumping the complete Django database.
+
+If production contains data worth migrating, design model-specific export/import procedures.
+
+Assess appropriate approaches for:
+
+### AffiliateProductState
+
+Prefer a slug-keyed migration strategy.
+
+The strategy must preserve:
+
+* slug;
+* manually maintained price;
+* availability;
+* last-checked date;
+* any other meaningful fields.
+
+It must avoid overwriting manual values with catalogue defaults.
+
+### Audit data
+
+If retained, preserve relational integrity between:
+
+```text
+ProductAuditRun
+ProductAuditIssue
+```
+
+### Users
+
+If production admin users must be retained, propose the safest Django-native migration approach.
+
+Do not migrate:
+
+* `contenttypes`;
+* generated permissions;
+* sessions;
+
+unless repository-specific evidence shows this is required.
+
+Explain import ordering and potential primary-key conflicts.
+
+---
+
+# Phase 7 — Prepare first PostgreSQL cutover sequence
+
+Create a detailed ordered runbook.
+
+The intended high-level sequence is:
+
+```text
+1. Apply Task #15 to main
+2. Confirm no automatic Render deploy occurs
+3. Inventory production SQLite
+4. Back up production SQLite externally
+5. Create Render PostgreSQL
+6. Obtain Render internal DATABASE_URL
+7. Configure production environment variables
+8. Deploy PostgreSQL-ready repository
+9. Run migrations against PostgreSQL
+10. Verify migrations
+11. Import only required preserved data
+12. Seed missing AffiliateProductState rows
+13. Verify maintenance-state population
+14. Smoke-test website
+15. Verify admin
+16. Verify logs
+17. Keep SQLite backup until final sign-off
+```
+
+However, audit the dependencies carefully and improve this sequence where necessary.
+
+---
+
+# Phase 8 — Define exact Render environment contract
+
+For the first PostgreSQL deployment, specify the exact required production environment configuration.
+
+Expected contract:
+
+```text
+DJANGO_ENV=production
+DJANGO_DB_BACKEND=postgres
+DATABASE_URL=<Render internal PostgreSQL connection string>
+DEBUG=False
+SECRET_KEY=<existing production secret>
+```
+
+Determine whether any additional variables are required by the current codebase.
+
+Do not expose or generate secret values.
+
+Also determine whether Render provides `DATABASE_URL` automatically when a PostgreSQL database is linked or whether it must be added explicitly for this service.
+
+Do not change Render yet.
+
+---
+
+# Phase 9 — First-deployment migration strategy
+
+For the **first cutover only**, migrations and sync should remain separate controlled actions.
+
+Do NOT yet recommend blindly configuring:
+
+```bash
+python manage.py migrate --noinput && python manage.py sync_affiliate_product_states
+```
+
+as an automatic Render pre-deploy command.
+
+Instead design the first cutover with explicit verification gates:
+
+```text
+PostgreSQL connected
+        ↓
+python manage.py migrate --noinput
+        ↓
+python manage.py showmigrations
+        ↓
+verify schema
+        ↓
+import preserved data if applicable
+        ↓
+python manage.py sync_affiliate_product_states
+        ↓
+verify state count/data
+        ↓
+smoke tests
+```
+
+Explain whether migrations should be executed:
+
+* via Render Shell;
+* via a temporary pre-deploy command;
+* via another Render-supported mechanism.
+
+Prefer the safest option for a first controlled migration.
+
+---
+
+# Phase 10 — Define smoke tests
+
+Create an exact post-cutover verification checklist.
+
+At minimum test:
+
+```text
+/
+/product/greenpan-barcelona-pro-hapjespan-28/
+/product/ninja-crispi-4-in-1/
+/koekenpannen/
+/vershoudcontainers/?uitvoering=3-delig
+```
+
+Also verify:
+
+* HTTP 200;
+* product content renders;
+* affiliate buttons render;
+* product variants work;
+* maintenance overrides work;
+* no Django 500s in Render logs;
+* Django admin loads if applicable;
+* AffiliateProductState admin/data is accessible;
+* current state count matches the catalogue baseline;
+* database backend is actually PostgreSQL.
+
+Include an explicit production verification command equivalent to:
+
+```python
+from django.db import connection
+print(connection.vendor)
+```
+
+Expected:
+
+```text
+postgresql
+```
+
+---
+
+# Phase 11 — Rollback design
+
+Create a rollback plan for each failure point:
+
+## Before deployment
+
+If backup/inventory is incomplete:
+
+```text
+STOP
+```
+
+Do not cut over.
+
+## PostgreSQL migrations fail
+
+Explain how to restore service without damaging the existing SQLite backup.
+
+## Application fails to start
+
+Determine how the old known-good Render deployment could be restored.
+
+## PostgreSQL works but data migration is incorrect
+
+Explain how to stop before writing further production data and either correct forward or restore the old configuration.
+
+## Smoke tests fail
+
+Do not consider the cutover complete.
+
+## AffiliateProductState sync fails
+
+Determine whether the public website can safely operate with an empty but migrated state table and catalogue defaults.
+
+Do not assume rollback automatically requires reversing database migrations.
+
+Prefer forward correction where appropriate.
+
+---
+
+# Phase 12 — Future deployment automation
+
+Only design this; do not enable it.
+
+After the first successful PostgreSQL cutover, determine the preferred ongoing deployment flow.
+
+Likely target:
+
+```text
+Render build
+      ↓
+pre-deploy:
+python manage.py migrate --noinput
+      ↓
+application start
+```
+
+Separately assess whether:
+
+```bash
+python manage.py sync_affiliate_product_states
+```
+
+should also run automatically on every release.
+
+Evaluate:
+
+* idempotency;
+* catalogue additions;
+* removed catalogue products;
+* preservation of administrator overrides;
+* behavior when sync fails.
+
+It may be safer to make state sync an explicit maintenance/admin process rather than a release prerequisite.
+
+Make a recommendation based on the actual command behavior.
+
+---
+
+# Phase 13 — No production changes
+
+This task must end before any external cutover action.
+
+Explicitly confirm:
+
+```text
+No Render PostgreSQL database created.
+No Render environment variables changed.
+No production deployment performed.
+No production data modified.
+No production database switched.
+```
+
+---
+
+# Final report
+
+Return:
+
+## A. Current production inventory commands
+
+Exact Render Shell commands I should run, in order.
+
+## B. Expected safe outputs
+
+Explain what information each command should return.
+
+## C. Production model classification
+
+For each model:
+
+```text
+Regenerate / Preserve / Optional / Discard
+```
+
+with justification.
+
+## D. AffiliateProductState migration decision tree
+
+Explain separately:
+
+```text
+production count = 0
+production contains baseline-only rows
+production contains manual overrides
+```
+
+and what to do in each situation.
+
+## E. Backup procedure
+
+Provide exact backup and validation commands.
+
+## F. External backup handling
+
+Explain how the SQLite backup should be preserved outside Render's ephemeral filesystem before proceeding.
+
+## G. PostgreSQL cutover runbook
+
+Number every action.
+
+Clearly mark:
+
+```text
+STOP / VERIFY / CONTINUE
+```
+
+gates.
+
+## H. Required Render variables
+
+List names and expected type/source, never secret values.
+
+## I. First-migration commands
+
+Exact commands and expected outcomes.
+
+## J. Data import procedure
+
+Only for models that actually need preservation.
+
+## K. Affiliate state sync procedure
+
+Include dynamic expected-count validation rather than hard-coded 138/140.
+
+## L. Smoke-test checklist
+
+Exact routes and database checks.
+
+## M. Rollback plan
+
+Include failure scenarios and recovery path.
+
+## N. Future deployment automation recommendation
+
+Explain whether migrations and affiliate-state sync should become automatic after cutover.
+
+## O. Risks
+
+Classify:
+
+* critical;
+* high;
+* medium;
+* low.
+
+## P. Go/no-go recommendation
+
+State whether we are ready to proceed with the actual Render PostgreSQL cutover after completing the production inventory and external SQLite backup.
+
+Do not perform the production cutover until I explicitly approve it.
