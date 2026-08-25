@@ -319,61 +319,58 @@ PRODUCTS = {
         "verdict": "Een hoogwaardig afgewerkte pan voor wie ergonomie en een stevige constructie vooropstelt.",
     },
 
-    "greenpan_mayflower_28": {
-        "slug": "greenpan-mayflower-28",
-        "name": "GreenPan Mayflower",
-        "description": "Stijlvolle keramische koekenpan met PFAS-vrije Thermolon™ coating en inductiebodem.",
-        "brand": "GreenPan",
-        "diameter": 28,
-        "material": "Aluminium met Thermolon keramische antiaanbaklaag",
-        "features": [
-            "Geschikt voor inductie",
-            "Goede warmteverdeling",
-        ],
-        "rating": 4.4,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "currency": "EUR",
-        "availability": "InStock",
-        "award": "",
-        "price_range": "€€-€€€",
-        "image": "greenpan-mayflower-28cm.jpg",
-        "image_path": "images/products/keramische-koekenpannen",
-        "variants": [
-            {
-                "name": "Grijs",
-                "image": "greenpan-mayflower-grijs-28cm.webp",
-                "hex": "#3F4448",
-                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij%2F9300000091450190%2F&name=GreenPan%20Mayflower%20Pro%20koekenpan%2028cm%20-%20grijs%20-%20houten%20handvat%20-%20PFAS-vrij",
-                "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij/9300000091450190/",
-                "price": 59.90,
-                "price_last_checked": "2026-08-07",
-                "price_range": "€€€",
-            },
-            {
-                "name": "Blauw",
-                "image": "greenpan-mayflower-blauw-28cm.webp",
-                "hex": "#8CA9B5",
-                "affiliate_url":"https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-mayflower-koekenpan-o28-cm-inductie-anti-aanbak-pfas-vrij%2F9300000001596267%2F&name=GreenPan%20Mayflower%20Koekenpan%2028cm%20-%20PFAS-vrije%20antikleeflaag%20-%20Koekenpan%20inductie%20-...",
-                "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-mayflower-koekenpan-o28-cm-inductie-anti-aanbak-pfas-vrij/9300000001596267/",
-                "price": 42.99,
-                "price_last_checked": "2026-08-07",
-                "price_range": "€€",
-            },
-        ],
-        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij%2F9300000091450190%2F&name=GreenPan%20Mayflower%20Pro%20koekenpan%2028cm%20-%20grijs%20-%20houten%20handvat%20-%20PFAS-vrij",
-        "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij/9300000091450190/",
-        "pros": [
-            "PFAS-vrije Thermolon™ coating",
-            "Goede warmteverdeling",
-            "Aantrekkelijk design",
-        ],
-        "cons": [
-            "Niet geschikt voor ovengebruik",
-            "Prijs verschilt duidelijk per kleurvariant",
-        ],
-        "verdict": "Betrouwbare keuze voor milieubewuste gebruiker die stijl en gezond koken combineert.",
-    },
+        "greenpan_apex_hybrid_28": {
+            "slug": "greenpan-apex-hybrid-28",
+            "name": "GreenPan Apex Hybrid 28 cm",
+            "brand": "GreenPan",
+            "material": (
+                "3-laags roestvrij staal met aluminium kern, Thermolon 9G "
+                "PFAS-vrije keramische antiaanbaklaag en geëtst RVS-patroon"
+            ),
+            "features": [
+                "Met diamant versterkte antiaanbaklaag",
+                "Geschikt voor inductie",
+                "Geschikt voor gas, elektrisch, keramisch en halogeen",
+                "Ovenbestendig tot 220 °C",
+                "Roestvrijstalen handgreep",
+                "Vaatwasserbestendig",
+            ],
+            "image": "greenpan-apex-hybrid-28.webp",
+            "image_path": "images/products/koekenpannen",
+            "description": (
+                "Ruime hybride koekenpan van 3-laags RVS met aluminium kern, "
+                "voorzien van een Thermolon 9G PFAS-vrije keramische "
+                "antiaanbaklaag en een geëtst RVS-patroon op het bakoppervlak."
+            ),
+            "pros": [
+                "3-laagse RVS-constructie met aluminium kern voor een gelijkmatige warmteverdeling",
+                "Keramische antiaanbaklaag gecombineerd met een beschermend geëtst RVS-patroon",
+                "Ovenbestendig tot 220 °C en geschikt voor inductie",
+                ],
+            "cons": [
+                "Duurder dan veel standaard aluminium koekenpannen met keramische coating",
+                "Voor delicate bereidingen kan het hybride RVS-oppervlak iets meer aandacht voor temperatuur en vet vragen",
+                ],
+            "rating": 4.7,
+            "rating_count": None,
+            "rating_source": "editorial",
+            "price": 65.95,
+            "price_last_checked": "2026-08-25",
+            "currency": "EUR",
+            "availability": "InStock",
+            "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-apex-koekenpan-28cm-honinggraat-keramische-pfas-vrij-inductie-koekenpan-ovenbestendig-tot-220-c-vaatwasserbestendig-rvs-handgrepen-roestvrijstaal%2F9300000241290137%2F&name=GreenPan%20Apex%20Koekenpan%2028cm%20-%20Keramisch%2C%20PFAS-vrij%2C%20inductie%2C%20ovenbestendig",
+            "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-apex-koekenpan-28cm-honinggraat-keramische-pfas-vrij-inductie-koekenpan-ovenbestendig-tot-220-c-vaatwasserbestendig-rvs-handgrepen-roestvrijstaal/9300000241290137/",
+            "official_url": "https://greenpan.nl/products/apex-braadpan-28cm",
+            "availability_label": "Tijdelijk uitverkocht bij de fabrikant",
+            "price_range": "€€€",
+            "verdict": (
+                "Een hoogwaardige hybride koekenpan die een 3-laagse "
+                "RVS-constructie combineert met een PFAS-vrije keramische "
+                "antiaanbaklaag en daarmee duidelijk afwijkt van klassieke "
+                "aluminium keramische koekenpannen."
+            ),
+            "award": None,
+        },
 
     # 24CM KOEKENPANNEN
     "greenpan_barcelona_pro_24": {
@@ -567,38 +564,61 @@ PRODUCTS = {
         "en een toegankelijke prijs.",
     },
 
-    "greenpan_torino_24": {
-        "slug": "greenpan-torino-24",
-        "name": "GreenPan Torino",
-        "description": "Lichte aluminium koekenpan met Thermolon keramische antiaanbaklaag "
-        "voor dagelijks gebruik.",
+    "greenpan_apex_hybrid_24": {
+        "slug": "greenpan-apex-hybrid-24",
+        "name": "GreenPan Apex Hybrid 24 cm",
         "brand": "GreenPan",
-        "diameter": 24,
-        "material": "Aluminium met Thermolon keramische antiaanbaklaag",
-        "features": ["Inductie", "PFAS-vrij"],
-        "rating": 4.3,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 39.60,
-        "price_last_checked": "2026-08-07",
-        "currency": "EUR",
-        "availability": "InStock",
-        "price_range": "€€",
-        "image": "greenpan-torino-24cm.webp",
-        "image_path": "images/products/keramische-koekenpannen",
-        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-torino-keramische-koekenpan-24-cm%2F9300000036288442%2F&name=GreenPan%20Torino%20Braadpan%20-%2024%20cm%20-%20Keramische%20antiaanbaklaag%20-%20PFAS-vrij",
-        "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-torino-keramische-koekenpan-24-cm/9300000036288442/",
-        "pros": [
-            "Licht en gemakkelijk hanteerbaar",
+        "material": (
+            "3-laags roestvrij staal met aluminium kern, Thermolon 9G "
+            "PFAS-vrije keramische antiaanbaklaag en geëtst RVS-patroon"
+        ),
+        "features": [
+            "Diameter 24 cm",
+            "3-laags RVS-constructie met aluminium kern",
+            "Thermolon 9G keramische antiaanbaklaag",
+            "PFAS-vrije coating",
+            "Met diamant versterkte antiaanbaklaag",
+            "Geëtst RVS-patroon op het bakoppervlak",
             "Geschikt voor inductie",
-            "Eenvoudig schoon te maken",
+            "Geschikt voor gas, elektrisch, keramisch en halogeen",
+            "Ovenbestendig tot 220 °C",
+            "Roestvrijstalen handgreep",
+            "Vaatwasserbestendig",
+        ],
+        "image": "greenpan-apex-hybrid-24.webp",
+        "image_path": "images/products/koekenpannen",
+        "description": (
+            "Hybride koekenpan met een 3-laagse RVS-constructie en aluminium "
+            "kern, gecombineerd met GreenPans Thermolon 9G PFAS-vrije "
+            "keramische antiaanbaklaag en een geëtst RVS-patroon."
+        ),
+        "pros": [
+            "Hybride combinatie van 3-laags RVS en keramische antiaanbaklaag",
+            "Ovenbestendig tot 220 °C",
+            "Geschikt voor alle gangbare warmtebronnen inclusief inductie",
         ],
         "cons": [
-            "Beperkte ovenbestendigheid",
-            "Eenvoudigere constructie dan de Barcelona Pro-serie",
+            "Duurder dan veel conventionele keramisch gecoate koekenpannen",
+            "Het hybride RVS-patroon geeft een ander bakoppervlak dan een volledig gladde keramische coating",
         ],
-        "verdict": "Een toegankelijke middenklassepan voor dagelijks gebruik en "
-        "kleinere maaltijden.",
+        "rating": 4.6,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 69.90,
+        "price_last_checked": "2026-08-25",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": "",
+        "official_url": "https://greenpan.nl/products/apex-braadpan-24cm",
+        "availability_label": "Tijdelijk uitverkocht bij de fabrikant",
+        "price_range": "€€€",
+        "verdict": (
+            "Een onderscheidende hybride keuze voor wie de constructie van "
+            "3-laags RVS wil combineren met een PFAS-vrije keramische "
+            "antiaanbaklaag."
+        ),
+        "award": None,
     },
 
     "tefal_renew_24": {
