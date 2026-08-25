@@ -43,9 +43,11 @@ CONTENT = {
                 "gewenst is."
             ),
             (
-                "<strong>Verschillende constructies:</strong> de pannen zijn "
-                "onder meer verkrijgbaar in aluminium, "
-                "gerecycled aluminium of meerlaags staal."
+                "<strong>Verschillende constructies:</strong> de selectie bevat "
+                "onder meer aluminium pannen, modellen van gerecycled aluminium "
+                "en meerlaagse RVS-constructies met een aluminium kern. Sommige "
+                "hybride modellen combineren bovendien een keramische "
+                "antiaanbaklaag met een geëtst RVS-oppervlak."
             ),
             (
                 "<strong>Onderhoud:</strong> veel keramische pannen zijn "
@@ -201,10 +203,12 @@ CONTENT = {
                 "twee personen en kleinere dagelijkse bereidingen. De "
                 "<strong>GreenPan Barcelona Pro</strong> biedt de meest "
                 "complete combinatie van constructie, warmteverdeling en "
-                "ovenmogelijkheden. De <strong>Kochstar Essenz</strong> is "
-                "onze budgetkeuze. Wie meer waarde hecht aan afwerking en "
-                "stabiele warmteverdeling kan kiezen voor de "
-                "<strong>Demeyere Alu Pro 5 Ceraforce</strong>."
+                "ovenmogelijkheden. De <strong>Demeyere Alu Pro 5 "
+                "Ceraforce</strong> is een sterke premiumoptie, terwijl de "
+                "<strong>GreenPan Apex Hybrid</strong> zich onderscheidt met "
+                "een 3-laagse RVS-constructie, aluminium kern en hybride "
+                "bakoppervlak met keramische antiaanbaklaag. De "
+                "<strong>Kochstar Essenz</strong> blijft onze budgetkeuze."
             ),
         },
 
@@ -230,12 +234,15 @@ CONTENT = {
             "text": (
                 "Het formaat <strong>28 cm</strong> is breed inzetbaar voor "
                 "stellen en gezinnen. De <strong>GreenPan Barcelona "
-                "Pro</strong> is onze beste allround keuze. De "
-                "<strong>Kochstar Essenz</strong> biedt een zeer lage "
-                "instapprijs. De <strong>Demeyere Alu Pro 5 "
-                "Ceraforce</strong> en <strong>De Buyer Ceranoa</strong> "
-                "zijn geschikt voor wie meer waarde hecht aan afwerking, "
-                "constructie en stabiele warmteverdeling."
+                "Pro</strong> is onze beste allround keuze en de "
+                "<strong>Demeyere Alu Pro 5 Ceraforce</strong> een sterke "
+                "premiumoptie. De <strong>GreenPan Apex Hybrid</strong> biedt "
+                "een duidelijk andere constructie met 3-laags RVS, een "
+                "aluminium kern en een hybride keramisch/RVS-bakoppervlak. "
+                "De <strong>Kochstar Essenz</strong> biedt een lage "
+                "instapprijs, terwijl de <strong>De Buyer Ceranoa</strong> "
+                "een interessant alternatief is voor wie veel waarde hecht "
+                "aan constructie en afwerking."
             ),
         },
 
@@ -365,6 +372,19 @@ CONTENT = {
                     ),
             },
             {
+                "q": "Wat is een hybride keramische koekenpan?",
+                "a": (
+                    "Bij een hybride koekenpan wordt een keramische antiaanbaklaag "
+                    "gecombineerd met een zichtbaar of geëtst RVS-patroon op het "
+                    "bakoppervlak. Het doel is om het gebruiksgemak van een "
+                    "antiaanbaklaag te combineren met eigenschappen van RVS, zoals "
+                    "een stevige constructie en directer contact tussen voedsel en "
+                    "het metalen bakoppervlak. Voor delicate bereidingen kan zo'n "
+                    "oppervlak iets meer aandacht voor temperatuur en vet vragen "
+                    "dan een volledig gladde keramische coating."
+                ),
+            },
+            {
                 "q": "Kan een keramische koekenpan in de oven?",
                 "a": (
                     "Dat hangt af van het materiaal van de pan, het type handgreep en "
@@ -405,8 +425,11 @@ CONTENT = {
                 "productspecificatie?"
             ),
             (
-                "<strong>Materiaal en constructie:</strong> waaruit bestaat "
-                "het panlichaam en welk type antiaanbaklaag wordt gebruikt?"
+                "<strong>Materiaal en constructie:</strong> we kijken naar het "
+                "materiaal van de pan, de opbouw van bodem en zijwanden "
+                "en het type antiaanbaklaag. Daarbij onderscheiden we onder meer "
+                "aluminium constructies en meerlaagse RVS-pannen met een "
+                "warmtegeleidende aluminium kern."
             ),
             (
                 "<strong>Gebruiksmogelijkheden:</strong> inductie, oven, "

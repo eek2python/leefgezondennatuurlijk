@@ -1295,12 +1295,5 @@
     "category": "keramische-koekenpannen",
     "product_key": "greenpan-apex-hybrid-24cm",
     "enabled": true
-  },
-  {
-    "source": "keramische-koekenpannen/greenpan-apex-hybrid-28cm.jpg",
-    "slug": "greenpan-apex-hybrid-28cm",
-    "category": "keramische-koekenpannen",
-    "product_key": "greenpan-apex-hybrid-28cm",
-    "enabled": true
   }
 ]

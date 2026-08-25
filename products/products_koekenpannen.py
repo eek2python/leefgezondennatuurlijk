@@ -335,8 +335,8 @@ PRODUCTS = {
                 "Roestvrijstalen handgreep",
                 "Vaatwasserbestendig",
             ],
-            "image": "greenpan-apex-hybrid-28.webp",
-            "image_path": "images/products/koekenpannen",
+            "image": "greenpan-apex-hybrid-28cm.webp",
+            "image_path": "images/products/keramische-koekenpannen",
             "description": (
                 "Ruime hybride koekenpan van 3-laags RVS met aluminium kern, "
                 "voorzien van een Thermolon 9G PFAS-vrije keramische "
@@ -573,43 +573,38 @@ PRODUCTS = {
             "PFAS-vrije keramische antiaanbaklaag en geëtst RVS-patroon"
         ),
         "features": [
-            "Diameter 24 cm",
-            "3-laags RVS-constructie met aluminium kern",
-            "Thermolon 9G keramische antiaanbaklaag",
-            "PFAS-vrije coating",
             "Met diamant versterkte antiaanbaklaag",
-            "Geëtst RVS-patroon op het bakoppervlak",
             "Geschikt voor inductie",
             "Geschikt voor gas, elektrisch, keramisch en halogeen",
             "Ovenbestendig tot 220 °C",
             "Roestvrijstalen handgreep",
             "Vaatwasserbestendig",
         ],
-        "image": "greenpan-apex-hybrid-24.webp",
-        "image_path": "images/products/koekenpannen",
+        "image": "greenpan-apex-hybrid-24cm.webp",
+        "image_path": "images/products/keramische-koekenpannen",
         "description": (
             "Hybride koekenpan met een 3-laagse RVS-constructie en aluminium "
             "kern, gecombineerd met GreenPans Thermolon 9G PFAS-vrije "
             "keramische antiaanbaklaag en een geëtst RVS-patroon."
         ),
         "pros": [
-            "Hybride combinatie van 3-laags RVS en keramische antiaanbaklaag",
-            "Ovenbestendig tot 220 °C",
-            "Geschikt voor alle gangbare warmtebronnen inclusief inductie",
+            "3-laagse RVS-constructie met aluminium kern voor een gelijkmatige warmteverdeling",
+            "Keramische antiaanbaklaag gecombineerd met een beschermend geëtst RVS-patroon",
+            "Ovenbestendig tot 220 °C en geschikt voor inductie",
         ],
         "cons": [
-            "Duurder dan veel conventionele keramisch gecoate koekenpannen",
-            "Het hybride RVS-patroon geeft een ander bakoppervlak dan een volledig gladde keramische coating",
+            "Duurder dan veel standaard aluminium koekenpannen met keramische coating",
+            "Voor delicate bereidingen kan het hybride RVS-oppervlak iets meer aandacht voor temperatuur en vet vragen",
         ],
         "rating": 4.6,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 69.90,
+        "price": 47.99,
         "price_last_checked": "2026-08-25",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-apex-koekenpan-24cm-honinggraat-keramisch-pfas-vrij-inductie-koekenpan-ovenbestendig-tot-220-c-vaatwasserbestendig-rvs-handgrepen-roestvrijstaal%2F9300000241290138%2F&name=GreenPan%20Apex%20Hybrid%20Koekenpan%20-%2024%20cm%20-%20Keramisch%20-%20PFAS-vrij%20-%20Inductie",
+        "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-apex-koekenpan-24cm-honinggraat-keramisch-pfas-vrij-inductie-koekenpan-ovenbestendig-tot-220-c-vaatwasserbestendig-rvs-handgrepen-roestvrijstaal/9300000241290138/",
         "official_url": "https://greenpan.nl/products/apex-braadpan-24cm",
         "availability_label": "Tijdelijk uitverkocht bij de fabrikant",
         "price_range": "€€€",
