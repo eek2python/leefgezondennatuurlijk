@@ -1344,19 +1344,5 @@
     "category": "rvs-koekenpannen",
     "product_key": "oz_home_bavary_30cm",
     "enabled": true
-  },
-  {
-    "source": "keramische-koekenpannen/bk-infinity-24cm.jpg",
-    "slug": "bk-infinity-24cm",
-    "category": "keramische-koekenpannen",
-    "product_key": "bk_infinity_24cm",
-    "enabled": true
-  },
-  {
-    "source": "keramische-koekenpannen/bk-infinity-28cm.jpg",
-    "slug": "bk-infinity-28cm",
-    "category": "keramische-koekenpannen",
-    "product_key": "bk_infinity_28cm",
-    "enabled": true
   }
 ]

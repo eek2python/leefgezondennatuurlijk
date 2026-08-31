@@ -217,36 +217,54 @@ PRODUCTS = {
     "met hitte-indicator zoekt.",
     },
 
-    "bk_enjoy_28": {
-        "slug": "bk-enjoy-28",
-        "name": "BK Enjoy",
-        "description": "Lichtgewicht aluminium koekenpan met keramische antiaanbaklaag "
-        "voor dagelijks gebruik.",
+    "bk_infinity_28": {
+        "slug": "bk-infinity-keramische-koekenpan-28-cm",
+        "name": "BK Infinity Keramische Koekenpan 28 cm",
+        "description": (
+            "De BK Infinity 28 cm is een ruime keramische koekenpan met een body van "
+            "100% gerecycled aluminium en een extra dikke roestvrijstalen inductiebodem. "
+            "De PFAS-vrije Thermolon™ keramische antiaanbaklaag maakt bakken met weinig "
+            "vet mogelijk. De pan is geschikt voor alle gangbare warmtebronnen, waaronder "
+            "inductie, en kan tot 160 °C in de oven."
+        ),
         "brand": "BK",
         "diameter": 28,
-        "material": "Aluminium met keramische antiaanbaklaag",
-        "features": ["Lichtgewicht"],
-        "rating": 4.1,
+        "material": "100% gerecycled aluminium",
+        "features": [
+            "PFAS-vrije Thermolon™ keramische antiaanbaklaag",
+            "Extra dikke roestvrijstalen inductiebodem",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Ovenbestendig tot 160 °C",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.4,
         "rating_count": None,
-        "rating_source": "editorial",
-        "price": 34.90,
-        "price_last_checked": "2026-07-27",
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 69.90,
+        "price_last_checked": "2026-08-31",
         "currency": "EUR",
-        "availability": "InStock",
+        "availability": True,
         "affiliate_url": "",
-        "retailer_url": "https://bk.nl/products/enjoy-koekenpan-zwart-28-cm?srsltid=AfmBOoqIJ-LNGVZmMJZThGeFbB_cW7XcZXFB0rnlbkDqbVjERLMNIpFY",
+        "retailer_url": "",
+        "official_url": "https://bk.nl/products/infinity-koekenpan-28cm",
+        "availability_label": "Op voorraad",
+        "award": None,
         "price_range": "€€",
-        "image": "bk-enjoy-28cm.webp",
+        "image": "bk-infinity-28cm.webp",
         "image_path": "images/products/keramische-koekenpannen",
         "pros": [
-            "Licht van gewicht",
-            "Goede warmtegeleiding",
-            "Gemakkelijk schoon te maken",
+            "PFAS-vrije Thermolon™ keramische antiaanbaklaag",
+            "Extra dikke RVS bodem voor goede prestaties op inductie",
         ],
         "cons": [
-            "Niet geschikt voor oven",
+            "Ovenbestendig tot slechts 160 °C",
         ],
-        "verdict": "Een lichte en praktische pan voor dagelijks gezond koken.",
+        "verdict": (
+            "Een stevige en ruime keramische koekenpan die vooral interessant is door de "
+            "combinatie van een 100% gerecyclede aluminium, een dikke RVS inductiebodem "
+            "en een PFAS-vrije Thermolon™ coating. Een sterke middenklassekeuze voor "
+            "dagelijks gebruik, met de beperkte ovenbestendigheid als belangrijkste nadeel."
+        ),
     },
 
     "demeyere_alu_pro_5_28": {
@@ -650,35 +668,55 @@ PRODUCTS = {
         "met hitte-indicator zoekt.",
     },
 
-    "bk_enjoy_24": {
-        "slug": "bk-enjoy-24",
-        "name": "BK Enjoy",
-        "description": "Lichtgewicht aluminium koekenpan met keramische antiaanbaklaag "
-        "voor dagelijks gebruik.",
+    "bk_infinity_24": {
+        "slug": "bk-infinity-keramische-koekenpan-24-cm",
+        "name": "BK Infinity Keramische Koekenpan 24 cm",
+        "description": (
+            "De BK Infinity 24 cm is een stevige keramische koekenpan met een body van "
+            "100% gerecycled aluminium en een extra dikke roestvrijstalen inductiebodem. "
+            "De PFAS-vrije Thermolon™ keramische antiaanbaklaag maakt bakken met weinig "
+            "vet mogelijk. De pan is geschikt voor alle gangbare warmtebronnen, waaronder "
+            "inductie, en kan tot 160 °C in de oven."
+        ),
         "brand": "BK",
         "diameter": 24,
-        "material": "Aluminium met keramische antiaanbaklaag",
-        "features": ["Lichtgewicht"],
-        "rating": 4.1,
+        "material": "100% gerecycled aluminium",
+        "features": [
+            "PFAS-vrije Thermolon™ keramische antiaanbaklaag",
+            "Extra dikke roestvrijstalen inductiebodem",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Ovenbestendig tot 160 °C",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.4,
         "rating_count": None,
-        "rating_source": "editorial",
-        "price": 29.90,
-        "price_last_checked": "2026-07-27",
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 59.90,
+        "price_last_checked": "2026-08-31",
         "currency": "EUR",
-        "availability": "InStock",
+        "availability": True,
         "affiliate_url": "",
-        "retailer_url": "https://www.kookexpert.nl/koekenpan-bk-enjoy-met-keramische-antikleeflaag-24-cm.html",
+        "retailer_url": "",
+        "official_url": "https://bk.nl/products/infinity-koekenpan-24cm",
+        "availability_label": "Op voorraad",
+        "award": None,
         "price_range": "€€",
-        "image": "bk-enjoy-24cm.webp",
+        "image": "bk-infinity-24cm.webp",
         "image_path": "images/products/keramische-koekenpannen",
         "pros": [
-            "Licht en gemakkelijk hanteerbaar",
-            "Goede warmtegeleiding",
+            "PFAS-vrije Thermolon™ keramische antiaanbaklaag",
+            "Extra dikke RVS bodem voor goede prestaties op inductie",
+            "Handig stapelbaar ontwerp",
         ],
         "cons": [
-            "Niet geschikt voor oven",
+            "Ovenbestendig tot slechts 160 °C",
         ],
-        "verdict": "Een lichte en praktische koekenpan voor eenvoudig dagelijks gebruik.",
+        "verdict": (
+            "Een hoogwaardige keramische koekenpan met een stevige constructie en een "
+            "extra dikke inductiebodem. De combinatie van 100% gerecycled aluminium en "
+            "een PFAS-vrije Thermolon™ coating maakt de Infinity een interessante keuze "
+            "voor dagelijks gebruik, al beperkt de kunststof greep de ovenbestendigheid."
+        ),
     },
 
     "ikea_hemlagad_keramisch_24": {

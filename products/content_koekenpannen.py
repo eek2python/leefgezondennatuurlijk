@@ -136,11 +136,11 @@ CONTENT = {
 
     "products_section": {
         "h2": (
-            "De {product_count} beste PFAS-vrije koekenpannen "
+            "De {product_count} beste PFAS-vrije keramische koekenpannen "
             "van {selected_size} cm"
         ),
         "comparison_title": (
-            "Vergelijking: {product_count} PFAS-vrije koekenpannen "
+            "Vergelijking: {product_count} PFAS-vrije keramische koekenpannen "
             "van {selected_size} cm"
         ),
     },

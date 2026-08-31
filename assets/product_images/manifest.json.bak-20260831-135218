@@ -1351,12 +1351,5 @@
     "category": "keramische-koekenpannen",
     "product_key": "bk_infinity_24cm",
     "enabled": true
-  },
-  {
-    "source": "keramische-koekenpannen/bk-infinity-28cm.jpg",
-    "slug": "bk-infinity-28cm",
-    "category": "keramische-koekenpannen",
-    "product_key": "bk_infinity_28cm",
-    "enabled": true
   }
 ]

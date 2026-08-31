@@ -21,7 +21,7 @@ RANKINGS = {
         "kochstar_essenz_24",
         "berndes_b_green_24",
         "ikea_hemlagad_keramisch_24",
-        "bk_enjoy_24",
+        "bk_infinity_24",
     ],
     26: [
         "greenpan_barcelona_pro_26",
@@ -42,7 +42,7 @@ RANKINGS = {
         "debuyer_ceranoa_28",
         "kochstar_essenz_28",
         "brabantia_dusk_28",
-        "bk_enjoy_28",
+        "bk_infinity_28",
     ],
     30: [
         "greenpan_barcelona_pro_30",
