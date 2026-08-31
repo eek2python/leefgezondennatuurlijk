@@ -912,4 +912,307 @@ PRODUCTS = {
             "meerlagenconstructie en een gestructureerd bakoppervlak."
         ),
     },
+    
+    # 30 cm RVS koekenpannen
+    "bk_maestro_rvs_30": {
+        "slug": "bk-maestro-rvs-koekenpan-30-cm",
+        "name": "BK Maestro RVS Koekenpan 30 cm",
+        "description": (
+            "De BK Maestro is een hoogwaardige 3-ply RVS-koekenpan met een aluminium kern "
+            "tussen twee lagen roestvrij staal. Hierdoor wordt de warmte snel en gelijkmatig "
+            "over de pan verdeeld. Het bakoppervlak bestaat volledig uit RVS en bevat geen "
+            "antiaanbaklaag. De pan is geschikt voor alle warmtebronnen, inclusief inductie, "
+            "en kan tot 220 °C in de oven."
+        ),
+        "brand": "BK",
+        "diameter": 30,
+        "material": "3-ply RVS met aluminium kern",
+        "features": [
+            "Ongecoat RVS bakoppervlak",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 220 °C",
+            "Vaatwasserbestendig",
+            "15 jaar garantie",
+        ],
+        "rating": 4.8,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 109.90,
+        "price_last_checked": "2026-08-31",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "",
+        "retailer_url": "https://bk.nl/products/maestro-3-ply-koekenpan-30-cm",
+        "official_url": "https://bk.nl/products/maestro-3-ply-koekenpan-30-cm",
+        "availability_label": "Op voorraad",
+        "award": "Beste keuze",
+        "price_range": "€€€",
+        "image": "bk-maestro-rvs-30.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Volledig ongecoat RVS bakoppervlak",
+            "Goede warmteverdeling door de 3-ply constructie",
+            "Geschikt voor hoge baktemperaturen",
+            "Sterke prijs-kwaliteitverhouding",
+        ],
+        "cons": [
+            "Duurder dan eenvoudige RVS-pannen met alleen een sandwichbodem",
+        ],
+        "verdict": (
+            "Een zeer complete 30 cm RVS-koekenpan met een hoogwaardige 3-ply constructie. "
+            "De combinatie van gelijkmatige warmteverdeling, een volledig ongecoat bakoppervlak "
+            "en een redelijk prijsniveau maakt dit onze beste allround keuze."
+        ),
+    },
+    
+    "le_creuset_3ply_classic_30": {
+        "slug": "le-creuset-3-ply-rvs-classic-koekenpan-30-cm",
+        "name": "Le Creuset 3-Ply RVS Classic Koekenpan 30 cm",
+        "description": (
+            "De Le Creuset 3-Ply RVS Classic is een ruime ongecoate koekenpan met een "
+            "drielaagse constructie van roestvrij staal en aluminium. De aluminium kern helpt "
+            "de warmte snel en gelijkmatig over de pan te verdelen. Dankzij de extra hulpgreep "
+            "is de relatief grote pan gemakkelijker op te tillen en te verplaatsen."
+        ),
+        "brand": "Le Creuset",
+        "diameter": 30,
+        "material": "3-ply RVS met aluminium kern",
+        "features": [
+            "Ongecoat RVS bakoppervlak",
+            "Extra hulpgreep",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.7,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 139.00,
+        "price_last_checked": "2026-08-31",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fle-creuset-rvs-koekenpan-met-extra-handvat-o-30cm%2F9300000236215323%2F&name=Le%20Creuset%20Koekenpan%203-Ply%20RVS%20Classic%2030%20Cm%20Met%20Extra%20Greep",
+        "retailer_url": "https://www.bol.com/nl/nl/p/le-creuset-rvs-koekenpan-met-extra-handvat-o-30cm/9300000257372559/",
+        "official_url": "",
+        "availability_label": "Op voorraad",
+        "award": None,
+        "price_range": "€€€",
+        "image": "le-creuset-3ply-classic-30cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Volledig ongecoat RVS bakoppervlak",
+            "Gelijkmatige warmteverdeling",
+            "Extra hulpgreep is praktisch bij dit formaat",
+        ],
+        "cons": [
+            "Relatief zwaar",
+            "Hoger geprijsd dan verschillende vergelijkbare 3-ply alternatieven",
+        ],
+        "verdict": (
+            "Een degelijk uitgevoerde 3-ply koekenpan die vooral aantrekkelijk is voor wie "
+            "een ruime en duurzame RVS-pan zoekt. De extra hulpgreep is bij een pan van "
+            "30 cm een duidelijk praktisch voordeel."
+        ),
+    },
+
+    "cristel_1826_30": {
+        "slug": "cristel-1826-rvs-koekenpan-30-cm",
+        "name": "Cristel 1826 RVS Koekenpan 30 cm",
+        "description": (
+            "De Cristel 1826 is een RVS-koekenpan met een "
+            "geborstelde afwerking en een aluminium warmtegeleidende kern. Het ongecoate "
+            "RVS bakoppervlak is geschikt voor krachtig aanbraden en de pan kan op alle "
+            "warmtebronnen worden gebruikt, inclusief inductie."
+        ),
+        "brand": "Cristel",
+        "diameter": 30,
+        "material": "RVS met aluminium warmtegeleidende kern",
+        "features": [
+            "Ongecoat 18/10 RVS",
+            "Geschikt voor inductie",
+            "Geschikt voor de oven",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.7,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 134.90,
+        "price_last_checked": "2026-08-31",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "",
+        "retailer_url": "https://www.kookwinkel.nl/cristel-1826-koekenpan-30-cm-geborsteld-rvs-54431-0001060212",
+        "official_url": "https://www.cristel.com/en/1826-collection",
+        "availability_label": "Op voorraad",
+        "award": None,
+        "price_range": "€€€",
+        "image": "cristel-1826-30cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Ongecoat 18/10 RVS bakoppervlak",
+            "Goede warmteverdeling",
+            "Degelijke afwerking",
+            "Geschikt voor alle warmtebronnen",
+        ],
+        "cons": [
+            "Hoger prijsniveau",
+        ],
+        "verdict": (
+            "Een hoogwaardige RVS-koekenpan met een degelijke constructie en nette afwerking. "
+            "Vooral interessant voor wie kwaliteit en duurzaamheid belangrijker vindt dan "
+            "een zo laag mogelijke aanschafprijs."
+        ),
+    },
+
+    "beka_chef_30": {
+        "slug": "beka-chef-rvs-koekenpan-30-cm",
+        "name": "Beka Chef RVS Koekenpan 30 cm",
+        "description": (
+            "De Beka Chef is een klassieke ongecoate koekenpan van 18/10 roestvrij staal. "
+            "In tegenstelling tot volledig meerlaagse pannen maakt Beka gebruik van een "
+            "ingekapselde drielaagse sandwichbodem. Deze bodem helpt de warmte gelijkmatig "
+            "te verdelen, terwijl de RVS binnenzijde geschikt is voor krachtig aanbraden."
+        ),
+        "brand": "Beka",
+        "diameter": 30,
+        "material": "18/10 RVS met 3-laagse sandwichbodem",
+        "features": [
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 200 °C",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.4,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 90.60,
+        "price_last_checked": "2026-08-31",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbeka-chef-braadpan-rvs-o-30cm%2F9200000063890744%2F&name=Beka%20Chef%20Braadpan%20-%20Rvs%20-%20%C3%98%2030cm",
+        "retailer_url": "https://www.beka-cookware.com/products/chef-braadpan",
+        "official_url": "https://www.beka-cookware.com/products/chef-braadpan",
+        "availability_label": "Op voorraad",
+        "award": None,
+        "price_range": "€€",
+        "image": "beka-chef-30cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Ongecoat 18/10 RVS",
+            "Stevige en bewezen constructie",
+            "Goede warmteverdeling via de sandwichbodem",
+            "Relatief gunstige prijs",
+        ],
+        "cons": [
+            "Niet volledig 3-ply tot aan de rand",
+            "Minder snelle warmteverdeling langs de zijwanden dan volledig meerlaagse pannen",
+        ],
+        "verdict": (
+            "Een degelijke klassieke RVS-koekenpan met een uitstekende garantieperiode. "
+            "De constructie is eenvoudiger dan bij volledig 3-ply pannen, maar daar staat "
+            "een gunstiger prijsniveau tegenover."
+        ),
+    },
+    "mauviel_mcook_30": {
+        "slug": "mauviel-mcook-rvs-koekenpan-30-cm",
+        "name": "Mauviel M'Cook RVS Koekenpan 30 cm",
+        "description": (
+            "De Mauviel M'Cook is een premium RVS-koekenpan met een vijflaagse constructie "
+            "van roestvrij staal en aluminium. Drie aluminium binnenlagen zorgen voor een "
+            "snelle en gelijkmatige warmtegeleiding, terwijl het voedsel uitsluitend met "
+            "roestvrij staal in contact komt."
+        ),
+        "brand": "Mauviel",
+        "diameter": 30,
+        "material": "5-ply RVS en aluminium",
+        "features": [
+            "Ongecoat RVS bakoppervlak",
+            "Drie aluminium binnenlagen",
+            "Geschikt voor inductie",
+            "Geschikt voor de oven",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.8,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 280.00,
+        "price_last_checked": "2026-08-31",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "",
+        "retailer_url": "https://www.kookwinkel.nl/mauviel-m-cook-koekenpan-o-30-cm-rvs-glans",
+        "official_url": "",
+        "availability_label": "Op voorraad",
+        "award": "Premium keuze",
+        "price_range": "€€€€",
+        "image": "mauviel-mcook-30cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Hoogwaardige 5-ply constructie",
+            "Zeer goede warmteverdeling",
+            "Volledig ongecoat RVS bakoppervlak",
+            "Aluminium volledig omsloten door RVS",
+            "Hoogwaardige afwerking",
+        ],
+        "cons": [
+            "Zeer hoge aanschafprijs",
+            "De meerprijs is voor de meeste thuiskoks moeilijk te rechtvaardigen",
+        ],
+        "verdict": (
+            "Technisch een van de beste pannen in deze selectie. De vijflaagse constructie "
+            "zorgt voor uitstekende warmteverdeling en controle, maar de zeer hoge prijs "
+            "maakt hem vooral interessant voor wie bewust voor een premium pan kiest."
+        ),
+    },
+
+    "oz_home_bavary_30": {
+        "slug": "oz-home-bavary-rvs-koekenpan-30-cm",
+        "name": "OZ Home Bavary RVS Koekenpan 30 cm",
+        "description": (
+            "De OZ Home Bavary is een betaalbare ongecoate koekenpan van 18/10 roestvrij "
+            "staal. De pan bevat geen synthetische antiaanbaklaag en is geschikt voor alle "
+            "gangbare warmtebronnen, waaronder inductie. Met een bodemdiameter van ongeveer "
+            "22 cm biedt hij een relatief groot bakoppervlak voor een lage aanschafprijs."
+        ),
+        "brand": "OZ Home",
+        "diameter": 30,
+        "material": "18/10 RVS",
+        "features": [
+            "Ongecoat 18/10 RVS",
+            "Geen PFAS- of PTFE-coating",
+            "Geschikt voor inductie",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Vaatwasserbestendig",
+            "Bodemdiameter circa 22 cm",
+        ],
+        "rating": 4.1,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 37.95,
+        "price_last_checked": "2026-08-31",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Foz-home-bavary-rvs-koekenpan-30-cm-inductie-18-10-inox-zonder-coating-pfas-vrij-alle-warmtebronnen%2F9300000287761673%2F&name=OZ%20Home%20Bavary%20RVS%20Koekenpan%2030%20cm%20-%20Inductie%20-%2018%2F10%20inox%20-%20Zonder%20Coating%20-...",
+        "retailer_url": "https://www.bol.com/nl/nl/p/oz-home-bavary-rvs-koekenpan-30-cm-inductie-18-10-inox-zonder-coating-pfas-vrij-alle-warmtebronnen/9300000287761673/",
+        "official_url": "https://www.ozhome.nl/",
+        "availability_label": "Op voorraad",
+        "award": "Budget keuze",
+        "price_range": "€",
+        "image": "oz-home-bavary-30cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Zeer betaalbaar",
+            "Ongecoat 18/10 RVS bakoppervlak",
+            "Geschikt voor inductie",
+            "Breed assortiment aan formaten",
+        ],
+        "cons": [
+            "Minder bewezen merk dan de andere pannen in deze selectie",
+            "Constructie en warmteverdeling zijn eenvoudiger dan bij 3-ply en 5-ply pannen",
+            "Beperkte onafhankelijke gebruikservaringen beschikbaar",
+        ],
+        "verdict": (
+            "Een interessante budgetkeuze voor wie vooral een eenvoudige ongecoate "
+            "RVS-koekenpan zoekt. Voor maximale warmteverdeling en langdurig intensief "
+            "gebruik zijn de meerlaagse modellen hoger in deze selectie aantrekkelijker."
+        ),
+    },
 }

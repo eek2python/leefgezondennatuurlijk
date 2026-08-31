@@ -23,4 +23,12 @@ RANKINGS = {
         "debuyer_affinity_28",
         "bk_bright_28",
     ],
+    30: [
+        "bk_maestro_rvs_30",
+        "le_creuset_3ply_classic_30",
+        "cristel_1826_30",
+        "beka_chef_30",
+        "mauviel_mcook_30",
+        "oz_home_bavary_30",
+    ],
 }

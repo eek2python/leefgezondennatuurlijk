@@ -1316,33 +1316,5 @@
     "category": "rvs-koekenpannen",
     "product_key": "le_creuset_3ply_classic_30cm",
     "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/cristel-1826-30cm.jpg",
-    "slug": "cristel-1826-30cm",
-    "category": "rvs-koekenpannen",
-    "product_key": "cristel_1826_30cm",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/beka-chef-30.jpg",
-    "slug": "beka-chef-30cm",
-    "category": "rvs-koekenpannen",
-    "product_key": "beka_chef_30cm",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/mauviel-mcook-30cm.jpg",
-    "slug": "mauviel-mcook-30cm",
-    "category": "rvs-koekenpannen",
-    "product_key": "mauviel_mcook_30cm",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/oz-home-bavary-30cm.jpg",
-    "slug": "oz-home-bavary-30cm",
-    "category": "rvs-koekenpannen",
-    "product_key": "oz_home_bavary_30cm",
-    "enabled": true
   }
 ]

@@ -227,6 +227,26 @@ CONTENT = {
                 "premiumaanbeveling."
             ),
         },
+
+        30: {
+            "title": (
+                "Conclusie – welke RVS-koekenpan van 30 cm past het best?"
+            ),
+            "text": (
+                "Een RVS-koekenpan van <strong>30 cm</strong> biedt extra "
+                "bakruimte en is vooral geschikt voor grotere porties en "
+                "gezinnen. De <strong>BK Maestro RVS</strong> is onze beste "
+                "allround keuze dankzij de volledige 3-plyconstructie, het "
+                "ongecoate RVS-bakoppervlak en de goede verhouding tussen "
+                "constructie en prijs. De <strong>OZ Home Bavary</strong> is "
+                "de budgetkeuze voor wie vooral een betaalbare ongecoate "
+                "RVS-pan zoekt. De <strong>Mauviel M'Cook</strong> is onze "
+                "premiumaanbeveling met een hoogwaardige vijflaagse "
+                "constructie. De <strong>Le Creuset 3-Ply Classic</strong> "
+                "is een praktisch alternatief dankzij de volledige "
+                "drielaagse constructie en extra hulpgreep."
+            ),
+        },
     },
 
     "faq": {
@@ -349,7 +369,9 @@ CONTENT = {
                     "Een pan van 20 cm is geschikt voor kleine porties. "
                     "Het formaat 24 cm is bruikbaar voor kleine tot "
                     "middelgrote bereidingen. Een pan van 28 cm biedt meer "
-                    "ruimte voor gezinnen en grotere maaltijden. Stem de "
+                    "ruimte voor gezinnen en grotere maaltijden. Een pan van "
+                    "30 cm geeft nog wat extra bakoppervlak en is vooral "
+                    "praktisch voor grotere porties. Stem de diameter van de "
                     "panbodem altijd af op de kookzone."
                 ),
             },
