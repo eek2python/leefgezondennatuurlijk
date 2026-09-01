@@ -211,6 +211,27 @@ CONTENT = {
             ),
         },
 
+        26: {
+            "title": (
+                "Conclusie – welke RVS-koekenpan van 26 cm past het best?"
+            ),
+            "text": (
+                "Een RVS-koekenpan van <strong>26 cm</strong> biedt iets meer "
+                "bakruimte dan een model van 24 cm, zonder direct het formaat en "
+                "gewicht van een grote 28 cm-pan te hebben. De "
+                "<strong>Fissler M5 Pro-Ply</strong> is onze beste allround keuze "
+                "door de volledige vijflaagse constructie, gelijkmatige "
+                "warmteverdeling en hoogwaardige afwerking. De "
+                "<strong>Scanpan Impact</strong> is de budgetkeuze voor wie een "
+                "betaalbare ongecoate RVS-pan zoekt. De "
+                "<strong>Habonne Queen</strong> biedt met zijn volledige "
+                "tri-plyconstructie een sterke verhouding tussen prijs en "
+                "materiaalopbouw. De <strong>Cristel Castel'Pro</strong> is een "
+                "hoogwaardig vijflaags alternatief met een hoge "
+                "ovenbestendigheid."
+            ),
+        },
+
         28: {
             "title": (
                 "Conclusie – welke RVS-koekenpan van 28 cm past het best?"
@@ -390,14 +411,25 @@ CONTENT = {
                 "a": (
                     "Een pan van 20 cm is geschikt voor kleine porties en "
                     "bereidingen voor één persoon. Het formaat 24 cm is bruikbaar "
-                    "voor kleine tot middelgrote dagelijkse bereidingen. Een pan "
-                    "van 28 cm biedt meer ruimte voor gezinnen en grotere maaltijden. "
-                    "Met 30 cm krijg je extra bakoppervlak voor grotere porties. "
-                    "Een pan van 32 cm is vooral geschikt wanneer veel bakruimte "
-                    "nodig is, bijvoorbeeld voor meerdere stukken vlees of een "
-                    "grote hoeveelheid groenten. Houd er bij de grotere formaten "
-                    "rekening mee dat ook de diameter van de panbodem moet passen "
-                    "bij de gebruikte kookzone."
+                    "voor kleine tot middelgrote dagelijkse bereidingen. Een pan van "
+                    "26 cm vormt een tussenmaat met iets meer bakruimte, zonder direct "
+                    "zo groot te zijn als een model van 28 cm. Een pan van 28 cm is "
+                    "geschikt voor grotere porties en gezinnen. Met 30 cm krijg je "
+                    "nog meer bakoppervlak, terwijl een pan van 32 cm vooral geschikt "
+                    "is wanneer veel ruimte nodig is, bijvoorbeeld voor meerdere "
+                    "stukken vlees of een grote hoeveelheid groenten. Houd er bij "
+                    "grotere formaten rekening mee dat ook de diameter van de panbodem "
+                    "moet passen bij de gebruikte kookzone."
+                ),
+            },
+            {
+                "q": "Waarom kiezen voor een RVS-koekenpan van 26 cm?",
+                "a": (
+                    "Een koekenpan van 26 cm zit tussen de gangbare formaten 24 en "
+                    "28 cm in. Dit formaat biedt wat extra bakruimte ten opzichte van "
+                    "24 cm, maar is doorgaans compacter en lichter dan een pan van "
+                    "28 cm. Daardoor kan 26 cm een praktische middenmaat zijn voor "
+                    "dagelijkse bereidingen voor één tot twee personen."
                 ),
             },
             {

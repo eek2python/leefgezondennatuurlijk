@@ -40,4 +40,12 @@ RANKINGS = {
         "demeyere_silverline_7_nanotouch_32",
         "debuyer_prim_appety_32",
     ],
+
+    26: [
+        "fissler_m5_pro_ply_26",
+        "cristel_castel_pro_26",
+        "le_creuset_signature_rvs_26",
+        "habonne_queen_26",
+        "scanpan_impact_26",
+    ],
 }

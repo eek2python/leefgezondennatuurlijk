@@ -1414,26 +1414,5 @@
     "category": "rvs-koekenpannen",
     "product_key": "cristel-castel-pro-26cm",
     "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/le-creuset-signature-rvs-26cm.jpg",
-    "slug": "le-creuset-signature-rvs-26cm",
-    "category": "rvs-koekenpannen",
-    "product_key": "le-creuset-signature-rvs_26cm",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/habonne-queen-26cm.jpg",
-    "slug": "habonne-queen-26cm",
-    "category": "rvs-koekenpannen",
-    "product_key": "habonne-queen-26cm",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/scanpan-impact-26cm.jpg",
-    "slug": "scanpan-impact-26cm",
-    "category": "rvs-koekenpannen",
-    "product_key": "scanpan-impact-26cm",
-    "enabled": true
   }
 ]

@@ -1556,4 +1556,274 @@ PRODUCTS = {
             "pannen in deze selectie, maar het prijsverschil is aanzienlijk."
         ),
     },
+
+    # 26 cm RVS koekenpannen
+    
+    "fissler_m5_pro_ply_26": {
+        "slug": "fissler-m5-pro-ply-rvs-koekenpan-26-cm",
+        "name": "Fissler M5 Pro-Ply Koekenpan 26 cm",
+        "description": (
+            "De Fissler M5 Pro-Ply is een hoogwaardige ongecoate RVS-koekenpan "
+            "met een vijflaagse constructie van roestvrij staal en aluminium. "
+            "De meerlaagse opbouw loopt door de volledige pan en zorgt voor een "
+            "gelijkmatige warmteverdeling over bodem en zijwanden. De pan heeft "
+            "een naadloze binnenzijde zonder klinknagels en een gesloten rand "
+            "die de meerlaagse constructie beschermt."
+        ),
+        "brand": "Fissler",
+        "diameter": 26,
+        "material": "5-ply RVS en aluminium",
+        "features": [
+            "Naadloze binnenzijde zonder klinknagels",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 230 °C",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.8,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 169.00,
+        "price_last_checked": "2026-09-01",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "",
+        "retailer_url": "https://www.kookexpert.nl/koekenpan-fissler-m5-pro-ply-26-cm.html",
+        "official_url": "https://fissler.com/en/products/m5-pro-ply-frying-pan",
+        "availability_label": "Op voorraad",
+        "award": "🏆 Beste keuze",
+        "price_range": "€€€",
+        "image": "fissler-m5-pro-ply-26cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Volledige vijflaagse constructie",
+            "Gelijkmatige warmteverdeling via bodem en zijwanden",
+            "Geen klinknagels aan de binnenzijde",
+            "Geschikt voor alle gangbare warmtebronnen",
+        ],
+        "cons": [
+            "Relatief hoge aanschafprijs",
+            "Ovenbestendigheid is lager dan bij enkele alternatieven",
+        ],
+        "verdict": (
+            "Een technisch zeer complete RVS-koekenpan met een hoogwaardige "
+            "vijflaagse constructie en een praktisch klinknagelvrij ontwerp. "
+            "De combinatie van warmteverdeling, afwerking en duurzaamheid maakt "
+            "de M5 Pro-Ply onze beste allround keuze van 26 cm."
+        ),
+    },
+
+    "cristel_castel_pro_26": {
+        "slug": "cristel-castel-pro-rvs-koekenpan-26-cm",
+        "name": "Cristel Castel'Pro Koekenpan 26 cm",
+        "description": (
+            "De Cristel Castel'Pro is een ongecoate RVS-koekenpan met "
+            "een volledige vijflaagse constructie. De warmtegeleidende lagen "
+            "lopen door de bodem en zijwanden, waardoor de warmte gelijkmatig "
+            "over de pan wordt verdeeld. De 26 cm-uitvoering heeft een "
+            "bodemdiameter van 20 cm en is geschikt voor alle warmtebronnen."
+        ),
+        "brand": "Cristel",
+        "diameter": 26,
+        "material": "5-ply RVS en aluminium",
+        "features": [
+            "Bodemdiameter 20 cm",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 300 °C",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.7,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 144.00,
+        "price_last_checked": "2026-09-01",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "",
+        "retailer_url": "",
+        "official_url": (
+            "https://www.cristel.com/en/products/"
+            "professional-fryingpan-castel-pro-by-cristel-fixed-handle"
+        ),
+        "availability_label": "Op voorraad",
+        "award": None,
+        "price_range": "€€€",
+        "image": "cristel-castel-pro-26cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Volledige vijflaagse constructie",
+            "Goede warmteverdeling over bodem en zijwanden",
+            "Ovenbestendig tot 300 °C",
+            "Ruime bodemdiameter van 20 cm",
+        ],
+        "cons": [
+            "Relatief hoge aanschafprijs",
+            "Relatief zwaar",
+        ],
+        "verdict": (
+            "Een hoogwaardige vijflaagse RVS-koekenpan met een sterke "
+            "materiaalopbouw en hoge ovenbestendigheid. De Castel'Pro vormt "
+            "een uitstekend alternatief voor de Fissler voor wie een Franse "
+            "premium pan zoekt."
+        ),
+    },
+
+    "le_creuset_signature_rvs_26": {
+        "slug": "le-creuset-signature-rvs-koekenpan-26-cm",
+        "name": "Le Creuset Signature RVS Koekenpan 26 cm",
+        "description": (
+            "De Le Creuset Signature is een ongecoate RVS-koekenpan met een "
+            "meerlaagse constructie waarin aluminium voor een snelle en "
+            "gelijkmatige warmteverdeling zorgt. De pan is geschikt voor "
+            "krachtig aanbraden en bruinen en kan op alle gangbare "
+            "warmtebronnen worden gebruikt, inclusief inductie."
+        ),
+        "brand": "Le Creuset",
+        "diameter": 26,
+        "material": "3-ply RVS met aluminium kern",
+        "features": [
+            "Bodemdiameter circa 19 cm",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Geschikt voor de oven",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.6,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 149.00,
+        "price_last_checked": "2026-09-01",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "",
+        "retailer_url": "",
+        "official_url": "https://www.lecreuset.nl/nl_NL/p/koekenpan-in-rvs-signature/ES54202.html?dwvar_ES54202_color=noColour&dwvar_ES54202_size=26cm",
+        "availability_label": "Op voorraad",
+        "award": None,
+        "price_range": "€€€",
+        "image": "le-creuset-signature-rvs-26cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Volledige drielaagse constructie",
+            "Goede warmteverdeling",
+        ],
+        "cons": [
+            "Relatief hoog geprijsd voor een 3-ply pan",
+        ],
+        "verdict": (
+            "Een degelijk uitgevoerde 3-ply koekenpan van een bekend merk. "
+            "De Signature biedt goede warmteverdeling en brede inzetbaarheid, "
+            "maar de vijflaagse Fissler en Cristel bieden voor een vergelijkbaar "
+            "prijsniveau een technisch uitgebreidere constructie."
+        ),
+    },
+
+    "habonne_queen_26": {
+        "slug": "habonne-queen-rvs-koekenpan-26-cm",
+        "name": "Habonne Queen Koekenpan 26 cm",
+        "description": (
+            "De Habonne Queen is een ongecoate RVS-koekenpan met een volledige "
+            "tri-plyconstructie. De meerlaagse opbouw zorgt ervoor dat de warmte "
+            "niet alleen via de bodem, maar ook via de zijwanden wordt verdeeld. "
+            "De pan is geschikt voor alle warmtebronnen, inclusief inductie, en "
+            "combineert deze constructie met een relatief laag prijsniveau."
+        ),
+        "brand": "Habonne",
+        "diameter": 26,
+        "material": "Tri-ply RVS met aluminium kern",
+        "features": [
+            "18/10 RVS",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Geschikt voor de oven",
+            "Vaatwasserbestendig",
+            "Schenkrand",
+        ],
+        "rating": 4.5,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 59.99,
+        "price_last_checked": "2026-09-01",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "habonne-queen-koekenpan-26-cm-rvs/9200000082859817/"
+        ),
+        "official_url": "https://habonne.nl/series/queen/",
+        "availability_label": "Op voorraad",
+        "award": "Beste prijs-kwaliteit",
+        "price_range": "€€",
+        "image": "habonne-queen-26cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Volledige tri-plyconstructie",
+            "Warmteverdeling tot aan de zijwanden",
+            "Geschikt voor inductie en oven",
+            "Scherpe prijs voor een volledig meerlaagse pan",
+        ],
+        "cons": [
+            "Minder uitgebreid gedocumenteerde productspecificaties",
+        ],
+        "verdict": (
+            "De Queen biedt voor een relatief lage prijs een volledige "
+            "tri-plyconstructie en een ongecoat RVS-bakoppervlak. Daardoor is "
+            "dit binnen de 26 cm-selectie onze sterkste prijs-kwaliteitkeuze."
+        ),
+    },
+
+    "scanpan_impact_26": {
+        "slug": "scanpan-impact-rvs-koekenpan-26-cm",
+        "name": "Scanpan Impact Koekenpan 26 cm",
+        "description": (
+            "De Scanpan Impact is een ongecoate RVS-koekenpan met een 6,4 mm "
+            "dikke sandwichbodem met aluminium kern. De warmtegeleidende laag "
+            "bevindt zich vooral in de bodem en loopt dus niet volledig door "
+            "de zijwanden zoals bij tri-ply of 5-ply pannen. Daar staat een "
+            "duidelijk lager prijsniveau tegenover."
+        ),
+        "brand": "Scanpan",
+        "diameter": 26,
+        "material": "RVS met 6,4 mm sandwichbodem en aluminium kern",
+        "features": [
+            "Bodemdiameter 20,4 cm",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 250 °C",
+            "Vaatwasserbestendig",
+            "Gegoten RVS handgreep",
+        ],
+        "rating": 4.3,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 51.90,
+        "price_last_checked": "2026-09-01",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "",
+        "retailer_url": "",
+        "official_url": (
+            "https://www.scanpan.eu/nl-nl/shop/"
+            "20-cm-koekenpan-impact/26cm"
+        ),
+        "availability_label": "Op voorraad",
+        "award": "💰 Budget keuze",
+        "price_range": "€",
+        "image": "scanpan-impact-26cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Betaalbare ongecoate RVS-koekenpan",
+            "Dikke sandwichbodem met aluminium kern",
+            "Ruime bodemdiameter van 20,4 cm",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 250 °C",
+        ],
+        "cons": [
+            "Meerlaagse constructie beperkt zich tot de bodem",
+            "Minder gelijkmatige warmteverdeling via de zijwanden dan bij full-clad pannen",
+        ],
+        "verdict": (
+            "Een degelijke budgetkeuze voor wie vooral een betaalbare ongecoate "
+            "RVS-koekenpan zoekt. De constructie is eenvoudiger dan bij de "
+            "tri-ply en 5-ply alternatieven, maar de dikke sandwichbodem en "
+            "brede inzetbaarheid maken de Impact aantrekkelijk in zijn prijsklasse."
+        ),
+    },
 }
