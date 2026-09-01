@@ -945,7 +945,7 @@ PRODUCTS = {
         "retailer_url": "https://bk.nl/products/maestro-3-ply-koekenpan-30-cm",
         "official_url": "https://bk.nl/products/maestro-3-ply-koekenpan-30-cm",
         "availability_label": "Op voorraad",
-        "award": "Beste keuze",
+        "award": "🏆 Beste keuze",
         "price_range": "€€€",
         "image": "bk-maestro-rvs-30.webp",
         "image_path": "images/products/rvs-koekenpannen",
@@ -1141,7 +1141,7 @@ PRODUCTS = {
         "retailer_url": "https://www.kookwinkel.nl/mauviel-m-cook-koekenpan-o-30-cm-rvs-glans",
         "official_url": "",
         "availability_label": "Op voorraad",
-        "award": "Premium keuze",
+        "award": "💎 Premium keuze",
         "price_range": "€€€€",
         "image": "mauviel-mcook-30cm.webp",
         "image_path": "images/products/rvs-koekenpannen",
@@ -1194,7 +1194,7 @@ PRODUCTS = {
         "retailer_url": "https://www.bol.com/nl/nl/p/oz-home-bavary-rvs-koekenpan-30-cm-inductie-18-10-inox-zonder-coating-pfas-vrij-alle-warmtebronnen/9300000287761673/",
         "official_url": "https://www.ozhome.nl/",
         "availability_label": "Op voorraad",
-        "award": "Budget keuze",
+        "award": "💰 Budget keuze",
         "price_range": "€",
         "image": "oz-home-bavary-30cm.webp",
         "image_path": "images/products/rvs-koekenpannen",
@@ -1213,6 +1213,347 @@ PRODUCTS = {
             "Een interessante budgetkeuze voor wie vooral een eenvoudige ongecoate "
             "RVS-koekenpan zoekt. Voor maximale warmteverdeling en langdurig intensief "
             "gebruik zijn de meerlaagse modellen hoger in deze selectie aantrekkelijker."
+        ),
+    },
+
+    # 32 cm RVS koekenpannen
+
+    "demeyere_industry_5_32": {
+        "slug": "demeyere-industry-5-rvs-koekenpan-32-cm",
+        "name": "Demeyere Industry 5 Koekenpan 32 cm",
+        "description": (
+            "De Demeyere Industry 5 is een hoogwaardige ongecoate RVS-koekenpan "
+            "met vijflaags materiaal dat tot aan de rand van de pan doorloopt. "
+            "De combinatie van roestvrij staal en warmtegeleidende lagen zorgt "
+            "voor een gelijkmatige warmteverdeling over de bodem en zijwanden. "
+            "De pan is geschikt voor alle warmtebronnen, inclusief inductie, "
+            "en kan ook op hoge temperatuur in de oven worden gebruikt."
+        ),
+        "brand": "Demeyere",
+        "diameter": 32,
+        "material": "5-ply RVS en aluminium",
+        "features": [
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 350 °C",
+            "Silvinox-oppervlaktebehandeling",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.8,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 195.00,
+        "price_last_checked": "2026-09-01",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "",
+        "retailer_url": "",
+        "official_url": (
+            "https://www.zwilling.com/nl/demeyere-industry-5-"
+            "koekenpan-32-cm-67632/1029701.html"
+        ),
+        "availability_label": "Op voorraad",
+        "award": "🏆 Beste keuze",
+        "price_range": "€€€",
+        "image": "demeyere-industry-5-32cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Volledig vijflaagse constructie",
+            "Gelijkmatige warmteverdeling tot aan de rand",
+            "Geschikt voor hoge baktemperaturen",
+            "Ovenbestendig tot 350 °C",
+        ],
+        "cons": [
+            "Relatief hoge aanschafprijs",
+            "Met ongeveer 2 kg geen lichte koekenpan",
+        ],
+        "verdict": (
+            "Een zeer complete RVS-koekenpan voor wie een grote pan zoekt zonder "
+            "antiaanbaklaag. De volledige vijflaagse constructie, hoge "
+            "temperatuurbestendigheid en degelijke afwerking maken de Industry 5 "
+            "onze beste allround keuze van 32 cm."
+        ),
+    },
+
+    "spring_brigade_premium_32": {
+        "slug": "spring-brigade-premium-rvs-koekenpan-32-cm",
+        "name": "Spring Brigade Premium Koekenpan 32 cm",
+        "description": (
+            "De Spring Brigade Premium is een ongecoate RVS-koekenpan met een "
+            "volledige vijflaagse constructie. Tussen de twee buitenlagen van "
+            "roestvrij staal bevinden zich drie lagen aluminium. Hierdoor wordt "
+            "de warmte niet alleen via de bodem, maar ook via de zijwanden "
+            "verspreid. De pan is geschikt voor alle warmtebronnen, inclusief "
+            "inductie, en kan ook in de oven worden gebruikt."
+        ),
+        "brand": "Spring",
+        "diameter": 32,
+        "material": "5-ply RVS en aluminium",
+        "features": [
+            "Drie aluminium tussenlagen",
+            "Geschikt voor inductie",
+            "Geschikt voor de oven",
+            "Vaatwasserbestendig",
+            "Holle RVS handgreep",
+        ],
+        "rating": 4.7,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 129.00,
+        "price_last_checked": "2026-09-01",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fspring-brigade-premium%2F9200000050305019%2F&name=Koekenpan%2032cm%20Spring%20Brigade%20Premium",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/spring-brigade-premium/"
+            "9200000050305019/"
+        ),
+        "official_url": "",
+        "availability_label": "Op voorraad",
+        "award": None,
+        "price_range": "€€€",
+        "image": "spring-brigade-premium-32cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Volledige vijflaagse constructie",
+            "Goede warmteverdeling tot aan de rand",
+            "Geschikt voor oven en inductie",
+            "Scherp geprijsd voor een volledig meerlaagse pan",
+        ],
+        "cons": [
+            "Specificaties bij verschillende verkooppunten zijn niet altijd consistent",
+        ],
+        "verdict": (
+            "De Brigade Premium biedt voor een relatief gunstige prijs een "
+            "volledige vijflaagse constructie die normaal vooral bij duurdere "
+            "RVS-pannen voorkomt. Daardoor is dit voor ons de sterkste "
+            "prijs-kwaliteitkeuze binnen het 32 cm-formaat."
+        ),
+    },
+
+    "debuyer_affinity_32": {
+        "slug": "debuyer-affinity-rvs-koekenpan-32-cm",
+        "name": "De Buyer Affinity Koekenpan 32 cm",
+        "description": (
+            "De Buyer Affinity is een Franse premium koekenpan met een volledig "
+            "vijflaagse constructie van RVS en aluminium. De drie "
+            "warmtegeleidende tussenlagen reageren relatief snel op "
+            "temperatuurveranderingen en verdelen de warmte over de volledige "
+            "pan. Het bakoppervlak bestaat uit ongecoat RVS en is geschikt voor "
+            "krachtig aanbraden, afblussen en het bereiden van sauzen."
+        ),
+        "brand": "De Buyer",
+        "diameter": 32,
+        "material": "5-ply RVS en aluminium",
+        "features": [
+            "Geschikt voor inductie",
+            "Geschikt voor de oven",
+            "Vaatwasserbestendig",
+            "Geklonken RVS handgreep",
+        ],
+        "rating": 4.7,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 188.00,
+        "price_last_checked": "2026-09-01",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdebuyer-affinity-koekenpan-o-32-cm%2F9200000015324048%2F&name=De%20Buyer%20Affinity%20Koekenpan%20-%2032%20cm%20-%20RVS%20en%20aluminium%20-%20Geschikt%20voor%20alle%20warmtebronnen",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/debuyer-affinity-koekenpan-o-32-cm/"
+            "9200000015324048/"
+        ),
+        "official_url": "https://www.debuyer.com/en/1-793.html",
+        "availability_label": "Op voorraad",
+        "award": None,
+        "price_range": "€€€",
+        "image": "debuyer-affinity-32cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Volledig vijflaagse constructie",
+            "Snelle reactie op temperatuurveranderingen",
+            "Relatief laag gewicht voor een 32 cm 5-ply pan",
+        ],
+        "cons": [
+            "Hoger prijsniveau",
+            "De bodemdiameter is met 23 cm relatief beperkt voor een pan van 32 cm",
+        ],
+        "verdict": (
+            "Een hoogwaardige en relatief responsieve vijflaagse RVS-pan. "
+            "De Affinity onderscheidt zich vooral door de combinatie van een "
+            "volledige multilayerconstructie en een relatief beperkt gewicht, "
+            "maar is duidelijk duurder dan de Spring Brigade Premium."
+        ),
+    },
+
+    "cristel_castel_pro_32": {
+        "slug": "cristel-castel-pro-rvs-koekenpan-32-cm",
+        "name": "Cristel Castel'Pro Multiply Koekenpan 32 cm",
+        "description": (
+            "De Cristel Castel'Pro Multiply is een ongecoate Franse "
+            "RVS-koekenpan met een volledige vijflaagse constructie. Drie lagen "
+            "aluminium liggen tussen een binnenlaag van 18/10 RVS en een "
+            "inductiegeschikte buitenlaag van RVS. De meerlaagse opbouw loopt "
+            "door de hele pan en zorgt daardoor voor warmteverdeling via zowel "
+            "de bodem als de wanden."
+        ),
+        "brand": "Cristel",
+        "diameter": 32,
+        "material": "5-ply RVS en aluminium",
+        "features": [
+            "Drie aluminium tussenlagen",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 300 °C",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.7,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 169.00,
+        "price_last_checked": "2026-09-01",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.kookwinkel.nl/cristel-castel-pro-multiply-"
+            "koekenpan-o-32-cm-rvs"
+        ),
+        "official_url": (
+            "https://www.cristel.com/en/products/"
+            "professional-fryingpan-castel-pro-by-cristel-fixed-handle"
+        ),
+        "availability_label": "Op voorraad",
+        "award": None,
+        "price_range": "€€€",
+        "image": "cristel-castel-pro-32cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Volledige vijflaagse constructie",
+            "Gelijkmatige warmteverdeling over bodem en wanden",
+            "Ovenbestendig tot 300 °C",
+        ],
+        "cons": [
+            "Met ongeveer 2,2 kg relatief zwaar",
+        ],
+        "verdict": (
+            "Een technisch hoogwaardige 5-ply koekenpan met een ruime "
+            "bodemdiameter en hoge ovenbestendigheid. De Castel'Pro is een sterk "
+            "alternatief voor Demeyere en De Buyer, vooral voor wie een volledig "
+            "meerlaagse Franse pan zoekt."
+        ),
+    },
+
+    "demeyere_silverline_7_nanotouch_32": {
+        "slug": "demeyere-silverline-7-nanotouch-koekenpan-32-cm",
+        "name": "Demeyere Silverline 7 NanoTouch Koekenpan 32 cm",
+        "description": (
+            "De Demeyere Silverline 7 NanoTouch is een premium RVS-koekenpan "
+            "met zevenlaags materiaal tot aan de rand. Het ongecoate "
+            "RVS-bakoppervlak heeft een microscopische NanoTouch-structuur die "
+            "het bakken en loslaten van ingrediënten moet vergemakkelijken "
+            "zonder gebruik van een traditionele antiaanbaklaag. TriplInduc "
+            "is gericht op een efficiënte warmteoverdracht op inductie."
+        ),
+        "brand": "Demeyere",
+        "diameter": 32,
+        "material": "7-ply RVS en aluminium",
+        "features": [
+            "TriplInduc-technologie",
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 350 °C",
+            "Silvinox-oppervlaktebehandeling",
+            "Vaatwasserbestendig",
+        ],
+        "rating": 4.9,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 269.00,
+        "price_last_checked": "2026-09-01",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "",
+        "retailer_url": "",
+        "official_url": (
+            "https://www.zwilling.com/nl/demeyere-silverline-7-"
+            "koekenpan-nanotouch-32-cm-60632/1032984.html"
+        ),
+        "availability_label": "Op voorraad",
+        "award": "💎 Premium keuze",
+        "price_range": "€€€€",
+        "image": "demeyere-silverline-7-nanotouch-32cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Zevenlaagse constructie tot aan de rand",
+            "NanoTouch-oppervlak zonder antiaanbaklaag",
+            "Zeer goede warmteverdeling",
+            "Geoptimaliseerd voor inductie",
+            "Ovenbestendig tot 350 °C",
+        ],
+        "cons": [
+            "Zeer hoge aanschafprijs",
+            "Met ruim 2 kg een zware koekenpan",
+        ],
+        "verdict": (
+            "De technisch meest uitgebreide pan in deze selectie. De combinatie "
+            "van zevenlaags materiaal, TriplInduc en het gestructureerde "
+            "NanoTouch-oppervlak maakt de Silverline 7 onze premiumkeuze, maar "
+            "de prijs ligt aanzienlijk hoger dan die van de meeste alternatieven."
+        ),
+    },
+
+    "debuyer_prim_appety_32": {
+        "slug": "debuyer-prim-appety-rvs-koekenpan-32-cm",
+        "name": "De Buyer Prim'Appety Koekenpan 32 cm",
+        "description": (
+            "De De Buyer Prim'Appety is een eenvoudigere ongecoate "
+            "RVS-koekenpan die gebruikmaakt van een warmtegeleidende "
+            "sandwichbodem. In tegenstelling tot de Affinity loopt de "
+            "meerlaagse constructie dus niet door de volledige zijwand. "
+            "Daar staat een aanzienlijk lager prijsniveau tegenover. De pan "
+            "is geschikt voor alle warmtebronnen, inclusief inductie, en kan "
+            "ook in de oven worden gebruikt."
+        ),
+        "brand": "De Buyer",
+        "diameter": 32,
+        "material": "RVS met magnetische sandwichbodem",
+        "features": [
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Geschikt voor de oven",
+            "Vaatwasserbestendig",
+            "Satijngepolijste afwerking",
+        ],
+        "rating": 4.3,
+        "rating_count": None,
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 54.99,
+        "price_last_checked": "2026-09-01",
+        "currency": "EUR",
+        "availability": True,
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fde-buyer-prim-appety-koekenpan-o-32cm-rvs%2F9200000096150990%2F&name=De%20Buyer%20Prim%27Appety%20Koekenpan%20-%20RVS%20-%20%C3%98%2032cm%20-%20Geschikt%20voor%20inductie",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/de-buyer-prim-appety-"
+            "koekenpan-o-32cm-rvs/9200000096150990/"
+        ),
+        "official_url": "https://www.debuyer.com/en/1-724.html",
+        "availability_label": "Op voorraad",
+        "award": "💰 Budget keuze",
+        "price_range": "€€",
+        "image": "debuyer-prim-appety-32cm.webp",
+        "image_path": "images/products/rvs-koekenpannen",
+        "pros": [
+            "Relatief betaalbaar",
+            "Degelijke professionele basisconstructie",
+            "Geschikt voor inductie en oven",
+            "Vaatwasserbestendig",
+        ],
+        "cons": [
+            "Meerlaagse constructie beperkt zich tot de bodem",
+            "Minder gelijkmatige warmteverdeling via de zijwanden dan bij full-clad pannen",
+        ],
+        "verdict": (
+            "Een interessante instapoptie voor wie een grote ongecoate RVS-pan "
+            "van een gerenommeerd merk zoekt zonder direct voor full-clad "
+            "5-ply te betalen. Technisch is hij eenvoudiger dan de andere "
+            "pannen in deze selectie, maar het prijsverschil is aanzienlijk."
         ),
     },
 }

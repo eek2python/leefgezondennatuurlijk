@@ -31,4 +31,13 @@ RANKINGS = {
         "mauviel_mcook_30",
         "oz_home_bavary_30",
     ],
+
+    32: [
+        "demeyere_industry_5_32",
+        "spring_brigade_premium_32",
+        "debuyer_affinity_32",
+        "cristel_castel_pro_32",
+        "demeyere_silverline_7_nanotouch_32",
+        "debuyer_prim_appety_32",
+    ],
 }

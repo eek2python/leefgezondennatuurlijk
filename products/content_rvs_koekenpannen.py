@@ -247,6 +247,28 @@ CONTENT = {
                 "drielaagse constructie en extra hulpgreep."
             ),
         },
+
+        32: {
+            "title": (
+                "Conclusie – welke RVS-koekenpan van 32 cm past het best?"
+            ),
+            "text": (
+                "Een RVS-koekenpan van <strong>32 cm</strong> biedt veel "
+                "bakruimte en is vooral geschikt voor grotere porties en "
+                "bereidingen waarbij ingrediënten voldoende ruimte nodig hebben "
+                "om goed te kunnen bruinen. De <strong>Demeyere Industry 5</strong> "
+                "is onze beste allround keuze dankzij de volledige vijflaagse "
+                "constructie, gelijkmatige warmteverdeling en brede inzetbaarheid. "
+                "De <strong>De Buyer Prim'Appety</strong> is de budgetkeuze voor "
+                "wie een grote ongecoate RVS-pan zoekt tegen een lager prijsniveau. "
+                "De <strong>Spring Brigade Premium</strong> biedt met zijn "
+                "volledige vijflaagse constructie een sterke verhouding tussen "
+                "prijs en materiaalopbouw. De "
+                "<strong>Demeyere Silverline 7 NanoTouch</strong> is onze "
+                "premiumaanbeveling met zevenlaags materiaal en een "
+                "gestructureerd RVS-bakoppervlak."
+            ),
+        },
     },
 
     "faq": {
@@ -366,13 +388,28 @@ CONTENT = {
             {
                 "q": "Welke maat RVS-koekenpan heb ik nodig?",
                 "a": (
-                    "Een pan van 20 cm is geschikt voor kleine porties. "
-                    "Het formaat 24 cm is bruikbaar voor kleine tot "
-                    "middelgrote bereidingen. Een pan van 28 cm biedt meer "
-                    "ruimte voor gezinnen en grotere maaltijden. Een pan van "
-                    "30 cm geeft nog wat extra bakoppervlak en is vooral "
-                    "praktisch voor grotere porties. Stem de diameter van de "
-                    "panbodem altijd af op de kookzone."
+                    "Een pan van 20 cm is geschikt voor kleine porties en "
+                    "bereidingen voor één persoon. Het formaat 24 cm is bruikbaar "
+                    "voor kleine tot middelgrote dagelijkse bereidingen. Een pan "
+                    "van 28 cm biedt meer ruimte voor gezinnen en grotere maaltijden. "
+                    "Met 30 cm krijg je extra bakoppervlak voor grotere porties. "
+                    "Een pan van 32 cm is vooral geschikt wanneer veel bakruimte "
+                    "nodig is, bijvoorbeeld voor meerdere stukken vlees of een "
+                    "grote hoeveelheid groenten. Houd er bij de grotere formaten "
+                    "rekening mee dat ook de diameter van de panbodem moet passen "
+                    "bij de gebruikte kookzone."
+                ),
+            },
+            {
+                "q": "Is een RVS-koekenpan van 32 cm geschikt voor iedere kookplaat?",
+                "a": (
+                    "Niet altijd. Een pan van 32 cm heeft doorgaans een kleinere "
+                    "bodemdiameter dan de bovenrand, maar vraagt nog steeds om een "
+                    "relatief grote kookzone. Op een te kleine kookzone kan vooral "
+                    "bij pannen met een eenvoudige bodemconstructie een groter "
+                    "temperatuurverschil tussen het midden en de buitenzijde ontstaan. "
+                    "Controleer daarom niet alleen de opgegeven diameter van de pan, "
+                    "maar indien beschikbaar ook de diameter van de bodem."
                 ),
             },
         ],

@@ -1393,12 +1393,5 @@
     "category": "rvs-koekenpannen",
     "product_key": "demeyere-silverline-7-nanotouch-32cm",
     "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/debuyer-prim-appety-32cm.jpg",
-    "slug": "debuyer-prim-appety-32cm",
-    "category": "rvs-koekenpannen",
-    "product_key": "debuyer-prim-appety-32cm",
-    "enabled": true
   }
 ]

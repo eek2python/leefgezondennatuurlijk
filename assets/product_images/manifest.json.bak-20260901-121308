@@ -1379,26 +1379,5 @@
     "category": "rvs-koekenpannen",
     "product_key": "debuyer-affinity-32cm",
     "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/cristel-castel-pro-32cm.jpg",
-    "slug": "cristel-castel-pro-32cm",
-    "category": "rvs-koekenpannen",
-    "product_key": "cristel-castel-pro-32cm",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/demeyere-silverline-7-nanotouch-32cm.jpg",
-    "slug": "demeyere-silverline-7-nanotouch-32cm",
-    "category": "rvs-koekenpannen",
-    "product_key": "demeyere-silverline-7-nanotouch-32cm",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/debuyer-prim-appety-32cm.jpg",
-    "slug": "debuyer-prim-appety-32cm",
-    "category": "rvs-koekenpannen",
-    "product_key": "debuyer-prim-appety-32cm",
-    "enabled": true
   }
 ]
