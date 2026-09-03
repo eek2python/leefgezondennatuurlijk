@@ -40,6 +40,16 @@ CATEGORY_PRODUCT_SOURCES: dict[str, dict] = {
         "url_path": "/rvs-koekenpannen/",
         "description": "RVS koekenpannen",
     },
+    "koolstofstalen-koekenpannen": {
+        "module": "products.products_koolstofstaal_koekenpannen",
+        "variable": "PRODUCTS",
+        "rule_key": "koolstofstalen_koekenpannen",
+        "rankings_module": "products.rankings_koolstofstaal_koekenpannen",
+        "rankings_variable": "RANKINGS",
+        "rankings_type": "dict_by_size",
+        "url_path": "/koolstofstalen-koekenpannen/",
+        "description": "Koolstofstalen koekenpannen",
+    },
     "hapjespannen": {
         "module": "products.products_hapjespannen",
         "variable": "PRODUCTS",

@@ -25,6 +25,13 @@
             <small>Bakken zonder coating</small>
         </a>
         {% endif %}
+        {% if current_category != 'koolstofstalen_koekenpannen' %}
+        <a href="{% url 'koolstofstalen_koekenpannen' %}" class="category-card">
+            <img src="{% static 'images/thumbnails/koolstofstalen-koekenpannen.webp' %}" alt="Koolstofstalen koekenpannen" loading="lazy" width="600" height="600">
+            <span>Koolstofstalen Koekenpannen</span>
+            <small>Zonder synthetische antiaanbaklaag</small>
+        </a>
+        {% endif %}
         {% if current_category != 'hapjespannen' %}
         <a href="{% url 'hapjespannen' %}" class="category-card">
             <img src="{% static 'images/thumbnails/hapjespan.webp' %}" alt="PFAS-vrije hapjespannen" loading="lazy" width="600" height="600">

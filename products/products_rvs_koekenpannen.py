@@ -1743,7 +1743,7 @@ PRODUCTS = {
         "price_last_checked": "2026-09-01",
         "currency": "EUR",
         "availability": True,
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Faccount%2Foverzicht%2F&name=bol",
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
             "habonne-queen-koekenpan-26-cm-rvs/9200000082859817/"

@@ -25,6 +25,7 @@ CATEGORY_SOURCES = {
     "hapjespannen": "products.products_hapjespannen",
     "wokpannen": "products.products_wokpannen",
     "rvs-koekenpannen": "products.products_rvs_koekenpannen",
+    "koolstofstalen-koekenpannen": "products.products_koolstofstaal_koekenpannen",
     "snijplanken": "products.products_snijplanken",
     "airfryers": "products.products_airfryers",
     "vershoudbakjes": "products.products_vershoudcontainers",
@@ -39,6 +40,7 @@ PRICING_CATEGORY_KEYS = {
     "hapjespannen": "hapjespannen",
     "wokpannen": "wokpannen",
     "rvs-koekenpannen": "rvs-koekenpannen",
+    "koolstofstalen-koekenpannen": "koolstofstalen-koekenpannen",
     "snijplanken": "snijplanken",
     "airfryers": "airfryers",
     "vershoudbakjes": "vershoudcontainers",
@@ -52,6 +54,7 @@ COMPARISON_TEMPLATES = [
     "templates/hapjespannen.html",
     "templates/wokpannen.html",
     "templates/rvs-koekenpannen.html",
+    "templates/koolstofstaal-koekenpannen.html",
     "templates/snijplanken.html",
     "templates/airfryers.html",
 ]

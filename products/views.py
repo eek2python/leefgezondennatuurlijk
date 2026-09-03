@@ -48,12 +48,26 @@ from .content_vershoudcontainers import CONTENT as VERSHOUDCONTAINERS_CONTENT
 from .products_rvs_koekenpannen import PRODUCTS as RVS_KOEKENPANNEN_PRODUCTS
 from .rankings_rvs_koekenpannen import RANKINGS as RVS_KOEKENPANNEN_RANKINGS
 from .content_rvs_koekenpannen import CONTENT as RVS_KOEKENPANNEN_CONTENT
+from .products_koolstofstaal_koekenpannen import (
+    PRODUCTS as KOOLSTOFSTALEN_KOEKENPANNEN_PRODUCTS,
+)
+from .rankings_koolstofstaal_koekenpannen import (
+    RANKINGS as KOOLSTOFSTALEN_KOEKENPANNEN_RANKINGS,
+)
+from .content_koolstofstaal_koekenpannen import (
+    CONTENT as KOOLSTOFSTALEN_KOEKENPANNEN_CONTENT,
+)
 from .slug_redirects import SLUG_REDIRECTS
 
 
 CATEGORY_MAP = {
     "koekenpannen": {"products": KOEKENPANNEN_PRODUCTS, "label": "Koekenpannen", "url_name": "koekenpannen"},
     "rvs-koekenpannen": {"products": RVS_KOEKENPANNEN_PRODUCTS, "label": "RVS Koekenpannen", "url_name": "rvs_koekenpannen"},
+    "koolstofstalen-koekenpannen": {
+        "products": KOOLSTOFSTALEN_KOEKENPANNEN_PRODUCTS,
+        "label": "Koolstofstalen koekenpannen",
+        "url_name": "koolstofstalen_koekenpannen",
+    },
     "hapjespannen": {"products": HAPJESPANNEN_PRODUCTS, "label": "Hapjespannen", "url_name": "hapjespannen"},
     "wokpannen": {"products": WOKPANNEN_PRODUCTS, "label": "Wokpannen", "url_name": "wokpannen"},
     "snijplanken": {"products": SNIJPLANKEN_PRODUCTS, "label": "Snijplanken", "url_name": "snijplanken"},
@@ -961,6 +975,63 @@ def rvs_koekenpannen(request):
         "faq_ld": faq_ld,
         "itemlist_ld": itemlist_ld,
         "meta": meta,
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+    })
+
+
+def koolstofstalen_koekenpannen(request):
+    available_sizes = sorted(KOOLSTOFSTALEN_KOEKENPANNEN_RANKINGS)
+    size = request.GET.get("size")
+    try:
+        size = int(size)
+    except (TypeError, ValueError):
+        size = 28 if 28 in available_sizes else available_sizes[0]
+    if size not in KOOLSTOFSTALEN_KOEKENPANNEN_RANKINGS:
+        size = 28 if 28 in available_sizes else available_sizes[0]
+
+    keys = KOOLSTOFSTALEN_KOEKENPANNEN_RANKINGS[size]
+    products = [
+        copy.deepcopy(KOOLSTOFSTALEN_KOEKENPANNEN_PRODUCTS[key])
+        for key in keys
+        if key in KOOLSTOFSTALEN_KOEKENPANNEN_PRODUCTS
+    ]
+    _enrich_products(products, category="koolstofstalen-koekenpannen")
+    product_count = len(products)
+    content = _format_content(
+        KOOLSTOFSTALEN_KOEKENPANNEN_CONTENT,
+        product_count=product_count,
+        selected_size=size,
+    )
+    conclusie = content["conclusies"].get(
+        size, content["conclusies"]["default"]
+    )
+    faq_ld = _build_faq_ld(content["faq"]["items"])
+    itemlist_ld = _build_itemlist_ld(
+        request,
+        f"Beste koolstofstalen koekenpannen van {size} cm",
+        content["meta"]["description"],
+        products,
+    )
+    breadcrumbs = [
+        {"label": "Koekenpannen", "url": "/koekenpannen/"},
+        {
+            "label": "Koolstofstaal",
+            "url": "/koolstofstalen-koekenpannen/",
+        },
+    ]
+    return render(request, "koolstofstaal-koekenpannen.html", {
+        "products": products,
+        "top_picks": _build_top_picks(products),
+        "in_het_kort": _build_in_het_kort(products, content),
+        "available_sizes": available_sizes,
+        "selected_size": size,
+        "product_count": product_count,
+        "content": content,
+        "conclusie": conclusie,
+        "faq_ld": faq_ld,
+        "itemlist_ld": itemlist_ld,
+        "meta": content["meta"],
         "breadcrumbs": breadcrumbs,
         "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
     })

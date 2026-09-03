@@ -1435,5 +1435,208 @@
     "category": "rvs-koekenpannen",
     "product_key": "scanpan-impact-26cm",
     "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/debuyer-mineral-b-20cm.jpg",
+    "slug": "debuyer-mineral-b-20cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "debuyer-mineral-b-20cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/debuyer-mineral-b-pro-20cm.jpg",
+    "slug": "debuyer-mineral-b-pro-20cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "debuyer-mineral-b-pro-20cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/skottsberg-carbon-steel-20cm.jpg",
+    "slug": "skottsberg-carbon-steel-20cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "skottsberg-carbon-steel-20cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/bk-black-steel-20cm.jpg",
+    "slug": "bk-black-steel-20cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "bk-black-steel-20cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/forged-essentials-20cm.jpg",
+    "slug": "forged-essentials-20cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "forged-essentials-20cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/blackwell-carbon-steel-20cm.jpg",
+    "slug": "blackwell-carbon-steel-20cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "blackwell-carbon-steel-20cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/debuyer-mineral-b-24cm.jpg",
+    "slug": "debuyer-mineral-b-24cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "debuyer-mineral-b-24cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/debuyer-mineral-b-pro-24cm.jpg",
+    "slug": "debuyer-mineral-b-pro-24cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "debuyer-mineral-b-pro-24cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/skottsberg-carbon-steel-24cm.jpg",
+    "slug": "skottsberg-carbon-steel-24cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "skottsberg-carbon-steel-24cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/forged-essentials-24cm.jpg",
+    "slug": "forged-essentials-24cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "forged-essentials-24cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/blackwell-carbon-steel-24cm.jpg",
+    "slug": "blackwell-carbon-steel-24cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "blackwell-carbon-steel-24cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/hendi-traditioneel-24cm.jpg",
+    "slug": "hendi-traditioneel-24cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "hendi-traditioneel-24cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/debuyer-mineral-b-28cm.jpg",
+    "slug": "debuyer-mineral-b-28cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "debuyer-mineral-b-28cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/skottsberg-carbon-steel-28cm.jpg",
+    "slug": "kottsberg-carbon-steel-28cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "kottsberg-carbon-steel-28cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/debuyer-mineral-b-pro-28cm.jpg",
+    "slug": "debuyer-mineral-b-pro-28cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "debuyer-mineral-b-pro-28cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/beka-nomad-28cm.jpg",
+    "slug": "beka-nomad-28cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "beka-nomad-28cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/forged-essentials-28cm.jpg",
+    "slug": "forged-essentials-28cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "forged-essentials-28cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/bk-black-steel-28cm.jpg",
+    "slug": "bk-black-steel-28cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "bk-black-steel-28cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/ikea-vardagen-koolstofstaal-28cm.jpg",
+    "slug": "ikea-vardagen-koolstofstaal-28cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "ikea-vardagen-koolstofstaal-28cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/debuyer-carbone-plus-30cm.jpg",
+    "slug": "debuyer-carbone-plus-30cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "debuyer-carbone-plus-30cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/netherton-foundry-induction-30cm.jpg",
+    "slug": "netherton-foundry-induction-30cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "netherton-foundry-induction-30cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/bk-black-steel-30cm.jpg",
+    "slug": "bk-black-steel-30cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "bk-black-steel-30cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/blackwell-carbon-steel-30cm.jpg",
+    "slug": "blackwell-carbon-steel-30cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "blackwell-carbon-steel-30cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/bk-solid-steel-30cm.jpg",
+    "slug": "bk-solid-steel-30cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "bk-solid-steel-30cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/hendi-traditioneel-30cm.jpg",
+    "slug": "hendi-traditioneel-30cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "hendi-traditioneel-30cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/debuyer-mineral-b-32cm.jpg",
+    "slug": "debuyer-mineral-b-32cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "debuyer-mineral-b-32cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/debuyer-mineral-b-pro-32cm.jpg",
+    "slug": "debuyer-mineral-b-pro-32cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "debuyer-mineral-b-pro-32cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/blackwell-carbon-steel-32cm.jpg",
+    "slug": "blackwell-carbon-steel-32cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "blackwell-carbon-steel-32cm",
+    "enabled": true
+  },
+  {
+    "source": "koolstofstalen-koekenpannen/hendi-traditioneel-32cm.jpg",
+    "slug": "hendi-traditioneel-32cm",
+    "category": "koolstofstalen-koekenpannen",
+    "product_key": "hendi-traditioneel-32cm",
+    "enabled": true
   }
 ]

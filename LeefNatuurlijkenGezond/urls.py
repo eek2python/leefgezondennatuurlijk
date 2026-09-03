@@ -42,6 +42,11 @@ urlpatterns = [
    path("airfryers/<slug:fmt>/", views.airfryers, name="airfryers_format"),
    path("vershoudcontainers/", views.vershoudcontainers, name="vershoudcontainers"),
    path("rvs-koekenpannen/", views.rvs_koekenpannen, name="rvs_koekenpannen"),
+   path(
+       "koolstofstalen-koekenpannen/",
+       views.koolstofstalen_koekenpannen,
+       name="koolstofstalen_koekenpannen",
+   ),
    path("over-ons/", views.over_ons, name="over_ons"),
    path("hoe-wij-beoordelen/", views.hoe_wij_beoordelen, name="hoe_wij_beoordelen"),
    path("privacy/", views.privacy, name="privacy"),
