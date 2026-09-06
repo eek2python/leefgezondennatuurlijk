@@ -722,7 +722,7 @@ PRODUCTS = {
         "rating_source": "editorial",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fle-creuset-hoge-ronde-skillet-mat-zwart-26cm%2F9200000110073508%2F&name=Le%20Creuset%20Signature%20Skillet%20Pan%20-%20Gietijzeren%20koekenpan%20-%2026%20cm%20-%20Mat%20Zwart",
         "retailer_url": "",
         "award": "💎 Premium keuze",
         "price_range": "€€€€",
