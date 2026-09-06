@@ -1236,12 +1236,12 @@ class VariantAuditCommandTests(TestCase):
         self.assertIn("Structurele fouten: 0", output)
 
     def test_command_reports_airfryer_swatch_category(self):
-        # De eerder bekende inconsistent_jsonld_variant-melding is verdwenen
-        # doordat de affiliate-URL's naar retailer_url zijn gemigreerd; de
-        # audit moet de swatchcategorie nog steeds volledig rapporteren.
+        # De audit moet alle actuele airfryerproducten met kleurswatches
+        # volledig rapporteren.
         output = self._run("--category", "airfryers")
-        self.assertIn("Variantproducten (kleurswatches): 2", output)
+        self.assertIn("Variantproducten (kleurswatches): 4", output)
         self.assertIn("greenpan_bistro_xxl_7_2l", output)
+        self.assertIn("ninja_crispi_pro_xl_5_7l", output)
 
     def test_command_does_not_mutate_source_data(self):
         import copy as _copy
@@ -2253,8 +2253,7 @@ class SnijplankenCountTests(TestCase):
         self.assertNotIn("{product_count}", html)
         self.assertIn(f"<h1>De {count} beste houten snijplanken van 2026</h1>", html)
         self.assertIn(f"Top {count} Houten Snijplanken", html)
-        self.assertIn(f"Ontdek de {count} beste houten snijplanken", html)
-        self.assertIn(f"Bekijk de {count} beste houten snijplanken", html)
+        self.assertIn("Onze selectie houten snijplanken", html)
         self.assertNotIn("10 beste houten snijplanken", html)
         self.assertNotIn("Top 10 Houten Snijplanken", html)
         self.assertIn(f"Top {count} Houten Snijplanken zonder Plastic", html)

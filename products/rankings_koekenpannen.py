@@ -41,6 +41,7 @@ RANKINGS = {
         "bk_easy_induction_28",
         "debuyer_ceranoa_28",
         "kochstar_essenz_28",
+        "greenpan_mayflower_28",
         "brabantia_dusk_28",
         "bk_infinity_28",
     ],

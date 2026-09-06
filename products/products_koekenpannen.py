@@ -360,6 +360,68 @@ PRODUCTS = {
         "verdict": "Een hoogwaardig afgewerkte pan voor wie ergonomie en een stevige constructie vooropstelt.",
     },
 
+    "greenpan_mayflower_28": {
+        "slug": "greenpan-mayflower-28",
+        "name": "GreenPan Mayflower",
+        "description": (
+            "Stijlvolle keramische koekenpan met PFAS-vrije Thermolon™ "
+            "coating en inductiebodem."
+        ),
+        "brand": "GreenPan",
+        "diameter": 28,
+        "material": "Aluminium met Thermolon keramische antiaanbaklaag",
+        "features": [
+            "Geschikt voor inductie",
+            "Goede warmteverdeling",
+        ],
+        "rating": 4.4,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "currency": "EUR",
+        "availability": "InStock",
+        "award": "",
+        "price_range": "€€-€€€",
+        "image": "greenpan-mayflower-grijs-28cm.webp",
+        "image_path": "images/products/keramische-koekenpannen",
+        "variants": [
+            {
+                "name": "Grijs",
+                "image": "greenpan-mayflower-grijs-28cm.webp",
+                "hex": "#3F4448",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij%2F9300000091450190%2F&name=GreenPan%20Mayflower%20Pro%20koekenpan%2028cm%20-%20grijs%20-%20houten%20handvat%20-%20PFAS-vrij",
+                "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij/9300000091450190/",
+                "price": 59.90,
+                "price_last_checked": "2026-08-07",
+                "price_range": "€€€",
+            },
+            {
+                "name": "Blauw",
+                "image": "greenpan-mayflower-blauw-28cm.webp",
+                "hex": "#8CA9B5",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-mayflower-koekenpan-o28-cm-inductie-anti-aanbak-pfas-vrij%2F9300000001596267%2F&name=GreenPan%20Mayflower%20Koekenpan%2028cm%20-%20PFAS-vrije%20antikleeflaag%20-%20Koekenpan%20inductie-...",
+                "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-mayflower-koekenpan-o28-cm-inductie-anti-aanbak-pfas-vrij/9300000001596267/",
+                "price": 42.99,
+                "price_last_checked": "2026-08-07",
+                "price_range": "€€",
+            },
+        ],
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij%2F9300000091450190%2F&name=GreenPan%20Mayflower%20Pro%20koekenpan%2028cm%20-%20grijs%20-%20houten%20handvat%20-%20PFAS-vrij",
+        "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij/9300000091450190/",
+        "pros": [
+            "PFAS-vrije Thermolon™ coating",
+            "Goede warmteverdeling",
+            "Aantrekkelijk design",
+        ],
+        "cons": [
+            "Niet geschikt voor ovengebruik",
+            "Prijs verschilt duidelijk per kleurvariant",
+        ],
+        "verdict": (
+            "Betrouwbare keuze voor wie een keramische koekenpan met "
+            "houten handgreep en meerdere kleurvarianten zoekt."
+        ),
+    },
+
         "greenpan_apex_hybrid_28": {
             "slug": "greenpan-apex-hybrid-28",
             "name": "GreenPan Apex Hybrid 28 cm",
