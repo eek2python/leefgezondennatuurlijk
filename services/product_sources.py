@@ -50,6 +50,16 @@ CATEGORY_PRODUCT_SOURCES: dict[str, dict] = {
         "url_path": "/koolstofstalen-koekenpannen/",
         "description": "Koolstofstalen koekenpannen",
     },
+    "gietijzeren-koekenpannen": {
+        "module": "products.products_gietijzeren_koekenpannen",
+        "variable": "PRODUCTS",
+        "rule_key": "gietijzeren_koekenpannen",
+        "rankings_module": "products.rankings_gietijzeren_koekenpannen",
+        "rankings_variable": "RANKINGS",
+        "rankings_type": "dict_by_size",
+        "url_path": "/gietijzeren-koekenpannen/",
+        "description": "Gietijzeren koekenpannen",
+    },
     "hapjespannen": {
         "module": "products.products_hapjespannen",
         "variable": "PRODUCTS",

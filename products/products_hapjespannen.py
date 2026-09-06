@@ -23,18 +23,18 @@ PRODUCTS = {
         "rating": 4.7,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 159.90,
-        "price_last_checked": "2026-06-31",
+        "price": 105.90,
+        "price_last_checked": "2026-09-06",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": (
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-barcelona-keramische-hapjespan-28-cm-met-glazen-deksel%2F9300000171979351%2F&name=GreenPan%20Barcelona%20Pro%20hapjespan%2028cm%20-%204%2C6l%20-%20met%20deksel%20-%20PFAS-vrij",
+        "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-barcelona-keramische-hapjespan-28-cm-met-glazen-deksel/9300000171979351/",
+        "official_url": (
             "https://www.greenpan.nl/products/"
             "barcelona-pro-hapjespan-met-deksel-28cm"
         ),
-        "official_url": "",
         "availability_label": "",
-        "price_range": "€€€€",
+        "price_range": "€€€",
         "image": "hapjespan-greenpan-barcelona-pro-28cm.webp",
         "image_path": "images/products/hapjespannen",
         "pros": [
@@ -369,15 +369,12 @@ PRODUCTS = {
         "rating": 4.3,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 48.99,
-        "price_last_checked": "2026-07-31",
+        "price": 54.01,
+        "price_last_checked": "2026-09-06",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": (
-            "https://www.coolblue.nl/product/819625/"
-            "greenpan-torino-keramische-hapjespan-met-deksel-28-cm.html"
-        ),
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-torino-keramische-hapjespan-28-cm-met-glazen-deksel%2F9200000125314874%2F&name=GreenPan%20Torino%20Stoofpan%20met%20deksel%20-%2025%25%20groter%20bakoppervlak",
+        "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-torino-keramische-hapjespan-28-cm-met-glazen-deksel/9200000125314874/",
         "official_url": "",
         "availability_label": "",
         "price_range": "€€",

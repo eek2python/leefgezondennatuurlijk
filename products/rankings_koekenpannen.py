@@ -36,7 +36,7 @@ RANKINGS = {
         "greenpan_barcelona_pro_28",
         "demeyere_alu_pro_5_28",
         "greenpan_apex_hybrid_28",
-        "greenchef_diamond_28",
+        "fissler_essential_28",
         "tefal_renew_28",
         "bk_easy_induction_28",
         "debuyer_ceranoa_28",

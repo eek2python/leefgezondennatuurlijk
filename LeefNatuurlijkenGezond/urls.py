@@ -47,6 +47,11 @@ urlpatterns = [
        views.koolstofstalen_koekenpannen,
        name="koolstofstalen_koekenpannen",
    ),
+   path(
+       "gietijzeren-koekenpannen/",
+       views.gietijzeren_koekenpannen,
+       name="gietijzeren_koekenpannen",
+   ),
    path("over-ons/", views.over_ons, name="over_ons"),
    path("hoe-wij-beoordelen/", views.hoe_wij_beoordelen, name="hoe_wij_beoordelen"),
    path("privacy/", views.privacy, name="privacy"),

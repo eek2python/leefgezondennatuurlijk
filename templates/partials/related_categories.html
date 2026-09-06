@@ -32,6 +32,13 @@
             <small>Zonder synthetische antiaanbaklaag</small>
         </a>
         {% endif %}
+        {% if current_category != 'gietijzeren_koekenpannen' %}
+        <a href="{% url 'gietijzeren_koekenpannen' %}" class="category-card">
+            <img src="{% static 'images/thumbnails/gietijzeren-koekenpannen.webp' %}" alt="Gietijzeren koekenpannen" loading="lazy" width="600" height="600">
+            <span>Gietijzeren Koekenpannen</span>
+            <small>Voor fornuis, oven &amp; barbecue</small>
+        </a>
+        {% endif %}
         {% if current_category != 'hapjespannen' %}
         <a href="{% url 'hapjespannen' %}" class="category-card">
             <img src="{% static 'images/thumbnails/hapjespan.webp' %}" alt="PFAS-vrije hapjespannen" loading="lazy" width="600" height="600">

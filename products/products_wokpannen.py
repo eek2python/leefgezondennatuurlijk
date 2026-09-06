@@ -123,12 +123,12 @@ PRODUCTS = {
         "rating": 4.7,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 35.58,
-        "price_last_checked": "2026-07-31",
+        "price": 61.11,
+        "price_last_checked": "2026-09-06",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": "https://www.amazon.nl/dp/B0B799PK1X",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fwmf-durado-wokpan-28-cm%2F9300000116793911%2F&name=WMF%20Durado%20Wokpan%20-%20Inductie%2C%20PFAS-vrij%2C%20anti-aanbaklaag%20-%20%C3%98%2028%20cm",
+        "retailer_url": "https://www.bol.com/nl/nl/p/wmf-durado-wokpan-28-cm/9300000116793911/",
         "official_url": (
             "https://www.wmf.com/nl/nl/"
             "durado-748486021-keramische-wokpan-28-cm-7115006064.html"

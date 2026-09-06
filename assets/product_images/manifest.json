@@ -1638,5 +1638,243 @@
     "category": "koolstofstalen-koekenpannen",
     "product_key": "hendi-traditioneel-32cm",
     "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/fissler-essential-28cm.jpg",
+    "slug": "fissler-essential-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "fissler-essential-28cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/petromax-fp20-20cm.jpg",
+    "slug": "petromax-fp20-20cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "petromax-fp20-20cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/le-creuset-signature-skillet-20cm.jpg",
+    "slug": "le-creuset-signature-skillet-20cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "le-creuset-signature-skillet-20cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/hendi-cast-iron-skillet-20cm.jpg",
+    "slug": "hendi-cast-iron-skillet-20cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "hendi-cast-iron-skillet-20cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/ronneby-bruk-ultra-light-pro-20cm.jpg",
+    "slug": "ronneby-bruk-ultra-light-pro-20cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "ronneby-bruk-ultra-light-pro-20cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/lava-cast-iron-20cm.jpg",
+    "slug": "lava-cast-iron-20cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "lava-cast-iron-20cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/blackwell-cast-iron-20cm.jpg",
+    "slug": "blackwell-cast-iron-20cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "blackwell-cast-iron-20cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/skottsberg-cast-iron-24cm.jpg",
+    "slug": "skottsberg-cast-iron-24cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "skottsberg-cast-iron-24cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/combekk-cast-iron-24cm.jpg",
+    "slug": "combekk-cast-iron-24cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "combekk-cast-iron-24cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/ronneby-bruk-maestro-24cm.jpg",
+    "slug": "ronneby-bruk-maestro-24cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "ronneby-bruk-maestro-24cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/skeppshult-walnut-24cm.jpg",
+    "slug": "skeppshult-walnut-24cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "skeppshult-walnut-24cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/staub-cast-iron-24cm.jpg",
+    "slug": "staub-cast-iron-24cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "staub-cast-iron-24cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/maysternya-cast-iron-24cm.jpg",
+    "slug": "maysternya-cast-iron-24cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "maysternya-cast-iron-24cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/lodge-logic-26cm.jpg",
+    "slug": "lodge-logic-26cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "lodge-logic-26cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/maysternya-cast-iron-26cm.jpg",
+    "slug": "maysternya-cast-iron-26cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "maysternya-cast-iron-26cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/combekk-classic-skillet-26cm.jpg",
+    "slug": "combekk-classic-skillet-26cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "combekk-classic-skillet-26cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/fissler-moments-26cm-white.jpg",
+    "slug": "fissler-moments-26cm-white",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "fissler-moments-26cm-white",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/fissler-moments-26cm-red.jpg",
+    "slug": "fissler-moments-26cm-red",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "fissler-moments-26cm-red",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/staub-cast-iron-26cm.jpg",
+    "slug": "staub-cast-iron-26cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "staub-cast-iron-26cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/le-creuset-signature-skillet-26cm-zwart.jpg",
+    "slug": "le-creuset-signature-skillet-26cm-zwart",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "le-creuset-signature-skillet-26cm-zwart",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/le-creuset-signature-skillet-26cm-kersenrood.jpg",
+    "slug": "le-creuset-signature-skillet-26cm-kersenrood",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "le-creuset-signature-skillet-26cm-kersenrood",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/le-creuset-signature-skillet-26cm-nectar.jpg",
+    "slug": "le-creuset-signature-skillet-26cm-nectar",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "le-creuset-signature-skillet-26cm-nectar",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/skottsberg-cast-iron-28cm.jpg",
+    "slug": "skottsberg-cast-iron-28cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "skottsberg-cast-iron-28cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/kela-calido-28cm.jpg",
+    "slug": "kela-calido-28cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "kela-calido-28cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/beka-stark-28cm.jpg",
+    "slug": "beka-stark-28cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "beka-stark-28cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/wmf-flavour-28cm.jpg",
+    "slug": "wmf-flavour-28cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "wmf-flavour-28cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/lava-cast-iron-28cm.jpg",
+    "slug": "lava-cast-iron-28cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "lava-cast-iron-28cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/skeppshult-traditional-28cm.jpg",
+    "slug": "skeppshult-traditional-28cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "skeppshult-traditional-28cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/lodge-logic-30cm.jpg",
+    "slug": "lodge-logic-30cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "lodge-logic-30cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/valhal-outdoor-vh30-30cm.jpg",
+    "slug": "valhal-outdoor-vh30-30cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "valhal-outdoor-vh30-30cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/petromax-fp30-30cm.jpg",
+    "slug": "petromax-fp30-30cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "petromax-fp30-30cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/beka-stark-30cm.jpg",
+    "slug": "beka-stark-30cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "beka-stark-30cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/koock-amsterdam-skillet-30cm.jpg",
+    "slug": "koock-amsterdam-skillet-30cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "koock-amsterdam-skillet-30cm",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/victoria-signature-polished-30cm.jpg",
+    "slug": "victoria-signature-polished-30cm",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "victoria-signature-polished-30cm",
+    "enabled": true
   }
 ]

@@ -1104,6 +1104,7 @@ class PriceRangeTemplateTests(TestCase):
         for url in ("/koekenpannen/", "/wokpannen/", "/hapjespannen/",
                     "/snijplanken/", "/airfryers/", "/rvs-koekenpannen/",
                      "/koolstofstalen-koekenpannen/",
+                     "/gietijzeren-koekenpannen/",
                      "/vershoudcontainers/"):
             self.assertEqual(self.client.get(url).status_code, 200, url)
 
@@ -1158,6 +1159,62 @@ class KoolstofstalenKoekenpannenIntegrationTests(TestCase):
         from services.product_sources import CATEGORY_PRODUCT_SOURCES
 
         category = "koolstofstalen-koekenpannen"
+        self.assertIn(category, CATEGORY_SOURCES)
+        self.assertIn(category, CATEGORY_PRODUCT_SOURCES)
+        result = run_variant_audit(category=category)
+        self.assertEqual(result["errors"], [])
+
+
+class GietijzerenKoekenpannenIntegrationTests(TestCase):
+    def test_category_page_renders_seo_content_and_size_selection(self):
+        response = self.client.get(
+            "/gietijzeren-koekenpannen/", {"size": "26"}
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(
+            response,
+            "De beste gietijzeren koekenpannen van 2026",
+        )
+        self.assertContains(
+            response,
+            '<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/gietijzeren-koekenpannen/">',
+            html=True,
+        )
+        self.assertEqual(response.context["selected_size"], 26)
+        self.assertEqual(response.context["product_count"], 6)
+
+    def test_menu_homepage_and_related_categories_link_to_category(self):
+        category_url = "/gietijzeren-koekenpannen/"
+        homepage = self.client.get("/")
+        carbon_steel = self.client.get("/koolstofstalen-koekenpannen/")
+        self.assertContains(homepage, category_url)
+        self.assertContains(
+            homepage, "images/thumbnails/gietijzeren-koekenpannen.webp"
+        )
+        self.assertContains(carbon_steel, category_url)
+
+    def test_category_and_products_are_in_sitemap(self):
+        sitemap = self.client.get("/sitemap.xml")
+        self.assertEqual(sitemap.status_code, 200)
+        self.assertContains(
+            sitemap,
+            "https://www.leefnatuurlijkengezond.nl/gietijzeren-koekenpannen/",
+        )
+        self.assertContains(
+            sitemap,
+            "https://www.leefnatuurlijkengezond.nl/product/petromax-fp20-20/",
+        )
+
+    def test_product_detail_returns_to_cast_iron_category(self):
+        response = self.client.get("/product/petromax-fp20-20/")
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "/gietijzeren-koekenpannen/")
+
+    def test_category_is_available_to_shared_audits(self):
+        from audits.checks.variants import CATEGORY_SOURCES, run_variant_audit
+        from services.product_sources import CATEGORY_PRODUCT_SOURCES
+
+        category = "gietijzeren-koekenpannen"
         self.assertIn(category, CATEGORY_SOURCES)
         self.assertIn(category, CATEGORY_PRODUCT_SOURCES)
         result = run_variant_audit(category=category)

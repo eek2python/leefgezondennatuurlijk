@@ -11,6 +11,7 @@ STATIC_URLS = [
     {"name": "koekenpannen",       "loc_name": "koekenpannen",      "changefreq": "monthly", "priority": "0.9"},
     {"name": "rvs_koekenpannen",   "loc_name": "rvs_koekenpannen",  "changefreq": "monthly", "priority": "0.9"},
     {"name": "koolstofstalen_koekenpannen", "loc_name": "koolstofstalen_koekenpannen", "changefreq": "monthly", "priority": "0.9"},
+    {"name": "gietijzeren_koekenpannen", "loc_name": "gietijzeren_koekenpannen", "changefreq": "monthly", "priority": "0.9"},
     {"name": "hapjespannen",       "loc_name": "hapjespannen",      "changefreq": "monthly", "priority": "0.9"},
     {"name": "wokpannen",          "loc_name": "wokpannen",         "changefreq": "monthly", "priority": "0.9"},
     {"name": "snijplanken",        "loc_name": "snijplanken",       "changefreq": "monthly", "priority": "0.9"},

@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Beste gietijzeren koekenpannen van {{ selected_size }} cm (2026) | Leef Natuurlijk & Gezond{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ meta.description }}">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl{{ meta.canonical_path }}">
+
+<meta property="og:title" content="{{ meta.og_title }}">
+<meta property="og:description" content="{{ meta.og_description }}">
+<meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/thumbnails/gietijzeren-koekenpannen.webp">
+<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl{{ meta.canonical_path }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta.og_title }}">
+<meta name="twitter:description" content="{{ meta.og_description }}">
+<meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/thumbnails/gietijzeren-koekenpannen.webp">
+
+<script type="application/ld+json">
+{{ itemlist_ld|safe }}
+</script>
+<script type="application/ld+json">
+{{ faq_ld|safe }}
+</script>
+{% endblock %}
+
+{% block content %}
+{% include "partials/breadcrumbs.html" %}
+{% include "partials/affiliate_disclosure.html" %}
+
+<section id="banner">
+    <div class="content">
+        <header class="main">
+            <h1>{{ content.hero.h1 }}</h1>
+        </header>
+        {% for paragraph in content.hero.paragraphs %}
+        <p>{{ paragraph|safe }}</p>
+        {% endfor %}
+    </div>
+</section>
+
+{% include "partials/format_selector.html" %}
+{% include "partials/top_picks.html" %}
+
+<section>
+    <header class="major">
+        <h2>{{ content.why_choose.title }}</h2>
+    </header>
+    {% if content.why_choose.intro %}
+    <p>{{ content.why_choose.intro|safe }}</p>
+    {% endif %}
+    <ul>
+        {% for bullet in content.why_choose.bullets %}
+        <li>{{ bullet|safe }}</li>
+        {% endfor %}
+    </ul>
+    {% if content.why_choose.outro %}
+    <p>{{ content.why_choose.outro|safe }}</p>
+    {% endif %}
+</section>
+
+{% include "partials/how_we_select.html" %}
+
+<section id="producten" class="products">
+    <header class="major">
+        <h2 id="productlijst">{{ content.products_section.h2 }}</h2>
+    </header>
+    <div class="products-container">
+        {% for product in products %}
+        {% include "partials/product_block.html" with product=product %}
+        {% endfor %}
+    </div>
+</section>
+
+<section id="vergelijking">
+    <h2>{{ content.products_section.comparison_title }}</h2>
+    <div class="table-wrapper">
+        <table class="alt product-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Belangrijkste eigenschappen</th>
+                    <th>Prijs</th>
+                    <th>Beoordeling</th>
+                    <th>Actie</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>
+                        <strong>{{ product.name|cut:" (" }}</strong>
+                        {% if product.award %}
+                        <br>
+                        <span class="product-badge {{ product.award_class }}">{{ product.award }}</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ product.material }}
+                        {% if product.features %}
+                        · {{ product.features|join:" · " }}
+                        {% endif %}
+                    </td>
+                    <td>{{ product.display_price_range|default:"—" }}</td>
+                    <td>
+                        {% if product.rating %}
+                        <div class="editorial-rating editorial-rating--compact">
+                            <span class="rating-label">Onze beoordeling:</span>
+                            <span class="stars stars-{{ product.rating_class }}" aria-hidden="true"></span>
+                            <span class="rating-value">{{ product.rating_display }}/5</span>
+                        </div>
+                        {% else %}
+                        —
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if product.resolved_link.url or product.availability_label %}
+                        {% include "includes/product_link.html" with resolved_link=product.resolved_link availability_label=product.availability_label link_product=product link_small=True %}
+                        {% else %}
+                        <span class="button small disabled" aria-disabled="true">Binnenkort beschikbaar</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section>
+    <header class="major">
+        <h2>{{ content.tips.title }}</h2>
+    </header>
+    {% if content.tips.intro %}
+    <p>{{ content.tips.intro|safe }}</p>
+    {% endif %}
+    <ul>
+        {% for bullet in content.tips.bullets %}
+        <li>{{ bullet|safe }}</li>
+        {% endfor %}
+    </ul>
+    {% if content.tips.outro %}
+    <p>{{ content.tips.outro|safe }}</p>
+    {% endif %}
+</section>
+
+{% if conclusie %}
+<section>
+    <header class="major">
+        <h2>{{ conclusie.title }}</h2>
+    </header>
+    <p>{{ conclusie.text|safe }}</p>
+</section>
+{% endif %}
+
+{% include "partials/faq_section.html" %}
+{% include "partials/handige_artikelen.html" %}
+{% include "partials/related_categories.html" with current_category='gietijzeren_koekenpannen' %}
+{% include "partials/author_byline.html" %}
+{% endblock %}

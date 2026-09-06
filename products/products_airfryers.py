@@ -34,15 +34,12 @@ PRODUCTS = {
         "rating": 4.5,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 89.00,
-        "price_last_checked": "2026-07-31",
+        "price": 79.00,
+        "price_last_checked": "2026-09-06",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": (
-            "https://www.expert.nl/"
-            "inventum-gf500hld-xxl-372566678"
-        ),
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Finventum-gf500hld-airfryer-heteluchtfriteuse-beste-koop-november-2022-inhoud-5-liter-zwart-rvs%2F9200000114032192%2F&name=Inventum%20Airfryer%20GF500HLD%20-%20Heteluchtfriteuse%20-%205%20liter%20-%20PFAS%20vrij",
+        "retailer_url": "https://www.bol.com/nl/nl/p/inventum-gf500hld-airfryer-heteluchtfriteuse-beste-koop-november-2022-inhoud-5-liter-zwart-rvs/9200000114032192/",
         "official_url": (
             "https://www.inventum.eu/kleine-keukenapparaten/"
             "airfryers/gf500hld/"

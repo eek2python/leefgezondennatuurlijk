@@ -88,36 +88,59 @@ PRODUCTS = {
         "verdict": "Een toegankelijke budgetkeuze voor licht en regelmatig gebruik.",
     },
 
-    "greenchef_diamond_28": {
-        "slug": "greenchef-diamond-28",
-        "name": "GreenChef Diamond Induction",
-        "description": "Aluminium koekenpan met keramische antiaanbaklaag "
-    "waaraan volgens de fabrikant diamantdeeltjes zijn toegevoegd.",
-        "brand": "GreenChef",
+    "fissler_essential_28": {
+        "slug": "fissler-essential-keramische-koekenpan-28-cm",
+        "name": "Fissler Essential Keramische Koekenpan 28 cm",
+        "description": (
+            "De Fissler Essential 28 cm is een koekenpan geproduceerd van "
+            "100% gerecycled aluminium met een keramische antiaanbaklaag die zonder "
+            "PFAS en PTFE is geproduceerd. De Essential-inductiebodem is ontworpen voor "
+            "een gelijkmatige warmteverdeling en -opslag. De pan is geschikt voor alle "
+            "gangbare warmtebronnen, waaronder inductie, en heeft een ergonomische "
+            "kunststof handgreep zonder klinknagels."
+        ),
+        "brand": "Fissler",
         "diameter": 28,
-        "material": "Aluminium met keramische antiaanbaklaag",
-        "features": ["Keramische coating met diamantdeeltjes", "Duurzaam"],
-        "rating": 4.3,
+        "material": "100% gerecycled aluminium met keramische antiaanbaklaag",
+        "features": [
+            "Fissler Essential-inductiebodem",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Bodemdiameter circa 21,5 cm",
+            "Bodemdikte circa 5 mm",
+            "Ergonomische kunststof handgreep zonder klinknagels",
+        ],
+        "rating": 4.4,
         "rating_count": None,
-        "rating_source": "editorial",
-        "price": 26.99,
-        "price_last_checked": "2026-08-07",
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 49.00,
+        "price_last_checked": "2026-09-06",
         "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenchef-diamond-koekenpan-28cm-zwart-inductie-pfas-vrij%2F9200000130094499%2F&name=GreenChef%20Diamond%20koekenpan%20-%2028%20cm%20-%20Inductie%20-%20PFAS-vrij%20-%20Keramisch",
-        "retailer_url": "https://www.bol.com/nl/nl/p/greenchef-diamond-koekenpan-28cm-zwart-inductie-pfas-vrij/9200000130094499/",
+        "availability": True,
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Ffissler-essential-koekenpan-28cm%2F9300000233149801%2F&name=Fissler%20Essential%20Koekenpan%2028cm",
+        "retailer_url": "https://www.bol.com/nl/nl/p/fissler-essential-koekenpan-28cm/9300000233149801/",
+        "official_url": "https://nl.fissler.com/products/fissler-essential-pan",
+        "availability_label": "Op voorraad",
+        "award": None,
         "price_range": "€€",
-        "image": "greenchef-diamond-28cm.webp",
+        "image": "fissler-essential-28cm.webp",
         "image_path": "images/products/keramische-koekenpannen",
         "pros": [
-            "Diamantversterkte keramische coating",
-            "Licht en gemakkelijk hanteerbaar",
-            "Eenvoudig schoon te maken",
+            "Keramische coating geproduceerd zonder PFAS en PTFE",
+            "Gemaakt van 100% gerecycled aluminium",
+            "Geschikt voor inductie",
         ],
         "cons": [
-            "Niet ovenbestendig",
+            "Niet geschikt voor gebruik in de oven",
+            "Kunststof handgreep is minder veelzijdig dan een volledig metalen greep",
         ],
-        "verdict": "Een betaalbare middenklassepan voor dagelijks bakken op lage tot middelhoge temperatuur.",
+        "verdict": (
+            "Een sterke middenklassekeuze met een aantrekkelijke combinatie van prijs en "
+            "constructie. Het gebruik van 100% "
+            "gerecycled aluminium en de keramische coating zonder PFAS en PTFE onderscheiden "
+            "de Essential van veel eenvoudige aluminium pannen in deze prijsklasse. De "
+            "kunststof handgreep en het ontbreken van ovenbestendigheid beperken de "
+            "veelzijdigheid enigszins."
+        ),
     },
 
     "bk_easy_induction_28": {

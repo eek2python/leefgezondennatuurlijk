@@ -57,6 +57,15 @@ from .rankings_koolstofstaal_koekenpannen import (
 from .content_koolstofstaal_koekenpannen import (
     CONTENT as KOOLSTOFSTALEN_KOEKENPANNEN_CONTENT,
 )
+from .products_gietijzeren_koekenpannen import (
+    PRODUCTS as GIETIJZEREN_KOEKENPANNEN_PRODUCTS,
+)
+from .rankings_gietijzeren_koekenpannen import (
+    RANKINGS as GIETIJZEREN_KOEKENPANNEN_RANKINGS,
+)
+from .content_gietijzeren_koekenpannen import (
+    CONTENT as GIETIJZEREN_KOEKENPANNEN_CONTENT,
+)
 from .slug_redirects import SLUG_REDIRECTS
 
 
@@ -67,6 +76,11 @@ CATEGORY_MAP = {
         "products": KOOLSTOFSTALEN_KOEKENPANNEN_PRODUCTS,
         "label": "Koolstofstalen koekenpannen",
         "url_name": "koolstofstalen_koekenpannen",
+    },
+    "gietijzeren-koekenpannen": {
+        "products": GIETIJZEREN_KOEKENPANNEN_PRODUCTS,
+        "label": "Gietijzeren koekenpannen",
+        "url_name": "gietijzeren_koekenpannen",
     },
     "hapjespannen": {"products": HAPJESPANNEN_PRODUCTS, "label": "Hapjespannen", "url_name": "hapjespannen"},
     "wokpannen": {"products": WOKPANNEN_PRODUCTS, "label": "Wokpannen", "url_name": "wokpannen"},
@@ -1021,6 +1035,60 @@ def koolstofstalen_koekenpannen(request):
         },
     ]
     return render(request, "koolstofstaal-koekenpannen.html", {
+        "products": products,
+        "top_picks": _build_top_picks(products),
+        "in_het_kort": _build_in_het_kort(products, content),
+        "available_sizes": available_sizes,
+        "selected_size": size,
+        "product_count": product_count,
+        "content": content,
+        "conclusie": conclusie,
+        "faq_ld": faq_ld,
+        "itemlist_ld": itemlist_ld,
+        "meta": content["meta"],
+        "breadcrumbs": breadcrumbs,
+        "breadcrumb_ld": _build_breadcrumb_ld(breadcrumbs),
+    })
+
+
+def gietijzeren_koekenpannen(request):
+    available_sizes = sorted(GIETIJZEREN_KOEKENPANNEN_RANKINGS)
+    size = request.GET.get("size")
+    try:
+        size = int(size)
+    except (TypeError, ValueError):
+        size = 28 if 28 in available_sizes else available_sizes[0]
+    if size not in GIETIJZEREN_KOEKENPANNEN_RANKINGS:
+        size = 28 if 28 in available_sizes else available_sizes[0]
+
+    keys = GIETIJZEREN_KOEKENPANNEN_RANKINGS[size]
+    products = [
+        copy.deepcopy(GIETIJZEREN_KOEKENPANNEN_PRODUCTS[key])
+        for key in keys
+        if key in GIETIJZEREN_KOEKENPANNEN_PRODUCTS
+    ]
+    _enrich_products(products, category="gietijzeren-koekenpannen")
+    product_count = len(products)
+    content = _format_content(
+        GIETIJZEREN_KOEKENPANNEN_CONTENT,
+        product_count=product_count,
+        selected_size=size,
+    )
+    conclusie = content["conclusies"].get(
+        size, content["conclusies"]["default"]
+    )
+    faq_ld = _build_faq_ld(content["faq"]["items"])
+    itemlist_ld = _build_itemlist_ld(
+        request,
+        f"Beste gietijzeren koekenpannen van {size} cm",
+        content["meta"]["description"],
+        products,
+    )
+    breadcrumbs = [
+        {"label": "Koekenpannen", "url": "/koekenpannen/"},
+        {"label": "Gietijzer", "url": "/gietijzeren-koekenpannen/"},
+    ]
+    return render(request, "gietijzeren-koekenpannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
         "in_het_kort": _build_in_het_kort(products, content),
