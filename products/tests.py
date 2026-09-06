@@ -1243,6 +1243,12 @@ class VariantAuditCommandTests(TestCase):
         self.assertIn("greenpan_bistro_xxl_7_2l", output)
         self.assertIn("ninja_crispi_pro_xl_5_7l", output)
 
+    def test_airfryer_variant_data_has_no_known_swatch_warnings(self):
+        output = self._run("--category", "airfryers")
+        self.assertIn("Waarschuwingen: 0", output)
+        self.assertNotIn("inconsistent_jsonld_variant", output)
+        self.assertNotIn("missing_variant_url", output)
+
     def test_command_does_not_mutate_source_data(self):
         import copy as _copy
         from products.products_vershoudcontainers import PRODUCTS as P1
@@ -2241,6 +2247,25 @@ class SwatchVariantLinkTests(TestCase):
         self.assertIn('data-rel="nofollow noopener"', html)
         swatch_area = html[html.find("variant-swatches"):]
         self.assertIn('data-link-type="retailer"', swatch_area)
+
+    def test_bourgini_swatches_resolve_their_own_retailer_urls(self):
+        import copy
+        from products.products_airfryers import PRODUCTS
+        from utils.variant_helpers import (
+            apply_resolved_link,
+            resolve_swatch_variant_links,
+        )
+
+        product = copy.deepcopy(PRODUCTS["bourgini_slimfit_pure_8l"])
+        apply_resolved_link(product)
+        resolve_swatch_variant_links(product)
+
+        self.assertEqual(len(product["variants"]), 2)
+        for variant in product["variants"]:
+            link = variant["resolved_link"]
+            self.assertEqual(link.url, variant["retailer_url"])
+            self.assertEqual(link.link_type, "retailer")
+            self.assertNotIn("sponsored", link.rel)
 
 
 class SnijplankenCountTests(TestCase):

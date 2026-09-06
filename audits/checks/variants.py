@@ -18,7 +18,11 @@ from audits.result import (
     AuditIssue,
 )
 from utils.pricing import get_price_range, has_price_range_config
-from utils.variant_helpers import prepare_product_variants
+from utils.variant_helpers import (
+    apply_resolved_link,
+    prepare_product_variants,
+    resolve_swatch_variant_links,
+)
 
 CATEGORY_SOURCES = {
     "koekenpannen": "products.products_koekenpannen",
@@ -204,9 +208,12 @@ def _audit_swatch_product(category, key, product):
     Alleen inconsistenties tussen JSON-LD-basis (productniveau) en de
     default (eerste) swatch worden gerapporteerd."""
     issues = []
+    resolved_product = copy.deepcopy(product)
+    apply_resolved_link(resolved_product)
+    resolve_swatch_variant_links(resolved_product)
     first = product["variants"][0]
-    for variant in product["variants"]:
-        if not variant.get("affiliate_url") and not product.get("affiliate_url"):
+    for variant in resolved_product["variants"]:
+        if not variant["resolved_link"].url:
             issues.append(
                 (
                     "missing_variant_url",
