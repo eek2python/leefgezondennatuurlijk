@@ -28,6 +28,11 @@ _SET_COUNT = re.compile(r"(\d+)-delig")
 _TEXT_FIELDS = ("name", "description", "verdict")
 
 
+def _normalise_identifier(value):
+    """Maak product keys en URL-veilige slugs vergelijkbaar."""
+    return value.replace("-", "_").replace("+", "_plus")
+
+
 def _static_exists(image_path, image):
     if not image:
         return False
@@ -48,8 +53,7 @@ def validate_vershoudbakjes(products, rankings):
         slug = product.get("slug") or ""
 
         # key/slug-consistentie (key gebruikt underscores, slug hyphens)
-        if slug and slug.replace("-", "_").replace("+", "+") != key.replace("+", "+") and \
-                slug.replace("-", "_") != key:
+        if slug and _normalise_identifier(slug) != _normalise_identifier(key):
             warnings.append(f"{where}: slug '{slug}' wijkt af van product key")
 
         material = product.get("material")

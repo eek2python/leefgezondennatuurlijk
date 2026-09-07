@@ -2,7 +2,8 @@
 SLUG_REDIRECTS = {
     "berghoff_perfect_seal": "berghoff-perfect-seal",
     "kitchenbrothers_5delig": "kitchenbrothers-5delig",
-    "oxo_good_grips_smart_seal_6delig": "oxo-good-grips-smart-seal-6delig",
+    "oxo_good_grips_smart_seal_6delig": "oxo-good-grips-smart-seal-4delig",
+    "oxo-good-grips-smart-seal-6delig": "oxo-good-grips-smart-seal-4delig",
     "beka_cicla_24": "beka-cicla-24",
     "berghoff_leo_recycled_wok_28": "berghoff-leo-recycled-wok-28",
     "berghoff_phantom_wok_30": "berghoff-phantom-wok-30",

@@ -245,7 +245,7 @@ Geen.
 | vershoudbakjes | igluu_meal_prep_5delig | set-5x950-rectangle | 38.95 | — | — |
 | vershoudbakjes | kitchenbrothers_5delig | — | 25.0 | €€ | — |
 | vershoudbakjes | luminarc_purebox_5delig | — | 49.63 | €€ | — |
-| vershoudbakjes | oxo_good_grips_smart_seal_6delig | — | 41.29 | €€€ | — |
+| vershoudbakjes | oxo_good_grips_smart_seal_4delig | — | 41.29 | €€€ | — |
 
 ## Handmatige controle
 

@@ -23,8 +23,7 @@ RANKINGS = {
         "igluu_meal_prep_5delig",
         "kitchenbrothers_5delig",
         "luminarc_purebox_5delig",
-        # "oxo_good_grips_smart_seal_6delig" is bewust niet gerankt: de entry bevat
-        # nog gekopieerde Glasslock-data (beschrijving, inhoud, afbeelding) en wacht
-        # op echte OXO-productgegevens.
+        # De 4-delige OXO-set blijft ongerankt totdat hij redactioneel met de
+        # 3- en 5-delige selectorgroepen kan worden vergeleken.
     ],
 }

@@ -70,15 +70,14 @@ Frigoverre (3/5). Geen usage voor de gekopieerde/onbetrouwbare records
   ("Nederlands kwaliteitsmerk", "Controleer per set of deksels volledig
   lekvrij zijn").
 
-## 4. Nog handmatig verifiëren (NIET zelf aangepast)
+## 4. Nog handmatig verifiëren
 
-- **oxo_good_grips_smart_seal_6delig** (bewust ongerankt): volledig
-  gekopieerde Glasslock/Luminarc-data, inclusief niet-bestaande afbeelding
-  `glasslock-3delig.jpg`, 3 capaciteiten bij een "6-delige" naam.
+- **oxo_good_grips_smart_seal_4delig** blijft bewust ongerankt: de productdata
+  en afbeelding zijn gecorrigeerd, maar de paginaselector heeft alleen groepen
+  voor 3- en 5-delige sets.
 - **kitchenbrothers_5delig**: materiaal "Borosilicaatglas" botst met
   beschrijving "gehard glas" (gekopieerde Luminarc-tekst).
-- **glasslock_3delig** en **berghoff_perfect_seal**: beschrijving/verdict/
-  pluspunten identiek aan een ander merk.
+- **berghoff_perfect_seal**: beschrijving/verdict/pluspunten verifiëren.
 - **ikea_365+_enkel**: affiliate-URL van de 600 ml-variant noemt "740-ml".
 - **luminarc_purebox_5delig**: beschrijving identiek aan KitchenBrothers.
 - **igluu_meal_prep_5delig**: rechthoek-variant mist capacities en echte

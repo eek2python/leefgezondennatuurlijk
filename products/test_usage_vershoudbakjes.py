@@ -8,6 +8,7 @@ from django.test import TestCase
 
 from products.products_vershoudcontainers import PRODUCTS
 from products.rankings_vershoudcontainers import RANKINGS
+from products.validators_vershoudbakjes import validate_vershoudbakjes
 from utils.usage_helpers import build_usage_display, merge_usage, validate_usage
 from utils.variant_helpers import prepare_product_variants
 
@@ -79,6 +80,9 @@ class UsagePageTests(TestCase):
 
 
 class EditorialRulesTests(TestCase):
+    def test_catalogue_audit_has_no_warnings(self):
+        self.assertEqual(validate_vershoudbakjes(PRODUCTS, RANKINGS), [])
+
     def test_max_three_pros_two_cons(self):
         for key, p in PRODUCTS.items():
             self.assertLessEqual(len(p.get("pros") or []), 3, key)
