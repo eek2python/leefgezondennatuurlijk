@@ -15,8 +15,8 @@ PRODUCTS = {
         "rating": 4.7,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 117.00,
-        "price_last_checked": "2026-08-08",
+        "price": 119.00,
+        "price_last_checked": "2026-09-14",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdemeyere-industry-5-rvs-koekenpan-koekenpan-inductie-24-cm-ptfe-vrij%2F9200000011477842%2F&name=Demeyere%20Industry%205%20Koekenpan%2024%20cm%20-%20RVS%20-%20Geschikt%20voor%20alle%20kookplaten",
@@ -66,11 +66,11 @@ PRODUCTS = {
         "rating": 4.5,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 65.00,
-        "price_last_checked": "2026-07-30",
+        "price": 63.39,
+        "price_last_checked": "2026-09-14",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-superior-triply-koekenpan-o-24-cm-rvs-inductie%2F9300000022010208%2F&name=BK%20Superior%20Tri-Ply%20koekenpan%20-%2024%20cm%20-%20Geschikt%20voor%20alle%20warmtebronnen",
         "retailer_url": (
             "https://www.meesterslijpers.nl/"
             "bk-superior-3-ply-koekenpan-24cm"
@@ -324,11 +324,11 @@ PRODUCTS = {
         "rating": 4.7,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 139.00,
-        "price_last_checked": "2026-07-30",
+        "price": 161.16,
+        "price_last_checked": "2026-09-14",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdemeyere-industry-5-koekenpan-28-cm%2F9300000187019367%2F&name=DEMEYERE%20Industry%205%20Koekenpan%20-%20RVS%20-%2028%20cm%20-%20Voor%20alle%20warmtebronnen",
         "retailer_url": (
             "https://braadbaas.nl/products/"
             "koekenpan-industry-5-gesloten-rand"
@@ -527,11 +527,11 @@ PRODUCTS = {
         "rating": 4.5,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 89.90,
-        "price_last_checked": "2026-07-30",
+        "price": 66.10,
+        "price_last_checked": "2026-09-14",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-superior-triply-koekenpan-o-28-cm-rvs-inductie%2F9300000022010168%2F&name=BK%20Superior%20Triply%20koekenpan%20-%2028%20cm%20-%20Geschikt%20voor%20alle%20warmtebronnen",
         "retailer_url": (
             "https://bk.nl/products/"
             "superior-tri-ply-koekenpan"
@@ -628,8 +628,8 @@ PRODUCTS = {
         "rating": 4.7,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 132.40,
-        "price_last_checked": "2026-08-08",
+        "price": 111.17,
+        "price_last_checked": "2026-09-14",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdemeyere-industry-5-koekenpan-20-cm%2F9300000185199285%2F&name=Demeyere%20Industry%205%20Koekenpan%20-%2020cm%20-%205-laags%20RVS%20-%20Silvinox%20-%20Inductie",
@@ -678,8 +678,8 @@ PRODUCTS = {
         "rating": 4.5,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 59.95,
-        "price_last_checked": "2026-08-08",
+        "price": 52.18,
+        "price_last_checked": "2026-09-14",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-koekenpan-superior-tri-ply-o-20-cm-zonder-anti-aanbaklaag%2F9300000113331181%2F&name=BK%20Superior%20Tri-Ply%20koekenpan%2020%20cm",
@@ -1241,11 +1241,11 @@ PRODUCTS = {
         "rating": 4.8,
         "rating_count": None,
         "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 195.00,
-        "price_last_checked": "2026-09-01",
+        "price": 159.00,
+        "price_last_checked": "2026-09-14",
         "currency": "EUR",
         "availability": True,
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdemeyere-industry-5-koekenpan-32-cm%2F9300000185199287%2F&name=Demeyere%20Industry%205%20Koekenpan%20-%2032%20cm%20-%20RVS%20-%20Geschikt%20voor%20alle%20warmtebronnen",
         "retailer_url": "",
         "official_url": (
             "https://www.zwilling.com/nl/demeyere-industry-5-"
