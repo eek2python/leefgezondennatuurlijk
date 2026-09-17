@@ -1,22 +1,45 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Leef Natuurlijk & Gezond | Koolstofstaal vs gietijzer: welke koekenpan past bij jou?{% endblock %}
+{% block title %}Koolstofstaal vs gietijzer: welke koekenpan past bij jou? | Leef Natuurlijk & Gezond{% endblock %}
 
 {% block meta %}
 <meta name="description" content="Twijfel je tussen een koolstofstalen en gietijzeren koekenpan? Ontdek de verschillen in gewicht, warmte, onderhoud, bakresultaat en koken zonder coating.">
-<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/blogs/koolstofstaal-vs-gietijzer/">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/blogs/koolstofstaal-vs-gietijzer-koekenpan/">
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="Koolstofstaal vs gietijzer: welke koekenpan past bij jou?">
 <meta property="og:description" content="Vergelijk koolstofstaal en gietijzer op gewicht, warmtebehoud, onderhoud en gebruiksgemak en ontdek welk materiaal bij jouw manier van koken past.">
-<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/blogs/koolstofstaal-vs-gietijzer/">
-<meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/koolstofstaal-vs-gietijzer.webp">
+<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl/blogs/koolstofstaal-vs-gietijzer-koekenpan/">
+<meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/blogs/koolstofstaal-vs-gietijzer-koekenpan.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="nl_NL">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Koolstofstaal vs gietijzer: welke koekenpan past bij jou?">
 <meta name="twitter:description" content="Vergelijk koolstofstaal en gietijzer op gewicht, warmtebehoud, onderhoud en gebruiksgemak.">
-<meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/koolstofstaal-vs-gietijzer.webp">
+<meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/blogs/koolstofstaal-vs-gietijzer-koekenpan.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Koolstofstaal vs gietijzer: welke koekenpan past bij jou?",
+  "description": "Vergelijk koolstofstaal en gietijzer op gewicht, warmtebehoud, onderhoud en gebruiksgemak en ontdek welk materiaal bij jouw manier van koken past.",
+  "image": "https://www.leefnatuurlijkengezond.nl/static/images/blogs/koolstofstaal-vs-gietijzer-koekenpan.webp",
+  "mainEntityOfPage": "https://www.leefnatuurlijkengezond.nl/blogs/koolstofstaal-vs-gietijzer-koekenpan/",
+  "author": {
+    "@type": "Organization",
+    "name": "Leef Natuurlijk & Gezond"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Leef Natuurlijk & Gezond"
+  }
+}
+</script>
 {% endblock %}
 
 {% block content %}
@@ -24,7 +47,17 @@
 {% include "partials/breadcrumbs.html" %}
 
 <section id="banner">
-<article class="blog-article">
+<div class="content">
+<header class="main">
+<h1>Koolstofstaal vs gietijzer: welke koekenpan past het beste bij jou?</h1>
+</header>
+
+<span class="image main">
+<img src="{% static 'images/blogs/koolstofstaal-vs-gietijzer-koekenpan.webp' %}"
+     alt="Een koolstofstalen en gietijzeren koekenpan naast elkaar"
+     width="1200"
+     height="630">
+</span>
 
 <!-- IN HET KORT -->
 <div class="tldr-box">
@@ -37,11 +70,10 @@
     Welke pan het beste past, hangt daarom vooral af van wat en hoe je graag kookt.
 </p>
 </div>
+</div>
 </section>
 
-<header class="main">
-<h1>Koolstofstaal vs gietijzer: welke koekenpan past het beste bij jou?</h1>
-</header>
+<article class="blog-article">
 
 {% include "partials/affiliate_notice.html" %}
 
@@ -602,7 +634,7 @@
 
 <a href="{% url 'koolstofstalen_koekenpannen' %}" class="category-card">
 <img
-    src="{% static 'images/thumbnails/koekenpan.webp' %}"
+    src="{% static 'images/thumbnails/koolstofstalen-koekenpannen.webp' %}"
     alt="Koolstofstalen koekenpannen"
     loading="lazy"
     width="600"
@@ -612,7 +644,7 @@
 
 <a href="{% url 'gietijzeren_koekenpannen' %}" class="category-card">
 <img
-    src="{% static 'images/thumbnails/koekenpan.webp' %}"
+    src="{% static 'images/thumbnails/gietijzeren-koekenpannen.webp' %}"
     alt="Gietijzeren koekenpannen"
     loading="lazy"
     width="600"
