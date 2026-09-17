@@ -1249,6 +1249,11 @@ class VariantAuditCommandTests(TestCase):
         self.assertNotIn("inconsistent_jsonld_variant", output)
         self.assertNotIn("missing_variant_url", output)
 
+    def test_manual_review_does_not_report_removed_silhouette_product(self):
+        output = self._run("--category", "airfryers")
+        self.assertNotIn("greenpan_silhouette_xl_5l", output)
+        self.assertNotIn("Moroccan Green", output)
+
     def test_command_does_not_mutate_source_data(self):
         import copy as _copy
         from products.products_vershoudcontainers import PRODUCTS as P1

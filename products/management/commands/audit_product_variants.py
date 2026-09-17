@@ -144,10 +144,6 @@ class Command(BaseCommand):
             "",
             "| Categorie | Probleem | Waarom niet automatisch opgelost |",
             "|---|---|---|",
-            "| airfryers | greenpan_silhouette_xl_5l: productniveauprijs (129,90) wijkt af "
-            "van de getoonde defaultswatch Moroccan Green (116,00); JSON-LD gebruikt "
-            "productniveau | Prijscorrectie is een redactionele/datakeuze; de audit mag "
-            "geen prijzen wijzigen |",
             "| vershoudbakjes | Eerder gemarkeerde TODO-varianten (Igluu vierkant, "
             "Lock&Lock 630 ml / 1 L) hebben inmiddels prijs en URL; periodieke "
             "prijsverificatie blijft handwerk | price_last_checked bijwerken is een "
