@@ -2,6 +2,7 @@
 
 import copy
 import json
+from unittest.mock import patch
 
 from django.contrib.auth.models import Permission, User
 from django.core.management import call_command
@@ -10,6 +11,7 @@ from django.urls import reverse
 
 from audits import runner as audit_runner
 from audits.checks.links import run_product_link_check
+from audits.checks.product_data import run_product_data_check
 from audits.checks.variants import run_price_level_check, run_variant_check
 from audits.models import ProductAuditIssue, ProductAuditRun
 from audits.registry import all_audits, get_audit
@@ -293,6 +295,44 @@ class RegistryTests(TestCase):
         self.assertEqual(
             ProductAuditRun.objects.filter(audit_key="brand_diversity").count(), 2
         )
+
+
+class VershoudbakjesProductDataAuditTests(TestCase):
+    def test_clean_catalogue_has_no_vershoudbakjes_issues(self):
+        issues, metadata = run_product_data_check(category="vershoudbakjes")
+
+        self.assertEqual(issues, [])
+        self.assertGreater(metadata["products_checked"], 0)
+        self.assertIn(
+            "vershoudbakjes", get_audit("product_data").categories
+        )
+
+    def test_faulty_catalogue_returns_structured_issues(self):
+        from products.products_vershoudcontainers import PRODUCTS
+        from products.rankings_vershoudcontainers import RANKINGS
+
+        products = copy.deepcopy(PRODUCTS)
+        rankings = copy.deepcopy(RANKINGS)
+        key = next(iter(products))
+        products[key]["award"] = "Onbekende keuze"
+        products[key]["name"] = ""
+
+        with patch("audits.checks.product_data.load_category") as load:
+            load.return_value = {
+                "load_errors": [],
+                "rule_key": "glazen_vershoudbakjes",
+                "products_dict": products,
+                "rankings_raw": rankings,
+            }
+            issues, metadata = run_product_data_check(category="vershoudbakjes")
+
+        by_code = {issue.code: issue for issue in issues}
+        self.assertEqual(by_code["invalid_award"].severity, SEVERITY_ERROR)
+        self.assertEqual(by_code["invalid_award"].product_slug, key)
+        self.assertEqual(by_code["invalid_award"].field, "award")
+        self.assertEqual(by_code["empty_text_field"].severity, SEVERITY_WARNING)
+        self.assertEqual(by_code["empty_text_field"].field, "name")
+        self.assertEqual(metadata["products_checked"], len(products))
 
 
 class ProductLinkAuditTests(TestCase):

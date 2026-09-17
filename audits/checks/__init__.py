@@ -19,7 +19,7 @@ from audits.checks.variants import (
     run_variant_check,
 )
 from audits.checks.links import run_product_link_check
-from audits.checks.product_data import run_product_data_check
+from audits.checks.product_data import PRODUCT_DATA_CATEGORIES, run_product_data_check
 from audits.checks.rankings import run_brand_diversity_check
 
 register_audit(
@@ -64,7 +64,7 @@ register_audit(
     supports_category=True,
     uses_network=False,
     speed=SPEED_STANDARD,
-    categories=AUDIT_CATEGORIES,
+    categories=PRODUCT_DATA_CATEGORIES,
 )
 
 register_audit(

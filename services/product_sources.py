@@ -106,7 +106,7 @@ CATEGORY_PRODUCT_SOURCES: dict[str, dict] = {
         "rule_key": "glazen_vershoudbakjes",
         "rankings_module": "products.rankings_vershoudcontainers",
         "rankings_variable": "RANKINGS",
-        "rankings_type": "list",
+        "rankings_type": "dict_by_size",
         "url_path": "/vershoudcontainers/",
         "description": "Glazen vershoudbakjes",
     },
