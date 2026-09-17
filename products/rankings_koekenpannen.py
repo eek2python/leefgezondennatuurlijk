@@ -67,7 +67,7 @@ RANKINGS = {
         "ikea_hemlagad_keramisch_32",
         "scanpan_nura_32",
     ],
-    24 28: [
+    24_28: [
         "demeyere_alu_industry_3_ceraforce_set_24_28",
         "beka_pro_induc_set_24_28",
         "le_creuset_essential_ceramic_set_24_28",
