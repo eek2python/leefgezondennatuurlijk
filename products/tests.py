@@ -1166,7 +1166,7 @@ class KoolstofstalenKoekenpannenIntegrationTests(TestCase):
         ceramic = self.client.get("/koekenpannen/")
         self.assertContains(homepage, category_url)
         self.assertContains(
-            homepage, "images/thumbnails/koolstofstalen-koekenpannen.webp"
+            homepage, "images/thumbnails/koolstofstalen-koekenpannen-keuken.webp"
         )
         self.assertContains(ceramic, category_url)
 
@@ -1222,7 +1222,7 @@ class GietijzerenKoekenpannenIntegrationTests(TestCase):
         carbon_steel = self.client.get("/koolstofstalen-koekenpannen/")
         self.assertContains(homepage, category_url)
         self.assertContains(
-            homepage, "images/thumbnails/gietijzeren-koekenpannen.webp"
+            homepage, "images/thumbnails/gietijzeren-koekenpannen-keuken.webp"
         )
         self.assertContains(carbon_steel, category_url)
 
