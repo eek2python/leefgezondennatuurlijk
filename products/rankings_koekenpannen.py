@@ -41,7 +41,6 @@ RANKINGS = {
         "bk_easy_induction_28",
         "debuyer_ceranoa_28",
         "kochstar_essenz_28",
-        "greenpan_mayflower_28",
         "brabantia_dusk_28",
         "bk_infinity_28",
     ],
@@ -67,7 +66,7 @@ RANKINGS = {
         "ikea_hemlagad_keramisch_32",
         "scanpan_nura_32",
     ],
-    24_28: [
+    "24_28": [
         "demeyere_alu_industry_3_ceraforce_set_24_28",
         "beka_pro_induc_set_24_28",
         "le_creuset_essential_ceramic_set_24_28",

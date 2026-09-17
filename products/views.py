@@ -498,14 +498,24 @@ def snijplanken(request):
 
 def koekenpannen(request):
     content = KOEKENPANNEN_CONTENT
-    available_sizes = sorted(KOEKENPANNEN_RANKINGS.keys())
-    size = request.GET.get("size")
-    try:
-        size = int(size)
-    except (TypeError, ValueError):
-        size = 28 if 28 in available_sizes else available_sizes[0]
+    available_sizes = sorted(
+        KOEKENPANNEN_RANKINGS.keys(),
+        key=lambda value: (
+            len(str(value).split("_")) > 1,
+            tuple(int(part) for part in str(value).split("_")),
+        ),
+    )
+    default_size = 28 if 28 in available_sizes else available_sizes[0]
+    raw_size = request.GET.get("size")
+    if raw_size in KOEKENPANNEN_RANKINGS:
+        size = raw_size
+    else:
+        try:
+            size = int(raw_size)
+        except (TypeError, ValueError):
+            size = default_size
     if size not in KOEKENPANNEN_RANKINGS:
-        size = 28 if 28 in available_sizes else available_sizes[0]
+        size = default_size
 
     keys = KOEKENPANNEN_RANKINGS[size]
     # Deep copies: prijsniveau-afleiding zet velden op geneste variant-dicts
@@ -513,19 +523,31 @@ def koekenpannen(request):
     products = [copy.deepcopy(KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in KOEKENPANNEN_PRODUCTS]
     _enrich_products(products, category="koekenpannen")
     product_count = len(products)
+    selected_size_label = " + ".join(str(size).split("_"))
 
     conclusie = content["conclusies"].get(size, {})
-    hero_h1 = content["hero"]["h1"].format(product_count=product_count, selected_size=size)
-    products_h2 = content["products_section"]["h2"].format(product_count=product_count, selected_size=size)
-    comparison_title = content["products_section"]["comparison_title"].format(
-        product_count=product_count, selected_size=size
+    hero_h1 = content["hero"]["h1"].format(
+        product_count=product_count,
+        selected_size=selected_size_label,
     )
-    content = _format_content(content, product_count=product_count, selected_size=size)
+    products_h2 = content["products_section"]["h2"].format(
+        product_count=product_count,
+        selected_size=selected_size_label,
+    )
+    comparison_title = content["products_section"]["comparison_title"].format(
+        product_count=product_count,
+        selected_size=selected_size_label,
+    )
+    content = _format_content(
+        content,
+        product_count=product_count,
+        selected_size=selected_size_label,
+    )
     faq_ld = _build_faq_ld(content["faq"]["items"])
     json_ld = _build_itemlist_ld(
         request,
-        f"Top {product_count} PFAS-vrije Koekenpannen {size} cm",
-        f"Top {product_count} PFAS-vrije koekenpannen van {size}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
+        f"Top {product_count} PFAS-vrije Koekenpannen {selected_size_label} cm",
+        f"Top {product_count} PFAS-vrije koekenpannen van {selected_size_label}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
         products,
     )
     breadcrumbs = [

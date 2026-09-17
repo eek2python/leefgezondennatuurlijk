@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static product_formatting %}
 
-{% block title %}Beste keramische koekenpannen van {{ selected_size }} cm | Leef Natuurlijk & Gezond{% endblock %}
+{% block title %}Beste keramische koekenpannen van {{ selected_size|format_size_label }} cm | Leef Natuurlijk & Gezond{% endblock %}
 
 {% block meta %}
 <meta

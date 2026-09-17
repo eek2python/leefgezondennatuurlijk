@@ -1,3 +1,4 @@
+{% load product_formatting %}
 {% if top_picks %}
 <section class="category-section top-picks">
     <header class="major">
@@ -5,7 +6,7 @@
         {% with picks_count=c1|add:c2|add:c3 %}
         <h2>Snel kiezen: {% if picks_count == 1 %}onze aanbeveling{% else %}onze {{ picks_count }} aanbevelingen{% endif %}</h2>
         {% if selected_size %}
-        <p class="top-picks-intro">Geen tijd om alles te vergelijken? {% if picks_count == 1 %}Dit is onze belangrijkste keuze{% else %}Dit zijn onze {{ picks_count }} belangrijkste keuzes{% endif %} uit de volledige {{ selected_size }} cm lijst.</p>
+        <p class="top-picks-intro">Geen tijd om alles te vergelijken? {% if picks_count == 1 %}Dit is onze belangrijkste keuze{% else %}Dit zijn onze {{ picks_count }} belangrijkste keuzes{% endif %} uit de volledige {{ selected_size|format_size_label }} cm lijst.</p>
         {% else %}
         <p class="top-picks-intro">Geen tijd om alles te vergelijken? {% if picks_count == 1 %}Dit is onze belangrijkste keuze{% else %}Dit zijn onze {{ picks_count }} belangrijkste keuzes{% endif %} uit de volledige lijst.</p>
         {% endif %}

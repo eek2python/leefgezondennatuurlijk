@@ -1,3 +1,4 @@
+{% load product_formatting %}
 {% if available_sizes %}
 <div class="format-selector" data-size-selector>
     <span class="label">Kies jouw formaat:</span>
@@ -5,7 +6,7 @@
     <a href="?size={{ f }}"
        class="format-pill {% if f == selected_size %}is-active{% endif %}"
        {% if f == selected_size %}aria-current="page"{% endif %}>
-        {{ f }} cm
+        {{ f|format_size_label }} cm
     </a>
     {% endfor %}
 </div>
@@ -18,7 +19,7 @@
             <a href="?size={{ f }}"
                class="format-pill format-pill-sm {% if f == selected_size %}is-active{% endif %}"
                {% if f == selected_size %}aria-current="page"{% endif %}>
-                {{ f }} cm
+                 {{ f|format_size_label }} cm
             </a>
             {% endfor %}
         </div>

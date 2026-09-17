@@ -806,6 +806,39 @@ class DisplayVariantHardeningTests(TestCase):
         self.assertEqual(offer_retailer["url"], "https://example.com/retailer")
 
 
+class KoekenpanSetSizeSelectorTests(TestCase):
+    def test_set_size_ranking_key_is_text(self):
+        from products.rankings_koekenpannen import RANKINGS
+
+        self.assertIn("24_28", RANKINGS)
+        self.assertNotIn(2428, RANKINGS)
+        self.assertEqual(len(RANKINGS["24_28"]), 8)
+
+    def test_set_size_selector_loads_and_labels_sets(self):
+        response = self.client.get("/koekenpannen/?size=24_28")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["selected_size"], "24_28")
+        self.assertEqual(response.context["product_count"], 8)
+        self.assertEqual(
+            response.context["available_sizes"],
+            [20, 24, 26, 28, 30, 32, "24_28"],
+        )
+        self.assertContains(response, 'href="?size=24_28"')
+        self.assertContains(response, "24 + 28 cm")
+        self.assertNotContains(response, "24_28 cm")
+        self.assertContains(
+            response,
+            "De 8 beste PFAS-vrije keramische koekenpannen van 24 + 28 cm",
+        )
+
+    def test_unknown_set_size_falls_back_to_default(self):
+        response = self.client.get("/koekenpannen/?size=20_28")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["selected_size"], 28)
+
+
 class EditorialRatingDisplayTests(TestCase):
     """Zichtbaar 'Onze beoordeling: X,X/5' naast de sterren."""
 
