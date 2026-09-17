@@ -67,4 +67,14 @@ RANKINGS = {
         "ikea_hemlagad_keramisch_32",
         "scanpan_nura_32",
     ],
+    24+28: [
+        "demeyere_alu_industry_3_ceraforce_set_24_28",
+        "beka_pro_induc_set_24_28",
+        "le_creuset_essential_ceramic_set_24_28",
+        "ducq_keramische_koekenpannenset_24_28",
+        "greenpan_essence_set_24_28",
+        "tefal_renew_on_set_24_28",
+        "bk_brilliant_set_24_28",
+        "cook_and_pan_go_ivory_set_24_28",
+    ],
 }
