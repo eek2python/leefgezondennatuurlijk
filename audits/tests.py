@@ -335,6 +335,32 @@ class VershoudbakjesProductDataAuditTests(TestCase):
         self.assertEqual(metadata["products_checked"], len(products))
 
 
+class GroupedRankingProductDataAuditTests(TestCase):
+    def test_airfryer_groups_are_not_treated_as_product_keys(self):
+        from services.product_sources import load_category
+
+        data = load_category("airfryers")
+
+        self.assertEqual(data["load_errors"], [])
+        self.assertEqual(data["rankings_type"], "dict_by_size")
+        self.assertNotIn("compact", data["ranked_keys"])
+        self.assertNotIn("xl", data["ranked_keys"])
+        self.assertNotIn("dual", data["ranked_keys"])
+        self.assertGreater(len(data["ranked_products"]), 0)
+
+    def test_rvs_sizes_are_not_treated_as_product_keys(self):
+        from services.product_sources import load_category
+
+        data = load_category("rvs-koekenpannen")
+
+        self.assertEqual(data["load_errors"], [])
+        self.assertEqual(data["rankings_type"], "dict_by_size")
+        self.assertNotIn(20, data["ranked_keys"])
+        self.assertNotIn(24, data["ranked_keys"])
+        self.assertNotIn(28, data["ranked_keys"])
+        self.assertGreater(len(data["ranked_products"]), 0)
+
+
 class ProductLinkAuditTests(TestCase):
     """Auditregels voor het onderscheid affiliate/retailer/official."""
 

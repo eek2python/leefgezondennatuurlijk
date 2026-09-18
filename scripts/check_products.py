@@ -63,7 +63,7 @@ CATEGORY_CONFIG = {
         "products_module": "products.products_rvs_koekenpannen",
         "rankings_module": "products.rankings_rvs_koekenpannen",
         "url_path": "/rvs-koekenpannen/",
-        "rankings_type": "list",
+        "rankings_type": "dict_by_size",
     },
     "houten_snijplanken": {
         "rules": r_snijplanken.RULES,
@@ -91,7 +91,7 @@ CATEGORY_CONFIG = {
         "products_module": "products.products_airfryers",
         "rankings_module": "products.rankings_airfryers",
         "url_path": "/airfryers/",
-        "rankings_type": "list",
+        "rankings_type": "dict_by_size",
     },
     "glazen_vershoudbakjes": {
         "rules": r_vershoudbakjes.RULES,

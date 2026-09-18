@@ -4,7 +4,6 @@ RANKINGS = {
         "bk_brilliant_24",
         "woll_ecolite_qxr_24",
         "greenchef_prime_24",
-        "bk_balans_plus_24",
         "kochstar_essenz_24",
     ],
     28: [
