@@ -10127,7 +10127,7 @@ PRODUCTS = {
         "price": 69.90,
         "price_last_checked": "2026-08-31",
         "currency": "EUR",
-        "availability": True,
+        "availability": "InStock",
         "affiliate_url": "",
         "retailer_url": "",
         "official_url": "https://bk.nl/products/infinity-koekenpan-28cm",

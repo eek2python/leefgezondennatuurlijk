@@ -26,6 +26,11 @@ RVS_FIELD_ALIASES = {
     "features": "key_features",
 }
 
+EDITORIAL_RATING_SOURCES = {
+    "editorial",
+    "leef natuurlijk & gezond",
+}
+
 
 def _get(product: dict, field: str, is_rvs: bool = False) -> object:
     if is_rvs:
@@ -160,6 +165,7 @@ def _check_rating(product: dict) -> list[str]:
     issues = []
     rating = product.get("rating")
     rating_count = product.get("rating_count")
+    rating_source = str(product.get("rating_source") or "").strip().lower()
     if rating is None:
         issues.append("Veld 'rating' ontbreekt.")
     else:
@@ -171,8 +177,12 @@ def _check_rating(product: dict) -> list[str]:
         except (TypeError, ValueError):
             issues.append(f"Rating '{rating}' is geen geldig getal.")
 
-    if rating_count is None:
+    if "rating_count" not in product:
         issues.append("Veld 'rating_count' ontbreekt.")
+    elif rating_count is None and rating_source not in EDITORIAL_RATING_SOURCES:
+        issues.append("Veld 'rating_count' is leeg.")
+    elif rating_count is None:
+        return issues
     else:
         try:
             rc = int(rating_count)
@@ -338,6 +348,8 @@ def check_field_consistency(product: dict, rules: dict) -> dict:
         if "ontbreekt" in issue:
             field = "rating" if "rating'" in issue else "rating_count"
             missing_fields.append(field)
+        elif "rating_count" in issue and "is leeg" in issue:
+            warnings.append(issue)
         else:
             all_issues.append(issue)
 

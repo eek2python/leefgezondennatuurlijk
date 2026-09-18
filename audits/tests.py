@@ -361,6 +361,79 @@ class GroupedRankingProductDataAuditTests(TestCase):
         self.assertGreater(len(data["ranked_products"]), 0)
 
 
+class RatingCountProductDataAuditTests(TestCase):
+    def test_editorial_rating_sources_allow_explicit_none_count(self):
+        from services.product_normalization import check_field_consistency
+
+        for rating_source in ("editorial", "Leef Natuurlijk & Gezond"):
+            with self.subTest(rating_source=rating_source):
+                result = check_field_consistency(
+                    {
+                        "name": "Testpan",
+                        "brand": "Testmerk",
+                        "material": "Keramisch",
+                        "price": 49.95,
+                        "availability": "InStock",
+                        "affiliate_url": "https://example.com/product",
+                        "rating": 4.5,
+                        "rating_count": None,
+                        "rating_source": rating_source,
+                    },
+                    {"category_key": "keramische_koekenpannen"},
+                )
+
+                self.assertNotIn("rating_count", result["missing_fields"])
+                self.assertFalse(
+                    any(
+                        "rating_count" in warning
+                        for warning in result["warnings"]
+                    )
+                )
+
+    def test_missing_rating_count_key_is_still_reported(self):
+        from services.product_normalization import check_field_consistency
+
+        result = check_field_consistency(
+            {
+                "name": "Testpan",
+                "brand": "Testmerk",
+                "material": "Keramisch",
+                "price": 49.95,
+                "availability": "InStock",
+                "affiliate_url": "https://example.com/product",
+                "rating": 4.5,
+                "rating_source": "editorial",
+            },
+            {"category_key": "keramische_koekenpannen"},
+        )
+
+        self.assertIn("rating_count", result["missing_fields"])
+
+    def test_non_editorial_none_count_is_reported_as_empty(self):
+        from services.product_normalization import check_field_consistency
+
+        result = check_field_consistency(
+            {
+                "name": "Testpan",
+                "brand": "Testmerk",
+                "material": "Keramisch",
+                "price": 49.95,
+                "availability": "InStock",
+                "affiliate_url": "https://example.com/product",
+                "rating": 4.5,
+                "rating_count": None,
+                "rating_source": "retailer",
+            },
+            {"category_key": "keramische_koekenpannen"},
+        )
+
+        self.assertIn(
+            "Veld 'rating_count' is leeg.",
+            result["warnings"],
+        )
+        self.assertNotIn("rating_count", result["missing_fields"])
+
+
 class ProductLinkAuditTests(TestCase):
     """Auditregels voor het onderscheid affiliate/retailer/official."""
 

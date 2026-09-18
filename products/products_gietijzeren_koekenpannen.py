@@ -180,7 +180,7 @@ PRODUCTS = {
         "price_last_checked": "2026-09-03",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Flava-koekenpan-20-cm-0-77-liter-gietijzer-zwart%2F9300000288620968%2F&name=Lava%20Koekenpan%20-%2020%20cm%20-%200.77%20liter%20-%20Gietijzer%20-%20Zwart",
         "retailer_url": "https://www.bol.com/nl/nl/p/lava-koekenpan-20-cm-0-77-liter-gietijzer-zwart/9300000288620968/",
         "award": None,
         "price_range": "€€€",
