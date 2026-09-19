@@ -1876,5 +1876,306 @@
     "category": "gietijzeren-koekenpannen",
     "product_key": "victoria-signature-polished-30cm",
     "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/demeyere-alu-industry-3-ceraforce-set-24-28cm.jpg",
+    "slug": "demeyere-alu-industry-3-ceraforce-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "demeyere-alu-industry-3-ceraforce-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/beka-pro-induc-set-24-28cm.jpg",
+    "slug": "beka-pro-induc-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "beka-pro-induc-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/le-creuset-essential-ceramic-set-24-28cm.jpg",
+    "slug": "le-creuset-essential-ceramic-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "le-creuset-essential-ceramic-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/ducq-keramische-koekenpannenset-24-28cm.jpg",
+    "slug": "ducq-keramische-koekenpannenset-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "ducq-keramische-koekenpannenset-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-essence-set-24-28cm.jpg",
+    "slug": "greenpan-essence-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan-essence-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/tefal-renew-on-set-24-28cm.jpg",
+    "slug": "tefal-renew-on-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "tefal-renew-on-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/bk-brilliant-set-24-28cm.jpg",
+    "slug": "bk-brilliant-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk-brilliant-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-signature-set-zwart-24-28cm.jpg",
+    "slug": "cook-and-pan-signature-set-zwart-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-signature-set-zwart-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-ivory-set-creme-24-28cm.webp",
+    "slug": "cook-and-pan-go-ivory-set-creme-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-ivory-set-creme-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-ivory-set-taupe-24-28cm.jpg",
+    "slug": "cook-and-pan-go-ivory-set-taupe-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-ivory-set-taupe-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-green-set-24-28cm.jpg",
+    "slug": "cook-and-pan-go-green-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-green-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-sienna-set-24-28cm.jpg",
+    "slug": "cook-and-pan-go-sienna-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-sienna-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-vanilla-set-24-28cm.jpg",
+    "slug": "cook-and-pan-go-vanilla-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-vanilla-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-blauw-set-24-28cm.jpg",
+    "slug": "cook-and-pan-go-blauw-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-blauw-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-olive-set-24-28cm.jpg",
+    "slug": "cook-and-pan-go-olive-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-olive-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-rose-set-24-28cm.jpg",
+    "slug": "cook-and-pan-go-rose-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-rose-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-oceaan-blauw-set-24-28cm.jpg",
+    "slug": "cook-and-pan-go-oceaan-blauw-set-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-oceaan-blauw-set-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-geneva-set-20-28cm.jpg",
+    "slug": "greenpan-geneva-set-20-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan-geneva-set-20-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/tefal-jamie-oliver-set-20-28cm.jpg",
+    "slug": "tefal-jamie-oliver-set-20-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "tefal-jamie-oliver-set-20-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/combekk-element-expert-set-20-28cm.jpg",
+    "slug": "combekk-element-expert-set-20-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "combekk-element-expert-set-20-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-valencia-pro-set-cream-20-24-28cm.jpg",
+    "slug": "greenpan-valencia-pro-set-cream-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan-valencia-pro-set-cream-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-valencia-pro-set-oxford-blue-20-24-28cm.jpg",
+    "slug": "greenpan-valencia-pro-set-oxford-blue-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan-valencia-pro-set-oxford-blue-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-valencia-pro-set-taupe-20-24-28cm.jpg",
+    "slug": "greenpan-valencia-pro-set-taupe-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan-valencia-pro-set-taupe-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-valencia-pro-set-green-20-24-28cm.jpg",
+    "slug": "greenpan-valencia-pro-set-green-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan-valencia-pro-set-green-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/bk-sublime-set-olive-green-20-24-28cm.jpg",
+    "slug": "bk-sublime-set-olive-green-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk-sublime-set-olive-green-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/bk-sublime-set-cream-20-24-28cm.jpg",
+    "slug": "bk-sublime-set-cream-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk-sublime-set-cream-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-shades-set-terra-20-24-28cm.jpg",
+    "slug": "greenpan-shades-set-terra-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan-shades-set-terra-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-shades-set-coastal-20-24-28cm.jpg",
+    "slug": "greenpan-shades-set-coastal-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan-shades-set-coastal-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenpan-shades-set-natural-20-24-28cm.jpg",
+    "slug": "greenpan-shades-set-natural-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenpan-shades-set-natural-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-signature-set-zwart-20-24-28cm.jpg",
+    "slug": "cook-and-pan-signature-set-zwart-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-signature-set-zwart-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-ivory-set-creme-20-24-28cm.jpg",
+    "slug": "cook-and-pan-go-ivory-set-creme-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-ivory-set-creme-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-ivory-set-taupe-20-24-28cm.jpg",
+    "slug": "cook-and-pan-go-ivory-set-taupe-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-ivory-set-taupe-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-green-set-20-24-28cm.jpg",
+    "slug": "cook-and-pan-go-green-set-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-green-set-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-sienna-set-20-24-28cm.jpg",
+    "slug": "cook-and-pan-go-sienna-set-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-sienna-set-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-olive-set-20-24-28cm.jpg",
+    "slug": "cook-and-pan-go-olive-set-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-olive-set-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-vanilla-set-20-24-28cm.jpg",
+    "slug": "cook-and-pan-go-vanilla-set-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-vanilla-set-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-rose-set-20-24-28cm.jpg",
+    "slug": "cook-and-pan-go-rose-set-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-rose-set-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-slate-set-20-24-28cm.jpg",
+    "slug": "cook-and-pan-go-slate-set-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-slate-set-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-blauw-set-20-24-28cm.jpg",
+    "slug": "cook-and-pan-go-blauw-set-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-blauw-set-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-oceaan-blauw-set-20-24-28cm.jpg",
+    "slug": "cook-and-pan-go-oceaan-blauw-set-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-oceaan-blauw-set-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/cook-and-pan-go-geel-set-20-24-28cm.jpg",
+    "slug": "cook-and-pan-go-geel-set-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "cook-and-pan-go-geel-set-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/bk-brilliant-set-20-24-28cm.jpg",
+    "slug": "bk-brilliant-set-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "bk-brilliant-set-20-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/combekk-tundra-easy-set-20-24-28cm.jpg",
+    "slug": "combekk-tundra-easy-set-20-24-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "combekk-tundra-easy-set-20-24-28cm",
+    "enabled": true
   }
 ]

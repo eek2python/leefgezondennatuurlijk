@@ -52,7 +52,7 @@
        {% for variant in product.variants %}
 <button
            type="button"
-           class="variant-swatch{% if forloop.first %} is-active{% endif %}"
+           class="variant-swatch{% if variant.swatch_colors %} variant-swatch--combination{% endif %}{% if forloop.first %} is-active{% endif %}"
            style="--swatch: {{ variant.hex }};"
            data-variant-swatch
            data-image="{% static product.image_path|add:'/' %}{{ variant.image }}"
@@ -65,7 +65,7 @@
            title="{{ variant.name }}"
            aria-label="Kleur: {{ variant.name }}"
            aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
-></button>
+ >{% if variant.swatch_colors %}<span class="variant-swatch__combination" aria-hidden="true">{% for color in variant.swatch_colors %}<span class="variant-swatch__color" style="--swatch-color: {{ color }};"></span>{% endfor %}</span>{% endif %}</button>
        {% endfor %}
 </div>
 </div>

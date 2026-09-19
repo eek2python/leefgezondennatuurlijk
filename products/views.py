@@ -236,6 +236,26 @@ def _derive_price_levels(p, category):
             p["display_price_range"] = p.get("price_range") or ""
 
 
+COMBINATION_SWATCH_COLORS = {
+    "greenpan-shades-set-20-24-28": {
+        "Terra": ["#D6A07D", "#5A342B", "#879084"],
+        "Coastal": ["#182432", "#D7E6E7", "#4D95A6"],
+        "Natural": ["#C8BBA4", "#B6D8BE", "#244A40"],
+    },
+}
+
+
+def _apply_combination_swatch_colors(product):
+    colors_by_variant = COMBINATION_SWATCH_COLORS.get(product.get("slug"))
+    if not colors_by_variant:
+        return
+    for variant in product.get("variants") or []:
+        colors = colors_by_variant.get(variant.get("name"))
+        if colors:
+            variant["hex"] = colors[1]
+            variant["swatch_colors"] = colors
+
+
 def _enrich_products(products, category=None):
     # Bulk-load maintenance overrides in één query (geen N+1).
     slugs = [p.get("slug") for p in products if p.get("slug")]
@@ -247,6 +267,7 @@ def _enrich_products(products, category=None):
 
     for p in products:
         prepare_product_variants(p)
+        _apply_combination_swatch_colors(p)
 
         # DB maintenance-override: NADAT prepare_product_variants() klaar is,
         # zodat variantprojectie de DB-waarden niet kan overschrijven.

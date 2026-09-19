@@ -4340,6 +4340,28 @@ table.product-table .product-badge {
  cursor: pointer;
  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+.variant-swatch--combination {
+ width: auto;
+ min-width: 48px;
+ height: 24px;
+ padding: 3px 5px;
+ border-radius: 999px;
+ background: #fff;
+}
+.variant-swatch__combination {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 3px;
+}
+.variant-swatch__color {
+ display: block;
+ width: 12px;
+ height: 12px;
+ border: 1px solid rgba(0, 0, 0, 0.16);
+ border-radius: 50%;
+ background-color: var(--swatch-color, #cccccc);
+}
 .variant-swatch:hover {
  transform: scale(1.15);
 }

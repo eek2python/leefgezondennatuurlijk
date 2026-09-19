@@ -1079,6 +1079,20 @@ class VariantPriceRangeTests(TestCase):
         # Geen productniveau-fallbackattribuut bij afgeleide niveaus.
         self.assertNotIn("data-base-price", html)
 
+    def test_greenpan_shades_renders_three_color_combination_swatches(self):
+        html = self.client.get(
+            "/koekenpannen/", {"size": "20_24_28"}
+        ).content.decode()
+
+        self.assertEqual(html.count("variant-swatch--combination"), 3)
+        self.assertEqual(html.count('class="variant-swatch__color"'), 9)
+        for color in (
+            "#D6A07D", "#5A342B", "#879084",
+            "#182432", "#D7E6E7", "#4D95A6",
+            "#C8BBA4", "#B6D8BE", "#244A40",
+        ):
+            self.assertIn(f"--swatch-color: {color};", html)
+
     def test_js_clears_and_never_falls_back_for_derived_levels(self):
         js = open("static/assets/js/variants.js", encoding="utf-8").read()
         self.assertIn('swatch.hasAttribute("data-price")', js)
