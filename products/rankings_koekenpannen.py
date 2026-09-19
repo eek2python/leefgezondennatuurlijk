@@ -63,7 +63,7 @@ RANKINGS = {
         "ikea_hemlagad_keramisch_32",
         "scanpan_nura_32",
     ],
-    24_28: [
+    "24_28": [
         "demeyere_alu_industry_3_ceraforce_set_24_28",
         "beka_pro_induc_set_24_28",
         "le_creuset_essential_ceramic_set_24_28",
@@ -73,13 +73,13 @@ RANKINGS = {
         "bk_brilliant_set_24_28",
         "cook_and_pan_set_24_28",
     ],
-    20_28: [
+    "20_28": [
         "greenpan_geneva_set_20_28",
         "tefal_jamie_oliver_easy_cook_ceramic_set_20_28",
         "combekk_element_expert_green_set_20_28",
         "greenchef_prime_set_20_28"
     ],
-    20_24_28: [
+    "20_24_28": [
         "greenpan_valencia_pro_set_20_24_28",
         "bk_sublime_set_20_24_28",
         "greenpan_shades_set_20_24_28",
@@ -153,7 +153,7 @@ RANKINGS = {
         "ikea_hemlagad_keramisch_32",
         "scanpan_nura_32",
     ],
-    24_28: [
+    "24_28": [
         "demeyere_alu_industry_3_ceraforce_set_24_28",
         "beka_pro_induc_set_24_28",
         "le_creuset_essential_ceramic_set_24_28",
@@ -163,13 +163,13 @@ RANKINGS = {
         "bk_brilliant_set_24_28",
         "cook_and_pan_go_ivory_set_24_28",
     ],
-    20_28: [
+    "20_28": [
         "greenpan_geneva_set_20_28",
         "tefal_jamie_oliver_easy_cook_ceramic_set_20_28",
         "combekk_element_expert_green_set_20_28",
         "greenchef_prime_set_20_28"
     ],
-    20_24_28: [
+    "20_24_28": [
         "greenpan_valencia_pro_set_20_24_28",
         "bk_sublime_set_20_24_28",
         "greenpan_shades_set_20_24_28",
@@ -246,7 +246,7 @@ RANKINGS = {
         "ikea_hemlagad_keramisch_32",
         "scanpan_nura_32",
     ],
-    24_28: [
+    "24_28": [
         "demeyere_alu_industry_3_ceraforce_set_24_28",
         "beka_pro_induc_set_24_28",
         "le_creuset_essential_ceramic_set_24_28",
@@ -256,13 +256,13 @@ RANKINGS = {
         "bk_brilliant_set_24_28",
         "cook_and_pan_go_ivory_set_24_28",
     ],
-    20_28: [
+    "20_28": [
         "greenpan_geneva_set_20_28",
         "tefal_jamie_oliver_easy_cook_ceramic_set_20_28",
         "combekk_element_expert_green_set_20_28",
         "greenchef_prime_set_20_28"
     ],
-    20_24_28: [
+    "20_24_28": [
         "greenpan_valencia_pro_set_20_24_28",
         "bk_sublime_set_20_24_28",
         "greenpan_shades_set_20_24_28",
@@ -339,7 +339,7 @@ RANKINGS = {
         "ikea_hemlagad_keramisch_32",
         "scanpan_nura_32",
     ],
-    24_28: [
+    "24_28": [
         "demeyere_alu_industry_3_ceraforce_set_24_28",
         "beka_pro_induc_set_24_28",
         "le_creuset_essential_ceramic_set_24_28",
@@ -349,13 +349,13 @@ RANKINGS = {
         "bk_brilliant_set_24_28",
         "cook_and_pan_go_ivory_set_24_28",
     ],
-    20_28: [
+    "20_28": [
         "greenpan_geneva_set_20_28",
         "tefal_jamie_oliver_easy_cook_ceramic_set_20_28",
         "combekk_element_expert_green_set_20_28",
         "greenchef_prime_set_20_28"
     ],
-    20_24_28: [
+    "20_24_28": [
         "greenpan_valencia_pro_set_20_24_28",
         "bk_sublime_set_20_24_28",
         "greenpan_shades_set_20_24_28",
@@ -432,7 +432,7 @@ RANKINGS = {
         "ikea_hemlagad_keramisch_32",
         "scanpan_nura_32",
     ],
-    24_28: [
+    "24_28": [
         "demeyere_alu_industry_3_ceraforce_set_24_28",
         "beka_pro_induc_set_24_28",
         "le_creuset_essential_ceramic_set_24_28",
@@ -442,13 +442,13 @@ RANKINGS = {
         "bk_brilliant_set_24_28",
         "cook_and_pan_go_ivory_set_24_28",
     ],
-    20_28: [
+    "20_28": [
         "greenpan_geneva_set_20_28",
         "tefal_jamie_oliver_easy_cook_ceramic_set_20_28",
         "combekk_element_expert_green_set_20_28",
         "greenchef_prime_set_20_28"
     ],
-    20_24_28: [
+    "20_24_28": [
         "greenpan_valencia_pro_set_20_24_28",
         "bk_sublime_set_20_24_28",
         "greenpan_shades_set_20_24_28",
@@ -525,7 +525,7 @@ RANKINGS = {
         "ikea_hemlagad_keramisch_32",
         "scanpan_nura_32",
     ],
-    24_28: [
+    "24_28": [
         "demeyere_alu_industry_3_ceraforce_set_24_28",
         "beka_pro_induc_set_24_28",
         "le_creuset_essential_ceramic_set_24_28",
@@ -535,13 +535,13 @@ RANKINGS = {
         "bk_brilliant_set_24_28",
         "cook_and_pan_go_ivory_set_24_28",
     ],
-    20_28: [
+    "20_28": [
         "greenpan_geneva_set_20_28",
         "tefal_jamie_oliver_easy_cook_ceramic_set_20_28",
         "combekk_element_expert_green_set_20_28",
         "greenchef_prime_set_20_28"
     ],
-    20_24_28: [
+    "20_24_28": [
         "greenpan_valencia_pro_set_20_24_28",
         "bk_sublime_set_20_24_28",
         "greenpan_shades_set_20_24_28",
@@ -618,7 +618,7 @@ RANKINGS = {
         "ikea_hemlagad_keramisch_32",
         "scanpan_nura_32",
     ],
-    24_28: [
+    "24_28": [
         "demeyere_alu_industry_3_ceraforce_set_24_28",
         "beka_pro_induc_set_24_28",
         "le_creuset_essential_ceramic_set_24_28",
@@ -628,13 +628,13 @@ RANKINGS = {
         "bk_brilliant_set_24_28",
         "cook_and_pan_go_ivory_set_24_28",
     ],
-    20_28: [
+    "20_28": [
         "greenpan_geneva_set_20_28",
         "tefal_jamie_oliver_easy_cook_ceramic_set_20_28",
         "combekk_element_expert_green_set_20_28",
         "greenchef_prime_set_20_28"
     ],
-    20_24_28: [
+    "20_24_28": [
         "greenpan_valencia_pro_set_20_24_28",
         "bk_sublime_set_20_24_28",
         "greenpan_shades_set_20_24_28",
@@ -711,7 +711,7 @@ RANKINGS = {
         "ikea_hemlagad_keramisch_32",
         "scanpan_nura_32",
     ],
-    24_28: [
+    "24_28": [
         "demeyere_alu_industry_3_ceraforce_set_24_28",
         "beka_pro_induc_set_24_28",
         "le_creuset_essential_ceramic_set_24_28",
@@ -721,13 +721,13 @@ RANKINGS = {
         "bk_brilliant_set_24_28",
         "cook_and_pan_go_ivory_set_24_28",
     ],
-    20_28: [
+    "20_28": [
         "greenpan_geneva_set_20_28",
         "tefal_jamie_oliver_easy_cook_ceramic_set_20_28",
         "combekk_element_expert_green_set_20_28",
         "greenchef_prime_set_20_28"
     ],
-    20_24_28: [
+    "20_24_28": [
         "greenpan_valencia_pro_set_20_24_28",
         "bk_sublime_set_20_24_28",
         "greenpan_shades_set_20_24_28",

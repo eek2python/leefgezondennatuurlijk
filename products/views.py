@@ -14,6 +14,7 @@ from utils.product_helpers import (
 )
 from utils.usage_helpers import build_usage_display
 from utils.pricing import get_price_range, has_price_range_config
+from .templatetags.product_formatting import format_size_label
 from utils.variant_helpers import (
     apply_resolved_link,
     prepare_product_variants,
@@ -544,7 +545,7 @@ def koekenpannen(request):
     products = [copy.deepcopy(KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in KOEKENPANNEN_PRODUCTS]
     _enrich_products(products, category="koekenpannen")
     product_count = len(products)
-    selected_size_label = " + ".join(str(size).split("_"))
+    selected_size_label = format_size_label(size)
 
     conclusie = content["conclusies"].get(size, {})
     hero_h1 = content["hero"]["h1"].format(

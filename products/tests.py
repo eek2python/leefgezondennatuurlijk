@@ -807,6 +807,14 @@ class DisplayVariantHardeningTests(TestCase):
 
 
 class KoekenpanSetSizeSelectorTests(TestCase):
+    def test_size_label_formatter_handles_single_and_set_sizes(self):
+        from products.templatetags.product_formatting import format_size_label
+
+        self.assertEqual(format_size_label(20), "20")
+        self.assertEqual(format_size_label("20_28"), "20 + 28")
+        self.assertEqual(format_size_label("24_28"), "24 + 28")
+        self.assertEqual(format_size_label("20_24_28"), "20 + 24 + 28")
+
     def test_set_size_ranking_key_is_text(self):
         from products.rankings_koekenpannen import RANKINGS
 
@@ -815,25 +823,45 @@ class KoekenpanSetSizeSelectorTests(TestCase):
         self.assertEqual(len(RANKINGS["24_28"]), 8)
 
     def test_set_size_selector_loads_and_labels_sets(self):
-        response = self.client.get("/koekenpannen/?size=24_28")
+        expected_counts = {
+            "20_28": 4,
+            "24_28": 7,
+            "20_24_28": 6,
+        }
 
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.context["selected_size"], "24_28")
-        self.assertEqual(response.context["product_count"], 8)
+        for size_key, product_count in expected_counts.items():
+            with self.subTest(size_key=size_key):
+                response = self.client.get("/koekenpannen/", {"size": size_key})
+                label = " + ".join(size_key.split("_"))
+
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(response.context["selected_size"], size_key)
+                self.assertEqual(response.context["product_count"], product_count)
+                self.assertContains(response, f'href="?size={size_key}"', count=2)
+                self.assertContains(response, f"{label} cm")
+                self.assertNotContains(response, f"{size_key} cm")
+                self.assertContains(
+                    response,
+                    (
+                        f"De {product_count} beste PFAS-vrije keramische "
+                        f"koekenpannen van {label} cm"
+                    ),
+                )
+                self.assertContains(
+                    response,
+                    (
+                        f"Op deze pagina vergelijken we {product_count} keramische "
+                        f"koekenpannen van {label} cm"
+                    ),
+                )
+
         self.assertEqual(
             response.context["available_sizes"],
-            [20, 24, 26, 28, 30, 32, "24_28"],
-        )
-        self.assertContains(response, 'href="?size=24_28"')
-        self.assertContains(response, "24 + 28 cm")
-        self.assertNotContains(response, "24_28 cm")
-        self.assertContains(
-            response,
-            "De 8 beste PFAS-vrije keramische koekenpannen van 24 + 28 cm",
+            [20, 24, 26, 28, 30, 32, "20_24_28", "20_28", "24_28"],
         )
 
     def test_unknown_set_size_falls_back_to_default(self):
-        response = self.client.get("/koekenpannen/?size=20_28")
+        response = self.client.get("/koekenpannen/?size=18_22")
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context["selected_size"], 28)
