@@ -25960,7 +25960,7 @@ PRODUCTS = {
         "availability": "InStock",
         "affiliate_url": "",
         "retailer_url": "https://bk.nl/products/sublime-3-delige-set-green",
-        "award": "💎 Beste luxe uitvoering",
+        "award": "💎 Premium keuze",
         "price_range": "€€€",
         "image": "bk-sublime-set-olive-green-20-24-28cm.webp",
         "image_path": "images/products/keramische-koekenpannen",
