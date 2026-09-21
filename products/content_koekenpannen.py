@@ -16,13 +16,16 @@ CONTENT = {
                 "De selectie bevat zowel voordelige als premium modellen. "
                 "De beoordelingen zijn redactioneel en gebaseerd op "
                 "productspecificaties, bevestigde materiaalinformatie en "
-                "de praktische mogelijkheden van ieder model."
+                "de praktische mogelijkheden van iedere losse pan of set. "
+                "Bij een koekenpannenset kijken we daarnaast naar het aantal "
+                "daadwerkelijke pannen, de maatcombinatie en eventuele "
+                "accessoires."
             ),
         ],
     },
 
     "why_choose": {
-        "title": "Waarom kiezen voor een koekenpan zonder PFAS?",
+        "title": "Waarom kiezen voor een koekenpan of set zonder PFAS?",
         "intro": (
             "PFAS is een verzamelnaam voor een grote groep chemische stoffen. "
             "Wie deze stoffen in een antiaanbaklaag wil vermijden, kan kiezen "
@@ -53,6 +56,13 @@ CONTENT = {
                 "<strong>Onderhoud:</strong> veel keramische pannen zijn "
                 "eenvoudig te reinigen, al blijft handwas doorgaans de "
                 "voorzichtigste keuze voor de coating."
+            ),
+            (
+                "<strong>Meerdere formaten in één keer:</strong> een "
+                "koekenpannenset combineert twee of drie diameters, zodat je "
+                "voor kleine en grotere porties een passende pan kunt kiezen. "
+                "Controleer wel of je alle meegeleverde formaten daadwerkelijk "
+                "zult gebruiken."
             ),
         ],
         "outro": (
@@ -101,9 +111,47 @@ CONTENT = {
                 "h3": "Praktische combinaties",
                 "items": [
                     "<b>Kleine huishoudens:</b> 20 cm en/of 24 cm",
-                    "<b>Stellen:</b> 24 cm + 28 cm",
+                    (
+                        "<b>20 + 28 cm:</b> een compacte pan voor één portie "
+                        "naast een ruime pan voor gezamenlijke maaltijden."
+                    ),
+                    (
+                        "<b>24 + 28 cm:</b> twee veelgebruikte formaten voor "
+                        "dagelijkse bereidingen voor één tot vier personen."
+                    ),
+                    (
+                        "<b>20 + 24 + 28 cm:</b> de meest complete combinatie "
+                        "voor wie regelmatig kleine, middelgrote en grotere "
+                        "porties bereidt."
+                    ),
                     "<b>Gezinnen:</b> 26 of 28 cm + een grotere pan",
                     "<b>Grote bereidingen:</b> 30 of 32 cm",
+                ],
+            },
+            {
+                "h3": "Wanneer is een koekenpannenset interessant?",
+                "items": [
+                    (
+                        "<b>Prijs per pan:</b> vergelijk de setprijs met de "
+                        "prijzen van de losse pannen. Een set is niet "
+                        "automatisch voordeliger."
+                    ),
+                    (
+                        "<b>Werkelijk aantal pannen:</b> tel alleen de "
+                        "koekenpannen mee. Deksels, grepen en beschermers kunnen "
+                        "door verkopers ook als afzonderlijk onderdeel worden "
+                        "meegeteld."
+                    ),
+                    (
+                        "<b>Gelijke uitvoering:</b> controleer of alle pannen "
+                        "dezelfde coating, bodemconstructie, handgreep en "
+                        "ovenlimiet hebben."
+                    ),
+                    (
+                        "<b>Opbergen:</b> drie pannen vragen meer kastruimte. "
+                        "Gebruik panbeschermers wanneer de pannen gestapeld "
+                        "worden bewaard."
+                    ),
                 ],
             },
             {
@@ -129,8 +177,9 @@ CONTENT = {
             },
         ],
         "outro": (
-            "<b>Praktische vuistregel:</b> kies geen grotere pan dan je "
-            "kookzone en gebruikelijke porties nodig maken."
+            "<b>Praktische vuistregel:</b> kies geen grotere pan of "
+            "uitgebreidere set dan je kookzones, opbergruimte en gebruikelijke "
+            "porties nodig maken."
         ),
     },
 
@@ -279,10 +328,71 @@ CONTENT = {
                 "op prijs-kwaliteit te beoordelen."
             ),
         },
+
+        "20+28": {
+            "title": "Conclusie voor koekenpannensets van 20 + 28 cm",
+            "text": (
+                "Een set van <strong>20 + 28 cm</strong> combineert een "
+                "compacte pan voor eieren, bijgerechten en éénpersoonsporties "
+                "met een ruime pan voor gezamenlijke maaltijden. De "
+                "<strong>GreenPan Geneva</strong> is onze beste veelzijdige "
+                "keuze door de combinatie van inductiegeschiktheid en "
+                "ovengebruik tot 220 °C. De <strong>Jamie Oliver by Tefal "
+                "Easy Cook Ceramic</strong> onderscheidt zich met RVS "
+                "basismateriaal, een warmte-indicator en comfortabele siliconen "
+                "grepen. De <strong>COMBEKK Element Expert</strong> is de "
+                "budgetkeuze met een volledige inductiebodem. De "
+                "<strong>GreenChef Prime</strong> is vooral geschikt voor wie "
+                "koelblijvende handgrepen belangrijk vindt, maar heeft een "
+                "beperktere ovenbestendigheid van 160 °C."
+            ),
+        },
+
+        "24+28": {
+            "title": "Conclusie voor koekenpannensets van 24 + 28 cm",
+            "text": (
+                "De combinatie <strong>24 + 28 cm</strong> is voor veel "
+                "huishoudens de praktischste tweedelige set: 24 cm voor "
+                "kleinere dagelijkse bereidingen en 28 cm voor grotere "
+                "porties. De <strong>Demeyere Alu Industry 3 "
+                "Ceraforce</strong> is onze beste allroundkeuze. De "
+                "<strong>Beka Pro Induc</strong> is de budgetkeuze en de "
+                "<strong>Le Creuset Essential Non-Stick Ceramic</strong> de "
+                "premiumkeuze. De sets van <strong>DUCQ</strong>, "
+                "<strong>GreenPan Essence</strong>, <strong>Tefal Renew "
+                "ON</strong>, <strong>BK Brilliant</strong> en "
+                "<strong>Cook & Pan</strong> bieden aanvullende "
+                "keuzes met verschillen in constructie, handgrepen, "
+                "ovenbestendigheid en prijsniveau."
+            ),
+        },
+
+        "20+24+28": {
+            "title": "Conclusie voor koekenpannensets van 20 + 24 + 28 cm",
+            "text": (
+                "Een set van <strong>20 + 24 + 28 cm</strong> biedt drie "
+                "duidelijk verschillende formaten voor kleine, middelgrote "
+                "en grotere bereidingen. De <strong>GreenPan Valencia Pro "
+                "</strong> is onze beste allroundkeuze door de "
+                "Magneto-inductiebodem, ovenmogelijkheden en vlakke "
+                "bodemconstructie. De <strong>BK Sublime</strong> "
+                "is de luxe keuze en wordt geleverd met twee "
+                "panbeschermers. De <strong>COMBEKK Tundra Easy</strong> is "
+                "de budgetkeuze, maar voor deze specifieke set is geen "
+                "maximale oventemperatuur bevestigd. De "
+                "<strong>GreenPan Shades</strong>, "
+                "<strong>Cook & Pan</strong> en "
+                "<strong>BK Brilliant</strong> vormen alternatieven met "
+                "verschillende handgreepmaterialen en ovenlimieten."
+            ),
+        },
     },
 
     "faq": {
-        "title": "Veelgestelde vragen over PFAS-vrije koekenpannen",
+        "title": (
+            "Veelgestelde vragen over PFAS-vrije koekenpannen en "
+            "koekenpannensets"
+        ),
         "items": [
             {
                 "q": "Wat betekent PFAS-vrij bij een koekenpan?",
@@ -359,6 +469,36 @@ CONTENT = {
                 ),
             },
             {
+                "q": "Welke koekenpannenset past het beste bij mijn huishouden?",
+                "a": (
+                    "Een set van 20 + 28 cm is geschikt als je zowel zeer "
+                    "kleine als grotere porties bereidt. De combinatie "
+                    "24 + 28 cm bevat twee veelgebruikte dagelijkse formaten. "
+                    "Een set van 20 + 24 + 28 cm biedt de meeste keuze, maar "
+                    "is vooral zinvol wanneer je alle drie de maten regelmatig "
+                    "gebruikt."
+                ),
+            },
+            {
+                "q": "Is een koekenpannenset voordeliger dan losse pannen?",
+                "a": (
+                    "Niet altijd. Vergelijk de actuele setprijs met de "
+                    "gezamenlijke prijs van exact dezelfde losse pannen. Let "
+                    "daarbij ook op kleurvarianten, accessoires en verschillen "
+                    "in handgrepen of coating."
+                ),
+            },
+            {
+                "q": "Wat betekent het aantal delen bij een pannenset?",
+                "a": (
+                    "Het aantal delen is niet altijd gelijk aan het aantal "
+                    "pannen. Sommige aanbieders tellen deksels, losse grepen of "
+                    "panbeschermers mee. Daarom vermelden wij bij iedere set "
+                    "apart hoeveel daadwerkelijke pannen en welke diameters "
+                    "worden geleverd."
+                ),
+            },
+            {
                 "q": "Wat is het verschil tussen keramische en RVS pannen?",
                 "a": (
                     "Een keramische pan heeft een antiaanbaklaag en is daardoor vaak "
@@ -411,7 +551,7 @@ CONTENT = {
     },
 
     "how_we_test": {
-        "title": "Hoe wij koekenpannen beoordelen",
+        "title": "Hoe wij koekenpannen en koekenpannensets beoordelen",
         "intro": (
             "Onze beoordelingen zijn redactioneel. Tenzij bij een product "
             "expliciet anders staat vermeld, voeren wij geen laboratorium- of "
@@ -440,8 +580,19 @@ CONTENT = {
                 "onderhoud en hanteerbaarheid."
             ),
             (
+                "<strong>Samenstelling van de set:</strong> het werkelijke "
+                "aantal pannen, de meegeleverde diameters, de onderlinge "
+                "spreiding in formaat en eventuele deksels of accessoires."
+            ),
+            (
+                "<strong>Consistentie binnen de set:</strong> gelden de "
+                "PFAS-vrije claim, inductiegeschiktheid, ovenlimiet en "
+                "onderhoudsinstructies voor alle meegeleverde pannen?"
+            ),
+            (
                 "<strong>Prijs-kwaliteit:</strong> de eigenschappen en "
-                "beperkingen in verhouding tot het actuele prijsniveau."
+                "beperkingen in verhouding tot het actuele prijsniveau. Bij "
+                "sets kijken we ook naar de prijs per daadwerkelijke pan."
             ),
             (
                 "<strong>Beschikbaarheid:</strong> is het exacte model "

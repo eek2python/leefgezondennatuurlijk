@@ -524,6 +524,7 @@ def koekenpannen(request):
         KOEKENPANNEN_RANKINGS.keys(),
         key=lambda value: (
             len(str(value).split("_")) > 1,
+            len(str(value).split("_")),
             tuple(int(part) for part in str(value).split("_")),
         ),
     )

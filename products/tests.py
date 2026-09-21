@@ -857,7 +857,7 @@ class KoekenpanSetSizeSelectorTests(TestCase):
 
         self.assertEqual(
             response.context["available_sizes"],
-            [20, 24, 26, 28, 30, 32, "20_24_28", "20_28", "24_28"],
+            [20, 24, 26, 28, 30, 32, "20_28", "24_28", "20_24_28"],
         )
 
     def test_unknown_set_size_falls_back_to_default(self):
