@@ -37,19 +37,23 @@ def sitemap_xml(request):
             "priority": entry["priority"],
         })
 
-    blog_templates_path = os.path.join(settings.BASE_DIR, "blogs", "templates", "blogs")
+    from blogs.views import BLOG_ARTICLE_META
+
     blog_urls = []
-    if os.path.isdir(blog_templates_path):
-        for filename in sorted(os.listdir(blog_templates_path)):
-            if filename.endswith(".html") and filename != "blogoverzicht.html":
-                slug = filename.replace(".html", "")
-                file_path = os.path.join(blog_templates_path, filename)
-                blog_urls.append({
-                    "loc": f"{BASE_URL}/blogs/{slug}/",
-                    "lastmod": datetime.fromtimestamp(
-                        os.path.getmtime(file_path)
-                    ).strftime("%Y-%m-%d"),
-                })
+    for slug, meta in sorted(BLOG_ARTICLE_META.items()):
+        template_name = meta.get("template", f"blogs/{slug}.html")
+        file_path = os.path.join(
+            settings.BASE_DIR,
+            "blogs",
+            "templates",
+            template_name,
+        )
+        blog_urls.append({
+            "loc": BASE_URL + reverse("blogs_detail", kwargs={"slug": slug}),
+            "lastmod": datetime.fromtimestamp(
+                os.path.getmtime(file_path)
+            ).strftime("%Y-%m-%d"),
+        })
 
     from products.views import ALL_PRODUCTS_BY_SLUG
     product_urls = []

@@ -6,6 +6,8 @@
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
    {% block meta %}<meta name="description" content="Bezoek onze website voor ondersteuning bij het maken van weloverwogen en gezondere keuzes van niet-giftige, milieuvriendelijke producten voor elke hoek van je huis.">{% endblock %}
+   {% if article_ld %}<script type="application/ld+json">{{ article_ld|safe }}</script>{% endif %}
+   {% if blog_breadcrumb_ld %}<script type="application/ld+json">{{ blog_breadcrumb_ld|safe }}</script>{% endif %}
    <link rel="stylesheet" href="{% static_v 'assets/css/main.css' %}" />
    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
    {% if GA_MEASUREMENT_ID %}
