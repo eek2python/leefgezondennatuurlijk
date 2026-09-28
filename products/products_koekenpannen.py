@@ -268487,7 +268487,7 @@ PRODUCTS = {
         "slug": "beka-pro-induc-koekenpannenset-24-28",
         "name": "Beka Pro Induc Koekenpannenset",
         "description": (
-            "Betaalbare tweedelige koekenpannenset van 100% gerecycled aluminium met een "
+            "Tweedelige koekenpannenset van 100% gerecycled aluminium met een "
             "PFAS-vrije keramische antiaanbaklaag. De zware inductiebodem en ergonomische "
             "RVS-grepen maken de pannen geschikt voor dagelijks koken op alle gangbare "
             "warmtebronnen."
