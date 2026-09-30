@@ -1061,4 +1061,106 @@ PRODUCTS = {
         ),
         "award": None,
     },
+
+    "ninja_crispi_dualzone_7_6l": {
+        "slug": "ninja-crispi-dualzone-glazen-airfryer-7-6l",
+        "name": "Ninja CRISPi DualZone Glazen Airfryer – 2 x 3,8 L",
+        "brand": "Ninja",
+        "material": (
+            "Twee PFAS- en PTFE-vrije CleanCrisp glazen kookschalen"
+        ),
+        "features": [
+            "2 x 3,8 liter",
+            "2860 watt",
+            "8 kookfuncties",
+            "Twee afzonderlijk instelbare kookzones",
+            "Smart Finish-synchronisatiefunctie",
+            "Match Cook-functie",
+            "Glazen kookschalen met goed zicht op het bereidingsproces",
+            "Meegeleverde deksels voor bewaren in koelkast of vriezer",
+            "Verwijderbare crispplaten",
+            "Vaatwasserbestendige glazen schalen, deksels en crispplaten",
+        ],
+        "image": "airfryer-ninja-crispi-dualzone-7-6l-wit.webp",
+        "image_path": "images/products/airfryers",
+        "variants": [
+            {
+                "name": "Wit",
+                "image": (
+                    "airfryer-ninja-crispi-dualzone-7-6l-wit.webp"
+                ),
+                "hex": "#C6C1C0",
+                "affiliate_url": "",
+                "retailer_url": "https://www.sharkninja.nl/ninja-crispi-dualzone-glazen-airfryer-8-in-1-wit/DD102EUIV2.html?dwvar_DD102EUIV2_color=C6C1C0",
+                "official_url": "https://www.sharkninja.nl/ninja-crispi-dualzone-glazen-airfryer-8-in-1-wit/DD102EUIV2.html?dwvar_DD102EUIV2_color=C6C1C0",
+                "price": 329.99,
+                "price_last_checked": "2026-09-30",
+            },
+            {
+                "name": "Donker blauw",
+                "image": (
+                    "airfryer-ninja-crispi-dualzone-7-6l-donkerblauw.webp"
+                ),
+                "hex": "#666e7c",
+                "affiliate_url": "",
+                "retailer_url": "https://www.sharkninja.nl/ninja-crispi-dualzone-glazen-airfryer-8-in-1-donkerblauw/DD102EUBL1.html?dwvar_DD102EUBL1_color=666e7c",
+                "official_url": "https://www.sharkninja.nl/ninja-crispi-dualzone-glazen-airfryer-8-in-1-donkerblauw/DD102EUBL1.html?dwvar_DD102EUBL1_color=666e7c",
+                "price": 329.99,
+                "price_last_checked": "2026-09-30",
+            },
+            {
+                "name": "Roze",
+                "image": (
+                    "airfryer-ninja-crispi-dualzone-7-6l-roze.webp"
+                ),
+                "hex": "#e4bdbf",
+                "affiliate_url": "",
+                "retailer_url": "https://www.sharkninja.nl/ninja-crispi-dualzone-glazen-airfryer-8-in-1-roze/DD102EUPK1.html?dwvar_DD102EUPK1_color=e4bdbf",
+                "official_url": "https://www.sharkninja.nl/ninja-crispi-dualzone-glazen-airfryer-8-in-1-roze/DD102EUPK1.html?dwvar_DD102EUPK1_color=e4bdbf",
+                "price": 329.99,
+                "price_last_checked": "2026-09-30",
+            },
+            ],
+        "description": (
+            "Dual-zoneairfryer met twee glazen kookschalen van elk 3,8 liter, "
+            "acht kookfuncties, Smart Finish en PFAS- en PTFE-vrij "
+            "CleanCrisp-glaswerk."
+        ),
+        "pros": [
+            "Twee transparante glazen kookschalen zonder PFAS en PTFE",
+            "Smart Finish en Match Cook voor flexibel koken met twee zones",
+            "Acht kookfuncties, waaronder airfryen, bakken, braden en drogen",
+            "Glazen schalen zijn ook geschikt voor serveren en bewaren",
+        ],
+        "cons": [
+            "Met circa €330 aanzienlijk duurder dan de meeste dual-zoneairfryers",
+            "Met circa 14 kg relatief zwaar om regelmatig te verplaatsen",
+        ],
+        "rating": 4.7,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 329.99,
+        "price_last_checked": "2026-09-30",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.sharkninja.nl/"
+            "ninja-crispi-dualzone-glazen-airfryer-8-in-1-wit/"
+            "DD102EUIV2.html"
+        ),
+        "official_url": (
+            "https://www.sharkninja.nl/"
+            "ninja-crispi-dualzone-glazen-airfryer-8-in-1-wit/"
+            "DD102EUIV2.html"
+        ),
+        "availability_label": "",
+        "price_range": "€€€€",
+        "verdict": (
+            "Een innovatieve premiumkeuze met twee transparante glazen "
+            "kookschalen, acht functies en DualZone-technologie, maar tegen "
+            "een duidelijk hogere prijs dan conventionele dual-zoneairfryers."
+        ),
+        "award": None,
+    },
 }

@@ -2191,12 +2191,5 @@
     "category": "airfryers",
     "product_key": "airfryer-ninja-crispi-dualzone-7-6l-wit",
     "enabled": true
-  },
-  {
-    "source": "airfryers/airfryer-ninja-crispi-pro-xl-5-7l-rose.jpg",
-    "slug": "airfryer-ninja-crispi-dualzone-7-6l-roze",
-    "category": "airfryers",
-    "product_key": "airfryer-ninja-crispi-dualzone-7-6l-roze",
-    "enabled": true
   }
 ]

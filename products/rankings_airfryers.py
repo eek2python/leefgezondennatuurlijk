@@ -20,5 +20,6 @@ RANKINGS = {
         "bourgini_duo_8l",
         "greenpan_bistro_dual_8l",
         "wartmann_wm2511af_11l",
+        "ninja_crispi_dualzone_7_6l",
     ],
 }
