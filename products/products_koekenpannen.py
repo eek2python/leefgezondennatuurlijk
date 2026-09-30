@@ -2987,8 +2987,10 @@ PRODUCTS = {
 "bk_sublime_set_20_24_28": {
   "slug": "bk-sublime-set-20-24-28",
   "name": "BK Sublime koekenpannenset 20 + 24 + 28 cm",
-  "description": "Drie aluminium koekenpannen met PFAS-vrije Thermolon-laag, "
-  "RVS grepen en twee meegeleverde panbeschermers.",
+  "description": "Driedelige koekenpannenset van 100% gerecycled aluminium met een PFAS-vrije "
+  "Thermolon keramische antiaanbaklaag met Scratch Guard-technologie voor betere weerstand tegen "
+  "krassen. De pannen zijn voorzien van een inductiebodem, RVS-grepen en worden geleverd met twee "
+  "panbeschermers.",
   "brand": "BK",
   "diameter": 28,
   "set_type": "koekenpannenset",
@@ -2996,8 +2998,13 @@ PRODUCTS = {
   "diameters": [20, 24, 28],
   "set_contents": ["Koekenpan 20 cm", "Koekenpan 24 cm", "Koekenpan 28 cm"],
   "set_accessories": ["2 panbeschermers"],
-  "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["Geschikt voor inductie", "Ovenbestendig tot 220 °C"],
+  "material": "100% gerecycled aluminium met keramische antiaanbaklaag",
+  "features": [
+      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie", 
+      "Roestvrijstalen grepen",
+      "Ovenbestendig tot 220 °C",
+      "Vaatwasserbestendig; handwas aanbevolen"
+  ],
   "rating": 4.4,
   "rating_count": None,
   "rating_source": "editorial",
@@ -3032,32 +3039,36 @@ PRODUCTS = {
       },
   ],
   "pros": [
-      "Magneto-inductiebodem en RVS handgrepen die ovengebruik tot 220 °C mogelijk maken",
-      "Twee meegeleverde panbeschermers maken het stapelen van de drie pannen praktischer",
+      "Krasbestandigere coating",
+      "Ovenbestendig tot 220 °C",
+      "Twee meegeleverde panbeschermers voor het opbergen",
   ],
   "cons": [
-      "RVS grepen worden heet bij gebruik in de oven"
+      "Relatief hogere aanschafprijs"
   ],
-  "verdict": "De BK Sublime combineert de drie gebruikelijke bakformaten met "
-  "inductiegeschiktheid en ovenbestendigheid tot 220 °C. De twee "
-  "panbeschermers voegen praktisch nut toe wanneer je de set "
-  "opgeborgen houdt in een stapel. De volledig metalen handgrepen "
-  "vragen wel bescherming bij gebruik in de oven; voor wie vooral "
-  "koelblijvende grepen zoekt, is de BK Brilliant geschikter.",
+  "verdict": "Onze premiumkeuze voor wie drie op elkaar afgestemde keramische koekenpannen "
+  "zoekt met een inductiebodem, keramische coating die beter bestand is tegen krassen en "
+  "ovenmogelijkheden tot 220 °C. De twee panbeschermers helpen bij het stapelen en opbergen. ",
 },
 "greenpan_shades_set_20_24_28": {
   "slug": "greenpan-shades-set-20-24-28",
   "name": "GreenPan Shades koekenpannenset 20 + 24 + 28 cm",
-  "description": "Drie verschillend gekleurde aluminium koekenpannen met PFAS-vrije "
-  "keramische laag en RVS grepen.",
+  "description": "Driedelige koekenpannenset van 100% gerecycled aluminium met een PFAS-vrije, "
+  "diamantversterkte keramische antiaanbaklaag. De pannen combineren drie op "
+  "elkaar afgestemde kleuren met een geperforeerde inductiebodem voor gelijkmatige verwarming, RVS-grepen "
+  "en kunnen tot 200 °C in de oven.",
   "brand": "GreenPan",
   "diameter": 28,
   "set_type": "koekenpannenset",
   "pan_count": 3,
   "diameters": [20, 24, 28],
   "set_contents": ["Koekenpan 20 cm", "Koekenpan 24 cm", "Koekenpan 28 cm"],
-  "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["PFAS-vrij", "Geschikt voor inductie", "Ovenbestendig tot 200 °C"],
+  "material": "100% gerecycled aluminium met keramische antiaanbaklaag",
+  "features": [
+      "Geperforeerde inductiebodem",
+      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie", 
+      "Roestvrijstalen grepen",
+      "Ovenbestendig tot 200 °C"],
   "rating": 4.2,
   "rating_count": None,
   "rating_source": "editorial",
@@ -3101,24 +3112,26 @@ PRODUCTS = {
       },
   ],
   "pros": [
-      "Drie op elkaar afgestemde kleuren zonder verschil in de panformaten",
-      "Geschikt voor inductie en ovengebruik tot 200 °C",
+      "Geperforeerde inductiebodem voor gelijkmatige verwarming",
+      "Geschikt voor ovengebruik tot 200 °C",
+      "Vaatwasserbestendig",
   ],
   "cons": [
-      "RVS handgrepen worden heet bij gebruik in de oven",
+      "Relatief hoge aanschafprijs",
   ],
-  "verdict": "De Greenpan Shades is vooral aantrekkelijk als je drie bij elkaar "
-  "passende, verschillend gekleurde koekenpannen zoekt zonder in te "
-  "leveren op inductiegeschiktheid. De pannen kunnen bovendien tot "
-  "200 °C in de oven. Daarmee zijn ze bruikbaar voor veel "
-  "ovenbereidingen.",
+  "verdict": "Een keramische set voor wie een opvallend, op elkaar afgestemd kleurontwerp wil "
+  "combineren met praktische bakmogelijkheden. De pannen hebben een "
+  "diamantversterkte coating, zijn geschikt voor inductie en mogen tot 200 °C in de "
+  "oven. ",
 },
 
 "cook_and_pan_set_20_24_28": {
   "slug": "cook-and-pan-set-20-24-28",
   "name": "Cook & Pan koekenpannenset 20 + 24 + 28 cm",
-  "description": "Drie aluminium koekenpannen met PFAS-vrije keramische antiaanbaklaag "
-  "en metalen handgrepen.",
+  "description": "Driedelige aluminium koekenpannenset met een PFAS-vrije keramische "
+  "antiaanbaklaag, verkrijgbaar in meerdere kleur- en handgreepuitvoeringen. De "
+  "pannen zijn geschikt voor inductie; varianten met RVS-grepen mogen tot 280 °C "
+  "in de oven, uitvoeringen met houtlookgrepen tot 180 °C.",
   "brand": "Cook & Pan",
   "diameter": 28,
   "set_type": "koekenpannenset",
@@ -3126,7 +3139,11 @@ PRODUCTS = {
   "diameters": [20, 24, 28],
   "set_contents": ["Koekenpan 20 cm", "Koekenpan 24 cm", "Koekenpan 28 cm"],
   "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["Geschikt voor inductie", "Uitvoering met RVS handgrepen ovenbestendig tot 280 °C", "Vaatwasserbestendig",],
+  "features": [
+      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie", 
+      "Uitvoering met RVS handgrepen ovenbestendig tot 280 °C", 
+      "Uitvoering met houtlookgrepen: ovenbestendig tot 180 °C"
+      "Vaatwasserbestendig",],
   "rating": 4.2,
   "rating_count": None,
   "rating_source": "editorial",
@@ -3255,21 +3272,21 @@ PRODUCTS = {
       "Vaatwasserbestendig, evenals de uitvoeringen met houtlook handgrepen",
   ],
   "cons": [
-      "Voor de varianten met RVS handgrepen worden deze heet bij ovengebruik",
-      "De grens van 280 °C geldt niet voor houtlook uitvoeringen; die mogen tot 180 °C in de oven",
+      "Bij houtlookgrepen is de ovenlimiet 180 °C",
   ],
-  "verdict": "De Cook and Pan set is interessant als je de koekenpannen ook "
-  "regelmatig in de oven gebruikt: Cook & Pan geeft een maximum "
-  "van 280 °C op voor deze uitvoering met RVS handgrepen. "
-  "Uitvoeringen met houtlook handgrepen zijn tot 180 °C "
-  "ovenbestendig; beide typen mogen in de vaatwasser. Houd bij "
-  "ovengebruik rekening met hete RVS grepen."
+  "verdict": "Een veelzijdige keramische set voor wie drie formaten en een ruime keuze aan "
+  "kleuren zoekt. De modellen met RVS-grepen kunnen tot 280 °C in de oven; "
+  "uitvoeringen met houtlookgrepen zijn begrensd op 180 °C. Alle varianten zijn "
+  "vaatwasserbestendig, al is handwas vriendelijker voor de keramische coating.",
 },
+    
 "bk_brilliant_set_20_24_28": {
   "slug": "bk-brilliant-set-20-24-28",
   "name": "BK Brilliant koekenpannenset 20 + 24 + 28 cm",
-  "description": "Drie zwarte aluminium koekenpannen met keramische PFAS-vrije "
-  "antiaanbaklaag en koelblijvende kunststof grepen.",
+  "description": "Driedelige aluminium koekenpannenset met een PFAS-vrije keramische "
+  "antiaanbaklaag en kunststof koudgrepen. Met de formaten 20, 24 en 28 cm is de "
+  "set geschikt voor zowel kleine als ruime dagelijkse bereidingen, op alle "
+  "gangbare warmtebronnen inclusief inductie.",
   "brand": "BK",
   "diameter": 28,
   "set_type": "koekenpannenset",
@@ -3277,7 +3294,12 @@ PRODUCTS = {
   "diameters": [20, 24, 28],
   "set_contents": ["Koekenpan 20 cm", "Koekenpan 24 cm", "Koekenpan 28 cm"],
   "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["Geschikt voor inductie", "Ovenbestendig tot 160 °C"],
+  "features": [
+      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie", 
+      "Kunststof koudgrepen",
+      "Ovenbestendig tot 160 °C",
+      "Vaatwasserbestendig; handwas aanbevolen voor de coating"
+  ],
   "rating": 4.0,
   "rating_count": None,
   "rating_source": "editorial",
@@ -3292,31 +3314,31 @@ PRODUCTS = {
   "image": "bk-brilliant-set-20-24-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Kunststof handgrepen blijven volgens BK koel bij gebruik op de kookplaat",
+      "Kunststof handgrepen die koel blijven bij gebruik op de kookplaat",
       "Geschikt voor inductie en vaatwasserbestendig voor dagelijks gebruik",
   ],
   "cons": ["Door de kunststof grepen in de oven beperkt tot 160 °C"],
-  "verdict": "De BK Brilliant is een praktische keuze als je de drie pannen "
-  "vooral op de kookplaat gebruikt. De kunststof grepen blijven "
-  "daarbij volgens BK koel, terwijl de pannen ook geschikt zijn "
-  "voor inductie en in de vaatwasser mogen. De ovenlimiet van "
-  "160 °C maakt deze set minder geschikt voor gerechten die na "
+  "verdict": "Een praktische driedelige set voor wie vooral op de kookplaat bakt en "
+  "comfortabele koudgrepen wil. De pannen zijn geschikt voor inductie en zijn vaatwasbestendig."
+  "De ovenlimiet van 160 °C maakt deze set minder geschikt voor gerechten die na "
   "het aanbakken op hogere temperatuur in de oven garen.",
 },
 
 "combekk_tundra_easy_set_20_24_28": {
   "slug": "combekk-tundra-easy-set-20-24-28",
   "name": "COMBEKK Tundra Easy koekenpannenset 20 + 24 + 28 cm",
-  "description": "Drie zwarte aluminium koekenpannen met PFAS-vrije keramische "
-  "antiaanbaklaag, geschikt voor inductie.",
+  "description": "Driedelige aluminium koekenpannenset met een PFAS-vrije keramische "
+  "antiaanbaklaag. De pannen zijn geschikt voor inductie, ovenbestendig en mogen in de vaatwasser. ",
   "brand": "COMBEKK",
   "diameter": 28,
   "set_type": "koekenpannenset",
   "pan_count": 3,
   "diameters": [20, 24, 28],
   "set_contents": ["Koekenpan 20 cm", "Koekenpan 24 cm", "Koekenpan 28 cm"],
-  "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["Geschikt voor inductie", "Vaatwasserbestendig"],
+  "material": "100% gerecycled aluminium met keramische antiaanbaklaag",
+  "features": [
+      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie", 
+      "Vaatwasserbestendig; handwas aanbevolen voor de coating"],
   "rating": 3.8,
   "rating_count": None,
   "rating_source": "editorial",
@@ -3335,13 +3357,11 @@ PRODUCTS = {
       "Geschikt voor inductie en vaatwasser",
   ],
   "cons": [
-      "Ovengebruik kan niet worden aanbevolen zonder bevestigde maximumtemperatuur",
+      "Geen bevestigde maximale oventemperatuur voor deze exacte set",
   ],
-  "verdict": "De Combekk Tundra Easy pannenset is de budgetkeuze voor wie in één keer drie "
-      "keramische koekenpannen voor de kookplaat wil aanschaffen. "
-      "Inductiegeschiktheid en vaatwasserbestendigheid maken de set "
-      "praktisch voor dagelijks gebruik. Een maximale oventemperatuur "
-      "voor deze specifieke uitvoering is niet bevestigd; kies voor "
-      "ovenbereidingen liever een set waarvan die grens wel vaststaat.",
+  "verdict": "Onze budgetkeuze voor wie in één keer drie PFAS-vrije keramische koekenpannen "
+      "voor de kookplaat wil aanschaffen. De set combineert drie gangbare formaten met "
+      "inductiegeschiktheid en vaatwasserbestendigheid. Voor ovenbereidingen is de "
+      "maximale toegestane temperatuur van deze uitvoering nog niet bevestigd.",
 },
 }
