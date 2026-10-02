@@ -987,20 +987,33 @@ def _enrich_rvs_products(products):
 
 def rvs_koekenpannen(request):
     content = RVS_KOEKENPANNEN_CONTENT
-    available_sizes = sorted(RVS_KOEKENPANNEN_RANKINGS.keys())
-    size = request.GET.get("size")
-    try:
-        size = int(size)
-    except (TypeError, ValueError):
-        size = 28 if 28 in available_sizes else available_sizes[0]
+    available_sizes = sorted(
+        RVS_KOEKENPANNEN_RANKINGS.keys(),
+        key=lambda value: (
+            len(str(value).split("_")) > 1,
+            len(str(value).split("_")),
+            tuple(int(part) for part in str(value).split("_")),
+        ),
+    )
+    default_size = 28 if 28 in available_sizes else available_sizes[0]
+    raw_size = request.GET.get("size")
+    if raw_size in RVS_KOEKENPANNEN_RANKINGS:
+        size = raw_size
+    else:
+        try:
+            size = int(raw_size)
+        except (TypeError, ValueError):
+            size = default_size
     if size not in RVS_KOEKENPANNEN_RANKINGS:
-        size = 28 if 28 in available_sizes else available_sizes[0]
+        size = default_size
 
     keys = RVS_KOEKENPANNEN_RANKINGS[size]
     products = [copy.deepcopy(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in RVS_KOEKENPANNEN_PRODUCTS]
     _enrich_rvs_products(products)
     product_count = len(products)
-    conclusie = content["conclusies"].get(size, content["conclusies"]["default"])
+    conclusie = content["conclusies"].get(
+        size, {} if isinstance(size, str) else content["conclusies"]["default"]
+    )
     faq_ld = _build_faq_ld(content["faq"]["items"])
     real_products = [p for p in products if p["affiliate_url"]]
     itemlist_ld = json.dumps({

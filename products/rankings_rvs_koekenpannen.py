@@ -48,4 +48,14 @@ RANKINGS = {
         "habonne_queen_26",
         "scanpan_impact_26",
     ],
+    "24_28": [
+        "demeyere_essential_5_set_24_28",
+        "beka_savor_multiply_set_24_28",
+    ],
+    "20_28": [
+
+    ],
+    "20_24_28": [
+      
+    ]
 }

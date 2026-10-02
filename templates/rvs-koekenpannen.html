@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static product_formatting %}
 
 {% block title %}
-Beste RVS-koekenpannen van {{ selected_size }} cm | Leef Natuurlijk & Gezond
+Beste RVS-koekenpannen van {{ selected_size|format_size_label }} cm | Leef Natuurlijk & Gezond
 {% endblock %}
 
 {% block meta %}
@@ -76,12 +76,16 @@ Beste RVS-koekenpannen van {{ selected_size }} cm | Leef Natuurlijk & Gezond
 {% include "partials/how_we_select.html" %}
 
                         <section class="top10-section">
+{% if not products %}
+<p role="status">Voor het formaat {{ selected_size|format_size_label }} cm zijn nog geen RVS-koekenpannen toegevoegd.</p>
+{% endif %}
 {% for product in products %}
 {% include "partials/product_block.html" %}
 {% endfor %}
                         </section>
 
                         <!-- Vergelijkingstabel -->
+                        {% if products %}
                         <section>
                         <h2>{{ content.products_section.comparison_title }}</h2>
                         <div class="table-wrapper">
@@ -129,6 +133,7 @@ Beste RVS-koekenpannen van {{ selected_size }} cm | Leef Natuurlijk & Gezond
                         </table>
                         </div>
                         </section>
+                        {% endif %}
                 </div>
                 </section>
 
