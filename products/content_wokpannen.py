@@ -18,10 +18,10 @@ CONTENT = {
             ),
             (
                 "Deze wokpannen zijn vooral bedoeld voor gecontroleerd "
-                "roerbakken op lage tot middelhoge of middelhoge temperatuur. "
-                "Ze werken anders dan een dunne koolstofstalen wok, die is "
-                "ontworpen voor zeer snelle temperatuurreacties en "
-                "traditionele woktechnieken op hoge hitte."
+                "roerbakken op lage tot middelhoge temperatuur. Ze werken "
+                "anders dan een dunne koolstofstalen wok, die is ontworpen "
+                "voor zeer snelle temperatuurreacties en traditionele "
+                "woktechnieken op hoge hitte."
             ),
         ],
     },
@@ -213,20 +213,21 @@ CONTENT = {
             "text": (
                 "Een wokpan van <strong>30 cm</strong> biedt extra ruimte "
                 "voor grotere porties en wokgerechten met veel groenten. "
-                "De <strong>GreenPan Barcelona Evershine</strong> is onze "
-                "beste keuze wanneer deze verkrijgbaar is. De drielaagse "
-                "RVS constructie met aluminium kern en ovenbestendigheid tot "
-                "220 °C maken dit het meest uitgebreid uitgevoerde model, "
-                "maar ook verreweg het duurste. De "
-                "<strong>BK Easy Induction Ceramic</strong> is de "
-                "budgetkeuze binnen deze maat. De "
-                "<strong>BK Superior Ceramic</strong> combineert een inhoud "
-                "van 5 liter met ovenbestendigheid tot 230 °C. De "
-                "<strong>GreenPan Copenhagen</strong> heeft een extra "
-                "handgreep, 4,8 liter inhoud en ovengebruik tot 220 °C. "
-                "Voor de grootste bevestigde inhoud is de "
-                "<strong>BergHOFF LEO Phantom</strong> van 5,2 liter een "
-                "interessante optie."
+                "De <strong>BK Superior Ceramic</strong> is onze beste keuze "
+                "door de combinatie van een ruime inhoud van 5 liter, stevige "
+                "geanodiseerde aluminium constructie en ovenbestendigheid tot "
+                "230 °C. De <strong>BK Easy Induction Ceramic</strong> is onze "
+                "budgetkeuze voor wie vooral een betaalbare, ruime keramische "
+                "wokpan voor dagelijks gebruik zoekt. De "
+                "<strong>GreenPan Première</strong> is onze premiumkeuze door "
+                "de 3-laags RVS constructie met aluminium kern, inhoud van "
+                "4,7 liter en ovenbestendigheid tot 220 °C. De "
+                "<strong>GreenPan Copenhagen</strong> is een veelzijdige "
+                "allrounder met 4,8 liter inhoud, een extra handgreep en "
+                "ovenbestendigheid tot 220 °C. De "
+                "<strong>ISENVI Alice</strong> is een betaalbaar alternatief "
+                "dat standaard met glazen deksel wordt geleverd, maar niet "
+                "geschikt is voor gebruik in de oven."
             ),
         },
     },
@@ -395,7 +396,9 @@ CONTENT = {
         "intro": (
             "Onze beoordeling is redactioneel en gebaseerd op "
             "productspecificaties, materiaalopbouw, inhoud, "
-            "gebruiksmogelijkheden, prijs en beschikbaarheid. Tenzij "
+            "gebruiksmogelijkheden, prijs, beschikbaarheid en beschikbare "
+            "gebruikerservaringen. Reviews gebruiken we als aanvullend signaal "
+            "voor mogelijke sterke en zwakke punten van een product. Tenzij "
             "expliciet vermeld, voeren wij geen laboratorium- of langdurige "
             "gebruikstest uit."
         ),
@@ -419,6 +422,13 @@ CONTENT = {
             (
                 "<strong>Gebruiksgemak:</strong> gewicht, extra handgreep, "
                 "onderhoud en beperkingen voor kookgerei."
+            ),
+            (
+                "<strong>Coating en duurzaamheid:</strong> type keramische coating, "
+                "onderhoudsvoorschriften en beschikbare gebruikerservaringen over "
+                "het behoud van de antiaanbakeigenschappen. Omdat gebruik en "
+                "onderhoud sterk verschillen, behandelen we reviews hierbij als "
+                "aanvullend signaal en niet als afzonderlijke praktijktest."
             ),
             (
                 "<strong>Prijs-kwaliteit:</strong> verhouding tussen prijs, "

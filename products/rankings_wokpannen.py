@@ -15,7 +15,7 @@ RANKINGS = {
         "bk_superior_ceramic_wok_30",
         "bk_easy_induction_wok_30",
         "greenpan_copenhagen_wok_30",
-        "berghoff_phantom_wok_30",
-        "greenpan_barcelona_evershine_wok_30",
+        "greenpan_premiere_wok_30",
+        "isenvi_alice_wok_30",
     ],
 }

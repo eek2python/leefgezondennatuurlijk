@@ -538,60 +538,7 @@ PRODUCTS = {
 
 # 30CM WOKPANNEN
 
-    "greenpan_barcelona_evershine_wok_30": {
-        "slug": "greenpan-barcelona-evershine-wok-30",
-        "name": "GreenPan Barcelona Evershine Wokpan 30 cm",
-        "description": (
-            "Drielaags RVS wokpan van 30 cm met aluminium kern en "
-            "Thermolon Infinity Pro keramische antiaanbaklaag."
-        ),
-        "brand": "GreenPan",
-        "diameter": 30,
-        "material": (
-            "Drielaags RVS met aluminium kern en Thermolon Infinity Pro "
-            "keramische antiaanbaklaag"
-        ),
-        "features": [
-            "PFAS-vrij",
-            "Drielaags RVS met aluminium kern",
-            "Geschikt voor inductie",
-            "Ovenbestendig tot 220 °C",
-            "Vaatwasserbestendig; handwas aanbevolen",
-        ],
-        "rating": 4.7,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 149.90,
-        "price_last_checked": "2026-07-31",
-        "currency": "EUR",
-        "availability": "OutOfStock",
-        "affiliate_url": "",
-        "retailer_url": "",
-        "official_url": (
-            "https://greenpan.nl/products/"
-            "barcelona-evershine-wokpan"
-        ),
-        "availability_label": "Tijdelijk uitverkocht bij de fabrikant",
-        "price_range": "€€€€",
-        "image": "wokpan-greenpan-barcelona-evershine-30m.webp",
-        "image_path": "images/products/wokpannen",
-        "pros": [
-            "Drielaagse RVS constructie met aluminium kern",
-            "Ovenbestendig tot 220 °C",
-            "Geschikt voor inductie en vaatwasser",
-        ],
-        "cons": [
-            "Zeer hoge aanschafprijs",
-            "Zwaarder dan aluminium wokpannen",
-        ],
-        "verdict": (
-            "Onze beste keuze voor wie een ruime drielaags RVS wokpan "
-            "zoekt met keramische coating en ovengebruik tot 220 °C."
-        ),
-        "award": "🏆 Beste keuze",
-    },
-
-    "bk_easy_induction_wok_30": {
+"bk_easy_induction_wok_30": {
         "slug": "bk-easy-induction-wok-30",
         "name": "BK Easy Induction Ceramic Wokpan 30 cm",
         "description": (
@@ -668,16 +615,12 @@ PRODUCTS = {
         "rating": 4.5,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 73.87,
-        "price_last_checked": "2026-08-08",
+        "price": 92.90,
+        "price_last_checked": "2026-10-04",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-superior-wok-o-30-cm-keramisch-inductie%2F9300000022010093%2F&name=BK%20Superior%20Wok%2030%20cm%20-%20Geanodiseerd%20aluminium%20-%20Keramische%20antiaanbaklaag",
-        "retailer_url": (
-            "https://www.bol.com/nl/nl/p/"
-            "bk-superior-wok-o-30-cm-keramisch-inductie/"
-            "9300000022010093/"
-        ),
+        "affiliate_url": "",
+        "retailer_url": "",
         "official_url": (
             "https://bk.nl/products/"
             "superior-ceramic-wok-30-cm"
@@ -696,10 +639,9 @@ PRODUCTS = {
 
         ],
         "verdict": (
-            "Een ruime keramische wokpan met een inhoud van 5 liter "
-            "en een hoge maximale oventemperatuur van 230 °C."
+            "Onze allround favoriet door de combinatie van een ruime 5-literinhoud, stevige geanodiseerde aluminium constructie, hoge ovenbestendigheid en een gunstigere prijs dan de premium RVS-modellen."
         ),
-        "award": None,
+        "award": "🏆 Beste keuze",
     },
 
     "greenpan_copenhagen_wok_30": {
@@ -724,10 +666,10 @@ PRODUCTS = {
             "Extra handvat",
             "Inhoud van 4,8 liter",
         ],
-        "rating": 4.5,
+        "rating": 4.4,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 68.20,
+        "price": 71.00,
         "price_last_checked": "2026-08-08",
         "currency": "EUR",
         "availability": "InStock",
@@ -760,61 +702,126 @@ PRODUCTS = {
         "award": None,
     },
 
-    "berghoff_phantom_wok_30": {
-        "slug": "berghoff-phantom-wok-30",
-        "name": "BergHOFF LEO Phantom Wokpan 30 cm",
+    "greenpan_premiere_wok_30": {
+        "slug": "greenpan-premiere-wok-30",
+        "name": "GreenPan Première Wokpan 30 cm",
         "description": (
-            "Ruime wokpan van gerecycled aluminium met CeraGreen "
-            "keramische antiaanbaklaag en een inhoud van 5,2 liter."
+            "Premium 3-laags RVS wokpan van 30 cm met PFAS-vrije keramische "
+            "antiaanbaklaag, extra handvat en een inhoud van 4,7 liter."
         ),
-        "brand": "BergHOFF",
+        "brand": "GreenPan",
         "diameter": 30,
-        "material": (
-            "Gerecycled aluminium met CeraGreen "
-            "keramische antiaanbaklaag"
-        ),
+        "material": "3-laags RVS met keramische antiaanbaklaag",
         "features": [
-            "PFAS-vrij",
+            "PFAS-vrije Thermolon Infinity Pro antiaanbaklaag",
+            "3-laags RVS constructie",
             "Geschikt voor inductie",
-            "Inhoud van 5,2 liter",
-            "Full-diskbodem",
-            "Handwas aanbevolen",
+            "Ovenbestendig tot 220 °C",
+            "Vaatwasserbestendig",
+            "Inhoud van 4,7 liter",
+            "Extra handvat voor gemakkelijker tillen",
+            "Evershine-technologie voor het RVS",
         ],
-        "rating": 4.3,
+        "rating": 4.4,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 74.95,
-        "price_last_checked": "2026-08-08",
+        "price": 130.00,
+        "price_last_checked": "2026-10-04",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fphantom-wokpan-30-cm-5-2-l-gerecycled-aluminium-berghoff-leo-line%2F9300000160900434%2F&name=LEO%20Wok%20antikleef%20Phantom%20-%20%C3%98%2030cm%20-%20Zwart%20-%20PFAS-vrij",
+        "affiliate_url": (
+            "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-premiere-wok-met-extra-handvat-o-30-cm-4-7l-rvs-inductie%2F9300000022010097%2F&name=GreenPan%20Premi%C3%A8re%20wok%20-%20Met%20extra%20handvat%20-%2030%20cm%20-%204.7%20L"
+        ),
         "retailer_url": (
             "https://www.bol.com/nl/nl/p/"
-            "phantom-wokpan-30-cm-5-2-l-gerecycled-"
-            "aluminium-berghoff-leo-line/9300000160900434/"
+            "greenpan-premiere-wok-met-extra-handvat-o-30-cm-"
+            "4-7l-rvs-inductie/9300000022010097/"
         ),
         "official_url": (
-            "https://berghoffworldwide.com/en/"
-            "wok-non-stick-phantom-30cm"
+            "https://greenpan.nl/products/"
+            "premiere-wokpan"
         ),
         "availability_label": "",
-        "price_range": "€€€",
-        "image": "wokpan-berghoff-phantom-30cm.webp",
+        "price_range": "€€€€",
+        "image": "wokpan-greenpan-premiere-30cm.webp",
         "image_path": "images/products/wokpannen",
         "pros": [
-            "Grootste bevestigde inhoud van de selectie met 5,2 liter",
-            "Geschikt voor alle gangbare warmtebronnen",
-            "Full-diskbodem voor contact met de volledige kookzone",
+            "Stevige 3-laags RVS constructie",
+            "Ruime inhoud van 4,7 liter",
+            "Ovenbestendig tot 220 °C",
+            "Extra handvat maakt de volle wok makkelijker hanteerbaar",
         ],
         "cons": [
-            "Hoger geprijsd dan verschillende aluminium alternatieven",
-            "Handwas aanbevolen",
-            "Maximale oventemperatuur niet bekent",
+            "Relatief hoge aanschafprijs",
+            "Handwas wordt aanbevolen ondanks vaatwassergeschiktheid",
         ],
         "verdict": (
-            "Een ruime wokpan van 5,2 liter voor grotere porties "
-            "en dagelijks gebruik op inductie."
+            "Onze premiumkeuze voor wie een hoogwaardige keramische wokpan zoekt "
+            "met een duurzame 3-laags RVS constructie, ruime inhoud en hoge "
+            "ovenbestendigheid."
         ),
-        "award": None,
+        "award": "💎 Premium keuze",
+    },
+
+    "isenvi_alice_wok_30": {
+        "slug": "isenvi-alice-wok-30",
+        "name": "ISENVI Alice Wokpan met Deksel 30 cm",
+        "description": (
+            "Ruime aluminium wokpan van 30 cm met PFAS-vrije keramische "
+            "antiaanbaklaag, koudgreep en glazen deksel."
+        ),
+        "brand": "ISENVI",
+        "diameter": 30,
+        "material": "Aluminium met keramische antiaanbaklaag",
+        "features": [
+            "PFAS-, PTFE- en PFOA-vrij",
+            "ISENVI Ceramica Generation Six antiaanbaklaag",
+            "Geschikt voor inductie",
+            "Inclusief glazen deksel",
+            "Koudblijvende bakelieten handgreep met houtlook",
+            "Vaatwasserbestendig",
+            "Hoge rand van circa 9 cm",
+            "Gewicht van circa 1,93 kg",
+        ],
+        "rating": 4.1,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 39.95,
+        "price_last_checked": "2026-10-04",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": (
+            "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Falice-by-isenvi-wokpan-inductie-met-deksel-30-cm-keramisch-koudgreep-wok-pfas-ptfe-en-pfoa-vrij-alle-warmtebronnen-beige%2F9300000241532540%2F&name=Alice%20by%20ISENVI%20Wokpan%20Inductie%20met%20Deksel%20-%2030%20cm%20-%20Keramisch%20-%20Koudgreep%20-%20Wok%20-..."
+        ),
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "alice-by-isenvi-wokpan-inductie-met-deksel-30-cm-keramisch-"
+            "koudgreep-wok-pfas-ptfe-en-pfoa-vrij-alle-warmtebronnen-beige/"
+            "9300000241532540/"
+        ),
+        "official_url": (
+            "https://www.isenvi.com/nl/"
+            "alice-keramische-wokpan-met-deksel-30-cm-beige"
+        ),
+        "availability_label": "",
+        "price_range": "€€",
+        "image": "wokpan-isenvi-alice-30cm.webp",
+        "image_path": "images/products/wokpannen",
+        "pros": [
+            "Relatief lage aanschafprijs",
+            "Inclusief glazen deksel",
+            "Koudblijvende handgreep",
+            "Geschikt voor inductie en vaatwasser",
+        ],
+        "cons": [
+            "Niet geschikt voor gebruik in de oven",
+            "Nog weinig langdurige gebruikservaringen beschikbaar",
+        ],
+        "verdict": (
+            "Interessante betaalbare keuze voor wie een ruime PFAS-vrije "
+            "keramische wok zoekt met deksel en koudblijvende handgreep, "
+            "maar geen ovenbestendigheid nodig heeft."
+        ),
+        "award": "",
     },
 }
