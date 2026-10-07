@@ -183,6 +183,29 @@ class PanPricingTests(SimpleTestCase):
 
 class PanPricingEntryPointTests(TestCase):
     products = {"pan": {"diameter": 28, "price": 55, "price_range": "€€€"}}
+    rvs_variant_products = {
+        "single-family": {
+            "diameter": 20, "price": 999, "price_range": "€€€€",
+            "variants": [
+                {"id": "below", "diameter": 28,
+                 "price": Decimal("64.99"), "price_range": "€€"},
+                {"id": "boundary", "diameter": 28,
+                 "price": Decimal("65.00"), "price_range": "€€"},
+                {"id": "higher", "diameter": 28,
+                 "price": Decimal("110.00"), "price_range": "€"},
+            ],
+        },
+        "set-family": {
+            "diameter": 28, "diameters": [20, 28],
+            "price": 999, "price_range": "€€€€",
+            "variants": [
+                {"id": "boundary", "diameters": [28, 24],
+                 "price": Decimal("180.00"), "price_range": "€€€"},
+                {"id": "unknown", "diameters": [24, 20],
+                 "price": Decimal("150.00"), "price_range": "€"},
+            ],
+        },
+    }
     rvs_products = {
         "single": {"diameter": 28, "price": 150, "price_range": "€"},
         "set": {"diameter": 28, "diameters": [28, 20],
@@ -250,6 +273,92 @@ class PanPricingEntryPointTests(TestCase):
         self.assertCountEqual(
             response.context["price_table"], run.metadata["price_table"],
         )
+
+    def assert_rvs_variant_run_saved(self, run):
+        run.refresh_from_db()
+        self.assertEqual(run.status, "completed")
+        self.assertEqual(run.category, "rvs-koekenpannen")
+        self.assertEqual(run.error_count, 0)
+        self.assertEqual(run.warning_count, 4)
+        self.assertEqual(run.issue_count, 4)
+        # Letterlijke verwachtingen, niet afgeleid met de geteste prijshelper:
+        # 28 cm: 65/110; 24+28 cm: 140/190; 20+24 cm: niet geconfigureerd.
+        self.assertCountEqual(run.metadata["price_table"], [
+            {
+                "category": "rvs-koekenpannen",
+                "product": slug,
+                "variant": variant,
+                "price": price,
+                "manual": manual,
+                "computed": computed,
+            }
+            for slug, variant, price, manual, computed in (
+                ("single-family", "below", 64.99, "€€", "€"),
+                ("single-family", "boundary", 65.0, "€€", "€€"),
+                ("single-family", "higher", 110.0, "€", "€€€"),
+                ("set-family", "boundary", 180.0, "€€€", "€€"),
+                ("set-family", "unknown", 150.0, "€", "—"),
+            )
+        ])
+        self.assertCountEqual(
+            list(run.issues.values_list(
+                "code", "severity", "category", "product_slug", "message",
+            )),
+            [
+                (
+                    "price_range_mismatch", "warning", "rvs-koekenpannen", slug,
+                    f"{variant}: handmatig '{manual}' ≠ berekend '{computed}' "
+                    "volgens rvs-koekenpannen (brondata blijft ongewijzigd)",
+                )
+                for slug, variant, manual, computed in (
+                    ("single-family", "below", "€€", "€"),
+                    ("single-family", "higher", "€", "€€€"),
+                    ("set-family", "boundary", "€€€", "€€"),
+                )
+            ] + [
+                (
+                    "pan_pricing_format_unknown", "warning", "rvs-koekenpannen",
+                    "set-family",
+                    "unknown: geen auditgrenzen voor formaat [24, 20]; "
+                    "berekend niveau ontbreekt",
+                ),
+            ],
+        )
+
+    def test_management_command_saves_rvs_variant_levels_without_mutation(self):
+        products = copy.deepcopy(self.rvs_variant_products)
+        before = copy.deepcopy(products)
+        # Alleen de bron vervangen; echte RVS-configuratie, runner en opslag.
+        with patch("audits.checks.variants._load_products", return_value=products):
+            with self.assertRaises(CommandError):
+                call_command("audit_products", audit="price_levels",
+                             category="rvs-koekenpannen", strict=True,
+                             stdout=StringIO())
+        run = ProductAuditRun.objects.get(audit_key="price_levels")
+        self.assert_rvs_variant_run_saved(run)
+        self.assertIsNone(run.requested_by)
+        self.assertEqual(products, before)
+
+    def test_admin_run_saves_rvs_variant_levels_without_mutation(self):
+        products = copy.deepcopy(self.rvs_variant_products)
+        before = copy.deepcopy(products)
+        user = User.objects.create_superuser(username="audit-test", password="test-only")
+        self.client.force_login(user)
+        with patch("audits.checks.variants._load_products", return_value=products):
+            response = self.client.post(
+                reverse("audit_run"),
+                {"audit_key": "price_levels", "category": "rvs-koekenpannen"},
+                follow=True,
+            )
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Interne prijstabel")
+        run = ProductAuditRun.objects.get(audit_key="price_levels")
+        self.assert_rvs_variant_run_saved(run)
+        self.assertEqual(run.requested_by, user)
+        self.assertCountEqual(
+            response.context["price_table"], run.metadata["price_table"],
+        )
+        self.assertEqual(products, before)
 
     def test_management_command_saves_new_computed_levels(self):
         with patch("audits.checks.variants._load_products", return_value=self.products):
