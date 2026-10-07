@@ -103,7 +103,7 @@ PAN_AUDIT_PRICE_RANGES = {
         "single": KERAMISCHE_KOEKENPANNEN_PRICE_RANGES,
         "sets": KERAMISCHE_KOEKENPANNENSETS_PRICE_RANGES,
     },
-    "rvs_koekenpannen": {
+    "rvs-koekenpannen": {
         "single": RVS_KOEKENPANNEN_PRICE_RANGES,
         "sets": RVS_KOEKENPANNENSETS_PRICE_RANGES,
     }
