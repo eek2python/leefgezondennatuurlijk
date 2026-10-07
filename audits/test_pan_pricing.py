@@ -183,6 +183,73 @@ class PanPricingTests(SimpleTestCase):
 
 class PanPricingEntryPointTests(TestCase):
     products = {"pan": {"diameter": 28, "price": 55, "price_range": "€€€"}}
+    rvs_products = {
+        "single": {"diameter": 28, "price": 150, "price_range": "€"},
+        "set": {"diameter": 28, "diameters": [28, 20],
+                "price": 150, "price_range": "€"},
+        "unknown-set": {"diameter": 24, "diameters": [20, 24],
+                        "price": 150, "price_range": "€"},
+    }
+
+    def assert_rvs_run_saved(self, run):
+        self.assertEqual(run.status, "completed")
+        self.assertEqual(run.category, "rvs-koekenpannen")
+        self.assertEqual(run.error_count, 0)
+        self.assertEqual(run.warning_count, 3)
+        self.assertEqual(run.issue_count, 3)
+        self.assertCountEqual(run.metadata["price_table"], [
+            {
+                "category": "rvs-koekenpannen",
+                "product": slug,
+                "variant": "—",
+                "price": 150.0,
+                "manual": "€",
+                "computed": computed,
+            }
+            for slug, computed in (
+                ("single", "€€€"), ("set", "€€"), ("unknown-set", "—"),
+            )
+        ])
+        self.assertCountEqual(
+            list(run.issues.values_list(
+                "code", "severity", "category", "product_slug",
+            )),
+            [
+                ("price_range_mismatch", "warning", "rvs-koekenpannen", "single"),
+                ("price_range_mismatch", "warning", "rvs-koekenpannen", "set"),
+                ("pan_pricing_format_unknown", "warning",
+                 "rvs-koekenpannen", "unknown-set"),
+            ],
+        )
+
+    def test_management_command_saves_rvs_levels_and_unknown_format(self):
+        # Alleen de productbron vervangen: de RVS-grenzen blijven echt.
+        with patch("audits.checks.variants._load_products",
+                   return_value=self.rvs_products):
+            with self.assertRaises(CommandError):
+                call_command("audit_products", audit="price_levels",
+                             category="rvs-koekenpannen", strict=True,
+                             stdout=StringIO())
+        run = ProductAuditRun.objects.get(audit_key="price_levels")
+        self.assert_rvs_run_saved(run)
+
+    def test_admin_run_saves_rvs_levels_and_unknown_format(self):
+        user = User.objects.create_superuser(username="audit-test", password="test-only")
+        self.client.force_login(user)
+        with patch("audits.checks.variants._load_products",
+                   return_value=self.rvs_products):
+            response = self.client.post(
+                reverse("audit_run"),
+                {"audit_key": "price_levels", "category": "rvs-koekenpannen"},
+                follow=True,
+            )
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Interne prijstabel")
+        run = ProductAuditRun.objects.get(audit_key="price_levels")
+        self.assert_rvs_run_saved(run)
+        self.assertCountEqual(
+            response.context["price_table"], run.metadata["price_table"],
+        )
 
     def test_management_command_saves_new_computed_levels(self):
         with patch("audits.checks.variants._load_products", return_value=self.products):
