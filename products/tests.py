@@ -1,6 +1,7 @@
 import copy
 import json
 import re
+from unittest.mock import patch
 
 from django.test import SimpleTestCase, TestCase
 
@@ -1100,12 +1101,42 @@ class VariantPriceRangeTests(TestCase):
         self.assertEqual(product["variants"][1]["display_price_range"], "")
 
     def test_swatch_data_price_always_emitted_when_derived(self):
-        html = self.client.get("/koekenpannen/").content.decode()
-        # Afgeleide niveaus als data-price op swatches (Mayflower).
-        self.assertIn('data-price="€€€"', html)
-        self.assertIn('data-price="€€"', html)
+        # Test de volledige pagina met vaste prijzen, onafhankelijk van
+        # welke producten momenteel in de openbare ranking staan.
+        product = {
+            "slug": "test-swatch-pan", "name": "Test swatchpan",
+            "description": "Testproduct voor afgeleide swatchprijzen.",
+            "brand": "Test", "material": "Keramisch",
+            "rating": 4.0, "price": 42.99, "price_range": "€€€€",
+            "image": "test.jpg", "image_path": "images/test",
+            "variants": [
+                {"name": "Blauw", "hex": "#0000ff", "image": "blue.jpg",
+                 "price": 42.99, "price_range": "€"},
+                {"name": "Grijs", "hex": "#888888", "image": "grey.jpg",
+                 "price": 59.90, "price_range": "€"},
+                {"name": "Onbekend", "hex": "#ffffff", "image": "white.jpg",
+                 "price_range": "€€€€"},
+            ],
+        }
+        before = copy.deepcopy(product)
+        with patch("products.views.KOEKENPANNEN_PRODUCTS", {"test": product}), \
+                patch("products.views.KOEKENPANNEN_RANKINGS", {28: ["test"]}):
+            response = self.client.get("/koekenpannen/")
+        self.assertEqual(response.status_code, 200)
+        html = response.content.decode()
+        swatches = re.findall(r"<button\b[^>]*\bdata-variant-swatch\b[^>]*>", html)
+        self.assertEqual(len(swatches), 3)
+        for swatch, name, level in zip(
+            swatches, ("Blauw", "Grijs", "Onbekend"), ("€€", "€€€", "")
+        ):
+            with self.subTest(variant=name):
+                self.assertIn(f'data-name="{name}"', swatch)
+                # Ook een ontbrekende prijs krijgt een expliciet leeg attribuut,
+                # zodat de browser geen oud of handmatig niveau overneemt.
+                self.assertIn(f'data-price="{level}"', swatch)
         # Geen productniveau-fallbackattribuut bij afgeleide niveaus.
         self.assertNotIn("data-base-price", html)
+        self.assertEqual(product, before)
 
     def test_greenpan_shades_renders_three_color_combination_swatches(self):
         html = self.client.get(
@@ -1311,18 +1342,49 @@ class VariantAuditCommandTests(TestCase):
         self.assertIn("Structurele fouten: 0", output)
 
     def test_command_reports_airfryer_swatch_category(self):
+        from products.products_airfryers import PRODUCTS
+        from audits.checks.variants import run_variant_audit
+
         # De audit moet alle actuele airfryerproducten met kleurswatches
-        # volledig rapporteren.
+        # volledig rapporteren, ook na toevoegingen aan de catalogus.
+        swatch_products = {
+            key: product for key, product in PRODUCTS.items()
+            if product.get("variants")
+            and not all(v.get("id") for v in product["variants"])
+        }
+        self.assertTrue(swatch_products)
         output = self._run("--category", "airfryers")
-        self.assertIn("Variantproducten (kleurswatches): 4", output)
-        self.assertIn("greenpan_bistro_xxl_7_2l", output)
-        self.assertIn("ninja_crispi_pro_xl_5_7l", output)
+        self.assertIn(
+            f"Variantproducten (kleurswatches): {len(swatch_products)}", output
+        )
+        result = run_variant_audit(category="airfryers")
+        self.assertEqual(result["errors"], [])
+        reported = [
+            (category, key, label)
+            for category, key, label, *_ in result["price_rows"]
+            if key in swatch_products
+        ]
+        expected = [
+            ("airfryers", key, variant["name"])
+            for key, product in swatch_products.items()
+            for variant in product["variants"]
+        ]
+        self.assertCountEqual(reported, expected)
+        for _, key, label in expected:
+            with self.subTest(product=key, variant=label):
+                self.assertIn(f"| airfryers | {key} | {label} |", output)
 
     def test_airfryer_variant_data_has_no_known_swatch_warnings(self):
-        output = self._run("--category", "airfryers")
-        self.assertIn("Waarschuwingen: 0", output)
-        self.assertNotIn("inconsistent_jsonld_variant", output)
-        self.assertNotIn("missing_variant_url", output)
+        from audits.checks.variants import run_variant_audit
+
+        # Prijsauditwaarschuwingen zijn toegestaan; regressies in URL- en
+        # JSON-LD-consistentie van de actuele swatches niet.
+        result = run_variant_audit(category="airfryers")
+        swatch_warnings = [
+            warning for warning in result["warnings"]
+            if warning[0] in ("inconsistent_jsonld_variant", "missing_variant_url")
+        ]
+        self.assertEqual(swatch_warnings, [])
 
     def test_manual_review_does_not_report_removed_silhouette_product(self):
         output = self._run("--category", "airfryers")
@@ -1338,10 +1400,58 @@ class VariantAuditCommandTests(TestCase):
         self.assertEqual(P1, before1)
         self.assertEqual(P2, before2)
 
-    def test_strict_mode_fails_on_warnings(self):
+    def _airfryer_warning_fixture(self):
+        return {
+            "test_airfryer": {
+                "slug": "test-airfryer", "name": "Test airfryer",
+                "price": 100, "affiliate_url": "https://example.com/airfryer",
+                "variants": [
+                    {"name": "Blauw", "price": 100, "price_range": "€",
+                     "affiliate_url": "https://example.com/airfryer"},
+                    {"name": "Grijs", "price": 120, "price_range": "€€€",
+                     "affiliate_url": "https://example.com/grey"},
+                ],
+            },
+        }
+
+    def test_price_warning_is_reported_and_strict_mode_fails(self):
+        from audits.checks.variants import run_variant_audit
         from django.core.management.base import CommandError
-        with self.assertRaises(CommandError):
-            self._run("--strict")
+
+        products = self._airfryer_warning_fixture()
+        before = copy.deepcopy(products)
+        with patch("audits.checks.variants._load_products", return_value=products), \
+                patch("products.rankings_airfryers.RANKINGS",
+                      {"compact": ["test_airfryer"]}):
+            result = run_variant_audit(category="airfryers")
+            self.assertEqual(result["errors"], [])
+            self.assertEqual(
+                [warning[:3] for warning in result["warnings"]],
+                [("price_range_mismatch", "airfryers", "test_airfryer")],
+            )
+            output = self._run("--category", "airfryers")
+            self.assertIn("Waarschuwingen: 1", output)
+            self.assertIn("| price_range_mismatch | airfryers | test_airfryer |", output)
+            with self.assertRaisesMessage(
+                CommandError, "Audit: 0 fout(en), 1 waarschuwing(en)"
+            ):
+                self._run("--category", "airfryers", "--strict")
+        self.assertEqual(products, before)
+
+    def test_command_reports_swatch_url_and_jsonld_warnings(self):
+        products = self._airfryer_warning_fixture()
+        product = products["test_airfryer"]
+        product["price"] = 101  # wijkt bewust af van de defaultswatch
+        product.pop("affiliate_url")
+        for variant in product["variants"]:
+            variant.pop("affiliate_url")
+        with patch("audits.checks.variants._load_products", return_value=products), \
+                patch("products.rankings_airfryers.RANKINGS",
+                      {"compact": ["test_airfryer"]}):
+            output = self._run("--category", "airfryers")
+        for code in ("missing_variant_url", "inconsistent_jsonld_variant"):
+            with self.subTest(code=code):
+                self.assertIn(f"| {code} | airfryers | test_airfryer |", output)
 
     def test_no_unsafe_commercial_firstof_in_comparison_templates(self):
         output = self._run()
