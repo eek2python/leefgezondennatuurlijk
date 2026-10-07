@@ -64,6 +64,7 @@ PRODUCTS = {
 "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fkochstar-essenz-zwart-keramische-koekenpan-28cm-pfas-vrij-inductie-koekenpan-inductie-pan-keramische-anti-aanbaklaag-koelgreep-ovenbestendig-tot-130-c-zwart%2F9300000231848099%2F&name=Kochstar%20Essenz%20koekenpan%20-%2028cm%20-%20PFAS-vrij%20-%20Inductie%20-%20Keramische%20anti-aanbaklaag",
           "retailer_url": "https://www.bol.com/nl/nl/p/kochstar-essenz-zwart-keramische-koekenpan-28cm-pfas-vrij-inductie-koekenpan-inductie-pan-keramische-anti-aanbaklaag-koelgreep-ovenbestendig-tot-130-c-zwart/9300000231848099/",
           "price": 13.99,
+          "price_range": "€",
           "price_last_checked": "2026-08-07",
       },
       {
@@ -73,6 +74,7 @@ PRODUCTS = {
           "affiliate_url":"https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fkochstar-essenz-koekenpan-28cm-pfas-vrij-inductie-pan-keramische-anti-aanbaklaag-koelgreep-taupe%2F9300000231848102%2F&name=Kochstar%20Essenz%20Taupe%20Keramische%20Koekenpan%20-%2028cm%20-%20PFAS-vrij%20-%20Inductie%20koekenpan%20-...",
           "retailer_url":"https://www.bol.com/nl/nl/p/kochstar-essenz-koekenpan-28cm-pfas-vrij-inductie-pan-keramische-anti-aanbaklaag-koelgreep-taupe/9300000231848102/",
           "price": 14.99,
+          "price_range": "€",
           "price_last_checked": "2026-08-07",
       },
   ],
