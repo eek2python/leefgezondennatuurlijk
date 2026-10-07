@@ -21,6 +21,46 @@ from utils.pricing import (
 
 
 class PanPricingTests(SimpleTestCase):
+    def test_real_rvs_boundaries_through_audit(self):
+        # Alleen de productbron vervangen, niet de echte prijsconfiguratie.
+        cases = [
+            ({"diameter": 20}, (50, 90, 140)),
+            ({"diameter": 24}, (60, 100, 150)),
+            ({"diameter": 26}, (60, 100, 150)),
+            ({"diameter": 28}, (65, 110, 175)),
+            ({"diameter": 30}, (70, 120, 180)),
+            ({"diameter": 32}, (90, 150, 220)),
+            ({"diameter": 28, "diameters": [28, 20]}, (140, 180, 240)),
+            ({"diameters": [28, 24]}, (140, 190, 260)),
+            ({"diameters": [28, 20, 24]}, (150, 250, 350)),
+        ]
+        for product, amounts in cases:
+            for index, amount in enumerate(amounts):
+                for price, expected in (
+                    (Decimal(amount) - Decimal("0.01"), "€" * (index + 1)),
+                    (Decimal(amount), "€" * (index + 2)),
+                ):
+                    for manual in (expected, "verkeerd"):
+                        with self.subTest(product=product, price=price, manual=manual):
+                            products = {"pan": {
+                                **product, "price": price, "price_range": manual,
+                            }}
+                            before = copy.deepcopy(products)
+                            with patch("audits.checks.variants._load_products",
+                                       return_value=products):
+                                errors, warnings, rows = audit_price_levels(
+                                    "rvs-koekenpannen", "unused"
+                                )
+                            self.assertEqual(errors, [])
+                            self.assertEqual(rows, [
+                                ("rvs-koekenpannen", "pan", "", price, manual, expected),
+                            ])
+                            self.assertEqual(
+                                [w[0] for w in warnings],
+                                [] if manual == expected else ["price_range_mismatch"],
+                            )
+                            self.assertEqual(products, before)
+
     def test_all_requested_boundaries(self):
         cases = [
             ({"diameter": 20}, (25, 50, 90)),
@@ -77,6 +117,25 @@ class PanPricingTests(SimpleTestCase):
                 self.assertEqual(rows[0][-1], "—")
                 self.assertIn("pan_pricing_format_unknown", {w[0] for w in warnings})
 
+    def test_real_rvs_unknown_formats_have_no_fallback(self):
+        # 20+24 is wel keramisch geconfigureerd, maar geen bestaande RVS-setgrens.
+        for product in (
+            {}, {"diameter": 22}, {"diameter": "28"}, {"diameter": True},
+            {"diameter": 28, "diameters": []},
+            {"diameter": 28, "diameters": [20, 24]},
+            {"diameters": [20, 32]}, {"diameters": [20, 20, 28]},
+            {"diameters": "20_28"}, {"diameters": [20, "28"]},
+        ):
+            with self.subTest(product=product):
+                self.assertIsNone(get_audit_price_thresholds("rvs-koekenpannen", product))
+                with patch("audits.checks.variants._load_products", return_value={
+                    "pan": {**product, "price": 150, "price_range": "€€"},
+                }):
+                    errors, warnings, rows = audit_price_levels("rvs-koekenpannen", "unused")
+                self.assertEqual(errors, [])
+                self.assertEqual(rows[0][-1], "—")
+                self.assertEqual([w[0] for w in warnings], ["pan_pricing_format_unknown"])
+
     def test_variant_format_overrides_family_format_without_mutation(self):
         products = {"pan": {
             "diameter": 20,
@@ -96,16 +155,16 @@ class PanPricingTests(SimpleTestCase):
     def test_other_categories_can_register_own_formats(self):
         custom = ((Decimal("200"), "€"), (None, "€€"))
         with patch.dict("utils.pricing.PAN_AUDIT_PRICE_RANGES", {
-            "rvs-koekenpannen": {"single": {24: custom}, "sets": {(20, 28): custom}},
+            "test-pannen": {"single": {24: custom}, "sets": {(20, 28): custom}},
         }):
             self.assertEqual(get_audit_price_thresholds(
-                "rvs-koekenpannen", {"diameter": 24}
+                "test-pannen", {"diameter": 24}
             ), custom)
             self.assertEqual(get_audit_price_thresholds(
-                "rvs-koekenpannen", {"diameters": [28, 20]}
+                "test-pannen", {"diameters": [28, 20]}
             ), custom)
             self.assertIsNone(get_audit_price_thresholds(
-                "rvs-koekenpannen", {"diameter": 28}
+                "test-pannen", {"diameter": 28}
             ))
 
     def test_public_levels_and_unconfigured_categories_unchanged(self):
@@ -117,6 +176,9 @@ class PanPricingTests(SimpleTestCase):
             55, get_audit_price_thresholds("hapjespannen", {})
         ), "€€")
         self.assertIsNone(get_audit_price_thresholds("rvs-koekenpannen", {}))
+        for price in (49.99, 60, 110, 150, 240, 350):
+            with self.subTest(price=price):
+                self.assertIsNone(get_price_range(price, "rvs-koekenpannen"))
 
 
 class PanPricingEntryPointTests(TestCase):
