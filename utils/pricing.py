@@ -67,6 +67,55 @@ PRICE_RANGE_THRESHOLDS = {
     ),
 }
 
+KERAMISCHE_KOEKENPANNEN_PRICE_RANGES = {
+    20: ((Decimal("25"), "€"), (Decimal("50"), "€€"), (Decimal("90"), "€€€"), (None, "€€€€")),
+    24: ((Decimal("30"), "€"), (Decimal("60"), "€€"), (Decimal("100"), "€€€"), (None, "€€€€")),
+    26: ((Decimal("35"), "€"), (Decimal("65"), "€€"), (Decimal("105"), "€€€"), (None, "€€€€")),
+    28: ((Decimal("40"), "€"), (Decimal("70"), "€€"), (Decimal("110"), "€€€"), (None, "€€€€")),
+    30: ((Decimal("45"), "€"), (Decimal("75"), "€€"), (Decimal("120"), "€€€"), (None, "€€€€")),
+    32: ((Decimal("50"), "€"), (Decimal("85"), "€€"), (Decimal("130"), "€€€"), (None, "€€€€")),
+}
+
+KERAMISCHE_KOEKENPANNENSETS_PRICE_RANGES = {
+    (20, 24): ((Decimal("50"), "€"), (Decimal("80"), "€€"), (Decimal("125"), "€€€"), (None, "€€€€")),
+    (20, 28): ((Decimal("50"), "€"), (Decimal("75"), "€€"), (Decimal("110"), "€€€"), (None, "€€€€")),
+    (24, 28): ((Decimal("60"), "€"), (Decimal("100"), "€€"), (Decimal("175"), "€€€"), (None, "€€€€")),
+    (20, 24, 28): ((Decimal("75"), "€"), (Decimal("120"), "€€"), (Decimal("175"), "€€€"), (None, "€€€€")),
+}
+
+# Audit-only: de openbare prijsweergave gebruikt nog PRICE_RANGE_THRESHOLDS.
+# Andere pannencategorieën kunnen hier eigen diameter- en setgrenzen registreren.
+PAN_AUDIT_PRICE_RANGES = {
+    "koekenpannen": {
+        "single": KERAMISCHE_KOEKENPANNEN_PRICE_RANGES,
+        "sets": KERAMISCHE_KOEKENPANNENSETS_PRICE_RANGES,
+    },
+}
+
+
+def get_audit_price_thresholds(category, product):
+    """Selecteer auditgrenzen op productformaat; geen fallback bij onbekend formaat.
+
+    ``diameters`` markeert een set en heeft voorrang boven ``diameter``.
+    De volgorde van setdiameters maakt niet uit; dubbele maten blijven behouden.
+    Categorieën zonder formaatconfig gebruiken hun bestaande categoriegrenzen.
+    """
+    config = PAN_AUDIT_PRICE_RANGES.get(category)
+    if config is None:
+        return PRICE_RANGE_THRESHOLDS.get(category)
+    if "diameters" in product:
+        diameters = product["diameters"]
+        if not isinstance(diameters, (list, tuple)) or not diameters:
+            return None
+        if any(isinstance(d, bool) or not isinstance(d, (int, float, Decimal))
+               for d in diameters):
+            return None
+        return config.get("sets", {}).get(tuple(sorted(diameters)))
+    diameter = product.get("diameter")
+    if isinstance(diameter, bool) or not isinstance(diameter, (int, float, Decimal)):
+        return None
+    return config.get("single", {}).get(diameter)
+
 
 def has_price_range_config(category):
     """True wanneer voor deze categorie definitieve prijsgrenzen bestaan."""
@@ -82,7 +131,11 @@ def get_price_range(price, category="koekenpannen"):
     - een onbekende categorie geeft ``None`` (geen aannames over grenzen);
     - geeft alleen een niveau terug, nooit een concrete prijs.
     """
-    thresholds = PRICE_RANGE_THRESHOLDS.get(category)
+    return get_price_range_from_thresholds(price, PRICE_RANGE_THRESHOLDS.get(category))
+
+
+def get_price_range_from_thresholds(price, thresholds):
+    """Bereken met expliciet gekozen grenzen (gedeeld door rendering en audit)."""
     if thresholds is None or price is None:
         return None
     try:

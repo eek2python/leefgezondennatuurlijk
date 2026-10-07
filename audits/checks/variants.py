@@ -17,7 +17,11 @@ from audits.result import (
     SEVERITY_WARNING,
     AuditIssue,
 )
-from utils.pricing import get_price_range, has_price_range_config
+from utils.pricing import (
+    PAN_AUDIT_PRICE_RANGES,
+    get_audit_price_thresholds,
+    get_price_range_from_thresholds,
+)
 from utils.variant_helpers import (
     apply_resolved_link,
     prepare_product_variants,
@@ -269,9 +273,17 @@ def audit_price_levels(name, module_path):
             for product_key in RANKINGS.get(group, []):
                 airfryer_groups.setdefault(product_key, set()).add(group)
 
-    def check_price(key, variant_label, price, manual, pricing_key):
-        configured = has_price_range_config(pricing_key)
-        computed = get_price_range(price, pricing_key) if configured else None
+    def check_price(key, variant_label, price, manual, pricing_key, product):
+        thresholds = get_audit_price_thresholds(pricing_key, product)
+        configured = thresholds is not None
+        computed = get_price_range_from_thresholds(price, thresholds)
+        if pricing_key in PAN_AUDIT_PRICE_RANGES and not configured:
+            warnings.append(
+                ("pan_pricing_format_unknown", name, key,
+                 f"{variant_label or 'product'}: geen auditgrenzen voor formaat "
+                 f"{product.get('diameters', product.get('diameter'))!r}; "
+                 "berekend niveau ontbreekt")
+            )
         price_rows.append(
             (name, key, variant_label, price, manual or "—", computed or "—")
         )
@@ -330,14 +342,14 @@ def audit_price_levels(name, module_path):
         if swatch:
             for v in variants:
                 check_price(key, v.get("name") or "?", v.get("price"),
-                            v.get("price_range"), pricing_key)
+                            v.get("price_range"), pricing_key, {**product, **v})
         elif variants:
             for v in variants:
                 check_price(key, v.get("id") or "?", v.get("price"),
-                            v.get("price_range"), pricing_key)
+                            v.get("price_range"), pricing_key, {**product, **v})
         else:
             check_price(key, "", product.get("price"), product.get("price_range"),
-                        pricing_key)
+                        pricing_key, product)
     return errors, warnings, price_rows
 
 

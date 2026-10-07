@@ -7,3 +7,4 @@
 - [Render migration discipline](render-migration-discipline.md) — catalogue rendering depends on migrated maintenance schema; verify/apply migrations as an explicit Render release step.
 - [Cold Python compilation on Render](render-cold-compile-memory.md) — warm imports can hide a 512 MB build failure from repeated large Python catalogue definitions.
 - [Airfryer prijsindeling](airfryer-price-policy.md) — vastgestelde grenzen per compact/XL/dual; audit volgt pagina-indeling, niet productnaam.
+- [Panprijzen voor audits](pan-audit-price-policy.md) — formaatgebonden vergelijking voor losse pannen en sets; openbare prijsweergave buiten scope.
