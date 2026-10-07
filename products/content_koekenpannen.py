@@ -329,7 +329,7 @@ CONTENT = {
             ),
         },
 
-        "20+28": {
+        "20_28": {
             "title": "Conclusie voor koekenpannensets van 20 + 28 cm",
             "text": (
                 "Een set van <strong>20 + 28 cm</strong> combineert een "
@@ -348,7 +348,7 @@ CONTENT = {
             ),
         },
 
-        "24+28": {
+        "24_28": {
             "title": "Conclusie voor koekenpannensets van 24 + 28 cm",
             "text": (
                 "De combinatie <strong>24 + 28 cm</strong> is voor veel "
@@ -367,7 +367,7 @@ CONTENT = {
             ),
         },
 
-        "20+24+28": {
+        "20_24_28": {
             "title": "Conclusie voor koekenpannensets van 20 + 24 + 28 cm",
             "text": (
                 "Een set van <strong>20 + 24 + 28 cm</strong> biedt drie "

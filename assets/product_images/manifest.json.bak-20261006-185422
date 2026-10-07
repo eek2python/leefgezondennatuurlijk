@@ -2275,33 +2275,5 @@
     "category": "rvs-koekenpannen",
     "product_key": "beka-maestro-5ply-set-20-24-28",
     "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/demeyere-essential-5-set-20-24-28.jpg",
-    "slug": "demeyere-essential-5-set-20-24-28",
-    "category": "rvs-koekenpannen",
-    "product_key": "demeyere-essential-5-set-20-24-28",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/beka-savor-multiply-set-20-24-28.jpg",
-    "slug": "beka-savor-multiply-set-20-24-28",
-    "category": "rvs-koekenpannen",
-    "product_key": "beka-savor-multiply-set-20-24-28",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/sola-green-cooking-plus-set-20-24-28.jpg",
-    "slug": "sola-green-cooking-plus-set-20-24-28",
-    "category": "rvs-koekenpannen",
-    "product_key": "sola-green-cooking-plus-set-20-24-28",
-    "enabled": true
-  },
-  {
-    "source": "rvs-koekenpannen/demeyere-classico-3-set-20-24-28.jpg",
-    "slug": "demeyere-classico-3-set-20-24-28",
-    "category": "rvs-koekenpannen",
-    "product_key": "demeyere-classico-3-set-20-24-28",
-    "enabled": true
   }
 ]

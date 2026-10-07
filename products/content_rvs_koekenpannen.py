@@ -1,18 +1,17 @@
 CONTENT = {
     "meta": {
         "title": (
-            "Beste RVS koekenpannen van 2026 – ongecoat en geschikt "
-            "voor inductie"
+            "Beste RVS koekenpannen en pannensets van 2026 – ongecoat"
         ),
         "description": (
-            "Vergelijk RVS koekenpannen zonder antiaanbaklaag. Bekijk "
-            "materiaalopbouw, inductiegeschiktheid, ovengebruik, "
+            "Vergelijk ongecoate RVS-koekenpannen en pannensets. Bekijk "
+            "materiaalopbouw, formaten, inductiegeschiktheid, ovengebruik, "
             "prijsniveau en praktische verschillen."
         ),
-        "og_title": "Beste RVS koekenpannen van 2026",
+        "og_title": "Beste RVS koekenpannen en pannensets van 2026",
         "og_description": (
-            "Onze redactionele vergelijking van ongecoate RVS-koekenpannen, "
-            "van voordelige instapmodellen tot meerlaagse premium pannen."
+            "Onze redactionele vergelijking van ongecoate RVS-koekenpannen "
+            "en sets, van voordelige instapmodellen tot meerlaagse premium pannen."
         ),
         "canonical_path": "/rvs-koekenpannen/",
     },
@@ -27,9 +26,18 @@ CONTENT = {
                 "afblussen en het maken van sauzen op basis van aanbakresten."
             ),
             (
-                "Bakken in RVS vraagt meer aandacht voor temperatuur, gebruik van olie of "                 "boter en timing dan bakken in een keramische pan.Daar staat tegenover "
-                "dat een ongecoat bakoppervlak niet afhankelijk is van een "
-                "antiaanbaklaag die tijdens het gebruik kan slijten."
+                "Bakken in RVS vraagt meer aandacht voor temperatuur, gebruik "
+                "van olie of boter en timing dan bakken in een keramische pan. "
+                "Daar staat tegenover dat een ongecoat bakoppervlak niet "
+                "afhankelijk is van een antiaanbaklaag die tijdens het gebruik "
+                "kan slijten."
+            ),
+            (
+                "Naast losse koekenpannen vergelijken we ook RVS-koekenpannensets "
+                "in de combinaties 20 + 28 cm, 24 + 28 cm en 20 + 24 + 28 cm. "
+                "Daarbij kijken we niet alleen naar de prijs van de set, maar "
+                "ook naar de materiaalopbouw van de pannen en de praktische "
+                "bruikbaarheid van de verschillende formaten."
             ),
         ],
     },
@@ -68,6 +76,12 @@ CONTENT = {
             (
                 "<strong>Beschikbaarheid:</strong> verwijst de verkooplink "
                 "naar de juiste maat en uitvoering?"
+            ),
+            (
+                "<strong>Pannensets:</strong> bij sets beoordelen we of alle "
+                "meegeleverde koekenpannen een ongecoat RVS-bakoppervlak hebben, "
+                "welke materiaalconstructie wordt gebruikt en of de combinatie "
+                "van formaten praktisch en structureel verkrijgbaar is."
             ),
         ],
         "outro": (
@@ -117,8 +131,8 @@ CONTENT = {
     },
 
     "products_section": {
-        "h2": "Onze selectie RVS-koekenpannen",
-        "comparison_title": "Vergelijkingstabel RVS-koekenpannen",
+        "h2": "Onze selectie RVS-koekenpannen en pannensets",
+        "comparison_title": "Vergelijk RVS-koekenpannen en pannensets",
     },
 
     "tips": {
@@ -290,6 +304,62 @@ CONTENT = {
                 "gestructureerd RVS-bakoppervlak."
             ),
         },
+        "20_28": {
+            "title": (
+                "Conclusie – welke RVS-koekenpannenset van 20 + 28 cm "
+                "past het best?"
+            ),
+            "text": (
+                "Een set van <strong>20 + 28 cm</strong> combineert een compacte "
+                "pan voor kleine porties met een ruime pan voor grotere "
+                "bereidingen. De <strong>Beka Savor Multiply</strong> is onze "
+                "beste keuze dankzij de volledige tri-plyconstructie tot aan de "
+                "rand en de lange garantieperiode. De "
+                "<strong>Scanpan Impact</strong> is de budgetkeuze met een "
+                "warmtegeleidende sandwichbodem en hoge ovenbestendigheid. De "
+                "<strong>Scanpan STS</strong> biedt een vergelijkbare basisopbouw "
+                "met een andere afwerking en vormgeving."
+            ),
+        },
+
+        "24_28": {
+            "title": (
+                "Conclusie – welke RVS-koekenpannenset van 24 + 28 cm "
+                "past het best?"
+            ),
+            "text": (
+                "De combinatie <strong>24 + 28 cm</strong> is een veelzijdige "
+                "keuze voor dagelijks gebruik en biedt zowel een middelgrote als "
+                "een ruime koekenpan. De <strong>Demeyere Essential 5</strong> "
+                "is onze beste keuze dankzij het vijflaags materiaal tot aan de "
+                "rand en de brede inzetbaarheid. De "
+                "<strong>Beka Savor Multiply</strong> biedt met zijn volledige "
+                "tri-plyconstructie een sterke verhouding tussen prijs en "
+                "materiaalopbouw. De <strong>Demeyere Classico 3</strong> is "
+                "de budgetkeuze voor wie twee ongecoate RVS-pannen zoekt en een "
+                "eenvoudigere capsulebodem voldoende vindt."
+            ),
+        },
+
+        "20_24_28": {
+            "title": (
+                "Conclusie – welke RVS-koekenpannenset van 20 + 24 + 28 cm "
+                "past het best?"
+            ),
+            "text": (
+                "Een set van <strong>20 + 24 + 28 cm</strong> biedt drie duidelijk "
+                "verschillende formaten en is daardoor geschikt voor uiteenlopende "
+                "dagelijkse bereidingen. De <strong>Beka Maestro 5-Ply</strong> "
+                "is onze beste keuze door de volledige vijflaagse constructie, "
+                "goede warmteverdeling en drie praktische formaten. De "
+                "<strong>Sola Green Cooking+</strong> is onze budgetkeuze met een "
+                "tri-plyconstructie en relatief gunstig prijsniveau. De "
+                "<strong>Demeyere Essential 5</strong> is onze premiumkeuze en "
+                "combineert vijflaags materiaal tot aan de rand met een hoge "
+                "ovenbestendigheid. De <strong>Beka Savor Multiply</strong> vormt "
+                "een hoogwaardige tri-plyoptie met een lange garantieperiode."
+            ),
+        },
     },
 
     "faq": {
@@ -442,6 +512,40 @@ CONTENT = {
                     "temperatuurverschil tussen het midden en de buitenzijde ontstaan. "
                     "Controleer daarom niet alleen de opgegeven diameter van de pan, "
                     "maar indien beschikbaar ook de diameter van de bodem."
+                ),
+            },
+            {
+                "q": "Welke RVS-koekenpannenset heb ik nodig?",
+                "a": (
+                    "Een set van 20 + 28 cm is geschikt voor wie vooral een kleine "
+                    "en een grote koekenpan gebruikt en het tussenformaat kan missen. "
+                    "De combinatie 24 + 28 cm is veelzijdig voor dagelijkse "
+                    "bereidingen en grotere porties. Een set van 20 + 24 + 28 cm "
+                    "biedt de meeste flexibiliteit en is vooral interessant wanneer "
+                    "je meerdere losse koekenpannen tegelijk wilt vervangen of een "
+                    "complete basisset zoekt."
+                ),
+            },
+            {
+                "q": "Is een RVS-koekenpannenset voordeliger dan losse pannen?",
+                "a": (
+                    "Dat verschilt per merk en aanbieding. Een set kan voordeliger "
+                    "zijn dan dezelfde pannen afzonderlijk aanschaffen, maar de "
+                    "materiaalopbouw en bruikbaarheid van de formaten zijn minstens "
+                    "zo belangrijk. Een goedkope set is niet automatisch de beste "
+                    "keuze wanneer bijvoorbeeld alleen de bodem meerlaags is "
+                    "opgebouwd."
+                ),
+            },
+            {
+                "q": "Wat betekent full-clad bij een RVS-koekenpan?",
+                "a": (
+                    "Bij een full-clad of volledig meerlaagse pan lopen de lagen "
+                    "RVS en warmtegeleidend materiaal, meestal aluminium, door van "
+                    "de bodem tot in de zijwanden. Bij een pan met een sandwich- of "
+                    "capsulebodem bevindt de warmtegeleidende meerlaagse constructie "
+                    "zich hoofdzakelijk in de bodem. Full-clad kan daardoor zorgen "
+                    "voor een gelijkmatigere warmteverdeling over de volledige pan."
                 ),
             },
         ],

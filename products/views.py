@@ -1014,6 +1014,8 @@ def rvs_koekenpannen(request):
     conclusie = content["conclusies"].get(
         size, {} if isinstance(size, str) else content["conclusies"]["default"]
     )
+    if isinstance(size, str) and not products:
+        conclusie = {}
     faq_ld = _build_faq_ld(content["faq"]["items"])
     real_products = [p for p in products if p["affiliate_url"]]
     itemlist_ld = json.dumps({

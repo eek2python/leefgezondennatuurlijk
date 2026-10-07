@@ -51,11 +51,20 @@ RANKINGS = {
     "24_28": [
         "demeyere_essential_5_set_24_28",
         "beka_savor_multiply_set_24_28",
+        "scanpan_fusion_5_set_24_28",
+        "le_creuset_3ply_rvs_set_24_28",
+        "demeyere_classico_3_set_24_28",
     ],
     "20_28": [
-
+        "beka_savor_multiply_set_20_28",
+        "scanpan_sts_set_20_28",
+        "scanpan_impact_set_20_28",
     ],
     "20_24_28": [
-      
+        "beka_maestro_5ply_set_20_24_28",
+        "demeyere_essential_5_set_20_24_28",
+        "beka_savor_multiply_set_20_24_28",
+        "sola_green_cooking_plus_set_20_24_28",
+        "demeyere_classico_3_set_20_24_28",
     ]
 }
