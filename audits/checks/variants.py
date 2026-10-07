@@ -260,10 +260,17 @@ def audit_price_levels(name, module_path):
     ``price_range_mismatch``-waarschuwingen; overige zijn report-only.
     Er worden nooit prijzen of productdata gewijzigd."""
     errors, warnings, price_rows = [], [], []
-    pricing_key = PRICING_CATEGORY_KEYS.get(name, name)
-    configured = has_price_range_config(pricing_key)
+    default_pricing_key = PRICING_CATEGORY_KEYS.get(name, name)
+    airfryer_groups = {}
+    if name == "airfryers":
+        from products.rankings_airfryers import RANKINGS
 
-    def check_price(key, variant_label, price, manual):
+        for group in ("compact", "xl", "dual"):
+            for product_key in RANKINGS.get(group, []):
+                airfryer_groups.setdefault(product_key, set()).add(group)
+
+    def check_price(key, variant_label, price, manual, pricing_key):
+        configured = has_price_range_config(pricing_key)
         computed = get_price_range(price, pricing_key) if configured else None
         price_rows.append(
             (name, key, variant_label, price, manual or "—", computed or "—")
@@ -292,30 +299,45 @@ def audit_price_levels(name, module_path):
             warnings.append(
                 ("price_range_mismatch", name, key,
                  f"{variant_label or 'product'}: handmatig '{manual}' ≠ "
-                 f"berekend '{computed}' (berekend niveau is leidend "
-                 "bij rendering; brondata blijft ongewijzigd)")
+                 f"berekend '{computed}' volgens {pricing_key} "
+                 "(brondata blijft ongewijzigd)")
             )
         if configured and computed and not manual and variant_label == "":
             warnings.append(
                 ("stale_price_range", name, key,
                  "price_range ontbreekt terwijl een geldige prijs bestaat "
-                 "(niveau wordt bij rendering berekend)")
+                 f"(auditniveau berekend volgens {pricing_key})")
             )
 
     products = _load_products(module_path)
     for key, product in products.items():
+        pricing_key = default_pricing_key
+        if name == "airfryers":
+            groups = airfryer_groups.get(key, set())
+            if len(groups) == 1:
+                pricing_key = f"airfryers_{next(iter(groups))}"
+            else:
+                # Geen willekeurige grenswaarden voor onbekende/ambigue groepen.
+                pricing_key = ""
+                warnings.append(
+                    ("airfryer_pricing_group_unknown", name, key,
+                     "Geen eenduidige prijsindeling compact/xl/dual in "
+                     "rankings_airfryers.py; berekend niveau ontbreekt"
+                     + (f" (groepen: {', '.join(sorted(groups))})" if groups else ""))
+                )
         variants = product.get("variants") or []
         swatch = bool(variants) and not all(_is_button_variant(v) for v in variants)
         if swatch:
             for v in variants:
                 check_price(key, v.get("name") or "?", v.get("price"),
-                            v.get("price_range"))
+                            v.get("price_range"), pricing_key)
         elif variants:
             for v in variants:
                 check_price(key, v.get("id") or "?", v.get("price"),
-                            v.get("price_range"))
+                            v.get("price_range"), pricing_key)
         else:
-            check_price(key, "", product.get("price"), product.get("price_range"))
+            check_price(key, "", product.get("price"), product.get("price_range"),
+                        pricing_key)
     return errors, warnings, price_rows
 
 

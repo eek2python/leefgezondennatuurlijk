@@ -45,6 +45,26 @@ PRICE_RANGE_THRESHOLDS = {
         (Decimal("110"), "€€€"),
         (None, "€€€€"),
     ),
+    "airfryers_compact": (
+        (Decimal("75"), "€"),
+        (Decimal("110"), "€€"),
+        (Decimal("150"), "€€€"),
+        (None, "€€€€"),
+    ),
+
+    "airfryers_xl": (
+        (Decimal("90"), "€"),
+        (Decimal("130"), "€€"),
+        (Decimal("180"), "€€€"),
+        (None, "€€€€"),
+    ),
+
+    "airfryers_dual": (
+        (Decimal("110"), "€"),
+        (Decimal("170"), "€€"),
+        (Decimal("250"), "€€€"),
+        (None, "€€€€"),
+    ),
 }
 
 
