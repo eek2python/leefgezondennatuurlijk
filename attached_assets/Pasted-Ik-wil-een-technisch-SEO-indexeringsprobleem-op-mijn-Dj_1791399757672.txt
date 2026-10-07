@@ -1,0 +1,412 @@
+Ik wil een technisch SEO/indexeringsprobleem op mijn Django-website Leef Natuurlijk & Gezond oplossen.
+
+Domein:
+https://leefnatuurlijkengezond.nl/
+
+BELANGRIJK:
+De gewenste primaire/canonical hostname is ZONDER www:
+
+https://leefnatuurlijkengezond.nl/
+
+De www-versie mag uitsluitend via een permanente redirect naar de non-www-versie leiden.
+
+Google Search Console laat momenteel bijvoorbeeld voor:
+
+https://www.leefnatuurlijkengezond.nl/wokpannen/
+
+zien:
+
+- Page is not indexed: Page with redirect
+- User-declared canonical:
+  https://www.leefnatuurlijkengezond.nl/wokpannen/
+- Google-selected canonical:
+  https://leefnatuurlijkengezond.nl/wokpannen/
+- Crawling allowed: Yes
+- Indexing allowed: Yes
+- Page fetch: Successful
+- No referring sitemaps detected
+
+Dit wijst erop dat de website intern mogelijk www als canonical declareert, terwijl de server www naar non-www redirect.
+
+DOEL
+
+Maak de URL/canonical-configuratie van de hele website volledig consistent, zodat:
+
+1. https://leefnatuurlijkengezond.nl/... altijd de definitieve URL is.
+2. https://www.leefnatuurlijkengezond.nl/... permanent redirect naar de equivalent non-www URL.
+3. Alle canonical-tags naar non-www verwijzen.
+4. De sitemap uitsluitend non-www URL's bevat.
+5. OpenGraph-, structured-data- en andere interne absolute URL's ook non-www gebruiken.
+6. Interne links niet onnodig via www lopen.
+7. Google geen tegenstrijdige canonical-signalen meer krijgt.
+
+WERKWIJZE
+
+Voer eerst een volledige audit uit voordat je wijzigingen maakt.
+
+--------------------------------------------------
+FASE 1 — AUDIT
+--------------------------------------------------
+
+Zoek projectbreed naar alle verwijzingen naar:
+
+www.leefnatuurlijkengezond.nl
+
+en controleer in ieder geval:
+
+- Django templates
+- canonical-tags
+- og:url
+- og:image
+- Twitter metadata
+- JSON-LD / structured data
+- breadcrumbs
+- sitemap-generatie
+- robots.txt
+- settings.py
+- environment/config variables
+- SITE_URL
+- BASE_URL
+- DOMAIN
+- request.build_absolute_uri()
+- Django Sites-framework, indien gebruikt
+- context processors
+- custom template tags
+- views
+- urls.py
+- middleware
+- redirects
+- hardcoded interne links
+- sitemap classes
+- deployment/config files
+
+Maak eerst een overzicht van alle relevante vindplaatsen en bepaal per vindplaats of deze aangepast moet worden.
+
+Pas niet blind alle strings aan:
+externe links, affiliate-links en andere domeinen mogen uiteraard niet worden gewijzigd.
+
+--------------------------------------------------
+FASE 2 — CANONICAL URLS
+--------------------------------------------------
+
+Controleer hoe canonical-tags momenteel worden gegenereerd.
+
+Alle indexeerbare pagina's moeten zichzelf canonicaliseren naar:
+
+https://leefnatuurlijkengezond.nl/<pad>/
+
+Dus bijvoorbeeld:
+
+https://leefnatuurlijkengezond.nl/wokpannen/
+
+moet bevatten:
+
+<link rel="canonical" href="https://leefnatuurlijkengezond.nl/wokpannen/">
+
+NIET:
+
+<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/wokpannen/">
+
+Controleer dit sitebreed.
+
+Gebruik bij voorkeur één centrale configuratie/helper voor het domein in plaats van hetzelfde domein op tientallen plaatsen hardcoded te houden, als dit veilig kan worden ingevoerd zonder onnodige refactoring.
+
+--------------------------------------------------
+FASE 3 — OPENGRAPH EN SOCIAL METADATA
+--------------------------------------------------
+
+Controleer:
+
+<meta property="og:url">
+<meta property="og:image">
+
+en Twitter metadata.
+
+Waar URL's naar onze eigen site verwijzen, moeten deze consequent:
+
+https://leefnatuurlijkengezond.nl/
+
+gebruiken.
+
+Voorbeeld:
+
+<meta property="og:url"
+      content="https://leefnatuurlijkengezond.nl/wokpannen/">
+
+Gebruik nergens www voor interne absolute URL's.
+
+--------------------------------------------------
+FASE 4 — SITEMAP
+--------------------------------------------------
+
+Inspecteer de volledige sitemap-implementatie.
+
+Controleer:
+
+- welke sitemap-URL actief is;
+- welke Django Sitemap classes worden gebruikt;
+- of alle belangrijke categoriepagina's, blogs en andere indexeerbare pagina's erin staan;
+- of alle <loc>-URL's non-www gebruiken;
+- of URL's die redirecten per ongeluk in de sitemap staan;
+- of canonical URL's overeenkomen met sitemap-URL's.
+
+De sitemap moet bijvoorbeeld bevatten:
+
+<loc>https://leefnatuurlijkengezond.nl/wokpannen/</loc>
+
+en NIET:
+
+<loc>https://www.leefnatuurlijkengezond.nl/wokpannen/</loc>
+
+Controleer specifiek of deze belangrijke pagina's in de sitemap staan indien ze indexeerbaar zijn:
+
+- /koekenpannen/
+- /rvs-koekenpannen/
+- /koolstofstalen-koekenpannen/
+- /gietijzeren-koekenpannen/
+- /wokpannen/
+- /hapjespannen/
+- blogs en individuele blogartikelen
+- overige actieve productcategorieën
+
+Voeg ontbrekende belangrijke indexeerbare pagina's toe als de huidige sitemapconfiguratie ze per ongeluk uitsluit.
+
+Voeg GEEN:
+- redirect-URL's
+- duplicate URLs
+- filter/query-parametervarianten
+- adminpagina's
+- technische pagina's
+- noindex-pagina's
+
+toe aan de sitemap.
+
+--------------------------------------------------
+FASE 5 — WWW → NON-WWW REDIRECT
+--------------------------------------------------
+
+Controleer hoe de www → non-www redirect momenteel wordt geregeld.
+
+Gewenst gedrag:
+
+http://www.leefnatuurlijkengezond.nl/test/
+→ 301/308 →
+https://leefnatuurlijkengezond.nl/test/
+
+https://www.leefnatuurlijkengezond.nl/test/
+→ 301/308 →
+https://leefnatuurlijkengezond.nl/test/
+
+https://leefnatuurlijkengezond.nl/test/
+→ 200
+
+De querystring en het volledige pad moeten behouden blijven.
+
+Bijvoorbeeld:
+
+https://www.leefnatuurlijkengezond.nl/koekenpannen/?size=28
+
+moet redirecten naar:
+
+https://leefnatuurlijkengezond.nl/koekenpannen/?size=28
+
+Voorkom redirect chains zoals:
+
+www → http non-www → https non-www
+
+als dat technisch eenvoudig te voorkomen is.
+
+BELANGRIJK:
+Als de www → non-www redirect buiten Django wordt geregeld, bijvoorbeeld door Render of DNS/domain-configuratie, wijzig dan niet willekeurig Django.
+
+Documenteer dan waar de redirect wordt geregeld en welke instelling ik eventueel handmatig in Render moet controleren.
+
+Maak alleen middleware of andere Django redirectlogica als dit daadwerkelijk nodig is.
+
+--------------------------------------------------
+FASE 6 — INTERNE LINKS
+--------------------------------------------------
+
+Controleer interne links.
+
+Waar Django named URLs beschikbaar zijn, geef voorkeur aan:
+
+{% url '...' %}
+
+boven hardcoded absolute URLs.
+
+Voor interne absolute URLs die noodzakelijk zijn, gebruik:
+
+https://leefnatuurlijkengezond.nl/
+
+niet www.
+
+Verander geen:
+- bol.com affiliate-links
+- externe fabrikantlinks
+- social links
+- externe bronnen
+
+--------------------------------------------------
+FASE 7 — ROBOTS.TXT
+--------------------------------------------------
+
+Controleer robots.txt.
+
+Verifieer dat:
+
+- belangrijke categorie- en blogpagina's niet worden geblokkeerd;
+- de sitemap correct wordt vermeld;
+- de sitemapregel naar de non-www sitemap verwijst.
+
+Bijvoorbeeld:
+
+Sitemap: https://leefnatuurlijkengezond.nl/sitemap.xml
+
+--------------------------------------------------
+FASE 8 — STRUCTURED DATA
+--------------------------------------------------
+
+Controleer alle JSON-LD en andere structured data op eigen domein-URL's.
+
+Denk onder andere aan:
+
+- BreadcrumbList
+- Article
+- WebSite
+- Organization
+- FAQPage
+- ItemList
+- eventuele Product structured data
+
+Als hierin www.leefnatuurlijkengezond.nl voorkomt, wijzig dit naar:
+
+leefnatuurlijkengezond.nl
+
+Controleer ook of er niet twee varianten van dezelfde URL worden gegenereerd.
+
+--------------------------------------------------
+FASE 9 — CONTROLE OP TRAILING SLASHES
+--------------------------------------------------
+
+Controleer of de URL-structuur consequent trailing slashes gebruikt.
+
+Bijvoorbeeld:
+
+/wokpannen/
+
+en niet door elkaar:
+
+/wokpannen
+/wokpannen/
+
+Vermijd dat sitemap, canonical en interne links verschillende varianten gebruiken.
+
+Sluit aan op de bestaande Django APPEND_SLASH/configuratie en verander de bestaande URL-architectuur niet onnodig.
+
+--------------------------------------------------
+FASE 10 — TESTS
+--------------------------------------------------
+
+Voer na de wijzigingen relevante controles uit.
+
+Minimaal:
+
+python manage.py check
+
+Controleer daarnaast indien mogelijk programmatisch de HTML-output en HTTP-status van meerdere representatieve pagina's.
+
+Test ten minste:
+
+/
+ /wokpannen/
+ /koekenpannen/
+ /rvs-koekenpannen/
+ /koolstofstalen-koekenpannen/
+ /gietijzeren-koekenpannen/
+ /blogs/
+
+en minimaal één individueel blogartikel.
+
+Controleer per pagina:
+
+1. HTTP 200 op de canonical non-www URL
+2. exact één canonical-tag
+3. canonical gebruikt https
+4. canonical gebruikt non-www
+5. canonical URL komt overeen met de daadwerkelijke pagina
+6. geen onverwachte redirect
+7. og:url gebruikt non-www
+8. pagina mag geïndexeerd worden
+
+Controleer ook sitemap.xml:
+
+- HTTP 200
+- geldige XML
+- alleen canonical non-www URLs
+- geen www URLs
+- geen redirect URLs
+- belangrijke categoriepagina's aanwezig
+
+Zoek na afloop opnieuw projectbreed naar:
+
+www.leefnatuurlijkengezond.nl
+
+Als dit nog voorkomt, geef voor iedere resterende vindplaats aan waarom deze bewust niet is gewijzigd.
+
+--------------------------------------------------
+BELANGRIJKE RANDVOORWAARDEN
+--------------------------------------------------
+
+- Verander geen productcontent.
+- Verander geen selectie van producten.
+- Verander geen affiliate IDs of affiliate URLs.
+- Verander geen styling tenzij technisch noodzakelijk.
+- Verander geen bestaande slugs.
+- Verwijder geen werkende pagina's.
+- Introduceer geen grote refactor als een kleine veilige wijziging voldoende is.
+- Maak geen redirects tussen bestaande contentpagina's tenzij noodzakelijk.
+- Behoud bestaande SEO titles en meta descriptions, behalve wanneer alleen de hostname moet worden aangepast.
+- Vermijd duplicate canonical-tags.
+- Maak geen wijzigingen waarvan niet duidelijk is wat het effect is.
+
+--------------------------------------------------
+OPLEVERING
+--------------------------------------------------
+
+Voer de veilige wijzigingen daadwerkelijk door.
+
+Geef daarna een beknopt rapport met:
+
+1. ROOT CAUSE
+Wat veroorzaakte het canonical/indexeringsprobleem?
+
+2. AANGEPASTE BESTANDEN
+Bestandsnaam + korte omschrijving van wijziging.
+
+3. CANONICALS
+Hoe worden canonical URLs nu gegenereerd?
+
+4. SITEMAP
+Welke sitemap wordt gebruikt en welke hostname bevat deze?
+
+5. REDIRECTS
+Waar en hoe wordt www → non-www geregeld?
+
+6. ROBOTS.TXT
+Is de sitemap correct vermeld en zijn indexeerbare pagina's toegestaan?
+
+7. RESTERENDE WWW-VERWIJZINGEN
+Noem eventuele bewuste uitzonderingen.
+
+8. TESTRESULTATEN
+Geef de resultaten van Django check en de URL/sitemapcontroles.
+
+9. HANDMATIGE ACTIES
+Noem expliciet eventuele zaken die ik zelf nog in Render, DNS of Google Search Console moet doen.
+
+STOP als je tijdens de audit ontdekt dat de huidige productieconfiguratie bewust www als primaire hostname gebruikt en non-www slechts toevallig lijkt te werken. Leg dan eerst uit wat je hebt gevonden voordat je de domeinstrategie omdraait.
+
+Op basis van Google Search Console is de beoogde situatie echter:
+https://leefnatuurlijkengezond.nl/
+als enige canonical hostname.

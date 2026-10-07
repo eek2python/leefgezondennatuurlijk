@@ -1,14 +1,15 @@
 import json
 from django.shortcuts import render
 from django.http import Http404
+from LeefNatuurlijkenGezond.site_urls import absolute_site_url
 
 
 def _build_breadcrumb_ld(breadcrumbs):
-    items = [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.leefnatuurlijkengezond.nl/"}]
+    items = [{"@type": "ListItem", "position": 1, "name": "Home", "item": absolute_site_url("/")}]
     for i, crumb in enumerate(breadcrumbs, start=2):
         entry = {"@type": "ListItem", "position": i, "name": crumb["label"]}
         if crumb.get("url"):
-            entry["item"] = f"https://www.leefnatuurlijkengezond.nl{crumb['url']}"
+            entry["item"] = absolute_site_url(crumb["url"])
         items.append(entry)
     return json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items})
 
@@ -68,13 +69,13 @@ BLOG_ARTICLE_META = {
 
 def _build_article_ld(slug):
     meta = BLOG_ARTICLE_META[slug]
-    canonical = f"https://www.leefnatuurlijkengezond.nl/blogs/{slug}/"
+    canonical = absolute_site_url(f"/blogs/{slug}/")
     return json.dumps({
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": BLOG_TITLES[slug],
         "description": meta["description"],
-        "image": f"https://www.leefnatuurlijkengezond.nl{meta['image']}",
+        "image": absolute_site_url(meta["image"]),
         "mainEntityOfPage": canonical,
         "author": {"@type": "Organization", "name": "Leef Natuurlijk & Gezond"},
         "publisher": {"@type": "Organization", "name": "Leef Natuurlijk & Gezond"},

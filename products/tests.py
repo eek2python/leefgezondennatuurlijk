@@ -1269,7 +1269,7 @@ class KoolstofstalenKoekenpannenIntegrationTests(TestCase):
         )
         self.assertContains(
             response,
-            '<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/koolstofstalen-koekenpannen/">',
+            '<link rel="canonical" href="https://leefnatuurlijkengezond.nl/koolstofstalen-koekenpannen/">',
             html=True,
         )
         self.assertEqual(response.context["selected_size"], 24)
@@ -1290,11 +1290,11 @@ class KoolstofstalenKoekenpannenIntegrationTests(TestCase):
         self.assertEqual(sitemap.status_code, 200)
         self.assertContains(
             sitemap,
-            "https://www.leefnatuurlijkengezond.nl/koolstofstalen-koekenpannen/",
+            "https://leefnatuurlijkengezond.nl/koolstofstalen-koekenpannen/",
         )
         self.assertContains(
             sitemap,
-            "https://www.leefnatuurlijkengezond.nl/product/debuyer-mineral-b-28/",
+            "https://leefnatuurlijkengezond.nl/product/debuyer-mineral-b-28/",
         )
 
     def test_product_detail_returns_to_carbon_steel_category(self):
@@ -1325,7 +1325,7 @@ class GietijzerenKoekenpannenIntegrationTests(TestCase):
         )
         self.assertContains(
             response,
-            '<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl/gietijzeren-koekenpannen/">',
+            '<link rel="canonical" href="https://leefnatuurlijkengezond.nl/gietijzeren-koekenpannen/">',
             html=True,
         )
         self.assertEqual(response.context["selected_size"], 26)
@@ -1346,11 +1346,11 @@ class GietijzerenKoekenpannenIntegrationTests(TestCase):
         self.assertEqual(sitemap.status_code, 200)
         self.assertContains(
             sitemap,
-            "https://www.leefnatuurlijkengezond.nl/gietijzeren-koekenpannen/",
+            "https://leefnatuurlijkengezond.nl/gietijzeren-koekenpannen/",
         )
         self.assertContains(
             sitemap,
-            "https://www.leefnatuurlijkengezond.nl/product/petromax-fp20-20/",
+            "https://leefnatuurlijkengezond.nl/product/petromax-fp20-20/",
         )
 
     def test_product_detail_returns_to_cast_iron_category(self):

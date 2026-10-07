@@ -30,6 +30,9 @@ DEBUG = os.environ.get("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = ['*']
 
+# Public SEO origin, independent of the request/proxy or preview hostname.
+SITE_URL = "https://leefnatuurlijkengezond.nl"
+
 # Trust the Replit proxy and the production domain for CSRF-protected POSTs
 # (admin login etc.). Requests arrive via an https proxy, so Django needs the
 # external origins listed explicitly.
@@ -92,6 +95,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'LeefNatuurlijkenGezond.context_processors.ga_measurement_id',
+                'LeefNatuurlijkenGezond.context_processors.site_origin',
             ],
         },
     },

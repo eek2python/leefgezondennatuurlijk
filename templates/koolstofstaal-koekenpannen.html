@@ -6,19 +6,19 @@
 {% block meta %}
 <meta name="description" content="{{ meta.description }}">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl{{ meta.canonical_path }}">
+<link rel="canonical" href="{{ SITE_URL }}{{ meta.canonical_path }}">
 
 <meta property="og:title" content="{{ meta.og_title }}">
 <meta property="og:description" content="{{ meta.og_description }}">
-<meta property="og:image" content="https://www.leefnatuurlijkengezond.nl/static/images/thumbnails/koolstofstalen-koekenpannen-keuken.webp">
-<meta property="og:url" content="https://www.leefnatuurlijkengezond.nl{{ meta.canonical_path }}">
+<meta property="og:image" content="{{ SITE_URL }}/static/images/thumbnails/koolstofstalen-koekenpannen-keuken.webp">
+<meta property="og:url" content="{{ SITE_URL }}{{ meta.canonical_path }}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ meta.og_title }}">
 <meta name="twitter:description" content="{{ meta.og_description }}">
-<meta name="twitter:image" content="https://www.leefnatuurlijkengezond.nl/static/images/thumbnails/koolstofstalen-koekenpannen-keuken.webp">
+<meta name="twitter:image" content="{{ SITE_URL }}/static/images/thumbnails/koolstofstalen-koekenpannen-keuken.webp">
 
 <script type="application/ld+json">
 {{ itemlist_ld|safe }}

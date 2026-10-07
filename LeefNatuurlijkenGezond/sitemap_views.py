@@ -4,6 +4,7 @@ from django.conf import settings
 from django.template.loader import render_to_string
 from django.urls import reverse
 from datetime import datetime
+from .site_urls import absolute_site_url
 
 
 STATIC_URLS = [
@@ -25,14 +26,11 @@ STATIC_URLS = [
     {"name": "privacy",            "loc_name": "privacy",           "changefreq": "yearly",  "priority": "0.3"},
 ]
 
-BASE_URL = "https://www.leefnatuurlijkengezond.nl"
-
-
 def sitemap_xml(request):
     static_urls = []
     for entry in STATIC_URLS:
         static_urls.append({
-            "loc": BASE_URL + reverse(entry["loc_name"], kwargs=entry.get("kwargs") or None),
+            "loc": absolute_site_url(reverse(entry["loc_name"], kwargs=entry.get("kwargs") or None)),
             "changefreq": entry["changefreq"],
             "priority": entry["priority"],
         })
@@ -49,7 +47,7 @@ def sitemap_xml(request):
             template_name,
         )
         blog_urls.append({
-            "loc": BASE_URL + reverse("blogs_detail", kwargs={"slug": slug}),
+            "loc": absolute_site_url(reverse("blogs_detail", kwargs={"slug": slug})),
             "lastmod": datetime.fromtimestamp(
                 os.path.getmtime(file_path)
             ).strftime("%Y-%m-%d"),
@@ -59,7 +57,7 @@ def sitemap_xml(request):
     product_urls = []
     for slug in sorted(ALL_PRODUCTS_BY_SLUG):
         product_urls.append({
-            "loc": BASE_URL + reverse("product_detail", kwargs={"slug": slug}),
+            "loc": absolute_site_url(reverse("product_detail", kwargs={"slug": slug})),
             "changefreq": "monthly",
             "priority": "0.6",
         })

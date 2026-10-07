@@ -162,9 +162,9 @@ All 6 category pages use a standardised three-file content architecture per cate
 - Total: 139 URLs (0 duplicates)
 
 ### Canonical Host
-- Single canonical host: `https://www.leefnatuurlijkengezond.nl` (with `www.`)
+- Single canonical host: `https://leefnatuurlijkengezond.nl` (without `www.`), defined once in `settings.SITE_URL`.
 - Used consistently in: all `<link rel="canonical">` tags, all `og:url` meta tags, sitemap.xml (`BASE_URL`), and robots.txt (`Sitemap:` directive)
-- Non-www → www redirect should be configured at the web server / deployment level
+- www → HTTPS non-www redirect is handled outside Django on production infrastructure; preserve path/query. Do not add opposite redirects. See `docs/seo-canonical-audit.md`.
 
 ### URL Routing
 - All public routes are defined in `LeefNatuurlijkenGezond/urls.py` (project-level URLconf)

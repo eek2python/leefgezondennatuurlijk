@@ -1,4 +1,5 @@
 import os
+from LeefNatuurlijkenGezond.site_urls import absolute_site_url
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
 from .models import Product, Click, AffiliateProductState
@@ -100,11 +101,11 @@ for cat_key, cat_info in CATEGORY_MAP.items():
 
 
 def _build_breadcrumb_ld(breadcrumbs):
-    items = [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.leefnatuurlijkengezond.nl/"}]
+    items = [{"@type": "ListItem", "position": 1, "name": "Home", "item": absolute_site_url("/")}]
     for i, crumb in enumerate(breadcrumbs, start=2):
         entry = {"@type": "ListItem", "position": i, "name": crumb["label"]}
         if crumb.get("url"):
-            entry["item"] = f"https://www.leefnatuurlijkengezond.nl{crumb['url']}"
+            entry["item"] = absolute_site_url(crumb["url"])
         items.append(entry)
     return json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items})
 
@@ -379,7 +380,7 @@ def _build_product_ld(request, p):
         "@type": "Product",
         "name": p["name"],
         "description": p["description"],
-        "image": request.build_absolute_uri(
+        "image": absolute_site_url(
             f"/static/{p['image_path']}/{p['image']}"
         ),
         "brand": {"@type": "Brand", "name": p["brand"]},
@@ -697,7 +698,6 @@ def wokpannen(request):
 
 
 AIRFRYER_FORMATS = ["compact", "xl", "dual"]
-AIRFRYER_BASE_URL = "https://www.leefnatuurlijkengezond.nl"
 
 
 def airfryers(request, fmt=None):
@@ -719,7 +719,7 @@ def airfryers(request, fmt=None):
     fmt_meta = content["formats"][selected_format]
 
     canonical_path = "/airfryers/" if selected_format == "compact" else f"/airfryers/{selected_format}/"
-    canonical_url = AIRFRYER_BASE_URL + canonical_path
+    canonical_url = absolute_site_url(canonical_path)
 
     hero_h1 = fmt_meta["h1"]
     products_h2 = content["products_section"]["h2"]

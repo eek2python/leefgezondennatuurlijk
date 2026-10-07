@@ -23,7 +23,7 @@ class KoolstofstaalVsGietijzerBlogTests(TestCase):
         )
         self.assertContains(
             response,
-            f'<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl{self.path}">',
+            f'<link rel="canonical" href="https://leefnatuurlijkengezond.nl{self.path}">',
             html=True,
         )
         self.assertContains(response, '"@type": "Article"')
@@ -47,7 +47,7 @@ class KoolstofstaalVsGietijzerBlogTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(
             response,
-            f"https://www.leefnatuurlijkengezond.nl{self.path}",
+            f"https://leefnatuurlijkengezond.nl{self.path}",
         )
 
     def test_blog_images_exist(self):
@@ -76,7 +76,7 @@ class AllBlogSeoTests(TestCase):
                 self.assertEqual(html.count('name="description"'), 1)
                 self.assertEqual(html.count('rel="canonical"'), 1)
                 self.assertIn(
-                    f'<link rel="canonical" href="https://www.leefnatuurlijkengezond.nl{path}">',
+                    f'<link rel="canonical" href="https://leefnatuurlijkengezond.nl{path}">',
                     html,
                 )
                 self.assertEqual(html.count('"@type": "Article"'), 1)
@@ -95,12 +95,12 @@ class AllBlogSeoTests(TestCase):
                     for schema in parsed_schemas
                     if schema.get("@type") == "Article"
                 )
-                canonical = f"https://www.leefnatuurlijkengezond.nl{path}"
+                canonical = f"https://leefnatuurlijkengezond.nl{path}"
                 self.assertEqual(article_schema["mainEntityOfPage"], canonical)
                 self.assertEqual(
                     article_schema["image"],
                     (
-                        "https://www.leefnatuurlijkengezond.nl"
+                        "https://leefnatuurlijkengezond.nl"
                         f"{BLOG_ARTICLE_META[slug]['image']}"
                     ),
                 )
@@ -122,7 +122,7 @@ class AllBlogSeoTests(TestCase):
                 self.assertIn(path, overview)
                 self.assertEqual(
                     sitemap.count(
-                        f"https://www.leefnatuurlijkengezond.nl{path}"
+                        f"https://leefnatuurlijkengezond.nl{path}"
                     ),
                     1,
                 )
@@ -135,7 +135,7 @@ class AllBlogSeoTests(TestCase):
             if "/blogs/" in loc.text and not loc.text.endswith("/blogs/")
         ]
         expected_urls = [
-            f"https://www.leefnatuurlijkengezond.nl/blogs/{slug}/"
+            f"https://leefnatuurlijkengezond.nl/blogs/{slug}/"
             for slug in BLOG_TITLES
         ]
         self.assertCountEqual(blog_urls, expected_urls)
