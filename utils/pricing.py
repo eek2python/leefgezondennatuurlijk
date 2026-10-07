@@ -77,6 +77,7 @@ KERAMISCHE_KOEKENPANNEN_PRICE_RANGES = {
 }
 
 KERAMISCHE_KOEKENPANNENSETS_PRICE_RANGES = {
+    (20, 24): ((Decimal("50"), "€"), (Decimal("80"), "€€"), (Decimal("125"), "€€€"), (None, "€€€€")),
     (20, 28): ((Decimal("50"), "€"), (Decimal("75"), "€€"), (Decimal("110"), "€€€"), (None, "€€€€")),
     (24, 28): ((Decimal("60"), "€"), (Decimal("100"), "€€"), (Decimal("175"), "€€€"), (None, "€€€€")),
     (20, 24, 28): ((Decimal("75"), "€"), (Decimal("120"), "€€"), (Decimal("175"), "€€€"), (None, "€€€€")),

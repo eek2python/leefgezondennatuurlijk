@@ -808,6 +808,29 @@ class DisplayVariantHardeningTests(TestCase):
 
 
 class KoekenpanSetSizeSelectorTests(TestCase):
+    def setUp(self):
+        # Vaste gedragsfixtures, onafhankelijk van de openbare catalogus.
+        self.products = {
+            key: {
+                "slug": key,
+                "name": f"Test pannenset {key}",
+                "description": "Testproduct voor de formaatselector.",
+                "brand": "Test",
+                "material": "Keramisch",
+                "rating": 4.0,
+                "image": "test.jpg",
+                "image_path": "images/test",
+            }
+            for key in ("set-a", "set-b")
+        }
+        self.rankings = {
+            "20_24_28": ["set-b"],
+            "24_28": ["set-a", "set-b"],
+            28: ["set-a"],
+            "20_28": ["set-a"],
+            20: ["set-b"],
+        }
+
     def test_size_label_formatter_handles_single_and_set_sizes(self):
         from products.templatetags.product_formatting import format_size_label
 
@@ -821,17 +844,35 @@ class KoekenpanSetSizeSelectorTests(TestCase):
 
         self.assertIn("24_28", RANKINGS)
         self.assertNotIn(2428, RANKINGS)
-        self.assertEqual(len(RANKINGS["24_28"]), 8)
+
+    def test_set_size_selector_loads_current_ranked_products(self):
+        from products.products_koekenpannen import PRODUCTS
+        from products.rankings_koekenpannen import RANKINGS
+
+        set_sizes = [key for key in RANKINGS if "_" in str(key)]
+        self.assertTrue(set_sizes)
+        for size_key in set_sizes:
+            with self.subTest(size_key=size_key):
+                ranked_keys = RANKINGS[size_key]
+                self.assertTrue(ranked_keys)
+                for key in ranked_keys:
+                    self.assertIn(key, PRODUCTS)
+                response = self.client.get("/koekenpannen/", {"size": size_key})
+
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(response.context["selected_size"], size_key)
+                self.assertEqual(response.context["product_count"], len(ranked_keys))
+                self.assertEqual(
+                    [product["slug"] for product in response.context["products"]],
+                    [PRODUCTS[key]["slug"] for key in ranked_keys],
+                )
+                self.assertCountEqual(response.context["available_sizes"], RANKINGS)
 
     def test_set_size_selector_loads_and_labels_sets(self):
-        expected_counts = {
-            "20_28": 4,
-            "24_28": 7,
-            "20_24_28": 6,
-        }
-
-        for size_key, product_count in expected_counts.items():
-            with self.subTest(size_key=size_key):
+        for size_key, product_count in (("20_28", 1), ("24_28", 2), ("20_24_28", 1)):
+            with self.subTest(size_key=size_key), \
+                    patch("products.views.KOEKENPANNEN_PRODUCTS", self.products), \
+                    patch("products.views.KOEKENPANNEN_RANKINGS", self.rankings):
                 response = self.client.get("/koekenpannen/", {"size": size_key})
                 label = " + ".join(size_key.split("_"))
 
@@ -855,14 +896,15 @@ class KoekenpanSetSizeSelectorTests(TestCase):
                         f"koekenpannen van {label} cm"
                     ),
                 )
-
-        self.assertEqual(
-            response.context["available_sizes"],
-            [20, 24, 26, 28, 30, 32, "20_28", "24_28", "20_24_28"],
-        )
+                self.assertEqual(
+                    response.context["available_sizes"],
+                    [20, 28, "20_28", "24_28", "20_24_28"],
+                )
 
     def test_unknown_set_size_falls_back_to_default(self):
-        response = self.client.get("/koekenpannen/?size=18_22")
+        with patch("products.views.KOEKENPANNEN_PRODUCTS", self.products), \
+                patch("products.views.KOEKENPANNEN_RANKINGS", self.rankings):
+            response = self.client.get("/koekenpannen/?size=18_22")
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context["selected_size"], 28)
