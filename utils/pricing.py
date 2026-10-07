@@ -77,12 +77,25 @@ KERAMISCHE_KOEKENPANNEN_PRICE_RANGES = {
 }
 
 KERAMISCHE_KOEKENPANNENSETS_PRICE_RANGES = {
-    (20, 24): ((Decimal("50"), "€"), (Decimal("80"), "€€"), (Decimal("125"), "€€€"), (None, "€€€€")),
     (20, 28): ((Decimal("50"), "€"), (Decimal("75"), "€€"), (Decimal("110"), "€€€"), (None, "€€€€")),
     (24, 28): ((Decimal("60"), "€"), (Decimal("100"), "€€"), (Decimal("175"), "€€€"), (None, "€€€€")),
     (20, 24, 28): ((Decimal("75"), "€"), (Decimal("120"), "€€"), (Decimal("175"), "€€€"), (None, "€€€€")),
 }
 
+RVS_KOEKENPANNEN_PRICE_RANGES = {
+    20: ((Decimal("50"), "€"), (Decimal("90"), "€€"), (Decimal("140"), "€€€"), (None, "€€€€")),
+    24: ((Decimal("60"), "€"), (Decimal("100"), "€€"), (Decimal("150"), "€€€"), (None, "€€€€")),
+    26: ((Decimal("60"), "€"), (Decimal("100"), "€€"), (Decimal("150"), "€€€"), (None, "€€€€")),
+    28: ((Decimal("65"), "€"), (Decimal("110"), "€€"), (Decimal("175"), "€€€"), (None, "€€€€")),
+    30: ((Decimal("70"), "€"), (Decimal("120"), "€€"), (Decimal("180"), "€€€"), (None, "€€€€")),
+    32: ((Decimal("90"), "€"), (Decimal("150"), "€€"), (Decimal("220"), "€€€"), (None, "€€€€")),
+}
+
+RVS_KOEKENPANNENSETS_PRICE_RANGES = {
+(20, 28): ((Decimal("140"), "€"), (Decimal("180"), "€€"), (Decimal("240"), "€€€"), (None, "€€€€")),
+(24, 28): ((Decimal("140"), "€"), (Decimal("190"), "€€"), (Decimal("260"), "€€€"), (None, "€€€€")),
+(20, 24, 28): ((Decimal("150"), "€"), (Decimal("250"), "€€"), (Decimal("350"), "€€€"), (None, "€€€€")),
+}
 # Audit-only: de openbare prijsweergave gebruikt nog PRICE_RANGE_THRESHOLDS.
 # Andere pannencategorieën kunnen hier eigen diameter- en setgrenzen registreren.
 PAN_AUDIT_PRICE_RANGES = {
@@ -90,6 +103,10 @@ PAN_AUDIT_PRICE_RANGES = {
         "single": KERAMISCHE_KOEKENPANNEN_PRICE_RANGES,
         "sets": KERAMISCHE_KOEKENPANNENSETS_PRICE_RANGES,
     },
+    "rvs_koekenpannen": {
+        "single": RVS_KOEKENPANNEN_PRICE_RANGES,
+        "sets": RVS_KOEKENPANNENSETS_PRICE_RANGES,
+    }
 }
 
 
