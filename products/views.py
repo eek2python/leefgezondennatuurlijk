@@ -2,6 +2,7 @@ import os
 from LeefNatuurlijkenGezond.site_urls import absolute_site_url
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
+from django.urls import reverse
 from .models import Product, Click, AffiliateProductState
 import logging
 from utils.product_helpers import (
@@ -473,6 +474,7 @@ def _build_offer_ld(p):
 
 
 def _build_itemlist_ld(request, name, description, products):
+    """Describe a comparison list, not individual product rich results."""
     return json.dumps({
         "@context": "https://schema.org",
         "@type": "ItemList",
@@ -484,7 +486,10 @@ def _build_itemlist_ld(request, name, description, products):
             {
                 "@type": "ListItem",
                 "position": i + 1,
-                "item": _build_product_ld(request, p),
+                "name": p["name"],
+                "url": absolute_site_url(
+                    reverse("product_detail", kwargs={"slug": p["slug"]})
+                ),
             }
             for i, p in enumerate(products)
         ],
@@ -1017,24 +1022,10 @@ def rvs_koekenpannen(request):
     if isinstance(size, str) and not products:
         conclusie = {}
     faq_ld = _build_faq_ld(content["faq"]["items"])
-    real_products = [p for p in products if p["affiliate_url"]]
-    itemlist_ld = json.dumps({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": content["meta"]["title"],
-        "description": content["meta"]["description"],
-        "itemListOrder": "ItemListOrderDescending",
-        "numberOfItems": len(real_products),
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": i + 1,
-                "name": p["name"],
-                "url": p["affiliate_url"],
-            }
-            for i, p in enumerate(real_products)
-        ],
-    })
+    itemlist_ld = _build_itemlist_ld(
+        request, content["meta"]["title"],
+        content["meta"]["description"], products,
+    )
     meta = content["meta"]
     breadcrumbs = [{"label": "Koekenpannen", "url": "/koekenpannen/"}, {"label": "RVS", "url": "/rvs-koekenpannen/"}]
     return render(request, "rvs-koekenpannen.html", {

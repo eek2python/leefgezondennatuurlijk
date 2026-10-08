@@ -293,7 +293,7 @@ class VariantPageTests(TestCase):
         self.assertEqual(table.count("<strong>Igluu Meal Prep"), 1)
         self.assertIn("Afhankelijk van uitvoering", table)
 
-    def test_structured_data_uses_default_variant_offer(self):
+    def test_structured_data_links_igluu_once_to_own_product_page(self):
         import re
 
         response = self.client.get("/vershoudcontainers/?uitvoering=3-delig")
@@ -305,16 +305,18 @@ class VariantPageTests(TestCase):
             json.loads(b) for b in blocks if '"ItemList"' in b
         )
         igluu = [
-            e["item"]
+            e
             for e in itemlist["itemListElement"]
-            if "Igluu" in e["item"]["name"]
+            if "Igluu" in e["name"]
         ]
-        self.assertEqual(len(igluu), 1)  # one Product entity, not one per shape
-        # Beleid: affiliate_url → retailer_url als fallback. Igluu heeft
-        # retailer_url (amazon.nl), dus krijgt wél een Offer.
-        self.assertIn("offers", igluu[0])
-        self.assertEqual(igluu[0]["offers"]["@type"], "Offer")
-        self.assertIn("amazon.nl", igluu[0]["offers"]["url"])
+        self.assertEqual(len(igluu), 1)  # one list entry, not one per shape
+        self.assertEqual(
+            igluu[0]["url"],
+            "https://leefnatuurlijkengezond.nl/product/igluu-meal-prep-3delig/",
+        )
+        self.assertEqual(igluu[0]["@type"], "ListItem")
+        self.assertNotIn("offers", igluu[0])
+        self.assertNotIn("item", igluu[0])
 
     def test_igluu_detail_page_uses_default_variant(self):
         response = self.client.get("/product/igluu-meal-prep-3delig/")
@@ -388,7 +390,7 @@ class StorageTypeSelectorTests(TestCase):
             r'<script type="application/ld\+json">\s*(.*?)\s*</script>', html, re.S
         )
         itemlist = next(json.loads(b) for b in blocks if '"ItemList"' in b)
-        names = [e["item"]["name"] for e in itemlist["itemListElement"]]
+        names = [e["name"] for e in itemlist["itemListElement"]]
         self.assertEqual(len(names), 5)
         self.assertTrue(all("5-delige" in n or "6-delig" in n or "5 " in n or "set" in n.lower() for n in names))
         positions = [e["position"] for e in itemlist["itemListElement"]]
@@ -945,7 +947,7 @@ class EditorialRatingDisplayTests(TestCase):
                 self.assertIsInstance(p["rating"], (int, float))
         self.assertEqual(PRODUCTS, before)
 
-    def test_jsonld_rating_stays_numeric(self):
+    def test_category_jsonld_does_not_claim_product_ratings(self):
         import json as _json
         import re as _re
         html = self.client.get("/koekenpannen/").content.decode()
@@ -955,10 +957,9 @@ class EditorialRatingDisplayTests(TestCase):
             data = _json.loads(ld)
             if data.get("@type") != "ItemList":
                 continue
-            for element in data.get("itemListElement", []):
-                agg = element.get("item", {}).get("aggregateRating")
-                if agg:
-                    self.assertIsInstance(agg["ratingValue"], (int, float))
+            self.assertTrue(data["itemListElement"])
+            self.assertNotIn("aggregateRating", _json.dumps(data))
+            self.assertNotIn('"@type": "Product"', _json.dumps(data))
 
     def test_stars_hidden_for_screenreaders(self):
         html = self.client.get("/koekenpannen/").content.decode()
@@ -1705,7 +1706,7 @@ class LockNLockCapacityVariantTests(TestCase):
         self.assertEqual(table.count("<strong>Lock&amp;Lock"), 1)
         self.assertIn("Afhankelijk van uitvoering", table)
 
-    def test_itemlist_ld_contains_locknlock_once_with_default_offer(self):
+    def test_itemlist_ld_contains_locknlock_once_with_own_product_url(self):
         import re
         html = self._get_html()
         blocks = re.findall(
@@ -1713,15 +1714,17 @@ class LockNLockCapacityVariantTests(TestCase):
         )
         itemlist = next(json.loads(b) for b in blocks if '"ItemList"' in b)
         entries = [
-            e["item"] for e in itemlist["itemListElement"]
-            if "Lock&Lock" in e["item"]["name"]
+            e for e in itemlist["itemListElement"]
+            if "Lock&Lock" in e["name"]
         ]
         self.assertEqual(len(entries), 1)
-        # Beleid: affiliate_url → retailer_url als fallback. Lock&Lock heeft
-        # een retailer_url (locklock.nl), dus krijgt wél een Offer.
-        self.assertIn("offers", entries[0])
-        self.assertEqual(entries[0]["offers"]["@type"], "Offer")
-        self.assertIn("locklock.nl", entries[0]["offers"]["url"])
+        self.assertEqual(
+            entries[0]["url"],
+            "https://leefnatuurlijkengezond.nl/product/locknlock-enkel/",
+        )
+        self.assertEqual(entries[0]["@type"], "ListItem")
+        self.assertNotIn("offers", entries[0])
+        self.assertNotIn("item", entries[0])
         positions = [e["position"] for e in itemlist["itemListElement"]]
         self.assertEqual(len(positions), len(set(positions)))
 

@@ -8,3 +8,4 @@
 - [Cold Python compilation on Render](render-cold-compile-memory.md) — warm imports can hide a 512 MB build failure from repeated large Python catalogue definitions.
 - [Airfryer prijsindeling](airfryer-price-policy.md) — vastgestelde grenzen per compact/XL/dual; audit volgt pagina-indeling, niet productnaam.
 - [Panprijzen voor audits](pan-audit-price-policy.md) — formaatgebonden vergelijking voor losse pannen en sets; openbare prijsweergave buiten scope.
+- [Structured data voor lijsten](comparison-structured-data.md) — categorieën claimen bewust geen Product-rich-results; nooit aanbiedingen of klantreviews verzinnen voor validatie.
