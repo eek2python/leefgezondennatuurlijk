@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static product_formatting %}
 
-{% block title %}Beste koolstofstalen koekenpannen van {{ selected_size }} cm (2026) | Leef Natuurlijk & Gezond{% endblock %}
+{% block title %}Beste koolstofstalen koekenpannen van {{ selected_size|format_size_label }} cm (2026) | Leef Natuurlijk & Gezond{% endblock %}
 
 {% block meta %}
 <meta name="description" content="{{ meta.description }}">

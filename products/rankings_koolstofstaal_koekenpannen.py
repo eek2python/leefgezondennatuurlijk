@@ -39,5 +39,17 @@ RANKINGS = {
         "blackwell_carbon_steel_32",
         "hendi_traditioneel_32",
     ],
+    "24_28": [
+        "debuyer_mineral_b_set_24_28",
+        "blackwell_carbon_steel_set_24_28",
+        "skottsberg_carbon_steel_set_24_28",
+        "gastrotools_carbon_steel_set_24_28",
+    ],
+    "20_24_28": [
+        "debuyer_mineral_b_set_20_24_28",
+        "blackwell_carbon_steel_set_20_24_28",
+        "skottsberg_carbon_steel_set_20_24_28",
+        "gastrotools_carbon_steel_set_20_24_28",
+    ]
     
 }

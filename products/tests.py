@@ -1266,7 +1266,7 @@ class KoolstofstalenKoekenpannenIntegrationTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(
             response,
-            "De beste koolstofstalen koekenpannen van 2026",
+            "De beste koolstofstalen koekenpannen en pannensets van 2026",
         )
         self.assertContains(
             response,

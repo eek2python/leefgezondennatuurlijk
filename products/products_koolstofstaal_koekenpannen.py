@@ -1138,4 +1138,476 @@ PRODUCTS = {
         "verdict": "Onze budgetkeuze voor wie voor weinig geld een grote en "
         "bijzonder robuuste professionele plaatstalen koekenpan zoekt.",
     },
+
+    # KOOLSTOFSTALEN KOEKENPANNENSETS 24 + 28 CM
+
+    "debuyer_mineral_b_set_24_28": {
+        "slug": "debuyer-mineral-b-koekenpannenset-24-28",
+        "name": "De Buyer Mineral B Koekenpannenset",
+        "description": (
+            "Tweedelige plaatstalen koekenpannenset van 24 en 28 cm "
+            "met beschermende bijenwasafwerking, geklonken stalen grepen en "
+            "een stevige constructie van 2,5 tot 3 mm dik staal."
+        ),
+        "brand": "De Buyer",
+        "set_type": "Koekenpannenset",
+        "pan_count": 2,
+        "diameters": [24, 28],
+        "set_contents": [
+            "Koekenpan 24 cm",
+            "Koekenpan 28 cm",
+        ],
+        "material": "Koolstofstaal / plaatstaal met beschermende bijenwasafwerking",
+        "features": [
+            "Geschikt voor inductie",
+            "24 cm: 2,5 mm dik",
+            "28 cm: 3 mm dik",
+            "Ovenbestendig tot 200 °C gedurende maximaal 10 minuten",
+        ],
+        "rating": 4.8,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 85.00,
+        "price_last_checked": "2026-10-09",
+        "currency": "EUR",
+        "availability": "InStock",
+        "availability_label": "Op voorraad",
+        "affiliate_url": "",
+        "retailer_url": "https://www.coolblue.nl/en/product/966115/de-buyer-mineral-b-frying-pan-set-24-28cm.html",
+        "official_url": "https://www.debuyer.com/en/1-1456.html",
+        "award": "🏆 Beste keuze",
+        "price_range": "€€",
+        "image": "debuyer-mineral-b-set-24-28cm.webp",
+        "image_path": "images/products/koolstofstalen-koekenpannen",
+        "pros": [
+            "Stevige constructie van 2,5 mm bij 24 cm en 3 mm bij 28 cm",
+            "Beschermende bijenwasafwerking op beide pannen",
+        ],
+        "cons": [
+            "Ovengebruik is beperkt tot maximaal 10 minuten op 200 °C",
+            "De 28 cm-pan is met circa 2,15 kg relatief zwaar",
+        ],
+        "verdict": (
+            "Onze beste keuze voor wie een robuuste tweedelige plaatstalen set "
+            "zoekt met een stevige materiaaldikte en een "
+            "beschermende bijenwasafwerking."
+        ),
+    },
+
+    "blackwell_carbon_steel_set_24_28": {
+        "slug": "blackwell-carbon-steel-koekenpannenset-24-28",
+        "name": "Blackwell Carbon Steel Koekenpannenset",
+        "description": (
+            "Tweedelige carbonstalen koekenpannenset van 24 en 28 cm met "
+            "2 mm dikke panconstructie, relatief laag gewicht en geschiktheid "
+            "voor fornuis, oven en barbecue."
+        ),
+        "brand": "Blackwell",
+        "set_type": "Koekenpannenset",
+        "pan_count": 2,
+        "diameters": [24, 28],
+        "set_contents": [
+            "Koekenpan 24 cm",
+            "Koekenpan 28 cm",
+        ],
+        "material": "2 mm dik carbonstaal",
+        "features": [
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 220 °C",
+            "Geschikt voor barbecue",
+            "Bodemdiameters van 18,6 en 23 cm",
+        ],
+        "rating": 4.3,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 74.99,
+        "price_last_checked": "2026-10-09",
+        "currency": "EUR",
+        "availability": "InStock",
+        "availability_label": "Op voorraad",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.cookinglife.nl/products/"
+            "blackwell-koekenpannenset-carbon-steel"
+        ),
+        "official_url": (
+            "https://www.cookinglife.nl/products/"
+            "blackwell-koekenpannenset-carbon-steel"
+        ),
+        "award": "💰 Budget keuze",
+        "price_range": "€",
+        "image": "blackwell-carbon-steel-set-24-28cm.webp",
+        "image_path": "images/products/koolstofstalen-koekenpannen",
+        "pros": [
+            "Pannen hebben relatief laag gewicht",
+            "Ovenbestendig tot 220 °C",
+            "Relatief lage aanschafprijs",
+        ],
+        "cons": [
+            "Fabrieksgarantie van één jaar",
+        ],
+        "verdict": (
+            "Onze budgetkeuze voor wie een betaalbare tweedelige carbonstalen "
+            "set zoekt met relatief lichte pannen en bruikbaarheid op zowel "
+            "inductie als in de oven."
+        ),
+    },
+
+    "skottsberg_carbon_steel_set_24_28": {
+        "slug": "skottsberg-carbon-steel-koekenpannenset-24-28",
+        "name": "Skottsberg The Original Carbon Steel Koekenpannenset",
+        "description": (
+            "Tweedelige koekenpannenset van 24 en 28 cm van 2,5 mm dik "
+            "koolstofstaal, vooraf tweemaal ingebrand met natuurlijke "
+            "plantaardige olie en voorzien van holle RVS grepen."
+        ),
+        "brand": "Skottsberg",
+        "set_type": "Koekenpannenset",
+        "pan_count": 2,
+        "diameters": [24, 28],
+        "set_contents": [
+            "Koekenpan 24 cm",
+            "Koekenpan 28 cm",
+        ],
+        "material": (
+            "2,5 mm dik koolstofstaal"
+        ),
+        "features": [
+            "Geschikt voor inductie",
+            "Tweemaal vooringebrand",
+            "Direct klaar voor gebruik",
+            "Ovenbestendig",
+            "Holle RVS grepen",
+            "Levenslange garantie",
+        ],
+        "rating": 4.7,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 104.99,
+        "price_last_checked": "2026-10-09",
+        "currency": "EUR",
+        "availability": "InStock",
+        "availability_label": "Op voorraad",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.knivesandtools.nl/nl/pt/"
+            "-skottsberg-the-original-carbon-steel-koekenpannenset-24-28-cm.htm"
+        ),
+        "official_url": (
+            "https://www.skottsberg.com/nl/"
+            "skottsberg-koekenpan-carbon-steel.html"
+        ),
+        "award": None,
+        "price_range": "€€",
+        "image": "skottsberg-carbon-steel-set-24-28cm.webp",
+        "image_path": "images/products/koolstofstalen-koekenpannen",
+        "pros": [
+            "Beide pannen zijn tweemaal vooringebrand en direct klaar voor gebruik",
+            "Holle RVS grepen nemen minder snel warmte van de pan over",
+            "Levenslange garantie op materiaal- en fabricagefouten",
+        ],
+        "cons": [
+            "Relatief hoge aanschafprijs voor een tweedelige set",
+        ],
+        "verdict": (
+            "Een gebruiksvriendelijke tweedelige set met vooraf ingebrand "
+            "bakoppervlak, holle RVS grepen en levenslange garantie."
+        ),
+    },
+
+    "gastrotools_carbon_steel_set_24_28": {
+        "slug": "gastrotools-carbon-steel-koekenpannenset-24-28",
+        "name": "Gastrotools Carbon Steel Koekenpannenset",
+        "description": (
+            "Tweedelige koekenpannenset van 24 en "
+            "28 cm van 2,5 mm dik koolstofstaal, met CoolGrip-grepen en "
+            "zeer hoge ovenbestendigheid."
+        ),
+        "brand": "Gastrotools",
+        "set_type": "Koekenpannenset",
+        "pan_count": 2,
+        "diameters": [24, 28],
+        "set_contents": [
+            "Koekenpan 24 cm",
+            "Koekenpan 28 cm",
+        ],
+        "material": "2,5 mm dik ongelegeerd koolstofstaal",
+        "features": [
+            "Geschikt voor inductie",
+            "CoolGrip-handgrepen",
+            "Ovenbestendig tot 650 °C",
+            "Geschikt voor open vuur",
+        ],
+        "rating": 4.8,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 169.00,
+        "price_last_checked": "2026-10-09",
+        "currency": "EUR",
+        "availability": "InStock",
+        "availability_label": "Op voorraad",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://gastrotools.com/products/frying-pan-carbon-steel"
+        ),
+        "official_url": (
+            "https://gastrotools.com/products/frying-pan-carbon-steel"
+        ),
+        "award": "💎 Premium keuze",
+        "price_range": "€€€",
+        "image": "gastrotools-carbon-steel-set-24-28cm.webp",
+        "image_path": "images/products/koolstofstalen-koekenpannen",
+        "pros": [
+            "CoolGrip-handgrepen zijn ontwikkeld om de greep comfortabeler te houden",
+            "Ovenbestendig tot 650 °C",
+            "Vervaardigd uit 2,5 mm dik koolstofstaal",
+        ],
+        "cons": [
+            "Relatief hoge aanschafprijs",
+        ],
+        "verdict": (
+            "Onze premium keuze voor wie een set zoekt "
+            "met een 2,5 mm dikke panconstructie, CoolGrip-grepen en uitzonderlijk "
+            "ruime mogelijkheden voor gebruik bij hoge oventemperaturen."
+        ),
+    },
+
+    # KOOLSTOFSTALEN KOEKENPANNENSETS 20 + 24 + 28 CM
+
+    "debuyer_mineral_b_set_20_24_28": {
+        "slug": "debuyer-mineral-b-koekenpannenset-20-24-28",
+        "name": "De Buyer Mineral B Koekenpannenset",
+        "description": (
+            "Driedelige plaatstalen koekenpannenset van 20, 24 en 28 cm "
+            "met beschermende bijenwasafwerking en stevige geklonken stalen grepen."
+        ),
+        "brand": "De Buyer",
+        "set_type": "Koekenpannenset",
+        "pan_count": 3,
+        "diameters": [20, 24, 28],
+        "set_contents": [
+            "Koekenpan 20 cm",
+            "Koekenpan 24 cm",
+            "Koekenpan 28 cm",
+        ],
+        "material": "Koolstofstaal / plaatstaal met beschermende bijenwasafwerking",
+        "features": [
+            "Geschikt voor inductie",
+            "Beschermende bijenwasafwerking",
+            "Ovenbestendig tot 200 °C",
+            "Levenslange garantie op materiaal- en fabricagefouten",
+        ],
+        "rating": 4.8,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 174.99,
+        "price_last_checked": "2026-10-09",
+        "currency": "EUR",
+        "availability": "InStock",
+        "availability_label": "Op voorraad",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fde-buyer-koekenpannenset-mineral-b-element-3-delig-o-20-24-28-cm-zonder-anti-aanbaklaag%2F9300000382631167%2F&name=De%20Buyer%20Koekenpannenset%20Mineral%20B%20Element%203-delig%20-%20%C3%B8%2020%2C%2024%20%26%2028%20cm%20-%20zonder...",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "de-buyer-koekenpannenset-mineral-b-element-3-delig-o-20-24-28-cm-"
+            "zonder-anti-aanbaklaag/9300000382631167/"
+        ),
+        "official_url": "https://www.debuyer.com/en/1-1456.html",
+        "award": "🏆 Beste keuze",
+        "price_range": "€€€",
+        "image": "debuyer-mineral-b-set-20-24-28cm.webp",
+        "image_path": "images/products/koolstofstalen-koekenpannen",
+        "pros": [
+            "Beschermende bijenwasafwerking op alle drie de pannen",
+            "Levenslange garantie op materiaal- en fabricagefouten",
+        ],
+        "cons": [
+            "De 28 cm-pan is met circa 2,24 kg relatief zwaar",
+            "Ovenbestendigheid is beperkt tot maximaal 200 °C",
+        ],
+        "verdict": (
+            "Onze beste keuze voor wie drie robuuste plaatstalen pannen zoekt "
+            "met een beschermende bijenwasafwerking en "
+            "levenslange garantie op materiaal- en fabricagefouten."
+        ),
+    },
+
+    "blackwell_carbon_steel_set_20_24_28": {
+        "slug": "blackwell-carbon-steel-koekenpannenset-20-24-28",
+        "name": "Blackwell Carbon Steel Koekenpannenset",
+        "description": (
+            "Driedelige carbonstalen koekenpannenset van 20, 24 en 28 cm "
+            "met een relatief lichte panconstructie en geschiktheid voor "
+            "inductie en ovengebruik."
+        ),
+        "brand": "Blackwell",
+        "set_type": "Koekenpannenset",
+        "pan_count": 3,
+        "diameters": [20, 24, 28],
+        "set_contents": [
+            "Koekenpan 20 cm",
+            "Koekenpan 24 cm",
+            "Koekenpan 28 cm",
+        ],
+        "material": "Carbonstaal",
+        "features": [
+            "Geschikt voor inductie",
+            "Ovenbestendig tot 220 °C",
+            "Gewichten van circa 0,77, 1,05 en 1,32 kg",
+        ],
+        "rating": 4.3,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 99.98,
+        "price_last_checked": "2026-10-09",
+        "currency": "EUR",
+        "availability": "InStock",
+        "availability_label": "Op voorraad",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://www.cookinglife.nl/products/"
+            "blackwell-koekenpannenset-carbon-steel-3-delig"
+        ),
+        "official_url": (
+            "https://www.cookinglife.nl/products/"
+            "blackwell-koekenpannenset-carbon-steel-3-delig"
+        ),
+        "award": "💰 Budget keuze",
+        "price_range": "€",
+        "image": "blackwell-carbon-steel-set-20-24-28cm.webp",
+        "image_path": "images/products/koolstofstalen-koekenpannen",
+        "pros": [
+            "Scherpe setprijs voor drie verschillende formaten",
+            "28 cm-pan weegt slechts circa 1,32 kg",
+            "Ovenbestendig tot 220 °C",
+        ],
+        "cons": [
+            "Fabrieksgarantie van één jaar",
+        ],
+        "verdict": (
+            "Onze budgetkeuze voor wie voor een toegankelijke prijs drie "
+            "relatief lichte carbonstalen koekenpannen van 20, 24 en 28 cm zoekt."
+        ),
+    },
+
+    "skottsberg_carbon_steel_set_20_24_28": {
+        "slug": "skottsberg-carbon-steel-koekenpannenset-20-24-28",
+        "name": "Skottsberg Carbon Steel Koekenpannenset",
+        "description": (
+            "Driedelige plaatstalen koekenpannenset van 20, 24 en 28 cm "
+            "die tweemaal is vooringebrand met natuurlijke olie en voorzien "
+            "is van holle stalen grepen."
+        ),
+        "brand": "Skottsberg",
+        "set_type": "Koekenpannenset",
+        "pan_count": 3,
+        "diameters": [20, 24, 28],
+        "set_contents": [
+            "Koekenpan 20 cm",
+            "Koekenpan 24 cm",
+            "Koekenpan 28 cm",
+        ],
+        "material": (
+            "Plaatstaal, tweemaal vooringebrand met "
+            "100% natuurlijke olie"
+        ),
+        "features": [
+            "Geschikt voor inductie",
+            "Tweemaal vooringebrand",
+            "Direct klaar voor gebruik",
+            "Geschikt voor oven en open vuur",
+            "Holle grepen",
+            "Levenslange garantie",
+        ],
+        "rating": 4.7,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 149.99,
+        "price_last_checked": "2026-10-09",
+        "currency": "EUR",
+        "availability": "InStock",
+        "availability_label": "Op voorraad",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fskottsberg-3-delige-koekenpannenset-carbon-steel-20-24-28-cm-pfas-vrij-geschikt-voor-inductie-en-oven%2F9300000283762043%2F&name=Skottsberg%203-delige%20Koekenpannenset%20-%20Carbon%20Steel%20-%2020%2C%2024%20%26%2028%20cm%20-%20PFAS%20vrij%20-...",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "skottsberg-3-delige-koekenpannenset-carbon-steel-20-24-28-cm-"
+            "pfas-vrij-geschikt-voor-inductie-en-oven/9300000283762043/"
+        ),
+        "official_url": (
+            "https://www.skottsberg.com/nl/"
+            "skottsberg-koekenpan-carbon-steel.html"
+        ),
+        "award": None,
+        "price_range": "€€",
+        "image": "skottsberg-carbon-steel-set-20-24-28cm.webp",
+        "image_path": "images/products/koolstofstalen-koekenpannen",
+        "pros": [
+            "Alle drie de pannen zijn tweemaal vooringebrand en direct klaar voor gebruik",
+            "Holle grepen nemen minder snel warmte van de pan over",
+            "Levenslange garantie",
+        ],
+        "cons": [],
+        "verdict": (
+            "Een gebruiksvriendelijke driedelige set met drie vooringebrande "
+            "pannen, relatief lichte constructie, holle grepen en "
+            "levenslange garantie."
+        ),
+    },
+
+    "gastrotools_carbon_steel_set_20_24_28": {
+        "slug": "gastrotools-carbon-steel-koekenpannenset-20-24-28",
+        "name": "Gastrotools Carbon Steel Koekenpannenset",
+        "description": (
+            "Driedelige koekenpannenset van 20, 24 "
+            "en 28 cm van 2,5 mm dik koolstofstaal, met CoolGrip-grepen "
+            "en zeer hoge ovenbestendigheid."
+        ),
+        "brand": "Gastrotools",
+        "set_type": "Koekenpannenset",
+        "pan_count": 3,
+        "diameters": [20, 24, 28],
+        "set_contents": [
+            "Koekenpan 20 cm",
+            "Koekenpan 24 cm",
+            "Koekenpan 28 cm",
+        ],
+        "material": "2,5 mm dik ongelegeerd koolstofstaal",
+        "features": [
+            "Geschikt voor inductie",
+            "CoolGrip-handgrepen",
+            "Ovenbestendig tot 650 °C",
+            "Geschikt voor alle warmtebronnen",
+        ],
+        "rating": 4.8,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 239.00,
+        "price_last_checked": "2026-10-09",
+        "currency": "EUR",
+        "availability": "InStock",
+        "availability_label": "Op voorraad",
+        "affiliate_url": "",
+        "retailer_url": (
+            "https://gastrotools.com/products/frying-pan-set-carbon-steel"
+        ),
+        "official_url": (
+            "https://gastrotools.com/products/frying-pan-set-carbon-steel"
+        ),
+        "award": "💎 Premium keuze",
+        "price_range": "€€€€",
+        "image": "gastrotools-carbon-steel-set-20-24-28cm.webp",
+        "image_path": "images/products/koolstofstalen-koekenpannen",
+        "pros": [
+            "Alle drie de pannen zijn vervaardigd uit 2,5 mm dik koolstofstaal",
+            "CoolGrip-handgrepen zijn ontworpen om de warmteoverdracht naar de greep te beperken",
+            "Ovenbestendig tot 650 °C",
+        ],
+        "cons": [
+            "Relatief hoge aanschafprijs",
+        ],
+        "verdict": (
+            "Onze premium keuze voor wie een driedelige "
+            "set zoekt met een 2,5 mm dikke panconstructie, CoolGrip-grepen en "
+            "uitzonderlijk ruime mogelijkheden voor ovengebruik."
+        ),
+    },
 }

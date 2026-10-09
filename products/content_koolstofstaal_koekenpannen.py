@@ -1,25 +1,24 @@
 CONTENT = {
     "meta": {
         "title": (
-            "Beste koolstofstalen koekenpannen van 2026 – zonder "
-            "synthetische antiaanbaklaag"
+            "Beste koolstofstalen koekenpannen en sets van 2026"
         ),
         "description": (
-            "Vergelijk koolstofstalen en plaatstalen koekenpannen zonder "
-            "synthetische antiaanbaklaag. Bekijk materiaal, inbranden, "
+            "Vergelijk koolstofstalen en plaatstalen koekenpannen en pannensets "
+            "zonder synthetische antiaanbaklaag. Bekijk materiaal, inbranden, "
             "inductiegeschiktheid, ovengebruik en prijsniveau."
         ),
-        "og_title": "Beste koolstofstalen koekenpannen van 2026",
+        "og_title": "Beste koolstofstalen koekenpannen en sets van 2026",
         "og_description": (
-            "Onze redactionele vergelijking van koolstofstalen koekenpannen, "
-            "van voordelige plaatstalen modellen tot vooringebrande en "
-            "premium uitvoeringen."
+            "Onze redactionele vergelijking van koolstofstalen koekenpannen en "
+            "pannensets, van voordelige modellen tot vooringebrande en premium "
+            "uitvoeringen."
         ),
         "canonical_path": "/koolstofstalen-koekenpannen/",
     },
 
     "hero": {
-        "h1": "De beste koolstofstalen koekenpannen van 2026",
+        "h1": "De beste koolstofstalen koekenpannen en pannensets van 2026",
         "paragraphs": [
             (
                 "Een koolstofstalen of plaatstalen koekenpan is geschikt voor "
@@ -34,6 +33,12 @@ CONTENT = {
                 "ingebrand en ontwikkelen tijdens gebruik een donkere "
                 "patinalaag. Deze laag helpt voedsel steeds gemakkelijker "
                 "los te laten en moet zorgvuldig worden onderhouden."
+            ),
+            (
+                "Naast losse koekenpannen vergelijken we ook sets met meerdere "
+                "formaten. Een combinatie van 24 + 28 cm biedt twee veelgebruikte "
+                "maten, terwijl een set van 20 + 24 + 28 cm meer flexibiliteit "
+                "biedt voor kleine, middelgrote en grotere bereidingen."
             ),
         ],
     },
@@ -71,9 +76,14 @@ CONTENT = {
                 "handgreep, eventuele tegengreep en het benodigde onderhoud."
             ),
             (
-                "<strong>Prijs-kwaliteit:</strong> staan materiaalopbouw, "
-                "afwerking en praktische mogelijkheden in verhouding tot "
-                "het prijsniveau?"
+                "<strong>Prijs-kwaliteit:</strong> staan materiaalopbouw, afwerking en "
+                "praktische mogelijkheden in verhouding tot het prijsniveau? Bij sets "
+                "kijken we ook naar de prijs van de complete combinatie."
+            ),
+            (
+                "<strong>Setsamenstelling:</strong> bij pannensets kijken we naar de "
+                "combinatie van formaten, eventuele verschillen tussen de pannen en "
+                "of de set als geheel praktisch is samengesteld."
             ),
             (
                 "<strong>Beschikbaarheid:</strong> verwijst de verkooplink "
@@ -129,8 +139,10 @@ CONTENT = {
     },
 
     "products_section": {
-        "h2": "Onze selectie koolstofstalen koekenpannen",
-        "comparison_title": "Vergelijkingstabel koolstofstalen koekenpannen",
+        "h2": "Onze selectie koolstofstalen koekenpannen en pannensets",
+        "comparison_title": (
+            "Vergelijkingstabel koolstofstalen koekenpannen en pannensets"
+        ),
     },
 
     "tips": {
@@ -306,10 +318,57 @@ CONTENT = {
                 "alternatief voor wie een duidelijk lichtere 32 cm-pan zoekt."
             ),
         },
+
+        "24_28": {
+            "title": (
+                "Conclusie – welke koolstofstalen koekenpannenset van "
+                "24 + 28 cm past het best?"
+            ),
+            "text": (
+                "Een koolstofstalen koekenpannenset van "
+                "<strong>24 + 28 cm</strong> combineert een handzaam formaat "
+                "voor kleinere dagelijkse bereidingen met een grotere pan voor "
+                "ruimere porties. De <strong>De Buyer Mineral B</strong> is "
+                "onze beste allround keuze dankzij de stevige constructie van "
+                "2,5 mm bij 24 cm en 3 mm bij 28 cm en de beschermende "
+                "bijenwasafwerking. De <strong>Blackwell Carbon Steel</strong> "
+                "is onze budgetkeuze met twee relatief lichte pannen tegen een "
+                "toegankelijk prijsniveau. De "
+                "<strong>Gastrotools Carbon Steel</strong> is onze premiumkeuze "
+                "met 2,5 mm dikke panlichamen, CoolGrip-grepen en een zeer hoge "
+                "ovenbestendigheid. De <strong>Skottsberg Carbon Steel</strong> "
+                "is vooral interessant voor wie pannen zoekt die al tweemaal "
+                "zijn vooringebrand en direct klaar zijn voor gebruik."
+            ),
+        },
+
+        "20_24_28": {
+            "title": (
+                "Conclusie – welke koolstofstalen koekenpannenset van "
+                "20 + 24 + 28 cm past het best?"
+            ),
+            "text": (
+                "Een koolstofstalen koekenpannenset van "
+                "<strong>20 + 24 + 28 cm</strong> biedt drie duidelijk "
+                "verschillende formaten voor kleine, middelgrote en grotere "
+                "bereidingen. De <strong>De Buyer Mineral B</strong> is onze "
+                "beste allround keuze dankzij de robuuste plaatstalen "
+                "constructie, beschermende bijenwasafwerking en combinatie "
+                "van drie veelgebruikte formaten. De "
+                "<strong>Blackwell Carbon Steel</strong> is onze budgetkeuze "
+                "en biedt alle drie de maten tegen een relatief laag "
+                "prijsniveau. De <strong>Gastrotools Carbon Steel</strong> is "
+                "onze premiumkeuze met 2,5 mm dikke panlichamen, CoolGrip-grepen "
+                "en ruime mogelijkheden voor ovengebruik. De "
+                "<strong>Skottsberg Carbon Steel</strong> vormt een "
+                "gebruiksvriendelijk alternatief doordat alle drie de pannen "
+                "vooraf zijn ingebrand en direct kunnen worden gebruikt."
+            ),
+        },
     },
 
     "faq": {
-        "title": "Veelgestelde vragen over koolstofstalen koekenpannen",
+        "title": "Veelgestelde vragen over koolstofstalen koekenpannen en pannensets",
         "items": [
             {
                 "q": "Wat is een koolstofstalen koekenpan?",
@@ -540,6 +599,8 @@ CONTENT = {
                     "terwijl een pan van 32 cm vooral geschikt is wanneer "
                     "veel oppervlak nodig is. Houd bij grotere formaten ook "
                     "rekening met het gewicht en de diameter van de panbodem."
+                    "Wie regelmatig verschillende hoeveelheden bereidt, kan ook kiezen voor een "
+                    "set van 24 + 28 cm of 20 + 24 + 28 cm."
                 ),
             },
             {
@@ -551,6 +612,27 @@ CONTENT = {
                     "de bodem snel verwarmd, waardoor grotere "
                     "temperatuurverschillen kunnen ontstaan. Controleer daarom "
                     "indien beschikbaar ook de bodemdiameter van de pan."
+                ),
+            },
+            {
+                "q": "Wanneer is een koolstofstalen koekenpannenset interessant?",
+                "a": (
+                    "Een set is vooral interessant wanneer je meerdere formaten regelmatig "
+                    "gebruikt. Met verschillende diameters kun je de grootte van de pan "
+                    "beter aanpassen aan de hoeveelheid ingrediënten en de gebruikte "
+                    "kookzone. Controleer bij een set wel of je alle meegeleverde formaten "
+                    "daadwerkelijk nodig hebt."
+                ),
+            },
+            {
+                "q": "Kies ik een set van 24 + 28 cm of 20 + 24 + 28 cm?",
+                "a": (
+                    "Een set van 24 + 28 cm is een praktische combinatie voor veel "
+                    "dagelijkse bereidingen: 24 cm voor kleinere hoeveelheden en 28 cm "
+                    "voor grotere porties. Een set van 20 + 24 + 28 cm voegt een extra "
+                    "compact formaat toe, bijvoorbeeld voor een kleine portie, een ei of "
+                    "een bijgerecht. Welke combinatie het beste past hangt vooral af van "
+                    "hoe vaak je het kleinste formaat daadwerkelijk gebruikt."
                 ),
             },
         ],

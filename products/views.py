@@ -1046,14 +1046,25 @@ def rvs_koekenpannen(request):
 
 
 def koolstofstalen_koekenpannen(request):
-    available_sizes = sorted(KOOLSTOFSTALEN_KOEKENPANNEN_RANKINGS)
-    size = request.GET.get("size")
-    try:
-        size = int(size)
-    except (TypeError, ValueError):
-        size = 28 if 28 in available_sizes else available_sizes[0]
+    available_sizes = sorted(
+        KOOLSTOFSTALEN_KOEKENPANNEN_RANKINGS,
+        key=lambda value: (
+            len(str(value).split("_")) > 1,
+            len(str(value).split("_")),
+            tuple(int(part) for part in str(value).split("_")),
+        ),
+    )
+    default_size = 28 if 28 in available_sizes else available_sizes[0]
+    raw_size = request.GET.get("size")
+    if raw_size in KOOLSTOFSTALEN_KOEKENPANNEN_RANKINGS:
+        size = raw_size
+    else:
+        try:
+            size = int(raw_size)
+        except (TypeError, ValueError):
+            size = default_size
     if size not in KOOLSTOFSTALEN_KOEKENPANNEN_RANKINGS:
-        size = 28 if 28 in available_sizes else available_sizes[0]
+        size = default_size
 
     keys = KOOLSTOFSTALEN_KOEKENPANNEN_RANKINGS[size]
     products = [
@@ -1063,18 +1074,19 @@ def koolstofstalen_koekenpannen(request):
     ]
     _enrich_products(products, category="koolstofstalen-koekenpannen")
     product_count = len(products)
+    selected_size_label = format_size_label(size)
     content = _format_content(
         KOOLSTOFSTALEN_KOEKENPANNEN_CONTENT,
         product_count=product_count,
-        selected_size=size,
+        selected_size=selected_size_label,
     )
     conclusie = content["conclusies"].get(
-        size, content["conclusies"]["default"]
+        size, {} if isinstance(size, str) else content["conclusies"]["default"]
     )
     faq_ld = _build_faq_ld(content["faq"]["items"])
     itemlist_ld = _build_itemlist_ld(
         request,
-        f"Beste koolstofstalen koekenpannen van {size} cm",
+        f"Beste koolstofstalen koekenpannen van {selected_size_label} cm",
         content["meta"]["description"],
         products,
     )
