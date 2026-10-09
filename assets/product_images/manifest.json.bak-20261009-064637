@@ -2324,40 +2324,5 @@
     "category": "koolstofstalen-koekenpannen",
     "product_key": "skottsberg-carbon-steel-set-24-28cm",
     "enabled": true
-  },
-  {
-    "source": "koolstofstalen-koekenpannen/gastrotools-carbon-steel-set-24-28cm.jpg",
-    "slug": "gastrotools-carbon-steel-set-24-28cm",
-    "category": "koolstofstalen-koekenpannen",
-    "product_key": "gastrotools-carbon-steel-set-24-28cm",
-    "enabled": true
-  },
-  {
-    "source": "koolstofstalen-koekenpannen/debuyer-mineral-b-set-20-24-28cm.jpg",
-    "slug": "debuyer-mineral-b-set-20-24-28cm",
-    "category": "koolstofstalen-koekenpannen",
-    "product_key": "debuyer-mineral-b-set-20-24-28cm",
-    "enabled": true
-  },
-  {
-    "source": "koolstofstalen-koekenpannen/blackwell-carbon-steel-set-20-24-28cm.jpg",
-    "slug": "blackwell-carbon-steel-set-20-24-28cm",
-    "category": "koolstofstalen-koekenpannen",
-    "product_key": "blackwell-carbon-steel-set-20-24-28cm",
-    "enabled": true
-  },
-  {
-    "source": "koolstofstalen-koekenpannen/skottsberg-carbon-steel-set-20-24-28cm.jpg",
-    "slug": "skottsberg-carbon-steel-set-20-24-28cm",
-    "category": "koolstofstalen-koekenpannen",
-    "product_key": "skottsberg-carbon-steel-set-20-24-28cm",
-    "enabled": true
-  },
-  {
-    "source": "koolstofstalen-koekenpannen/gastrotools-carbon-steel-set-20-24-28cm.jpg",
-    "slug": "gastrotools-carbon-steel-set-20-24-28cm",
-    "category": "koolstofstalen-koekenpannen",
-    "product_key": "gastrotools-carbon-steel-set-20-24-28cm",
-    "enabled": true
   }
 ]
