@@ -6,7 +6,7 @@
         {% with picks_count=c1|add:c2|add:c3 %}
         <h2>Snel kiezen: {% if picks_count == 1 %}onze aanbeveling{% else %}onze {{ picks_count }} aanbevelingen{% endif %}</h2>
         {% if selected_size %}
-        <p class="top-picks-intro">Geen tijd om alles te vergelijken? {% if picks_count == 1 %}Dit is onze belangrijkste keuze{% else %}Dit zijn onze {{ picks_count }} belangrijkste keuzes{% endif %} uit de volledige {{ selected_size|format_size_label }} cm lijst.</p>
+        <p class="top-picks-intro">Geen tijd om alles te vergelijken? {% if picks_count == 1 %}Dit is onze belangrijkste keuze{% else %}Dit zijn onze {{ picks_count }} belangrijkste keuzes{% endif %} uit de volledige {% if selected_size in named_sizes %}lijst met {{ selected_size|lower }}{% else %}{{ selected_size|format_size_label }} cm lijst{% endif %}.</p>
         {% else %}
         <p class="top-picks-intro">Geen tijd om alles te vergelijken? {% if picks_count == 1 %}Dit is onze belangrijkste keuze{% else %}Dit zijn onze {{ picks_count }} belangrijkste keuzes{% endif %} uit de volledige lijst.</p>
         {% endif %}

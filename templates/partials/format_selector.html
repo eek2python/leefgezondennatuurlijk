@@ -6,7 +6,7 @@
     <a href="?size={{ f }}"
        class="format-pill {% if f == selected_size %}is-active{% endif %}"
        {% if f == selected_size %}aria-current="page"{% endif %}>
-        {{ f|format_size_label }} cm
+        {{ f|format_size_label }}{% if not named_sizes or f not in named_sizes %} cm{% endif %}
     </a>
     {% endfor %}
 </div>
@@ -19,7 +19,7 @@
             <a href="?size={{ f }}"
                class="format-pill format-pill-sm {% if f == selected_size %}is-active{% endif %}"
                {% if f == selected_size %}aria-current="page"{% endif %}>
-                 {{ f|format_size_label }} cm
+                  {{ f|format_size_label }}{% if not named_sizes or f not in named_sizes %} cm{% endif %}
             </a>
             {% endfor %}
         </div>

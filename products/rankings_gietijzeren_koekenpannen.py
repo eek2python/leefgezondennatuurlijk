@@ -40,5 +40,14 @@ RANKINGS = {
         "koock_amsterdam_skillet_30",
         "victoria_signature_polished_30",
     ],
+
+    "Pannensets": [
+        "skottsberg_cast_iron_set_24_28",
+        "blackwell_cast_iron_set_16_20_25",
+        "rednas_cast_iron_set_16_22_28",
+        "koock_amsterdam_cast_iron_set_25_30",
+        "beka_stark_cast_iron_set_24_28",
+        
+    ]
     
 }

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Beste gietijzeren koekenpannen van {{ selected_size }} cm (2026) | Leef Natuurlijk & Gezond{% endblock %}
+{% block title %}{% if selected_size in named_sizes %}Beste gietijzeren {{ selected_size|lower }}{% else %}Beste gietijzeren koekenpannen van {{ selected_size }} cm{% endif %} (2026) | Leef Natuurlijk & Gezond{% endblock %}
 
 {% block meta %}
 <meta name="description" content="{{ meta.description }}">

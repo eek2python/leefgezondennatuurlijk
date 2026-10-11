@@ -1,19 +1,17 @@
 CONTENT = {
     "meta": {
         "title": (
-            "Beste gietijzeren koekenpannen van 2026 – "
-            "traditioneel en geëmailleerd"
+            "Beste gietijzeren koekenpannen en pannensets van 2026"
         ),
         "description": (
-            "Vergelijk gietijzeren koekenpannen van 20 tot 30 cm. "
-            "Bekijk materiaal, seasoning of emaille, inductiegeschiktheid, "
-            "ovengebruik, gewicht, onderhoud en prijsniveau."
+            "Vergelijk gietijzeren koekenpannen en pannensets: "
+            "lichtgewicht of traditioneel, van compacte skillets "
+            "tot 3-delige sets. Met keuzehulp en onderhoudstips."
         ),
-        "og_title": "Beste gietijzeren koekenpannen van 2026",
+        "og_title": "Beste gietijzeren koekenpannen en pannensets van 2026",
         "og_description": (
-            "Onze redactionele vergelijking van gietijzeren koekenpannen, "
-            "van voordelige traditionele skillets tot lichtgewicht en "
-            "geëmailleerde premium uitvoeringen."
+            "Vergelijk traditionele, lichtgewicht en geëmailleerde "
+            "gietijzeren koekenpannen én sets van twee of drie formaten."
         ),
         "canonical_path": "/gietijzeren-koekenpannen/",
     },
@@ -38,6 +36,15 @@ CONTENT = {
                 "op dezelfde manier te worden ingebrand en is minder gevoelig "
                 "voor roest en zure ingrediënten, maar de emaillelaag vraagt "
                 "wel zorgvuldig gebruik."
+            ),
+            (
+                "Naast losse koekenpannen vergelijken we ook gietijzeren "
+                "pannensets met twee of drie formaten. Daarbij gaat het niet "
+                "alleen om de prijs per pan: de combinatie van diameters, "
+                "het werkelijke vlakke bakoppervlak, het gewicht en de "
+                "afwerking bepalen hoeveel voordeel je van een set hebt. "
+                "Een lichte set is eenvoudiger te hanteren, terwijl "
+                "traditioneel zwaar gietijzer meer warmte kan opslaan."
             ),
         ],
     },
@@ -75,6 +82,12 @@ CONTENT = {
                 "<strong>Gebruiksgemak:</strong> formaat, gewicht, "
                 "handgreep, eventuele tegengreep en hoe gemakkelijk de "
                 "pan te verplaatsen en te onderhouden is."
+            ),
+            (
+                "<strong>Samenstelling van pannensets:</strong> sluiten "
+                "de diameters op elkaar aan, is er voldoende verschil "
+                "tussen de pannen en is de grootste pan ruim genoeg "
+                "voor de beoogde porties?"
             ),
             (
                 "<strong>Onderhoud:</strong> welke verzorging vraagt het "
@@ -136,6 +149,12 @@ CONTENT = {
                 "vuur worden gebruikt."
             ),
             (
+                "<strong>Meerdere formaten in één set:</strong> een kleine "
+                "pan is handig voor een ei of bijgerecht, terwijl een "
+                "grotere pan meer ruimte biedt voor vlees en groenten. "
+                "Een set is vooral nuttig als je alle formaten gebruikt."
+            ),
+            (
                 "<strong>Keuze tussen traditioneel en geëmailleerd:</strong> "
                 "wie een natuurlijke seasoning wil kan voor ongeëmailleerd "
                 "gietijzer kiezen, terwijl emaille minder specifiek "
@@ -151,8 +170,8 @@ CONTENT = {
     },
 
     "products_section": {
-        "h2": "Onze selectie gietijzeren koekenpannen",
-        "comparison_title": "Vergelijkingstabel gietijzeren koekenpannen",
+        "h2": "Onze selectie gietijzeren koekenpannen en pannensets",
+        "comparison_title": "Vergelijkingstabel gietijzeren koekenpannen en pannensets",
     },
 
     "tips": {
@@ -213,6 +232,25 @@ CONTENT = {
                 "tegengreep kan bij een zware pan van 28 of 30 cm een "
                 "belangrijk praktisch voordeel zijn."
             ),
+            (
+                "Vergelijk bij een pannenset niet alleen de opgegeven "
+                "bovendiameters, maar ook de vlakke bodemdiameters. "
+                "De lichtgewicht Skottsberg heeft bijvoorbeeld een "
+                "vlak bodemoppervlak van 14 cm bij de 24 cm-pan en "
+                "18 cm bij de 28 cm-pan."
+            ),
+            (
+                "Bedenk of je alle formaten gaat gebruiken. De "
+                "Blackwell-set van 16, 20 en 25 cm is vooral handig "
+                "voor kleinere porties; voor grotere maaltijden is "
+                "een set met een 28 of 30 cm-pan vaak praktischer."
+            ),
+            (
+                "Houd bij lichtgewicht gietijzer rekening met sneller "
+                "opwarmen én een grotere kans op plaatselijke hete "
+                "plekken. Verwarm de pan geleidelijk en verdeel "
+                "de ingrediënten over het beschikbare bakoppervlak."
+            ),
         ],
         "outro": (
             "Goed onderhouden gietijzer kan zeer lang meegaan. Wie een "
@@ -225,19 +263,25 @@ CONTENT = {
     "conclusies": {
         "default": {
             "title": (
-                "Conclusie – welke gietijzeren koekenpan past het best?"
+                "Conclusie – welke gietijzeren koekenpan of pannenset past het best?"
             ),
             "text": (
-                "Welke gietijzeren koekenpan het beste past, hangt vooral af "
-                "van het gewenste gewicht en onderhoud. De "
-                "<strong>Lodge Logic</strong> is een sterke traditionele "
-                "keuze met een vooringebrande gietijzeren constructie. De "
-                "<strong>Skottsberg Cast Iron</strong> is interessant voor "
-                "wie de eigenschappen van gietijzer wil combineren met een "
-                "aanzienlijk lager gewicht. Wie liever geen traditionele "
-                "seasoning onderhoudt, kan kiezen voor een geëmailleerde "
-                "uitvoering zoals de <strong>Le Creuset Signature "
-                "Skillet</strong>."
+                "Bij losse pannen hangt de beste keuze vooral af van "
+                "gewicht, afwerking en onderhoud. De <strong>Lodge "
+                "Logic</strong> is een robuuste traditionele keuze, "
+                "<strong>Skottsberg Cast Iron</strong> is opvallend licht "
+                "en <strong>Le Creuset Signature Skillet</strong> is "
+                "interessant voor wie geëmailleerd gietijzer verkiest. "
+                "Bij pannensets is de <strong>Skottsberg Cast Iron "
+                "24 + 28 cm</strong> onze beste allround keuze als "
+                "hanteerbaarheid vooropstaat. De <strong>Blackwell "
+                "16 + 20 + 25 cm</strong> is een budgetvriendelijke "
+                "keuze voor kleinere porties. De <strong>Rednas "
+                "16 + 22 + 28 cm</strong> biedt een breder maatbereik. "
+                "De <strong>Beka Stark 24 + 28 cm</strong> past bij "
+                "liefhebbers van zwaarder gietijzer met RVS handgrepen, "
+                "terwijl de <strong>Koock Amsterdam 25 + 30 cm</strong> "
+                "vooral interessant is voor grotere bereidingen."
             ),
         },
 
@@ -351,6 +395,37 @@ CONTENT = {
                 "een relatief handelbare constructie zoekt."
             ),
         },
+
+        "Pannensets": {
+              "title": (
+                "Conclusie – welke gietijzeren pannenset "
+                "past het best?"
+            ),
+        "text": (
+            "Welke gietijzeren pannenset de beste keuze is, hangt "
+            "vooral af van de gewenste formaten, het gewicht en het "
+            "budget. De <strong>Skottsberg Cast Iron 24 + 28 cm</strong> "
+            "is onze beste allround keuze voor wie lichtgewicht gietijzer "
+            "zoekt. Met circa 1,2 en 1,47 kg zijn de pannen goed "
+            "hanteerbaar. Houd wel rekening met relatief kleine vlakke "
+            "bakoppervlakken en een grotere kans op hotspots dan bij "
+            "zwaarder gietijzer. De <strong>Blackwell Cast Iron "
+            "16 + 20 + 25 cm</strong> is een voordelige optie voor "
+            "kleine porties, maar biedt geen grote gezinskoekenpan. "
+            "De <strong>Rednas Cast Iron Series 16 + 22 + 28 cm</strong> "
+            "heeft een veelzijdiger maatbereik en is interessant als "
+            "betaalbare driedelige set. Wie juist twee ruime, zware "
+            "skillets wil, kan de <strong>Koock Amsterdam Skillet "
+            "25 + 30 cm</strong> overwegen; het gewicht en de vlakheid "
+            "van de bodem verdienen bij aankoop aandacht. De "
+            "<strong>Beka Stark 24 + 28 cm</strong> is een premium "
+            "alternatief voor wie de voorkeur geeft aan traditioneel "
+            "zwaar gietijzer met RVS handgrepen. Voor de meeste "
+            "huishoudens bieden twee formaten rond 24 en 28 cm een "
+            "praktische combinatie, terwijl drie verschillende maten "
+            "vooral voordeel bieden als je ook vaak kleine porties bakt."
+        ),
+        }
     },
 
     "faq": {
@@ -639,6 +714,42 @@ CONTENT = {
                     "voordeel dat een beschadigde seasoning opnieuw kan "
                     "worden opgebouwd. Bij geëmailleerde pannen is het "
                     "belangrijk om beschadiging van de emaillelaag te voorkomen."
+                ),
+            },
+            {
+                "q": "Wanneer is een gietijzeren pannenset een goede keuze?",
+                "a": (
+                    "Een set is vooral nuttig als je regelmatig in "
+                    "verschillende formaten bakt. Met een kleine pan "
+                    "gebruik je minder ruimte voor een ei of bijgerecht, "
+                    "terwijl een grote pan geschikt is voor meerdere "
+                    "porties. Vergelijk de setprijs met de prijzen van "
+                    "de losse pannen en koop liever niet alleen vanwege "
+                    "een lage prijs per stuk."
+                ),
+            },
+            {
+                "q": "Welke gietijzeren pannenset past bij een gezin?",
+                "a": (
+                    "Voor grotere maaltijden is een set met minimaal "
+                    "één pan van 28 cm doorgaans praktischer dan een "
+                    "set waarvan de grootste pan 25 cm is. De "
+                    "Skottsberg en Beka Stark combineren 24 en 28 cm. "
+                    "De Rednas heeft 16, 22 en 28 cm. Wie vooral "
+                    "ruime pannen zoekt, kan de Koock Amsterdam "
+                    "25 + 30 cm overwegen. Let ook op de werkelijke "
+                    "vlakke bodemdiameter en het gewicht."
+                ),
+            },
+            {
+                "q": "Is de opgegeven diameter hetzelfde als het vlakke bakoppervlak?",
+                "a": (
+                    "Nee. De maat van een koekenpan is doorgaans de "
+                    "diameter aan de bovenrand. De vlakke bodem kan "
+                    "aanzienlijk kleiner zijn. Bij de Skottsberg "
+                    "Cast Iron van 24 en 28 cm geeft de fabrikant "
+                    "bijvoorbeeld vlakke bodemdiameters van "
+                    "respectievelijk 14 en 18 cm op."
                 ),
             },
         ],

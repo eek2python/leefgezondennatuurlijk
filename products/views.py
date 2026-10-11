@@ -1115,14 +1115,23 @@ def koolstofstalen_koekenpannen(request):
 
 
 def gietijzeren_koekenpannen(request):
-    available_sizes = sorted(GIETIJZEREN_KOEKENPANNEN_RANKINGS)
-    size = request.GET.get("size")
+    available_sizes = sorted(
+        GIETIJZEREN_KOEKENPANNEN_RANKINGS,
+        key=lambda value: (isinstance(value, str), value),
+    )
+    named_sizes = [value for value in available_sizes if isinstance(value, str)]
+    default_size = 28 if 28 in available_sizes else available_sizes[0]
+    raw_size = request.GET.get("size")
     try:
-        size = int(size)
+        size = int(raw_size)
     except (TypeError, ValueError):
-        size = 28 if 28 in available_sizes else available_sizes[0]
+        size = next(
+            (value for value in named_sizes
+             if value.casefold() == (raw_size or "").casefold()),
+            default_size,
+        )
     if size not in GIETIJZEREN_KOEKENPANNEN_RANKINGS:
-        size = 28 if 28 in available_sizes else available_sizes[0]
+        size = default_size
 
     keys = GIETIJZEREN_KOEKENPANNEN_RANKINGS[size]
     products = [
@@ -1138,12 +1147,13 @@ def gietijzeren_koekenpannen(request):
         selected_size=size,
     )
     conclusie = content["conclusies"].get(
-        size, content["conclusies"]["default"]
+        size, {} if size in named_sizes else content["conclusies"]["default"]
     )
     faq_ld = _build_faq_ld(content["faq"]["items"])
     itemlist_ld = _build_itemlist_ld(
         request,
-        f"Beste gietijzeren koekenpannen van {size} cm",
+        (f"Beste gietijzeren {size.lower()}" if size in named_sizes
+         else f"Beste gietijzeren koekenpannen van {size} cm"),
         content["meta"]["description"],
         products,
     )
@@ -1156,6 +1166,7 @@ def gietijzeren_koekenpannen(request):
         "top_picks": _build_top_picks(products),
         "in_het_kort": _build_in_het_kort(products, content),
         "available_sizes": available_sizes,
+        "named_sizes": named_sizes,
         "selected_size": size,
         "product_count": product_count,
         "content": content,

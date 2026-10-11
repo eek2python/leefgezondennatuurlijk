@@ -1261,4 +1261,276 @@ PRODUCTS = {
         "bakeigenschappen wil combineren met een bijzonder hoogwaardige "
         "en verfijnde afwerking.",
     },
+
+
+    # GIETIJZEREN KOEKENPANNENSETS
+    
+    "skottsberg_cast_iron_set_24_28": {
+        "slug": "skottsberg-cast-iron-set-24-28",
+        "name": "Skottsberg Cast Iron Koekenpannenset",
+        "description": (
+            "2-delige set lichtgewicht gietijzeren koekenpannen van 24 en 28 cm, "
+            "vooringebrand met natuurlijke olie en direct klaar voor gebruik."
+        ),
+        "brand": "Skottsberg",
+        "diameters": [24, 28],
+        "material": "Lichtgewicht gietijzer, vooringebrand met natuurlijke olie",
+        "features": [
+            "Set van 24 en 28 cm",
+            "Geschikt voor inductie",
+             "Geschikt voor oven, barbecue en open vuur",
+            "Gewicht circa 1,2 kg en 1,47 kg",
+            "Levenslange garantie",
+        ],
+        "rating": 4.8,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 99.99,
+        "price_last_checked": "2026-10-11",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fskottsberg-2-delige-koekenpannen-set-cast-iron-24-28-cm-gietijzer-pfas-vrij-geschikt-voor-inductie-bbq-en-open-vuur%2F9300000283762038%2F&name=Skottsberg%20-%20Cast%20Iron%20-%202-delige%20Koekenpannen%20set%20-%2024%20%26%2028%20cm%20Gietijzer%20-%20PFAS%20vrij...",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "skottsberg-2-delige-koekenpannen-set-cast-iron-24-28-cm-gietijzer-"
+            "pfas-vrij-geschikt-voor-inductie-bbq-en-open-vuur/"
+            "9300000283762038/"
+        ),
+        "award": "🏆 Beste keuze",
+        "price_range": "€€€",
+        "image": "skottsberg-cast-iron-set-24-28.webp",
+        "image_path": "images/products/gietijzeren-koekenpannen",
+        "pros": [
+            "Relatief licht in gewicht",
+            "Vooringebrand en direct klaar voor gebruik",
+            "Twee veelzijdige formaten voor dagelijkse bereidingen",
+        ],
+        "cons": [
+            "Meer kans op hotspots dan bij traditioneel gietijzer",
+            "Relatief klein vlak bakoppervlak voor de opgegeven diameters",
+            "Hogere aanschafprijs dan veel traditionele gietijzeren sets",
+        ],
+        "verdict": (
+            "Onze beste allround set voor wie twee veelzijdige gietijzeren "
+            "koekenpannen zoekt zonder het hoge gewicht van traditioneel gietijzer."
+        ),
+    },
+
+
+    "blackwell_cast_iron_set_16_20_25": {
+        "slug": "blackwell-cast-iron-set-16-20-25",
+        "name": "Blackwell Cast Iron Koekenpannenset",
+        "description": (
+            "3-delige set traditionele gietijzeren koekenpannen van "
+            "16, 20 en 25 cm, zonder synthetische antiaanbaklaag. "
+            "Geschikt voor uiteenlopende kleine en middelgrote bereidingen."
+        ),
+        "brand": "Blackwell",
+        "diameters": [16, 20, 25],
+        "material": "Ongeëmailleerd gietijzer",
+        "features": [
+            "Set van 16, 20 en 25 cm",
+            "Geschikt voor inductie",
+            "Geschikt voor oven en barbecue",
+            "Geïntegreerde gietijzeren handgrepen",
+            "Praktische schenktuiten",
+            "Totaalgewicht circa 3,83 kg",
+        ],
+        "rating": None,
+        "rating_count": None,
+        "rating_source": None,
+        "price": 49.99,
+        "price_last_checked": "2026-10-11",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fblackwell-koekenpannenset-gietijzer-o-16-20-en-25-cm-zonder-anti-aanbaklaag%2F9300000102316300%2F&name=Blackwell%20Koekenpannenset%20Skillets%20Gietijzer%203-Delig%20%C3%B8%2016%2C%2020%20%26%2025%20cm%20-%20geschikt%20voor...",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "blackwell-koekenpannenset-gietijzer-o-16-20-en-25-cm-"
+            "zonder-anti-aanbaklaag/9300000102316300/"
+        ),
+        "award": "💰 Budgetkeuze",
+        "price_range": "€",
+        "image": "blackwell-cast-iron-set-16-20-25.webp",
+        "image_path": "images/products/gietijzeren-koekenpannen",
+        "pros": [
+            "Drie verschillende formaten voor een relatief lage prijs",
+            "Massief gietijzer zonder synthetische antiaanbaklaag",
+            "Geschikt voor hoge temperaturen en uiteenlopende warmtebronnen",
+            "Compacte pannen zijn handig voor kleinere porties",
+        ],
+        "cons": [
+            "Grootste pan van 25 cm biedt beperkte ruimte voor gezinsmaaltijden",
+            "Eenvoudigere afwerking dan duurdere gietijzeren pannen",
+        ],
+        "verdict": (
+            "Een betaalbare kennismaking met gietijzer. "
+            "Vooral interessant voor kleinere huishoudens of wie "
+            "meerdere compacte pannen zoekt zonder veel uit te geven."
+        ),
+    },
+
+    "rednas_cast_iron_set_16_22_28": {
+        "slug": "rednas-cast-iron-set-16-22-28",
+        "name": "Rednas Cast Iron Series Koekenpannenset",
+        "description": (
+            "3-delige gietijzeren koekenpannenset van 16, 22 en 28 cm, "
+            "met vooringebrand bakoppervlak en een slijtvaste "
+            "nitride-oppervlaktebehandeling."
+        ),
+        "brand": "Rednas",
+        "diameters": [16, 22, 28],
+        "material": "Massief gietijzer met nitride-oppervlaktebehandeling",
+        "features": [
+            "Set van 16, 22 en 28 cm",
+            "Geschikt voor inductie",
+            "Vooringebrand",
+            "Nitride-behandeling voor betere roestbestendigheid",
+            "Geschikt voor oven, barbecue en open vuur",
+            "Verhoogde ergonomische handgrepen",
+            "Inclusief handvatbeschermers",
+        ],
+        "rating": None,
+        "rating_count": None,
+        "rating_source": None,
+        "price": 59.95,
+        "price_last_checked": "2026-10-11",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Frednas-gietijzeren-pannenset-3-delig-koekenpannen-set-koekenpan-geschikt-voor-inductie-gas-bbq-en-oven-skillet-maten-o16cm-o22cm-en-o28cm%2F9300000249474862%2F&name=Rednas%20Gietijzeren%20Pannenset%20-%203-Delig%20Koekenpannen%20Set%20-%20Koekenpan%20geschikt%20voor...",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "rednas-gietijzeren-pannenset-3-delig-koekenpannen-set-"
+            "koekenpan-geschikt-voor-inductie-gas-bbq-en-oven-"
+            "skillet-maten-o16cm-o22cm-en-o28cm/9300000249474862/"
+        ),
+        "award": None,
+        "price_range": "€€",
+        "image": "rednas-cast-iron-set-16-22-28.webp",
+        "image_path": "images/products/gietijzeren-koekenpannen",
+        "pros": [
+            "Drie uiteenlopende formaten, inclusief een ruime 28 cm-pan",
+            "Nitride-behandeling verbetert de weerstand tegen roest",
+            "Vooringebrand en geschikt voor direct gebruik",
+            "Meegeleverde Handvatbeschermers",
+            "Aantrekkelijke prijs voor een complete driedelige set",
+        ],
+        "cons": [
+            "De pannen blijven relatief zwaar door het massieve gietijzer",
+            "Nitride-behandeling maakt onderhoud niet volledig overbodig",
+        ],
+        "verdict": (
+            "Een veelzijdige driedelige set met een gunstige "
+            "prijs-kwaliteitverhouding. De combinatie van een ruime "
+            "28 cm-pan en een roestbestendiger oppervlak maakt deze "
+            "set interessant voor dagelijks gebruik."
+        ),
+    },
+
+    "koock_amsterdam_cast_iron_set_25_30": {
+        "slug": "koock-amsterdam-cast-iron-set-25-30",
+        "name": "Koock Amsterdam Skillet Koekenpannenset",
+        "description": (
+            "2-delige set traditionele gietijzeren skillets van "
+            "25 en 30 cm, zonder synthetische antiaanbaklaag, "
+            "geschikt voor koken op inductie en buiten op de barbecue."
+        ),
+        "brand": "Koock Amsterdam",
+        "diameters": [25, 30],
+        "material": "Traditioneel ongeëmailleerd gietijzer",
+        "features": [
+            "Set van 25 en 30 cm",
+            "Geschikt voor inductie",
+            "Geschikt voor oven, barbecue en open vuur",
+            "Gietijzeren handgrepen",
+            "Geschikt voor bereidingen op hoge temperatuur",
+        ],
+        "rating": None,
+        "rating_count": None,
+        "rating_source": None,
+        "price": 79.95,
+        "price_last_checked": "2026-10-11",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fkoock-amsterdam-skillet-gietijzer-set-twee-pannen-25-30-cm-koekenpan-geschikt-voor-alle-warmtebronnen-incl-bbq-en-inductie%2F9300000167960370%2F&name=Koock%20Amsterdam%C2%AE%20Skillet%20gietijzer%20set%20-%20TWEE%20pannen%20-%2025%20%26%2030%20cm%20-%20koekenpan%20-...",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "koock-amsterdam-skillet-gietijzer-set-twee-pannen-"
+            "25-30-cm-koekenpan-geschikt-voor-alle-warmtebronnen-"
+            "incl-bbq-en-inductie/9300000167960370/"
+        ),
+        "award": None,
+        "price_range": "€€",
+        "image": "koock-amsterdam-cast-iron-set-25-30.webp",
+        "image_path": "images/products/gietijzeren-koekenpannen",
+        "pros": [
+            "Twee royale formaten, waaronder een ruime 30 cm-koekenpan",
+            "Traditioneel gietijzer zonder synthetische antiaanbaklaag",
+            "Geschikt voor hoge temperaturen en buitenkoken",
+            "Goede warmteopslag bij het aanbraden van grotere porties",
+        ],
+        "cons": [
+            "Door het traditionele gietijzer zijn de pannen relatief zwaar",
+            "Enkele gebruikers melden een bolle bodem bij de 30 cm-uitvoering",
+            "Het grote formaat vraagt voldoende ruimte op de kookplaat",
+        ],
+        "verdict": (
+            "Een praktische set voor liefhebbers van traditionele "
+            "gietijzeren skillets die vooral grotere porties bereiden. "
+            "De royale formaten zijn aantrekkelijk, maar de meldingen "
+            "over de bodemvorm verdienen aandacht bij gebruik op inductie."
+        ),
+    },
+
+    "beka_stark_cast_iron_set_24_28": {
+        "slug": "beka-stark-cast-iron-set-24-28",
+        "name": "Beka Stark Gietijzeren Koekenpannenset",
+        "description": (
+            "2-delige set ongeëmailleerde gietijzeren koekenpannen "
+            "van 24 en 28 cm, met roestvrijstalen handgrepen "
+            "en een vooringebrand bakoppervlak."
+        ),
+        "brand": "Beka",
+        "diameters": [24, 28],
+        "material": "Ongeëmailleerd gietijzer met RVS handgrepen",
+        "features": [
+            "Set van 24 en 28 cm",
+            "Geschikt voor inductie",
+            "Vooringebrand",
+            "Ovenbestendig tot 200 °C",
+            "Roestvrijstalen handgrepen",
+            "Gewicht circa 1,67 kg en 2,47 kg",
+        ],
+        "rating": None,
+        "rating_count": None,
+        "rating_source": None,
+        "price": 128.00,
+        "price_last_checked": "2026-10-11",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "",
+        "retailer_url": "https://www.cookinglife.nl/products/beka-stark-koekenpannenset-2-delig-24-cm-28-cm",
+        "award": "💎 Premium keuze",
+        "price_range": "€€€€",
+        "image": "beka-stark-cast-iron-set-24-28.webp",
+        "image_path": "images/products/gietijzeren-koekenpannen",
+        "pros": [
+            "Twee praktische formaten voor dagelijks bakken en braden",
+            "Robuuste combinatie van gietijzer en RVS handgrepen",
+            "Vooringebrand en zonder synthetische antiaanbaklaag",
+            "Goede warmteopslag voor het aanbraden van vlees en groenten",
+        ],
+        "cons": [
+            "Relatief hogere aanschafprijs dan veel andere gietijzeren sets",
+            "Ovenbestendigheid beperkt tot 200 °C",
+        ],
+        "verdict": (
+            "Een solide keuze voor wie ongeëmailleerd gietijzer "
+            "wil combineren met roestvrijstalen handgrepen. "
+            "De set is geschikt voor dagelijks gebruik, maar "
+            "is prijziger en zwaarder dan de meeste "
+            "overig verkrijgbare pannensets"
+        ),
+    },
+
 }
