@@ -2359,5 +2359,40 @@
     "category": "koolstofstalen-koekenpannen",
     "product_key": "gastrotools-carbon-steel-set-20-24-28cm",
     "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/blackwell-cast-iron-set-16-20-25.jpg",
+    "slug": "blackwell-cast-iron-set-16-20-25",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "blackwell-cast-iron-set-16-20-25",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/skottsberg-cast-iron-set-24-28.jpg",
+    "slug": "skottsberg-cast-iron-set-24-28",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "skottsberg-cast-iron-set-24-28",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/rednas-cast-iron-set-16-22-28.jpg",
+    "slug": "rednas-cast-iron-set-16-22-28",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "rednas-cast-iron-set-16-22-28",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/koock-amsterdam-cast-iron-set-25-30.jpg",
+    "slug": "koock-amsterdam-cast-iron-set-25-30",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "koock-amsterdam-cast-iron-set-25-30",
+    "enabled": true
+  },
+  {
+    "source": "gietijzeren-koekenpannen/beka-stark-cast-iron-set-24-28.jpg",
+    "slug": "beka-stark-cast-iron-set-24-28",
+    "category": "gietijzeren-koekenpannen",
+    "product_key": "beka-stark-cast-iron-set-24-28",
+    "enabled": true
   }
 ]
