@@ -131,6 +131,15 @@
     </div>
 </section>
 
+{% if conclusie %}
+<section>
+    <header class="major">
+        <h2>{{ conclusie.title }}</h2>
+    </header>
+    <p>{{ conclusie.text|safe }}</p>
+</section>
+{% endif %}
+
 <section>
     <header class="major">
         <h2>{{ content.tips.title }}</h2>
@@ -147,15 +156,6 @@
     <p>{{ content.tips.outro|safe }}</p>
     {% endif %}
 </section>
-
-{% if conclusie %}
-<section>
-    <header class="major">
-        <h2>{{ conclusie.title }}</h2>
-    </header>
-    <p>{{ conclusie.text|safe }}</p>
-</section>
-{% endif %}
 
 {% include "partials/faq_section.html" %}
 {% include "partials/handige_artikelen.html" %}

@@ -9,3 +9,4 @@
 - [Airfryer prijsindeling](airfryer-price-policy.md) — vastgestelde grenzen per compact/XL/dual; audit volgt pagina-indeling, niet productnaam.
 - [Panprijzen voor audits](pan-audit-price-policy.md) — formaatgebonden vergelijking voor losse pannen en sets; openbare prijsweergave buiten scope.
 - [Structured data voor lijsten](comparison-structured-data.md) — categorieën claimen bewust geen Product-rich-results; nooit aanbiedingen of klantreviews verzinnen voor validatie.
+- [Leesvolgorde vergelijkingen](comparison-reading-order.md) — eerst het redactionele keuzeadvies, daarna verdieping over gebruik en onderhoud; geen SEO-belofte.

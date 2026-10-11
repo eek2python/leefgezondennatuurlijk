@@ -137,6 +137,16 @@ Beste RVS-koekenpannen van {{ selected_size|format_size_label }} cm | Leef Natuu
                 </div>
                 </section>
 
+                <!-- Conclusie -->
+                {% if conclusie %}
+                <section>
+                <header class="major">
+                <h2>{{ conclusie.title }}</h2>
+                </header>
+                <p>{{ conclusie.text|safe }}</p>
+                </section>
+                {% endif %}
+
                 <!-- Tips voor bakken in RVS -->
                 <section>
                 <header class="major">
@@ -154,16 +164,6 @@ Beste RVS-koekenpannen van {{ selected_size|format_size_label }} cm | Leef Natuu
                 <p>{{ content.tips.outro|safe }}</p>
                 {% endif %}
                 </section>
-
-                <!-- Conclusie -->
-                {% if conclusie %}
-                <section>
-                <header class="major">
-                <h2>{{ conclusie.title }}</h2>
-                </header>
-                <p>{{ conclusie.text|safe }}</p>
-                </section>
-                {% endif %}
 
                 <!-- FAQ -->
                 {% include "partials/faq_section.html" %}
