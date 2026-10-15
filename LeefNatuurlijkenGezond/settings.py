@@ -71,8 +71,14 @@ INSTALLED_APPS = [
 # 20 uitvoeringen per audit te bewaren.
 AUDIT_RUN_RETENTION_PER_KEY = None
 
+# Temporary diagnostic logging; opt in explicitly on the running service.
+LOG_404_REQUESTS = os.getenv("LOG_404_REQUESTS", "").strip().lower() in {
+    "true", "1", "yes", "on",
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'LeefNatuurlijkenGezond.middleware.Log404RequestsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -117,6 +123,11 @@ LOGGING = {
         },
     },
     "handlers": {
+        "http404_console": {
+            "class": "logging.StreamHandler",
+            "level": "WARNING",
+            "stream": "ext://sys.stdout",
+        },
         "django_request_console": {
             "class": "logging.StreamHandler",
             "level": "ERROR",
@@ -125,6 +136,11 @@ LOGGING = {
         },
     },
     "loggers": {
+        "http404": {
+            "handlers": ["http404_console"],
+            "level": "WARNING",
+            "propagate": False,
+        },
         "django.request": {
             "handlers": ["django_request_console"],
             "level": "ERROR",

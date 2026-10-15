@@ -1,0 +1,139 @@
+Ik wil tijdelijk onderzoeken welke URL-paden de grote hoeveelheid HTTP 404-responses
+veroorzaken op mijn Django-website Leef Natuurlijk & Gezond, die op Render draait.
+
+Render Network Metrics laat veel 404-responses zien, maar in Application Logs verschijnen
+geen regels met "Not Found" of andere informatie waarmee het aangevraagde pad kan worden
+achterhaald.
+
+Voeg daarom veilige, tijdelijke 404-request logging toe aan Django.
+
+DOEL
+
+Wanneer Django een HTTP 404-response retourneert, wil ik in Render Application Logs
+een regel kunnen zien zoals:
+
+HTTP404 method=GET path=/wp-login.php referrer=- user_agent="Mozilla/5.0 ..."
+
+of:
+
+HTTP404 method=GET path=/oude-productpagina/ referrer=https://leefnatuurlijkengezond.nl/koekenpannen/ user_agent="Googlebot ..."
+
+BELANGRIJKE RANDVOORWAARDEN
+
+- Log GEEN IP-adressen.
+- Log GEEN cookies.
+- Log GEEN authorization headers.
+- Log GEEN request body.
+- Log GEEN querystrings.
+- Gebruik request.path en niet request.get_full_path().
+- Strip queryparameters en fragments uit HTTP_REFERER voordat deze wordt gelogd.
+- Beperk user-agent en referrer tot een redelijke lengte, bijvoorbeeld 200–300 tekens.
+- Verander de HTTP-response niet.
+- Maak van een 404 geen redirect.
+- Verander geen bestaande URL-configuratie.
+- Verander geen SEO-, canonical- of sitemaplogica.
+- De logging mag alleen diagnostisch zijn.
+
+IMPLEMENTATIE
+
+Voeg bij voorkeur een kleine Django middleware toe die na verwerking van de request
+controleert:
+
+response.status_code == 404
+
+Log vervolgens via Python/Django logging minimaal:
+
+- marker: HTTP404
+- HTTP method
+- request.path
+- referrer zonder querystring
+- user-agent
+
+Gebruik bijvoorbeeld een dedicated logger zoals:
+
+logger = logging.getLogger("http404")
+
+De logregel moet gemakkelijk doorzoekbaar zijn op:
+
+HTTP404
+
+VOORBEELD
+
+HTTP404 method=GET path=/wp-admin/ referrer=- user_agent="Mozilla/5.0 ..."
+
+SCHAKELBAAR VIA ENVIRONMENT VARIABLE
+
+De logging moet alleen actief zijn wanneer deze environment variable true is:
+
+LOG_404_REQUESTS=true
+
+Als LOG_404_REQUESTS niet bestaat of false is, moet de middleware geen 404-logregels
+produceren.
+
+Gebruik een veilige boolean check voor waarden als:
+
+true
+1
+yes
+on
+
+Zorg ervoor dat de middleware normaal aanwezig mag blijven terwijl logging is uitgeschakeld.
+
+MIDDLEWARE
+
+Plaats de middleware op een logische plaats in MIDDLEWARE zodat hij normale Django
+responses kan inspecteren zonder bestaande middlewarefunctionaliteit te verstoren.
+
+Controleer eerst de bestaande projectstructuur voordat je nieuwe bestanden aanmaakt.
+Sluit aan op de huidige architectuur.
+
+LOGGING
+
+Controleer de bestaande LOGGING-configuratie.
+
+Zorg dat INFO- of WARNING-regels van de nieuwe http404-logger daadwerkelijk naar stdout/
+console gaan zodat Render Application Logs ze toont.
+
+Gebruik bij voorkeur WARNING zodat ze binnen de bestaande productieconfiguratie zichtbaar
+zijn, tenzij de huidige loggingconfiguratie duidelijk maakt dat INFO betrouwbaar wordt
+doorgestuurd.
+
+VOORKOM LOGFLOOD
+
+Omdat er mogelijk veel 404’s zijn:
+
+- houd iedere logregel compact;
+- schrijf geen stack traces voor normale 404’s;
+- log niet meerdere regels per request;
+- voeg geen exception logging toe voor een normale Http404.
+
+TESTS
+
+Voer na implementatie minimaal uit:
+
+python manage.py check
+
+Test lokaal of via Django test client:
+
+1. bestaande pagina → 200 → geen HTTP404-log
+2. niet-bestaande pagina → 404 → exact één HTTP404-log als LOG_404_REQUESTS=true
+3. niet-bestaande pagina → 404 → geen HTTP404-log als LOG_404_REQUESTS=false
+4. querystring wordt niet gelogd:
+   /bestaat-niet/?email=test@example.com
+   moet alleen tonen:
+   path=/bestaat-niet/
+5. referrer-querystring wordt verwijderd.
+
+OPLEVERING
+
+Geef na afloop:
+
+1. welke bestanden zijn aangepast;
+2. waar de middleware is toegevoegd;
+3. welke logger is gebruikt;
+4. voorbeeld van een uiteindelijke logregel;
+5. welke Render environment variable ik moet toevoegen;
+6. of een redeploy/restart nodig is;
+7. hoe ik de logging daarna weer uitschakel.
+
+Voer geen andere wijzigingen aan de website uit.
