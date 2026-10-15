@@ -2394,5 +2394,12 @@
     "category": "gietijzeren-koekenpannen",
     "product_key": "beka-stark-cast-iron-set-24-28",
     "enabled": true
+  },
+  {
+    "source": "airfryers/airfryer-seeger-clearfry-glass-4-5l.jpg",
+    "slug": "airfryer-seeger-clearfry-glass-4-5l",
+    "category": "airfryers",
+    "product_key": "airfryer-seeger-clearfry-glass-4-5l",
+    "enabled": true
   }
 ]

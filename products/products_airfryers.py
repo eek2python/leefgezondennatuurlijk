@@ -270,8 +270,8 @@ PRODUCTS = {
                 "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fninja-crispi-4-in-1-compacte-glazen-airfryer-blauw-fn101eugy%2F9300000236296742%2F&name=Ninja%20CRISPi%204-in-1%20Airfryer%20-%20Glazen%20kooksysteem%20-%203.8L%20en%201.4L%20schalen",
                 "retailer_url": "https://www.bol.com/nl/nl/p/ninja-crispi-4-in-1-compacte-glazen-airfryer-blauw-fn101eugy/9300000236296742/",
                 "official_url": "https://www.sharkninja.nl/ninja-crispi-4-in-1-airfryer-met-glazen-vershoudschalen-antraciet/FN101EUGY.html?dwvar_FN101EUGY_color=666e7c",
-                "price": 109.00,
-                "price_last_checked": "2026-08-18",
+                "price": 135.00,
+                "price_last_checked": "2026-10-15",
             },
             {
                 "name": "Groen",
@@ -282,8 +282,8 @@ PRODUCTS = {
                 "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fninja-crispi-4-in-1-compacte-glazen-airfryer-groen-fn101eusg%2F9300000236187102%2F&name=Ninja%20CRISPi%20Glazen%20Airfryer%20-%204-in-1%20-%203.8L%20%26%201.4L%20schalen%20-%20FN101EUSG",
                 "retailer_url": "https://www.bol.com/nl/nl/p/ninja-crispi-4-in-1-compacte-glazen-airfryer-groen-fn101eusg/9300000236187102/",
                 "official_url": "https://www.sharkninja.nl/ninja-crispi-4-in-1-airfryer-met-glazen-vershoudschalen-groen/FN101EUSG.html?dwvar_FN101EUSG_color=afbebb",
-                "price": 109.00,
-                "price_last_checked": "2026-08-18",
+                "price": 154.99,
+                "price_last_checked": "2026-10-15",
             },
             {
                 "name": "Stone",
@@ -291,11 +291,11 @@ PRODUCTS = {
                     "airfryer-ninja-crispi-4in1-stone.webp"
                 ),
                 "hex": "#b9b0a4",
-                "affiliate_url": "",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fninja-crispi-4-in-1-compacte-glazen-airfryer-grijs-fn101eust%2F9300000236296743%2F&name=Ninja%20CRISPi%204-in-1%20Glazen%20Airfryer%20-%203.8L%20%26%201.4L%20schalen%20-%20FN101EUST",
                 "retailer_url": "",
                 "official_url": "https://www.sharkninja.nl/ninja-crispi-4-in-1-airfryer-met-glazen-vershoudschalen-beige/FN101EUST.html?dwvar_FN101EUST_color=c5beb6",
-                "price": 109.00,
-                "price_last_checked": "2026-08-18",
+                "price": 139.95,
+                "price_last_checked": "2026-10-15",
             },
         ],
         "description": (
@@ -333,7 +333,68 @@ PRODUCTS = {
             "bereidt en dezelfde schalen ook wil gebruiken voor serveren "
             "en bewaren."
         ),
-        "award": "🫙 Beste glazen keuze",
+        "award": None,
+    },
+
+    "seeger_clearfry_glass_4_5l": {
+        "slug": "seeger-clearfry-glazen-airfryer-4-5l",
+        "name": "Seeger ClearFry Glazen Airfryer – 2,5 / 4,5 L",
+        "brand": "Seeger",
+        "material": (
+            "Twee verwisselbare glazen kookschalen van 2,5 en 4,5 liter"
+        ),
+        "features": [
+            "1500 watt",
+            "6 kookprogramma’s",
+            "Temperatuur instelbaar van 60 tot 200 °C",
+            "Timer tot 320 minuten",
+            "Glazen kookschalen geschikt voor de vaatwasser",
+            "Meegeleverde deksels voor beide glazen schalen",
+            "Inclusief hittebestendige siliconen onderzetter",
+        ],
+        "image": "airfryer-seeger-clearfry-glass-4-5l.webp",
+        "image_path": "images/products/airfryers",
+        "description": (
+            "PFAS-vrije glazen airfryer met verwisselbare kookschalen van "
+            "2,5 en 4,5 liter, zes kookprogramma’s en een temperatuurbereik "
+            "van 60 tot 200 °C."
+        ),
+        "pros": [
+            "Twee verwisselbare glazen kookschalen van 2,5 en 4,5 liter",
+            "Glazen bakken zonder tefloncoating en met goed zicht op de bereiding",
+            "Zes kookfuncties waaronder bakken, opwarmen en drogen",
+            "Glazen schalen kunnen met de meegeleverde deksels ook worden gebruikt voor bewaren",
+        ],
+        "cons": [
+            "De twee glazen kookschalen kunnen niet gelijktijdig worden gebruikt",
+            "De onderzijde van de verwarmingsunit kan na gebruik nog langere tijd heet blijven",
+        ],
+        "rating": 4.5,
+        "rating_count": None,
+        "rating_source": "editorial",
+        "price": 114.99,
+        "price_last_checked": "2026-10-15",
+        "currency": "EUR",
+        "availability": "InStock",
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fseeger-clearfry-glazen-airfryer-6-programma-s-pfas-vrij-60-c-tot-200-c-2-5l-4-5l-glazen-containers-zwart%2F9300000330982631%2F&name=Seeger%20ClearFry%20Glazen%20Airfryer%20-%206%20Programma%27s%20-%20PFAS-Vrij%20-%2060%C2%B0C%20Tot%20200%C2%B0C%20-%202.5L%20%2B...",
+        "retailer_url": (
+            "https://www.bol.com/nl/nl/p/"
+            "seeger-clearfry-glazen-airfryer-6-programma-s-pfas-vrij-"
+            "60-c-tot-200-c-2-5l-4-5l-glazen-containers-zwart/"
+            "9300000330982631/"
+        ),
+        "official_url": (
+            "https://myseeger.com/nl-nl/products/"
+            "seeger-clearfry-glazen-airfryer-zwart"
+        ),
+        "availability_label": "",
+        "price_range": "€€€",
+        "verdict": (
+            "Een aantrekkelijke glazen airfryer met twee verwisselbare formaten, "
+            "zes kookfuncties. Vooral "
+            "interessant als betaalbaarder alternatief voor duurdere glazen airfryers."
+        ),
+        "award": None,
     },
 
 # XL PFAS-VRIJE AIRFRYERS

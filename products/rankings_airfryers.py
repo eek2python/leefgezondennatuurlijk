@@ -6,6 +6,7 @@ RANKINGS = {
         # "wartmann_wm2312af_5l",
         "maison_kitchen_5l",
         "ninja_crispi_4in1",
+        "seeger_clearfry_glass_4_5l",
     ],
     "xl": [
         "inventum_gf730hldb_7_3l",
