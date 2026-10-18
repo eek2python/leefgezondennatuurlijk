@@ -302,7 +302,7 @@ PRODUCTS = {
                 "price_last_checked": "2026-07-24",
                 "currency": "EUR",
                 "availability": "InStock",
-                "affiliate_url": "",
+                "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Flock-lock-ovenschaal-met-deksel-glazen-vershoudbakje-plastic-deksel-rechthoekig-1-liter-20-x-15-cm%2F9200000069093488%2F&name=Lock%26Lock%20Ovenschaal%20met%20deksel%20-%20Glazen%20vershoudbakje%20-%201%20liter%20-%2020%20x%2015%20cm",
                 "retailer_url": "https://locklock.nl/product/keuken/ovenschalen-met-deksel/ovenschaal-met-deksel-1-0-liter/",
                 "is_default": False,
             },

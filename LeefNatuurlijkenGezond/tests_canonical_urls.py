@@ -6,7 +6,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit
 from xml.etree import ElementTree
 
-from django.test import TestCase
+from django.test import TestCase, override_settings
 
 from .site_urls import absolute_site_url
 
@@ -92,6 +92,7 @@ class CanonicalURLTests(TestCase):
             with self.subTest(path=path):
                 self.assert_canonical_page(path, canonical)
 
+    @override_settings(ALLOWED_HOSTS=["preview.example", LEGACY_HOST])
     def test_preview_and_www_request_hosts_do_not_change_public_metadata(self):
         for host in ("preview.example", LEGACY_HOST):
             with self.subTest(host=host):

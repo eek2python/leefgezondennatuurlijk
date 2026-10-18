@@ -40,3 +40,8 @@ run = ["gunicorn", "--bind=0.0.0.0:5000", "--reuse-port", "--error-logfile=-", "
 [postMerge]
 path = "scripts/post-merge.sh"
 timeoutMs = 120000
+
+[userenv]
+
+[userenv.development]
+DEBUG = "true"

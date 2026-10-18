@@ -26,9 +26,22 @@ load_dotenv(BASE_DIR / ".env")
 SECRET_KEY = os.environ.get('SECRET_KEY', "dev-insecure-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "True") == "True"
+DEBUG = os.getenv("DEBUG", "False").strip().lower() in {"true", "1", "yes", "on"}
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "leefnatuurlijkengezond.nl",
+    "www.leefnatuurlijkengezond.nl",
+    "localhost",
+    "127.0.0.1",
+    "[::1]",
+]
+for _host in (
+    os.getenv("ALLOWED_HOSTS", "").split(",")
+    + [os.getenv("REPLIT_DEV_DOMAIN", ""), os.getenv("RENDER_EXTERNAL_HOSTNAME", "")]
+):
+    _host = _host.strip()
+    if _host and _host not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append(_host)
 
 # Public SEO origin, independent of the request/proxy or preview hostname.
 SITE_URL = "https://leefnatuurlijkengezond.nl"
@@ -202,6 +215,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# Only the three icon aliases live here; never expose the project directory.
+# Symlinks reuse the canonical static assets without copies or redirects.
+WHITENOISE_ROOT = BASE_DIR / "public"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

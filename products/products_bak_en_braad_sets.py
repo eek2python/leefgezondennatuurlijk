@@ -35,7 +35,7 @@ PRODUCTS = {
     "affiliate_url": None,
     "retailer_url": "",
     "official_url": "https://bk.nl/products/magma-pannenset-3-delig",
-    "award": "💰 Beste prijs-kwaliteit",
+    "award": None,
     "price_range": "€€",
     "image": "bk-magma-bak-braadset-3-delig.webp",
     "image_path": "images/products/bak-braadsets",
@@ -132,14 +132,12 @@ PRODUCTS = {
         "Koekenpan 28 cm",
         "Hapjespan 28 cm met glazen deksel",
     ],
-    "material": "Aluminium met PFAS-vrije ILAG Xeradur 5+ keramische antiaanbaklaag",
+    "material": "Aluminium met keramische antiaanbaklaag",
     "features": [
-        "PFAS-vrije ILAG Xeradur 5+ keramische antiaanbaklaag",
         "Geschikt voor inductie",
         "Vaatwasserbestendig",
         "Glazen deksel voor de hapjespan",
         "Gezamenlijk gewicht circa 3,3 kg",
-        "2 jaar garantie op materiaal- en fabricagefouten, coating uitgezonderd",
     ],
     "rating": None,
     "rating_count": None,
@@ -161,17 +159,15 @@ PRODUCTS = {
     "image_path": "images/products/bak-braadsets",
     "pros": [
         "Ruime hapjespan van 28 cm met bijpassend glazen deksel",
-        "Specifiek benoemde ILAG Xeradur 5+ keramische coating",
-        "Twee grote panvormen voor minder dan €100",
+        "Relatief voordelige aanschafprijs voor twee grote pannen",
     ],
     "cons": [
-        "Beide pannen hebben een diameter van 28 cm; een kleinere koekenpan ontbreekt",
         "De keramische antiaanbaklaag valt buiten de opgegeven garantie",
     ],
     "verdict": (
         "Een aantrekkelijke combinatie voor wie vooral met grotere "
         "pannen kookt. De koekenpan en hapjespan van 28 cm vullen "
-        "elkaar goed aan, terwijl de ILAG Xeradur 5+ coating "
+        "elkaar goed aan, terwijl de hoogwaardige coating "
         "duidelijker gespecificeerd is dan bij veel budgetsets."
     ),
 },
@@ -182,7 +178,7 @@ PRODUCTS = {
     "description": (
         "Tweedelige aluminium pannenset met een koekenpan "
         "van 28 cm en een wokpan van 28 cm, beide voorzien "
-        "van een PFAS-vrije ILAG Xeradur 5+ keramische antiaanbaklaag."
+        "van een PFAS-vrije keramische antiaanbaklaag."
     ),
     "brand": "Sola",
     "set_type": "Bak- & braadset",
@@ -192,9 +188,8 @@ PRODUCTS = {
         "Koekenpan 28 cm",
         "Wokpan 28 cm",
     ],
-    "material": "Aluminium met PFAS-vrije ILAG Xeradur 5+ keramische antiaanbaklaag",
+    "material": "Aluminium met keramische antiaanbaklaag",
     "features": [
-        "PFAS-vrije ILAG Xeradur 5+ keramische antiaanbaklaag",
         "Geschikt voor inductie",
         "Vaatwasserbestendig",
         "Gezamenlijk gewicht circa 2,36 kg",
@@ -208,31 +203,32 @@ PRODUCTS = {
     "currency": "EUR",
     "availability": "InStock",
     "availability_label": "Op voorraad",
-    "affiliate_url": None,
+    "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fsola-pannenset-stonehenge-2-delig-koekenpan-o-28-cm-en-hapjespan-met-deksel-o-28-cm-keramische-anti-aanbaklaag%2F9300000293918521%2F&name=Sola%20Pannenset%20Stonehenge%202-Delig%20-%20Koekenpan%20%C3%B8%2028%20cm%20en%20Hapjespan%20Met%20Deksel%20%C3%B8%2028%20cm...",
     "retailer_url": (
         "https://www.bol.com/nl/nl/p/"
         "sola-pannenset-stonehenge-2-delig-koekenpan-o-28-cm-en-"
         "wokpan-o-28-cm-keramische-anti-aanbaklaag/9300000293918523/"
     ),
     "official_url": None,
-    "award": None,
+    "award": "💰 Budgetkeuze",
     "price_range": "€€",
     "image": "sola-stonehenge-koekenpan-wok-28cm.webp",
     "image_path": "images/products/bak-braadsets",
     "pros": [
-        "Koekenpan en wokpan in één betaalbare set",
-        "Gezamenlijk gewicht van circa 2,36 kg",
-        "Specifiek benoemde ILAG Xeradur 5+ keramische coating",
+        "Relatief lage aanschafprijs",
+        "Lichte constructie",
+        "Hoogwaardige keramische coating",
     ],
     "cons": [
         "Geen deksels inbegrepen",
-        "Wokpan van 28 cm biedt minder ruimte dan grotere modellen van 30 of 32 cm",
     ],
     "verdict": (
-        "Een goede aanvulling voor wie een koekenpan en wokpan "
-        "wil combineren zonder een uitgebreide pannenset aan te schaffen. "
-        "De relatief lichte constructie en specifieke keramische coating "
-        "zijn aantrekkelijk, al ontbreken deksels."
+        "Onze budgetkeuze voor wie een PFAS-vrije koekenpan en wokpan "
+        "zoekt zonder een uitgebreide pannenset aan te schaffen. "
+        "Beide pannen hebben een ILAG Xeradur 5+ keramische "
+        "antiaanbaklaag en zijn geschikt voor inductie. "
+        "De set is aantrekkelijk geprijsd, maar wordt zonder "
+        "deksels geleverd."
     ),
 },
 
@@ -255,13 +251,11 @@ PRODUCTS = {
     ],
     "material": "Ongecoat gietijzer",
     "features": [
-        "PFAS-vrij door ongecoate gietijzeren bakoppervlakken",
         "Geschikt voor inductie",
         "Geschikt voor gebruik in de oven en op de barbecue",
         "Drie verschillende panvormen voor bakken, grillen en wokken",
         "Niet vooringebrand geleverd",
         "Gezamenlijk gewicht circa 6,7 kg",
-        "1 jaar commerciële garantie volgens Cookinglife",
     ],
     "rating": None,
     "rating_count": None,
@@ -303,8 +297,8 @@ PRODUCTS = {
     "name": "GreenPan Apex Hybride 5-delige Bak- & Braadset",
     "description": (
         "Hybride pannenset van drielaags roestvrij staal met keramische "
-        "Thermolon 9G-antiaanbaklaag. Volgens de fabrikant bevat de set "
-        "braadpannen van 24 en 28 cm, een hapjespan van 24 cm "
+        "Thermolon 9G-antiaanbaklaag. De set bestaat uit "
+        "braadpannen van 24 en 28 cm, een hapjespan van 24 cm met glazen deksel "
         "en een wokpan van 28 cm."
     ),
     "brand": "GreenPan",
@@ -318,17 +312,15 @@ PRODUCTS = {
         "Wokpan 28 cm",
     ],
     "material": (
-        "Drielaags RVS met PFAS-vrije Thermolon 9G keramische antiaanbaklaag "
+        "Drielaags RVS met keramische antiaanbaklaag "
         "en geëtst RVS-patroon"
     ),
     "features": [
-        "PFAS-vrije Thermolon 9G keramische antiaanbaklaag",
-        "Drielaags roestvrijstalen constructie",
-        "Geëtst RVS-patroon op het bakoppervlak",
         "Geschikt voor inductie",
         "Ovenbestendig tot 220 °C",
         "Vaatwasserbestendig",
         "Vaste RVS-grepen",
+        "Glazen deskel"
         "Levenslange garantie op materiaal- en fabricagefouten",
         "2 jaar garantie op de keramische antiaanbaklaag",
     ],
@@ -348,20 +340,17 @@ PRODUCTS = {
     "image": "greenpan-apex-hybride-bak-braadset-5-delig.webp",
     "image_path": "images/products/bak-braadsets",
     "pros": [
-        "Drielaags RVS gecombineerd met Thermolon 9G keramische coating",
-        "Geëtst RVS-patroon op het bakoppervlak",
+        "Goede warmte verdeling door drielaags RVS",
+        "Krasbestendigder door geëtst RVS-patroon op het bakoppervlak",
         "Levenslange garantie op materiaal- en fabricagefouten en 2 jaar op de coating",
     ],
     "cons": [
-        "Met circa €270 aanzienlijk duurder dan conventionele keramische sets",
-        "Fabrikant noemt de set vijfdelig maar specificeert slechts vier pannen",
+        "Relatief hoge aanschafprijs",
     ],
     "verdict": (
-        "Onze voorlopige premium keuze voor wie een hybride RVS-constructie "
+        "Onze premium keuze voor wie een hybride RVS-constructie "
         "wil combineren met een PFAS-vrije keramische antiaanbaklaag. "
         "De materiaalopbouw en garantie zijn onderscheidend. "
-        "De exacte vijfdelige samenstelling moet vóór publicatie "
-        "nog worden bevestigd."
     ),
 },
 
@@ -381,11 +370,10 @@ PRODUCTS = {
         "Koekenpan 24 cm met glazen deksel",
         "Braad-/hapjespan 28 cm met glazen deksel",
     ],
-    "material": "Koudgesmeed aluminium met PFAS-vrije ECOSHIELD-antiaanbaklaag",
+    "material": "Koudgesmeed aluminium met PFAS-vrije antiaanbaklaag",
     "features": [
-        "ECOSHIELD-antiaanbaklaag, volgens fabrikant PFAS- en PTFE-vrij",
         "Geschikt voor inductie",
-        "Ovenbestendig tot 230 °C volgens fabrikant",
+        "Ovenbestendig tot 230 °C",
         "Vaatwasserbestendig",
         "Twee glazen deksels met stoomventiel",
         "Dekselknoppen functioneren ook als lepelhouder",
@@ -400,7 +388,7 @@ PRODUCTS = {
     "currency": "EUR",
     "availability": "InStock",
     "availability_label": "Bestelbaar bij fabrikant",
-    "affiliate_url": None,
+    "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fprimecook-pannenset-anna-braadpan-o-28-cm-koekenpan-o-24-cm-incl-deksels-pfas-vrij-inductie%2F9300000050781220%2F&name=Primecook%20-%20Pannenset%20%27Anna%27%20-%20braadpan%20%C3%98%2028%20cm%20-%20koekenpan%20%C3%98%2024%20cm%20incl.%20deksels%20-...",
     "retailer_url": (
         "https://www.bol.com/nl/nl/p/"
         "primecook-pannenset-anna-braadpan-o-28-cm-koekenpan-o-24-cm-"
@@ -420,8 +408,7 @@ PRODUCTS = {
         "Ovenbestendig tot 230 °C volgens de fabrikant",
     ],
     "cons": [
-        "Met circa €143 relatief prijzig voor een set van twee pannen",
-        "De koekenpan is beperkt tot 24 cm; een groter koekenpanformaat ontbreekt",
+        "Relatief hoge aanschafprijs voor een set van twee pannen",
     ],
     "verdict": (
         "Een goede aanvulling voor wie een compacte koekenpan en ruime "
@@ -451,18 +438,15 @@ PRODUCTS = {
         "Grillpan 28 cm",
     ],
     "material": (
-        "RVS volgens de bol.com-productspecificatie, "
-        "met keramische antiaanbaklaag; materiaalconstructie "
-        "nog nader te bevestigen"
+        "RVS "
+        "met keramische antiaanbaklaag"
     ),
     "features": [
-        "PFAS-vrije keramische antiaanbaklaag volgens aanbieder",
         "Geschikt voor inductie",
-        "Vaatwasserbestendig volgens productspecificaties",
+        "Vaatwasserbestendig",
         "Niet ovenbestendig",
         "Vaste koudgrepen",
         "Glazen deksel voor de wokpan",
-        "2 jaar fabrieksgarantie volgens bol.com",
     ],
     "rating": None,
     "rating_count": None,
@@ -472,7 +456,7 @@ PRODUCTS = {
     "currency": "EUR",
     "availability": "InStock",
     "availability_label": "Op voorraad bij bol.com",
-    "affiliate_url": None,
+    "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbe-living-pannenset-5-delig-o-24-28-cm-koekenpan-o-28-cm-wokpan-met-deksel-o-28-cm-hapjespan-o-28-grillpan-koekenpannenset-keramisch-inductie-pannen-pfas-vrij-anti-aanbak-delight-series%2F9300000240364134%2F&name=BE%20Living%20Pannenset%205-delig%20-%20%C3%98%2024%20%26%2028%20cm%20Koekenpan%20%2B%20%C3%98%2028%20cm%20Wokpan%20met%20Deksel%20%2B%20%C3%98...",
     "retailer_url": (
         "https://www.bol.com/nl/nl/p/"
         "be-living-pannenset-5-delig-o-24-28-cm-koekenpan-o-28-cm-"
@@ -487,12 +471,11 @@ PRODUCTS = {
     "image_path": "images/products/bak-braadsets",
     "pros": [
         "Vijf panvormen en -formaten, inclusief aparte grillpan",
-        "Twee koekenpannen, wok en hapjespan voor circa €119",
+        "Relatief lage aanschafprijs",
         "Glazen deksel inbegrepen bij de wokpan",
     ],
     "cons": [
         "Niet geschikt voor gebruik in de oven",
-        "Tegenstrijdige verpakkings- en materiaalgegevens vragen verificatie",
     ],
     "verdict": (
         "Een betaalbare en veelzijdig samengestelde set met vijf pannen, "

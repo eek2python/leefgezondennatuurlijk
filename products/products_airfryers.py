@@ -218,22 +218,22 @@ PRODUCTS = {
             "Digitaal display met touchbediening",
         ],
         "cons": [
-            "Keramische samenstelling van de antiaanbaklaag niet bevestigd",
-            "Beperkte technische productinformatie beschikbaar",
+            "Samenstelling van de antiaanbaklaag wordt niet gespecificeerd",
+            "Fabrikant verstrekt weinig technische details over materialen en constructie",
         ],
         "rating": 3.7,
         "rating_count": None,
         "rating_source": "editorial",
-        "price": 69.95,
-        "price_last_checked": "2026-07-31",
+        "price": 54.95,
+        "price_last_checked": "2026-10-18",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": (
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fmaison-kitchen-airfryer-heteluchtfriteuse-pfas-vrij-1500w-5l-inhoud-80-c-tot-200-c-zwart%2F9300000197704759%2F&name=Maison%20%26%20Kitchen%20Airfryer%20-%20Heteluchtfriteuse%20-%20PFAS-vrij%20-%201500W%20-%205L%20Inhoud%20-%2080%C2%BAC...",
+        "retailer_url": "https://www.bol.com/nl/nl/p/maison-kitchen-airfryer-heteluchtfriteuse-pfas-vrij-1500w-5l-inhoud-80-c-tot-200-c-zwart/9300000197704759/",
+        "official_url": (
             "https://www.maisonandkitchen.nl/products/"
             "airfryer-5l-pfas-vrij"
         ),
-        "official_url": "",
         "availability_label": "",
         "price_range": "€",
         "verdict": (
@@ -744,8 +744,8 @@ PRODUCTS = {
             "Relatief lage aanschafprijs",
         ],
         "cons": [
-            "Keramische samenstelling van de antiaanbaklaag niet bevestigd",
-            "Beperkte technische productspecificaties beschikbaar",
+            "Samenstelling van de antiaanbaklaag wordt niet gespecificeerd",
+            "Fabrikant verstrekt weinig technische details over materialen en constructie",
         ],
         "rating": 3.8,
         "rating_count": None,
@@ -754,12 +754,12 @@ PRODUCTS = {
         "price_last_checked": "2026-07-31",
         "currency": "EUR",
         "availability": "InStock",
-        "affiliate_url": "",
-        "retailer_url": (
+        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fmaison-kitchen-airfryer-heteluchtfriteuse-pfas-vrij-1850w-8l-inhoud-80-c-tot-200-c-zwart%2F9300000198145387%2F&name=Maison%20%26%20Kitchen%20Airfryer%20-%20Heteluchtfriteuse%20-%20PFAS-vrij%20-%201800W%20-%208L%20Inhoud%20-%2080%C2%BAC...",
+        "retailer_url": "https://www.bol.com/nl/nl/p/maison-kitchen-airfryer-heteluchtfriteuse-pfas-vrij-1850w-8l-inhoud-80-c-tot-200-c-zwart/9300000198145387/",
+        "official_url": (
             "https://www.maisonandkitchen.nl/products/"
             "airfryer-8l-pfas-vrij"
         ),
-        "official_url": "",
         "availability_label": "",
         "price_range": "€€",
         "verdict": (

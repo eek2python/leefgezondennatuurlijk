@@ -1,0 +1,400 @@
+Ik wil drie kleine technische verbeteringen uitvoeren op mijn Django-website
+Leef Natuurlijk & Gezond naar aanleiding van een 24-uurs analyse van 404-logs.
+
+De site draait op Django en wordt gehost op Render.
+
+BELANGRIJK:
+Voer alleen de hieronder beschreven controles en veilige correcties uit.
+Pas geen content, productdata, URL-slugs, redirects, canonical-logica,
+sitemapstructuur of styling aan tenzij dit expliciet hieronder nodig is.
+
+==================================================
+DOEL
+==================================================
+
+Voer deze drie controles/verbeteringen uit:
+
+1. favicon.ico en Apple Touch Icon correct instellen;
+2. onderzoeken waarom /static/images/rvs-koekenpannen.jpg een 404 geeft;
+3. controleren dat Django in productie met DEBUG=False draait.
+
+Controleer daarna of alles technisch correct werkt.
+
+==================================================
+1. FAVICON EN APPLE TOUCH ICON
+==================================================
+
+In de productie-404-logs komen regelmatig requests voor:
+
+/favicon.ico
+/apple-touch-icon.png
+/apple-touch-icon-precomposed.png
+
+Deze requests lijken afkomstig van normale browsers/mobile devices en moeten
+bij voorkeur geen 404 geven.
+
+AUDIT
+
+Controleer eerst:
+
+- welke favicon/icon-bestanden al in het project aanwezig zijn;
+- welke static directories worden gebruikt;
+- of base.html of een centrale <head>-partial al favicon-tags bevat;
+- hoe Django static files op productie worden geserveerd;
+- of WhiteNoise of een vergelijkbare static-file-oplossing wordt gebruikt.
+
+HERGEBRUIK BESTAANDE BESTANDEN
+
+Als er al geschikte logo/favicon/icon-bestanden bestaan, gebruik die.
+
+Maak GEEN willekeurig nieuw visueel ontwerp als er al een geschikt icoon aanwezig is.
+
+Als er alleen een geschikt PNG/WebP-logo beschikbaar is maar geen favicon.ico,
+controleer dan of het technisch verstandig en veilig is om daar een faviconvariant
+van te maken.
+
+Als hiervoor geen geschikt bronbestand bestaat, verander dan niets aan het ontwerp
+maar rapporteer dat handmatig een faviconbestand moet worden aangeleverd.
+
+GEWENSTE HTML
+
+Zorg indien mogelijk centraal in de <head> voor correcte tags, bijvoorbeeld:
+
+<link rel="icon" href="{% static 'images/favicon.ico' %}">
+<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+Gebruik de werkelijk aanwezige bestandspaden.
+
+APPLE TOUCH ICON
+
+Idealiter is apple-touch-icon.png minimaal 180x180 pixels.
+
+Controleer of een geschikte afbeelding beschikbaar is.
+
+APPLE-TOUCH-ICON-PRECOMPOSED
+
+Moderne iOS-versies gebruiken normaal apple-touch-icon.png.
+
+Voeg geen verouderde extra metadata toe tenzij dit zinvol is.
+
+Als browsers nog rechtstreeks:
+
+/apple-touch-icon-precomposed.png
+
+opvragen, onderzoek of het eenvoudig en veilig is om hiervoor hetzelfde icoon
+beschikbaar te maken.
+
+Voorkom onnodige duplicatie als dat niet nodig is.
+
+ROOT /favicon.ico
+
+Browsers vragen vaak automatisch:
+
+/favicon.ico
+
+op, ook wanneer een <link rel="icon"> aanwezig is.
+
+Controleer of deze root-URL na de wijziging 200 kan retourneren.
+
+Gebruik hiervoor bij voorkeur de bestaande Django/static configuratie.
+
+Voeg alleen een expliciete Django route voor /favicon.ico toe als dat daadwerkelijk
+nodig is en technisch de nette oplossing is.
+
+Voorkom redirect chains.
+
+==================================================
+2. ONTBREKENDE RVS-AFBEELDING
+==================================================
+
+In de logs staat:
+
+GET /static/images/rvs-koekenpannen.jpg
+→ 404
+
+User-agent:
+
+AhrefsBot/7.0
+
+Onderzoek projectbreed exact deze string:
+
+rvs-koekenpannen.jpg
+
+Zoek in:
+
+- templates
+- Python-bestanden
+- CSS
+- JavaScript
+- JSON-LD
+- OpenGraph metadata
+- Twitter metadata
+- sitemap/code
+- oude configuratiebestanden
+- tests
+- static references
+
+Bepaal daarna welke situatie van toepassing is.
+
+SITUATIE A — URL wordt nog gebruikt
+
+Als de website of metadata nog verwijst naar:
+
+/static/images/rvs-koekenpannen.jpg
+
+maar het bestand niet bestaat:
+
+- bepaal welk bestaand beeld bedoeld is;
+- controleer of bijvoorbeeld een .webp-, .png- of anders genoemde variant bestaat;
+- pas de verwijzing aan naar het juiste bestaande bestand;
+- verander GEEN afbeeldingen inhoudelijk;
+- verander alleen de kapotte referentie.
+
+Controleer vooral:
+
+- og:image
+- twitter:image
+- <img src>
+- JSON-LD image
+- category thumbnails
+- blog metadata
+
+SITUATIE B — Bestand bestaat maar wordt niet goed geserveerd
+
+Als rvs-koekenpannen.jpg wel bestaat:
+
+- controleer static path;
+- controleer {% static %};
+- controleer collectstatic;
+- controleer eventuele casing-problemen;
+- controleer of het bestand in STATIC_ROOT terechtkomt.
+
+Los alleen de concrete oorzaak op.
+
+SITUATIE C — URL bestaat nergens meer
+
+Als:
+
+rvs-koekenpannen.jpg
+
+nergens in de huidige code, templates, data of static directory wordt gebruikt,
+dan betreft dit waarschijnlijk een oude/stale URL die Ahrefs nog kent.
+
+In dat geval:
+
+- maak GEEN redirect;
+- voeg GEEN dummy-afbeelding toe;
+- maak GEEN nieuwe route;
+- laat de 404 bestaan;
+- rapporteer dat geen actie nodig is.
+
+==================================================
+3. DJANGO DEBUG-INSTELLING
+==================================================
+
+Controleer hoe DEBUG in settings.py wordt bepaald.
+
+Productie op Render moet altijd draaien met:
+
+DEBUG = False
+
+Controleer:
+
+- settings.py
+- eventuele production settings
+- environment variables
+- os.getenv / environ helpers
+- Render-specifieke configuratie
+- .env.example
+- deployment-configuratie
+
+LET OP
+
+Zet DEBUG niet simpelweg hardcoded op False als de applicatie lokaal DEBUG=True
+nodig heeft.
+
+Gebruik indien nodig een veilige environment-based configuratie, bijvoorbeeld:
+
+DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "yes", "on")
+
+maar alleen als dat past bij de bestaande configuratiestijl van het project.
+
+Productie moet standaard False zijn als de environment variable ontbreekt.
+
+Controleer ook dat:
+
+ALLOWED_HOSTS
+
+correct staat voor:
+
+leefnatuurlijkengezond.nl
+www.leefnatuurlijkengezond.nl
+
+zonder onnodig '*' te gebruiken, tenzij daar al een expliciete technische reden voor is.
+
+Rapporteer hoe DEBUG in productie momenteel wordt bepaald.
+
+==================================================
+4. 404-LOGGING
+==================================================
+
+De tijdelijke 404-logger is bewust toegevoegd met:
+
+LOG_404_REQUESTS=true
+
+Verwijder deze logging NIET.
+
+Controleer alleen dat de code nog steeds via de environment variable aan/uit gezet
+kan worden.
+
+Omdat de analyse inmiddels voldoende informatie heeft opgeleverd, adviseer in het
+eindrapport dat ik in Render kan zetten:
+
+LOG_404_REQUESTS=false
+
+Voer dit niet zelf uit als je geen toegang hebt tot Render environment variables.
+
+==================================================
+5. SECURITY-CONTROLE
+==================================================
+
+De logs bevatten veel probes naar:
+
+.env
+.aws/credentials
+.git/*
+database.sql
+secrets.json
+wp-config.php
+phpinfo.php
+*.php
+
+Controleer uitsluitend of er geen gevoelige bestanden per ongeluk onder een
+publiek toegankelijke static/media/public directory staan.
+
+Zoek onder andere naar:
+
+.env
+*.env
+credentials*
+secrets*
+*.sql
+.git
+Dockerfile
+docker-compose.yml
+
+Verwijder of verplaats GEEN configuratiebestanden die correct buiten publieke
+directories staan.
+
+Het doel is uitsluitend controleren dat dergelijke bestanden niet via HTTP/static
+worden gepubliceerd.
+
+Controleer daarnaast of onverwachte .php-bestanden aanwezig zijn.
+
+Omdat dit een Django-site is, verwacht ik geen PHP-bestanden.
+Als er PHP-bestanden bestaan:
+
+- wijzig/verwijder ze niet automatisch;
+- rapporteer exact welke bestanden zijn gevonden en waar.
+
+==================================================
+6. TESTS
+==================================================
+
+Voer na wijzigingen minimaal uit:
+
+python manage.py check
+
+Voer daarnaast waar mogelijk:
+
+python manage.py collectstatic --noinput
+
+uit in een veilige omgeving of controleer de bestaande collectstatic-configuratie.
+
+Test vervolgens met Django test client of lokale HTTP-tests:
+
+1. homepage → 200
+2. /favicon.ico → 200 indien favicon correct is geïmplementeerd
+3. /apple-touch-icon.png → 200 indien geïmplementeerd
+4. static favicon/image-bestanden → 200
+5. bestaande belangrijke pagina's blijven 200 geven
+6. willekeurige URL zoals /this-page-does-not-exist/ → 404
+7. er is geen algemene 404 → homepage redirect geïntroduceerd
+
+Controleer daarnaast de gegenereerde HTML van de homepage:
+
+- exact één geldige favicon-link;
+- geldige apple-touch-icon-link indien aanwezig;
+- geen verwijzingen naar niet-bestaande static files.
+
+Controleer specifiek opnieuw of:
+
+rvs-koekenpannen.jpg
+
+nog ergens in de actieve code wordt gebruikt.
+
+==================================================
+7. GEEN ONNODIGE WIJZIGINGEN
+==================================================
+
+Niet aanpassen:
+
+- productdata
+- affiliate-links
+- categorie-inhoud
+- blogs
+- URL-slugs
+- redirects van bestaande pagina's
+- canonical URL's
+- sitemaplogica
+- robots.txt
+- database
+- prijsdata
+- styling
+- navigatiestructuur
+
+Voer geen algemene refactor uit.
+
+==================================================
+OPLEVERING
+==================================================
+
+Geef na afloop een compact rapport met:
+
+1. FAVICON
+   - welke bestanden bestonden;
+   - welke zijn gebruikt/toegevoegd;
+   - welke URLs nu 200 retourneren.
+
+2. RVS-AFBEELDING
+   - waar rvs-koekenpannen.jpg werd gevonden;
+   - of dit een actieve kapotte link of stale crawler-URL was;
+   - welke wijziging eventueel is gedaan.
+
+3. DEBUG
+   - huidige configuratie;
+   - bevestiging dat productie standaard DEBUG=False gebruikt.
+
+4. SECURITY
+   - bevestiging dat geen gevoelige configuratiebestanden publiek via static/media
+     worden geserveerd;
+   - eventuele onverwachte .php-bestanden.
+
+5. TESTS
+   - resultaat van python manage.py check;
+   - resultaat van static checks;
+   - HTTP-status van favicon/apple icon;
+   - bevestiging dat normale 404's nog steeds echte 404's geven.
+
+6. AANGEPASTE BESTANDEN
+   - bestandsnaam;
+   - korte omschrijving per wijziging.
+
+7. HANDMATIGE ACTIES VOOR MIJ
+   - bijvoorbeeld:
+     LOG_404_REQUESTS=false in Render zetten;
+   - alleen handmatige acties noemen die werkelijk nog nodig zijn.
+
+Als tijdens de audit blijkt dat favicon/static-configuratie afhankelijk is van
+WhiteNoise, Render of een andere bestaande infrastructuur, sluit dan aan bij die
+bestaande configuratie in plaats van een tweede oplossing toe te voegen.

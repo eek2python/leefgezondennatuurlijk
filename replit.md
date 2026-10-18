@@ -201,8 +201,9 @@ gunicorn --bind=0.0.0.0:5000 --reuse-port LeefNatuurlijkenGezond.wsgi:applicatio
 
 ## Configuration
 
-- `ALLOWED_HOSTS = ['*']` - Already set for Replit proxy compatibility
-- `DEBUG` - Controlled via `DEBUG` environment variable (defaults to `True`)
+- `ALLOWED_HOSTS` - Explicit production/loopback hosts plus `REPLIT_DEV_DOMAIN`, `RENDER_EXTERNAL_HOSTNAME` and optional comma-separated `ALLOWED_HOSTS`; no default wildcard.
+- `DEBUG` - Defaults to `False`; use `DEBUG=true` explicitly for local development. Keep `DEBUG=false` on Render.
+- Root browser icons use `WHITENOISE_ROOT=public/`, containing only symlinks to the canonical icons in `static/`. Do not place configuration or other project files in this publicly served directory.
 - `SECRET_KEY` - Set via `SECRET_KEY` environment variable
 
 ## Dependencies

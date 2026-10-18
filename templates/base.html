@@ -10,6 +10,7 @@
    {% if blog_breadcrumb_ld %}<script type="application/ld+json">{{ blog_breadcrumb_ld|safe }}</script>{% endif %}
    <link rel="stylesheet" href="{% static_v 'assets/css/main.css' %}" />
    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
    {% if GA_MEASUREMENT_ID %}
    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_MEASUREMENT_ID }}"></script>
    <script>
