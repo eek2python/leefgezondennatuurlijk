@@ -76,10 +76,12 @@
 		// Inactive by default on <= large.
 			breakpoints.on('<=large', function() {
 				$sidebar.addClass('inactive');
+if ($toggle) syncSidebar();
 			});
 
 			breakpoints.on('>large', function() {
 				$sidebar.removeClass('inactive');
+if ($toggle) syncSidebar();
 			});
 
 		// Hack: Workaround for Chrome/Android scrollbar position bug.
@@ -89,7 +91,7 @@
 					.appendTo($head);
 
 		// Toggle.
-			$('<a href="#sidebar" class="toggle">Toggle</a>')
+var $toggle = $('<button type="button" class="toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Menu openen">Menu</button>')
 				.appendTo($sidebar)
 				.on('click', function(event) {
 
@@ -98,9 +100,49 @@
 						event.stopPropagation();
 
 					// Toggle.
-						$sidebar.toggleClass('inactive');
+setSidebar($sidebar.hasClass('inactive'), true);
 
 				});
+
+function syncSidebar() {
+var overlay = breakpoints.active('<=large');
+var open = !$sidebar.hasClass('inactive');
+var restoreFocus = !open && $sidebar_inner[0].contains(document.activeElement);
+$sidebar_inner.prop('inert', !open);
+$toggle.attr('aria-expanded', String(open))
+.attr('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+// The overlay must not leave keyboard focus on covered page controls.
+$('#main').prop('inert', overlay && open);
+$body.toggleClass('menu-open', overlay && open);
+if (restoreFocus) $toggle.trigger('focus');
+}
+
+function setSidebar(open, moveFocus) {
+$sidebar.toggleClass('inactive', !open);
+syncSidebar();
+if (moveFocus && open)
+$sidebar_inner.find('a, button').filter(':visible').first().trigger('focus');
+else if (!open && $sidebar[0].contains(document.activeElement))
+$toggle.trigger('focus');
+}
+syncSidebar();
+
+$sidebar.on('keydown', function(event) {
+if (event.key === 'Escape' && !$sidebar.hasClass('inactive')) {
+event.preventDefault();
+setSidebar(false, false);
+}
+if (event.key !== 'Tab' || !breakpoints.active('<=large') || $sidebar.hasClass('inactive')) return;
+var controls = $sidebar.find('a, button').filter(function() {
+return $(this).is(':visible') && !this.closest('[inert]');
+}).toArray();
+var first = controls[0], last = controls[controls.length - 1];
+if (event.shiftKey && document.activeElement === first) {
+event.preventDefault(); last.focus();
+} else if (!event.shiftKey && document.activeElement === last) {
+event.preventDefault(); first.focus();
+}
+});
 
 		// Events.
 
@@ -125,7 +167,7 @@
 							return;
 
 					// Hide sidebar.
-						$sidebar.addClass('inactive');
+setSidebar(false, false);
 
 					// Redirect to href.
 						setTimeout(function() {
@@ -159,7 +201,7 @@
 							return;
 
 					// Deactivate.
-						$sidebar.addClass('inactive');
+setSidebar(false, false);
 
 				});
 
@@ -249,8 +291,9 @@
 						event.preventDefault();
 
 					// Toggle.
-						$menu_openers.not($this).removeClass('active');
+$menu_openers.not($this).removeClass('active').attr('aria-expanded', 'false').next('ul').prop('inert', true);
 						$this.toggleClass('active');
+$this.attr('aria-expanded', String($this.hasClass('active'))).next('ul').prop('inert', !$this.hasClass('active'));
 
 					// Trigger resize (sidebar lock).
 						$window.triggerHandler('resize.sidebar-lock');

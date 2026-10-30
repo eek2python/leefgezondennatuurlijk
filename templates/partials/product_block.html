@@ -11,30 +11,7 @@
 >
 </a>
 {% if product.shape_variants|length > 1 %}
-<div class="product-variant-selector" data-variant-selectors>
-    {% for group in product.variant_selector_groups %}
-    {% if group.show %}
-<div class="product-variant-group" data-product-variant-selector data-selector-key="{{ group.key }}">
-<span class="product-variant-group__label product-variant-selector__label" id="variant-label-{{ product.slug }}-{{ group.key }}">{{ group.label }}</span>
-<div class="product-variant-group__options product-variant-selector__options" role="group" aria-labelledby="variant-label-{{ product.slug }}-{{ group.key }}">
-        {% for option in group.options %}
-<button
-            type="button"
-            class="product-variant-option product-variant-button{% if option.active %} is-active product-variant-option--active{% endif %}"
-            {% if not option.available %}hidden{% endif %}
-            data-variant-option
-            data-selector-key="{{ group.key }}"
-            data-option-value="{{ option.value }}"
-            aria-label="{{ group.label }}: {{ option.label }}"
-            aria-pressed="{% if option.active %}true{% else %}false{% endif %}"
->{{ option.label }}</button>
-        {% endfor %}
-</div>
-</div>
-    {% endif %}
-    {% endfor %}
-</div>
-{% with data_id="variant-data-"|add:product.slug %}{{ product.variant_json_data|json_script:data_id }}{% endwith %}
+{% include "partials/product_variant_selector.html" %}
 {% endif %}
 </div>
 {% elif product.variants %}

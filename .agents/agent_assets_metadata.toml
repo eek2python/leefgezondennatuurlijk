@@ -49,3 +49,17 @@ uri = "file://static/images/products/vershoudbakjes/igluu-meal-prep-3delig-vierk
 type = "image"
 title = "Processed: Igluu 3-delig vierkant (800×800 WebP)"
 logical_id = "e488a7a1-9705-4b0b-a3e4-64287f1ae970"
+
+[[outputs]]
+id = "goniRWYuBOIuqVgBeQveL"
+uri = "file://generated-artifacts/mobile-ux/rapport.html"
+type = "html"
+title = "Mobiele gebruikerservaring — voor en na"
+description = "Voor/na-schermafbeeldingen, 104 responsive controles, interactietests en expliciete testbeperkingen."
+logical_id = "700706f4-69de-46cc-8fe4-7723f4662339"
+content_hash = "sha256:65a35a98adad5c7a4332e0ba22001ed182d38c8f26526ebd0ac4c883d63f796e"
+size = 1343975
+mtime_ms = 1793339273273
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:4edb9d22-631e-4db5-a4cb-7648e6b34c12/700706f4-69de-46cc-8fe4-7723f4662339/4107ff2f-9464-4dc9-bb0d-8215ac6b6ff8"
+storage_version_token = "1793339305694898"
+content_type = "text/html"

@@ -4,7 +4,7 @@
 <head>
    <title>{% block title %}Leef Natuurlijk & Gezond{% endblock %}</title>
    <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
    {% block meta %}<meta name="description" content="Bezoek onze website voor ondersteuning bij het maken van weloverwogen en gezondere keuzes van niet-giftige, milieuvriendelijke producten voor elke hoek van je huis.">{% endblock %}
    {% if article_ld %}<script type="application/ld+json">{{ article_ld|safe }}</script>{% endif %}
    {% if blog_breadcrumb_ld %}<script type="application/ld+json">{{ blog_breadcrumb_ld|safe }}</script>{% endif %}
@@ -54,8 +54,8 @@
                   <li><a href="{% url 'homepage' %}">Homepage</a></li>
                   <li><a href="{% url 'snijplanken' %}">Snijplanken</a></li>
                   <li>
-                     <span class="opener">Koekenpannen</span>
-                     <ul>
+                     <button type="button" class="opener" aria-expanded="false" aria-controls="menu-pannen">Koekenpannen</button>
+                     <ul id="menu-pannen" inert>
                         <li><a href="{% url 'koekenpannen' %}">Keramisch</a></li>
                         <li><a href="{% url 'rvs_koekenpannen' %}">RVS</a></li>
                          <li><a href="{% url 'koolstofstalen_koekenpannen' %}">Koolstofstaal</a></li>
@@ -110,6 +110,7 @@
    <script src="{% static_v 'assets/js/breakpoints.min.js' %}"></script>
    <script src="{% static_v 'assets/js/util.js' %}"></script>
    <script src="{% static_v 'assets/js/main.js' %}"></script>
+    <script src="{% static_v 'assets/js/mobile-accessibility.js' %}" defer></script>
    <script src="{% static_v 'assets/js/variants.js' %}" defer></script>
    <script src="{% static_v 'assets/js/variant-selector.js' %}" defer></script>
 

@@ -1,0 +1,2 @@
+# Optional local browser checks only; not needed by the Django application.
+playwright==1.64.1

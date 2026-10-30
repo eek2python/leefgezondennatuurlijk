@@ -115,6 +115,7 @@ CONTENT = {
             "onderdelen op de verpakking."
         ),
     },
+
     "why_choose": {
         "title": "Waarom kiezen voor een complete PFAS-vrije pannenset?",
         "intro": (
@@ -172,6 +173,7 @@ CONTENT = {
             "overige pannen en de mogelijkheid onderdelen te vervangen."
         ),
     },
+
     "products_section": {
         "h2": "Onze selectie PFAS-vrije complete pannensets",
         "comparison_title": "Vergelijkingstabel complete PFAS-vrije pannensets",
@@ -288,6 +290,7 @@ CONTENT = {
             "een logischere aanschaf zijn dan een nieuwe complete set."
         ),
     },
+
     "conclusies": {
         "default": {
             "title": "Conclusie – welke complete PFAS-vrije pannenset past het best?",
@@ -325,6 +328,156 @@ CONTENT = {
         },
     },
 
+    "faq": {
+        "title": "Veelgestelde vragen over complete PFAS-vrije pannensets",
+        "items": [
+            {
+                "q": "Wat is een complete pannenset?",
+                "a": (
+                    "In dit overzicht bedoelen we een set met minimaal "
+                    "één kookpan en één koekenpan. Vaak bevat de set "
+                    "ook een steelpan, hapjespan, wok of soeppan. "
+                    "Daardoor kun je zowel koken als bakken."
+                ),
+            },
+            {
+                "q": "Wat is het verschil tussen een kookpannenset en een complete pannenset?",
+                "a": (
+                    "Een kookpannenset bestaat hoofdzakelijk uit kookpannen "
+                    "en steelpannen. Een complete pannenset bevat daarnaast "
+                    "minimaal een koekenpan, zodat je ook kunt bakken."
+                ),
+            },
+            {
+                "q": "Wat betekent PFAS-vrij bij een complete pannenset?",
+                "a": (
+                    "Het betekent voor onze selectie dat de kookoppervlakken "
+                    "geen PFAS-houdende antiaanbakcoating hebben. Ongecoat "
+                    "RVS heeft geen aangebrachte antiaanbaklaag; bij keramische "
+                    "pannen beoordelen we de opgegeven PFAS-vrije samenstelling. "
+                    "Dit is geen uitspraak over de volledige productieketen."
+                ),
+            },
+            {
+                "q": "Is 'PFOA-vrij' hetzelfde als 'PFAS-vrij'?",
+                "a": (
+                    "Nee. PFOA is slechts één stof uit de brede PFAS-groep. "
+                    "Een antiaanbaklaag die als PFOA-vrij wordt omschreven, "
+                    "kan nog andere PFAS bevatten. Alleen die vermelding "
+                    "is daarom onvoldoende voor onze selectie."
+                ),
+            },
+            {
+                "q": "Zijn keramische antiaanbaklagen altijd PFAS-vrij?",
+                "a": (
+                    "Nee, de term 'keramisch' is op zichzelf onvoldoende "
+                    "bewijs voor de volledige samenstelling van een coating. "
+                    "We kijken naar de productspecificaties en de "
+                    "PFAS-vrije verklaring van de fabrikant."
+                ),
+            },
+            {
+                "q": "Is een PFAS-vrije keramische pan hetzelfde als een pan van massief keramiek?",
+                "a": (
+                    "Nee. De meeste keramische koekenpannen hebben een "
+                    "metalen basis, vaak aluminium, met daarop een "
+                    "keramisch ogende sol-gel-antiaanbaklaag. Het is dus "
+                    "geen massief keramische pan."
+                ),
+            },
+            {
+                "q": "Is ongecoat RVS duurzamer dan een keramische antiaanbaklaag?",
+                "a": (
+                    "Een kwalitatieve ongecoate RVS-pan heeft geen "
+                    "antiaanbaklaag die haar werking kan verliezen. "
+                    "Bij keramische koekenpannen kunnen de antiaanbakeigenschappen "
+                    "na verloop van tijd afnemen, zelfs als de pan "
+                    "constructief nog in goede staat is."
+                ),
+            },
+            {
+                "q": "Hoe lang gaat een keramische antiaanbaklaag mee?",
+                "a": (
+                    "Dat verschilt sterk per coating, gebruik en onderhoud. "
+                    "Een vaste levensduur is niet betrouwbaar te geven. "
+                    "Antiaanbakprestaties kunnen na maanden of jaren "
+                    "verminderen, zonder dat de coating zichtbaar "
+                    "beschadigd hoeft te zijn."
+                ),
+            },
+            {
+                "q": "Kan een keramische pan nog veilig worden gebruikt als hij aanbakt?",
+                "a": (
+                    "Verminderde antiaanbakwerking betekent niet automatisch "
+                    "dat de pan onveilig is. Controleer wel of de coating "
+                    "zichtbaar beschadigd is en volg de instructies van "
+                    "de fabrikant. Bij afbladdering of diepe schade "
+                    "is vervanging verstandig."
+                ),
+            },
+            {
+                "q": "Kun je versleten koekenpannen uit een pannenset los vervangen?",
+                "a": (
+                    "Bij veel merken wel. Zo worden de keramische "
+                    "BEKA-koekenpannen uit de Sola-sets en koekenpannen "
+                    "uit diverse andere series afzonderlijk verkocht. "
+                    "De exacte uitvoering en toekomstige voorraad "
+                    "moeten wel worden gecontroleerd."
+                ),
+            },
+            {
+                "q": "Moet een complete pannenset volledig keramisch gecoat zijn?",
+                "a": (
+                    "Nee. Voor koken in water is een antiaanbaklaag "
+                    "meestal niet nodig. Een combinatie van ongecoate "
+                    "RVS-kookpannen en een PFAS-vrije keramische "
+                    "koekenpan kan daarom heel praktisch zijn."
+                ),
+            },
+            {
+                "q": "Is volledig ongecoat RVS geschikt om eieren en vis te bakken?",
+                "a": (
+                    "Dat kan, maar temperatuurregeling en de juiste "
+                    "hoeveelheid vet zijn belangrijk. Zeker bij kwetsbare "
+                    "ingrediënten vraagt ongecoat RVS meer baktechniek "
+                    "dan een goed functionerende antiaanbaklaag."
+                ),
+            },
+            {
+                "q": "Wat is een 3-ply pannenset?",
+                "a": (
+                    "Bij een volledige 3-ply-constructie bestaat de pan "
+                    "uit drie verbonden metaallagen, meestal RVS met "
+                    "een aluminium kern. De lagen lopen door in de wanden "
+                    "en niet alleen over de bodem."
+                ),
+            },
+            {
+                "q": "Is 3-ply beter dan een sandwichbodem?",
+                "a": (
+                    "Niet voor iedere bereiding. Een doorlopende "
+                    "meerlagenconstructie kan warmte ook via de zijwanden "
+                    "geleiden. Voor gewone kookbereidingen in water "
+                    "is een degelijke sandwichbodem vaak voldoende."
+                ),
+            },
+            {
+                "q": "Wat is het voordeel van een koperen pannenset?",
+                "a": (
+                    "Koper geleidt warmte goed en kan bij een geschikte "
+                    "meerlaagse constructie helpen om snel op veranderingen "
+                    "in het kookvermogen te reageren. Een koperen "
+                    "buitenzijde vraagt wel meer onderhoud om mooi te blijven."
+                ),
+            },
+            {
+                "q": "Hoeveel functionele pannen heb je nodig?",
+                "a": (
+                    "Voor veel huishoudens is een combinatie van twee "
+                    "of drie kook- en steelpannen en één of twee "
+                    "koekenpannen een bruikbare basis. Een extra wok "
+                    "of hapjespan is vooral zinvol wanneer je die "
+                    "regelmatig gebruikt."
                 ),
             },
             {
