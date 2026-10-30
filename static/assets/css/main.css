@@ -5544,6 +5544,9 @@ a:hover {
         padding-top: calc(0.45em + 0.705em);
         padding-bottom: 0.45em;
 }
+#menu #menu-pannen > li:not(.menu-group-heading) > a:not(.pan-overview-link) {
+        text-transform: none;
+}
 #menu #menu-pannen .pan-overview-link::after {
         content: "\2192";
         margin-left: 0.55em;

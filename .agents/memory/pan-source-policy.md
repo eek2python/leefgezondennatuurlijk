@@ -38,3 +38,12 @@ verspringend beeld en vroeg beide menu’s vast te pinnen.
 **How to apply:** herstel de desktopstand vóór de eerste weergave, niet pas
 na het laden. Houd de mobiele overlay apart: navigatie sluit die zodat de
 nieuwe pagina zichtbaar is, zonder de desktopkeuze te overschrijven.
+
+De acht sublinks onder Koekenpannen en Pannensets gebruiken gewone
+schrijfwijze, niet uitsluitend hoofdletters. Sectiekoppen behouden hun
+bestaande stijl; RVS blijft een hoofdletterafkorting.
+
+**Why:** de gebruiker vindt gewone schrijfwijze mooier voor deze sublinks.
+
+**How to apply:** behoud dit onderscheid bij verdere menuaanpassingen,
+zonder de hoofdletterstijl van andere navigatie-items mee te wijzigen.
