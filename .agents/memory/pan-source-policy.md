@@ -17,3 +17,13 @@ geen prijzen, affiliatebestemmingen, product-slugs of rankings om de
 navigatie aan te passen. Menustructuur hoeft niet overeen te komen met de
 fysieke URL-structuur. Behoud bestaande werkende routes en maak geen
 materiaal-set-SEO-pagina’s alleen omdat zulke filters bestaan.
+
+Koekenpannen, hapjespannen, wokpannen en pannensets staan op gelijk niveau
+onder Pannen; hapjespannen en wokpannen vallen niet onder koekenpannen.
+
+**Why:** de gebruiker heeft expliciet gevraagd deze vier groepen op gelijk
+niveau te zetten, omdat hapjespannen en wokpannen onder koekenpannen leken
+te vallen.
+
+**How to apply:** geef deze vier groepen dezelfde visuele rang in het menu
+en behoud die hiërarchie in overzichtspagina’s en kruimelpaden.

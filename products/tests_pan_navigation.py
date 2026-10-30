@@ -89,6 +89,24 @@ class PanNavigationTests(TestCase):
         for href in re.findall(r'href="([^"]+)"', menu):
             self.assertEqual(self.client.get(unescape(href)).status_code, 200)
 
+    def test_pan_types_are_peer_menu_headings(self):
+        response = self.client.get(reverse("pannen"))
+        menu = re.search(
+            r'<ul id="menu-pannen" inert>(.*?)</ul>',
+            response.content.decode(), re.S,
+        ).group(1)
+        headings = re.findall(
+            r'<li class="menu-group-heading[^"]*">(.*?)</li>', menu, re.S,
+        )
+        labels = [re.sub(r"<[^>]+>", "", heading).strip() for heading in headings]
+        self.assertEqual(labels, [
+            "Koekenpannen", "Hapjespannen", "Wokpannen", "Pannensets",
+        ])
+        for name in ("hapjespannen", "wokpannen"):
+            crumbs = self.client.get(reverse(name)).context["breadcrumbs"]
+            self.assertEqual([crumb["label"] for crumb in crumbs],
+                             ["Pannen", name.capitalize()])
+
     def test_breadcrumbs_match_json_ld(self):
         for name, path in {**NEW_ROUTES, **OLD_ROUTES}.items():
             if name == "blogs_overview":
