@@ -5390,7 +5390,8 @@ a:hover {
         }
 
         .table-wrapper > table.product-table {
-                min-width: 720px;
+                min-width: 960px;
+                width: 960px;
         }
 
         .table-wrapper table th,
@@ -5406,9 +5407,9 @@ a:hover {
                 position: sticky;
                 left: 0;
                 z-index: 2;
-                min-width: 110px;
-                width: 144px;
-                max-width: 160px;
+                min-width: 180px;
+                width: 180px;
+                max-width: 220px;
                 background-color: #f5f8f8;
                 box-shadow: 2px 0 0 #d7e0e2;
         }
@@ -5420,6 +5421,38 @@ a:hover {
 
         .table-wrapper table.product-table tbody tr:nth-child(2n + 1) td:first-child {
                 background-color: #edf3f4;
+        }
+
+        /* Do not inherit the page's anywhere wrapping into comparison cells:
+           it lets narrow action columns split words into single letters. */
+        .table-wrapper table.product-table th,
+        .table-wrapper table.product-table td {
+                overflow-wrap: normal;
+                word-break: normal;
+        }
+
+        .table-wrapper table.product-table th:last-child,
+        .table-wrapper table.product-table td:last-child {
+                min-width: 220px;
+                width: 220px;
+        }
+
+        .table-wrapper table.product-table .button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+                width: 100%;
+                min-width: 180px;
+                min-height: 44px;
+                height: auto;
+                padding: 0.65rem 0.75rem;
+                line-height: 1.4;
+                letter-spacing: normal;
+                text-transform: none;
+                white-space: normal;
+                overflow-wrap: normal;
+                word-break: normal;
         }
 
         /* Fixed format chips sit below the 56px mobile menu control. */
@@ -5467,6 +5500,16 @@ a:hover {
 }
 
 /* Native menu buttons retain the existing navigation appearance. */
+/* A pinned product column consumes too much of a narrow phone viewport.
+   Let all columns scroll so the full rating and action remain reachable. */
+@media screen and (max-width: 480px) {
+        .table-wrapper table.product-table th:first-child,
+        .table-wrapper table.product-table td:first-child {
+                position: static;
+                box-shadow: none;
+        }
+}
+
 #menu button.opener {
         display: block;
         position: relative;

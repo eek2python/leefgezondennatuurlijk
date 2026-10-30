@@ -12,3 +12,16 @@ op andere apparaten.
 **How to apply:** geef mobiele leesbaarheid en bediening prioriteit bij UX-keuzes,
 maar controleer responsive wijzigingen ook op tablet en desktop. Neem geen
 specifieke bezoekerspercentages aan zonder meetgegevens.
+
+Bij vergelijkingstabellen gaat leesbaarheid van volledige kolommen boven
+het vastzetten van de productnaam op smalle telefoons. Gebruik horizontaal
+schuiven in plaats van kolommen en actieknoppen steeds smaller te drukken.
+
+**Why:** de gebruiker liet een telefoonscreenshot zien waarop de vastgezette
+productkolom andere informatie bedekte en knopteksten letter voor letter
+werden afgebroken. Een vastgezette kolom is niet bruikbaar als daardoor de
+actie niet volledig in beeld past.
+
+**How to apply:** houd woorden en knoppen leesbaar, beperk scrollen tot de
+tabel en controleer bij smalle viewports ook het volledig zichtbare uiteinde
+van de tabel, niet alleen de beginstand.
