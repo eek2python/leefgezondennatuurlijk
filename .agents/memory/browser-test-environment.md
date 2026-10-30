@@ -17,3 +17,13 @@ productievereisten en Nix-pakketlijst voor uitsluitend lokale browsertests.
 voordat je de browseromgeving opnieuw inricht. Zoek actuele Nix-paden in
 plaats van een oude store-hash over te nemen. Browseremulatie bewijst geen
 compatibiliteit met fysieke iOS-/Android-apparaten.
+
+Laat de initiële menu-initialisatie en de zijpaneeltransitie uitlopen voordat
+een browsertest toetsen naar een submenu stuurt. Alleen aanwezigheid van de
+gegenereerde menuknop bewijst nog niet dat de focus stabiel is.
+
+**Why:** te vroege toetsenbordinteractie gaf wisselende testfouten terwijl
+dezelfde bediening na initialisatie wel werkte.
+
+**How to apply:** synchroniseer menu-interactietests met de geïnitialiseerde
+bediening en wacht op de paneeltransitie voordat de focus wordt verplaatst.

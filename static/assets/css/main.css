@@ -5526,6 +5526,35 @@ a:hover {
 #menu ul .menu-group-heading-link {
         margin-top: 0.8em;
 }
+/* Pannen only: move row padding onto the anchors, including section links.
+   Keep the existing single-column sidebar on desktop and mobile. */
+#menu #menu-pannen > li {
+        padding-top: 0;
+}
+#menu #menu-pannen > li > a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 44px;
+        padding-top: calc(0.625em + 0.15625em);
+        padding-bottom: 0.625em;
+}
+#menu #menu-pannen > .menu-group-heading > a {
+        min-height: 52px;
+        padding-top: calc(0.45em + 0.705em);
+        padding-bottom: 0.45em;
+}
+#menu #menu-pannen .pan-overview-link::after {
+        content: "\2192";
+        margin-left: 0.55em;
+}
+/* Reduce only the set-item spacing by 20%; never shrink touch targets. */
+#menu #menu-pannen > .pan-set-item {
+        margin-top: 0.1em;
+}
+#menu #menu-pannen > .pan-set-item > a {
+        padding-top: calc(0.625em + 0.125em);
+}
 .pan-hub-grid .category-card {
         padding: 0.75em;
         border: 1px solid #d2d7d9;

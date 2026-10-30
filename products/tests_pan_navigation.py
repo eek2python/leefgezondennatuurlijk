@@ -85,7 +85,8 @@ class PanNavigationTests(TestCase):
         for name in (*NEW_ROUTES, *OLD_ROUTES):
             if name == "blogs_overview":
                 continue
-            self.assertEqual(menu.count(f'href="{reverse(name)}"'), 1, name)
+            expected = 2 if name == "koekenpannen" else 1
+            self.assertEqual(menu.count(f'href="{reverse(name)}"'), expected, name)
         for href in re.findall(r'href="([^"]+)"', menu):
             self.assertEqual(self.client.get(unescape(href)).status_code, 200)
 
@@ -102,6 +103,18 @@ class PanNavigationTests(TestCase):
         self.assertEqual(labels, [
             "Koekenpannen", "Hapjespannen", "Wokpannen", "Pannensets",
         ])
+        for heading, name in zip(headings, (
+                "koekenpannen", "hapjespannen", "wokpannen", "pannensets")):
+            self.assertIn(f'<a href="{reverse(name)}">', heading)
+            self.assertNotIn("opener", heading)
+        self.assertEqual(menu.count('class="pan-set-item"'), 4)
+        self.assertIn('class="pan-overview-link" href="/pannen/"', menu)
+        all_labels = [
+            re.sub(r"<[^>]+>", "", text).strip()
+            for text in re.findall(r"<a\b[^>]*>(.*?)</a>", menu, re.S)
+        ]
+        self.assertEqual(len(all_labels), 13)
+        self.assertEqual(len(all_labels), len(set(all_labels)))
         for name in ("hapjespannen", "wokpannen"):
             crumbs = self.client.get(reverse(name)).context["breadcrumbs"]
             self.assertEqual([crumb["label"] for crumb in crumbs],
