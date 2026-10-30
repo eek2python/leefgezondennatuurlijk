@@ -2429,5 +2429,173 @@
     "category": "bak-braadsets",
     "product_key": "sola-stonehenge-koekenpan-wok-28cm",
     "enabled": true
+  },
+  {
+    "source": "bak-braadsets/blackwell-cast-iron-bak-braadset-3-delig.webp",
+    "slug": "blackwell-cast-iron-bak-braadset-3-delig",
+    "category": "bak-braadsets",
+    "product_key": "blackwell-cast-iron-bak-braadset-3-delig",
+    "enabled": true
+  },
+  {
+    "source": "bak-braadsets/greenpan-apex-hybride-bak-braadset-5-delig.webp",
+    "slug": "greenpan-apex-hybride-bak-braadset-5-delig",
+    "category": "bak-braadsets",
+    "product_key": "greenpan-apex-hybride-bak-braadset-5-delig",
+    "enabled": true
+  },
+  {
+    "source": "bak-braadsets/primecook-anna-bak-braadset-24-28cm.jpg",
+    "slug": "primecook-anna-bak-braadset-24-28cm",
+    "category": "bak-braadsets",
+    "product_key": "primecook-anna-bak-braadset-24-28cm",
+    "enabled": true
+  },
+  {
+    "source": "bak-braadsets/be-living-delight-bak-braadset-5-delig.jpg",
+    "slug": "be-living-delight-bak-braadset-5-delig",
+    "category": "bak-braadsets",
+    "product_key": "be-living-delight-bak-braadset-5-delig",
+    "enabled": true
+  },
+  {
+    "source": "kookpannensets/bk-q-linair-classic-set-5-delig.jpg",
+    "slug": "bk-q-linair-classic-set-5-delig",
+    "category": "kookpannensets",
+    "product_key": "bk-q-linair-classic-set-5-delig",
+    "enabled": true
+  },
+  {
+    "source": "kookpannensets/zwilling-passion-set-5-delig.jpg",
+    "slug": "zwilling-passion-set-5-delig",
+    "category": "kookpannensets",
+    "product_key": "zwilling-passion-set-5-delig",
+    "enabled": true
+  },
+  {
+    "source": "kookpannensets/sola-mirage-set-4-delig.jpg",
+    "slug": "sola-mirage-set-4-delig",
+    "category": "kookpannensets",
+    "product_key": "sola-mirage-set-4-delig",
+    "enabled": true
+  },
+  {
+    "source": "kookpannensets/demeyere-diverto-3-set-5-delig.jpg",
+    "slug": "demeyere-diverto-3-set-5-delig",
+    "category": "kookpannensets",
+    "product_key": "demeyere-diverto-3-set-5-delig",
+    "enabled": true
+  },
+  {
+    "source": "kookpannensets/wmf-function-4-set-5-delig.webp",
+    "slug": "wmf-function-4-set-5-delig",
+    "category": "kookpannensets",
+    "product_key": "wmf-function-4-set-5-delig",
+    "enabled": true
+  },
+  {
+    "source": "kookpannensets/bk-conical-plus-set-5-delig.webp",
+    "slug": "bk-conical-plus-set-5-delig",
+    "category": "kookpannensets",
+    "product_key": "bk-conical-plus-set-5-delig",
+    "enabled": true
+  },
+  {
+    "source": "kookpannensets/fissler-phi-collection-set-5-delig.jpg",
+    "slug": "fissler-phi-collection-set-5-delig",
+    "category": "kookpannensets",
+    "product_key": "fissler-phi-collection-set-5-delig",
+    "enabled": true
+  },
+  {
+    "source": "kookpannensets/sola-juvia-set-4-delig.jpg",
+    "slug": "sola-juvia-set-4-delig",
+    "category": "kookpannensets",
+    "product_key": "sola-juvia-set-4-delig",
+    "enabled": true
+  },
+  {
+    "source": "kookpannensets/ikea-365-plus-set-3-delig.jpg",
+    "slug": "ikea-365-plus-set-3-delig",
+    "category": "kookpannensets",
+    "product_key": "ikea-365-plus-set-3-delig",
+    "enabled": true
+  },
+  {
+    "source": "complete-pannensets/sola-ruby-beka-pannenset-7-delig.webp",
+    "slug": "sola-ruby-beka-pannenset-7-delig",
+    "category": "complete-pannensets",
+    "product_key": "sola-ruby-beka-pannenset-7-delig",
+    "enabled": true
+  },
+  {
+    "source": "complete-pannensets/sola-pearl-beka-pannenset-6-delig.webp",
+    "slug": "sola-pearl-beka-pannenset-6-delig",
+    "category": "complete-pannensets",
+    "product_key": "sola-pearl-beka-pannenset-6-delig",
+    "enabled": true
+  },
+  {
+    "source": "complete-pannensets/cuisio-deco-plus-pannenset-8-delig.jpg",
+    "slug": "cuisio-deco-plus-pannenset-8-delig",
+    "category": "complete-pannensets",
+    "product_key": "cuisio-deco-plus-pannenset-8-delig",
+    "enabled": true
+  },
+  {
+    "source": "complete-pannensets/ikea-hemkomst-pannenset-4-delig.jpg",
+    "slug": "ikea-hemkomst-pannenset-4-delig",
+    "category": "complete-pannensets",
+    "product_key": "ikea-hemkomst-pannenset-4-delig",
+    "enabled": true
+  },
+  {
+    "source": "complete-pannensets/cook-pan-signature-pannenset-7-delig.webp",
+    "slug": "cook-pan-signature-pannenset-7-delig",
+    "category": "complete-pannensets",
+    "product_key": "cook-pan-signature-pannenset-7-delig",
+    "enabled": true
+  },
+  {
+    "source": "complete-pannensets/cook-pan-go-ivory-pannenset-7-delig.webp",
+    "slug": "cook-pan-go-ivory-pannenset-7-delig",
+    "category": "complete-pannensets",
+    "product_key": "cook-pan-go-ivory-pannenset-7-delig",
+    "enabled": true
+  },
+  {
+    "source": "complete-pannensets/cook-pan-taupe-of-mind-pannenset-7-delig.webp",
+    "slug": "cook-pan-taupe-of-mind-pannenset-7-delig",
+    "category": "complete-pannensets",
+    "product_key": "cook-pan-taupe-of-mind-pannenset-7-delig",
+    "enabled": true
+  },
+  {
+    "source": "complete-pannensets/cook-pan-go-green-pannenset-7-delig.webp",
+    "slug": "cook-pan-go-green-pannenset-7-delig",
+    "category": "complete-pannensets",
+    "product_key": "cook-pan-go-green-pannenset-7-delig",
+    "enabled": true
+  },
+  {
+    "source": "complete-pannensets/bk-twist-superior-ceramic-pannenset-8-delig.webp",
+    "slug": "bk-twist-superior-ceramic-pannenset-8-delig",
+    "category": "complete-pannensets",
+    "product_key": "bk-twist-superior-ceramic-pannenset-8-delig",
+    "enabled": true
+  },
+  {
+    "source": "complete-pannensets/kitchenaid-multi-ply-rvs-pannenset-4-delig.webp",
+    "slug": "kitchenaid-multi-ply-rvs-pannenset-4-delig",
+    "category": "complete-pannensets",
+    "product_key": "kitchenaid-multi-ply-rvs-pannenset-4-delig",
+    "enabled": true
+  },
+  {
+    "source": "complete-pannensets/ducq-koperen-pannenset-7-delig.webp",
+    "slug": "ducq-koperen-pannenset-7-delig",
+    "category": "complete-pannensets",
+    "product_key": "ducq-koperen-pannenset-7-delig",
+    "enabled": true
   }
 ]
