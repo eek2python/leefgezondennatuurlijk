@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}{{ meta.title }}{% endblock %}
+{% block meta %}{% include "partials/category_metadata.html" %}{% endblock %}
+
+{% block content %}
+{% include "partials/breadcrumbs.html" %}
+{% include "partials/affiliate_disclosure.html" %}
+<section id="banner">
+    <div class="content">
+        <header class="main"><h1>{{ hero_h1 }}</h1></header>
+        {% for paragraph in content.hero.paragraphs %}<p>{{ paragraph|safe }}</p>{% endfor %}
+        <p><a href="{% url 'pannensets' %}">Alle soorten pannensets</a> · <a href="{% url 'pannen' %}">Keuzehulp pannen</a></p>
+    </div>
+</section>
+
+{% if materials %}
+<nav class="pan-material-selector" aria-label="Materiaal koekenpannensets">
+    <p><strong>Kies een materiaal</strong></p>
+    <div class="format-selector">
+        <a href="{% url 'koekenpannensets' %}" class="format-pill{% if selected_material == 'alle' %} is-active{% endif %}"{% if selected_material == 'alle' %} aria-current="true"{% endif %}>Alle materialen</a>
+        {% for key, material in materials.items %}
+        <a href="{% url 'koekenpannensets' %}?materiaal={{ key }}" class="format-pill{% if selected_material == key %} is-active{% endif %}"{% if selected_material == key %} aria-current="true"{% endif %}>{{ material.label }}</a>
+        {% endfor %}
+    </div>
+</nav>
+{% endif %}
+
+{% include "partials/how_we_select.html" %}
+{% if content.why_choose %}
+<section>
+    <header class="major"><h2>{{ content.why_choose.title }}</h2></header>
+    {% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
+    <ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+    {% if content.why_choose.outro %}<p>{{ content.why_choose.outro|safe }}</p>{% endif %}
+</section>
+{% endif %}
+
+<h2 id="productlijst">{{ products_h2 }}</h2>
+<p>{{ product_count }} sets in dit overzicht.</p>
+{% if materials %}
+    {% for group in groups %}
+    <section class="pan-material-group">
+        <header class="major"><h2>{{ group.label }}</h2></header>
+        <p>Ook losse pannen vergelijken? <a href="{% url group.url_name %}">Bekijk alle {{ group.label|lower }} koekenpannen en de bestaande formaatkeuzes</a>.</p>
+        <p>Badges gelden binnen de oorspronkelijke materiaal- en formaatgroep.</p>
+        <div class="products-container">
+            {% for product in group.products %}{% include "partials/product_block.html" %}{% empty %}<p>Voor dit materiaal zijn nog geen sets opgenomen.</p>{% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+{% else %}
+<div class="products-container">
+    {% for product in products %}{% include "partials/product_block.html" %}{% endfor %}
+</div>
+{% endif %}
+
+{% include "partials/pan_set_comparison.html" %}
+
+{% if conclusie %}
+<section>
+    <header class="major"><h2>{{ conclusie.title }}</h2></header>
+    <p>{{ conclusie.text|safe }}</p>
+</section>
+{% endif %}
+{% if content.tips %}
+<section>
+    <header class="major"><h2>{{ content.tips.title }}</h2></header>
+    {% if content.tips.intro %}<p>{{ content.tips.intro|safe }}</p>{% endif %}
+    <ul>{% for bullet in content.tips.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+    {% if content.tips.outro %}<p>{{ content.tips.outro|safe }}</p>{% endif %}
+</section>
+{% endif %}
+{% include "partials/faq_section.html" %}
+{% include "partials/handige_artikelen.html" %}
+{% include "partials/author_byline.html" %}
+{% endblock %}

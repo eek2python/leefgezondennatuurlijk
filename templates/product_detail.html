@@ -11,13 +11,13 @@
 <meta property="og:title" content="{{ product.name }}">
 <meta property="og:description" content="{{ product.description }}">
 <meta property="og:url" content="{{ SITE_URL }}/product/{{ product.slug }}/">
-<meta property="og:image" content="{{ SITE_URL }}{% static product.image_path|add:'/' %}{{ product.image }}">
+{% if not product.image_unavailable %}<meta property="og:image" content="{{ SITE_URL }}{% static product.image_path|add:'/' %}{{ product.image }}">{% endif %}
 <meta property="og:locale" content="nl_NL">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ product.name }}">
 <meta name="twitter:description" content="{{ product.description }}">
-<meta name="twitter:image" content="{{ SITE_URL }}{% static product.image_path|add:'/' %}{{ product.image }}">
+{% if not product.image_unavailable %}<meta name="twitter:image" content="{{ SITE_URL }}{% static product.image_path|add:'/' %}{{ product.image }}">{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -31,7 +31,9 @@
     </header>
 
     <div class="product-detail-layout"{% if product.shape_variants|length > 1 %} data-shape-card data-shape-page data-product-slug="{{ product.slug }}" data-product-name="{{ product.name }}"{% endif %}>
-        {% if product.shape_variants %}
+        {% if product.image_unavailable %}
+        <p class="product-photo-notice">Productfoto nog niet beschikbaar.</p>
+        {% elif product.shape_variants %}
         <img
             src="{{ product.default_variant.image_url }}"
             alt="{{ product.default_variant.alt_text }}"
@@ -54,6 +56,10 @@
     </div>
 
     <p>{{ product.description }}</p>
+    {% if product.set_contents %}
+    <h3>Samenstelling van de set</h3>
+    <ul>{% for part in product.set_contents %}<li>{{ part }}</li>{% endfor %}</ul>
+    {% endif %}
 
     {% if product.formatted_capacity %}
     <p>

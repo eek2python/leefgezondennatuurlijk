@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="nl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Opleverrapport Pannen — Leef Natuurlijk &amp; Gezond</title>
+<style>
+  body{max-width:1050px;margin:2rem auto;padding:0 1.2rem 3rem;color:#25373b;background:#fff;font:16px/1.65 system-ui,sans-serif}
+  h1,h2,h3{line-height:1.3;color:#173c43}h2{margin-top:2.4rem;border-bottom:2px solid #b2e3e8;padding-bottom:.4rem}
+  a{color:#075e6b}code,pre{background:#f1f5f5;font-size:.9em;overflow-wrap:anywhere}
+  code{padding:.15em .3em}pre{padding:1rem;white-space:pre-wrap}
+  table{width:100%;border-collapse:collapse;margin:1rem 0}th,td{text-align:left;vertical-align:top;border:1px solid #d2d7d9;padding:.6rem;overflow-wrap:anywhere}
+  .note{padding:1rem;border-left:4px solid #b48222;background:#fff9eb}
+  .ok{padding:1rem;border-left:4px solid #137262;background:#edf8f5}
+  @media(max-width:650px){table,tbody,tr,th,td{display:block}thead{display:none}td+td{border-top:0}tr{margin-bottom:1rem}}
+</style>
+<h1>Pannen: navigatie en informatiearchitectuur</h1>
+<p>Leef Natuurlijk &amp; Gezond · Opleverrapport · 30 oktober 2026</p>
+<p class="ok">Geïmplementeerd en gecontroleerd in de ontwikkelomgeving. Bestaande categorie-URL’s, product-slugs, productdata, prijzen, affiliatebestemmingen en rankings zijn behouden. Geen redirects, migraties of publicatie uitgevoerd.</p>
+
+<h2>Voorafgaande audit</h2>
+<ul>
+  <li><strong>Routing:</strong> alle categorie- en productroutes staan op projectniveau in <code>LeefNatuurlijkenGezond/urls.py</code>. <code>products/urls.py</code> is bewust leeg en niet opgenomen. Er waren geen routes voor Pannen, Pannensets of de drie nieuwe setcategorieën.</li>
+  <li><strong>Bestaande routes:</strong> <code>/koekenpannen/</code> (keramisch), <code>/rvs-koekenpannen/</code>, <code>/koolstofstalen-koekenpannen/</code>, <code>/gietijzeren-koekenpannen/</code>, <code>/hapjespannen/</code>, <code>/wokpannen/</code>, <code>/blogs/</code> en <code>/blogs/&lt;slug&gt;/</code>. Alle behouden.</li>
+  <li><strong>Menu:</strong> één gedeeld zijmenu in <code>templates/base.html</code>, zowel op desktop als in het mobiele paneel. Geen aparte desktop- of mobiele menubron. Bestaande JavaScriptbediening in <code>static/assets/js/main.js</code> ondersteunt native knoppen, aria-expanded, inert, focusbeheer en Escape. Daarom geen tweede menusysteem toegevoegd.</li>
+  <li><strong>Contextprocessors:</strong> alleen Django-standaardcontext, analytics en de centrale site-origin. Geen bestaande navigatieprocessor om uit te breiden; geen nieuwe nodig.</li>
+  <li><strong>Productstructuur:</strong> catalogi in Python, rankings met verwijzingen naar catalogussleutels en aparte contentbestanden. Bestaande verrijking en centrale linkresolver worden hergebruikt. De drie aangeleverde setcategorieën waren nog niet aangesloten op de product-detailindex.</li>
+  <li><strong>Setherkenning:</strong> keramisch, RVS en koolstofstaal gebruiken het expliciete <code>set_type</code>. Gietijzer heeft al een aparte rankinggroep <code>Pannensets</code>. Alleen meerdere diameters of het woord ‘set’ in een naam zijn geen betrouwbare generieke selectievoorwaarde.</li>
+  <li><strong>Templates:</strong> bestaande categorietemplates bevatten vaak materiaalspecifieke SEO en formaatkeuzes. Eén gedeelde nieuwe settemplate gebruikt daarom de bestaande productkaart, FAQ, beoordelingsmethode, disclosure, byline en linkcomponenten; geen drie gekopieerde categorietemplates.</li>
+  <li><strong>SEO:</strong> bestaande zichtbare breadcrumb-partial en JSON-LD-builder, centrale non-www-origin en handmatig geregistreerde categorieën in de sitemap. Nieuwe contentbestanden noemen al de slugs <code>/bak-braadsets/</code>, <code>/kookpannensets/</code> en <code>/complete-pannensets/</code>; daarop aangesloten in plaats van cosmetisch een andere hiërarchie op te leggen.</li>
+  <li><strong>Vooraf bestaande beperkingen:</strong> 25 nieuwe setrecords verwijzen naar nog ontbrekende productfoto’s. De oorspronkelijke Django-suite gaf 472 geslaagde tests van 473, met één Ninja Crispi-prijsafwijking.</li>
+</ul>
+
+<h2>1. Nieuwe navigatie</h2>
+<pre>PANNEN
+├── Alle pannen
+├── KOEKENPANNEN
+│   ├── Keramisch
+│   ├── RVS
+│   ├── Koolstofstaal
+│   └── Gietijzer
+├── Hapjespannen
+├── Wokpannen
+└── PANNENSETS
+    ├── Koekenpannensets
+    ├── Bak- &amp; braadsets
+    ├── Kookpannensets
+    └── Complete pannensets</pre>
+<p>Het hoofditem Pannen klapt één paneel uit. Koekenpannen en Pannensets zijn duidelijke subkoppen; Pannensets linkt tevens naar zijn hub. Geen extra geneste accordions of hovermenu’s. Het bestaande desktopzijmenu blijft behouden. Het langere menu is binnen de bestaande scrollbare zijbalk bereikbaar en blijft binnen het scherm. De voormalige losse hoofditems voor Koekenpannen, Hapjespannen en Wokpannen zijn vervangen.</p>
+<p>Alle interne menulinks gebruiken Django named URLs. De opener behoudt aria-expanded, aria-controls, native Enter-/Spatiebediening en inert voor de gesloten lijst. De bestaande mobiele focusbegrenzing en Escape-terugkeer blijven werken. Submenulinks hebben minimaal 44 px hoogte.</p>
+
+<h2>2. Nieuwe routes en named URLs</h2>
+<table>
+  <thead><tr><th>Pagina</th><th>Django-pad</th><th>Naam</th></tr></thead>
+  <tbody>
+    <tr><td>Pannen</td><td><code>pannen/</code></td><td><code>pannen</code></td></tr>
+    <tr><td>Pannensets</td><td><code>pannensets/</code></td><td><code>pannensets</code></td></tr>
+    <tr><td>Koekenpannensets</td><td><code>pannensets/koekenpannensets/</code></td><td><code>koekenpannensets</code></td></tr>
+    <tr><td>Bak- &amp; braadsets</td><td><code>bak-braadsets/</code></td><td><code>bak_en_braad_sets</code></td></tr>
+    <tr><td>Kookpannensets</td><td><code>kookpannensets/</code></td><td><code>kookpannensets</code></td></tr>
+    <tr><td>Complete pannensets</td><td><code>complete-pannensets/</code></td><td><code>complete_pannensets</code></td></tr>
+  </tbody>
+</table>
+<p>De eerste twee hubs en de koekenpannensetcollectie hebben eigen views. De overige drie routes delen één configuratiegestuurde categorieview. Geen oude route of product-slug gewijzigd.</p>
+
+<h2>3. Koekenpannensets: één bron</h2>
+<ol>
+  <li>De collectie leest de vier bestaande materiaalcatalogi en hun rankings via referenties; er is geen nieuw productbestand voor koekenpannensets.</li>
+  <li>Een record wordt geselecteerd als <code>set_type</code> hoofdletterongevoelig gelijk is aan <code>koekenpannenset</code>, of als zijn bestaande sleutel in de gietijzeren groep <code>Pannensets</code> staat.</li>
+  <li>De volgorde binnen de bestaande rankinggroepen blijft behouden. Een sleutel verschijnt maar één keer in de collectie. Expliciet getypeerde maar nog niet gerankte sets kunnen vanuit de bron worden toegevoegd, zonder een parallel onderhouden lijst.</li>
+  <li>Per request wordt uitsluitend voor weergave een diepe kopie gemaakt. Dezelfde verrijking, prijsniveaus, commerciële onderhoudsoverrides en centrale linkresolver als op de materiaalpagina worden toegepast.</li>
+  <li>De gebruiker kan server-side kiezen tussen alle materialen, keramisch, RVS, koolstofstaal en gietijzer. Hiervoor is geen JavaScript nodig. Alle filterstanden hebben de ongefilterde collectie als canonical.</li>
+</ol>
+<p><strong>Huidig totaal: 44 sets — 18 keramisch, 13 RVS, 8 koolstofstaal en 5 gietijzer.</strong> Deze sets blijven tevens via de bestaande materiaal- en formaatkeuzes zichtbaar. Geen nieuwe algemene winnaar gekozen: badges blijven afkomstig uit de oorspronkelijke materiaal-/formaatgroepen, wat bij de collectie wordt uitgelegd.</p>
+<p>De overige nieuwe categorieën tonen hun bestaande rankinglijsten: 7 bak- &amp; braadsets, 9 kookpannensets en 8 complete pannensets. Eén aangeleverd bak- &amp; braadsetrecord staat niet in zijn bestaande ranking; dat blijft ongerankt en is wel als detailpagina beschikbaar. Geen ranking inhoudelijk veranderd.</p>
+
+<h2>4. Nieuwe bestanden</h2>
+<table>
+  <tbody>
+    <tr><td><code>products/pan_catalogue.py</code></td><td>Referenties naar broncatalogi, setselectie, categorieconfiguratie en gedeelde pan-breadcrumbhiërarchie.</td></tr>
+    <tr><td><code>products/pan_views.py</code></td><td>Twee hubs, centrale koekenpannensetcollectie en één gedeelde view voor de drie setcategorieën.</td></tr>
+    <tr><td><code>templates/pan_hub.html</code></td><td>Eén gedeelde hubtemplate met passende inhoud voor Pannen en Pannensets.</td></tr>
+    <tr><td><code>templates/pan_set_list.html</code></td><td>Eén gedeelde product-/contenttemplate voor de collectie en de drie setcategorieën.</td></tr>
+    <tr><td><code>templates/partials/category_metadata.html</code></td><td>Gedeelde metadata en structured-data-output van de nieuwe pagina’s.</td></tr>
+    <tr><td><code>templates/partials/pan_set_comparison.html</code></td><td>Gedeelde vergelijkingstabel met bestaande centrale linkcomponent.</td></tr>
+    <tr><td><code>products/tests_pan_navigation.py</code></td><td>14 regressietests voor routing, SEO, breadcrumbs, menu, datahergebruik, filtering en bronintegriteit.</td></tr>
+    <tr><td><code>scripts/check_pan_navigation.py</code></td><td>Herhaalbare browsercontrole van responsive pagina’s, menu, materiaalfilters en vergroting.</td></tr>
+    <tr><td><code>reports/pannen-navigatie.html</code></td><td>Dit zelfstandig leesbare opleverrapport.</td></tr>
+  </tbody>
+</table>
+<p>Daarnaast zijn twee interne projectnotities toegevoegd: <code>.agents/memory/pan-source-policy.md</code> legt het door de gebruiker gevraagde één-bronprincipe vast; <code>.agents/memory/browser-test-environment.md</code> beschrijft de lokale Nix-testbeperking. Geen nieuwe productdataset, afbeeldingen of runtimeafhankelijkheden toegevoegd.</p>
+
+<h2>5. Gewijzigde bestanden</h2>
+<table>
+  <tbody>
+    <tr><td><code>LeefNatuurlijkenGezond/urls.py</code></td><td>Zes nieuwe named routes naast alle bestaande routes.</td></tr>
+    <tr><td><code>LeefNatuurlijkenGezond/sitemap_views.py</code></td><td>Zes nieuwe indexeerbare overzichtspagina’s toegevoegd; bestaande vermeldingen behouden.</td></tr>
+    <tr><td><code>products/views.py</code></td><td>De drie nieuwe broncatalogi aangesloten op de bestaande categorie-/detailindex; hiërarchische pan-breadcrumbs; uitsluitend bij de nieuwe setcategorieën ontbrekende foto’s expliciet herkennen.</td></tr>
+    <tr><td><code>templates/base.html</code></td><td>Één hoofditem Pannen met directe sublinks; oude losse panhoofditems verwijderd.</td></tr>
+    <tr><td><code>static/assets/css/main.css</code></td><td>Gerichte menugroepopmaak, beter leesbaar submenucontrast, aanraakhoogte, hubkaarten, materiaalkeuze en afbrekende actierij bij vergroting. Bestaand ontwerp behouden.</td></tr>
+    <tr><td><code>templates/partials/product_block.html</code></td><td>Bestaande productkaart hergebruiken; setinhoud tonen waar aanwezig; ontbrekende foto melden in plaats van een kapotte afbeelding.</td></tr>
+    <tr><td><code>templates/product_detail.html</code></td><td>Setinhoud tonen; ontbrekende foto melden en dan geen kapotte sociale afbeeldings-URL uitsturen.</td></tr>
+    <tr><td><code>LeefNatuurlijkenGezond/tests_mobile_accessibility.py</code></td><td>De bestaande test voor de menuknop verwacht nu het gevraagde label Pannen in plaats van Koekenpannen.</td></tr>
+    <tr><td><code>.agents/memory/MEMORY.md</code></td><td>Verwijzingen naar bovengenoemde interne projectnotities.</td></tr>
+  </tbody>
+</table>
+<p>Alle product-, content- en rankingbronbestanden zijn ongewijzigd. Ook de contextprocessors, bestaande JavaScriptbediening, blogstructuur, database, deploymentconfiguratie en productievereisten zijn ongewijzigd gebleven.</p>
+
+<h2>6. Landingspagina Pannen</h2>
+<p>De gevraagde H1, een materiaal-/PFAS-intro zonder overdreven gezondheidsclaims, vier materiaalkaarten bij Koekenpannen, uitleg en links naar Hapjespannen en Wokpannen, vier settypen met definities, een compacte keuzehulp en relevante bestaande blogs. Elke materiaal- en setcategorie is direct bereikbaar. De gebruikelijke redactionele byline is opgenomen.</p>
+<p>De bloglinks verwijzen naar bestaande artikelen over keramisch versus RVS, koolstofstaal versus gietijzer, panmaten en keramische coating. Hun aanwezigheid en HTTP 200 zijn getest.</p>
+
+<h2>7. Landingspagina Pannensets</h2>
+<p>Uitleg over echte pannen versus meegetelde deksels/accessoires, vier duidelijke categoriekaarten, materiaal- en kookplaataandachtspunten en teruglinks naar Pannen en de keuzehulp. Deze hub toont bewust niet alle producten van alle typen tegelijk. De afzonderlijke setcategorieën delen productkaarten, vergelijking, bestaande redactionele inhoud, conclusie en FAQ.</p>
+
+<h2>8. SEO</h2>
+<ul>
+  <li>Alle nieuwe canonicals gebruiken uitsluitend <code>https://leefnatuurlijkengezond.nl/</code>, zonder www of request-host. Precies één canonical per pagina.</li>
+  <li>Unieke titels en descriptions, OpenGraph en Twittermetadata; de nieuwe pagina’s hebben passende CollectionPage-markup. Productoverzichten gebruiken ItemList, geen verzonnen Product-aanbiedingen of klantreviews.</li>
+  <li>Zichtbare breadcrumbs en BreadcrumbList worden uit dezelfde lijst opgebouwd. Bijvoorbeeld Home → Pannen → Koekenpannen → RVS en Home → Pannen → Pannensets → Kookpannensets. Nieuwe productdetails volgen hun echte categorie.</li>
+  <li>Nieuwe overzichtspagina’s en de aangesloten productdetails staan in de bestaande sitemap. Bestaande categorieën blijven staan; geen dubbele sitemaplocaties.</li>
+  <li>Geen vier extra materiaal-set-SEO-pagina’s toegevoegd. Materiaalfilters op de collectie canonicaliseren naar het centrale overzicht. Bestaande categoriecontent en bestaande canonicals behouden.</li>
+</ul>
+
+<h2>9. Testresultaten</h2>
+<ul>
+  <li><code>python manage.py check</code>: geen problemen.</li>
+  <li><code>python manage.py test --noinput</code>: <strong>486 van 487 geslaagd</strong>. De 14 nieuwe tests slagen. De enige resterende fout is exact de vooraf bestaande Ninja Crispi-afwijking in <code>products.tests.VariantAuditCommandTests.test_airfryer_variant_data_has_no_known_swatch_warnings</code>: €109 op productniveau versus €135 voor de standaardkleur Marineblauw. Niet aangepast buiten de gevraagde scope.</li>
+  <li>Nieuwe en bestaande categorieroutes, blogs en alle 25 nieuw aangesloten set-productdetails: HTTP 200; geen templatefouten of NoReverseMatch. Niet-bestaande product-slugs blijven HTTP 404 geven.</li>
+  <li>Nieuwe browsercontrole: <strong>48 paginacontroles</strong> en <strong>8 menucontroles</strong> geslaagd op 320, 360, 390, 430, 768, 1024, 1440 en 1920 px. Geen horizontale pagina-overloop, unieke canonical en één H1 per nieuwe pagina.</li>
+  <li>Menu: Enter/Spatie, open/dicht-status, inert, focusbegrenzing op mobiel, Escape-terugkeer, bereikbaarheid van alle sublinks en echte navigatie naar de Pannensets-hub gecontroleerd. Geen extra accordionniveau.</li>
+  <li>Alle vier materiaalfilters, actieve filterstatus, aantallen en vaste canonical gecontroleerd. Productkaart → originele detailpagina, breadcrumbs en expliciete ontbrekende-fotomelding gecontroleerd.</li>
+  <li>Liggende weergave en 200% body-tekstvergroting gecontroleerd zonder horizontale overloop. De actierij op de hub kan daarvoor omlopen.</li>
+  <li>Geen JavaScript-page-errors in de nieuwe browsercontrole. Source-non-mutatie, prijsniveaus, badges en resolved links van materiaalsets versus centrale collectie zijn geautomatiseerd vergeleken.</li>
+  <li>De bestaande brede mobiele browserregressiecontrole is eveneens volledig geslaagd: <strong>104 paginacontroles en 11 interactiegroepen</strong>, zonder page-errors. Dit omvat onder meer diameter- en airfryerformaatkeuze, 9 kleurselecties met exacte bestemmingen, 23 vershoudkeuzes, 3 detailvarianten, horizontale tabelbediening, springlinks, mobiele aanraking en een geïsoleerde ontbrekende-linkfixture. Productkaarten, varianten en affiliategedrag zijn daarmee aanvullend gecontroleerd.</li>
+</ul>
+<p>Ruwe browseruitkomsten en schermafbeeldingen staan lokaal in <code>generated-artifacts/pannen/</code>; gegenereerde bestanden worden niet in Git of de publicatie opgenomen. Browserhulpmiddelen blijven optioneel in <code>requirements-browser.txt</code>. Voor de Nix-greenlet-runtime kan bij het uitvoeren een aanwezige GCC-libdirectory in het lokale LD_LIBRARY_PATH nodig zijn.</p>
+<p><strong>Beperking:</strong> Chromium met schermemulatie is geen fysieke iPhone-/Androidtest en geen volledige schermlezeraudit. Er worden geen verbeteringen in conversie, rankings of laadsnelheid geclaimd.</p>
+
+<h2>10. Eventuele handmatige acties</h2>
+<p class="note">De echte foto’s voor de 25 aangeleverde setrecords ontbreken nog. Er zijn bewust geen onjuiste vervangende productfoto’s of verzonnen assets gebruikt. Overzichten en details tonen zolang nodig “Productfoto nog niet beschikbaar.” Zodra de juiste bestanden via de bestaande afbeeldingsvoorziening zijn toegevoegd, kunnen ze zonder een tweede productdataset worden getoond.</p>
+<p>Voor navigatie, routes en pagina’s zijn geen handmatige code- of databaseacties nodig. Er is niets gepubliceerd en niets aan productie aangepast. Werkelijke telefoon- en schermlezertests zijn niet als uitgevoerd gepresenteerd.</p>
+</html>

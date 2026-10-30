@@ -11,3 +11,5 @@
 - [Structured data voor lijsten](comparison-structured-data.md) — categorieën claimen bewust geen Product-rich-results; nooit aanbiedingen of klantreviews verzinnen voor validatie.
 - [Leesvolgorde vergelijkingen](comparison-reading-order.md) — eerst het redactionele keuzeadvies, daarna verdieping over gebruik en onderhoud; geen SEO-belofte.
 - [Mobiele doelgroep](mobile-audience.md) — merendeel bezoekt via telefoon; mobiele verbeteringen mogen tablet en desktop niet verslechteren.
+- [Pannen: één bron](pan-source-policy.md) — sets op meerdere overzichten, nooit dubbel onderhouden; navigatie mag bestaande URL’s niet cosmetisch wijzigen.
+- [Browsertests in Nix](browser-test-environment.md) — optionele testpakketten uit productie houden; greenlet kan de aanwezige GCC-runtime nodig hebben.

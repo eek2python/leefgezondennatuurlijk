@@ -14,7 +14,7 @@ class MobileMarkupTests(TestCase):
         self.assertContains(
             response,
             '<button type="button" class="opener" aria-expanded="false" '
-            'aria-controls="menu-pannen">Koekenpannen</button>',
+            'aria-controls="menu-pannen">Pannen</button>',
         )
         self.assertContains(response, '<ul id="menu-pannen" inert>')
 

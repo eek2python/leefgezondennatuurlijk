@@ -8,6 +8,12 @@ from .site_urls import absolute_site_url
 
 
 STATIC_URLS = [
+    {"name": "pannen", "loc_name": "pannen", "changefreq": "monthly", "priority": "0.9"},
+    {"name": "pannensets", "loc_name": "pannensets", "changefreq": "monthly", "priority": "0.9"},
+    {"name": "koekenpannensets", "loc_name": "koekenpannensets", "changefreq": "monthly", "priority": "0.8"},
+    {"name": "bak_en_braad_sets", "loc_name": "bak_en_braad_sets", "changefreq": "monthly", "priority": "0.8"},
+    {"name": "kookpannensets", "loc_name": "kookpannensets", "changefreq": "monthly", "priority": "0.8"},
+    {"name": "complete_pannensets", "loc_name": "complete_pannensets", "changefreq": "monthly", "priority": "0.8"},
     {"name": "homepage",           "loc_name": "homepage",          "changefreq": "weekly",  "priority": "1.0"},
     {"name": "koekenpannen",       "loc_name": "koekenpannen",      "changefreq": "monthly", "priority": "0.9"},
     {"name": "rvs_koekenpannen",   "loc_name": "rvs_koekenpannen",  "changefreq": "monthly", "priority": "0.9"},

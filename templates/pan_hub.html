@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}{{ meta.title }}{% endblock %}
+{% block meta %}{% include "partials/category_metadata.html" %}{% endblock %}
+
+{% block content %}
+{% include "partials/breadcrumbs.html" %}
+
+{% if hub_kind == "pannen" %}
+<section id="banner">
+    <div class="content">
+        <header class="main"><h1>Pannen zonder onnodige PFAS: soorten, materialen en sets</h1></header>
+        <p>Welke pan past bij de manier waarop jij kookt? Leef Natuurlijk &amp; Gezond vergelijkt pannen op materiaal, constructie, gebruiksgemak en duurzaamheid. Waar relevant kijken we naar de aanwezigheid of afwezigheid van PFAS-houdende antiaanbaklagen.</p>
+        <p>Een ongecoate pan en een keramisch gecoate pan vragen om een andere kooktechniek en ander onderhoud. Geen enkel materiaal is voor iedereen de beste keuze: begin bij wat je wilt bereiden en welke pannen je al hebt.</p>
+        <ul class="actions pan-hub-actions">
+            <li><a href="#keuzehulp" class="button">Welke pan past bij jou?</a></li>
+            <li><a href="{% url 'pannensets' %}" class="button">Bekijk pannensets</a></li>
+        </ul>
+    </div>
+</section>
+<section id="koekenpannen">
+    <header class="major"><h2>Koekenpannen</h2></header>
+    <p>Voor bakken en aanbraden is een koekenpan met een lage rand praktisch. Het materiaal bepaalt onder meer hoe de pan opwarmt, hoe je aanbakken voorkomt en welk onderhoud nodig is.</p>
+    <div class="category-grid pan-hub-grid">
+        <a class="category-card" href="{% url 'koekenpannen' %}">
+            <span>Keramische koekenpannen</span>
+            <small>Een keramische antiaanbaklaag voor gebruiksgemak. Gebruik gematigde hitte en behandel de coating zorgvuldig.</small>
+        </a>
+        <a class="category-card" href="{% url 'rvs_koekenpannen' %}">
+            <span>RVS koekenpannen</span>
+            <small>Duurzaam roestvrij staal zonder antiaanbakcoating. Goed voor aanbraden; temperatuurbeheersing helpt om aanbakken te beperken.</small>
+        </a>
+        <a class="category-card" href="{% url 'koolstofstalen_koekenpannen' %}">
+            <span>Koolstofstalen koekenpannen</span>
+            <small>Geschikt voor hoge temperaturen en meestal lichter dan vergelijkbaar gietijzer. Inbranden en onderhoud bouwen een natuurlijke patina op.</small>
+        </a>
+        <a class="category-card" href="{% url 'gietijzeren_koekenpannen' %}">
+            <span>Gietijzeren koekenpannen</span>
+            <small>Robuust, met veel warmtebehoud en relatief veel gewicht. Houd bij onderhoud rekening met ongecoat of geëmailleerd gietijzer.</small>
+        </a>
+    </div>
+</section>
+<section id="hapjespannen">
+    <header class="major"><h2>Hapjespannen</h2></header>
+    <p>Een hapjespan heeft een hogere rand dan een koekenpan en vaak een deksel. Handig voor eenpansgerechten, sauzen en bereidingen die je eerst aanbakt en daarna laat garen.</p>
+    <a href="{% url 'hapjespannen' %}" class="button">Vergelijk hapjespannen</a>
+</section>
+<section id="wokpannen">
+    <header class="major"><h2>Wokpannen</h2></header>
+    <p>De hoge, schuin oplopende wand van een wokpan geeft ruimte om ingrediënten te omscheppen. Voor roerbakken zijn een passende bodem, een krachtige warmtebron en kleine porties belangrijk. Stem de temperatuur af op het materiaal en een eventuele coating.</p>
+    <a href="{% url 'wokpannen' %}" class="button">Vergelijk wokpannen</a>
+</section>
+{% else %}
+<section id="banner">
+    <div class="content">
+        <header class="main"><h1>Pannensets: welke samenstelling past bij jou?</h1></header>
+        <p>Een pannenset kan bestaan uit meerdere maten van dezelfde pan, maar ook uit heel verschillende pannentypen. Hieronder vind je vier soorten sets, elk met een eigen doel.</p>
+        <p>Kijk naar het werkelijke aantal pannen en de bruikbare maten, niet alleen naar het aantal delen op de verpakking. Deksels en accessoires kunnen daarin meetellen. Vul aan wat je mist: een grote set is niet automatisch voordeliger als je de helft niet gebruikt.</p>
+    </div>
+</section>
+{% endif %}
+
+<section id="pannensets">
+    <header class="major"><h2>{% if hub_kind == "pannen" %}Pannensets{% else %}Vier soorten pannensets{% endif %}</h2></header>
+    <p>Wil je meerdere pannen tegelijk aanschaffen? Kies eerst tussen meerdere koekenpanmaten, verschillende bakpannen of pannen voor koken en sauzen.</p>
+    <div class="category-grid pan-hub-grid">
+        {% for card in set_cards %}
+        <a href="{% url card.url_name %}" class="category-card">
+            <span>{{ card.label }}</span><small>{{ card.text }}</small>
+        </a>
+        {% endfor %}
+    </div>
+    {% if hub_kind == "pannen" %}<p><a href="{% url 'pannensets' %}">Meer uitleg over de verschillende pannensets</a></p>{% endif %}
+</section>
+
+{% if hub_kind == "pannen" %}
+<section id="keuzehulp">
+    <header class="major"><h2>Welke pan past bij jou?</h2></header>
+    <ul>
+        <li><strong>Makkelijk antiaanbakgedrag:</strong> bekijk <a href="{% url 'koekenpannen' %}">keramische koekenpannen</a>; de coating vraagt zorgvuldig gebruik.</li>
+        <li><strong>Geen antiaanbakcoating:</strong> kies bijvoorbeeld <a href="{% url 'rvs_koekenpannen' %}">RVS</a>.</li>
+        <li><strong>Hoge temperatuur en een relatief lichte ijzeren pan:</strong> bekijk <a href="{% url 'koolstofstalen_koekenpannen' %}">koolstofstaal</a>.</li>
+        <li><strong>Veel warmtebehoud:</strong> bekijk <a href="{% url 'gietijzeren_koekenpannen' %}">gietijzer</a>.</li>
+        <li><strong>Meerdere maten van hetzelfde type:</strong> kies een <a href="{% url 'koekenpannensets' %}">koekenpannenset</a>.</li>
+        <li><strong>Verschillende bakpannen:</strong> bekijk <a href="{% url 'bak_en_braad_sets' %}">bak- &amp; braadsets</a>.</li>
+        <li><strong>Koken in water en sauzen bereiden:</strong> bekijk <a href="{% url 'kookpannensets' %}">kookpannensets</a>.</li>
+        <li><strong>Een brede keukenuitrusting ineens:</strong> bekijk <a href="{% url 'complete_pannensets' %}">complete pannensets</a>, maar controleer of de inhoud bij jouw gebruik past.</li>
+    </ul>
+</section>
+{% else %}
+<section>
+    <header class="major"><h2>Let ook op het materiaal en je kookplaat</h2></header>
+    <p>Materiaal, coating en bodemconstructie kunnen per pan in een set verschillen. Controleer inductiegeschiktheid, toegestane oventemperatuur en onderhoud voor alle onderdelen afzonderlijk.</p>
+    <p><a href="{% url 'pannen' %}">Vergelijk de verschillende soorten pannen en materialen</a>, of bekijk de <a href="{% url 'pannen' %}#keuzehulp">compacte keuzehulp</a>.</p>
+</section>
+{% endif %}
+
+{% include "partials/handige_artikelen.html" %}
+{% include "partials/author_byline.html" %}
+{% endblock %}

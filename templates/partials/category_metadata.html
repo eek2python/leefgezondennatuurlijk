@@ -1,0 +1,15 @@
+<meta name="description" content="{{ meta.description }}">
+<link rel="canonical" href="{{ canonical_url }}">
+<meta property="og:title" content="{{ meta.og_title|default:meta.title }}">
+<meta property="og:description" content="{{ meta.og_description|default:meta.description }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="{{ social_image }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta.og_title|default:meta.title }}">
+<meta name="twitter:description" content="{{ meta.og_description|default:meta.description }}">
+<meta name="twitter:image" content="{{ social_image }}">
+{% if collection_ld %}<script type="application/ld+json">{{ collection_ld|safe }}</script>{% endif %}
+{% if itemlist_ld %}<script type="application/ld+json">{{ itemlist_ld|safe }}</script>{% endif %}
+{% if faq_ld %}<script type="application/ld+json">{{ faq_ld|safe }}</script>{% endif %}

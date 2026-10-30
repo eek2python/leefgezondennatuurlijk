@@ -1,0 +1,21 @@
+<section id="vergelijking">
+    <h2>{{ comparison_title }}</h2>
+    <div class="table-wrapper">
+        <table class="alt product-table">
+            <thead><tr><th>Product</th><th>Materiaal en eigenschappen</th><th>Prijsniveau</th><th>Onze beoordeling</th><th>Meer informatie</th></tr></thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td><a href="{% url 'product_detail' slug=product.slug %}"><strong>{{ product.name }}</strong></a>
+                        {% if product.award %}<br><span class="product-badge {{ product.award_class }}">{{ product.award }}</span>{% endif %}
+                    </td>
+                    <td>{{ product.material }}{% if product.features %} · {{ product.features|join:" · " }}{% endif %}</td>
+                    <td>{{ product.display_price_range|default:"—" }}</td>
+                    <td>{% if product.rating %}{{ product.rating_display }}/5{% else %}—{% endif %}</td>
+                    <td>{% include "includes/product_link.html" with resolved_link=product.resolved_link availability_label=product.availability_label link_product=product link_small=True %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>

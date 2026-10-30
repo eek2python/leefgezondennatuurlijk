@@ -20,6 +20,7 @@ from django.urls import path
 from django.contrib import admin
 from django.urls import path, include
 from products import views
+from products import pan_views
 from products import admin_views
 from audits import admin_views as audit_admin_views
 from .sitemap_views import sitemap_xml
@@ -35,6 +36,12 @@ urlpatterns = [
    path("admin/", admin.site.urls),
    path("", views.homepage, name="homepage"),
    path("snijplanken/", views.snijplanken, name="snijplanken"),
+   path("pannen/", pan_views.pannen, name="pannen"),
+   path("pannensets/", pan_views.pannensets, name="pannensets"),
+   path("pannensets/koekenpannensets/", pan_views.koekenpannensets, name="koekenpannensets"),
+   path("bak-braadsets/", pan_views.set_category, {"category": "bak-braadsets"}, name="bak_en_braad_sets"),
+   path("kookpannensets/", pan_views.set_category, {"category": "kookpannensets"}, name="kookpannensets"),
+   path("complete-pannensets/", pan_views.set_category, {"category": "complete-pannensets"}, name="complete_pannensets"),
    path("koekenpannen/", views.koekenpannen, name="koekenpannen"),
    path("hapjespannen/", views.hapjespannen, name="hapjespannen"),
    path("wokpannen/", views.wokpannen, name="wokpannen"),

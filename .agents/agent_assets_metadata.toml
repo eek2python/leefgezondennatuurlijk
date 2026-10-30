@@ -63,3 +63,17 @@ mtime_ms = 1793339273273
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:4edb9d22-631e-4db5-a4cb-7648e6b34c12/700706f4-69de-46cc-8fe4-7723f4662339/4107ff2f-9464-4dc9-bb0d-8215ac6b6ff8"
 storage_version_token = "1793339305694898"
 content_type = "text/html"
+
+[[outputs]]
+id = "voTiWyceASt-EHD8LU0oe"
+uri = "file://reports/pannen-navigatie.html"
+type = "html"
+title = "Opleverrapport Pannen"
+description = "Audit, definitieve navigatie en routes, één bron voor koekenpannensets, alle nieuwe en gewijzigde bestanden, SEO, testresultaten en resterende aandachtspunten."
+logical_id = "b6943443-f4c7-40cb-809c-73143b8ac5f9"
+content_hash = "sha256:6b6cd8b5a573c55aa2c8472a8103b2ffc87dfb3be2b42fc77e4deee7d39ce3b6"
+size = 17390
+mtime_ms = 1793365968178
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:4edb9d22-631e-4db5-a4cb-7648e6b34c12/b6943443-f4c7-40cb-809c-73143b8ac5f9/2a054499-c339-40ef-b6a5-5fba0261e800"
+storage_version_token = "1793365993365336"
+content_type = "text/html"

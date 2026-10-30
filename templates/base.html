@@ -54,16 +54,23 @@
                   <li><a href="{% url 'homepage' %}">Homepage</a></li>
                   <li><a href="{% url 'snijplanken' %}">Snijplanken</a></li>
                   <li>
-                     <button type="button" class="opener" aria-expanded="false" aria-controls="menu-pannen">Koekenpannen</button>
+                      <button type="button" class="opener" aria-expanded="false" aria-controls="menu-pannen">Pannen</button>
                      <ul id="menu-pannen" inert>
+                         <li><a href="{% url 'pannen' %}">Alle pannen</a></li>
+                         <li class="menu-group-heading"><h3>Koekenpannen</h3></li>
                         <li><a href="{% url 'koekenpannen' %}">Keramisch</a></li>
                         <li><a href="{% url 'rvs_koekenpannen' %}">RVS</a></li>
                          <li><a href="{% url 'koolstofstalen_koekenpannen' %}">Koolstofstaal</a></li>
                          <li><a href="{% url 'gietijzeren_koekenpannen' %}">Gietijzer</a></li>
+                         <li><a href="{% url 'hapjespannen' %}">Hapjespannen</a></li>
+                         <li><a href="{% url 'wokpannen' %}">Wokpannen</a></li>
+                         <li class="menu-group-heading menu-group-heading-link"><a href="{% url 'pannensets' %}">Pannensets</a></li>
+                         <li><a href="{% url 'koekenpannensets' %}">Koekenpannensets</a></li>
+                         <li><a href="{% url 'bak_en_braad_sets' %}">Bak- &amp; braadsets</a></li>
+                         <li><a href="{% url 'kookpannensets' %}">Kookpannensets</a></li>
+                         <li><a href="{% url 'complete_pannensets' %}">Complete pannensets</a></li>
                      </ul>
                   </li>
-                  <li><a href="{% url 'hapjespannen' %}">Hapjespannen</a></li>
-                  <li><a href="{% url 'wokpannen' %}">Wokpannen</a></li>
                   <li><a href="{% url 'airfryers' %}">Airfryers</a></li>
                   <li><a href="{% url 'vershoudcontainers' %}">Vershoudbakjes</a></li>
                   <li><a href="{% url 'blogs_overview' %}">Blogs</a></li>

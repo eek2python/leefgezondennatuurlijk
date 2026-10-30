@@ -3,6 +3,7 @@ from LeefNatuurlijkenGezond.site_urls import absolute_site_url
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
 from django.urls import reverse
+from django.contrib.staticfiles import finders
 from .models import Product, Click, AffiliateProductState
 import logging
 from utils.product_helpers import (
@@ -70,6 +71,7 @@ from .content_gietijzeren_koekenpannen import (
     CONTENT as GIETIJZEREN_KOEKENPANNEN_CONTENT,
 )
 from .slug_redirects import SLUG_REDIRECTS
+from .pan_catalogue import SET_CATEGORIES, pan_breadcrumbs
 
 
 CATEGORY_MAP = {
@@ -91,6 +93,11 @@ CATEGORY_MAP = {
     "airfryers": {"products": AIRFRYERS_PRODUCTS, "label": "Airfryers", "url_name": "airfryers"},
     "vershoudcontainers": {"products": VERSHOUDCONTAINERS_PRODUCTS, "label": "Vershoudbakjes", "url_name": "vershoudcontainers"},
 }
+
+CATEGORY_MAP.update({
+    key: {field: config[field] for field in ("products", "label", "url_name")}
+    for key, config in SET_CATEGORIES.items()
+})
 
 ALL_PRODUCTS_BY_SLUG = {}
 for cat_key, cat_info in CATEGORY_MAP.items():
@@ -269,6 +276,11 @@ def _enrich_products(products, category=None):
     )
 
     for p in products:
+        if category in SET_CATEGORIES:
+            # The supplied set catalogues reference photos not uploaded yet.
+            # Do not substitute an unrelated product photo or mutate PRODUCTS.
+            image = "/".join((p.get("image_path", ""), p.get("image", "")))
+            p["image_unavailable"] = not bool(finders.find(image))
         prepare_product_variants(p)
         _apply_combination_swatch_colors(p)
 
@@ -579,10 +591,7 @@ def koekenpannen(request):
         f"Top {product_count} PFAS-vrije koekenpannen van {selected_size_label}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
         products,
     )
-    breadcrumbs = [
-        {"label": "Koekenpannen", "url": "/koekenpannen/"},
-        {"label": "Keramisch", "url": None},
-    ]
+    breadcrumbs = pan_breadcrumbs("koekenpannen")
     return render(request, "koekenpannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
@@ -632,7 +641,7 @@ def hapjespannen(request):
         f"Top {product_count} PFAS-vrije hapjespannen van {size}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
         products,
     )
-    breadcrumbs = [{"label": "Hapjespannen", "url": "/hapjespannen/"}]
+    breadcrumbs = pan_breadcrumbs("hapjespannen")
     return render(request, "hapjespannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
@@ -682,7 +691,7 @@ def wokpannen(request):
         f"Top {product_count} PFAS-vrije wokpannen van {size}\u00a0cm \u2013 duurzaam, gezond en zonder schadelijke stoffen.",
         products,
     )
-    breadcrumbs = [{"label": "Wokpannen", "url": "/wokpannen/"}]
+    breadcrumbs = pan_breadcrumbs("wokpannen")
     return render(request, "wokpannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
@@ -1027,7 +1036,7 @@ def rvs_koekenpannen(request):
         content["meta"]["description"], products,
     )
     meta = content["meta"]
-    breadcrumbs = [{"label": "Koekenpannen", "url": "/koekenpannen/"}, {"label": "RVS", "url": "/rvs-koekenpannen/"}]
+    breadcrumbs = pan_breadcrumbs("rvs-koekenpannen")
     return render(request, "rvs-koekenpannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
@@ -1090,13 +1099,7 @@ def koolstofstalen_koekenpannen(request):
         content["meta"]["description"],
         products,
     )
-    breadcrumbs = [
-        {"label": "Koekenpannen", "url": "/koekenpannen/"},
-        {
-            "label": "Koolstofstaal",
-            "url": "/koolstofstalen-koekenpannen/",
-        },
-    ]
+    breadcrumbs = pan_breadcrumbs("koolstofstalen-koekenpannen")
     return render(request, "koolstofstaal-koekenpannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
@@ -1157,10 +1160,7 @@ def gietijzeren_koekenpannen(request):
         content["meta"]["description"],
         products,
     )
-    breadcrumbs = [
-        {"label": "Koekenpannen", "url": "/koekenpannen/"},
-        {"label": "Gietijzer", "url": "/gietijzeren-koekenpannen/"},
-    ]
+    breadcrumbs = pan_breadcrumbs("gietijzeren-koekenpannen")
     return render(request, "gietijzeren-koekenpannen.html", {
         "products": products,
         "top_picks": _build_top_picks(products),
@@ -1216,6 +1216,13 @@ def product_detail(request, slug):
             {"label": cat_info["label"], "url": category_url},
             {"label": product["name"], "url": None},
         ]
+        if cat_key in SET_CATEGORIES or cat_key in (
+            "koekenpannen", "rvs-koekenpannen", "koolstofstalen-koekenpannen",
+            "gietijzeren-koekenpannen", "hapjespannen", "wokpannen",
+        ):
+            breadcrumbs = pan_breadcrumbs(cat_key) + [
+                {"label": product["name"], "url": None},
+            ]
         return render(request, "product_detail.html", {
             "product": product,
             "category_label": cat_info["label"],
