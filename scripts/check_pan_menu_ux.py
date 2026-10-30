@@ -36,7 +36,8 @@ def run():
                 page.wait_for_timeout(550)
             opener = page.locator("#menu button.opener")
             opener.focus()
-            page.keyboard.press("Space")
+            if opener.get_attribute("aria-expanded") != "true":
+                page.keyboard.press("Space")
             page.wait_for_timeout(550)
             assert opener.get_attribute("aria-expanded") == "true"
             assert not page.locator("#menu-pannen").evaluate("e => e.inert")

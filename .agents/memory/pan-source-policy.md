@@ -27,3 +27,14 @@ te vallen.
 
 **How to apply:** geef deze vier groepen dezelfde visuele rang in het menu
 en behoud die hiërarchie in overzichtspagina’s en kruimelpaden.
+
+Op desktop blijven het zijmenu en het Pannen-submenu in de door de gebruiker
+gekozen open/dichte stand bij paginawisselingen, totdat de gebruiker die
+stand zelf wijzigt.
+
+**Why:** de gebruiker ervoer het terugzetten naar de beginstand als
+verspringend beeld en vroeg beide menu’s vast te pinnen.
+
+**How to apply:** herstel de desktopstand vóór de eerste weergave, niet pas
+na het laden. Houd de mobiele overlay apart: navigatie sluit die zodat de
+nieuwe pagina zichtbaar is, zonder de desktopkeuze te overschrijven.

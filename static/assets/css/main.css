@@ -5555,6 +5555,16 @@ a:hover {
 #menu #menu-pannen > .pan-set-item > a {
         padding-top: calc(0.625em + 0.125em);
 }
+/* Match saved desktop state before main.js runs; mobile stays an overlay. */
+@media screen and (min-width: 1281px) {
+        html[data-nav-sidebar="false"] #sidebar { margin-left: -26em; }
+        html[data-nav-sidebar="true"] #sidebar { margin-left: 0; }
+        html[data-nav-pannen="true"] #menu #menu-pannen { display: block; }
+        html[data-nav-pannen="false"] #menu #menu-pannen { display: none; }
+}
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+        html[data-nav-sidebar="false"] #sidebar { margin-left: -24em; }
+}
 .pan-hub-grid .category-card {
         padding: 0.75em;
         border: 1px solid #d2d7d9;

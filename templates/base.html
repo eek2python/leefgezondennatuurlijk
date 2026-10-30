@@ -8,6 +8,7 @@
    {% block meta %}<meta name="description" content="Bezoek onze website voor ondersteuning bij het maken van weloverwogen en gezondere keuzes van niet-giftige, milieuvriendelijke producten voor elke hoek van je huis.">{% endblock %}
    {% if article_ld %}<script type="application/ld+json">{{ article_ld|safe }}</script>{% endif %}
    {% if blog_breadcrumb_ld %}<script type="application/ld+json">{{ blog_breadcrumb_ld|safe }}</script>{% endif %}
+   <script src="{% static_v 'assets/js/navigation-state.js' %}"></script>
    <link rel="stylesheet" href="{% static_v 'assets/css/main.css' %}" />
    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">

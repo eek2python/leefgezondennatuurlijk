@@ -2401,5 +2401,33 @@
     "category": "airfryers",
     "product_key": "airfryer-seeger-clearfry-glass-4-5l",
     "enabled": true
+  },
+  {
+    "source": "bak-braadsets/bk-magma-bak-braadset-3-delig.webp",
+    "slug": "bk-magma-bak-braadset-3-delig",
+    "category": "bak-braadsets",
+    "product_key": "bk-magma-bak-braadset-3-delig",
+    "enabled": true
+  },
+  {
+    "source": "bak-braadsets/bk-brilliant-bak-braadset-3-6-delig.webp",
+    "slug": "bk-brilliant-bak-braadset-3-6-delig",
+    "category": "bak-braadsets",
+    "product_key": "bk-brilliant-bak-braadset-3-6-delig",
+    "enabled": true
+  },
+  {
+    "source": "bak-braadsets/sola-stonehenge-koekenpan-hapjespan-28cm.webp",
+    "slug": "sola-stonehenge-koekenpan-hapjespan-28cm",
+    "category": "bak-braadsets",
+    "product_key": "sola-stonehenge-koekenpan-hapjespan-28cm",
+    "enabled": true
+  },
+  {
+    "source": "bak-braadsets/sola-stonehenge-koekenpan-wok-28cm.jpg",
+    "slug": "sola-stonehenge-koekenpan-wok-28cm",
+    "category": "bak-braadsets",
+    "product_key": "sola-stonehenge-koekenpan-wok-28cm",
+    "enabled": true
   }
 ]

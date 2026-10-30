@@ -71,16 +71,26 @@
 
 	// Sidebar.
 		var $sidebar = $('#sidebar'),
-			$sidebar_inner = $sidebar.children('.inner');
+$sidebar_inner = $sidebar.children('.inner'),
+navigationState = window.navigationState;
+
+function restorePannen(desktop) {
+var open = desktop && navigationState && navigationState.get('pannen');
+$('#menu button[aria-controls="menu-pannen"]')
+.toggleClass('active', !!open).attr('aria-expanded', String(!!open))
+.next('ul').prop('inert', !open);
+}
 
 		// Inactive by default on <= large.
 			breakpoints.on('<=large', function() {
 				$sidebar.addClass('inactive');
+restorePannen(false);
 if ($toggle) syncSidebar();
 			});
 
 			breakpoints.on('>large', function() {
-				$sidebar.removeClass('inactive');
+$sidebar.toggleClass('inactive', !!navigationState && !navigationState.get('sidebar'));
+restorePannen(true);
 if ($toggle) syncSidebar();
 			});
 
@@ -119,6 +129,8 @@ if (restoreFocus) $toggle.trigger('focus');
 
 function setSidebar(open, moveFocus) {
 $sidebar.toggleClass('inactive', !open);
+if (breakpoints.active('>large') && navigationState)
+navigationState.set('sidebar', open);
 syncSidebar();
 if (moveFocus && open)
 $sidebar_inner.find('a, button').filter(':visible').first().trigger('focus');
@@ -294,6 +306,8 @@ setSidebar(false, false);
 $menu_openers.not($this).removeClass('active').attr('aria-expanded', 'false').next('ul').prop('inert', true);
 						$this.toggleClass('active');
 $this.attr('aria-expanded', String($this.hasClass('active'))).next('ul').prop('inert', !$this.hasClass('active'));
+if (breakpoints.active('>large') && navigationState && $this.attr('aria-controls') === 'menu-pannen')
+navigationState.set('pannen', $this.hasClass('active'));
 
 					// Trigger resize (sidebar lock).
 						$window.triggerHandler('resize.sidebar-lock');
