@@ -5125,7 +5125,13 @@ a:hover {
                 font-size: 14px;
                 color: #075e6b !important;
                 box-shadow: inset 0 0 0 2px #087586;
-                white-space: normal;
+                white-space: nowrap;
+                text-transform: none;
+                letter-spacing: normal;
+                padding-left: 0.65rem;
+                padding-right: 0.65rem;
+                max-width: 100%;
+                box-sizing: border-box;
         }
 
         input[type="submit"].small,
@@ -5433,8 +5439,8 @@ a:hover {
 
         .table-wrapper table.product-table th:last-child,
         .table-wrapper table.product-table td:last-child {
-                min-width: 220px;
-                width: 220px;
+                min-width: 280px;
+                width: 280px;
         }
 
         .table-wrapper table.product-table .button {
@@ -5443,14 +5449,14 @@ a:hover {
                 justify-content: center;
                 box-sizing: border-box;
                 width: 100%;
-                min-width: 180px;
+                min-width: 240px;
                 min-height: 44px;
                 height: auto;
                 padding: 0.65rem 0.75rem;
                 line-height: 1.4;
                 letter-spacing: normal;
                 text-transform: none;
-                white-space: normal;
+                white-space: nowrap;
                 overflow-wrap: normal;
                 word-break: normal;
         }

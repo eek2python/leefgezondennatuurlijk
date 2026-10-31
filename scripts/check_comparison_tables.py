@@ -79,6 +79,8 @@ def run():
         page.set_viewport_size({"width": 390, "height": 900})
         page.goto(BASE + PATHS[0])
         page.add_style_tag(content="html { font-size: 200% !important; }")
+        # Let responsive label fitting settle after the text-size change.
+        page.wait_for_timeout(250)
         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1")
         assert page.locator("table.product-table .button").evaluate_all(
             "ls => ls.every(e => e.scrollWidth <= e.clientWidth + 1)"

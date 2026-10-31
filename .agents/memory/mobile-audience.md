@@ -35,3 +35,13 @@ qua kleuren en licht gelijk te maken aan desktop.
 **How to apply:** gebruik dezelfde beeldbehandeling op beide schermtypen en
 controleer de leesbaarheid van de tekst zonder de hele mobiele foto extra
 te verduisteren.
+
+Knopteksten moeten op telefoons op één regel passen.
+
+**Why:** de gebruiker vroeg expliciet om éénregelige buttons nadat een
+prijslink op de telefoon over twee regels liep.
+
+**How to apply:** behoud leesbare tekst en voldoende aanraakhoogte. Verkort
+zo nodig alleen het zichtbare productactielabel, zonder de bestemming of
+betekenis te wijzigen; houd de volledige omschrijving toegankelijk en houd
+rekening met wisselende variantlabels en vergrote tekst.
