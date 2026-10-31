@@ -27,3 +27,13 @@ dezelfde bediening na initialisatie wel werkte.
 
 **How to apply:** synchroniseer menu-interactietests met de geïnitialiseerde
 bediening en wacht op de paneeltransitie voordat de focus wordt verplaatst.
+
+Een IntersectionObserver met drempel nul meldt niet noodzakelijk een sprong
+van volledig onder naar volledig boven het viewport: beide standen zijn
+niet-intersecterend.
+
+**Why:** snelle programmatische navigatie sloeg de zichtbaarheidsupdate van
+de vaste formaatbalk over, terwijl langzaam scrollen wel werkte.
+
+**How to apply:** test ook directe scrollsprongen en herstel na navigatie.
+Laat vaste bediening niet uitsluitend van een intersectieovergang afhangen.

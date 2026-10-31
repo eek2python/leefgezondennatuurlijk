@@ -45,3 +45,13 @@ prijslink op de telefoon over twee regels liep.
 zo nodig alleen het zichtbare productactielabel, zonder de bestemming of
 betekenis te wijzigen; houd de volledige omschrijving toegankelijk en houd
 rekening met wisselende variantlabels en vergrote tekst.
+
+De vastgezette formaatselectie op telefoons deelt de bovenste rij met de
+hamburgermenuknop, ook in liggende stand. Maak duidelijk wanneer er meer
+formaten buiten beeld beschikbaar zijn.
+
+**Why:** de gebruiker wil minder verloren schermhoogte in liggende stand
+en vroeg om een subtiele pijl voor verborgen formaatopties.
+
+**How to apply:** reserveer ruimte naast de menuknop, toon schuifpijlen
+alleen bij overlopende formaatopties en behoud vegen en toetsenbordbediening.

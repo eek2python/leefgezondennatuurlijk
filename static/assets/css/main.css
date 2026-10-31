@@ -5699,14 +5699,61 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         body.menu-open .format-sticky,
         body.menu-open .storage-filters-sticky { visibility: hidden; }
         #menu a { min-height: 44px; display: flex; align-items: center; }
-        .format-sticky, .storage-filters-sticky { top: 56px; }
-        [id] { scroll-margin-top: calc(56px + var(--sticky-filter-height) + 1rem); }
+        .storage-filters-sticky { top: 56px; }
+        .format-sticky { top: 0; }
+        .format-sticky-inner {
+                padding: 4px 8px 4px 60px;
+                gap: 4px;
+                min-height: 56px;
+                max-width: 100%;
+        }
+        .format-sticky-label { display: none; }
+        .format-sticky-chips {
+                flex: 1;
+                min-width: 0;
+                padding: 2px 0;
+                -webkit-mask-image: none;
+                mask-image: none;
+        }
+        .format-sticky .format-pill {
+                display: inline-flex;
+                flex-shrink: 0;
+                align-items: center;
+                min-height: 44px;
+                padding: 8px 12px;
+                line-height: 1.2;
+        }
+        [id] { scroll-margin-top: calc(max(56px, var(--sticky-filter-height)) + 1rem); }
+}
+.format-scroll-button { display: none; }
+@media screen and (max-width: 1280px) {
+        .format-sticky .format-scroll-button {
+                display: inline-flex;
+                flex: 0 0 32px;
+                align-items: center;
+                justify-content: center;
+                width: 32px;
+                min-width: 32px;
+                height: 44px;
+                min-height: 44px;
+                padding: 0;
+                border: 0;
+                border-radius: 6px;
+                background: #f5f8f8;
+                box-shadow: none;
+                color: #075e6b !important;
+                font: 26px/1 Arial, sans-serif;
+                letter-spacing: normal;
+        }
+        .format-sticky .format-scroll-button:disabled {
+                opacity: 0.25;
+                cursor: default;
+        }
 }
 @media screen and (max-width: 736px) {
         .format-pill { min-height: 44px; display: inline-flex; align-items: center; }
         .format-pill.is-active { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
         .product-variant-button.is-active { font-weight: 700; text-decoration: underline; }
-        .format-sticky-inner { padding-left: 8px; }
         .format-pill,
         .format-sticky .format-pill,
         .product-variant-button,
