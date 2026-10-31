@@ -32,49 +32,31 @@
 {% include "partials/breadcrumbs.html" %}
 {% include "partials/affiliate_disclosure.html" %}
 
-<section id="banner">
-    <div class="content">
-        <header class="main">
-            <h1>{{ content.hero.h1 }}</h1>
-        </header>
-        {% for paragraph in content.hero.paragraphs %}
-        <p>{{ paragraph|safe }}</p>
-        {% endfor %}
-    </div>
-</section>
+{% include "partials/category_intro.html" with hero_heading=content.hero.h1 paragraphs=content.hero.paragraphs %}
 
 {% include "partials/format_selector.html" %}
 {% include "partials/top_picks.html" %}
-
-<section>
-    <header class="major">
-        <h2>{{ content.why_choose.title }}</h2>
-    </header>
-    {% if content.why_choose.intro %}
-    <p>{{ content.why_choose.intro|safe }}</p>
-    {% endif %}
-    <ul>
-        {% for bullet in content.why_choose.bullets %}
-        <li>{{ bullet|safe }}</li>
-        {% endfor %}
-    </ul>
-    {% if content.why_choose.outro %}
-    <p>{{ content.why_choose.outro|safe }}</p>
-    {% endif %}
-</section>
-
-{% include "partials/how_we_select.html" %}
 
 <section id="producten" class="products">
     <header class="major">
         <h2 id="productlijst">{{ content.products_section.h2 }}</h2>
     </header>
-    <div class="products-container">
+    <div class="products-container category-product-list">
         {% for product in products %}
         {% include "partials/product_block.html" with product=product %}
         {% endfor %}
     </div>
 </section>
+
+<details class="category-help" open>
+    <summary><h2>{{ content.why_choose.title }}</h2></summary>
+    <div class="category-help__content">
+    {% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
+    <ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+    {% if content.why_choose.outro %}<p>{{ content.why_choose.outro|safe }}</p>{% endif %}
+    </div>
+</details>
+{% include "partials/how_we_select.html" %}
 
 <section id="vergelijking">
     <h2>{{ content.products_section.comparison_title }}</h2>

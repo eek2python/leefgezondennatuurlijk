@@ -1,0 +1,57 @@
+/* Progressive enhancement: without JS the original scrollable table remains. */
+.comparison-cards {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+    min-width: 0;
+}
+.comparison-card {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid #d8e2e4;
+    border-top: 3px solid #62d4e5;
+    border-radius: 6px;
+    background: #fff;
+    overflow-wrap: anywhere;
+}
+.comparison-card h3 {
+    margin: 0 0 0.65rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+.comparison-card h3 .product-badge { font-size: 0.75rem; }
+.comparison-card dl { margin: 0; }
+.comparison-card dt {
+    color: #3d4449;
+    font-weight: 600;
+    margin: 0.7rem 0 0.15rem;
+}
+.comparison-card dd {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+.comparison-card .comparison-card__actions { margin-top: 1rem; }
+.comparison-card .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    overflow-wrap: normal;
+}
+.comparison-card .editorial-rating {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+}
+@media (min-width: 737px) {
+    .comparison-cards { display: none; }
+}

@@ -75,17 +75,7 @@ Beste glazen vershoudbakjes en sets van 2026 | Leef Natuurlijk & Gezond
 
 
 <!-- Hero -->
-<section id="banner" class="storage-hero">
-    <div class="content">
-        <header class="main">
-            <h1>{{ content.hero.h1 }}</h1>
-        </header>
-
-        {% for paragraph in content.hero.paragraphs %}
-        <p>{{ paragraph|safe }}</p>
-        {% endfor %}
-    </div>
-</section>
+{% include "partials/category_intro.html" with hero_heading=content.hero.h1 paragraphs=content.hero.paragraphs hero_class="storage-hero" %}
 
 
 <!-- Filters -->
@@ -108,39 +98,15 @@ Beste glazen vershoudbakjes en sets van 2026 | Leef Natuurlijk & Gezond
 {% include "partials/top_picks.html" %}
 
 
-<!-- Waarom kiezen -->
-<section
-    class="storage-why-choose"
-    aria-labelledby="why-choose-title"
->
-    <header class="major">
-        <h2 id="why-choose-title">
-            {{ content.why_choose.title }}
-        </h2>
-    </header>
-
-    {% if content.why_choose.intro %}
-    <p>{{ content.why_choose.intro|safe }}</p>
-    {% endif %}
-
-    {% if content.why_choose.bullets %}
-    <ul>
-        {% for bullet in content.why_choose.bullets %}
-        <li>{{ bullet|safe }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-</section>
-
-
 <!-- Producten -->
 <section
     id="producten"
     class="products storage-products"
-    aria-labelledby="products-title"
+    aria-labelledby="productlijst"
 >
     <header class="major">
-        <h2 id="products-title">
+        <span id="products-title"></span>
+        <h2 id="productlijst">
             {{ type_heading }}
         </h2>
     </header>
@@ -156,9 +122,6 @@ Beste glazen vershoudbakjes en sets van 2026 | Leef Natuurlijk & Gezond
             door het ventiel te openen of het deksel te verwijderen.
         </em>
     </p>
-
-    <!-- Methodologie -->
-    {% include "partials/how_we_select.html" %}
 
     {% if products %}
 
@@ -333,6 +296,17 @@ Beste glazen vershoudbakjes en sets van 2026 | Leef Natuurlijk & Gezond
 
     {% endif %}
 </section>
+
+<details class="category-help storage-why-choose" open>
+    <summary><h2 id="why-choose-title">{{ content.why_choose.title }}</h2></summary>
+    <div class="category-help__content">
+    {% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
+    {% if content.why_choose.bullets %}
+    <ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+    {% endif %}
+    </div>
+</details>
+{% include "partials/how_we_select.html" %}
 
 
 <!-- Conclusie -->

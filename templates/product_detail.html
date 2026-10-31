@@ -30,10 +30,16 @@
         <h1>{{ product.name }}</h1>
     </header>
 
+    <p>{{ product.description }}</p>
+
     <div class="product-detail-layout"{% if product.shape_variants|length > 1 %} data-shape-card data-shape-page data-product-slug="{{ product.slug }}" data-product-name="{{ product.name }}"{% endif %}>
         {% if product.image_unavailable %}
         <p class="product-photo-notice">Productfoto nog niet beschikbaar.</p>
         {% elif product.shape_variants %}
+        {% if product.shape_variants|length > 1 %}
+        {% include "partials/product_variant_selector.html" %}
+        <p class="variant-selected-summary" data-shape-summary>{{ product.default_variant.selected_summary }}</p>
+        {% endif %}
         <img
             src="{{ product.default_variant.image_url }}"
             alt="{{ product.default_variant.alt_text }}"
@@ -41,10 +47,6 @@
             loading="lazy"
             data-shape-image
         >
-        {% if product.shape_variants|length > 1 %}
-        {% include "partials/product_variant_selector.html" %}
-        <p class="variant-selected-summary" data-shape-summary>{{ product.default_variant.selected_summary }}</p>
-        {% endif %}
         {% else %}
         <img
             src="{% static product.image_path|add:'/' %}{{ product.image }}"
@@ -55,7 +57,6 @@
         {% endif %}
     </div>
 
-    <p>{{ product.description }}</p>
     {% if product.set_contents %}
     <h3>Samenstelling van de set</h3>
     <ul>{% for part in product.set_contents %}<li>{{ part }}</li>{% endfor %}</ul>

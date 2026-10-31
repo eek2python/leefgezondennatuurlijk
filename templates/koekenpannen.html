@@ -74,56 +74,12 @@
 {% include "partials/breadcrumbs.html" %}
 {% include "partials/affiliate_disclosure.html" %}
 
-<section id="banner">
-    <div class="content">
-        <header class="main">
-            <h1>{{ hero_h1 }}</h1>
-        </header>
-        {% for paragraph in content.hero.paragraphs %}
-        <p>{{ paragraph|safe }}</p>
-        {% endfor %}
-    </div>
-</section>
+{% include "partials/category_intro.html" with hero_heading=hero_h1 paragraphs=content.hero.paragraphs %}
 {% include "partials/format_selector.html" %}
 {% include "partials/top_picks.html" %}
 
-{% if content.why_choose %}
-<section>
-    <header class="major">
-        <h2>{{ content.why_choose.title }}</h2>
-    </header>
-    {% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
-    <ul>
-    {% for bullet in content.why_choose.bullets %}
-    <li>{{ bullet|safe }}</li>
-    {% endfor %}
-    </ul>
-    {% if content.why_choose.outro %}<p>{{ content.why_choose.outro|safe }}</p>{% endif %}
-</section>
-{% endif %}
-
-{% if content.size_guide %}
-<!-- ⭐ KOOPGIDS: WELK FORMAAT KOEKENPAN? -->
-<section>
-    <header class="major">
-        <h2>{{ content.size_guide.title }}</h2>
-    </header>
-    {% if content.size_guide.intro %}<p>{{ content.size_guide.intro|safe }}</p>{% endif %}
-    {% for section in content.size_guide.sections %}
-        <h3>{{ section.h3 }}</h3>
-        <ul>
-        {% for item in section.items %}
-            <li>{{ item|safe }}</li>
-        {% endfor %}
-        </ul>
-    {% endfor %}
-    {% if content.size_guide.outro %}<p>{{ content.size_guide.outro|safe }}</p>{% endif %}
-</section>
-{% endif %}
-{% include "partials/how_we_select.html" %}
-
 <h2 class="category-title" id="productlijst">{{ products_h2 }}</h2>
-<div class="products-container">
+<div class="products-container category-product-list">
 
     {% for product in products %}
 
@@ -180,6 +136,30 @@
         </table>
     </div>
 </section>
+
+{% if content.why_choose %}
+<details class="category-help" open>
+    <summary><h2>{{ content.why_choose.title }}</h2></summary>
+    <div class="category-help__content">
+    {% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
+    <ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+    {% if content.why_choose.outro %}<p>{{ content.why_choose.outro|safe }}</p>{% endif %}
+    </div>
+</details>
+{% endif %}
+{% if content.size_guide %}
+<details class="category-help" open>
+    <summary><h2>{{ content.size_guide.title }}</h2></summary>
+    <div class="category-help__content">
+    {% if content.size_guide.intro %}<p>{{ content.size_guide.intro|safe }}</p>{% endif %}
+    {% for section in content.size_guide.sections %}
+        <h3>{{ section.h3 }}</h3><ul>{% for item in section.items %}<li>{{ item|safe }}</li>{% endfor %}</ul>
+    {% endfor %}
+    {% if content.size_guide.outro %}<p>{{ content.size_guide.outro|safe }}</p>{% endif %}
+    </div>
+</details>
+{% endif %}
+{% include "partials/how_we_select.html" %}
 
 
 {% if conclusie %}

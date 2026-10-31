@@ -35,60 +35,17 @@
 {% include "partials/affiliate_disclosure.html" %}
 
                 <!-- Content -->
-                <section id="banner">
-                <div class="content">
-                <header class="main">
-                <h1>{{ hero_h1 }}</h1>
-                </header>
-                {% for p in content.hero.paragraphs %}
-                <p>{{ p|safe }}</p>
-                {% endfor %}
-                {% if intro_extra %}<p>{{ intro_extra|safe }}</p>{% endif %}
-                </div>
-                </section>
+                {% include "partials/category_intro.html" with hero_heading=hero_h1 paragraphs=content.hero.paragraphs extra_paragraph=intro_extra %}
 
                 {% include "partials/airfryer_format_selector.html" %}
 
                 {% include "partials/top_picks.html" %}
 
-                <section>
-                <header class="major">
-                <h2>{{ content.why_choose.title }}</h2>
-                </header>
-                <p>{{ content.why_choose.intro|safe }}</p>
-                <ul>
-                {% for bullet in content.why_choose.bullets %}
-                <li>{{ bullet|safe }}</li>
-                {% endfor %}
-                </ul>
-                <p>{{ content.why_choose.outro|safe }}</p>
-                </section>
-
-                {% if content.size_guide %}
-                <section>
-                <header class="major">
-                <h2>{{ content.size_guide.title }}</h2>
-                </header>
-                <p>{{ content.size_guide.intro|safe }}</p>
-                {% for sec in content.size_guide.sections %}
-                <h3>{{ sec.h3 }}</h3>
-                <ul>
-                {% for item in sec.items %}
-                <li>{{ item|safe }}</li>
-                {% endfor %}
-                </ul>
-                {% endfor %}
-                <p>{{ content.size_guide.outro|safe }}</p>
-                </section>
-                {% endif %}
-
                 <section id="producten" class="products">
                         <header class="major">
-                                <h2>{{ products_h2 }}</h2>
+                                <h2 id="productlijst">{{ products_h2 }}</h2>
                         </header>
                         <div class="product-list">
-
-{% include "partials/how_we_select.html" %}
 
                         <section class="top10-section">
 {% for product in products %}
@@ -139,6 +96,29 @@
                         </div>
                         </section>
                 </section>
+
+                <details class="category-help" open>
+                <summary><h2>{{ content.why_choose.title }}</h2></summary>
+                <div class="category-help__content">
+                <p>{{ content.why_choose.intro|safe }}</p>
+                <ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+                <p>{{ content.why_choose.outro|safe }}</p>
+                </div>
+                </details>
+                {% if content.size_guide %}
+                <details class="category-help" open>
+                <summary><h2>{{ content.size_guide.title }}</h2></summary>
+                <div class="category-help__content">
+                <p>{{ content.size_guide.intro|safe }}</p>
+                {% for sec in content.size_guide.sections %}
+                <h3>{{ sec.h3 }}</h3>
+                <ul>{% for item in sec.items %}<li>{{ item|safe }}</li>{% endfor %}</ul>
+                {% endfor %}
+                <p>{{ content.size_guide.outro|safe }}</p>
+                </div>
+                </details>
+                {% endif %}
+                {% include "partials/how_we_select.html" %}
 
                         {% if conclusie %}
                         <section>

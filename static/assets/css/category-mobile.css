@@ -1,0 +1,107 @@
+/* Category page hierarchy: practical, compact and in keeping with the existing editorial theme. */
+.storage-filters-sticky:not([data-sticky-initialized]) {
+    position: static;
+}
+.category-hero .content > p:last-child,
+.category-help__content > :last-child {
+    margin-bottom: 0;
+}
+
+.category-help {
+    margin: 1.25rem 0 1.75rem;
+    border: 1px solid rgba(98, 212, 229, 0.38);
+    border-radius: 0.45rem;
+    background: #f2fbfb;
+}
+
+.category-help.how-we-select {
+    margin: 1.25rem 0 1.75rem;
+    padding: 0;
+    border: 1px solid rgba(98, 212, 229, 0.38);
+    border-radius: 0.45rem;
+    background: #f2fbfb;
+}
+
+.category-help > summary {
+    min-height: 3rem;
+    padding: 0.8rem 1rem;
+    color: #3d4449;
+    cursor: pointer;
+    list-style: none;
+}
+
+.category-help > summary::-webkit-details-marker {
+    display: none;
+}
+
+.category-help > summary::after {
+    content: "+";
+    float: right;
+    color: #328b98;
+    font-family: sans-serif;
+    font-size: 1.35rem;
+    line-height: 1;
+}
+
+.category-help[open] > summary::after {
+    content: "−";
+}
+
+.category-help > summary h2,
+.category-help > summary h3 {
+    display: inline;
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.category-help__content {
+    padding: 0 1rem 1rem;
+}
+
+.category-help :focus-visible {
+    outline: 3px solid #328b98;
+    outline-offset: 3px;
+}
+
+.category-product-list {
+    scroll-margin-top: calc(max(56px, var(--sticky-filter-height, 0px)) + 1rem);
+}
+
+#productlijst {
+    scroll-margin-top: calc(max(56px, var(--sticky-filter-height, 0px)) + 1rem);
+}
+
+@media (max-width: 736px) {
+    .category-hero .content > p:first-of-type {
+        margin-bottom: 0.65rem;
+    }
+
+    .category-help {
+        margin: 0.75rem 0 1.25rem;
+    }
+
+    .category-help > summary {
+        padding: 0.75rem 0.85rem;
+    }
+
+    .category-help__content {
+        padding: 0 0.85rem 0.85rem;
+    }
+
+    .category-product-list {
+        scroll-margin-top: calc(max(56px, var(--sticky-filter-height, 0px)) + 1rem);
+    }
+
+    #productlijst {
+        scroll-margin-top: calc(max(56px, var(--sticky-filter-height, 0px)) + 1rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .category-help *,
+    .category-product-list * {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

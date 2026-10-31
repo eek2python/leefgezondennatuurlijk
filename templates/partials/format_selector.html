@@ -3,7 +3,7 @@
 <div class="format-selector" data-size-selector>
     <span class="label">Kies jouw formaat:</span>
     {% for f in available_sizes %}
-    <a href="?size={{ f }}"
+    <a href="?size={{ f }}#productlijst"
        class="format-pill {% if f == selected_size %}is-active{% endif %}"
        {% if f == selected_size %}aria-current="page"{% endif %}>
         {{ f|format_size_label }}{% if not named_sizes or f not in named_sizes %} cm{% endif %}
@@ -16,7 +16,7 @@
         <span class="format-sticky-label">Maat:</span>
         <div class="format-sticky-chips">
             {% for f in available_sizes %}
-            <a href="?size={{ f }}"
+            <a href="?size={{ f }}#productlijst"
                class="format-pill format-pill-sm {% if f == selected_size %}is-active{% endif %}"
                {% if f == selected_size %}aria-current="page"{% endif %}>
                   {{ f|format_size_label }}{% if not named_sizes or f not in named_sizes %} cm{% endif %}

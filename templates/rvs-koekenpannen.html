@@ -36,44 +36,16 @@ Beste RVS-koekenpannen van {{ selected_size|format_size_label }} cm | Leef Natuu
 {% include "partials/affiliate_disclosure.html" %}
 
                 <!-- Hero -->
-                <section id="banner">
-                <div class="content">
-                <header class="main">
-                <h1>{{ content.hero.h1 }}</h1>
-                </header>
-                {% for p in content.hero.paragraphs %}
-                <p>{{ p|safe }}</p>
-                {% endfor %}
-                </div>
-                </section>
+                {% include "partials/category_intro.html" with hero_heading=content.hero.h1 paragraphs=content.hero.paragraphs %}
                 {% include "partials/format_selector.html" %}
                 {% include "partials/top_picks.html" %}
-
-                <!-- Waarom RVS -->
-                <section>
-                <header class="major">
-                <h2>{{ content.why_choose.title }}</h2>
-                </header>
-                <p>{{ content.why_choose.intro|safe }}</p>
-                <ul>
-                {% for bullet in content.why_choose.bullets %}
-                <li>{{ bullet|safe }}</li>
-                {% endfor %}
-                </ul>
-                {% if content.why_choose.outro %}
-                <p>{{ content.why_choose.outro|safe }}</p>
-                {% endif %}
-                </section>
 
                 <!-- Producten -->
                 <section id="producten" class="products">
                         <header class="major">
-                                <h2>{{ content.products_section.h2 }}</h2>
+                                <h2 id="productlijst">{{ content.products_section.h2 }}</h2>
                         </header>
                         <div class="product-list">
-
-<div id="productlijst"></div>
-{% include "partials/how_we_select.html" %}
 
                         <section class="top10-section">
 {% if not products %}
@@ -136,6 +108,16 @@ Beste RVS-koekenpannen van {{ selected_size|format_size_label }} cm | Leef Natuu
                         {% endif %}
                 </div>
                 </section>
+
+                <details class="category-help" open>
+                <summary><h2>{{ content.why_choose.title }}</h2></summary>
+                <div class="category-help__content">
+                <p>{{ content.why_choose.intro|safe }}</p>
+                <ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+                {% if content.why_choose.outro %}<p>{{ content.why_choose.outro|safe }}</p>{% endif %}
+                </div>
+                </details>
+                {% include "partials/how_we_select.html" %}
 
                 <!-- Conclusie -->
                 {% if conclusie %}

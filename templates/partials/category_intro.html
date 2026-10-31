@@ -1,0 +1,35 @@
+<section id="banner" class="category-hero{% if hero_class %} {{ hero_class }}{% endif %}">
+    <div class="content">
+        <header class="main">
+            <h1>{{ hero_heading }}</h1>
+        </header>
+        {% for paragraph in paragraphs %}
+            {% if forloop.first %}
+                <p>{{ paragraph|safe }}</p>
+            {% else %}
+                {% if forloop.counter == 2 %}
+                <details class="category-help category-intro-more" open>
+                    <summary><h2>Meer over deze vergelijking</h2></summary>
+                    <div class="category-help__content">
+                {% endif %}
+                    <p>{{ paragraph|safe }}</p>
+                {% if forloop.last and forloop.counter > 1 and not extra_paragraph %}
+                    </div>
+                </details>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% if extra_paragraph %}
+            {% if paragraphs|length > 1 %}
+                <p>{{ extra_paragraph|safe }}</p>
+                </div>
+                </details>
+            {% else %}
+                <details class="category-help category-intro-more" open>
+                    <summary><h2>Meer over deze vergelijking</h2></summary>
+                    <div class="category-help__content"><p>{{ extra_paragraph|safe }}</p></div>
+                </details>
+            {% endif %}
+        {% endif %}
+    </div>
+</section>

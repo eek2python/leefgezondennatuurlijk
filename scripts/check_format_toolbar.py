@@ -88,9 +88,9 @@ def run():
             "e=>scrollTo(0,e.getBoundingClientRect().bottom+scrollY+80)"
         )
         page.wait_for_timeout(400)
-        link = page.locator(".format-sticky a[href='?size=28']")
+        link = page.locator(".format-sticky a[href='?size=28#productlijst']")
         link.click()
-        page.wait_for_url("**/?size=28")
+        page.wait_for_url("**/?size=28#productlijst")
         assert page.locator("[data-size-selector] .is-active").inner_text().strip() == "28 cm"
         browser.close()
     assert not results["errors"], results["errors"]

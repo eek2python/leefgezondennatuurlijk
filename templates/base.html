@@ -10,6 +10,8 @@
    {% if blog_breadcrumb_ld %}<script type="application/ld+json">{{ blog_breadcrumb_ld|safe }}</script>{% endif %}
    <script src="{% static_v 'assets/js/navigation-state.js' %}"></script>
    <link rel="stylesheet" href="{% static_v 'assets/css/main.css' %}" />
+   <link rel="stylesheet" href="{% static_v 'assets/css/category-mobile.css' %}" />
+   <link rel="stylesheet" href="{% static_v 'assets/css/comparison-cards.css' %}" />
    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
    {% if GA_MEASUREMENT_ID %}
@@ -123,6 +125,7 @@
    <script src="{% static_v 'assets/js/variants.js' %}" defer></script>
    <script src="{% static_v 'assets/js/variant-selector.js' %}" defer></script>
    <script src="{% static_v 'assets/js/button-labels.js' %}" defer></script>
+   <script src="{% static_v 'assets/js/category-experience.js' %}" defer></script>
 
    <script>
       document.getElementById("year").textContent = new Date().getFullYear();

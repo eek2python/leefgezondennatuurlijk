@@ -13,18 +13,17 @@ op andere apparaten.
 maar controleer responsive wijzigingen ook op tablet en desktop. Neem geen
 specifieke bezoekerspercentages aan zonder meetgegevens.
 
-Bij vergelijkingstabellen gaat leesbaarheid van volledige kolommen boven
-het vastzetten van de productnaam op smalle telefoons. Gebruik horizontaal
-schuiven in plaats van kolommen en actieknoppen steeds smaller te drukken.
+Op smalle telefoons hebben compacte vergelijkingskaarten de voorkeur boven
+een brede tabel. Gebruik dezelfde productgegevens als de tabel; onderhoud
+geen aparte mobiele productinformatie. Op grotere schermen blijft de tabel.
 
-**Why:** de gebruiker liet een telefoonscreenshot zien waarop de vastgezette
-productkolom andere informatie bedekte en knopteksten letter voor letter
-werden afgebroken. Een vastgezette kolom is niet bruikbaar als daardoor de
-actie niet volledig in beeld past.
+**Why:** een vastgezette productkolom bedekte eerder andere informatie en
+brak knopteksten af. De gebruiker vroeg vervolgens om mobiele kaarten zodat
+de belangrijkste informatie ook zonder horizontaal schuiven begrijpelijk is.
 
-**How to apply:** houd woorden en knoppen leesbaar, beperk scrollen tot de
-tabel en controleer bij smalle viewports ook het volledig zichtbare uiteinde
-van de tabel, niet alleen de beginstand.
+**How to apply:** houd woorden en knoppen leesbaar. Toon voor screenreaders
+maar één vergelijkingsweergave tegelijk. Een schuifbare tabel als fallback
+blijft bruikbaar, maar is niet de primaire telefoonweergave.
 
 De homepagefoto moet op telefoon dezelfde kleuren en helderheid houden als
 op desktop; voeg geen extra donkere laag toe alleen voor mobiel.

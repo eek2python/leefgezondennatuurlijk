@@ -4,7 +4,7 @@
     <div class="storage-filter-row">
     <div class="storage-size-filter__options">
     {% for f in available_size_filters %}
-    <a href="{{ f.url }}"
+    <a href="{{ f.url }}#productlijst"
        class="format-pill storage-size-filter__option {% if f.is_active %}is-active storage-size-filter__option--active{% endif %}"
        {% if f.is_active %}aria-current="page"{% endif %}>
         {{ f.label }}

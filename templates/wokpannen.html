@@ -74,53 +74,12 @@ Beste PFAS-vrije wokpannen van {{ selected_size }} cm | Leef Natuurlijk & Gezond
 {% include "partials/breadcrumbs.html" %}
 {% include "partials/affiliate_disclosure.html" %}
 
-<section id="banner">
-<div class="content">
-<header class="main">
-<h1>{{ hero_h1 }}</h1>
-</header>
-{% for paragraph in content.hero.paragraphs %}
-<p>{{ paragraph|safe }}</p>
-{% endfor %}
-</div>
-</section>
+{% include "partials/category_intro.html" with hero_heading=hero_h1 paragraphs=content.hero.paragraphs %}
 {% include "partials/format_selector.html" %}
 {% include "partials/top_picks.html" %}
 
-{% if content.why_choose %}
-<section>
-<header class="major">
-<h2>{{ content.why_choose.title }}</h2>
-</header>
-{% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
-<ul>
-{% for bullet in content.why_choose.bullets %}
-<li>{{ bullet|safe }}</li>
-{% endfor %}
-</ul>
-{% if content.why_choose.outro %}<p>{{ content.why_choose.outro|safe }}</p>{% endif %}
-</section>
-{% endif %}
-
-{% if content.wok_behavior %}
-<section>
-<header class="major">
-<h2>{{ content.wok_behavior.title }}</h2>
-</header>
-{% if content.wok_behavior.intro %}<p>{{ content.wok_behavior.intro|safe }}</p>{% endif %}
-<ul>
-{% for bullet in content.wok_behavior.bullets %}
-<li>{{ bullet|safe }}</li>
-{% endfor %}
-</ul>
-{% if content.wok_behavior.outro %}<p>{{ content.wok_behavior.outro|safe }}</p>{% endif %}
-</section>
-{% endif %}
-
-{% include "partials/how_we_select.html" %}
-
 <h2 class="category-title" id="productlijst">{{ products_h2 }}</h2>
-<div class="products-container">
+<div class="products-container category-product-list">
 
     {% for product in products %}
 
@@ -177,6 +136,28 @@ Beste PFAS-vrije wokpannen van {{ selected_size }} cm | Leef Natuurlijk & Gezond
         </table>
     </div>
 </section>
+
+{% if content.why_choose %}
+<details class="category-help" open>
+<summary><h2>{{ content.why_choose.title }}</h2></summary>
+<div class="category-help__content">
+{% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
+<ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+{% if content.why_choose.outro %}<p>{{ content.why_choose.outro|safe }}</p>{% endif %}
+</div>
+</details>
+{% endif %}
+{% if content.wok_behavior %}
+<details class="category-help" open>
+<summary><h2>{{ content.wok_behavior.title }}</h2></summary>
+<div class="category-help__content">
+{% if content.wok_behavior.intro %}<p>{{ content.wok_behavior.intro|safe }}</p>{% endif %}
+<ul>{% for bullet in content.wok_behavior.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+{% if content.wok_behavior.outro %}<p>{{ content.wok_behavior.outro|safe }}</p>{% endif %}
+</div>
+</details>
+{% endif %}
+{% include "partials/how_we_select.html" %}
 
 {% if conclusie %}
 <section>

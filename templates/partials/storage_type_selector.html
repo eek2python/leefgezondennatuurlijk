@@ -4,7 +4,7 @@
     <div class="storage-filter-row">
     <div class="storage-type-selector__options" role="group" aria-label="Kies uitvoering">
     {% for t in available_types %}
-    <a href="{{ t.url }}"
+    <a href="{{ t.url }}#productlijst"
        class="format-pill {% if t.is_active %}is-active{% endif %}"
        {% if t.is_active %}aria-current="page"{% endif %}>
         {{ t.label }}
