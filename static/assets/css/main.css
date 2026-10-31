@@ -5502,6 +5502,7 @@ a:hover {
         background: transparent;
         color: #3d4449 !important;
         font: inherit;
+        font-size: 0.9em;
         letter-spacing: inherit;
         text-align: left;
         text-transform: uppercase;
