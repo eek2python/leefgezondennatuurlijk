@@ -4870,6 +4870,10 @@ table.product-table .product-badge {
 .storage-filters-sticky .format-selector {
    margin-bottom: 6px;
 }
+.storage-filter-row,
+.storage-type-selector__options {
+   display: contents;
+}
 
 /* FAQ (vershoudbakjes, details/summary) */
 .faq-list {
@@ -5674,7 +5678,59 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         body.menu-open .format-sticky,
         body.menu-open .storage-filters-sticky { visibility: hidden; }
         #menu a { min-height: 44px; display: flex; align-items: center; }
-        .storage-filters-sticky { top: 56px; }
+        .storage-filters-sticky { top: 0; }
+        .storage-filters-sticky.is-stuck:not(.is-too-tall) {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                max-width: 100vw;
+                margin: 0;
+                padding: 4px 8px 4px 60px;
+        }
+        .storage-filters-sticky.is-stuck .format-selector {
+                display: block;
+                margin: 0;
+                min-width: 0;
+        }
+        .storage-filters-sticky.is-stuck .format-selector + .format-selector {
+                margin-top: 4px;
+        }
+        .storage-filters-sticky.is-stuck .label {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                clip-path: inset(50%);
+                white-space: nowrap;
+        }
+        .storage-filters-sticky.is-stuck .storage-filter-row {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                min-width: 0;
+        }
+        .storage-filters-sticky.is-stuck :is(.storage-type-selector__options, .storage-size-filter__options) {
+                display: flex;
+                flex: 1;
+                min-width: 0;
+                flex-wrap: nowrap;
+                gap: 8px;
+                overflow-x: auto;
+                padding: 2px 0;
+                scrollbar-width: none;
+        }
+        .storage-filters-sticky.is-stuck .storage-filter-row > div::-webkit-scrollbar { display: none; }
+        .storage-filters-sticky.is-stuck .format-pill {
+                display: inline-flex;
+                flex-shrink: 0;
+                align-items: center;
+                min-height: 44px;
+                padding: 8px 12px;
+                font-size: 14px;
+                line-height: 1.2;
+        }
         .format-sticky { top: 0; }
         .format-sticky-inner {
                 padding: 4px 8px 4px 60px;
@@ -5701,8 +5757,20 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         [id] { scroll-margin-top: calc(max(56px, var(--sticky-filter-height)) + 1rem); }
 }
 .format-scroll-button { display: none; }
+@media screen and (min-width: 600px) and (max-width: 1280px) {
+        .storage-filters-sticky.is-stuck {
+                display: grid;
+                grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+                gap: 12px;
+                align-items: center;
+        }
+        .storage-filters-sticky.is-stuck .format-selector + .format-selector {
+                margin-top: 0;
+        }
+}
 @media screen and (max-width: 1280px) {
-        .format-sticky .format-scroll-button {
+        .format-sticky .format-scroll-button,
+        .storage-filters-sticky .format-scroll-button {
                 display: inline-flex;
                 flex: 0 0 32px;
                 align-items: center;
@@ -5720,7 +5788,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
                 font: 26px/1 Arial, sans-serif;
                 letter-spacing: normal;
         }
-        .format-sticky .format-scroll-button:disabled {
+        .format-sticky .format-scroll-button:disabled,
+        .storage-filters-sticky .format-scroll-button:disabled {
                 opacity: 0.25;
                 cursor: default;
         }

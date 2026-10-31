@@ -50,8 +50,12 @@ De vastgezette formaatselectie op telefoons deelt de bovenste rij met de
 hamburgermenuknop, ook in liggende stand. Maak duidelijk wanneer er meer
 formaten buiten beeld beschikbaar zijn.
 
+Dit geldt ook voor ‘Kies uitvoering’ en ‘Filter op formaat’ bij de
+vershoudbakjes: houd de vastgezette filters naast het hamburgericoon compact.
+
 **Why:** de gebruiker wil minder verloren schermhoogte in liggende stand
-en vroeg om een subtiele pijl voor verborgen formaatopties.
+en vroeg om een subtiele pijl voor verborgen formaatopties. De gebruiker
+vroeg dezelfde plaatsing voor de twee filters bij vershoudbakjes.
 
 **How to apply:** reserveer ruimte naast de menuknop, toon schuifpijlen
 alleen bij overlopende formaatopties en behoud vegen en toetsenbordbediening.

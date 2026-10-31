@@ -1,6 +1,7 @@
 {% if available_size_filters %}
 <nav class="format-selector storage-size-filter" data-storage-size-filter aria-label="Filter vershoudbakjes op formaat">
     <span class="label storage-size-filter__label">Filter op formaat:</span>
+    <div class="storage-filter-row">
     <div class="storage-size-filter__options">
     {% for f in available_size_filters %}
     <a href="{{ f.url }}"
@@ -9,6 +10,7 @@
         {{ f.label }}
     </a>
     {% endfor %}
+    </div>
     </div>
     {% if size_filter_help %}
     <p class="storage-size-filter__help">{{ size_filter_help }}</p>

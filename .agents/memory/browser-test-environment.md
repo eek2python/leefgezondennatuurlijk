@@ -37,3 +37,13 @@ de vaste formaatbalk over, terwijl langzaam scrollen wel werkte.
 
 **How to apply:** test ook directe scrollsprongen en herstel na navigatie.
 Laat vaste bediening niet uitsluitend van een intersectieovergang afhangen.
+
+Een filterbalk die bij vastzetten compacter wordt, moet zijn oorspronkelijke
+ruimte in de documentstroom behouden als hij naar `position: fixed` gaat.
+
+**Why:** zonder ruimtebehoud kan browser-scrollverankering de pagina terug
+schuiven over de vastzetdrempel en de compacte weergave laten wisselen.
+
+**How to apply:** controleer de overgang vlak rond de drempel, niet alleen
+na ver doorscrollen. Laat updates van overlooppijlen bestaande schuifposities
+intact; tijdelijk verbergen van pijlen kan de schuifpositie begrenzen.

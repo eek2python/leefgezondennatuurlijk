@@ -17,13 +17,8 @@
                 height = Math.max(height, bar.getBoundingClientRect().height);
             }
         });
-        // The format bar now shares the menu row; storage filters remain below it.
-        var mobile = window.matchMedia('(max-width: 1280px)').matches;
-        var storage = bars.some(function (bar) {
-            return bar.classList.contains('storage-filters-sticky') &&
-                bar.classList.contains('is-stuck') && !bar.classList.contains('is-too-tall');
-        });
-        root.style.setProperty('--sticky-filter-height', (height + (mobile && storage ? 56 : 0)) + 'px');
+        // Both filter bars share the menu row instead of starting below it.
+        root.style.setProperty('--sticky-filter-height', height + 'px');
     }
     function revealHash() {
         if (!location.hash) return;
