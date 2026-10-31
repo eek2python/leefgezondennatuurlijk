@@ -25,3 +25,13 @@ actie niet volledig in beeld past.
 **How to apply:** houd woorden en knoppen leesbaar, beperk scrollen tot de
 tabel en controleer bij smalle viewports ook het volledig zichtbare uiteinde
 van de tabel, niet alleen de beginstand.
+
+De homepagefoto moet op telefoon dezelfde kleuren en helderheid houden als
+op desktop; voeg geen extra donkere laag toe alleen voor mobiel.
+
+**Why:** de gebruiker vond de mobiele homepagefoto te donker en vroeg die
+qua kleuren en licht gelijk te maken aan desktop.
+
+**How to apply:** gebruik dezelfde beeldbehandeling op beide schermtypen en
+controleer de leesbaarheid van de tekst zonder de hele mobiele foto extra
+te verduisteren.
