@@ -46,7 +46,7 @@
         var hint = document.createElement('p');
         hint.className = 'compact-comparison-hint';
         hint.id = 'compact-comparison-hint-' + index;
-        hint.textContent = 'Veeg om meer kenmerken te zien';
+        hint.textContent = 'Veeg opzij om de overige vergelijkingspunten te bekijken';
         hint.hidden = true;
         var scroll = document.createElement('div');
         scroll.className = 'compact-comparison-scroll';
