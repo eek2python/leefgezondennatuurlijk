@@ -5504,6 +5504,7 @@ a:hover {
         font: inherit;
         letter-spacing: inherit;
         text-align: left;
+        text-transform: uppercase;
         white-space: normal;
 }
 #menu ul a,
