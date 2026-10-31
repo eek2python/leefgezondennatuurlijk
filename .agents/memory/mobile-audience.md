@@ -55,3 +55,14 @@ en vroeg om een subtiele pijl voor verborgen formaatopties.
 
 **How to apply:** reserveer ruimte naast de menuknop, toon schuifpijlen
 alleen bij overlopende formaatopties en behoud vegen en toetsenbordbediening.
+
+Gebruik dezelfde lichte turquoise knopachtergronden op telefoon en desktop.
+De letters van awards, geselecteerde formaten en gevulde actieknoppen zoals
+‘Bekijk prijs’ moeten wit zijn.
+
+**Why:** de gebruiker vroeg deze kleurcombinatie expliciet en koos witte
+knopteksten nadat een donkerdere tekstkleur voor contrast was toegepast.
+
+**How to apply:** behoud de grotere mobiele aanraakvlakken en tekstgrootte.
+Maak de achtergrond niet uitsluitend op mobiel donkerder; witte letters op
+licht turquoise hebben beperkt contrast, dus claim hiervoor geen WCAG-conformiteit.
