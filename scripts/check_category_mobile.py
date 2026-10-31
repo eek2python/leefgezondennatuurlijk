@@ -36,23 +36,19 @@ def check_page(page, width, path):
     assert page.locator(".category-help").evaluate_all(
         "es=>es.every(e=>e.open===" + ("false" if width <= 736 else "true") + ")"
     )
-    cards = page.locator(".comparison-cards")
-    assert cards.count(), (width, path, "comparison cards absent")
-    for group in cards.all():
+    comparisons = page.locator(".compact-comparison-scroll")
+    assert comparisons.count(), (width, path, "compact comparison absent")
+    for group in comparisons.all():
         assert group.is_visible() == (width <= 736)
-        wrapper = group.locator("xpath=preceding-sibling::*[1]")
+        wrapper = group.locator("xpath=preceding-sibling::*[2]")
         assert wrapper.is_visible() == (width > 736)
         assert group.evaluate("""e=>{
-            const rows=[...e.previousElementSibling.querySelectorAll('tbody > tr')];
-            const cards=[...e.children];
+            const rows=[...e.previousElementSibling.previousElementSibling.querySelectorAll('tbody > tr')];
+            const compact=[...e.querySelectorAll('tbody > tr')];
             const text=n=>n.textContent.trim().replace(/\\s+/g,' ');
-            return rows.length===cards.length && rows.every((row,i)=>{
-                const card=cards[i];
-                return text(row.children[0])===text(card.querySelector('h3')) &&
-                    JSON.stringify([...row.querySelectorAll('a')].map(a=>[a.getAttribute('href'),a.rel,a.getAttribute('aria-label')]))===
-                    JSON.stringify([...card.querySelectorAll('a')].map(a=>[a.getAttribute('href'),a.rel,a.getAttribute('aria-label')]));
-            });
-        }"""), (width, path, "card data or link mismatch")
+            return rows.length===compact.length && !e.querySelector('.button') &&
+                rows.every((row,i)=>text(row.children[0])===text(compact[i].children[0]));
+        }"""), (width, path, "comparison row or product mismatch")
     assert page.evaluate("""()=>{
         const ids=[...document.querySelectorAll('[id]')].map(e=>e.id);
         return ids.length===new Set(ids).size;
@@ -72,7 +68,7 @@ def check_page(page, width, path):
         page.keyboard.press("Enter")
         assert not summary.evaluate("e=>e.parentElement.open")
     if width in (320, 390, 1440):
-        page.locator(".comparison-cards" if width <= 736 else ".table-wrapper").first.scroll_into_view_if_needed()
+        page.locator(".compact-comparison-scroll" if width <= 736 else ".table-wrapper").first.scroll_into_view_if_needed()
         page.screenshot(path=str(OUT / f"{width}-{path.strip('/').replace('/', '-')}.jpg"))
 
 

@@ -1,0 +1,95 @@
+/* Only the mobile comparison changes; the original desktop table is untouched. */
+.compact-comparison-scroll {
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    isolation: isolate;
+    margin: 0.6rem 0 1.5rem;
+    border: 1px solid #d8e2e4;
+    border-radius: 4px;
+}
+.compact-comparison-scroll:focus-visible {
+    outline: 3px solid #075e6b;
+    outline-offset: 3px;
+}
+.compact-comparison-hint {
+    margin: 0.5rem 0;
+    color: #59636a;
+    font-size: 0.8rem;
+}
+.compact-comparison-table {
+    table-layout: fixed;
+    width: 100%;
+    min-width: var(--comparison-min-width);
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #3d4449;
+}
+.compact-comparison-table caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+.compact-comparison-table th,
+.compact-comparison-table td {
+    padding: 0.6rem 0.5rem;
+    border: 0;
+    border-bottom: 1px solid #d8e2e4;
+    vertical-align: top;
+    text-align: left;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+.compact-comparison-table thead th {
+    background: #eaf3f4;
+    font-weight: 600;
+    font-size: 12px;
+}
+.compact-comparison-table tbody th {
+    font-weight: 600;
+}
+.compact-comparison-table tbody tr:nth-child(odd) > * {
+    background: #f5f8f8;
+}
+.compact-comparison-table tbody tr:nth-child(even) > * {
+    background: #fff;
+}
+.compact-comparison-table tr > :first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    box-shadow: 2px 0 0 #d8e2e4;
+}
+.compact-comparison-table tbody tr:last-child > * { border-bottom: 0; }
+.compact-comparison-table .product-badge {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0.35rem 0 0;
+    padding: 0.2em 0.35em;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.025em;
+    white-space: normal;
+}
+.compact-comparison-product {
+    display: inline-block;
+    min-height: 24px;
+    border: 0;
+    color: #075e6b;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+@media (min-width: 737px) {
+    .compact-comparison-scroll,
+    .compact-comparison-hint { display: none; }
+}

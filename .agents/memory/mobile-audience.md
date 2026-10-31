@@ -13,17 +13,20 @@ op andere apparaten.
 maar controleer responsive wijzigingen ook op tablet en desktop. Neem geen
 specifieke bezoekerspercentages aan zonder meetgegevens.
 
-Op smalle telefoons hebben compacte vergelijkingskaarten de voorkeur boven
-een brede tabel. Gebruik dezelfde productgegevens als de tabel; onderhoud
-geen aparte mobiele productinformatie. Op grotere schermen blijft de tabel.
+Op smalle telefoons moet de vergelijking een compacte tabel met één rij per
+product zijn, geen grote vergelijkingskaarten. De desktopvergelijking blijft
+behouden. Gebruik dezelfde bestaande gegevens, zonder aparte mobiele invoer.
 
-**Why:** een vastgezette productkolom bedekte eerder andere informatie en
-brak knopteksten af. De gebruiker vroeg vervolgens om mobiele kaarten zodat
-de belangrijkste informatie ook zonder horizontaal schuiven begrijpelijk is.
+**Why:** de gebruiker vond dat de mobiele vergelijkingskaarten te veel uit
+de productkaarten herhaalden en producten niet eenvoudig vergelijkbaar maakten.
+Daarom vroeg de gebruiker expliciet om een compacte tabel als vervanging.
 
-**How to apply:** houd woorden en knoppen leesbaar. Toon voor screenreaders
-maar één vergelijkingsweergave tegelijk. Een schuifbare tabel als fallback
-blijft bruikbaar, maar is niet de primaire telefoonweergave.
+**How to apply:** zet naam/badge, beoordeling en prijsindicatie vooraan.
+Neem andere kenmerken alleen compact en onderscheidend op. Geen mobiele
+affiliateknoppen in de vergelijking; verwijs naar bestaande productkaarten.
+Laat alleen de tabel horizontaal schuiven, houd de naamkolom betrouwbaar
+zichtbaar en toon een veegaanwijzing alleen bij echte overflow. Toon voor
+screenreaders maar één vergelijkingsweergave tegelijk.
 
 De homepagefoto moet op telefoon dezelfde kleuren en helderheid houden als
 op desktop; voeg geen extra donkere laag toe alleen voor mobiel.
