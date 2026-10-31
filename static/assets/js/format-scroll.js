@@ -1,4 +1,4 @@
-/* Show which direction contains more sizes without changing filter links. */
+/* Keep selections reachable and show when more options are available. */
 (function () {
     'use strict';
     var mobile = window.matchMedia('(max-width: 1280px)');
@@ -7,16 +7,18 @@
         var chips = bar.querySelector('.format-sticky-chips');
         var inner = bar.querySelector('.format-sticky-inner');
         if (!chips || !inner) return;
-        var reference = document.querySelector(
-            bar.hasAttribute('data-size-sticky') ? '[data-size-selector]' : '[data-format-selector]'
-        );
+        var isMaterial = bar.hasAttribute('data-material-sticky');
+        var reference = document.querySelector(isMaterial ? '[data-material-selector]' :
+            (bar.hasAttribute('data-size-sticky') ? '[data-size-selector]' : '[data-format-selector]'));
         // IntersectionObserver can miss a jump from below to above the viewport
         // when the selector never intersects between the two rendered frames.
         var scrollPending = false;
         function syncVisibility() {
             scrollPending = false;
             if (!reference) return;
-            var visible = reference.getBoundingClientRect().bottom <= 0;
+            // On phones the material choices have left the usable area once
+            // they pass behind the shared menu row.
+            var visible = reference.getBoundingClientRect().bottom <= (isMaterial && mobile.matches ? 56 : 0);
             if (bar.classList.contains('is-visible') !== visible)
                 bar.classList.toggle('is-visible', visible);
             bar.inert = !visible;
@@ -45,8 +47,8 @@
             });
             return button;
         }
-        var previous = makeButton('Vorige formaten', '‹', -1);
-        var next = makeButton('Meer formaten', '›', 1);
+        var previous = makeButton(isMaterial ? 'Vorige materialen' : 'Vorige formaten', '‹', -1);
+        var next = makeButton(isMaterial ? 'Meer materialen' : 'Meer formaten', '›', 1);
         inner.insertBefore(previous, chips);
         inner.appendChild(next);
 

@@ -10,13 +10,24 @@
 <p><a href="{% url 'pannensets' %}">Alle soorten pannensets</a> · <a href="{% url 'pannen' %}">Keuzehulp pannen</a></p>
 
 {% if materials %}
-<nav class="pan-material-selector" aria-label="Materiaal koekenpannensets">
+<nav class="pan-material-selector" data-material-selector aria-label="Materiaal koekenpannensets">
     <p><strong>Kies een materiaal</strong></p>
     <div class="format-selector">
         <a href="{% url 'koekenpannensets' %}" class="format-pill{% if selected_material == 'alle' %} is-active{% endif %}"{% if selected_material == 'alle' %} aria-current="true"{% endif %}>Alle materialen</a>
         {% for key, material in materials.items %}
         <a href="{% url 'koekenpannensets' %}?materiaal={{ key }}" class="format-pill{% if selected_material == key %} is-active{% endif %}"{% if selected_material == key %} aria-current="true"{% endif %}>{{ material.label }}</a>
         {% endfor %}
+    </div>
+</nav>
+<nav class="format-sticky" data-material-sticky aria-label="Materiaalkeuze koekenpannensets" inert>
+    <div class="format-sticky-inner">
+        <span class="format-sticky-label">Materiaal:</span>
+        <div class="format-sticky-chips">
+            <a href="{% url 'koekenpannensets' %}#productlijst" class="format-pill format-pill-sm{% if selected_material == 'alle' %} is-active{% endif %}"{% if selected_material == 'alle' %} aria-current="page"{% endif %}>Alle materialen</a>
+            {% for key, material in materials.items %}
+            <a href="{% url 'koekenpannensets' %}?materiaal={{ key }}#productlijst" class="format-pill format-pill-sm{% if selected_material == key %} is-active{% endif %}"{% if selected_material == key %} aria-current="page"{% endif %}>{{ material.label }}</a>
+            {% endfor %}
+        </div>
     </div>
 </nav>
 {% endif %}

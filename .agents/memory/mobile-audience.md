@@ -54,10 +54,14 @@ formaten buiten beeld beschikbaar zijn.
 
 Dit geldt ook voor ‘Kies uitvoering’ en ‘Filter op formaat’ bij de
 vershoudbakjes: houd de vastgezette filters naast het hamburgericoon compact.
+Ook de materiaalkeuze bij koekenpannensets moet tijdens het omlaag scrollen
+bovenaan bereikbaar blijven.
 
 **Why:** de gebruiker wil minder verloren schermhoogte in liggende stand
 en vroeg om een subtiele pijl voor verborgen formaatopties. De gebruiker
 vroeg dezelfde plaatsing voor de twee filters bij vershoudbakjes.
+De gebruiker vroeg ook om de materiaalopties bij koekenpannensets tijdens
+het scrollen bovenaan zichtbaar te houden.
 
 **How to apply:** reserveer ruimte naast de menuknop, toon schuifpijlen
 alleen bij overlopende formaatopties en behoud vegen en toetsenbordbediening.
