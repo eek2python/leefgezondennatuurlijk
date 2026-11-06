@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ meta.title }}{% endblock %}
+{% block meta %}{% include "partials/category_metadata.html" %}{% endblock %}
+
+{% block content %}
+{% include "partials/breadcrumbs.html" %}
+
+<section id="banner">
+    <div class="content">
+        <header class="main">
+            <h1>Keukenapparatuur voor bewust koken</h1>
+        </header>
+        <p>Bij keukenapparatuur tellen niet alleen functies en prestaties. Ook materiaalkeuze, coatings, reiniging en duurzaamheid spelen mee. Waar relevant kijken we naar wat er productspecifiek bekend is over de aanwezigheid of afwezigheid van PFAS.</p>
+        <p>Een PFAS-vermelding geldt alleen voor het onderdeel waarvoor die informatie is bevestigd; ze zegt niet automatisch iets over andere onderdelen of over de hele set. We doen geen algemene gezondheidsbeloften.</p>
+    </div>
+</section>
+
+<section id="categorieen">
+    <header class="major"><h2>Vergelijk keukenapparatuur</h2></header>
+    <p>Bekijk de categorie die past bij hoe je wilt koken. De vergelijkingen behandelen de eigenschappen die voor dat type apparaat relevant zijn.</p>
+    <div class="category-grid pan-hub-grid">
+        {% for category in appliance_categories %}
+        <a href="{% url category.url_name %}" class="category-card">
+            {% if category.image %}
+            <img src="{% static category.image %}" alt="{{ category.label }}" loading="lazy" decoding="async">
+            {% endif %}
+            <span>{{ category.label }}</span>
+            <small>{{ category.description }}</small>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="beoordelingscriteria">
+    <header class="major"><h2>Waar letten we op?</h2></header>
+    <p>We vergelijken keukenapparatuur op eigenschappen die in het dagelijks gebruik verschil maken:</p>
+    <ul>
+        <li>materiaal en eventuele coating;</li>
+        <li>prestaties en capaciteit;</li>
+        <li>temperatuurregeling en gebruiksgemak;</li>
+        <li>reiniging en onderhoud;</li>
+        <li>duurzaamheid en prijs-kwaliteitverhouding.</li>
+    </ul>
+    <p>De precieze weging verschilt per productsoort. Op de categoriepagina lees je welke criteria voor die vergelijking het zwaarst meewegen en welke materiaal- of coatinginformatie beschikbaar is.</p>
+</section>
+
+{% include "partials/handige_artikelen.html" %}
+{% include "partials/author_byline.html" %}
+{% endblock %}

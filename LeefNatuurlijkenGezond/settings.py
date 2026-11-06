@@ -115,6 +115,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'LeefNatuurlijkenGezond.context_processors.ga_measurement_id',
                 'LeefNatuurlijkenGezond.context_processors.site_origin',
+                'LeefNatuurlijkenGezond.context_processors.appliance_navigation',
             ],
         },
     },

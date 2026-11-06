@@ -71,6 +71,9 @@
     </p>
     {% endif %}
 
+    {% if product.specifications %}
+    {% include "partials/product_specifications.html" %}
+    {% endif %}
     {% if product.features %}
     <h3>Kenmerken</h3>
     <ul>

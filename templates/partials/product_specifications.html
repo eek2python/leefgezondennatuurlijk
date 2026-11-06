@@ -1,0 +1,9 @@
+<details class="product-specifications">
+    <summary>Specificaties en PFAS-status per onderdeel</summary>
+    <dl>
+        {% for specification in product.specifications %}
+        <dt>{{ specification.label }}</dt>
+        <dd>{{ specification.value }}</dd>
+        {% endfor %}
+    </dl>
+</details>

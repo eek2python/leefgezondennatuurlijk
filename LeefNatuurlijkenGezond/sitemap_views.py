@@ -23,6 +23,8 @@ STATIC_URLS = [
     {"name": "wokpannen",          "loc_name": "wokpannen",         "changefreq": "monthly", "priority": "0.9"},
     {"name": "snijplanken",        "loc_name": "snijplanken",       "changefreq": "monthly", "priority": "0.9"},
     {"name": "airfryers",          "loc_name": "airfryers",         "changefreq": "monthly", "priority": "0.9"},
+    {"name": "keukenapparatuur",   "loc_name": "keukenapparatuur",  "changefreq": "monthly", "priority": "0.9"},
+    {"name": "gourmetsets",        "loc_name": "gourmetsets",       "changefreq": "monthly", "priority": "0.9"},
     {"name": "airfryers_xl",       "loc_name": "airfryers_format",  "kwargs": {"fmt": "xl"},   "changefreq": "monthly", "priority": "0.8"},
     {"name": "airfryers_dual",     "loc_name": "airfryers_format",  "kwargs": {"fmt": "dual"}, "changefreq": "monthly", "priority": "0.8"},
     {"name": "vershoudcontainers", "loc_name": "vershoudcontainers","changefreq": "monthly", "priority": "0.9"},

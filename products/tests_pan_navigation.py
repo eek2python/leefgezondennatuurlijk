@@ -79,7 +79,8 @@ class PanNavigationTests(TestCase):
         response = self.client.get(reverse("pannen"))
         html = response.content.decode()
         menu = re.search(r'<nav id="menu">(.*?)</nav>', html, re.S).group(1)
-        self.assertEqual(menu.count('class="opener"'), 1)
+        self.assertEqual(menu.count('aria-controls="menu-pannen"'), 1)
+        self.assertEqual(menu.count('class="opener"'), 2)
         self.assertIn('aria-expanded="false" aria-controls="menu-pannen">Pannen</button>', menu)
         self.assertIn('<ul id="menu-pannen" inert>', menu)
         for name in (*NEW_ROUTES, *OLD_ROUTES):

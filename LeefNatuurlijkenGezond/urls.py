@@ -21,6 +21,7 @@ from django.contrib import admin
 from django.urls import path, include
 from products import views
 from products import pan_views
+from products import appliance_views
 from products import admin_views
 from audits import admin_views as audit_admin_views
 from .sitemap_views import sitemap_xml
@@ -46,6 +47,8 @@ urlpatterns = [
    path("hapjespannen/", views.hapjespannen, name="hapjespannen"),
    path("wokpannen/", views.wokpannen, name="wokpannen"),
    path("airfryers/", views.airfryers, name="airfryers"),
+   path("keukenapparatuur/", appliance_views.keukenapparatuur, name="keukenapparatuur"),
+   path("gourmetsets/", appliance_views.gourmetsets, name="gourmetsets"),
    path("airfryers/<slug:fmt>/", views.airfryers, name="airfryers_format"),
    path("vershoudcontainers/", views.vershoudcontainers, name="vershoudcontainers"),
    path("rvs-koekenpannen/", views.rvs_koekenpannen, name="rvs_koekenpannen"),

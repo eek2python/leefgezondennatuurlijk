@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gourmetsets en Keukenapparatuur — integratierapport</title>
+<style>
+body{font:16px/1.6 system-ui,sans-serif;color:#263238;max-width:1000px;margin:auto;padding:24px}
+h1,h2{line-height:1.3}h2{margin-top:2em;border-bottom:2px solid #62d4e5;padding-bottom:.3em}
+table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{border:1px solid #d8e2e4;padding:.65em;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:#eef8f9}pre{white-space:pre-wrap;background:#f4f7f7;padding:16px}code{overflow-wrap:anywhere}.note{padding:16px;background:#eef8f9;border-left:4px solid #328b98}
+@media(max-width:600px){body{padding:16px}table{font-size:.8rem}th,td{padding:.45em}}
+@media print{body{font-size:11pt;max-width:none}h2{break-after:avoid}tr{break-inside:avoid}}
+</style></head><body>
+<h1>Gourmetsets en Keukenapparatuur</h1>
+<p>Integratierapport — 6 november 2026. Uitgevoerd in de bestaande Django-website, zonder publicatie, nieuwe afhankelijkheden of databasemigratie.</p>
+
+<h2>1. Audit en bronbestanden</h2>
+<p>Projectbreed gezocht op gourmet, gourmetset, gourmetsets en raclette. Aanwezig waren <code>products/products_gourmetsets.py</code>, <code>products/rankings_gourmetsets.py</code> en <code>products/content_gourmetsets.py</code>. Er waren nog geen gekoppelde Gourmetsets-view, route, template, breadcrumbs of sitemapvermelding.</p>
+<p>De contentbestanden waren verwisseld: <code>content_airfryers.py</code> bevatte Gourmetsets-content, terwijl <code>content_gourmetsets.py</code> exact de oorspronkelijke Airfryer-content bevatte. De bestanden zijn onder hun juiste namen teruggezet. De Airfryer-content is byte-voor-byte gelijk aan de oorspronkelijke opgeslagen versie. De Gourmetsets-productdictionary had een extra laag accolades, waardoor de module niet kon laden; alleen die technische verpakking is verwijderd.</p>
+<p>Er is geen tweede productdataset gemaakt. Alle zes producten, bronteksten, scores, awards, bestaande prijsindicaties, links en de aangeleverde rankingvolgorde zijn behouden. De ranking is niet opnieuw op score gesorteerd.</p>
+
+<h2>2. Gourmetsets</h2>
+<ul>
+<li>Route: <code>/gourmetsets/</code>; named URL: <code>gourmetsets</code>.</li>
+<li>View: <code>products.appliance_views.gourmetsets</code>; template: <code>templates/gourmetsets.html</code>.</li>
+<li>H1: De beste PFAS-vrije gourmetsets van 2026, uit de bestaande content.</li>
+<li>Bestaande productkaarten, centrale linkresolver, prijsweergave, sterren, badges en categorie-intro hergebruikt.</li>
+<li>Specificaties omvatten de aangeleverde capaciteit, pannetjes, materiaal, plaat, vermogen, bediening, afneembare onderdelen, onderhoud en extra functies.</li>
+<li>PFAS-status voor bakplaat en pannetjes wordt afzonderlijk weergegeven. Nul pannetjes blijft nul; “niet van toepassing” wordt niet omgezet in een bevestiging.</li>
+<li>Desktopvergelijking en compacte mobiele vergelijking gebruiken dezelfde gerenderde gegevens. Mobiel toont alleen onderscheidende extra kolommen, zoals pannetjes en vermogen.</li>
+<li>Ontbrekende scores of awards geven geen fout en leiden niet tot verzonnen invulling.</li>
+<li>De bestaande productdetailroute kan de nieuwe bronproducten laden; bestaande productdetailpagina’s blijven inhoudelijk gelijk.</li>
+</ul>
+
+<h2>3. Keukenapparatuur</h2>
+<p>Route: <code>/keukenapparatuur/</code>; named URL: <code>keukenapparatuur</code>. H1: Keukenapparatuur voor bewust koken.</p>
+<p>De hub bevat een voorzichtige introductie over materiaal, coatings, prestaties, onderhoud en duurzaamheid; twee volledig klikbare categoriekaarten voor Airfryers en Gourmetsets; en een korte toelichting op beoordelingscriteria. De bestaande Airfryer-afbeelding wordt met lazy loading gebruikt. Voor Gourmetsets is nog geen echte productfoto aanwezig, dus daarvoor is geen afbeelding verzonnen. Contactgrills, tosti-ijzers en waterkokers zijn niet zichtbaar gemaakt.</p>
+<p>De beschikbare categorieën worden centraal gedefinieerd in <code>products/appliance_catalogue.py</code> en hergebruikt voor menu en hub. Er is geen apart product- of rankingsysteem geïntroduceerd.</p>
+
+<h2>4. Definitief menu</h2>
+<pre>HOMEPAGE
+SNIJPLANKEN
+PANNEN
+    bestaande structuur ongewijzigd
+KEUKENAPPARATUUR
+    Alle keukenapparatuur
+    Airfryers
+    Gourmetsets
+VERSHOUDBAKJES
+BLOGS</pre>
+<p>Keukenapparatuur gebruikt op telefoon en desktop hetzelfde bestaande uitklapmechanisme als Pannen, met één niveau en drie directe links. Op desktop blijft dit in de bestaande zijbalkstijl; er is geen nieuwe horizontale menubalk of mega-menu gemaakt. Airfryers staat niet langer als zelfstandig hoofdmenu-item in het menu. Hover-/focusstijl, toetsenbordbediening, aria-expanded en inert volgen de bestaande component.</p>
+<p>Twee technische randgevallen zijn opgelost: de brede Gourmetsets-tabel mag de desktop-zijbalk niet buiten beeld drukken, en het openen van Keukenapparatuur sluit Pannen ook daadwerkelijk visueel, inclusief de opgeslagen desktopstatus.</p>
+
+<h2>5. Aangepaste bestaande bestanden</h2>
+<table><thead><tr><th>Bestand</th><th>Wijziging</th></tr></thead><tbody>
+<tr><td>products/content_airfryers.py en products/content_gourmetsets.py</td><td>Verwisselde bestanden teruggezet onder de juiste namen, zonder tekstwijziging.</td></tr>
+<tr><td>products/products_gourmetsets.py</td><td>Overbodige buitenste dictionary-laag verwijderd; productinhoud behouden.</td></tr>
+<tr><td>products/views.py</td><td>Gourmetsets in het centrale productregister; categoriegebonden presentatie van bronvelden; veilige ontbrekende score; Airfryer-breadcrumbs via de hub.</td></tr>
+<tr><td>LeefNatuurlijkenGezond/urls.py</td><td>Twee named routes toegevoegd; bestaande routes behouden.</td></tr>
+<tr><td>LeefNatuurlijkenGezond/sitemap_views.py</td><td>Hub en Gourmetsets toegevoegd; Airfryers behouden.</td></tr>
+<tr><td>LeefNatuurlijkenGezond/context_processors.py en settings.py</td><td>Gedeelde beschikbare apparaatcategorieën aan de templates doorgeven.</td></tr>
+<tr><td>templates/base.html</td><td>Nieuwe hoofdgroep; verwijdering los Airfryer-menu-item; gerichte stylesheet en optionele hoofdklasse voor de nieuwe categorie.</td></tr>
+<tr><td>templates/airfryers.html</td><td>Interne link terug naar Keukenapparatuur.</td></tr>
+<tr><td>templates/partials/product_block.html en templates/product_detail.html</td><td>Optionele specificaties voor de nieuwe Gourmetsets; bestaande producten zonder die velden houden dezelfde presentatie.</td></tr>
+<tr><td>static/assets/js/category-experience.js</td><td>Compacte onderscheidende pannetjes-/vermogenskolommen uit de bestaande tabelgegevens ondersteunen.</td></tr>
+<tr><td>static/assets/js/main.js</td><td>Opgeslagen Pannen-openstatus synchroniseren wanneer de nieuwe hoofdgroep Pannen sluit.</td></tr>
+<tr><td>products/tests_pan_navigation.py</td><td>Bestaande PANNEN-regressietest laten aansluiten op twee hoofduitklapgroepen, zonder de verwachte PANNEN-links te veranderen.</td></tr>
+</tbody></table>
+<p><code>products/rankings_gourmetsets.py</code> is uitsluitend hergebruikt, niet inhoudelijk gewijzigd.</p>
+
+<h2>6. Nieuwe implementatiebestanden</h2>
+<table><thead><tr><th>Bestand</th><th>Reden</th></tr></thead><tbody>
+<tr><td>products/appliance_catalogue.py</td><td>Beschikbare apparaatcategorieën en brongetrouwe presentatie van Gourmetsets-specificaties.</td></tr>
+<tr><td>products/appliance_views.py</td><td>Hub en Gourmetsets aansluiten op de bestaande categoriehelpers.</td></tr>
+<tr><td>templates/keukenapparatuur.html</td><td>Nieuwe echte hubpagina met bestaande kaartstijl.</td></tr>
+<tr><td>templates/gourmetsets.html</td><td>Nieuwe categoriepagina met bestaande product- en vergelijkingscomponenten.</td></tr>
+<tr><td>templates/partials/product_specifications.html</td><td>Toegankelijk inklapbare brongegevens en afzonderlijke PFAS-statussen.</td></tr>
+<tr><td>static/assets/css/appliances.css</td><td>Gerichte stijlen voor de nieuwe submenu-links, specificaties en de brede tabel; geen algemene huisstijlwijziging.</td></tr>
+<tr><td>products/test_appliances.py</td><td>Zes regressietests voor routes, metadata, gegevens, links, claims, sitemap en ontbrekende velden.</td></tr>
+<tr><td>scripts/check_appliances.py</td><td>Herhaalbare browsercontroles voor vier schermbreedtes en de echte menunavigatie.</td></tr>
+</tbody></table>
+
+<h2>7. SEO en testresultaten</h2>
+<ul>
+<li>Self-referencing canonicals: <code>https://leefnatuurlijkengezond.nl/keukenapparatuur/</code> en <code>https://leefnatuurlijkengezond.nl/gourmetsets/</code>.</li>
+<li>Airfryers houdt <code>/airfryers/</code>, <code>/airfryers/xl/</code> en <code>/airfryers/dual/</code>. Geen nieuwe redirects of slugwijzigingen.</li>
+<li>Unieke titles, descriptions, OpenGraph en Twitter-metadata; geen noindex toegevoegd.</li>
+<li>Zichtbare breadcrumbs en BreadcrumbList lopen via Keukenapparatuur. ItemList en FAQPage voor Gourmetsets volgen de bestaande helpers, zonder verzonnen klantreviews of aanbiedingen.</li>
+<li>Nieuwe routes staan in de sitemap met het bestaande non-www-domein. Alle zes Gourmetsets hebben geldige interne productroutes.</li>
+<li><code>python manage.py check</code>: geslaagd.</li>
+<li>21 integratie-/navigatietests plus 7 bestaande structured-data-/conclusietests: geslaagd, samen 28 unieke tests.</li>
+<li>Browsercontroles op 320, 390, 768 en 1440 px: drie routes per breedte, geen JavaScript-fouten of horizontale pagina-overflow.</li>
+<li>Menu openen/sluiten, Pannen sluiten bij openen Keukenapparatuur, Enter/Tab, drie directe links, touchhoogte van minstens 44 px en echte kaartnavigatie gecontroleerd.</li>
+<li>Mobiele vergelijking: zes rijen, geen affiliateknoppen, tabel-eigen scroll en zichtbare productnaamkolom gecontroleerd.</li>
+<li>Affiliate- en retailerbestemmingen zijn ongewijzigd en via de centrale resolver gecontroleerd. Externe winkelvoorraad en de werking van externe websites zijn niet opnieuw onderzocht.</li>
+</ul>
+
+<h2>8. Handmatige acties en aandachtspunten</h2>
+<div class="note">De pagina’s werken zonder extra handmatige configuratie. Voor productfoto’s moeten nog de zeven hieronder genoemde bestanden worden toegevoegd onder <code>static/images/products/gourmetsets/</code>. Tot die tijd verschijnt de expliciete melding “Productfoto nog niet beschikbaar”. Er zijn geen vervangende of gegenereerde productfoto’s gebruikt.</div>
+<pre>bourgini-gourmette-raclette-pure.webp
+boska-raclette-gourmet-party.webp
+greenpan-chefs-collection.webp
+greenpan-bistro.webp
+boska-raclette-gourmet-pro.webp
+bourgini-chefs-dinner-party-8-personen-wit.webp
+bourgini-chefs-dinner-party-8-personen-grazed-grey.webp</pre>
+<p>De aangeleverde Bourgini PURE-data vermeldt tegenstrijdig vaatwasseradvies voor de pannetjes. Die waarschuwing is behouden; er is geen onbevestigd onderhoudsadvies voor in de plaats gekomen. De schermcontroles zijn browseremulaties, geen tests op fysieke telefoons.</p>
+<p><strong>Niet gepubliceerd of gedeployd.</strong></p>
+</body></html>

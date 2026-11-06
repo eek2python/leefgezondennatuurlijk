@@ -77,3 +77,17 @@ mtime_ms = 1793365968178
 storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:4edb9d22-631e-4db5-a4cb-7648e6b34c12/b6943443-f4c7-40cb-809c-73143b8ac5f9/2a054499-c339-40ef-b6a5-5fba0261e800"
 storage_version_token = "1793365993365336"
 content_type = "text/html"
+
+[[outputs]]
+id = "kJidGroaXRRaVj0EIbUz1"
+uri = "file://reports/gourmetsets-integratie.html"
+type = "html"
+title = "Integratierapport Gourmetsets en Keukenapparatuur"
+description = "Audit, routes, bronbestanden, menu, SEO, testresultaten en de ontbrekende productfoto’s."
+logical_id = "1232868b-b4e7-40a1-86c2-22aaa70bb05e"
+content_hash = "sha256:27bb38473e0b0bf937c4d36b0bdc2a1e6131a22b64266b0ccdf8221e66d34bc6"
+size = 11075
+mtime_ms = 1793984662788
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:4edb9d22-631e-4db5-a4cb-7648e6b34c12/1232868b-b4e7-40a1-86c2-22aaa70bb05e/82757bd4-0077-481f-b424-3750aa217037"
+storage_version_token = "1793984711156030"
+content_type = "text/html"

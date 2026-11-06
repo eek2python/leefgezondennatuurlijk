@@ -46,6 +46,8 @@ from .content_snijplanken import CONTENT as SNIJPLANKEN_CONTENT
 from .products_airfryers import PRODUCTS as AIRFRYERS_PRODUCTS
 from .rankings_airfryers import RANKINGS as AIRFRYERS_RANKINGS
 from .content_airfryers import CONTENT as AIRFRYERS_CONTENT
+from .products_gourmetsets import PRODUCTS as GOURMETSETS_PRODUCTS
+from .appliance_catalogue import gourmet_specifications
 from .products_vershoudcontainers import PRODUCTS as VERSHOUDCONTAINERS_PRODUCTS
 from .rankings_vershoudcontainers import RANKINGS as VERSHOUDCONTAINERS_RANKINGS
 from .content_vershoudcontainers import CONTENT as VERSHOUDCONTAINERS_CONTENT
@@ -91,6 +93,7 @@ CATEGORY_MAP = {
     "wokpannen": {"products": WOKPANNEN_PRODUCTS, "label": "Wokpannen", "url_name": "wokpannen"},
     "snijplanken": {"products": SNIJPLANKEN_PRODUCTS, "label": "Snijplanken", "url_name": "snijplanken"},
     "airfryers": {"products": AIRFRYERS_PRODUCTS, "label": "Airfryers", "url_name": "airfryers"},
+    "gourmetsets": {"products": GOURMETSETS_PRODUCTS, "label": "Gourmetsets", "url_name": "gourmetsets"},
     "vershoudcontainers": {"products": VERSHOUDCONTAINERS_PRODUCTS, "label": "Vershoudbakjes", "url_name": "vershoudcontainers"},
 }
 
@@ -276,10 +279,19 @@ def _enrich_products(products, category=None):
     )
 
     for p in products:
-        if category in SET_CATEGORIES:
+        if category == "gourmetsets":
+            if isinstance(p.get("features"), str):
+                p["features"] = p["features"].split(" | ")
+            p["specifications"] = gourmet_specifications(p)
+        if category in SET_CATEGORIES or category == "gourmetsets":
             # The supplied set catalogues reference photos not uploaded yet.
             # Do not substitute an unrelated product photo or mutate PRODUCTS.
-            image = "/".join((p.get("image_path", ""), p.get("image", "")))
+            image_name = p.get("image", "")
+            if category == "gourmetsets" and not image_name:
+                image_name = next(
+                    (variant.get("image") for variant in p.get("variants", []) if variant.get("image")), ""
+                )
+            image = "/".join((p.get("image_path", ""), image_name))
             p["image_unavailable"] = not bool(finders.find(image))
         prepare_product_variants(p)
         _apply_combination_swatch_colors(p)
@@ -302,7 +314,7 @@ def _enrich_products(products, category=None):
         if "usage_display" not in p:
             p["usage_display"] = build_usage_display(p.get("usage"))
         p["formatted_capacity"], p["formatted_total_capacity"] = get_capacity_display(p)
-        p["rating_class"] = str(p["rating"]).replace(".", "-")
+        p["rating_class"] = str(p.get("rating") or "").replace(".", "-")
         # Nederlandse displaywaarde (komma); numerieke rating blijft ongewijzigd.
         p["rating_display"] = str(p["rating"]).replace(".", ",") if p.get("rating") else ""
         award = (p.get("award") or "").lower()
@@ -757,7 +769,10 @@ def airfryers(request, fmt=None):
         for k in AIRFRYER_FORMATS
     ]
 
-    breadcrumbs = [{"label": "Airfryers", "url": "/airfryers/"}]
+    breadcrumbs = [
+        {"label": "Keukenapparatuur", "url": reverse("keukenapparatuur")},
+        {"label": "Airfryers", "url": "/airfryers/"},
+    ]
     if selected_format != "compact":
         breadcrumbs.append({"label": fmt_label, "url": None})
 
@@ -1216,6 +1231,8 @@ def product_detail(request, slug):
             {"label": cat_info["label"], "url": category_url},
             {"label": product["name"], "url": None},
         ]
+        if cat_key == "gourmetsets":
+            breadcrumbs.insert(0, {"label": "Keukenapparatuur", "url": reverse("keukenapparatuur")})
         if cat_key in SET_CATEGORIES or cat_key in (
             "koekenpannen", "rvs-koekenpannen", "koolstofstalen-koekenpannen",
             "gietijzeren-koekenpannen", "hapjespannen", "wokpannen",

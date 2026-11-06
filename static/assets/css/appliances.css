@@ -1,0 +1,24 @@
+/* Scoped additions; shared navigation, cards and colours remain unchanged. */
+#main.appliance-category { min-width: 0; }
+#menu #menu-keukenapparatuur > li { padding: 0; }
+#menu #menu-keukenapparatuur > li > a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.6em 0;
+}
+.product-specifications {
+    margin: 1rem 0;
+    border: 1px solid #d8e2e4;
+    border-radius: 4px;
+    padding: 0.65rem;
+}
+.product-specifications summary {
+    cursor: pointer;
+    font-weight: 600;
+    min-height: 44px;
+    display: list-item;
+}
+.product-specifications dt { font-weight: 600; margin-top: 0.5rem; }
+.product-specifications dd { margin-left: 0; overflow-wrap: anywhere; }
+.product-specifications :focus-visible { outline: 3px solid #075e6b; outline-offset: 3px; }

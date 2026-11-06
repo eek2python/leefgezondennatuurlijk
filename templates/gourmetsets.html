@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block main_attributes %} class="appliance-category"{% endblock %}
+{% block title %}{{ meta.title }}{% endblock %}
+{% block meta %}{% include "partials/category_metadata.html" %}{% endblock %}
+
+{% block content %}
+{% include "partials/breadcrumbs.html" %}
+{% include "partials/affiliate_disclosure.html" %}
+{% include "partials/category_intro.html" with hero_heading=hero_h1 paragraphs=content.hero.paragraphs %}
+<p><a href="{% url 'keukenapparatuur' %}">Alle keukenapparatuur</a></p>
+
+<section class="category-product-list" aria-labelledby="productlijst">
+    <header class="major"><h2 id="productlijst">{{ content.products_section.h2 }}</h2></header>
+    <p>{{ content.products_section.intro }}</p>
+    <p>{{ product_count }} gourmetsets in dit overzicht.</p>
+    <div class="products-container">
+        {% for product in products %}{% include "partials/product_block.html" %}{% endfor %}
+    </div>
+</section>
+
+<section id="vergelijking" aria-labelledby="comparison-title">
+    <header class="major"><h2 id="comparison-title">{{ content.products_section.comparison_title }}</h2></header>
+    <div class="table-wrapper" tabindex="0" role="region" aria-label="{{ content.products_section.comparison_title }}">
+        <table class="alt product-table">
+            <thead><tr>
+                <th scope="col">Product</th>
+                <th scope="col">Personen</th>
+                <th scope="col">Pannetjes</th>
+                <th scope="col">Type plaat</th>
+                <th scope="col">Vermogen</th>
+                <th scope="col">Temperatuurregeling</th>
+                <th scope="col">PFAS-vrij: bakplaat</th>
+                <th scope="col">PFAS-vrij: pannetjes</th>
+                <th scope="col">Prijsniveau</th>
+                <th scope="col">Beoordeling</th>
+                <th scope="col">Actie</th>
+            </tr></thead>
+            <tbody>{% for product in products %}<tr>
+                <th scope="row">
+                    <strong>{{ product.name }}</strong>
+                    {% if product.award %}<br><span class="product-badge {{ product.award_class }}">{{ product.award }}</span>{% endif %}
+                </th>
+                <td>{{ product.capacity_persons|default_if_none:"—" }}</td>
+                <td>{{ product.number_of_pans|default_if_none:"—" }}</td>
+                <td>{{ product.plate_type|default:"—" }}</td>
+                <td>{% if product.power_w %}{{ product.power_w }} W{% else %}—{% endif %}</td>
+                <td>{{ product.temperature_control|default:"—" }}</td>
+                <td>{{ product.pfas_claim.grill_plate|default:"Niet vermeld" }}</td>
+                <td>{{ product.pfas_claim.pans|default:"Niet vermeld" }}</td>
+                <td>{{ product.display_price_range|default:"—" }}</td>
+                <td>{% if product.rating %}<span class="editorial-rating"><span class="rating-label">Onze beoordeling:</span> <span class="stars stars-{{ product.rating_class }}" aria-hidden="true"></span> <span class="rating-value">{{ product.rating_display }}/5</span></span>{% else %}—{% endif %}</td>
+                <td>{% include "includes/product_link.html" with resolved_link=product.resolved_link availability_label=product.availability_label link_product=product link_small=True %}</td>
+            </tr>{% endfor %}</tbody>
+        </table>
+    </div>
+</section>
+
+{% with section=content.why_choose %}
+<details class="category-help" open>
+    <summary><h2>{{ section.title }}</h2></summary>
+    <div class="category-help__content">
+        <p>{{ section.intro|safe }}</p>
+        <ul>{% for bullet in section.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+        <p>{{ section.outro|safe }}</p>
+    </div>
+</details>
+{% endwith %}
+{% with section=content.capacity_guide %}
+<details class="category-help" open>
+    <summary><h2>{{ section.title }}</h2></summary>
+    <div class="category-help__content">
+        <p>{{ section.intro|safe }}</p>
+        {% for group in section.sections %}
+        <h3>{{ group.h3 }}</h3>
+        <ul>{% for item in group.items %}<li>{{ item|safe }}</li>{% endfor %}</ul>
+        {% endfor %}
+        <p>{{ section.outro|safe }}</p>
+    </div>
+</details>
+{% endwith %}
+{% with section=content.price_guide %}
+<details class="category-help" open>
+    <summary><h2>{{ section.title }}</h2></summary>
+    <div class="category-help__content">
+        <p>{{ section.intro }}</p>
+        <ul>{% for range in section.ranges %}<li><strong>{{ range.label }}</strong>: {{ range.description }}</li>{% endfor %}</ul>
+        <p>{{ section.outro }}</p>
+    </div>
+</details>
+{% endwith %}
+{% with section=content.how_we_assess %}
+<details class="category-help" open>
+    <summary><h2>{{ section.title }}</h2></summary>
+    <div class="category-help__content">
+        <p>{{ section.intro|safe }}</p>
+        <ul>{% for item in section.admission %}<li>{{ item|safe }}</li>{% endfor %}</ul>
+        <ul>{% for weight in section.score_weights %}<li>{{ weight.criterion }}: {{ weight.weight }}</li>{% endfor %}</ul>
+        <ul>{% for bullet in section.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+        <p>{{ section.rating_threshold }}</p>
+        <p>{{ section.outro }}</p>
+    </div>
+</details>
+{% endwith %}
+<section>
+    <header class="major"><h2>{{ content.conclusion.title }}</h2></header>
+    <p>{{ content.conclusion.text|safe }}</p>
+</section>
+{% include "partials/faq_section.html" %}
+{% include "partials/handige_artikelen.html" %}
+{% include "partials/author_byline.html" %}
+{% endblock %}

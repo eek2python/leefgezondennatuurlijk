@@ -8,3 +8,8 @@ def ga_measurement_id(request):
 
 def site_origin(request):
     return {"SITE_URL": settings.SITE_URL.rstrip("/")}
+
+
+def appliance_navigation(request):
+    from products.appliance_catalogue import APPLIANCE_CATEGORIES
+    return {"appliance_categories": APPLIANCE_CATEGORIES}

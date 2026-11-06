@@ -34,6 +34,8 @@
         var coreCount = columns.length;
         addColumn(/^inhoud$/i, 'Inhoud', 104, text, true);
         addColumn(/^totale inhoud$/i, 'Totale inhoud', 104, text, true);
+        addColumn(/^pannetjes$/i, 'Pannetjes', 88, text, true);
+        if (columns.length < coreCount + 2) addColumn(/^vermogen$/i, 'Vermogen', 96, text, true);
         if (columns.length === coreCount) addColumn(/^formaat$/i, 'Formaat', 104, text, true);
         if (columns.length < coreCount + 2) {
             // The first term comes from the existing material/feature cell.

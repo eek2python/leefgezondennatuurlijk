@@ -11,6 +11,7 @@
    <script src="{% static_v 'assets/js/navigation-state.js' %}"></script>
    <link rel="stylesheet" href="{% static_v 'assets/css/main.css' %}" />
    <link rel="stylesheet" href="{% static_v 'assets/css/category-mobile.css' %}" />
+   <link rel="stylesheet" href="{% static_v 'assets/css/appliances.css' %}" />
    <link rel="stylesheet" href="{% static_v 'assets/css/comparison-table.css' %}" />
    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
@@ -30,7 +31,7 @@
    <div id="wrapper">
 
       <!-- Main -->
-      <div id="main">
+      <div id="main"{% block main_attributes %}{% endblock %}>
          <div class="inner">
 
             <!-- Header -->
@@ -74,7 +75,15 @@
                          <li class="pan-set-item"><a href="{% url 'complete_pannensets' %}">Complete pannensets</a></li>
                      </ul>
                   </li>
-                  <li><a href="{% url 'airfryers' %}">Airfryers</a></li>
+                  <li>
+                     <button type="button" class="opener" aria-expanded="false" aria-controls="menu-keukenapparatuur">Keukenapparatuur</button>
+                     <ul id="menu-keukenapparatuur" inert>
+                        <li><a href="{% url 'keukenapparatuur' %}">Alle keukenapparatuur</a></li>
+                        {% for category in appliance_categories %}
+                        <li><a href="{% url category.url_name %}">{{ category.label }}</a></li>
+                        {% endfor %}
+                     </ul>
+                  </li>
                   <li><a href="{% url 'vershoudcontainers' %}">Vershoudbakjes</a></li>
                   <li><a href="{% url 'blogs_overview' %}">Blogs</a></li>
                </ul>

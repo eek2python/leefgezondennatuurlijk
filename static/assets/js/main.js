@@ -306,8 +306,8 @@ setSidebar(false, false);
 $menu_openers.not($this).removeClass('active').attr('aria-expanded', 'false').next('ul').prop('inert', true);
 						$this.toggleClass('active');
 $this.attr('aria-expanded', String($this.hasClass('active'))).next('ul').prop('inert', !$this.hasClass('active'));
-if (breakpoints.active('>large') && navigationState && $this.attr('aria-controls') === 'menu-pannen')
-navigationState.set('pannen', $this.hasClass('active'));
+if (breakpoints.active('>large') && navigationState)
+navigationState.set('pannen', $menu.find('[aria-controls="menu-pannen"]').hasClass('active'));
 
 					// Trigger resize (sidebar lock).
 						$window.triggerHandler('resize.sidebar-lock');
