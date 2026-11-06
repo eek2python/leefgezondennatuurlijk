@@ -285,70 +285,48 @@ CONTENT = {
         ],
     },
     
-    "how_we_assess": {
-        "title": "Hoe wij gourmetsets beoordelen",
-        "intro": (
-            "We beoordelen gourmetsets op basis van betrouwbare "
-            "fabrikantgegevens, beschikbare onafhankelijke tests en "
-            "gebruikerservaringen. Tenzij uitdrukkelijk vermeld, voeren we "
-            "geen eigen praktijktest uit."
-        ),
-        "admission": [
-            (
-                "De PFAS-vrije status is onderbouwd voor de bakplaat en alle "
-                "meegeleverde pannetjes; een betrouwbaar bevestigde "
-                "ongecoate uitvoering voldoet ook."
+        "how_we_assess": {
+            "title": "Zo beoordelen we de gourmetsets",
+            "intro": (
+                "We nemen alleen gourmetsets op die verkrijgbaar zijn voor "
+                "Nederlandse consumenten en waarvan de PFAS-vrije status voor "
+                "de bakplaat en meegeleverde pannetjes voldoende is onderbouwd. "
+                "Een onderdeel kan ook voldoen als betrouwbaar is bevestigd dat "
+                "het ongecoat is."
             ),
-            "Het model is verkrijgbaar voor Nederlandse consumenten.",
-            (
-                "Er is voldoende betrouwbare informatie beschikbaar om de "
-                "belangrijkste eigenschappen te beoordelen."
+            "criteria_intro": (
+                "De sterrenbeoordeling is opgebouwd uit vijf onderdelen. Elk "
+                "onderdeel telt voor het aangegeven deel mee in de eindscore:"
             ),
-        ],
-        "score_weights": [
-            {"criterion": "Bakresultaat en temperatuurregeling", "weight": "25%"},
-            {"criterion": "Constructie en verwachte duurzaamheid", "weight": "25%"},
-            {"criterion": "Capaciteit, ontwerp en gebruiksgemak", "weight": "20%"},
-            {"criterion": "Reiniging en onderhoud", "weight": "15%"},
-            {"criterion": "Prijs-kwaliteitverhouding", "weight": "15%"},
-        ],
-        "bullets": [
-            (
-                "<strong>Gebruikerservaringen:</strong> gebruik reviews als "
-                "aanvullende aanwijzing voor terugkerende sterke punten of "
-                "problemen. Laat een enkele review de score niet zelfstandig "
-                "bepalen. Baseer algemene conclusies op meerdere vergelijkbare "
-                "ervaringen of op controleerbare productspecificaties."
+            "score_weights": [
+                {"criterion": "Bakresultaat en temperatuurregeling", "weight": "25%"},
+                {"criterion": "Constructie en verwachte duurzaamheid", "weight": "25%"},
+                {"criterion": "Capaciteit, ontwerp en gebruiksgemak", "weight": "20%"},
+                {"criterion": "Reiniging en onderhoud", "weight": "15%"},
+                {"criterion": "Prijs-kwaliteitverhouding", "weight": "15%"},
+            ],
+            "evidence": (
+                "Voor de beoordeling gebruiken we productspecificaties, "
+                "fabrikantdocumentatie, onafhankelijke tests en relevante "
+                "gebruikerservaringen. Gebruikerservaringen zijn aanvullende "
+                "informatie: een losse review bepaalt de score niet. Een patroon "
+                "dat in meerdere ervaringen terugkomt, kan wel meewegen. "
+                "Winkelgemiddelden vormen niet onze sterrenbeoordeling."
             ),
-            (
-                "<strong>Voorzichtig formuleren:</strong> schrijf een punt "
-                "toe aan een individuele ervaring als het alleen uit één "
-                "review komt, of laat het weg. Maak duidelijk wanneer een "
-                "conclusie een inschatting op basis van specificaties is."
+            "score_explanation": (
+                "We berekenen een gewogen gemiddelde op een schaal van 1 tot 5 "
+                "en ronden dat af op de dichtstbijzijnde halve ster. Alleen "
+                "modellen met minimaal 3,5 sterren worden opgenomen."
             ),
-            (
-                "<strong>Geen dubbeltelling:</strong> tel dezelfde bevinding "
-                "niet meerdere keren mee bij verschillende scorecriteria."
+            "testing_note": (
+                "De beoordeling is gebaseerd op de beschikbare informatie. We "
+                "vermelden het wanneer we een product zelf hebben getest; zonder "
+                "die vermelding is geen eigen praktijktest uitgevoerd."
             ),
-            (
-                "<strong>Reviewgemiddelden:</strong> gebruik externe "
-                "reviewgemiddelden en aantallen reviews niet als eigen score "
-                "of als zelfstandig voordeel. Neem ze niet op in de "
-                "productkaart. Bewaar ze alleen als onderbouwing in de "
-                "onderzoeksnotities, met bron en raadpleegdatum."
+            "outro": (
+                "Ontbreekt essentiële informatie om een product betrouwbaar te "
+                "beoordelen, dan nemen we het niet op. Prijzen, voorraad en "
+                "productspecificaties kunnen veranderen."
             ),
-        ],
-        "rating_threshold": (
-            "Beoordeel elk criterium op een schaal van 1 tot 5, bereken het "
-            "gewogen gemiddelde en rond de eindscore af op de dichtstbijzijnde "
-            "halve ster. Alleen modellen met minimaal 3,5 uit 5 sterren "
-            "worden in de lijst opgenomen."
-        ),
-        "outro": (
-            "Als essentiële informatie ontbreekt om een criterium betrouwbaar "
-            "te beoordelen, nemen we het model niet op. Prijzen, voorraad en "
-            "productspecificaties kunnen veranderen en worden daarom opnieuw "
-            "gecontroleerd voor publicatie."
-        ),
     },
     }

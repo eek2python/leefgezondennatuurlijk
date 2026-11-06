@@ -2597,5 +2597,54 @@
     "category": "complete-pannensets",
     "product_key": "ducq-koperen-pannenset-7-delig",
     "enabled": true
+  },
+  {
+    "source": "gourmetsets/bourgini-gourmette-raclette-pure.jpg",
+    "slug": "bourgini-gourmette-raclette-pure",
+    "category": "gourmetsets",
+    "product_key": "bourgini-gourmette-raclette-pure",
+    "enabled": true
+  },
+  {
+    "source": "gourmetsets/boska-raclette-gourmet-party.jpg",
+    "slug": "boska-raclette-gourmet-party",
+    "category": "gourmetsets",
+    "product_key": "boska-raclette-gourmet-party",
+    "enabled": true
+  },
+  {
+    "source": "gourmetsets/greenpan-chefs-collection.webp",
+    "slug": "greenpan-chefs-collection",
+    "category": "gourmetsets",
+    "product_key": "greenpan-chefs-collection",
+    "enabled": true
+  },
+  {
+    "source": "gourmetsets/greenpan-bistro.jpg",
+    "slug": "greenpan-bistro",
+    "category": "gourmetsets",
+    "product_key": "greenpan-bistro",
+    "enabled": true
+  },
+  {
+    "source": "gourmetsets/boska-raclette-gourmet-pro.jpg",
+    "slug": "boska-raclette-gourmet-pro",
+    "category": "gourmetsets",
+    "product_key": "boska-raclette-gourmet-pro",
+    "enabled": true
+  },
+  {
+    "source": "gourmetsets/bourgini-chefs-dinner-party-8-personen-wit.jpg",
+    "slug": "bourgini-chefs-dinner-party-8-personen-wit",
+    "category": "gourmetsets",
+    "product_key": "bourgini-chefs-dinner-party-8-personen-wit",
+    "enabled": true
+  },
+  {
+    "source": "gourmetsets/bourgini-chefs-dinner-party-8-personen-grazed-grey.jpg",
+    "slug": "bourgini-chefs-dinner-party-8-personen-grazed-grey",
+    "category": "gourmetsets",
+    "product_key": "bourgini-chefs-dinner-party-8-personen-grazed-grey",
+    "enabled": true
   }
 ]
