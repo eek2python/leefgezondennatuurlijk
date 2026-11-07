@@ -14,3 +14,4 @@
 - [Pannen: één bron](pan-source-policy.md) — sets op meerdere overzichten, nooit dubbel onderhouden; navigatie mag bestaande URL’s niet cosmetisch wijzigen.
 - [Browsertests in Nix](browser-test-environment.md) — optionele testpakketten uit productie houden; greenlet kan de aanwezige GCC-runtime nodig hebben.
 - [Categorie-uitbreiding](catalogue-growth-policy.md) — PANNEN niet herinrichten; alleen echte apparaatcategorieën tonen; Gourmetsets-claims per onderdeel en aangeleverde ranking behouden.
+- [Kenmerken in vergelijkingen](comparison-feature-policy.md) — alleen features in de kenmerkenkolom; material apart behouden en informatieverlies expliciet melden.

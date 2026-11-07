@@ -62,7 +62,7 @@
                         <thead>
                         <tr>
                         <th>Product</th>
-                        <th>Belangrijkste eigenschappen</th>
+                        <th>Kenmerken</th>
                         <th>Prijs</th>
                         <th>Beoordeling</th>
                         <th>Actie</th>
@@ -78,10 +78,7 @@
                         {% endif %}
                         </td>
                         <td>
-                        {{ product.material }}
-                        {% if product.features %}
-                        · {{ product.features|join:" · " }}
-                        {% endif %}
+                        {% include "partials/comparison_features.html" with features=product.features only %}
                         </td>
                         <td>{{ product.display_price_range|default:"—" }}</td>
                         <td>{% if product.rating %}<div class="editorial-rating editorial-rating--compact">

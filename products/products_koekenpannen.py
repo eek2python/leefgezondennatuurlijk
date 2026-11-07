@@ -311,6 +311,7 @@ PRODUCTS = {
         "Thermo-Signal warmte-indicator praktisch vindt bij het voorverwarmen. "
         "De pan is bedoeld voor gebruik op de kookplaat en niet in de oven."
     ),
+},
 
 "bk_infinity_28": {
   "slug": "bk-infinity-keramische-koekenpan-28-cm",

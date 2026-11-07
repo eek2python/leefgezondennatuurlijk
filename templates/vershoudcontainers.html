@@ -166,7 +166,7 @@ Beste glazen vershoudbakjes en sets van 2026 | Leef Natuurlijk & Gezond
                     <thead>
                         <tr>
                             <th scope="col">Product</th>
-                            <th scope="col">Belangrijkste eigenschappen</th>
+                            <th scope="col">Kenmerken</th>
                             <th scope="col">Inhoud</th>
 
                             {% if show_total_column %}
@@ -202,14 +202,7 @@ Beste glazen vershoudbakjes en sets van 2026 | Leef Natuurlijk & Gezond
                             </th>
 
                             <td>
-                                {% if row.product.material %}
-                                    {{ row.product.material }}
-                                {% endif %}
-
-                                {% if row.product.features %}
-                                    {% if row.product.material %} · {% endif %}
-                                    {{ row.product.features|join:" · " }}
-                                {% endif %}
+                                {% include "partials/comparison_features.html" with features=row.product.features only %}
                             </td>
 
                             <td>

@@ -38,9 +38,9 @@
         if (columns.length < coreCount + 2) addColumn(/^vermogen$/i, 'Vermogen', 96, text, true);
         if (columns.length === coreCount) addColumn(/^formaat$/i, 'Formaat', 104, text, true);
         if (columns.length < coreCount + 2) {
-            // The first term comes from the existing material/feature cell.
+            // The first feature comes from the existing features-only cell.
             // Omit the column altogether if any value needs a long description.
-            addColumn(/eigenschappen|materiaal/i, 'Materiaal / constructie', 144, function (cell) {
+            addColumn(/eigenschappen|kenmerken/i, 'Kenmerken', 144, function (cell) {
                 return text(cell).split('·')[0].trim();
             }, true);
         }
