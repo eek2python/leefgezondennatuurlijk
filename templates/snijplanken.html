@@ -134,15 +134,6 @@ Beste houten snijplanken van 2026 – kopshout en massief hout | Leef Natuurlijk
 
 </section>
 
-<details class="category-help" open>
-    <summary><h2>{{ content.why_choose.title }}</h2></summary>
-    <div class="category-help__content">
-    <p>{{ content.why_choose.intro|safe }}</p>
-    <ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
-    </div>
-</details>
-{% include "partials/how_we_select.html" %}
-
     {% if conclusie %}
     <section>
     <header class="major">
@@ -151,6 +142,15 @@ Beste houten snijplanken van 2026 – kopshout en massief hout | Leef Natuurlijk
     <p>{{ conclusie.text|safe }}</p>
     </section>
     {% endif %}
+
+<details class="category-help" open>
+    <summary><h2>{{ content.why_choose.title }}</h2></summary>
+    <div class="category-help__content">
+    <p>{{ content.why_choose.intro|safe }}</p>
+    <ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+    </div>
+</details>
+{% include "partials/how_we_select.html" %}
 
     <section>
     <header class="major">

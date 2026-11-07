@@ -134,6 +134,15 @@
     </div>
 </section>
 
+{% if conclusie %}
+<section>
+<header class="major">
+<h2>{{ conclusie.title }}</h2>
+</header>
+<p>{{ conclusie.text|safe }}</p>
+</section>
+{% endif %}
+
 {% if content.why_choose %}
 <details class="category-help" open>
 <summary><h2>{{ content.why_choose.title }}</h2></summary>
@@ -145,16 +154,6 @@
 </details>
 {% endif %}
 {% include "partials/how_we_select.html" %}
-
-{% if conclusie %}
-<section>
-<header class="major">
-<h2>{{ conclusie.title }}</h2>
-</header>
-<p>{{ conclusie.text|safe }}</p>
-</section>
-
-{% endif %}
 
 {% if content.tips %}
 <section>

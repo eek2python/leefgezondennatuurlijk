@@ -290,18 +290,6 @@ Beste glazen vershoudbakjes en sets van 2026 | Leef Natuurlijk & Gezond
     {% endif %}
 </section>
 
-<details class="category-help storage-why-choose" open>
-    <summary><h2 id="why-choose-title">{{ content.why_choose.title }}</h2></summary>
-    <div class="category-help__content">
-    {% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
-    {% if content.why_choose.bullets %}
-    <ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
-    {% endif %}
-    </div>
-</details>
-{% include "partials/how_we_select.html" %}
-
-
 <!-- Conclusie -->
 {% if conclusie %}
 <section
@@ -318,6 +306,16 @@ Beste glazen vershoudbakjes en sets van 2026 | Leef Natuurlijk & Gezond
 </section>
 {% endif %}
 
+<details class="category-help storage-why-choose" open>
+    <summary><h2 id="why-choose-title">{{ content.why_choose.title }}</h2></summary>
+    <div class="category-help__content">
+    {% if content.why_choose.intro %}<p>{{ content.why_choose.intro|safe }}</p>{% endif %}
+    {% if content.why_choose.bullets %}
+    <ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+    {% endif %}
+    </div>
+</details>
+{% include "partials/how_we_select.html" %}
 
 <!-- Onderhoudstips -->
 {% if content.tips %}

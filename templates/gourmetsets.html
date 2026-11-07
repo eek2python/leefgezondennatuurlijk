@@ -55,6 +55,11 @@
     </div>
 </section>
 
+<section>
+    <header class="major"><h2>{{ content.conclusion.title }}</h2></header>
+    <p>{{ content.conclusion.text|safe }}</p>
+</section>
+
 {% with section=content.why_choose %}
 <details class="category-help" open>
     <summary><h2>{{ section.title }}</h2></summary>
@@ -101,10 +106,6 @@
     </div>
 </details>
 {% endwith %}
-<section>
-    <header class="major"><h2>{{ content.conclusion.title }}</h2></header>
-    <p>{{ content.conclusion.text|safe }}</p>
-</section>
 {% include "partials/faq_section.html" %}
 {% include "partials/handige_artikelen.html" %}
 {% include "partials/author_byline.html" %}
