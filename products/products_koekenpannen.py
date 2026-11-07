@@ -54,18 +54,29 @@ PRODUCTS = {
 "kochstar_essenz_28": {
 "slug": "kochstar-essenz-28",
 "name": "Kochstar Essenz",
-"description": "Voordelige aluminium koekenpan met keramische antiaanbaklaag, "
-"koel blijvende greep en geschiktheid voor inductie.",
+"description": (
+        "Lichte aluminium koekenpan met PFAS-vrije keramische antiaanbaklaag "
+        "en koelblijvende handgreep. De pan is geschikt voor inductie en "
+        "beperkt ovenbestendig tot 130 °C."
+    ),
 "brand": "Kochstar",
 "diameter": 28,
 "material": "Aluminium met keramische antiaanbaklaag",
-"features": ["PFAS-vrij", "Lichtgewicht", ],
+"features": [
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Aluminium constructie",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 130 °C",
+        "Koelblijvende handgreep",
+        "Lichtgewicht constructie",
+    ],
 "rating": 4,
 "rating_count": None,
-"rating_source": "editorial",
+"rating_source": "Leef Natuurlijk & Gezond",
 "price": 13.99,
 "currency": "EUR",
 "availability": "InStock",
+"availability_label": "Op voorraad",
 "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fkochstar-essenz-zwart-keramische-koekenpan-28cm-pfas-vrij-inductie-koekenpan-inductie-pan-keramische-anti-aanbaklaag-koelgreep-ovenbestendig-tot-130-c-zwart%2F9300000231848099%2F&name=Kochstar%20Essenz%20koekenpan%20-%2028cm%20-%20PFAS-vrij%20-%20Inductie%20-%20Keramische%20anti-aanbaklaag",
 "retailer_url": "https://www.bol.com/nl/nl/p/kochstar-essenz-zwart-keramische-koekenpan-28cm-pfas-vrij-inductie-koekenpan-inductie-pan-keramische-anti-aanbaklaag-koelgreep-ovenbestendig-tot-130-c-zwart/9300000231848099/",
 "award": "💰 Budget keuze",
@@ -97,36 +108,40 @@ PRODUCTS = {
   "pros": [
       "Zeer lage aanschafprijs",
       "Licht en gemakkelijk hanteerbaar",
-      "Verkrijgbaar in twee kleuren",
+      "Koelblijvende handgreep",
   ],
   "cons": [
-      "Slechts beperkt ovenbestendig tot 130 °C",
-      "Eenvoudigere afwerking dan duurdere modellen",
+      "Ovenbestendig tot slechts 130 °C",
   ],
-  "verdict": "Een toegankelijke budgetkeuze voor licht en regelmatig gebruik.",
+  "verdict": (
+        "De Kochstar Essenz is onze 💰 Budget keuze door de zeer lage "
+        "aanschafprijs in combinatie met inductiegeschiktheid en een "
+        "koelblijvende handgreep. De ovenbestendigheid is beperkt tot 130 °C."
+    ),
 },
 
 "fissler_essential_28": {
   "slug": "fissler-essential-keramische-koekenpan-28-cm",
   "name": "Fissler Essential Keramische Koekenpan 28 cm",
   "description": (
-      "De Fissler Essential 28 cm is een koekenpan geproduceerd van "
-      "100% gerecycled aluminium met een keramische antiaanbaklaag die zonder "
-      "PFAS en PTFE is geproduceerd. De Essential-inductiebodem is ontworpen voor "
-      "een gelijkmatige warmteverdeling en -opslag. De pan is geschikt voor alle "
-      "gangbare warmtebronnen, waaronder inductie, en heeft een ergonomische "
-      "kunststof handgreep zonder klinknagels."
-  ),
+        "Koekenpan van 100% gerecycled aluminium met een keramische "
+        "antiaanbaklaag die zonder PFAS en PTFE is geproduceerd. De pan "
+        "heeft een circa 5 mm dikke Essential-inductiebodem en een "
+        "kunststof handgreep zonder klinknagels."
+    ),
   "brand": "Fissler",
   "diameter": 28,
   "material": "100% gerecycled aluminium met keramische antiaanbaklaag",
   "features": [
-      "Fissler Essential-inductiebodem",
-      "Geschikt voor alle gangbare warmtebronnen",
-      "Bodemdiameter circa 21,5 cm",
-      "Bodemdikte circa 5 mm",
-      "Ergonomische kunststof handgreep zonder klinknagels",
-  ],
+        "Keramische antiaanbaklaag geproduceerd zonder PFAS en PTFE",
+        "100% gerecycled aluminium",
+        "Essential-inductiebodem",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Niet geschikt voor ovengebruik",
+        "Kunststof handgreep zonder klinknagels",
+        "Bodemdiameter circa 21,5 cm",
+        "Bodemdikte circa 5 mm",
+    ],
   "rating": 4.4,
   "rating_count": None,
   "rating_source": "Leef Natuurlijk & Gezond",
@@ -134,19 +149,18 @@ PRODUCTS = {
   "price_last_checked": "2026-10-07",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Ffissler-essential-koekenpan-28cm%2F9300000233149801%2F&name=Fissler%20Essential%20Koekenpan%2028cm",
   "retailer_url": "https://www.bol.com/nl/nl/p/fissler-essential-koekenpan-28cm/9300000233149801/",
   "official_url": "https://nl.fissler.com/products/fissler-essential-pan",
-  "availability_label": "Op voorraad",
   "award": None,
   "price_range": "€€",
   "image": "fissler-essential-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Keramische coating geproduceerd zonder PFAS en PTFE",
-      "Gemaakt van 100% gerecycled aluminium",
-      "Geschikt voor inductie",
-  ],
+        "Circa 5 mm dikke Essential-inductiebodem",
+        "Kunststof handgreep zonder klinknagels",
+    ],
   "cons": [
       "Niet geschikt voor gebruik in de oven",
       "Kunststof handgreep is minder veelzijdig dan een volledig metalen greep",

@@ -40,6 +40,23 @@ def run():
                     assert source.is_visible() == (width > 736)
                     if width <= 736:
                         assert comparison.locator("tbody tr").count() == 6
+                        assert comparison.locator("thead th").all_text_contents() == [
+                            "Product", "Oordeel", "Prijs", "Pannetjes", "Vermogen",
+                            "Type plaat", "Temperatuurregeling",
+                            "PFAS-vrij: bakplaat", "PFAS-vrij: pannetjes",
+                        ]
+                        # Additional mobile cells must match the desktop source exactly.
+                        assert comparison.locator("table").evaluate("""mobile => {
+                            const source = document.querySelector('.product-table');
+                            const clean = e => e.textContent.replace(/\\s+/g, ' ').trim();
+                            const headers = [...source.tHead.rows[0].cells].map(clean);
+                            return [...mobile.tBodies[0].rows].every((row, i) =>
+                                [...mobile.tHead.rows[0].cells].slice(5).every((header, j) =>
+                                    clean(row.cells[j + 5]) === clean(
+                                        source.tBodies[0].rows[i].cells[headers.indexOf(clean(header))])));
+                        }""")
+                        assert "niet van toepassing" in comparison.inner_text()
+                        assert page.locator(".compact-comparison-hint").is_visible()
                         assert not comparison.locator(".button,button,[rel~='sponsored']").count()
                         comparison.scroll_into_view_if_needed()
                         first = comparison.locator("tbody th").first

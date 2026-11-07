@@ -44,6 +44,14 @@
                 return text(cell).split('·')[0].trim();
             }, true);
         }
+        if (table.dataset.comparisonCategory === 'gourmetsets') {
+            // These details matter even when all sets share the same PFAS status.
+            // Read the source cells verbatim, including unknown/not-applicable values.
+            addColumn(/^type plaat$/i, 'Type plaat', 180, text, false);
+            addColumn(/^temperatuurregeling$/i, 'Temperatuurregeling', 160, text, false);
+            addColumn(/^PFAS-vrij: bakplaat$/i, 'PFAS-vrij: bakplaat', 112, text, false);
+            addColumn(/^PFAS-vrij: pannetjes$/i, 'PFAS-vrij: pannetjes', 112, text, false);
+        }
 
         var hint = document.createElement('p');
         hint.className = 'compact-comparison-hint';

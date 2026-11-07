@@ -28,6 +28,16 @@ Laat alleen de tabel horizontaal schuiven, houd de naamkolom betrouwbaar
 zichtbaar en toon een veegaanwijzing alleen bij echte overflow. Toon voor
 screenreaders maar één vergelijkingsweergave tegelijk.
 
+De mobiele Gourmetsets-vergelijking bevat ook type plaat, temperatuurregeling
+en de afzonderlijke PFAS-status van bakplaat en pannetjes, ook als een status
+bij alle producten hetzelfde is.
+
+**Why:** de gebruiker vond de mobiele selectie te beperkt en stemde expliciet
+in met het toevoegen van deze vier vergelijkingspunten.
+
+**How to apply:** behoud deze informatie bij latere aanpassingen aan de
+compacte kolomselectie; gelijke PFAS-statussen zijn geen reden om ze te verbergen.
+
 De homepagefoto moet op telefoon dezelfde kleuren en helderheid houden als
 op desktop; voeg geen extra donkere laag toe alleen voor mobiel.
 
