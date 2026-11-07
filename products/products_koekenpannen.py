@@ -162,34 +162,42 @@ PRODUCTS = {
         "Kunststof handgreep zonder klinknagels",
     ],
   "cons": [
-      "Niet geschikt voor gebruik in de oven",
-      "Kunststof handgreep is minder veelzijdig dan een volledig metalen greep",
-  ],
+        "Niet geschikt voor gebruik in de oven",
+    ],
   "verdict": (
-      "Een sterke middenklassekeuze met een aantrekkelijke combinatie van prijs en "
-      "constructie. Het gebruik van 100% "
-      "gerecycled aluminium en de keramische coating zonder PFAS en PTFE onderscheiden "
-      "de Essential van veel eenvoudige aluminium pannen in deze prijsklasse. De "
-      "kunststof handgreep en het ontbreken van ovenbestendigheid beperken de "
-      "veelzijdigheid enigszins."
-  ),
+        "Een praktische middenklassepan voor gebruik op de kookplaat, met "
+        "een relatief dikke inductiebodem en een klinknagelloze kunststof "
+        "handgreep. Het ontbreken van ovenbestendigheid beperkt de "
+        "veelzijdigheid."
+    ),
 },
 
 "bk_easy_induction_28": {
   "slug": "bk-easy-induction-28",
   "name": "BK Easy Induction Ceramic",
-  "description": "PFAS-vrije keramische pan met koele greep en stevige bodem.",
+  "description": (
+        "Aluminium koekenpan met PFAS-vrije keramische antiaanbaklaag en "
+        "koelblijvende handgreep. De pan is geschikt voor inductie, maar "
+        "niet voor gebruik in de oven."
+    ),
   "brand": "BK",
   "diameter": 28,
   "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["Koele greep", "Inductie"],
+  "features": [
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Aluminium constructie",
+        "Geschikt voor inductie",
+        "Niet geschikt voor ovengebruik",
+        "Koelblijvende handgreep",
+    ],
   "rating": 4.3,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "price": 39.99,
   "price_last_checked": "2026-10-07",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-easy-induction-ceramic-koekenpan-28-cm-pfas-vrij-inductie%2F9300000032109237%2F&name=BK%20Easy%20Induction%20koekenpan%2028%20cm%20-%20PFAS%20vrij%20-%20Inductie%20-%20Ovenbestendig",
   "retailer_url": "https://www.bol.com/nl/nl/p/bk-easy-induction-ceramic-koekenpan-28-cm-pfas-vrij-inductie/9300000032109237/",
   "award": None,
@@ -197,63 +205,95 @@ PRODUCTS = {
   "image": "bk-easy-induction-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Goede prijs-kwaliteit",
-      "Snelle opwarming",
-      "Koele handgreep",
-  ],
+        "Koelblijvende handgreep",
+        "Lage aanschafprijs voor een 28 cm inductiepan",
+    ],
   "cons": [
-      "Niet ovenbestendig",
-  ],
-  "verdict":  "Een praktische middenklassepan met comfortabele greep "
-  "en een toegankelijke prijs.",
+        "Niet geschikt voor gebruik in de oven",
+    ],
+  "verdict":  (
+        "Een toegankelijke keramische koekenpan voor wie vooral op de "
+        "kookplaat bakt en een koelblijvende handgreep belangrijk vindt. "
+        "Voor ovenbereidingen is deze uitvoering niet geschikt."
+    ),
 },
 
 "brabantia_dusk_28": {
   "slug": "brabantia-dusk-28",
   "name": "Brabantia Dusk",
-  "description": "Moderne keramische PFAS-vrije pan met stijlvolle afwerking.",
+  "description": (
+        "Lichte koekenpan van 100% gerecycled aluminium met een PFAS-vrije "
+        "keramische antiaanbaklaag met twee lagen en een geklonken "
+        "roestvrijstalen handgreep. De pan is geschikt voor alle gangbare "
+        "warmtebronnen, waaronder inductie, en kan ook in de oven."
+    ),
   "brand": "Brabantia",
   "diameter": 28,
-  "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["PFAS-vrij", "Stevige bodem"],
+  "material": (
+        "100% gerecycled aluminium met keramische antiaanbaklaag"
+    ),
+  "features": [
+        "PFAS-vrije keramische antiaanbaklaag met twee lagen",
+        "100% gerecycled aluminium",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 200 °C",
+        "Geklonken roestvrijstalen handgreep",
+        "Vaatwasserbestendig",
+        "Gewicht circa 0,85 kg",
+    ],
   "rating": 4.2,
   "rating_count": None,
-  "rating_source": "editorial",
-  "price": 30.00,
-  "price_last_checked": "2026-08-07",
+  "rating_source": "Leef Natuurlijk & Gezond",
+  "price": 44.00,
+  "price_last_checked": "2026-11-07",
   "currency": "EUR",
-  "availability": "OutofStock",
+  "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbrabantia-dusk-r-ns-koekenpan-o-28cm-100-pfas-vrij%2F9300000225842102%2F&name=Brabantia%20Dusk%20Koekenpan%20%C3%98%2028cm%20-%20100%25%20PFAS%20vrij%20-%20100%25%20gerecycleerd%20-%20Inductie",
   "retailer_url": "https://www.bol.com/nl/nl/p/brabantia-dusk-r-ns-koekenpan-o-28cm-100-pfas-vrij/9300000225842102/",
   "price_range": "€€",
   "image": "brabantia-dusk-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Stevige inductiebodem",
-      "Comfortabele greep",
-      "Verzorgde, moderne afwerking",
-  ],
-  "cons": [
-      "Niet vaatwasserbestendig",
-  ],
-  "verdict": "Een aantrekkelijke keuze voor wie functionaliteit en een moderne vormgeving wil combineren.",
+        "Met circa 0,85 kg relatief licht voor een koekenpan van 28 cm",
+        "Ovenbestendig tot 200 °C",
+    ],
+  "cons": [],
+  "verdict": (
+        "Een lichte keramische koekenpan die geschikt is voor zowel de "
+        "kookplaat als ovengebruik tot 200 °C. De combinatie van het lage "
+        "gewicht en de metalen handgreep maakt de Dusk praktisch voor "
+        "verschillende bereidingswijzen."
+    ),
 },
 
 "tefal_renew_28": {
   "slug": "tefal-renew-28",
   "name": "Tefal Renew+",
-  "description": "Gemaakt van 100% gerecycled aluminium met PFAS-vrije laag.",
+  "description": (
+        "Koekenpan van 100% gerecycled aluminium met PFAS-vrije keramische "
+        "antiaanbaklaag en Thermo-Signal warmte-indicator. De pan is geschikt "
+        "voor inductie, maar niet voor gebruik in de oven."
+    ),
   "brand": "Tefal",
   "diameter": 28,
-  "material": "Gerecycled aluminium met keramische antiaanbaklaag",
-  "features": ["Thermo-Signal"],
+  "material": "100% gerecycled aluminium met keramische antiaanbaklaag",
+  "features": [
+        "PFAS-vrije keramische antiaanbaklaag",
+        "100% gerecycled aluminium",
+        "Geschikt voor inductie",
+        "Niet geschikt voor ovengebruik",
+        "Thermo-Signal warmte-indicator",
+    ],
   "rating": 4.2,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "price": 38.99,
   "price_last_checked": "2026-08-07",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Ftefal-renew-koekenpan-o28-cm-keramisch-pfas-vrij-geschikt-voor-inductie%2F9300000118641472%2F&name=Tefal%20Renew%2B%20Koekenpan%20-%20Keramisch%2C%20PFAS-vrij%20-%20%C3%9828%20cm%20-%20Geschikt%20voor%20inductie",
   "retailer_url": "https://www.bol.com/nl/nl/p/tefal-renew-koekenpan-o28-cm-keramisch-pfas-vrij-geschikt-voor-inductie/9300000118641472/",
   "award": "",
@@ -261,37 +301,37 @@ PRODUCTS = {
   "image": "tefal-renew-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Duurzaam gerecycled materiaal",
-      "Goede warmtegeleiding",
-      "Thermo-Signal-hitte-indicator",
-  ],
+        "Thermo-Signal geeft een visuele indicatie voor het voorverwarmen",
+    ],
   "cons": [
-      "Niet ovenbestendig",
-  ],
-  "verdict": "Een gebruiksvriendelijke keuze voor wie een keramische Tefal-pan "
-"met hitte-indicator zoekt.",
-},
+        "Niet geschikt voor gebruik in de oven",
+    ],
+  "verdict": (
+        "Een gebruiksvriendelijke keramische koekenpan voor wie de "
+        "Thermo-Signal warmte-indicator praktisch vindt bij het voorverwarmen. "
+        "De pan is bedoeld voor gebruik op de kookplaat en niet in de oven."
+    ),
 
 "bk_infinity_28": {
   "slug": "bk-infinity-keramische-koekenpan-28-cm",
   "name": "BK Infinity Keramische Koekenpan 28 cm",
   "description": (
-      "De BK Infinity 28 cm is een ruime keramische koekenpan met een body van "
-      "100% gerecycled aluminium en een extra dikke roestvrijstalen inductiebodem. "
-      "De PFAS-vrije Thermolon™ keramische antiaanbaklaag maakt bakken met weinig "
-      "vet mogelijk. De pan is geschikt voor alle gangbare warmtebronnen, waaronder "
-      "inductie, en kan tot 160 °C in de oven."
-  ),
+        "Keramische koekenpan van 100% gerecycled aluminium met Thermolon™ "
+        "antiaanbaklaag en een extra dikke roestvrijstalen inductiebodem. "
+        "De pan is geschikt voor alle gangbare warmtebronnen en ovenbestendig "
+        "tot 160 °C."
+    ),
   "brand": "BK",
   "diameter": 28,
-  "material": "100% gerecycled aluminium",
+  "material": "100% gerecycled aluminium met keramische antiaanbaklaag",
   "features": [
-      "PFAS-vrije Thermolon™ keramische antiaanbaklaag",
-      "Extra dikke roestvrijstalen inductiebodem",
-      "Geschikt voor alle gangbare warmtebronnen",
-      "Ovenbestendig tot 160 °C",
-      "Vaatwasserbestendig",
-  ],
+        "PFAS-vrije Thermolon™ keramische antiaanbaklaag",
+        "100% gerecycled aluminium",
+        "Extra dikke roestvrijstalen inductiebodem",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Ovenbestendig tot 160 °C",
+        "Vaatwasserbestendig",
+    ],
   "rating": 4.4,
   "rating_count": None,
   "rating_source": "Leef Natuurlijk & Gezond",
@@ -308,162 +348,133 @@ PRODUCTS = {
   "image": "bk-infinity-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "PFAS-vrije Thermolon™ keramische antiaanbaklaag",
-      "Extra dikke RVS bodem voor goede prestaties op inductie",
-  ],
+        "Extra dikke roestvrijstalen inductiebodem",
+        "Vaatwasserbestendig",
+    ],
   "cons": [
-      "Ovenbestendig tot slechts 160 °C",
-  ],
+        "Ovenbestendig tot maximaal 160 °C",
+    ],
   "verdict": (
-      "Een stevige en ruime keramische koekenpan die vooral interessant is door de "
-      "combinatie van een 100% gerecyclede aluminium, een dikke RVS inductiebodem "
-      "en een PFAS-vrije Thermolon™ coating. Een sterke middenklassekeuze voor "
-      "dagelijks gebruik, met de beperkte ovenbestendigheid als belangrijkste nadeel."
-  ),
+        "Een degelijk uitgevoerde keramische koekenpan met een extra dikke "
+        "RVS-inductiebodem en een body van 100% gerecycled aluminium. "
+        "De ovenbestendigheid tot 160 °C beperkt het gebruik bij "
+        "bereidingen op hogere oventemperaturen."
+    ),
 },
 
 "demeyere_alu_pro_5_28": {
   "slug": "demeyere-alu-pro-5-28",
   "name": "Demeyere Alu Pro 5 Ceraforce",
-  "description": "Stevige aluminium koekenpan met Ceraforce keramische coating "
-  "en een dikke bodem voor stabiele warmteverdeling.",
+  "description": (
+        "Stevige aluminium koekenpan met Ceraforce keramische "
+        "antiaanbaklaag en een dikke bodem. De pan is geschikt voor inductie "
+        "en heeft een robuust uitgevoerde handgreep."
+    ),
   "brand": "Demeyere",
   "diameter": 28,
   "material": "Aluminium met Ceraforce keramische antiaanbaklaag",
   "features": [
-      "Geschikt voor inductie",
-      "Dikke aluminium bodem",
-  ],
+        "Ceraforce keramische antiaanbaklaag",
+        "Aluminium constructie",
+        "Dikke aluminium bodem",
+        "Geschikt voor inductie",
+        "Stevige handgreep",
+    ],
   "rating": 4.6,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "price": 86.00,
   "price_last_checked": "2026-08-07",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdemeyere-12628-alu-pro-5-ceraforce-antikleef-bakpan-28-cm%2F9300000032747130%2F&name=Demeyere%20Alu%20Pro%205%20Ceraforce%20koekenpan%20-%2028%20cm%20-%20PFAS%20vrij%20-%20Inductie",
   "retailer_url": "https://www.bol.com/nl/nl/p/demeyere-12628-alu-pro-5-ceraforce-antikleef-bakpan-28-cm/9300000032747130/",
   "award": "💎 Premium keuze",
-  "price_range": "€€€€",
+  "price_range": "€€€",
   "image": "demeyere-alu-pro-5-ceraforce-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Zeer gelijkmatige warmteverdeling",
-      "Stevige handgreep en afwerking",
-      "Geschikt voor intensief dagelijks gebruik",
-  ],
+        "Dikke aluminium bodem",
+        "Stevig uitgevoerde handgreep en constructie",
+    ],
   "cons": [
-      "Hogere prijsklasse",
-      "Relatief zwaar",
-  ],
-  "verdict": "Onze premium keuze voor wie bouwkwaliteit en stabiele "
-  "warmteverdeling belangrijker vindt dan een lage prijs.",
+        "Relatief zwaar",
+        "Aanschafprijs ligt in het hogere prijssegment",
+    ],
+  "verdict": (
+        "De Demeyere Alu Pro 5 Ceraforce is onze 💎 Premium keuze door de "
+        "stevige constructie en dikke aluminium bodem. Het relatief hoge "
+        "gewicht en prijsniveau zijn de belangrijkste aandachtspunten."
+    ),
 },
 
 "debuyer_ceranoa_28": {
   "slug": "debuyer-ceranoa-28",
   "name": "De Buyer Ceranoa",
-  "description": "Hoogwaardige keramische pan zonder PFAS met ergonomische greep.",
+  "description": (
+        "Aluminium koekenpan met PFAS-vrije keramische antiaanbaklaag en "
+        "ergonomisch vormgegeven handgreep. De pan is geschikt voor inductie "
+        "en moet met de hand worden gereinigd."
+    ),
   "brand": "De Buyer",
   "diameter": 28,
   "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["PFAS-vrij", "Premium afwerking"],
+  "features": [
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Aluminium constructie",
+        "Geschikt voor inductie",
+        "Ergonomische handgreep",
+        "Niet vaatwasserbestendig",
+    ],
   "rating": 4.5,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "price": 84.78,
   "price_last_checked": "2026-07-27",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdebuyer-ceranoa-koekenpan-28cm%2F9300000232243696%2F&name=de%20Buyer%20CERANOA%20Koekenpan%2028%20cm%20%E2%80%93%20PFAS-vrije%20Keramische%20Koekenpan%20%E2%80%93%20Inductie",
   "retailer_url": "https://www.bol.com/nl/nl/p/debuyer-ceranoa-koekenpan-28cm/9300000232243696/",
   "price_range": "€€€",
   "image": "debuyer-ceranoa-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Gelijkmatige warmteverdeling",
-      "Hoogwaardig afgewerkte keramische antiaanbaklaag",
-      "Ergonomisch handvat",
-  ],
+        "Ergonomisch vormgegeven handgreep",
+        "Stevig en verzorgd afgewerkte constructie",
+    ],
   "cons": [
-      "Hoge aanschafprijs",
-      "Niet vaatwasserbestendig",
-  ],
-  "verdict": "Een hoogwaardig afgewerkte pan voor wie ergonomie en een stevige constructie vooropstelt.",
-},
-
-"greenpan_mayflower_28": {
-  "slug": "greenpan-mayflower-28",
-  "name": "GreenPan Mayflower",
-  "description": (
-      "Stijlvolle keramische koekenpan met PFAS-vrije Thermolon™ "
-      "coating en inductiebodem."
-  ),
-  "brand": "GreenPan",
-  "diameter": 28,
-  "material": "Aluminium met Thermolon keramische antiaanbaklaag",
-  "features": [
-      "Geschikt voor inductie",
-      "Goede warmteverdeling",
-  ],
-  "rating": 4.4,
-  "rating_count": None,
-  "rating_source": "editorial",
-  "currency": "EUR",
-  "availability": "InStock",
-  "award": "",
-  "price_range": "€€-€€€",
-  "image": "greenpan-mayflower-grijs-28cm.webp",
-  "image_path": "images/products/keramische-koekenpannen",
-  "variants": [
-      {
-          "name": "Grijs",
-          "image": "greenpan-mayflower-grijs-28cm.webp",
-          "hex": "#3F4448",
-          "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij%2F9300000091450190%2F&name=GreenPan%20Mayflower%20Pro%20koekenpan%2028cm%20-%20grijs%20-%20houten%20handvat%20-%20PFAS-vrij",
-          "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij/9300000091450190/",
-          "price": 59.90,
-          "price_last_checked": "2026-08-07",
-          "price_range": "€€€",
-      },
-      {
-          "name": "Blauw",
-          "image": "greenpan-mayflower-blauw-28cm.webp",
-          "hex": "#8CA9B5",
-          "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-mayflower-koekenpan-o28-cm-inductie-anti-aanbak-pfas-vrij%2F9300000001596267%2F&name=GreenPan%20Mayflower%20Koekenpan%2028cm%20-%20PFAS-vrije%20antikleeflaag%20-%20Koekenpan%20inductie-...",
-          "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-mayflower-koekenpan-o28-cm-inductie-anti-aanbak-pfas-vrij/9300000001596267/",
-          "price": 42.99,
-          "price_last_checked": "2026-08-07",
-          "price_range": "€€",
-      },
-  ],
-  "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij%2F9300000091450190%2F&name=GreenPan%20Mayflower%20Pro%20koekenpan%2028cm%20-%20grijs%20-%20houten%20handvat%20-%20PFAS-vrij",
-  "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-mayflower-pro-koekenpan-28cm-grijs-inductie-pfas-vrij/9300000091450190/",
-  "pros": [
-      "PFAS-vrije Thermolon™ coating",
-      "Goede warmteverdeling",
-      "Aantrekkelijk design",
-  ],
-  "cons": [
-      "Niet geschikt voor ovengebruik",
-      "Prijs verschilt duidelijk per kleurvariant",
-  ],
+        "Niet vaatwasserbestendig",
+        "Aanschafprijs ligt in het hogere prijssegment",
+    ],
   "verdict": (
-      "Betrouwbare keuze voor wie een keramische koekenpan met "
-      "houten handgreep en meerdere kleurvarianten zoekt."
-  ),
+        "Een stevig uitgevoerde keramische koekenpan met nadruk op ergonomie "
+        "en afwerking. Houd rekening met handmatige reiniging en een relatief "
+        "hoog prijsniveau."
+    ),
 },
 
   "greenpan_apex_hybrid_28": {
       "slug": "greenpan-apex-hybrid-28",
       "name": "GreenPan Apex Hybrid 28 cm",
+      "description": (
+          "Hybride koekenpan van 3-laags RVS met aluminium kern, voorzien van "
+          "een Thermolon 9G keramische antiaanbaklaag en een geëtst RVS-patroon "
+          "op het bakoppervlak. De pan is geschikt voor inductie en ovengebruik "
+          "tot 220 °C."
+      ),
       "brand": "GreenPan",
+      "diameter": 28,
       "material": (
-          "3-laags roestvrij staal met aluminium kern, Thermolon 9G "
-          "PFAS-vrije keramische antiaanbaklaag en geëtst RVS-patroon"
+          "3-laags RVS met aluminium kern, Thermolon 9G keramische "
+          "antiaanbaklaag en geëtst RVS-patroon"
       ),
       "features": [
-          "Met diamant versterkte antiaanbaklaag",
+          "PFAS-vrije Thermolon 9G keramische antiaanbaklaag",
+          "Met diamant versterkte coating",
+          "3-laags roestvrij staal met aluminium kern",
+          "Geëtst RVS-patroon op het bakoppervlak",
           "Geschikt voor inductie",
           "Geschikt voor gas, elektrisch, keramisch en halogeen",
           "Ovenbestendig tot 220 °C",
@@ -478,17 +489,17 @@ PRODUCTS = {
           "antiaanbaklaag en een geëtst RVS-patroon op het bakoppervlak."
       ),
       "pros": [
-          "3-laagse RVS-constructie met aluminium kern voor een gelijkmatige warmteverdeling",
-          "Keramische antiaanbaklaag gecombineerd met een beschermend geëtst RVS-patroon",
-          "Ovenbestendig tot 220 °C en geschikt voor inductie",
-          ],
+          "3-laagse RVS-constructie met aluminium kern",
+          "Geëtst RVS-patroon gecombineerd met een keramische antiaanbaklaag",
+          "Ovenbestendig tot 220 °C",
+      ],
       "cons": [
-          "Duurder dan veel standaard aluminium koekenpannen met keramische coating",
-          "Voor delicate bereidingen kan het hybride RVS-oppervlak iets meer aandacht voor temperatuur en vet vragen",
-          ],
+          "Het hybride RVS-oppervlak kan bij delicate bereidingen meer aandacht "
+          "voor temperatuur en vet vragen",
+      ],
       "rating": 4.7,
       "rating_count": None,
-      "rating_source": "editorial",
+      "rating_source": "Leef Natuurlijk & Gezond",
       "price": 65.95,
       "price_last_checked": "2026-08-25",
       "currency": "EUR",
@@ -497,12 +508,12 @@ PRODUCTS = {
       "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-apex-koekenpan-28cm-honinggraat-keramische-pfas-vrij-inductie-koekenpan-ovenbestendig-tot-220-c-vaatwasserbestendig-rvs-handgrepen-roestvrijstaal/9300000241290137/",
       "official_url": "https://greenpan.nl/products/apex-braadpan-28cm",
       "availability_label": "Tijdelijk uitverkocht bij de fabrikant",
-      "price_range": "€€€",
+      "price_range": "€€",
       "verdict": (
-          "Een hoogwaardige hybride koekenpan die een 3-laagse "
-          "RVS-constructie combineert met een PFAS-vrije keramische "
-          "antiaanbaklaag en daarmee duidelijk afwijkt van klassieke "
-          "aluminium keramische koekenpannen."
+          "Een technisch onderscheidende keramische koekenpan door de combinatie "
+          "van een 3-laagse RVS-constructie, aluminium kern en geëtst hybride "
+          "bakoppervlak. De ovenbestendigheid tot 220 °C maakt de pan breed "
+          "inzetbaar."
       ),
       "award": None,
   },
