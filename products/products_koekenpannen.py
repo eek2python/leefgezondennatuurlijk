@@ -5,34 +5,50 @@ PRODUCTS = {
 "greenpan_barcelona_pro_28": {
 "slug": "greenpan-barcelona-pro-28",
 "name": "GreenPan Barcelona Pro",
-"description": "Stevige aluminium koekenpan met Thermolon Infinity Pro-coating, "
-  "brede inductiebodem en ovenbestendige RVS greep.",
+"description": (
+        "Aluminium koekenpan met Thermolon Infinity Pro keramische "
+        "antiaanbaklaag, brede inductiebodem en roestvrijstalen greep. "
+        "De pan is geschikt voor inductie en ovengebruik tot 220 °C."
+    ),
 "brand": "GreenPan",
 "diameter": 28,
 "material": "Aluminium met keramische antiaanbaklaag",
-"features": ["Geschikt voor inductie", "Ovenbestendig tot 220 °C", ],
+"features": [
+        "Thermolon Infinity Pro keramische antiaanbaklaag",
+        "Aluminium constructie",
+        "Brede inductiebodem",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 220 °C",
+        "Roestvrijstalen handgreep",
+    ],
 "rating": 4.7,
 "rating_count": None,
-"rating_source": "editorial",
+"rating_source": "Leef Natuurlijk & Gezond",
 "price": 77.99,
 "currency": "EUR",
 "price_last_checked": "2026-10-07",
 "availability": "InStock",
+"availability_label": "Op voorraad",
 "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-barcelona-pro-koekenpan-met-keramische-antikleeflaag-28-cm%2F9300000111189161%2F&name=GreenPan%20Barcelona%20Pro%20koekenpan%20met%20keramische%20antikleeflaag%2028%20cm",
 "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-barcelona-pro-koekenpan-met-keramische-antikleeflaag-28-cm/9300000111189161/",
 "award": "🏆 Beste keuze",
 "price_range": "€€€",
 "image": "greenpan-barcelona-pro-28cm.webp",
 "image_path": "images/products/keramische-koekenpannen",
-"pros": ["Gelijkmatige warmteverdeling",
-       "Stevige constructie",
-       "Geschikt voor ovengebruik",
-      ],
-"cons": ["Relatief zwaar",
-       "Hogere aanschafprijs",
-      ],
-"verdict": "Onze beste allround keuze voor wie een stevige keramische pan "
-  "voor dagelijks gebruik zoekt.",
+"pros": [
+        "Brede inductiebodem",
+        "Ovenbestendig tot 220 °C",
+        ],
+"cons": [
+        "Relatief zwaar voor een aluminium koekenpan",
+        "Aanschafprijs ligt in het hogere prijssegment",
+    ],
+"verdict": (
+        "De GreenPan Barcelona Pro is onze 🏆 Beste keuze door de combinatie "
+        "van een stevige aluminium constructie, brede inductiebodem en "
+        "ovenbestendigheid tot 220 °C. Het hogere gewicht is vooral relevant "
+        "voor wie een lichte pan zoekt."
+    ),
 },
 
 "kochstar_essenz_28": {
