@@ -19,7 +19,6 @@ RANKINGS = {
         "tefal_renew_24",
         "bk_easy_induction_24",
         "kochstar_essenz_24",
-        "berndes_b_green_24",
         "ikea_hemlagad_keramisch_24",
         "bk_infinity_24",
     ],

@@ -523,20 +523,32 @@ PRODUCTS = {
 "greenpan_barcelona_pro_24": {
   "slug": "greenpan-barcelona-pro-24",
   "name": "GreenPan Barcelona Pro",
-  "description": "Stevige aluminium koekenpan met Thermolon Infinity Pro-coating, "
-  "inductiebodem en ovenbestendige RVS greep.",
+  "description": (
+        "Aluminium koekenpan met PFAS-vrije keramische antiaanbaklaag, "
+        "een vlak uitgevoerde bodem en een roestvrijstalen handgreep. "
+        "De pan is geschikt voor inductie en ovengebruik tot 220 °C."
+    ),
   "brand": "GreenPan",
   "diameter": 24,
-  "material": "Aluminium met Thermolon keramische antiaanbaklaag",
-  "features": ["Geschikt voor inductie",
-              "Ovenbestendig tot 220 °C",],
+  "material":  "Aluminium met keramische antiaanbaklaag",
+  "features": [
+        "PFAS-vrije keramische antiaanbaklaag versterkt met diamanten",
+        "Aluminium constructie",
+        "Vlakke bodemconstructie",
+        "Geschikt voor inductie",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Ovenbestendig tot 220 °C",
+        "Roestvrijstalen handgreep",
+        "Vaatwasserbestendig; handwas aanbevolen",
+    ],
   "rating": 4.7,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "price": 75.99,
   "price_last_checked": "2026-07-27",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-barcelona-pro-bakpan-24cm%2F9300000117606007%2F&name=GreenPan%20Koekenpan%20Barcelona%20Pro%20-%20Zwart%20-%20%E2%8C%80%2024%20cm%20-%20keramische%20anti-aanbaklaag",
   "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-barcelona-pro-bakpan-24cm/9300000117606007/",
   "award": "🏆 Beste keuze",
@@ -544,32 +556,46 @@ PRODUCTS = {
   "image": "greenpan-barcelona-pro-24cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Gelijkmatige warmteverdeling",
-      "Stevige constructie",
-      "Geschikt voor ovengebruik",
-  ],
+      "Vlakke bodemconstructie helpt olie en boter over het bakoppervlak te verdelen",
+      "Ovenbestendig tot 220 °C",
+    ],
   "cons": [
-      "Relatief zwaar",
-      "Hogere aanschafprijs",
+      "Aanschafprijs ligt in het hogere prijssegment",
   ],
-  "verdict":  "Onze beste allround keuze voor wie een stevige keramische pan "
-  "voor dagelijks gebruik zoekt.",
+  "verdict":  (
+        "De GreenPan Barcelona Pro is onze 🏆 Beste keuze door de combinatie "
+        "van een vlakke bodemconstructie en brede inzetbaarheid op de kookplaat "
+        "en in de oven tot 220 °C. De aanschafprijs ligt wel in het hogere segment."
+    ),
 },
 
 "kochstar_essenz_24": {
   "slug": "kochstar-essenz-24",
   "name": "Kochstar Essenz",
-  "description": "Voordelige aluminium koekenpan met keramische antiaanbaklaag, "
-  "koel blijvende greep en geschiktheid voor inductie.",
+  "description": (
+        "Aluminium koekenpan met PFAS-vrije keramische antiaanbaklaag "
+        "en een koelblijvende bakelieten handgreep. De pan is geschikt "
+        "voor alle gangbare warmtebronnen en ovenbestendig tot 130 °C."
+    ),
   "brand": "Kochstar",
   "diameter": 24,
-  "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["PFAS-vrij", "Lichtgewicht", ],
+  "material": "Gerecycled aluminium met keramische antiaanbaklaag",
+  "features": [
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Gerecycled aluminium",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 130 °C",
+        "Koelblijvende bakelieten handgreep",
+        "Bodemdiameter circa 18 cm",
+        "Handwas aanbevolen",
+    ],
   "rating": 4,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fkochstar-essenz-koekenpan-24cm-pfas-vrij-inductie-pan-keramische-anti-aanbaklaag-koelgreep-zwart%2F9300000231848093%2F&name=Kochstar%20Essenz%20Zwart%20Keramische%20Koekenpan%20-%2024cm%20-%20PFAS-vrij%20-%20Inductie%20koekenpan%20-...",
   "retailer_url": "https://www.bol.com/nl/nl/p/kochstar-essenz-koekenpan-24cm-pfas-vrij-inductie-pan-keramische-anti-aanbaklaag-koelgreep-zwart/9300000231848093/",
   "award": "💰 Budget keuze",
@@ -598,101 +624,151 @@ PRODUCTS = {
   ],
   "pros": [
       "Zeer lage aanschafprijs",
-      "Licht en gemakkelijk hanteerbaar",
-      "Verkrijgbaar in twee kleuren",
+      "Koelblijvende bakelieten handgreep",
   ],
   "cons": [
-      "Eenvoudigere afwerking",
-      "Beperkte ovenbestendigheid",
+      "Ovenbestendig tot slechts 130 °C",
+      "Niet geschikt voor de vaatwasser",
   ],
-  "verdict":  "Een toegankelijke budgetkeuze voor licht en regelmatig gebruik.",
+  "verdict":  (
+        "De Kochstar Essenz is onze 💰 Budget keuze door de zeer lage "
+        "aanschafprijs en de praktische koelblijvende handgreep. "
+        "De ovenbestendigheid is beperkt tot 130 °C en handwas is nodig."
+    ),
 },
 
 "demeyere_alu_pro_5_ceraforce_24": {
   "slug": "demeyere-alu-pro-5-ceraforce-24",
   "name": "Demeyere Alu Pro 5 Ceraforce",
-  "description": "Stevige aluminium koekenpan met Ceraforce keramische coating "
-  "en een dikke bodem voor stabiele warmteverdeling.",
+  "description": (
+        "Aluminium koekenpan met PFAS-vrije Ceraforce keramische "
+        "antiaanbaklaag en een 5 mm dikke bodem. De pan heeft een "
+        "roestvrijstalen handgreep en is ovenbestendig tot 230 °C."
+    ),
   "brand": "Demeyere",
   "diameter": 24,
   "material": "Aluminium met Ceraforce keramische antiaanbaklaag",
-  "features": ["Geschikt voor inductie",
-              "Stevige aluminium constructie",],
+  "features": [
+        "PFAS-vrije Ceraforce keramische antiaanbaklaag",
+        "Aluminium bodem van 5 mm",
+        "Bodemconstructie ontworpen om vlak te blijven",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 230 °C",
+        "Geklonken roestvrijstalen handgreep",
+        "Bodemdiameter circa 19,5 cm",
+        "Gewicht circa 1,14 kg",
+        "Handwas aanbevolen",
+    ],
   "rating": 4.6,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "price": 78.50,
   "price_last_checked": "2026-08-07",
   "price_range": "€€€",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "image": "demeyere-alu-pro-5-ceraforce-24cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdemeyere-12624-alu-pro-5-ceraforce-bakpan-antikleef-24-cm%2F9300000032747131%2F&name=DEMEYERE%20Alu%20Pro%205%20Ceraforce%20koekenpan%20-%20PFAS%20vrij%20-%2024%20cm",
   "retailer_url": "https://www.bol.com/nl/nl/p/demeyere-12624-alu-pro-5-ceraforce-bakpan-antikleef-24-cm/9300000032747131/",
   "award": "💎 Premium keuze",
   "pros": [
-      "Gelijkmatige warmteverdeling",
-      "Stevige afwerking",
-      "Geschikt voor intensief dagelijks gebruik",
-  ],
+        "5 mm dikke aluminium bodem",
+        "Bodemconstructie ontworpen om vlak te blijven bij verhitting",
+        "Ovenbestendig tot 230 °C",
+    ],
   "cons": [
-      "Relatief zwaar",
-      "Hoge aanschafprijs",
-  ],
-  "verdict": "Onze premium keuze voor wie stevige bouwkwaliteit en stabiele "
-  "warmteverdeling belangrijk vindt.",
+        "Met circa 1,14 kg relatief zwaar voor een pan van 24 cm",
+        "Aanschafprijs ligt in het hogere prijssegment",
+    ],
+  "verdict": (
+        "De Demeyere Alu Pro 5 Ceraforce is onze 💎 Premium keuze door de "
+        "5 mm dikke aluminium bodem, stabiele bodemconstructie en "
+        "ovenbestendigheid tot 230 °C. Met circa 1,14 kg is hij minder licht "
+        "hanteerbaar en de aanschafprijs ligt relatief hoog."
+    ),
 },
 
 "greenchef_diamond_24": {
   "slug": "greenchef-diamond-24",
   "name": "GreenChef Diamond Induction",
-  "description": "Aluminium koekenpan met keramische "
-  "antiaanbaklaag voor dagelijks gebruik.",
+  "description": (
+        "Aluminium koekenpan met PFAS-vrije, met diamantdeeltjes versterkte "
+        "keramische antiaanbaklaag en een koelblijvende kunststof handgreep. "
+        "De pan is geschikt voor inductie en ovengebruik tot 160 °C."
+    ),
   "brand": "GreenChef",
   "diameter": 24,
   "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["Keramische coating met diamantdeeltjes",
-              "Geschikt voor inductie",],
+  "features": [
+        "PFAS-vrije keramische antiaanbaklaag met diamantdeeltjes",
+        "Aluminium constructie",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 160 °C",
+        "Koelblijvende kunststof handgreep",
+        "Bodemdiameter circa 15 cm",
+        "Gewicht circa 0,68 kg",
+        "Vaatwasserbestendig",
+    ],
   "rating": 4.2,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "price": 26.99,
   "price_last_checked": "2026-08-07",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenchef-diamond-inductie-koekenpan-o24-cm-keramisch-pfas-vrij-best-getest%2F9200000130094485%2F&name=GreenChef%20Diamond%20Koekenpan%20-%20%C3%9824%20cm%20-%20keramisch%20-%20PFAS-vrij%20-%20Inductie",
   "retailer_url": "https://www.bol.com/nl/nl/p/greenchef-diamond-inductie-koekenpan-o24-cm-keramisch-pfas-vrij-best-getest/9200000130094485/",
   "price_range": "€",
   "image": "greenchef-diamond-24cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Licht en gemakkelijk hanteerbaar",
-      "Eenvoudig schoon te maken",
-      "Scherpe prijs",
-  ],
+        "Met circa 0,68 kg relatief licht voor een pan van 24 cm",
+        "Koelblijvende handgreep",
+    ],
   "cons": [
-      "Niet ovenbestendig",
-  ],
-  "verdict": "Een betaalbare keramische pan voor dagelijks bakken op lage tot "
-  "middelhoge temperaturen.",
+        "Bodemdiameter van circa 15 cm is relatief klein ten opzichte van de bovenzijde",
+        "Ovenbestendig tot maximaal 160 °C",
+    ],
+  "verdict": (
+        "Een lichte keramische koekenpan met een koelblijvende handgreep en "
+        "een gewicht van circa 0,68 kg. De relatief kleine bodemdiameter van "
+        "circa 15 cm en ovenlimiet van 160 °C zijn praktische aandachtspunten."
+    ),
 },
 
 "bk_easy_induction_24": {
   "slug": "bk-easy-induction-24",
   "name": "BK Easy Induction Ceramic",
-  "description": "PFAS-vrije keramische pan met koele greep en stevige bodem.",
+  "description": (
+        "Aluminium koekenpan met PFAS-vrije keramische antiaanbaklaag "
+        "en een koelblijvende handgreep. De pan is geschikt voor alle "
+        "gangbare warmtebronnen en ovenbestendig tot 160 °C."
+    ),
   "brand": "BK",
   "diameter": 24,
   "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["Koele greep", "Inductie"],
+  "features": [
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Aluminium constructie",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 160 °C",
+        "Koelblijvende handgreep",
+        "Vaatwasserbestendig",
+    ],
   "rating": 4.3,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "price": 33.95,
   "price_last_checked": "2026-08-07",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-easy-induction-ceramic-koekenpan-o24-cm-pfas-vrij%2F9300000032891762%2F&name=BK%20Easy%20Induction%20Basic%20koekenpan%20-%20%C3%9824cm%20-%20PFAS-vrij%20-%20ovenbestendig%20-%20Zwart",
   "retailer_url": "https://www.bol.com/nl/nl/p/bk-easy-induction-ceramic-koekenpan-o24-cm-pfas-vrij/9300000032891762/",
   "price_range": "€€",
@@ -700,15 +776,16 @@ PRODUCTS = {
   "image": "bk-easy-induction-24cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Goede prijs-kwaliteit",
-      "Snelle opwarming",
-      "Koele handgreep",
-  ],
+        "Koelblijvende handgreep",
+    ],
   "cons": [
-      "Niet ovenbestendig",
-  ],
-  "verdict": "Een praktische middenklassepan met comfortabele greep "
-  "en een toegankelijke prijs.",
+        "Ovenbestendig tot maximaal 160 °C",
+    ],
+  "verdict": (
+        "Een praktische keramische koekenpan met een koelblijvende handgreep "
+        "voor dagelijks gebruik op de kookplaat. Ovenbereidingen zijn mogelijk, "
+        "maar slechts tot 160 °C."
+    ),
 },
 
 "greenpan_apex_hybrid_24": {
@@ -716,69 +793,81 @@ PRODUCTS = {
   "name": "GreenPan Apex Hybrid 24 cm",
   "brand": "GreenPan",
   "material": (
-      "3-laags roestvrij staal met aluminium kern, Thermolon 9G "
-      "PFAS-vrije keramische antiaanbaklaag en geëtst RVS-patroon"
-  ),
+        "3-laags RVS met aluminium kern, keramische antiaanbaklaag "
+        "en geëtst RVS-patroon"
+    ),
   "features": [
-      "Met diamant versterkte antiaanbaklaag",
-      "Geschikt voor inductie",
-      "Geschikt voor gas, elektrisch, keramisch en halogeen",
-      "Ovenbestendig tot 220 °C",
-      "Roestvrijstalen handgreep",
-      "Vaatwasserbestendig",
-  ],
+        "PFAS-vrije keramische antiaanbaklaag",
+        "3-laags roestvrij staal met aluminium kern",
+        "Geëtst RVS-patroon op het bakoppervlak",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 220 °C",
+        "Roestvrijstalen handgreep",
+        "Vaatwasserbestendig",
+    ],
   "image": "greenpan-apex-hybrid-24cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "description": (
-      "Hybride koekenpan met een 3-laagse RVS-constructie en aluminium "
-      "kern, gecombineerd met GreenPans Thermolon 9G PFAS-vrije "
-      "keramische antiaanbaklaag en een geëtst RVS-patroon."
-  ),
+        "Hybride koekenpan van 3-laags RVS met aluminium kern, een "
+        "PFAS-vrije keramische antiaanbaklaag en een geëtst RVS-patroon "
+        "op het bakoppervlak. De pan is ovenbestendig tot 220 °C."
+    ),
+
   "pros": [
-      "3-laagse RVS-constructie met aluminium kern voor een gelijkmatige warmteverdeling",
-      "Keramische antiaanbaklaag gecombineerd met een beschermend geëtst RVS-patroon",
-      "Ovenbestendig tot 220 °C en geschikt voor inductie",
-  ],
-  "cons": [
-      "Duurder dan veel standaard aluminium koekenpannen met keramische coating",
-      "Voor delicate bereidingen kan het hybride RVS-oppervlak iets meer aandacht voor temperatuur en vet vragen",
-  ],
+        "Volledig 3-laagse RVS-constructie met aluminium kern",
+        "Hybride bakoppervlak combineert keramische coating met een geëtst RVS-patroon",
+        "Ovenbestendig tot 220 °C",
+    ],
+  "cons": [],
   "rating": 4.6,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "price": 47.99,
   "price_last_checked": "2026-08-25",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-apex-koekenpan-24cm-honinggraat-keramisch-pfas-vrij-inductie-koekenpan-ovenbestendig-tot-220-c-vaatwasserbestendig-rvs-handgrepen-roestvrijstaal%2F9300000241290138%2F&name=GreenPan%20Apex%20Hybrid%20Koekenpan%20-%2024%20cm%20-%20Keramisch%20-%20PFAS-vrij%20-%20Inductie",
   "retailer_url": "https://www.bol.com/nl/nl/p/greenpan-apex-koekenpan-24cm-honinggraat-keramisch-pfas-vrij-inductie-koekenpan-ovenbestendig-tot-220-c-vaatwasserbestendig-rvs-handgrepen-roestvrijstaal/9300000241290138/",
   "official_url": "https://greenpan.nl/products/apex-braadpan-24cm",
   "availability_label": "Tijdelijk uitverkocht bij de fabrikant",
   "price_range": "€€€",
   "verdict": (
-      "Een onderscheidende hybride keuze voor wie de constructie van "
-      "3-laags RVS wil combineren met een PFAS-vrije keramische "
-      "antiaanbaklaag."
-  ),
+        "Een technisch onderscheidende keramische koekenpan met een volledig "
+        "3-laagse RVS-constructie en een hybride keramisch/RVS-bakoppervlak. "
+        "De pan is bovendien ovenbestendig tot 220 °C."
+    ),
   "award": None,
 },
 
 "tefal_renew_24": {
   "slug": "tefal-renew-24",
   "name": "Tefal Renew+",
-  "description": "Koekenpan van 100% gerecycled aluminium met keramische antiaanbaklaag "
-  "en geïntegreerde hitte-indicator.",
+  "description": (
+        "Koekenpan van gerecycled aluminium met keramische antiaanbaklaag "
+        "en een warmte-indicator in het bakoppervlak. De pan is geschikt "
+        "voor alle gangbare warmtebronnen, waaronder inductie."
+    ),
   "brand": "Tefal",
   "diameter": 24,
   "material": "Gerecycled aluminium met keramische antiaanbaklaag",
-  "features": ["Hitte-indicator",],
+  "features": [
+        "Keramische antiaanbaklaag",
+        "Body van gerecycled aluminium",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Warmte-indicator wordt rood wanneer pan op temperatuur is",
+        "Vaste kunststof handgreep",
+    ],
   "rating": 4.2,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "price": 34.99,
   "price_last_checked": "2026-08-07",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Ftefal-renew-keramische-koekenpan-o-24-cm%2F9300000118641479%2F&name=Tefal%20Renew%2B%20Keramische%20koekenpan%20-%20%2324%20cm%20-%20PFAS-vrij%20-%20Geschikt%20voor%20inductie",
   "retailer_url": "https://www.bol.com/nl/nl/p/tefal-renew-keramische-koekenpan-o-24-cm/9300000118641479/",
   "price_range": "€€",
@@ -786,37 +875,42 @@ PRODUCTS = {
   "image": "tefal-renew-24cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Pan van gerecycled materiaal",
-      "Goede warmtegeleiding",
-      "Handige hitte-indicator",
-  ],
+        "Warmte-indicator geeft zichtbaar aan wanneer de pan op temperatuur is",
+    ],
   "cons": [
-      "Niet ovenbestendig",
-  ],
-  "verdict": "Een gebruiksvriendelijke keuze voor wie een keramische Tefal-pan "
-  "met hitte-indicator zoekt.",
+        "Niet geschikt voor gebruik in de oven",
+    ],
+
+  "verdict": (
+        "Een gebruiksvriendelijke keramische koekenpan voor wie een visuele "
+        "indicatie bij het voorverwarmen prettig vindt. De vaste kunststof "
+        "handgreep beperkt het gebruik tot de kookplaat."
+    ),
 },
 
 "bk_infinity_24": {
   "slug": "bk-infinity-keramische-koekenpan-24-cm",
   "name": "BK Infinity Keramische Koekenpan 24 cm",
   "description": (
-      "De BK Infinity 24 cm is een stevige keramische koekenpan met een body van "
-      "100% gerecycled aluminium en een extra dikke roestvrijstalen inductiebodem. "
-      "De PFAS-vrije Thermolon™ keramische antiaanbaklaag maakt bakken met weinig "
-      "vet mogelijk. De pan is geschikt voor alle gangbare warmtebronnen, waaronder "
-      "inductie, en kan tot 160 °C in de oven."
-  ),
+        "Koekenpan van gerecycled aluminium met PFAS-vrije Thermolon™ "
+        "keramische antiaanbaklaag en een extra dikke roestvrijstalen bodem. "
+        "De pan is ovenbestendig tot 160 °C en ontworpen om gestapeld "
+        "te kunnen worden opgeborgen."
+    ),
   "brand": "BK",
   "diameter": 24,
-  "material": "100% gerecycled aluminium",
+  "material": "Gerecycled aluminium met keramische antiaanbaklaag",
   "features": [
-      "PFAS-vrije Thermolon™ keramische antiaanbaklaag",
-      "Extra dikke roestvrijstalen inductiebodem",
-      "Geschikt voor alle gangbare warmtebronnen",
-      "Ovenbestendig tot 160 °C",
-      "Vaatwasserbestendig",
-  ],
+        "PFAS-vrije Thermolon™ keramische antiaanbaklaag",
+        "Gerecycled aluminium",
+        "Extra dikke roestvrijstalen inductiebodem",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 160 °C",
+        "Kunststof handgreep",
+        "Vaatwasserbestendig",
+        "Stapelbaar ontwerp",
+    ],
   "rating": 4.4,
   "rating_count": None,
   "rating_source": "Leef Natuurlijk & Gezond",
@@ -833,88 +927,67 @@ PRODUCTS = {
   "image": "bk-infinity-24cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "PFAS-vrije Thermolon™ keramische antiaanbaklaag",
-      "Extra dikke RVS bodem voor goede prestaties op inductie",
-      "Handig stapelbaar ontwerp",
-  ],
+        "Extra dikke RVS inductiebodem",
+        "Stapelbaar ontwerp maakt compact opbergen mogelijk",
+    ],
   "cons": [
-      "Ovenbestendig tot slechts 160 °C",
-  ],
+        "Ovenbestendig tot maximaal 160 °C",
+    ],
   "verdict": (
-      "Een hoogwaardige keramische koekenpan met een stevige constructie en een "
-      "extra dikke inductiebodem. De combinatie van 100% gerecycled aluminium en "
-      "een PFAS-vrije Thermolon™ coating maakt de Infinity een interessante keuze "
-      "voor dagelijks gebruik, al beperkt de kunststof greep de ovenbestendigheid."
-  ),
+        "Een stevig uitgevoerde keramische koekenpan met een extra dikke "
+        "RVS-inductiebodem en een stapelbaar ontwerp. De maximale "
+        "oventemperatuur van 160 °C beperkt het gebruik bij hetere ovenbereidingen."
+    ),
 },
 
 "ikea_hemlagad_keramisch_24": {
   "slug": "ikea-hemlagad-keramisch-24",
   "name": "IKEA HEMLAGAD",
-  "description": "Voordelige aluminium koekenpan met keramische antiaanbaklaag "
-  "voor kleinere dagelijkse bereidingen.",
+  "description": (
+        "Lichte aluminium koekenpan met PFAS-vrije sol-gel keramische "
+        "antiaanbaklaag en een kunststof handgreep. De pan is geschikt "
+        "voor alle gangbare kookplaten, waaronder inductie."
+    ),
   "brand": "IKEA",
   "diameter": 24,
-  "material": "Aluminium met keramische antiaanbaklaag",
+  "material": "Aluminium met sol-gel keramische antiaanbaklaag",
   "features": [
-      "Geschikt voor inductie",
-  ],
+        "PFAS-vrije sol-gel keramische antiaanbaklaag",
+        "Aluminium constructie",
+        "Roestvrijstalen plaat in de bodem",
+        "Geschikt voor alle gangbare kookplaten",
+        "Geschikt voor inductie",
+        "Fenolkunststof handgreep",
+        "Gewicht circa 0,76 kg",
+        "Alleen handwas",
+    ],
   "rating": 3.9,
   "rating_count": None,
-  "rating_source": "editorial",
+  "rating_source": "Leef Natuurlijk & Gezond",
   "price_range": "€",
   "price": 9.99,
   "price_last_checked": "2026-07-27",
   "currency": "EUR",
   "availability": "InStock",
+  "availability_label": "Op voorraad",
   "image": "ikea-hemlagad-keramisch-24cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "affiliate_url": "",
   "retailer_url": "https://www.ikea.com/nl/nl/p/hemlagad-koekenpan-antiaanbaklaag-zwart-60580893/",
   "pros": [
-      "Zeer lage aanschafprijs",
-      "Geschikt voor inductie",
-      "Licht en eenvoudig in gebruik",
-  ],
+        "Zeer lage aanschafprijs",
+        "Met circa 0,76 kg relatief licht voor een pan van 24 cm",
+    ],
   "cons": [
-      "Eenvoudigere constructie dan duurdere modellen",
-  ],
-  "verdict": "Een zeer voordelige keuze voor licht dagelijks gebruik en kleinere porties.",
+        "Alleen geschikt voor handwas",
+    ],
+  "verdict": (
+        "Een zeer voordelige en lichte keramische koekenpan voor dagelijks "
+        "gebruik op de kookplaat. Met circa 0,76 kg is de pan gemakkelijk "
+        "hanteerbaar, maar hij moet met de hand worden afgewassen."
+    ),
 },
 
-"berndes_b_green_24": {
-  "slug": "berndes-b-green-24",
-  "name": "Berndes B.Green",
-  "description":  "Een veelzijdige midden-premiumpan voor wie gerecycled aluminium "
-  "en brede gebruiksmogelijkheden belangrijk vindt.",
-  "brand": "Berndes",
-  "diameter": 24,
-  "material": "Gerecycled aluminium met b.nature kwarts-antiaanbaklaag",
-  "features": ["b.nature kwarts-coating", "Inductie", "100% gerecycled aluminium", "Ovenbestendig", "Vaatwasserbestendig"],
-  "rating": 4.4,
-  "rating_count": None,
-  "rating_source": "editorial",
-  "price": 64.99,
-  "price_last_checked": "2026-08-07",
-  "currency": "EUR",
-  "availability": "InStock",
-  "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fb-green-koekenpan-24-cm-berndes%2F9300000006419832%2F&name=Berndes%20-%20B.Green%20-%20Koekenpan%2024%20cm%20-%20Gerecycled%20Aluminium%20-%20Zilver",
-  "retailer_url": "https://www.bol.com/nl/nl/p/b-green-koekenpan-24-cm-berndes/9300000006419832/",
-  "award": None,
-  "price_range": "€€€",
-  "image": "berndes-b-green-24cm.webp",
-  "image_path": "images/products/keramische-koekenpannen",
-  "pros": [
-      "Pan gemaakt van gerecycled aluminium",
-      "Specifieke b.nature kwartscoating",
-      "Geschikt voor inductie",
-  ],
-  "cons": [
-      "Hogere aanschafprijs",
-      "Beperkte ovenbestendigheid",
-  ],
-  "verdict": "Milieuvriendelijke keuze voor wie echt PFAS-vrij wil koken met een coating van volledig natuurlijke grondstoffen.",
-},
 
 # 26CM KOEKENPANNEN
 "greenpan_barcelona_pro_26": {
