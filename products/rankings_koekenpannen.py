@@ -9,7 +9,6 @@ RANKINGS = {
         "greenpan_mayflower_20",
         "bk_enjoy_20",
         "hema_milano_20",
-        "berndes_b_green_20",
     ],
     24: [
         "greenpan_barcelona_pro_24",
