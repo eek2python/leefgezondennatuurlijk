@@ -1898,6 +1898,7 @@ PRODUCTS = {
         "aanschafprijs en de koelblijvende handgreep. Ovenbereidingen zijn "
         "beperkt tot 130 °C en de pan moet met de hand worden afgewassen."
     ),
+},
 
 "demeyere_alu_pro_5_ceraforce_30": {
   "slug": "demeyere-alu-pro-5-ceraforce-30",
