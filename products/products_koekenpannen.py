@@ -1508,6 +1508,7 @@ PRODUCTS = {
         "5 mm dikke aluminium bodem en ovenbestendigheid tot 230 °C. "
         "De pan is met circa 0,83 kg relatief zwaar voor dit formaat."
     ),
+},
 
 "greenchef_diamond_20": {
   "slug": "greenchef-diamond-20",
@@ -1805,14 +1806,24 @@ PRODUCTS = {
 "greenpan_barcelona_pro_30": {
   "slug": "greenpan-barcelona-pro-30",
   "name": "GreenPan Barcelona Pro",
-  "description": "Stevige aluminium koekenpan met Thermolon keramische "
-  "antiaanbaklaag, inductiebodem en ovenbestendige RVS handgreep.",
+  "description": (
+        "Aluminium koekenpan met een PFAS-vrije keramische antiaanbaklaag, "
+        "een 5 mm dikke constructie en een roestvrijstalen handgreep. "
+        "De pan is geschikt voor inductie en ovengebruik tot 220 °C."
+    ),
   "brand": "GreenPan",
   "diameter": 30,
-  "material": "Aluminium met Thermolon keramische antiaanbaklaag",
-  "features": ["Geschikt voor inductie",
-              "Ovenbestendig tot 220 °C",
-              "RVS handgreep",],
+  "material": "Aluminium met keramische antiaanbaklaag",
+  "features": [
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Aluminium constructie van circa 5 mm",
+        "Bodemdiameter circa 24 cm",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 220 °C",
+        "Roestvrijstalen handgreep",
+        "Vaatwasserbestendig; handwas aanbevolen",
+    ],
   "rating": 4.7,
   "rating_count": None,
   "rating_source": "editorial",
@@ -1827,29 +1838,40 @@ PRODUCTS = {
   "image": "greenpan-barcelona-pro-30cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Gelijkmatige warmteverdeling",
-      "Stevige constructie",
-      "Ovenbestendig tot 220 °C",
-  ],
+        "Circa 5 mm dikke aluminium constructie",
+        "Ovenbestendig tot 220 °C",
+    ],
   "cons": [
-      "Relatief zwaar",
-      "Hoge aanschafprijs",
-  ],
-  "verdict": "Onze beste allround keuze voor grotere porties en veelzijdig dagelijks gebruik.",
+        "Reguliere aanschafprijs ligt tegen de bovengrens van het €€€-segment",
+    ],
+  "verdict": (
+        "De GreenPan Barcelona Pro is onze 🏆 Beste keuze door de combinatie "
+        "van een stevige aluminium constructie en ovenbestendigheid tot 220 °C. "
+        "De reguliere aanschafprijs ligt relatief hoog."
+    ),
 },
 
 "kochstar_stein_30": {
   "slug": "kochstar-stein-30",
   "name": "Kochstar Stein",
-  "description": "Voordelige aluminium koekenpan met keramische antiaanbaklaag, "
-  "koel blijvende handgreep en ruim bakoppervlak.",
+  "description": (
+        "Aluminium koekenpan met een PFAS-vrije keramische antiaanbaklaag "
+        "en een koelblijvende handgreep. De pan is geschikt voor inductie "
+        "en ovengebruik tot 130 °C."
+    ),
   "brand": "Kochstar",
   "diameter": 30,
   "material": "Aluminium met keramische antiaanbaklaag",
-  "features": ["Geschikt voor inductie",
-      "Ovenbestendig tot 130 °C",
-      "Koel blijvende handgreep",
-  ],
+  "features": [
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Aluminium body met minimaal 65% gerecycled materiaal",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 130 °C",
+        "Koelblijvende handgreep",
+        "Alleen handwas",
+        "3 jaar garantie",
+    ],
   "rating": 4,
   "rating_count": None,
   "rating_source": "editorial",
@@ -1864,16 +1886,18 @@ PRODUCTS = {
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fkochstar-stein-koekenpan-30cm-pfas-vrij-inductie-pan-keramische-anti-aanbaklaag-koelgreep-graniet%2F9300000231848100%2F&name=Kochstar%20Stein%20Koekenpan%2030cm%20-%20PFAS-vrije%20antikleeflaag%20-%20Koekenpan%20inductie%20-...",
   "retailer_url": "https://www.bol.com/nl/nl/p/kochstar-stein-koekenpan-30cm-pfas-vrij-inductie-pan-keramische-anti-aanbaklaag-koelgreep-graniet/9300000231848100/",
   "pros": [
-      "Zeer lage aanschafprijs",
-      "Ruim bakoppervlak",
-      "Koel blijvende handgreep",
-  ],
+        "Zeer lage aanschafprijs voor een pan van 30 cm",
+        "Koelblijvende handgreep",
+    ],
   "cons": [
-      "Beperkte maximale oventemperatuur van 130 °C",
-      "Eenvoudigere afwerking dan duurdere modellen",
-  ],
-  "verdict": "Een zeer voordelige keuze voor grotere porties en dagelijks gebruik.",
-},
+        "Ovenbestendig tot slechts 130 °C",
+        "Niet geschikt voor de vaatwasser",
+    ],
+  "verdict": (
+        "De Kochstar Stein is onze 💰 Budget keuze door de zeer lage "
+        "aanschafprijs en de koelblijvende handgreep. Ovenbereidingen zijn "
+        "beperkt tot 130 °C en de pan moet met de hand worden afgewassen."
+    ),
 
 "demeyere_alu_pro_5_ceraforce_30": {
   "slug": "demeyere-alu-pro-5-ceraforce-30",

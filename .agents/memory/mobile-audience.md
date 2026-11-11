@@ -13,6 +13,17 @@ op andere apparaten.
 maar controleer responsive wijzigingen ook op tablet en desktop. Neem geen
 specifieke bezoekerspercentages aan zonder meetgegevens.
 
+Behandel een verandering van de mobiele vensterhoogte niet als nieuwe navigatie
+naar het anker in de URL. Een anker mag blijven staan terwijl de bezoeker elders
+op de pagina leest.
+
+**Why:** in- en uitschuivende browserbalken kunnen de vensterhoogte veranderen;
+opnieuw naar het bestaande lijstanker springen onderbrak dan het vergelijken.
+
+**How to apply:** houd filterafstanden bij zonder de leespositie te herstellen
+naar een oud anker; laat ook een late laadcorrectie niet voorgaan op scrollen
+dat de bezoeker al begonnen is.
+
 Op smalle telefoons moet de vergelijking een compacte tabel met één rij per
 product zijn, geen grote vergelijkingskaarten. De desktopvergelijking blijft
 behouden. Gebruik dezelfde bestaande gegevens, zonder aparte mobiele invoer.

@@ -4,6 +4,18 @@
     var root = document.documentElement;
     var bars = Array.from(document.querySelectorAll('.format-sticky, .storage-filters-sticky'));
     var pending;
+    var userNavigation = 0;
+    function cancelPendingReveal() {
+        userNavigation++;
+        clearTimeout(pending);
+    }
+    // A late load event must not undo scrolling the visitor already started.
+    window.addEventListener('wheel', cancelPendingReveal, {passive: true});
+    window.addEventListener('touchmove', cancelPendingReveal, {passive: true});
+    window.addEventListener('keydown', function (event) {
+        if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].indexOf(event.key) !== -1)
+            cancelPendingReveal();
+    });
     function updateOffset() {
         var height = 0;
         bars.forEach(function (bar) {
@@ -26,9 +38,11 @@
         try { target = document.getElementById(decodeURIComponent(location.hash.slice(1))); }
         catch (error) { return; }
         if (!target) return;
+        var navigationAtRequest = userNavigation;
         // Wait until scroll-triggered filter visibility and wrapping have settled.
         clearTimeout(pending);
         pending = setTimeout(function () {
+            if (navigationAtRequest !== userNavigation) return;
             updateOffset();
             target.scrollIntoView({block: 'start'});
         }, 180);
@@ -38,8 +52,12 @@
         if ('ResizeObserver' in window) new ResizeObserver(updateOffset).observe(bar);
     });
     window.addEventListener('hashchange', revealHash);
-    window.addEventListener('resize', function () { updateOffset(); revealHash(); });
-    window.addEventListener('load', revealHash);
+    // Mobile browser chrome changes viewport height while scrolling. Recompute
+    // filter offsets, but never treat a resize as a request to revisit the hash.
+    window.addEventListener('resize', updateOffset);
+    window.addEventListener('load', function () {
+        if (userNavigation === 0) revealHash();
+    });
     updateOffset();
 
     document.querySelectorAll('.table-wrapper').forEach(function (wrapper, index) {
