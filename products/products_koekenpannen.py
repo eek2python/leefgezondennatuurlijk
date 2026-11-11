@@ -1808,7 +1808,7 @@ PRODUCTS = {
   "name": "GreenPan Barcelona Pro",
   "description": (
         "Aluminium koekenpan met een PFAS-vrije keramische antiaanbaklaag, "
-        "een 5 mm dikke constructie en een roestvrijstalen handgreep. "
+        "een vlak uitgevoerde bodem en een roestvrijstalen handgreep. "
         "De pan is geschikt voor inductie en ovengebruik tot 220 °C."
     ),
   "brand": "GreenPan",
@@ -1816,18 +1816,25 @@ PRODUCTS = {
   "material": "Aluminium met keramische antiaanbaklaag",
   "features": [
         "PFAS-vrije keramische antiaanbaklaag",
-        "Aluminium constructie van circa 5 mm",
-        "Bodemdiameter circa 24 cm",
+        "Aluminium constructie",
+        "Vlakke bodemconstructie",
         "Geschikt voor alle gangbare warmtebronnen",
         "Geschikt voor inductie",
         "Ovenbestendig tot 220 °C",
         "Roestvrijstalen handgreep",
         "Vaatwasserbestendig; handwas aanbevolen",
     ],
+  "comparison_features": [
+        "Vlakke bodemconstructie",
+        "Ovenbestendig tot 220 °C",
+        "Roestvrijstalen handgreep",
+        "Handwas aanbevolen",
+    ],
   "rating": 4.7,
   "rating_count": None,
   "rating_source": "editorial",
   "price": 88.09,
+  "reference_price": 119.90,
   "price_last_checked": "2026-07-28",
   "currency": "EUR",
   "availability": "InStock",
@@ -1838,15 +1845,14 @@ PRODUCTS = {
   "image": "greenpan-barcelona-pro-30cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-        "Circa 5 mm dikke aluminium constructie",
         "Ovenbestendig tot 220 °C",
     ],
   "cons": [
-        "Reguliere aanschafprijs ligt tegen de bovengrens van het €€€-segment",
+      "De reguliere aanschafprijs ligt relatief hoog.",
     ],
   "verdict": (
-        "De GreenPan Barcelona Pro is onze 🏆 Beste keuze door de combinatie "
-        "van een stevige aluminium constructie en ovenbestendigheid tot 220 °C. "
+        "De GreenPan Barcelona Pro is onze 🏆 Beste keuze en kan zowel op "
+        "de kookplaat als in de oven tot 220 °C worden gebruikt. "
         "De reguliere aanschafprijs ligt relatief hoog."
     ),
 },
