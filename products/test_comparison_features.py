@@ -8,6 +8,28 @@ from django.utils.html import escape
 
 
 class ComparisonFeaturesTests(SimpleTestCase):
+    def test_comparison_features_take_priority_with_escaping(self):
+        html = render_to_string("partials/comparison_features.html", {
+            "comparison_features": ["Belangrijk", "<kort>"],
+            "features": ["Uitgebreide lijst"],
+        }).strip()
+        self.assertEqual(html, "Belangrijk · &lt;kort&gt;")
+
+    def test_empty_comparison_features_fall_back_to_features(self):
+        for value in (None, [], ""):
+            with self.subTest(comparison_features=value):
+                html = render_to_string("partials/comparison_features.html", {
+                    "comparison_features": value,
+                    "features": ["Inductie", "Ovenbestendig"],
+                }).strip()
+                self.assertEqual(html, "Inductie · Ovenbestendig")
+
+    def test_comparison_features_work_without_general_features(self):
+        html = render_to_string("partials/comparison_features.html", {
+            "comparison_features": ["Compact"],
+        }).strip()
+        self.assertEqual(html, "Compact")
+
     def test_features_only_with_escaping(self):
         html = render_to_string("partials/comparison_features.html", {
             "features": ["Inductie", "Oven tot 220 °C", "<script>"],
@@ -35,6 +57,7 @@ class ComparisonFeaturesTests(SimpleTestCase):
             with self.subTest(template=name):
                 source = (root / name).read_text()
                 self.assertIn('"partials/comparison_features.html"', source)
+                self.assertIn("comparison_features=", source)
                 self.assertNotIn("product.material", source)
 
 
@@ -64,5 +87,6 @@ class ComparisonPageTests(TestCase):
                 if path.startswith("/vershoudcontainers/"):
                     products = [row["product"] for row in response.context["comparison_rows"]]
                 for product in products:
-                    expected = str(escape(" · ".join(product.get("features") or []) or "—"))
+                    selected = product.get("comparison_features") or product.get("features") or []
+                    expected = str(escape(" · ".join(selected) or "—"))
                     self.assertRegex(table[1], r"<td>\s*" + re.escape(expected) + r"\s*</td>")

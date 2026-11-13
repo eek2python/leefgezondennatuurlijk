@@ -114,7 +114,7 @@ Beste PFAS-vrije wokpannen van {{ selected_size }} cm | Leef Natuurlijk & Gezond
                                    {% endif %}
             </td>
             <td>
-                                    {% include "partials/comparison_features.html" with features=product.features only %}
+                                    {% include "partials/comparison_features.html" with comparison_features=product.comparison_features features=product.features only %}
             </td>
             <td>{{ product.display_price_range|default:"—" }}</td>
             <td>

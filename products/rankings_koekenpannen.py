@@ -47,9 +47,7 @@ RANKINGS = {
         "kochstar_stein_30",
         "demeyere_alu_pro_5_ceraforce_30",
         "greenchef_diamond_30",
-        "bk_easy_induction_30",
         "greenpan_torino_30",
-        "tefal_renew_30",
         "brabantia_indu_plus_r_30",
     ],
     32: [

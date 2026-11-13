@@ -1,1 +1,1 @@
-{% if features %}{{ features|join:" · " }}{% else %}—{% endif %}
+{% if comparison_features %}{{ comparison_features|join:" · " }}{% elif features %}{{ features|join:" · " }}{% else %}—{% endif %}

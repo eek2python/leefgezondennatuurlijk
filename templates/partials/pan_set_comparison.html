@@ -9,7 +9,7 @@
                     <td><a href="{% url 'product_detail' slug=product.slug %}"><strong>{{ product.name }}</strong></a>
                         {% if product.award %}<br><span class="product-badge {{ product.award_class }}">{{ product.award }}</span>{% endif %}
                     </td>
-                    <td>{% include "partials/comparison_features.html" with features=product.features only %}</td>
+                    <td>{% include "partials/comparison_features.html" with comparison_features=product.comparison_features features=product.features only %}</td>
                     <td>{{ product.display_price_range|default:"—" }}</td>
                     <td>{% if product.rating %}{{ product.rating_display }}/5{% else %}—{% endif %}</td>
                     <td>{% include "includes/product_link.html" with resolved_link=product.resolved_link availability_label=product.availability_label link_product=product link_small=True %}</td>
