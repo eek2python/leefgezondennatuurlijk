@@ -2082,6 +2082,7 @@ PRODUCTS = {
         "maken hem daardoor interessant voor grotere porties, terwijl de "
         "reguliere prijs in het middensegment ligt."
     ),
+},
 
 
 "brabantia_indu_plus_r_30": {
