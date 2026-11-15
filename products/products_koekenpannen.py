@@ -889,7 +889,7 @@ PRODUCTS = {
         "Stapelbaar ontwerp",
         "2 jaar garantie",
     ],
-    [
+    "comparison_features": [
         "Extra dikke RVS-inductiebodem",
         "Stapelbaar ontwerp",
         "Ovenbestendig tot 160 °C",
