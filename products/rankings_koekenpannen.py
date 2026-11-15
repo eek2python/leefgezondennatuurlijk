@@ -11,14 +11,12 @@ RANKINGS = {
         "hema_milano_20",
     ],
     24: [
-        "greenpan_barcelona_pro_24",
         "demeyere_alu_pro_5_ceraforce_24",
-        "greenpan_apex_hybrid_24",
         "greenchef_diamond_24",
-        "tefal_renew_24",
+        "greenpan_barcelona_pro_24",
+        "greenpan_apex_hybrid_24",
         "bk_easy_induction_24",
         "kochstar_essenz_24",
-        "ikea_hemlagad_keramisch_24",
         "bk_infinity_24",
     ],
     26: [
