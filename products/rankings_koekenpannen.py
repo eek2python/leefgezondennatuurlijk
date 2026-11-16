@@ -44,13 +44,10 @@ RANKINGS = {
         "brabantia_indu_plus_r_30",
     ],
     32: [
-        "greenpan_barcelona_pro_32",
         "demeyere_alu_pro_5_ceraforce_32",
+        "greenpan_barcelona_pro_32",
         "combekk_forest_easy_32",
-        "tefal_renew_32",
-        "primecook_32",
-        "ikea_hemlagad_keramisch_32",
-        "scanpan_nura_32",
+        "tefal_experience_ceram_32",
     ],
     "24_28": [
         "demeyere_alu_industry_3_ceraforce_set_24_28",

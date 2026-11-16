@@ -2646,5 +2646,12 @@
     "category": "gourmetsets",
     "product_key": "bourgini-chefs-dinner-party-8-personen-grazed-grey",
     "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/tefal-experience-ceram-32.jpg",
+    "slug": "tefal-experience-ceram-32",
+    "category": "keramische-koekenpannen",
+    "product_key": "tefal-experience-ceram-32",
+    "enabled": true
   }
 ]

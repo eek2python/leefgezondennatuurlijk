@@ -2063,19 +2063,39 @@ PRODUCTS = {
 "greenpan_barcelona_pro_32": {
   "slug": "greenpan-barcelona-pro-32",
   "name": "GreenPan Barcelona Pro",
-  "description": "Grote aluminium koekenpan met Thermolon keramische "
-  "antiaanbaklaag, inductiebodem en ovenbestendige RVS handgreep.",
+  "description": (
+        "Grote aluminium koekenpan met een PFAS-vrije keramische "
+        "antiaanbaklaag, vlak uitgevoerde bodem en roestvrijstalen handgreep. "
+        "De pan is ovenbestendig tot 220 °C."
+    ),
   "brand": "GreenPan",
   "diameter": 32,
-  "material": "Aluminium met Thermolon keramische antiaanbaklaag",
-  "features": [ "Geschikt voor inductie",
-              "Ovenbestendig",
-              "Vaatwasserbestendig; handwas aanbevolen",],
-  "rating": 4.7,
-"rating_count": None,
-  "rating_source": "editorial",
-  "price": 91.99,
-  "price_last_checked": "2026-08-07",
+  "material": "Aluminium met keramische antiaanbaklaag",
+  "features": [
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Aluminium constructie",
+        "Vlakke bodemconstructie",
+        "Inductiecontactvlak circa 24,5 cm",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 220 °C",
+        "Roestvrijstalen handgreep",
+        "Gewicht circa 1,44 kg",
+        "Vaatwasserbestendig; handwas aanbevolen",
+        "5 jaar garantie op de antiaanbaklaag bij huishoudelijk gebruik",
+    ],
+    "comparison_features": [
+        "Gewicht circa 1,44 kg",
+        "Inductiecontactvlak circa 24,5 cm",
+        "Ovenbestendig tot 220 °C",
+        "5 jaar garantie op de antiaanbaklaag",
+    ],
+  "rating": 4.0,
+  "rating_count": None,
+  "rating_source": "Leef Natuurlijk & Gezond",
+  "price": 93.99,
+  "reference_price": 124.90,
+  "price_last_checked": "2026-11-16",
   "currency": "EUR",
   "availability": "InStock",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fgreenpan-barcelona-pro-bakpan-32cm%2F9300000118071130%2F&name=GreenPan%20Barcelona%20Pro%20koekenpan%20-%20PFAS-vrij%20-%2032cm%20-%20BalancePro%E2%84%A2-technologie",
@@ -2086,45 +2106,64 @@ PRODUCTS = {
   ),
   "official_url": "",
   "availability_label": "",
-  "award": "🏆 Beste keuze",
+  "award": None,
   "price_range": "€€€",
   "image": "greenpan-barcelona-pro-32cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Gelijkmatige warmteverdeling",
-      "Ruim bakoppervlak",
-      "Geschikt voor ovengebruik",
-  ],
+        "Met circa 1,44 kg relatief goed hanteerbaar voor een pan van 32 cm",
+        "Ovenbestendig tot 220 °C",
+        "5 jaar garantie op de antiaanbaklaag",
+    ],
   "cons": [
-      "Relatief zwaar",
-      "Hoge aanschafprijs",
-  ],
+        "Reguliere aanschafprijs ligt in het hogere prijssegment",
+    ],
   "verdict": (
-      "Onze beste allround keuze voor grote porties en "
-      "veelzijdig dagelijks gebruik."
-  ),
+        "De GreenPan Barcelona Pro past bij wie een grote aluminium pan zoekt "
+        "die ondanks het formaat relatief goed hanteerbaar blijft en ook in "
+        "de oven kan worden gebruikt. De pan weegt circa 1,44 kg en kan tot "
+        "220 °C in de oven, maar de reguliere aanschafprijs ligt hoog."
+    ),
 },
 
 "demeyere_alu_pro_5_ceraforce_32": {
   "slug": "demeyere-alu-pro-5-ceraforce-32",
   "name": "Demeyere Alu Pro 5 Ceraforce",
   "description": (
-      "Grote aluminium koekenpan met Ceraforce keramische "
-      "antiaanbaklaag en inductiebodem."
-  ),
+        "Grote koekenpan van gesmeed aluminium met een PFAS-vrije "
+        "keramische antiaanbaklaag en een 5 mm dikke constructie. "
+        "De pan heeft een roestvrijstalen handgreep en is ovenbestendig "
+        "tot 230 °C."
+    ),
   "brand": "Demeyere",
   "diameter": 32,
-  "material": "Aluminium met Ceraforce keramische antiaanbaklaag",
+  "material": "Gesmeed aluminium met keramische antiaanbaklaag",
   "features": [
-      "Geschikt voor inductie",
-      "Ruim bakoppervlak",
-  ],
-  "rating": 4.6,
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Gesmede aluminium constructie van 5 mm",
+        "Bodemconstructie ontworpen om vlak te blijven",
+        "Bodemdiameter circa 27,5 cm",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 230 °C",
+        "Geklonken roestvrijstalen handgreep",
+        "Gewicht circa 1,64 kg",
+        "Vaatwasserbestendig; handwas aanbevolen",
+        "5 jaar garantie op productiefouten bij huishoudelijk gebruik",
+    ],
+    "comparison_features": [
+        "Gesmede aluminium constructie van 5 mm",
+        "Bodemdiameter circa 27,5 cm",
+        "Ovenbestendig tot 230 °C",
+        "Gewicht circa 1,64 kg",
+    ],
+  "rating": 4.5,
   "rating_count": None,
   "rating_source": "editorial",
-  "price": 99.50,
-  "price_last_checked": "2026-08-07",
-  "price_range": "€€€€",
+  "price": 101.94,
+  "reference_price": 129.00,
+  "price_last_checked": "2026-11-16",
+  "price_range": "€€€",
   "currency": "EUR",
   "availability": "InStock",
   "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdemeyere-alu-pro-5-ceraforce-bakpan-32cm%2F9300000023769225%2F&name=Demeyere%20Alu%20Pro%205%20Ceraforce%20koekenpan%20-%2032%20cm%20-%20PFAS%20vrij",
@@ -2135,42 +2174,62 @@ PRODUCTS = {
   ),
   "official_url": "",
   "availability_label": "",
-  "award": "💎 Premium keuze",
+  "award": "🏆 Beste keuze",
   "image": "demeyere-alu-pro-5-ceraforce-32cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Gelijkmatige warmteverdeling",
-      "Stevige afwerking",
-      "Geschikt voor grote porties",
-  ],
+        "5 mm dikke aluminium constructie voor snelle warmtegeleiding",
+        "Bodemconstructie ontworpen om vlak te blijven bij verhitting",
+        "Ovenbestendig tot 230 °C",
+        "5 jaar garantie op productiefouten",
+    ],
   "cons": [
-      "Relatief zwaar",
-      "Hoge aanschafprijs",
-  ],
+        "Met circa 1,64 kg relatief zwaar voor een pan van 32 cm",
+        "Reguliere aanschafprijs ligt in het hogere prijssegment",
+    ],
   "verdict": (
-      "Onze premium keuze voor wie stabiele warmteverdeling "
-      "en een groot bakoppervlak belangrijk vindt."
-  ),
+        "De Demeyere Alu Pro 5 Ceraforce is onze 🏆 Beste keuze voor wie "
+        "een grote, stevig uitgevoerde keramische koekenpan zoekt voor "
+        "regelmatig gebruik op de kookplaat en in de oven tot 230 °C. "
+        "De 5 mm dikke constructie en grote bodem gaan samen met een "
+        "relatief hoog gewicht en prijsniveau."
+    ),
 },
 
 "combekk_forest_easy_32": {
   "slug": "combekk-forest-easy-32",
   "name": "Combekk Forest Easy",
-  "description": "Grote koekenpan van gerecycled aluminium met keramische "
-  "antiaanbaklaag, inductiebodem en koel blijvende handgreep.",
+  "description": (
+        "Grote koekenpan van 100% gerecycled aluminium met een PFAS-vrije "
+        "keramische antiaanbaklaag en een koelblijvende bakelieten handgreep. "
+        "De pan weegt circa 1,41 kg en heeft een volledig magnetische "
+        "inductiebodem."
+    ),
   "brand": "Combekk",
   "diameter": 32,
-  "material": "Gerecycled aluminium met keramische antiaanbaklaag",
+  "material": "100% gerecycled aluminium met keramische antiaanbaklaag",
   "features": [
-      "Geschikt voor alle warmtebronnen",
-      "Volledig magnetische inductiebodem",
-      "Koel blijvende bakelieten handgreep",
-  ],
-  "rating": 4.4,
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Body van 100% gerecycled aluminium",
+        "Volledig magnetische inductiebodem",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Koelblijvende bakelieten handgreep",
+        "Gewicht circa 1,41 kg",
+        "Vaatwasserbestendig",
+    ],
+    "comparison_features": [
+        "Gewicht circa 1,41 kg",
+        "Volledig magnetische inductiebodem",
+        "Koelblijvende handgreep",
+        "Vaatwasserbestendig",
+    ],
+  "rating": 4.0,
   "rating_count": None,
-  "rating_source": "editorial",
-  "price": 59.00,
-"price_last_checked": "2026-07-30",
+  "rating_source": "Leef Natuurlijk & Gezond",
+  "price": 56.99,
+  "reference_price": 69.00,
+  "price_last_checked": "2026-11-16",
   "currency": "EUR",
   "availability": "InStock",
   "affiliate_url": "",
@@ -2181,217 +2240,82 @@ PRODUCTS = {
   "official_url": "",
   "availability_label": "",
   "award": "",
-  "price_range": "€€€",
+  "price_range": "€€",
   "image": "combekk-forest-easy-32cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Gelijkmatige warmteverdeling via de inductiebodem",
-      "Comfortabele koel blijvende handgreep",
-      "Relatief gunstig geprijsd binnen het grote formaat",
-  ],
-  "cons": [
-      "Relatief zwaar",
-      "Langzaam opwarmen wordt aanbevolen",
-  ],
+        "Met circa 1,41 kg relatief licht voor een pan van 32 cm",
+        "Koelblijvende handgreep",
+        "Vaatwasserbestendig",
+    ],
+  "cons": [],
   "verdict": (
-      "Een complete middenklassekeuze met een stabiele inductiebodem "
-      "en een toegankelijke prijs."
-  ),
+        "De Combekk Forest Easy past vooral bij wie een grote keramische pan "
+        "zoekt die ondanks het formaat relatief licht en gemakkelijk "
+        "hanteerbaar blijft. De koelblijvende greep en vaatwasserbestendigheid "
+        "maken hem praktisch voor dagelijks gebruik op de kookplaat."
+    ),
 },
 
-"tefal_renew_32": {
-  "slug": "tefal-renew-32",
-  "name": "Tefal Renew ON",
+"tefal_experience_ceram_32": {
+  "slug": "tefal-experience-ceram-32",
+  "name": "Tefal Experience Ceram",
   "description": (
-      "Grote koekenpan van gerecycled aluminium met keramische "
-      "antiaanbaklaag en geïntegreerde hitte-indicator."
-  ),
+        "Grote aluminium koekenpan met een PFAS-vrije keramische "
+        "antiaanbaklaag, diepe vorm en warmte-indicator in het bakoppervlak. "
+        "De pan is geschikt voor inductie en ovengebruik tot 250 °C."
+    ),
   "brand": "Tefal",
   "diameter": 32,
   "material": (
       "Gerecycled aluminium met keramische antiaanbaklaag"
   ),
   "features": [
-      "Geschikt voor alle warmtebronnen",
-      "Thermo-Signal hitte-indicator",
-  ],
-  "rating": 4.2,
-  "rating_count": None,
-  "rating_source": "editorial",
-  "price": 36.79,
-  "price_last_checked": "2026-08-07",
-  "currency": "EUR",
-  "availability": "InStock",
-  "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Ftefal-renew-on-keramische-koekenpan-o-32-cm%2F9300000117431080%2F&name=Tefal%20Renew%20ON%20Koekenpan%20-%20Keramisch%20-%20%C3%9832%20cm%20-%20PFAS-vrij%20-%20Geschikt%20voor%20inductie",
-  "retailer_url": (
-      "https://www.bol.com/nl/nl/p/"
-      "tefal-renew-on-keramische-koekenpan-o-32-cm/"
-      "9300000117431080/"
-  ),
-  "official_url": "",
-  "availability_label": "",
-  "award": "",
-  "price_range": "€€",
-  "image": "tefal-renew-32cm.webp",
-  "image_path": "images/products/keramische-koekenpannen",
-  "pros": [
-      "Pan gemaakt van gerecycled aluminium",
-      "Goede warmtegeleiding",
-      "Handige hitte-indicator",
-  ],
-  "cons": [
-      "Niet geschikt voor ovengebruik",
-  ],
-  "verdict": (
-      "Een gebruiksvriendelijke grote pan met geïntegreerde "
-      "hitte-indicator en een aantrekkelijke prijs."
-  ),
-},
-
-"primecook_32": {
-  "slug": "primecook-32",
-  "name": "Primecook Koekenpan",
-  "description": (
-      "Grote aluminium koekenpan met Excilon-antiaanbaklaag "
-"op keramische basis, inductiebodem en twee handgrepen."
-  ),
-  "brand": "Primecook",
-  "diameter": 32,
-  "material": "Aluminium met Excilon-antiaanbaklaag op keramische basis",
-  "features": [
-      "Geschikt voor alle warmtebronnen",
-      "Geschikt voor ovengebruik",
-  ],
-  "rating": 4.1,
-  "rating_count": None,
-  "rating_source": "editorial",
-  "price": 81.90,
-  "price_last_checked": "2026-07-28",
-  "currency": "EUR",
-  "availability": "InStock",
-  "affiliate_url": "",
-  "retailer_url": (
-      "https://www.primecook.nl/"
-      "1903-primecook-koekenpan-32-cm-pfas-vrij"
-  ),
-  "official_url": "",
-  "availability_label": "",
-  "award": "",
-  "price_range": "€€€",
-  "image": "primecook-32cm.webp",
-  "image_path": "images/products/keramische-koekenpannen",
-  "pros": [
-      "Groot bakoppervlak",
-      "Geschikt voor inductie en ovengebruik",
-      "Twee handgrepen vergemakkelijken het verplaatsen",
-  ],
-  "cons": [
-      "Hoge aanschafprijs",
-      "Handwas wordt aanbevolen",
-  ],
-  "verdict": (
-      "Een ruime koekenpan voor wie ovengebruik en een tweede "
-      "handgreep belangrijk vindt."
-  ),
-},
-
-"ikea_hemlagad_keramisch_32": {
-  "slug": "ikea-hemlagad-keramisch-32",
-  "name": "IKEA HEMLAGAD",
-  "description": (
-      "Grote aluminium koekenpan met keramische antiaanbaklaag "
-      "voor dagelijks gebruik op alle gangbare kookplaten."
-  ),
-  "brand": "IKEA",
-  "diameter": 32,
-  "material": "Aluminium met keramische antiaanbaklaag",
-  "features": [
-      "Geschikt voor inductie",
-      "Groot bakoppervlak",
-      "Alleen handwas",
-  ],
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Body van gerecycled aluminium",
+        "Diepe vorm voor grotere hoeveelheden",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 250 °C",
+        "Visuele warmte-indicator",
+        "Vaatwasserbestendig",
+    ],
+    "comparison_features": [
+        "Diepe vorm",
+        "Ovenbestendig tot 250 °C",
+        "Visuele warmte-indicator",
+        "Vaatwasserbestendig",
+    ],
   "rating": 4.0,
   "rating_count": None,
-  "rating_source": "editorial",
-  "price": 17.99,
-  "price_last_checked": "2026-07-30",
+  "rating_source": "Leef Natuurlijk & Gezond",
+  "price": 46.99,
+  "reference_price": 58.49,
+  "price_last_checked": "2026-11-16",
   "currency": "EUR",
   "availability": "InStock",
-  "affiliate_url": "",
-  "retailer_url": (
-      "https://www.ikea.com/nl/nl/p/"
-      "hemlagad-koekenpan-antiaanbaklaag-zwart-30580899/"
-  ),
-  "official_url": "",
+  "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Ftefal-experience-ceram-keramische-koekenpan-32-cm-pfas-vrij-inductie%2F9300000238721662%2F&name=Tefal%20Experience%20Ceram%20Keramische%20Koekenpan%2032%20cm%20-%20PFAS-vrij%20-%20Krasbestendig%20door...",
+  "official_url": "https://www.tefal.nl/p/experience-ceram-keramische-koekenpan-32-cm-fusion-core-inductie/2100138111",
   "availability_label": "",
   "award": "💰 Budget keuze",
-  "price_range": "€",
-  "image": "ikea-hemlagad-keramisch-32cm.webp",
+  "price_range": "€€",
+  "image": "tefal-experience-ceram-32.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Zeer lage aanschafprijs",
-      "Ruim bakoppervlak",
-      "Geschikt voor alle gangbare kookplaten",
-  ],
-  "cons": [
-      "Niet vaatwasserbestendig",
-      "Voorzichtig opwarmen op krachtige kookzones",
-  ],
+        "Ovenbestendig tot 250 °C",
+        "Diepe vorm biedt extra ruimte voor grotere hoeveelheden",
+        "Warmte-indicator helpt bij het bepalen van het startmoment voor bakken",
+    ],
+  "cons": [],
   "verdict": (
-      "Een zeer voordelige grote koekenpan voor licht en "
-      "regelmatig dagelijks gebruik."
-  ),
+        "De Tefal Experience Ceram is onze 💰 Budget keuze voor wie tegen "
+        "een relatief lage prijs een grote en veelzijdige keramische pan "
+        "zoekt. De diepe vorm, warmte-indicator en ovenbestendigheid tot "
+        "250 °C bieden veel gebruiksmogelijkheden, al is de serie nog te "
+        "nieuw voor een goed beeld van de duurzaamheid op langere termijn."
+    ),
 },
 
-"scanpan_nura_32": {
-  "slug": "scanpan-nura-32",
-  "name": "Scanpan Nura",
-  "description": (
-      "Meerlaagse stalen koekenpan met Stratanium Leap "
-      "antiaanbaklaag en ovenbestendige RVS handgreep."
-  ),
-  "brand": "Scanpan",
-  "diameter": 32,
-  "material": (
-      "Meerlaags staal met Stratanium Leap antiaanbaklaag"
-  ),
-  "features": [
-      "Geschikt voor alle warmtebronnen",
-      "Ovenbestendig tot 250 °C",
-      "Vaatwasserbestendig",
-  ],
-  "rating": 4.4,
-  "rating_count": None,
-  "rating_source": "editorial",
-  "price": None,
-  "price_last_checked": None,
-  "currency": "EUR",
-  "availability": None,
-  "affiliate_url": "",
-  "retailer_url": "",
-  "official_url": (
-      "https://www.scanpan.eu/shop/"
-      "28-cm-fry-pan-nura/32cm"
-  ),
-  "availability_label": "Nog niet algemeen verkrijgbaar",
-  "award": "",
-  "price_range": None,
-  "image": "scanpan-nura-32cm.webp",
-  "image_path": "images/products/keramische-koekenpannen",
-  "pros": [
-      "Stevige meerlaagse staalconstructie",
-      "Geschikt voor ovengebruik tot 250 °C",
-      "Breed inzetbaar op verschillende warmtebronnen",
-  ],
-  "cons": [
-      "Relatief zwaar",
-      "Prijs-kwaliteit nog niet goed te beoordelen",
-  ],
-  "verdict": (
-      "Een veelzijdige nieuwe premiumoptie, maar door de beperkte "
-      "verkrijgbaarheid nog lastig op prijs-kwaliteit te beoordelen."
-  ),
-},
 
 # KERAMISCHE KOEKENPANNENSETS 24 + 28 CM
 
