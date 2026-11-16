@@ -57,7 +57,8 @@ RANKINGS = {
         "greenpan_essence_set_24_28",
         "tefal_renew_on_set_24_28",
         "bk_brilliant_set_24_28",
-        "cook_and_pan_set_24_28",
+        "cook_and_pan_rvs_set_24_28",
+        "cook_and_pan_houtlook_set_24_28",
     ],
     "20_28": [
         "greenpan_geneva_set_20_28",

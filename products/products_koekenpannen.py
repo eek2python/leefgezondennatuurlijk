@@ -2323,9 +2323,10 @@ PRODUCTS = {
   "slug": "demeyere-alu-industry-3-ceraforce-set-24-28",
   "name": "Demeyere Alu Industry 3 Ceraforce Koekenpannenset",
   "description": (
-      "Tweedelige koekenpannenset van gesmeed aluminium met "
-      "PFAS-vrije Ceraforce keramische antiaanbaklaag. De Radiant-bodem is ontworpen voor "            "stabiel contact met de kookplaat; de gelaste RVS-grepen maken ovengebruik tot 230 °C mogelijk."
-  ),
+        "Tweedelige koekenpannenset van gesmeed aluminium met een PFAS-vrije "
+        "keramische antiaanbaklaag. De pannen hebben gelaste roestvrijstalen "
+        "grepen en zijn ovenbestendig tot 230 °C."
+    ),
   "brand": "Demeyere",
   "set_type": "Koekenpannenset",
   "pan_count": 2,
@@ -2334,20 +2335,31 @@ PRODUCTS = {
       "Koekenpan 24 cm",
       "Koekenpan 28 cm",
   ],
-  "material": "Gesmeed aluminium met Ceraforce keramische antiaanbaklaag",
+  "material": "Gesmeed aluminium met keramische antiaanbaklaag",
   "features": [
-      "PFAS-vrije Ceraforce keramische antiaanbaklaag",
-      "Gesmeed aluminium met Radiant-bodem",
-      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie",
-      "Gelaste roestvrijstalen grepen",
-      "Ovenbestendig tot 230 °C",
-      "Handwas aanbevolen voor de keramische coating",
-  ],
-  "rating": 4.6,
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Gesmeed aluminium",
+        "Bodemconstructie ontworpen voor stabiel contact met de kookplaat",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 230 °C",
+        "Gelaste roestvrijstalen grepen zonder klinknagels aan de binnenzijde",
+        "Vaatwasserbestendig; handwas aanbevolen",
+        "5 jaar garantie",
+        "2 koekenpannen: 24 en 28 cm",
+    ],
+    "comparison_features": [
+        "Gesmeed aluminium",
+        "Klinknagelloze binnenzijde",
+        "Ovenbestendig tot 230 °C",
+        "5 jaar garantie",
+    ],
+  "rating": 4.0,
   "rating_count": None,
   "rating_source": "Leef Natuurlijk & Gezond",
-  "price": 90.00,
-  "price_last_checked": "2026-09-16",
+  "price": 109.00,
+  "reference_price": 168.00,
+  "price_last_checked": "2026-11-16",
   "currency": "EUR",
   "availability": "InStock",
   "availability_label": "Op voorraad",
@@ -2360,35 +2372,34 @@ PRODUCTS = {
       "https://www.zwilling.com/nl/demeyere/series/alu-industry-3/"
   ),
   "award": "🏆 Beste keuze",
-  "price_range": "€€",
+  "price_range": "€€€",
   "image": "demeyere-alu-industry-3-ceraforce-set-24-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Gesmeed aluminium en Radiant-bodem voor stabiel contact met de kookplaat",
-      "Gelaste RVS-grepen zonder klinknagels aan de binnenzijde"
-      "Ovenbestendig tot 230 °C",
-  ],
+        "Gelaste grepen zorgen voor een klinknagelloze binnenzijde die eenvoudiger schoon te maken is",
+        "Ovenbestendig tot 230 °C",
+        "5 jaar garantie",
+    ],
   "cons": [
-      "RVS-grepen kunnen tijdens gebruik op de kookplaat en in de oven heet worden",
-      "Handwas is aan te raden om de keramische coating te ontzien",
-  ],
+        "Er zijn terugkerende gebruikersmeldingen dat de antiaanbakwerking na verloop van tijd afneemt",
+    ],
   "verdict": (
-      "Onze allroundkeuze voor wie twee stevig uitgevoerde keramische koekenpannen "
-      "zoekt. De Radiant-bodem en het gesmede aluminium vormen een solide basis voor "
-      "dagelijks gebruik; de RVS-grepen bieden bovendien ovenmogelijkheden tot 230 °C. "
-      "Houd bij het verplaatsen van hete pannen rekening met de metalen grepen."
-  ),
+        "De Demeyere Alu Industry 3 Ceraforce is onze 🏆 Beste keuze voor wie "
+        "twee stevig uitgevoerde keramische pannen zoekt voor gebruik op de "
+        "kookplaat en in de oven tot 230 °C. De gesmede constructie, "
+        "klinknagelloze binnenzijde en vijf jaar garantie zijn sterke punten, "
+        "al zijn er ook gebruikersmeldingen over afnemende antiaanbakwerking."
+    ),
 },
 
 "beka_pro_induc_set_24_28": {
   "slug": "beka-pro-induc-koekenpannenset-24-28",
   "name": "Beka Pro Induc Koekenpannenset",
   "description": (
-      "Tweedelige koekenpannenset van 100% gerecycled aluminium met een "
-      "PFAS-vrije keramische antiaanbaklaag. De zware inductiebodem en ergonomische "
-      "RVS-grepen maken de pannen geschikt voor dagelijks koken op alle gangbare "
-      "warmtebronnen."
-  ),
+        "Tweedelige koekenpannenset van 100% gerecycled aluminium met een "
+        "PFAS-vrije keramische antiaanbaklaag en roestvrijstalen grepen. "
+        "De pannen zijn ovenbestendig tot 180 °C."
+    ),
   "brand": "Beka",
   "set_type": "Koekenpannenset",
   "pan_count": 2,
@@ -2399,18 +2410,29 @@ PRODUCTS = {
   ],
   "material": "100% gerecycled aluminium met keramische antiaanbaklaag",
   "features": [
-      "PFAS-vrije keramische antiaanbaklaag",
-      "Zware inductiebodem (heavy-gauge)",
-      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie",
-      "Ergonomische RVS-grepen met duimsteun",
-      "Ovenbestendig tot 180 °C",
-      "Vaatwasserbestendig; handwas aanbevolen",
-  ],
-  "rating": 4.2,
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Body van 100% gerecycled aluminium",
+        "Heavy-gauge inductiebodem",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 180 °C",
+        "Ergonomische roestvrijstalen grepen met duimsteun",
+        "Vaatwasserbestendig; handwas aanbevolen",
+        "2 jaar garantie",
+        "2 koekenpannen: 24 en 28 cm",
+    ],
+  "comparison_features": [
+        "Heavy-gauge inductiebodem",
+        "RVS-grepen met duimsteun",
+        "Ovenbestendig tot 180 °C",
+        "2 jaar garantie",
+    ],
+  "rating": 4.0,
   "rating_count": None,
   "rating_source": "Leef Natuurlijk & Gezond",
-  "price": 49.99,
-  "price_last_checked": "2026-09-16",
+  "price": 37.95,
+  "reference_price": 99.98,
+  "price_last_checked": "2026-11-16",
   "currency": "EUR",
   "availability": "InStock",
   "availability_label": "Op voorraad",
@@ -2420,38 +2442,33 @@ PRODUCTS = {
       "koekenpannenset-pfasvrij-keramisch"
   ),
   "official_url": "",
-  "award": "💰 Budget keuze",
-  "price_range": "€",
+  "award": None,
+  "price_range": "€€",
   "image": "beka-pro-induc-set-24-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Relatief lage prijs voor twee pannen",
-      "100% gerecycled aluminium en een zware inductiebodem",
-      "RVS-grepen met ergonomische duimsteun"
-      "Ook bruikbaar in de oven tot 180 °C",
-  ],
+        "Ergonomische RVS-grepen met duimsteun",
+        "Ovenbestendig tot 180 °C",
+    ],
   "cons": [
-      "Ovenbestendigheid is begrensd op 180 °C"
-      "RVS-grepen kunnen bij ovengebruik heet worden",
-      "Handwas wordt aanbevolen om de keramische laag te ontzien"
-  ],
+        "Ovenbestendigheid blijft beperkt tot 180 °C",
+    ],
   "verdict": (
-      "Onze budgetkeuze voor wie voor een beperkte aanschafprijs twee "
-      "keramische inductiepannen zoekt. De zware inductiebodem en RVS-grepen "
-      "bieden praktische gebruiksmogelijkheden, maar voor ovenbereidingen "
-      "boven 180 °C is deze set niet geschikt."
-  ),
+        "De Beka Pro Induc past bij wie een stevig uitgevoerde aluminium set "
+        "met metalen grepen zoekt voor gebruik op de kookplaat en beperkt "
+        "ovengebruik. De huidige aanbiedingsprijs is zeer aantrekkelijk, "
+        "maar de reguliere prijs ligt duidelijk hoger."
+    ),
 },
 
 "le_creuset_essential_ceramic_set_24_28": {
   "slug": "le-creuset-essential-ceramic-set-24-28",
   "name": "Le Creuset Essential Non-Stick Ceramic Koekenpannenset",
   "description": (
-      "Tweedelige keramische koekenpannenset met een zwaar gesmede aluminium "
-      "behuizing, een volledig omhulde RVS inductieschijf en een coating "
-      "die zonder PFAS is geproduceerd. De RVS-grepen en versterkte rand maken de "
-      "set geschikt voor intensief dagelijks gebruik en ovenbereidingen tot 280 °C."
-  ),
+        "Tweedelige koekenpannenset van zwaar gesmeed aluminium met een "
+        "PFAS-vrije keramische antiaanbaklaag en volledig omhulde "
+        "roestvrijstalen inductieschijf. De pannen zijn ovenbestendig tot 280 °C."
+    ),
   "brand": "Le Creuset",
   "set_type": "Koekenpannenset",
   "pan_count": 2,
@@ -2462,17 +2479,30 @@ PRODUCTS = {
   ],
   "material": "Zwaar gesmeed aluminium met keramische antiaanbaklaag",
   "features": [
-      "Zwaar gesmede aluminium behuizing",
-      "Volledig omhulde roestvrijstalen inductieschijf",
-      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie",
-      "Ovenbestendig tot 280 °C",
-      "Versterkte rand tegen vervorming",
-      "Roestvrijstalen handgrepen",
-  ],
-  "rating": 4.7,
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Zwaar gesmede aluminium constructie",
+        "Volledig omhulde roestvrijstalen inductieschijf",
+        "Versterkte rand ontworpen om vervorming tegen te gaan",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 280 °C",
+        "Roestvrijstalen grepen",
+        "Setgewicht circa 2,24 kg",
+        "Handwas aanbevolen",
+        "10 jaar garantie",
+        "2 koekenpannen: 24 en 28 cm",
+    ],
+    "comparison_features": [
+        "Setgewicht circa 2,24 kg",
+        "Volledig omhulde RVS-inductieschijf",
+        "Ovenbestendig tot 280 °C",
+        "10 jaar garantie",
+    ],
+  "rating": 4.0,
   "rating_count": None,
   "rating_source": "Leef Natuurlijk & Gezond",
-  "price": 199.00,
+  "price": 179.00,
+  "reference_price": 275.00,
   "price_last_checked": "2026-09-16",
   "currency": "EUR",
   "availability": "InStock",
@@ -2489,32 +2519,30 @@ PRODUCTS = {
   "image": "le-creuset-essential-ceramic-set-24-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Zwaar gesmede constructie en volledig omhulde inductieschijf",
-      "Ruime ovenbestendigheid tot 280 °C",
-      "Versterkte rand en RVS-grepen",
-  ],
+        "Versterkte rand is ontworpen om vervorming tegen te gaan",
+        "Ovenbestendig tot 280 °C",
+        "10 jaar garantie",
+    ],
   "cons": [
-      "Relatief hoge aanschafprijs",
-      "Met circa 2,24 kg een relatief zware tweedelige set",
-      "RVS-grepen worden heet bij ovengebruik",
-  ],
+        "Met circa 2,24 kg relatief zwaar voor een tweedelige aluminium set",
+        "Zeer hoge reguliere aanschafprijs",
+    ],
   "verdict": (
-      "Onze premiumkeuze voor wie een robuuste keramische koekenpannen met "
-      "ruime ovenmogelijkheden zoekt. De zware aluminium constructie, volledig omhulde "
-      "inductieschijf en ovenlimiet van 280 °C bieden veel gebruiksmogelijkheden. Het "
-      "setgewicht en de hoge prijs zijn aandachtspunten."
-  ),
+        "De Le Creuset Essential is onze 💎 Premium keuze voor wie een zware "
+        "constructie, hoge ovenbestendigheid en lange garantie belangrijk vindt. "
+        "De versterkte aluminium constructie kan tot 280 °C in de oven en heeft "
+        "10 jaar garantie, maar de set is zwaar en zeer kostbaar."
+    ),
 },
 
 "ducq_keramische_koekenpannenset_24_28": {
   "slug": "ducq-keramische-koekenpannenset-24-28",
   "name": "DUCQ Keramische Koekenpannenset",
   "description": (
-      "Tweedelige koekenpannenset met een drielaagse RVS-comstructie, een aluminium "
-      "kern en een PFAS-vrije keramische antiaanbaklaag. De holle RVS-grepen liggen "
-      "prettig in de hand; de pannen zijn geschikt voor inductie en ovengebruik tot "
-      "250 °C."
-  ),
+        "Tweedelige koekenpannenset met een 3-laagse constructie van "
+        "roestvrij staal en aluminium en een PFAS-vrije keramische "
+        "antiaanbaklaag. De pannen zijn ovenbestendig tot 250 °C."
+    ),
   "brand": "DUCQ",
   "set_type": "Koekenpannenset",
   "pan_count": 2,
@@ -2524,19 +2552,32 @@ PRODUCTS = {
       "Koekenpan 28 cm",
   ],
   "material": (
-      "3-laags RVS met aluminium kern en keramische antiaanbaklaag"
-  ),
+        "3-laags roestvrij staal met aluminium tussenlaag en "
+        "keramische antiaanbaklaag"
+    ),
   "features": [
-      "Geschikt voor alle gangbare warmtebronnen",
-      "Geschikt voor inductie",
-      "Ovenbestendig tot 250 °C",
-      "Holle roestvrijstalen grepen",
-  ],
-  "rating": 4.6,
+        "PFAS-vrije keramische antiaanbaklaag",
+        "3-laagse constructie van RVS en aluminium",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 250 °C",
+        "Holle roestvrijstalen grepen",
+        "Handwas aanbevolen",
+        "10 jaar garantie",
+        "2 koekenpannen: 24 en 28 cm",
+    ],
+    "comparison_features": [
+        "3-laags RVS met aluminium tussenlaag",
+        "Ovenbestendig tot 250 °C",
+        "Holle RVS-grepen",
+        "10 jaar garantie",
+    ],
+  "rating": 4.0,
   "rating_count": None,
   "rating_source": "Leef Natuurlijk & Gezond",
   "price": 169.00,
-  "price_last_checked": "2026-09-16",
+  "reference_price": 169.00,
+  "price_last_checked": "2026-11-16",
   "currency": "EUR",
   "availability": "InStock",
   "availability_label": "Op voorraad",
@@ -2554,30 +2595,30 @@ PRODUCTS = {
   "image": "ducq-keramische-koekenpannenset-24-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Drielaagse RVS-constructie met warmtegeleidende aluminium kern",
-      "Ovenbestendig tot 250 °C",
-      "Holle RVS-grepen voor comfortabel gebruik op de kookplaat",
-  ],
+        "Volledig 3-laagse RVS/aluminiumconstructie",
+        "Ovenbestendig tot 250 °C",
+        "10 jaar garantie",
+    ],
   "cons": [
-      "Relatief hoge prijs",
-      "Metalen grepen worden heet bij ovengebruik"
-      "Handwas wordt aanbevolen voor behoud van de keramische coating",
-  ],
+        "Reguliere aanschafprijs ligt in het hogere prijssegment",
+        "Handwas aanbevolen voor behoud van de keramische coating",
+    ],
   "verdict": (
-      "Een passende keuze voor wie een drielaagse RVS-constructie wil combineren met een "
-      "een 3-laagse RVS-constructie wil combineren met keramisch bakgemak."
-  ),
+        "De DUCQ-set past bij wie bewust kiest voor een 3-laagse "
+        "RVS/aluminiumconstructie in plaats van een volledig aluminium pan. "
+        "De set is ovenbestendig tot 250 °C en heeft 10 jaar garantie, "
+        "maar de aanschafprijs ligt relatief hoog."
+    ),
 },
 
 "greenpan_essence_set_24_28": {
   "slug": "greenpan-essence-koekenpannenset-24-28",
   "name": "GreenPan Essence Koekenpannenset",
   "description": (
-      "Tweedelige aluminium koekenpannenset met een PFAS-vrije Thermolon keramische "
-      "antiaanbaklaagen een inductiebodem. De pan bevat minstens 65% gerecycled "
-      "aluminium. De stay-coolgrepen kunnen na gebruik worden losgeschroefd, wat het "
-      "scheiden van materialen bij recycling vergemakkelijkt."
-  ),
+        "Tweedelige aluminium koekenpannenset met een PFAS-vrije keramische "
+        "antiaanbaklaag en koelblijvende kunststof grepen. De pannen zijn "
+        "geschikt voor alle gangbare warmtebronnen en ovengebruik tot 160 °C."
+    ),
   "brand": "GreenPan",
   "set_type": "Koekenpannenset",
   "pan_count": 2,
@@ -2587,19 +2628,32 @@ PRODUCTS = {
       "Koekenpan 28 cm",
   ],
   "material": (
-      "Aluminium met minstens 65% gerecycled materiaal en "
-      "Thermolon keramische antiaanbaklaag"
-  ),
+        "Aluminium met minimaal 65% gerecycled materiaal en "
+        "keramische antiaanbaklaag"
+    ),
   "features": [
-      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie",
-      "Afschroefbare stay-cool grepen",
-      "Geschikt voor ovengebruik",
-  ],
-  "rating": 4.4,
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Body met minimaal 65% gerecycled aluminium",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot circa 160 °C",
+        "Koelblijvende handgrepen",
+        "Grepen na gebruik afschroefbaar voor materiaalscheiding",
+        "5 jaar garantie op de antiaanbaklaag",
+        "2 koekenpannen: 24 en 28 cm",
+    ],
+    "comparison_features": [
+        "Koelblijvende handgrepen",
+        "Ovenbestendig tot circa 160 °C",
+        "Afschroefbare grepen voor materiaalscheiding",
+        "5 jaar garantie op de coating",
+    ],
+  "rating": 4.0,
   "rating_count": None,
   "rating_source": "Leef Natuurlijk & Gezond",
-  "price": 67.90,
-  "price_last_checked": "2026-09-16",
+  "price": 84.90,
+  "reference_price": 84.90,
+  "price_last_checked": "2026-11-16",
   "currency": "EUR",
   "availability": "InStock",
   "availability_label": "Op voorraad",
@@ -2617,92 +2671,29 @@ PRODUCTS = {
   "image": "greenpan-essence-set-24-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Gunstige prijs",
-      "Lichte aluminium constructie",
-      "Afschroefbare grepen maken recycling eenvoudiger",
-  ],
+        "Koelblijvende handgrepen",
+        "5 jaar garantie op de antiaanbaklaag",
+    ],
   "cons": [
-      "Exacte maximale oventemperatuur niet duidelijk",
-  ],
+        "Ovenbestendigheid beperkt tot circa 160 °C",
+    ],
   "verdict": (
-      "Een toegankelijke middenklasseset voor wie twee lichte keramische koekenpannen "
-      "met ergonomische grepen zoekt. Daarbij zijn de pannen voorzien van een inductiebodem. "
-      "Door gebruik te maken van gerecycledaluminium en afschroefbare grepen om scheiding van "
-      "materialen eenvoudiger te maken wordt het milieu minder belast."
-  ),
+        "De GreenPan Essence past bij wie twee aluminium pannen met "
+        "koelblijvende grepen zoekt voor voornamelijk dagelijks gebruik op "
+        "de kookplaat. De vijf jaar coatinggarantie is aantrekkelijk, maar "
+        "de ovenbestendigheid blijft beperkt tot circa 160 °C."
+    ),
 },
 
-"tefal_renew_on_set_24_28": {
-  "slug": "tefal-renew-on-koekenpannenset-24-28",
-  "name": "Tefal Renew ON Keramische Koekenpannenset",
-  "description": (
-      "Tweedelige keramische koekenpannenset van gerecycled aluminium met een "
-      "PFAS-vrije antiaanbaklaag. De Thermo-Signal-warmte-indicator helpt bij het "
-      "bepalen van het begin van het bakken; de Thermo-Fusion-inductiebodem is "
-      "ontworpen voor gebruik op inductie en andere gangbare kookplaten."
-  ),
-  "brand": "Tefal",
-  "set_type": "Koekenpannenset",
-  "pan_count": 2,
-  "diameters": [24, 28],
-  "set_contents": [
-      "Koekenpan 24 cm",
-      "Koekenpan 28 cm",
-  ],
-  "material": "Gerecycled aluminium met keramische antiaanbaklaag",
-  "features": [
-      "Thermo-Signal-warmte-indicator",
-      "Thermo-Fusion-inductiebodem",
-      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie",
-      "Kunststof koudgrepen",
-  ],
-  "rating": 4.2,
-  "rating_count": None,
-  "rating_source": "Leef Natuurlijk & Gezond",
-  "price": 95.00,
-  "price_last_checked": "2026-09-16",
-  "currency": "EUR",
-  "availability": "InStock",
-  "availability_label": "Op voorraad",
-  "affiliate_url": "",
-  "retailer_url": (
-      "https://www.coolblue.nl/product/913682/"
-      "tefal-renew-keramische-koekenpannenset-24-28-cm.html"
-  ),
-  "official_url": (
-      "https://www.tefal.nl/p/"
-      "renew-on-2-delige-keramische-pannenset-2428-cm-inductie/"
-      "2100128300"
-  ),
-  "award": None,
-  "price_range": "€€",
-  "image": "tefal-renew-on-set-24-28cm.webp",
-  "image_path": "images/products/keramische-koekenpannen",
-  "pros": [
-      "Thermo-Signal helpt het moment van voorverwarmen te herkennen",
-      "Thermo-Fusion-bodem voor inductiegebruik",
-      "Ergonomische kunststof grepen",
-  ],
-  "cons": [
-      "De kunststof grepen beperken de mogelijkheden voor ovengebruik",
-      "De maximale oventemperatuur is niet bevestigd voor deze exacte set"
-  ],
-  "verdict": (
-      "Een praktische set voor wie vooral op de kookplaat bakt en een warmte-indicator "
-      "prettig vindt. De combinatie van Thermo-Signal, een inductiebodem en koudgrepen "
-      "ondersteunt het dagelijkse gebruik."
-  ),
-},
 
 "bk_brilliant_set_24_28": {
   "slug": "bk-brilliant-koekenpannenset-24-28",
   "name": "BK Brilliant Koekenpannenset",
   "description": (
-      "Betaalbare tweedelige aluminium koekenpannenset met een PFAS-vrije "
-      "keramische antiaanbaklaag. De kunststof koudgrepen zijn gericht op comfortabel gebruik "
-      "op de kookplaat; de pannen zijn geschikt voor inductie en mogen tot 160 °C in "
-      "de oven.",
-  ),
+        "Tweedelige aluminium koekenpannenset met een PFAS-vrije keramische "
+        "antiaanbaklaag en koelblijvende kunststof grepen. De pannen zijn "
+        "vaatwasserbestendig en ovenbestendig tot 160 °C."
+    ),
   "brand": "BK",
   "set_type": "Koekenpannenset",
   "pan_count": 2,
@@ -2713,16 +2704,29 @@ PRODUCTS = {
   ],
   "material": "Aluminium met keramische antiaanbaklaag",
   "features": [
-      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie",
-      "Kunststof stay-coolgrepen",
-      "Ovenbestendig tot 160 °C",
-      "Vaatwasserbestendig; handwas aanbevolen voor de coating",
-  ],
-  "rating": 4.1,
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Aluminium constructie",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 160 °C",
+        "Koelblijvende kunststof grepen",
+        "Vaatwasserbestendig",
+        "Setgewicht circa 1,57 kg",
+        "3 jaar garantie",
+        "2 koekenpannen: 24 en 28 cm",
+    ],
+    "comparison_features": [
+        "Setgewicht circa 1,57 kg",
+        "Koelblijvende grepen",
+        "Ovenbestendig tot 160 °C",
+        "3 jaar garantie",
+    ],
+  "rating": 4.0,
   "rating_count": None,
   "rating_source": "Leef Natuurlijk & Gezond",
   "price": 59.93,
-  "price_last_checked": "2026-09-16",
+  "reference_price": 79.90,
+  "price_last_checked": "2026-11-16",
   "currency": "EUR",
   "availability": "InStock",
   "availability_label": "Op voorraad",
@@ -2735,35 +2739,34 @@ PRODUCTS = {
       "https://bk.nl/products/"
       "brilliant-koekenpannenset-24-en-28-cm"
   ),
-  "award": None,
-  "price_range": "€",
+  "award": "💰 Budget keuze",
+  "price_range": "€€",
   "image": "bk-brilliant-set-24-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "pros": [
-      "Gunstige prijs",
-      "Koel blijvende kunststof grepen",
-      "Vaatwasserbestendig",
-  ],
+        "Koelblijvende kunststof grepen",
+        "Vaatwasserbestendig",
+        "3 jaar garantie",
+    ],
   "cons": [
-      "Beperkt ovenbestendig tot 160 °C",
-  ],
+        "Ovenbestendig tot maximaal 160 °C",
+    ],
   "verdict": (
-      "Een toegankelijke keuze voor wie voornamelijk op de kookplaat bakt en comfortabele "
-      "koudgrepen belangrijk vindt. De twee formaten, inductiegeschiktheid en "
-      "vaatwasserbestendigheid bieden praktisch dagelijks gebruik. Voor ovenbereidingen "
-      "op hogere temperatuur is deze uitvoering minder geschikt."
-  ),
+        "De BK Brilliant is onze 💰 Budget keuze voor wie tegen een relatief "
+        "lage prijs twee praktische keramische koekenpannen zoekt voor dagelijks "
+        "gebruik. De koudgrepen, vaatwasserbestendigheid en drie jaar garantie "
+        "maken de set gebruiksvriendelijk; ovengebruik is beperkt tot 160 °C."
+    ),
 },
 
-"cook_and_pan_set_24_28": {
-  "slug": "cook-and-pan-koekenpannenset-24-28",
-  "name": "Cook & Pan Koekenpannenset",
+"cook_and_pan_rvs_set_24_28": {
+  "slug": "cook-and-pan-koekenpannenset-RVS-24-28",
+  "name": "Cook & Pan Koekenpannenset RVS grepen",
   "description": (
-      "Tweedelige aluminium koekenpannenset met een PFAS-vrije "
-      "keramische antiaanbaklaagen verschillende kleur- en handgreepuitvoeringen. De pannen "
-      "zijn geschikt voor inductie; uitvoeringen met RVS-grepen mogen tot 280 °C in "
-      "de oven en varianten met houtlookgrepen tot 180 °C."
-  ),
+        "Tweedelige aluminium koekenpannenset met een PFAS-vrije keramische "
+        "antiaanbaklaag en roestvrijstalen grepen. De uitvoering met roestvrijstalen grepen"
+        "is ovenbestendig tot 280 °C en vaatwasserbestendig."
+    ),
   "brand": "Cook & Pan",
   "set_type": "Koekenpannenset",
   "pan_count": 2,
@@ -2774,16 +2777,30 @@ PRODUCTS = {
   ],
   "material": "Aluminium met keramische antiaanbaklaag",
   "features": [
-      "Geschikt voor alle gangbare warmtebronnen, inclusief inductie",
-      "Ovenbestendig tot 180 °C (met houtlookgrepen)",
-      "Ovenbestendig tot 280 °C (met RVS-grepen",
-      "Vaatwasbestendig",
-  ],
-  "rating": 4.3,
+        "PFAS-vrije keramische antiaanbaklaag",
+        "Aluminium constructie met verdikte bodem en wanden",
+        "Geschikt voor alle gangbare warmtebronnen",
+        "Geschikt voor inductie",
+        "Ovenbestendig tot 280 °C",
+        "Roestvrijstalen grepen",
+        "Vaatwasserbestendig",
+        "7 jaar garantie op fabricage- en materiaalfouten",
+        "2 jaar garantie op de keramische antiaanbaklaag",
+        "60 dagen proefperiode",
+        "2 koekenpannen: 24 en 28 cm",
+    ],
+    "comparison_features": [
+        "Verdikte aluminium constructie",
+        "RVS-grepen",
+        "Ovenbestendig tot 280 °C",
+        "2 jaar garantie op de coating",
+    ],
+  "rating": 4.0,
   "rating_count": None,
   "rating_source": "Leef Natuurlijk & Gezond",
-  "price": 84.95,
-  "price_last_checked": "2026-09-16",
+  "price": 74.95,
+  "reference_price": 114.90,
+  "price_last_checked": "2026-11-16",
   "currency": "EUR",
   "availability": "InStock",
   "availability_label": "Op voorraad",
@@ -2794,7 +2811,7 @@ PRODUCTS = {
       "go-ivory-koekenpannenset-2-delig-1"
   ),
   "award": None,
-  "price_range": "€€",
+  "price_range": "€€€",
   "image": "cook-and-pan-go-ivory-set-24-28cm.webp",
   "image_path": "images/products/keramische-koekenpannen",
   "variants": [
@@ -2808,29 +2825,11 @@ PRODUCTS = {
           "price_last_checked": "2026-09-16",
       },
       {
-          "name": "Crème",
-          "image": "cook-and-pan-go-ivory-set-creme-24-28cm.webp",
-          "hex": "#E1E1E1",
-          "affiliate_url":"",
-          "retailer_url":"https://cookandpan.com/products/go-ivory-koekenpannenset-2-delig-1",
-          "price": 84.95,
-          "price_last_checked": "2026-09-16",
-      },
-      {
           "name": "Taupe",
           "image": "cook-and-pan-go-ivory-set-taupe-24-28cm.webp",
           "hex": "#998B86",
           "affiliate_url":"",
           "retailer_url":"https://cookandpan.com/products/taupe-of-mind-koekenpannenset-2-delig",
-          "price": 84.95,
-          "price_last_checked": "2026-09-16",
-      },
-      {
-          "name": "Groen",
-          "image": "cook-and-pan-go-green-set-24-28cm.webp",
-          "hex": "#597C3E",
-          "affiliate_url":"",
-          "retailer_url":"https://cookandpan.com/products/go-green-koekenpannenset-2-delig-1",
           "price": 84.95,
           "price_last_checked": "2026-09-16",
       },
@@ -2871,15 +2870,6 @@ PRODUCTS = {
           "price_last_checked": "2026-09-16",
       },
       {
-          "name": "Rose",
-          "image": "cook-and-pan-go-rose-set-24-28cm.webp",
-          "hex": "#EBCCBF",
-          "affiliate_url":"",
-          "retailer_url":"https://cookandpan.com/products/blush-koekenpannenset-2-delig",
-          "price": 84.95,
-          "price_last_checked": "2026-09-16",
-      },
-      {
           "name": "Oceaan Blauw",
           "image": "cook-and-pan-go-oceaan-blauw-set-24-28cm.webp",
           "hex": "#8196A8",
@@ -2890,21 +2880,104 @@ PRODUCTS = {
       },
   ],
   "pros": [
-      "Uitvoeringen met RVS-grepen zijn ovenbestendig tot 280 °C",
-      "Alle uitvoeringen zijn vaatwasserbestendig",
-      "Verkrijgbaar in meerdere kleurvarianten en verschillende typen handgrepen",
-  ],
+        "Ovenbestendig tot 280 °C",
+        "7 jaar garantie op fabricage- en materiaalfouten",
+        "60 dagen proefperiode",
+    ],
   "cons": [
-      "Bij houtlookgrepen ligt de ovenlimiet op 180 °C",
-      "De prijs is relatief hoog voor een tweedelige aluminium set",
-  ],
+        "Er zijn terugkerende gebruikersmeldingen over afnemende antiaanbakwerking bij langduriger gebruik",
+    ],
   "verdict": (
-      "Een keramische set voor wie kleurkeuze en gebruiksgemak wil "
-      "combineren. Met RVS-grepen zijn de pannen tot 280 °C ovenbestendig; de "
-      "uitvoeringen met houtlookgrepen hebben een grens van 180 °C. Alle varianten mogen "
-      "in de vaatwasser, maar handwas is de voorzichtigste keuze voor de antiaanbaklaag."
-      ),
+        "De Cook & Pan Signature met RVS-grepen past bij wie een keramische "
+        "pannenset ook regelmatig voor bereidingen in een hete oven wil gebruiken. "
+        "De pannen zijn ovenbestendig tot 280 °C en hebben een lange productgarantie, "
+        "maar gebruikerservaringen over de duurzaamheid van de coating zijn gemengd."
+    ),
 },
+
+    "cook_and_pan_houtlook_set_24_28": {
+      "slug": "cook-and-pan-koekenpannenset-houtlook-24-28",
+      "name": "Cook & Pan Koekenpannenset Houtlook grepen",
+      "description": (
+            "Tweedelige aluminium koekenpannenset met een PFAS-vrije keramische "
+            "antiaanbaklaag en houtlook grepen. De uitvoering met houtlookgrepen"
+            "is ovenbestendig tot 180 °C en vaatwasserbestendig."
+        ),
+      "brand": "Cook & Pan",
+      "set_type": "Koekenpannenset",
+      "pan_count": 2,
+      "diameters": [24, 28],
+      "set_contents": [
+          "Koekenpan 24 cm",
+          "Koekenpan 28 cm",
+      ],
+      "material": "Aluminium met keramische antiaanbaklaag",
+      "features": [
+          "Geschikt voor alle gangbare warmtebronnen, inclusief inductie",
+          "Ovenbestendig tot 180 °C (met houtlookgrepen)",
+          "Ovenbestendig tot 280 °C (met RVS-grepen",
+          "Vaatwasbestendig",
+      ],
+      "comparison_features": [
+            "Verdikte aluminium constructie",
+            "Houtlookgrepen",
+            "Ovenbestendig tot 180 °C",
+            "2 jaar garantie op de coating",
+        ],
+      "rating": 4.3,
+      "rating_count": None,
+      "rating_source": "Leef Natuurlijk & Gezond",
+      "price": 84.95,
+      "price_last_checked": "2026-09-16",
+      "currency": "EUR",
+      "availability": "InStock",
+      "availability_label": "Op voorraad",
+      "affiliate_url": "",
+      "retailer_url": "https://cookandpan.com/products/signature-koekenpannenset-2-delig",
+      "official_url": (
+          "https://cookandpan.com/products/"
+          "go-ivory-koekenpannenset-2-delig-1"
+      ),
+      "award": None,
+      "price_range": "€€",
+      "image": "cook-and-pan-go-ivory-set-24-28cm.webp",
+      "image_path": "images/products/keramische-koekenpannen",
+      "variants": [
+          {
+              "name": "Crème",
+              "image": "cook-and-pan-go-ivory-set-creme-24-28cm.webp",
+              "hex": "#E1E1E1",
+              "affiliate_url":"",
+              "retailer_url":"https://cookandpan.com/products/go-ivory-koekenpannenset-2-delig-1",
+              "price": 84.95,
+              "price_last_checked": "2026-09-16",
+          },
+          {
+              "name": "Groen",
+              "image": "cook-and-pan-go-green-set-24-28cm.webp",
+              "hex": "#597C3E",
+              "affiliate_url":"",
+              "retailer_url":"https://cookandpan.com/products/go-green-koekenpannenset-2-delig-1",
+              "price": 84.95,
+              "price_last_checked": "2026-09-16",
+          },          
+      ],
+      "pros": [
+            "Houtlookgrepen zijn gericht op comfortabel gebruik op de kookplaat",
+            "7 jaar garantie op fabricage- en materiaalfouten",
+            "60 dagen proefperiode",
+        ],
+      "cons": [
+            "Ovenbestendig tot maximaal 180 °C",
+            "Er zijn terugkerende gebruikersmeldingen over afnemende antiaanbakwerking bij langduriger gebruik",
+        ],
+      "verdict": (
+            "De Cook & Pan-uitvoering met houtlookgrepen past vooral bij wie "
+            "de pannen voornamelijk op de kookplaat gebruikt en de greepuitvoering "
+            "belangrijk vindt. Ovenbereidingen zijn mogelijk tot 180 °C, waardoor "
+            "deze variant minder geschikt is voor bereidingen op hoge oventemperatuur."
+        ),
+    },
 
 # KERAMISCHE KOEKENPANNENSETS 20 + 28 CM
 
