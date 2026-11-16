@@ -37,8 +37,24 @@
         addColumn(/^pannetjes$/i, 'Pannetjes', 88, text, true);
         if (columns.length < coreCount + 2) addColumn(/^vermogen$/i, 'Vermogen', 96, text, true);
         if (columns.length === coreCount) addColumn(/^formaat$/i, 'Formaat', 104, text, true);
-        if (columns.length < coreCount + 2) {
-            // The first feature comes from the existing features-only cell.
+        var featureIndex = headers.findIndex(function (header) {
+            return /eigenschappen|kenmerken/i.test(text(header));
+        });
+        var curatedFeatures = rows.map(function (row) {
+            return featureIndex < 0 ? [] : Array.from(
+                row.children[featureIndex].querySelectorAll('[data-comparison-feature]')
+            ).map(text).filter(Boolean).slice(0, 4);
+        });
+        if (curatedFeatures.some(function (features) { return features.length > 0; })) {
+            // Editorial comparison features remain visible even when identical
+            // across products or when other category-specific columns exist.
+            columns.push({label: 'Kenmerken', width: 216, values: rows.map(function (row, index) {
+                if (curatedFeatures[index].length) return curatedFeatures[index];
+                var fallback = text(row.children[featureIndex]).split('·')[0].trim();
+                return fallback.length <= 64 ? fallback : '—';
+            })});
+        } else if (columns.length < coreCount + 2) {
+            // Without curated data, preserve the existing compact fallback.
             // Omit the column altogether if any value needs a long description.
             addColumn(/eigenschappen|kenmerken/i, 'Kenmerken', 144, function (cell) {
                 return text(cell).split('·')[0].trim();
@@ -129,7 +145,20 @@
             var compactRow = body.insertRow();
             compactRow.appendChild(productCell);
             columns.forEach(function (column) {
-                compactRow.insertCell().textContent = column.values[rowIndex] || '—';
+                var cell = compactRow.insertCell();
+                var value = column.values[rowIndex];
+                if (Array.isArray(value)) {
+                    var list = document.createElement('ul');
+                    list.className = 'compact-comparison-features';
+                    value.forEach(function (feature) {
+                        var item = document.createElement('li');
+                        item.textContent = feature;
+                        list.appendChild(item);
+                    });
+                    cell.appendChild(list);
+                } else {
+                    cell.textContent = value || '—';
+                }
             });
         });
         scroll.appendChild(compact);

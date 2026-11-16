@@ -56,6 +56,18 @@
 .compact-comparison-table tbody th {
     font-weight: 600;
 }
+.compact-comparison-table .compact-comparison-features {
+    margin: 0;
+    padding: 0 0 0 1em;
+    list-style: disc;
+}
+.compact-comparison-table .compact-comparison-features li {
+    padding: 0;
+    margin: 0 0 0.3em;
+}
+.compact-comparison-table .compact-comparison-features li:last-child {
+    margin-bottom: 0;
+}
 .compact-comparison-table tbody tr:nth-child(odd) > * {
     background: #f5f8f8;
 }

@@ -4,7 +4,7 @@ import re
 
 from django.template.loader import render_to_string
 from django.test import SimpleTestCase, TestCase
-from django.utils.html import escape
+from django.utils.html import escape, strip_tags
 
 
 class ComparisonFeaturesTests(SimpleTestCase):
@@ -13,7 +13,9 @@ class ComparisonFeaturesTests(SimpleTestCase):
             "comparison_features": ["Belangrijk", "<kort>"],
             "features": ["Uitgebreide lijst"],
         }).strip()
-        self.assertEqual(html, "Belangrijk · &lt;kort&gt;")
+        self.assertEqual(strip_tags(html), "Belangrijk · &lt;kort&gt;")
+        self.assertEqual(html.count("data-comparison-feature>"), 2)
+        self.assertNotIn("<kort>", html)
 
     def test_empty_comparison_features_fall_back_to_features(self):
         for value in (None, [], ""):
@@ -28,7 +30,7 @@ class ComparisonFeaturesTests(SimpleTestCase):
         html = render_to_string("partials/comparison_features.html", {
             "comparison_features": ["Compact"],
         }).strip()
-        self.assertEqual(html, "Compact")
+        self.assertEqual(strip_tags(html), "Compact")
 
     def test_features_only_with_escaping(self):
         html = render_to_string("partials/comparison_features.html", {
@@ -89,4 +91,5 @@ class ComparisonPageTests(TestCase):
                 for product in products:
                     selected = product.get("comparison_features") or product.get("features") or []
                     expected = str(escape(" · ".join(selected) or "—"))
-                    self.assertRegex(table[1], r"<td>\s*" + re.escape(expected) + r"\s*</td>")
+                    cells = re.findall(r"<td\b[^>]*>(.*?)</td>", table[1], re.S)
+                    self.assertIn(expected, [strip_tags(cell).strip() for cell in cells])

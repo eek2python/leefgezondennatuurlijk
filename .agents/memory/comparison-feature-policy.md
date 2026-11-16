@@ -18,3 +18,14 @@ kenmerken te tonen zonder lange, onoverzichtelijke lijsten.
 bij wijzigingen welke relevante materiaal- of coatinginformatie niet in
 `features` voorkomt en meld dat expliciet. Voeg niet stilzwijgend materiaal
 weer toe aan features; dat zou de gekozen scheiding ongedaan maken.
+
+Op mobiel worden maximaal vier ingevulde `comparison_features` onder elkaar
+getoond. Verberg deze niet wanneer ze bij meerdere producten gelijk zijn.
+Zonder ingevulde vergelijkingskenmerken blijft de bestaande compacte terugval
+op één eigenschap uit `features` gelden. De desktopweergave blijft behouden.
+
+**Why:** de gebruiker heeft ingestemd met maximaal vier bewust gekozen
+kenmerken om de telefoonvergelijking nuttiger te maken zonder lange lijsten.
+
+**How to apply:** houd de productnaam vast bij horizontaal schuiven en zorg
+dat vergelijken ook rechtop werkt; kantelen mag geen vereiste zijn.
