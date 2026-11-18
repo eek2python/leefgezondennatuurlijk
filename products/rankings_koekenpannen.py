@@ -62,16 +62,15 @@ RANKINGS = {
     ],
     "20_28": [
         "greenpan_geneva_set_20_28",
-        "tefal_jamie_oliver_easy_cook_ceramic_set_20_28",
         "combekk_element_expert_green_set_20_28",
-        "greenchef_prime_set_20_28"
+        "greenchef_prime_set_20_28",
+        "tefal_jamie_oliver_easy_cook_ceramic_set_20_28",
     ],
     "20_24_28": [
         "greenpan_valencia_pro_set_20_24_28",
         "bk_sublime_set_20_24_28",
-        "greenpan_shades_set_20_24_28",
-        "cook_and_pan_set_20_24_28",
-        "bk_brilliant_set_20_24_28",
+        "cook_and_pan_rvs_set_20_24_28",
+        "cook_and_pan_houtlook_set_20_24_28",
         "combekk_tundra_easy_set_20_24_28",        
     ]
 }

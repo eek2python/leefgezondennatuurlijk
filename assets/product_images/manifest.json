@@ -2653,5 +2653,12 @@
     "category": "keramische-koekenpannen",
     "product_key": "tefal-experience-ceram-32",
     "enabled": true
+  },
+  {
+    "source": "keramische-koekenpannen/greenchef-prime-set-20-28cm.webp",
+    "slug": "greenchef-prime-set-20-28cm",
+    "category": "keramische-koekenpannen",
+    "product_key": "greenchef-prime-set-20-28cm",
+    "enabled": true
   }
 ]
