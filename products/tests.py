@@ -1005,18 +1005,21 @@ class PriceRangeHelperTests(SimpleTestCase):
     def test_boundaries(self):
         from utils.pricing import get_price_range
         cases = [
-            (0, "€"), (24.99, "€"), (25.00, "€€"), (49.99, "€€"),
-            (50.00, "€€€"), (89.99, "€€€"), (90.00, "€€€€"),
+            (0, "€"), (24.99, "€"), (25.00, "€"), (25.01, "€€"),
+            (50.00, "€€"), (50.01, "€€€"), (90.00, "€€€"), (90.01, "€€€€"),
         ]
         for price, expected in cases:
-            self.assertEqual(get_price_range(price, "koekenpannen"), expected, price)
+            self.assertEqual(get_price_range(
+                price, "koekenpannen", product={"diameter": 20},
+            ), expected, price)
 
     def test_numeric_string_decimal_float(self):
         from decimal import Decimal
         from utils.pricing import get_price_range
-        self.assertEqual(get_price_range("42.99", "koekenpannen"), "€€")
-        self.assertEqual(get_price_range(Decimal("42.99"), "koekenpannen"), "€€")
-        self.assertEqual(get_price_range(42.99, "koekenpannen"), "€€")
+        for value in ("42.99", Decimal("42.99"), 42.99):
+            self.assertEqual(get_price_range(
+                value, "koekenpannen", product={"diameter": 20},
+            ), "€€")
 
     def test_unknown_category_gives_none(self):
         from utils.pricing import get_price_range
@@ -1042,13 +1045,14 @@ class PriceRangeHelperTests(SimpleTestCase):
         self.assertEqual(get_price_range("39.999", "hapjespannen"), "€")
         self.assertEqual(get_price_range(Decimal("109.999"), "hapjespannen"), "€€€")
 
-    def test_koekenpannen_thresholds_unchanged(self):
+    def test_koekenpannen_thresholds_require_the_actual_format(self):
         from decimal import Decimal
-        from utils.pricing import PRICE_RANGE_THRESHOLDS
+        from utils.pricing import get_audit_price_thresholds, get_price_range
         self.assertEqual(
-            [u for u, _ in PRICE_RANGE_THRESHOLDS["koekenpannen"]],
+            [u for u, _ in get_audit_price_thresholds("koekenpannen", {"diameter": 20})],
             [Decimal("25"), Decimal("50"), Decimal("90"), None],
         )
+        self.assertIsNone(get_price_range(42.99, "koekenpannen"))
 
     def test_unknown_category_no_silent_fallback_to_koekenpannen(self):
         from utils.pricing import get_price_range, has_price_range_config
@@ -1064,7 +1068,7 @@ class NonVariantPriceRangeTests(TestCase):
     def test_computed_level_overrides_manual(self):
         from products.views import _enrich_products
         product = {
-            "name": "Test", "rating": 4.0, "price": 42.99,
+            "name": "Test", "rating": 4.0, "price": 42.99, "diameter": 20,
             "price_range": "€€€€",  # verouderd handmatig niveau
         }
         _enrich_products([product], category="koekenpannen")
@@ -1116,8 +1120,16 @@ class VariantPriceRangeTests(TestCase):
         _enrich_products([product], category="koekenpannen")
         return product
 
-    def test_mayflower_variants(self):
-        p = self._enriched("greenpan_mayflower_28")
+    def test_variant_prices_within_the_selected_format(self):
+        from products.views import _enrich_products
+        p = {
+            "name": "Varianttest", "diameter": 20, "rating": 4.0,
+            "variants": [
+                {"name": "Blauw", "price": 42.99},
+                {"name": "Grijs", "price": 59.90},
+            ],
+        }
+        _enrich_products([p], category="koekenpannen")
         by_name = {v["name"]: v["display_price_range"] for v in p["variants"]}
         self.assertEqual(by_name["Blauw"], "€€")   # 42.99
         self.assertEqual(by_name["Grijs"], "€€€")  # 59.90
@@ -1133,7 +1145,7 @@ class VariantPriceRangeTests(TestCase):
     def test_variant_without_price_gets_empty_level(self):
         from products.views import _enrich_products
         product = {
-            "name": "Test", "rating": 4.0, "price_range": "€€",
+            "name": "Test", "rating": 4.0, "price_range": "€€", "diameter": 20,
             "variants": [
                 {"name": "A", "price": 42.99},
                 {"name": "B"},  # geen prijs: geen niveau, geen fallback
@@ -1150,6 +1162,7 @@ class VariantPriceRangeTests(TestCase):
             "slug": "test-swatch-pan", "name": "Test swatchpan",
             "description": "Testproduct voor afgeleide swatchprijzen.",
             "brand": "Test", "material": "Keramisch",
+            "diameter": 20,
             "rating": 4.0, "price": 42.99, "price_range": "€€€€",
             "image": "test.jpg", "image_path": "images/test",
             "variants": [
@@ -1182,9 +1195,21 @@ class VariantPriceRangeTests(TestCase):
         self.assertEqual(product, before)
 
     def test_greenpan_shades_renders_three_color_combination_swatches(self):
-        html = self.client.get(
-            "/koekenpannen/", {"size": "20_24_28"}
-        ).content.decode()
+        # Fixed fixture: products may legitimately leave the live selection.
+        product = {
+            "slug": "greenpan-shades-set-20-24-28",
+            "name": "GreenPan Shades", "rating": 4.0, "diameters": [20, 24, 28],
+            "variants": [
+                {"name": "Terra", "price": 100},
+                {"name": "Coastal", "price": 100},
+                {"name": "Natural", "price": 100},
+            ],
+        }
+        with patch("products.views.KOEKENPANNEN_PRODUCTS", {"greenpan_shades_set_20_24_28": product}), \
+                patch("products.views.KOEKENPANNEN_RANKINGS", {"20_24_28": ["greenpan_shades_set_20_24_28"]}):
+            html = self.client.get(
+                "/koekenpannen/", {"size": "20_24_28"}
+            ).content.decode()
 
         self.assertEqual(html.count("variant-swatch--combination"), 3)
         self.assertEqual(html.count('class="variant-swatch__color"'), 9)
@@ -1202,7 +1227,12 @@ class VariantPriceRangeTests(TestCase):
         self.assertIn("priceEl.hidden = !price", js)
 
     def test_cards_do_not_share_state(self):
-        p1 = self._enriched("greenpan_mayflower_28")
+        from products.views import _enrich_products
+        p1 = {
+            "name": "Varianttest", "diameter": 20, "rating": 4.0,
+            "variants": [{"name": "Blauw", "price": 42.99}],
+        }
+        _enrich_products([p1], category="koekenpannen")
         p2 = self._enriched("kochstar_essenz_24")
         self.assertNotEqual(p1["display_price_range"],
                             p2["display_price_range"])
@@ -1214,12 +1244,12 @@ class PriceRangeTemplateTests(TestCase):
     def test_comparison_table_uses_display_level(self):
         from products.products_koekenpannen import PRODUCTS
         from products.rankings_koekenpannen import RANKINGS
-        from utils.pricing import get_price_range
+        from utils.pricing import get_price_range, get_regular_price
         html = self.client.get("/koekenpannen/").content.decode()
         key = RANKINGS[28][0]
         p = PRODUCTS[key]
         source = (p.get("variants") or [p])[0]
-        expected = get_price_range(source.get("price"), "koekenpannen")
+        expected = get_price_range(get_regular_price(source), "koekenpannen", product=p)
         self.assertIn(f"<td>{expected}</td>", html)
 
     def test_vershoud_table_uses_row_level(self):

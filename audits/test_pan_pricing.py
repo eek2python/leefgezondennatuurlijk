@@ -1,4 +1,4 @@
-"""Formaatgebonden panprijzen blijven audit-only en delen dezelfde runner."""
+"""Formaatgebonden panprijzen delen configuratie en de bestaande auditrunner."""
 
 import copy
 from decimal import Decimal
@@ -167,8 +167,9 @@ class PanPricingTests(SimpleTestCase):
                 "test-pannen", {"diameter": 28}
             ))
 
-    def test_public_levels_and_unconfigured_categories_unchanged(self):
-        self.assertEqual(get_price_range(55, "koekenpannen"), "€€€")
+    def test_public_levels_share_formats_and_other_categories_are_unchanged(self):
+        self.assertIsNone(get_price_range(55, "koekenpannen"))
+        self.assertEqual(get_price_range(55, "koekenpannen", product={"diameter": 28}), "€€")
         self.assertEqual(get_price_range_from_thresholds(
             55, get_audit_price_thresholds("koekenpannen", {"diameter": 28})
         ), "€€")

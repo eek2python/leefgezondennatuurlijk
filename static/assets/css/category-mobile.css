@@ -105,3 +105,119 @@
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Ceramic-pan comparison: compact product-first layout, isolated from other categories. */
+.ceramic-category-page #banner.ceramic-category-hero {
+    min-height: 0;
+    padding: 2.5em 0 1.25em;
+}
+
+.ceramic-category-page #banner.ceramic-category-hero .content {
+    width: 100%;
+    max-width: 62rem;
+}
+
+.ceramic-category-page #banner.ceramic-category-hero .content > p,
+.ceramic-category-page #banner.ceramic-category-hero .category-help__content {
+    max-width: 68ch;
+}
+
+.ceramic-category-page #banner.ceramic-category-hero .content > p {
+    margin-bottom: 0.75rem;
+}
+
+.ceramic-category-page .ceramic-products-section > p,
+.ceramic-category-page .ceramic-comparison-section > p {
+    max-width: 68ch;
+}
+
+.ceramic-category-page > .category-help > .category-help__content,
+.ceramic-category-page .ceramic-price-guide > .category-help__content {
+    max-width: 72ch;
+}
+
+.ceramic-category-page .ceramic-price-guide {
+    margin: 2rem 0;
+}
+
+.ceramic-category-page .ceramic-price-guide > .category-help__content {
+    padding-left: 0;
+}
+
+.ceramic-category-page .ceramic-price-levels,
+.ceramic-category-page .ceramic-score-weights,
+.ceramic-category-page .ceramic-awards__list {
+    margin: 0.65rem 0 1rem;
+    padding-left: 1.25rem;
+}
+
+.ceramic-category-page .ceramic-price-levels li {
+    display: grid;
+    grid-template-columns: minmax(2.75rem, 4rem) minmax(0, 1fr);
+    gap: 0.5rem;
+    align-items: start;
+    padding: 0.28rem 0;
+    overflow-wrap: anywhere;
+}
+
+.ceramic-category-page .ceramic-price-levels__label {
+    white-space: nowrap;
+    color: #328b98;
+}
+
+.ceramic-category-page .ceramic-score-weights li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.8rem;
+    padding: 0.28rem 0;
+    max-width: 42rem;
+}
+
+.ceramic-category-page .ceramic-score-weights li strong {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.ceramic-category-page .ceramic-awards__list li {
+    padding: 0.2rem 0;
+}
+
+@media (max-width: 736px) {
+    .ceramic-category-page #banner.ceramic-category-hero {
+        padding: 1.2em 0 0.7em;
+    }
+
+    .ceramic-category-page #banner.ceramic-category-hero header.main {
+        margin-bottom: 0.8rem;
+    }
+
+    .ceramic-category-page #banner.ceramic-category-hero h1 {
+        font-size: 1.7rem;
+        line-height: 1.25;
+        margin-bottom: 0.8rem;
+    }
+
+    .ceramic-category-page #banner.ceramic-category-hero .content {
+        width: 100%;
+    }
+
+    .ceramic-category-page #banner.ceramic-category-hero .content > p {
+        margin-bottom: 0.55rem;
+    }
+
+    .ceramic-category-page .ceramic-price-levels,
+    .ceramic-category-page .ceramic-score-weights,
+    .ceramic-category-page .ceramic-awards__list {
+        padding-left: 1.1rem;
+    }
+
+    .ceramic-category-page .ceramic-price-levels li {
+        grid-template-columns: 2.6rem minmax(0, 1fr);
+        gap: 0.35rem;
+    }
+
+    .ceramic-category-page .ceramic-score-weights li {
+        gap: 0.55rem;
+    }
+}

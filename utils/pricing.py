@@ -10,10 +10,8 @@ vastgestelde indeling; overige categorieën blijven report-only totdat hun
 grenzen bewust zijn vastgesteld):
 
     keramische koekenpannen ("koekenpannen"):
-        < €25            → €
-        €25 – < €50      → €€
-        €50 – < €90      → €€€
-        ≥ €90            → €€€€
+        formaat- en setgebonden grenzen; bovengrenzen zijn inclusief.
+        Dezelfde grenzen voeden de prijsuitleg, productweergave en audits.
 
     hapjespannen ("hapjespannen"):
         < €40            → €
@@ -22,8 +20,8 @@ grenzen bewust zijn vastgesteld):
         ≥ €110           → €€€€
 
 Grenzen zijn categoriegebonden (prijspeil verschilt per producttype);
-bedragen worden met Decimal vergeleken en een prijs exact op een grens
-valt altijd in de volgende categorie. Een nieuwe categorie toevoegen =
+bedragen worden met Decimal vergeleken. Behalve bij keramische koekenpannen
+valt een prijs exact op een grens in de volgende categorie. Een nieuwe categorie toevoegen =
 één entry in PRICE_RANGE_THRESHOLDS; onbekende categorieën blijven
 bewust zonder niveau (geen stille fallback naar andermans grenzen).
 """
@@ -33,12 +31,6 @@ from decimal import Decimal, InvalidOperation
 #: Per categorie: geordende (bovengrens-exclusief, niveau)-tupels; ``None``
 #: als bovengrens betekent "en hoger". Gebruik de bestaande categoriekeys.
 PRICE_RANGE_THRESHOLDS = {
-    "koekenpannen": (
-        (Decimal("25"), "€"),
-        (Decimal("50"), "€€"),
-        (Decimal("90"), "€€€"),
-        (None, "€€€€"),
-    ),
     "hapjespannen": (
         (Decimal("40"), "€"),
         (Decimal("70"), "€€"),
@@ -97,7 +89,8 @@ RVS_KOEKENPANNENSETS_PRICE_RANGES = {
 (24, 28): ((Decimal("140"), "€"), (Decimal("190"), "€€"), (Decimal("260"), "€€€"), (None, "€€€€")),
 (20, 24, 28): ((Decimal("150"), "€"), (Decimal("250"), "€€"), (Decimal("350"), "€€€"), (None, "€€€€")),
 }
-# Audit-only: de openbare prijsweergave gebruikt nog PRICE_RANGE_THRESHOLDS.
+# Keramische grenzen worden gedeeld door de openbare pagina en de audit.
+# De overige formaatgebonden panconfiguratie blijft audit-only.
 # Andere pannencategorieën kunnen hier eigen diameter- en setgrenzen registreren.
 PAN_AUDIT_PRICE_RANGES = {
     "koekenpannen": {
@@ -137,22 +130,29 @@ def get_audit_price_thresholds(category, product):
 
 def has_price_range_config(category):
     """True wanneer voor deze categorie definitieve prijsgrenzen bestaan."""
-    return category in PRICE_RANGE_THRESHOLDS
+    return category == "koekenpannen" or category in PRICE_RANGE_THRESHOLDS
 
 
-def get_price_range(price, category="koekenpannen"):
+def get_price_range(price, category="koekenpannen", *, product=None):
     """Leid het prijsniveau af uit een numerieke prijs.
 
     - ``None``, ongeldige of negatieve prijzen geven ``None``;
-    - grenswaarden zijn exact (25.00 → "€€", 89.99 → "€€€", 90.00 → "€€€€");
+    - keramische koekenpannen vereisen productformaat; bovengrenzen zijn inclusief;
     - accepteert int, float, Decimal en numerieke strings;
     - een onbekende categorie geeft ``None`` (geen aannames over grenzen);
     - geeft alleen een niveau terug, nooit een concrete prijs.
     """
-    return get_price_range_from_thresholds(price, PRICE_RANGE_THRESHOLDS.get(category))
+    thresholds = (
+        get_audit_price_thresholds(category, product or {})
+        if category == "koekenpannen"
+        else PRICE_RANGE_THRESHOLDS.get(category)
+    )
+    return get_price_range_from_thresholds(
+        price, thresholds, inclusive=category == "koekenpannen",
+    )
 
 
-def get_price_range_from_thresholds(price, thresholds):
+def get_price_range_from_thresholds(price, thresholds, *, inclusive=False):
     """Bereken met expliciet gekozen grenzen (gedeeld door rendering en audit)."""
     if thresholds is None or price is None:
         return None
@@ -160,9 +160,53 @@ def get_price_range_from_thresholds(price, thresholds):
         normalized = Decimal(str(price))
     except (InvalidOperation, TypeError, ValueError):
         return None
-    if normalized.is_nan() or normalized < Decimal("0"):
+    if not normalized.is_finite() or normalized < Decimal("0"):
         return None
     for upper, level in thresholds:
-        if upper is None or normalized < upper:
+        if upper is None or (normalized <= upper if inclusive else normalized < upper):
             return level
     return None
+
+
+def get_regular_price(source):
+    """Gebruik een eigen reguliere prijs; leen nooit prijzen van een andere variant."""
+    reference = source.get("reference_price")
+    if reference not in (None, ""):
+        return reference
+    return source.get("price")
+
+
+def get_price_guide(selection):
+    """Vier zichtbare niveaus uit dezelfde keramische formaat- of setconfiguratie."""
+    if isinstance(selection, str):
+        try:
+            parts = tuple(int(part) for part in selection.split("_"))
+        except ValueError:
+            return []
+        selection = parts[0] if len(parts) == 1 else parts
+    if isinstance(selection, (tuple, list)):
+        product = {"diameters": selection}
+    else:
+        product = {"diameter": selection}
+    thresholds = get_audit_price_thresholds("koekenpannen", product)
+    if not thresholds:
+        return []
+
+    def amount(value):
+        # Grensbedragen zijn meestal heel; cents worden uitsluitend getoond
+        # waar nodig om de inclusieve intervallen zonder overlap te beschrijven.
+        return format(value, ".2f").rstrip("0").rstrip(".").replace(".", ",")
+
+    rows = []
+    previous = None
+    for upper, label in thresholds:
+        if previous is None:
+            description = f"Tot en met €{amount(upper)}"
+        elif upper is None:
+            description = f"Meer dan €{amount(previous)}"
+        else:
+            lower = previous + Decimal("0.01")
+            description = f"€{amount(lower)}–€{amount(upper)}"
+        rows.append({"label": label, "description": description})
+        previous = upper
+    return rows

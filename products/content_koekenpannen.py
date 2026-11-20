@@ -1,3 +1,5 @@
+"""Algemene categoriecontent; productspecifieke aanbevelingen staan in de productdata."""
+
 CONTENT = {
     "hero": {
         "h1": (
@@ -7,72 +9,148 @@ CONTENT = {
         "paragraphs": [
             (
                 "Op deze pagina vergelijken we {product_count} keramische "
-                "koekenpannen van {selected_size} cm waarvan de coating "
-                "volgens de fabrikant zonder PFAS is geproduceerd. We letten "
-                "onder meer op materiaal en constructie, geschiktheid voor "
-                "inductie en oven, gebruiksgemak, onderhoud en prijsniveau."
+                "koekenpannen van {selected_size} cm waarvan voor het exacte "
+                "model voldoende is bevestigd dat de keramische antiaanbaklaag "
+                "zonder PFAS wordt geproduceerd. We vergelijken onder meer "
+                "constructie, gebruiksgemak, oven- en inductiegeschiktheid, "
+                "onderhoud en prijs."
             ),
             (
-                "De selectie bevat zowel voordelige als premium modellen. "
                 "De beoordelingen zijn redactioneel en gebaseerd op "
-                "productspecificaties, bevestigde materiaalinformatie en "
-                "de praktische mogelijkheden van iedere losse pan of set. "
-                "Bij een koekenpannenset kijken we daarnaast naar het aantal "
-                "daadwerkelijke pannen, de maatcombinatie en eventuele "
+                "productspecificaties, fabrikantdocumentatie, beschikbare "
+                "onafhankelijke tests en relevante gebruikerservaringen. "
+                "Winkelbeoordelingen worden niet rechtstreeks overgenomen als "
+                "onze score. Bij koekenpannensets kijken we daarnaast naar het "
+                "werkelijke aantal pannen, de maatcombinatie en eventuele "
                 "accessoires."
             ),
         ],
     },
-
-    "why_choose": {
-        "title": "Waarom kiezen voor een koekenpan of set zonder PFAS?",
-        "intro": (
-            "PFAS is een verzamelnaam voor een grote groep chemische stoffen. "
-            "Wie deze stoffen in een antiaanbaklaag wil vermijden, kan kiezen "
-            "voor een pan waarvan de fabrikant expliciet vermeldt dat de "
-            "coating zonder PFAS is geproduceerd. Veel van de modellen in "
-            "deze vergelijking gebruiken een keramische of mineraal "
-            "gebaseerde antiaanbaklaag."
+    "products_section": {
+        "h2": (
+            "De {product_count} geselecteerde PFAS-vrije keramische "
+            "koekenpannen van {selected_size} cm"
         ),
-        "bullets": [
+        "intro": (
+            "In de productkaarten zie je per pan of set de belangrijkste "
+            "eigenschappen, onze beoordeling, voor- en nadelen en eventuele "
+            "Beste keuze-, Budget keuze- of Premium keuze-badge."
+        ),
+        "comparison_title": (
+            "Vergelijking: {product_count} PFAS-vrije keramische "
+            "koekenpannen van {selected_size} cm"
+        ),
+        "comparison_intro": (
+            "Gebruik de vergelijkingstabel om de belangrijkste verschillen "
+            "in constructie, gewicht, ovengebruik, handgrepen en andere "
+            "relevante eigenschappen naast elkaar te bekijken."
+        ),
+    },
+    "price_guide": {
+        "title": "Prijsniveaus binnen deze vergelijking",
+        "intro": (
+            "De prijsniveaus geven aan waar een pan of set qua reguliere "
+            "verkoopprijs binnen het betreffende formaat valt. Tijdelijke "
+            "aanbiedingen bepalen het prijsniveau niet."
+        ),
+        "outro": (
+            "Een hoger prijsniveau betekent niet automatisch een hogere "
+            "beoordeling. Een duurdere pan moet de meerprijs onderbouwen met "
+            "bijvoorbeeld een betere constructie, meer gebruiksmogelijkheden "
+            "of andere relevante voordelen."
+        ),
+    },
+    "how_we_assess": {
+        "title": "Zo beoordelen we keramische koekenpannen",
+        "intro": (
+            "We nemen alleen modellen op die verkrijgbaar zijn voor Nederlandse "
+            "consumenten en waarvan voor het exacte model voldoende is bevestigd "
+            "dat de antiaanbaklaag keramisch is en zonder PFAS wordt geproduceerd. "
+            "De PFAS-status is een toelatingsvoorwaarde en levert op zichzelf "
+            "geen hogere score op."
+        ),
+        "criteria_intro": (
+            "De sterrenbeoordeling is opgebouwd uit vijf onderdelen. Elk "
+            "onderdeel telt voor het aangegeven deel mee in de eindscore:"
+        ),
+        "score_weights": [
+            {"criterion": "Bakresultaat en temperatuurregeling", "weight": "25%"},
+            {"criterion": "Constructie en verwachte duurzaamheid", "weight": "25%"},
+            {"criterion": "Capaciteit, ontwerp en gebruiksgemak", "weight": "20%"},
+            {"criterion": "Reiniging en onderhoud", "weight": "15%"},
+            {"criterion": "Prijs-kwaliteitverhouding", "weight": "15%"},
+        ],
+        "evidence": (
+            "Voor de beoordeling gebruiken we controleerbare "
+            "productspecificaties, fabrikantdocumentatie, beschikbare "
+            "onafhankelijke tests en relevante gebruikerservaringen. "
+            "Een individuele gebruikersreview bepaalt de score niet. "
+            "Terugkerende en productspecifieke ervaringen kunnen wel "
+            "meewegen wanneer ze voldoende zijn onderbouwd. "
+            "Winkelgemiddelden vormen niet onze sterrenbeoordeling."
+        ),
+        "score_explanation": (
+            "We beoordelen ieder onderdeel op een schaal van 1 tot 5 en "
+            "berekenen daarvan een gewogen gemiddelde. De uiteindelijke "
+            "beoordeling wordt weergegeven in stappen van een halve ster. "
+            "Alleen producten met minimaal 3,5 sterren worden opgenomen."
+        ),
+        "review_note": (
+            "Een terugkerend reviewsignaal kan bijvoorbeeld meewegen in de "
+            "score voor constructie, duurzaamheid of bakresultaat zonder dat "
+            "dit automatisch als zichtbaar nadeel bij het product wordt "
+            "vermeld. Is een kwaliteitsprobleem voldoende sterk en structureel, "
+            "dan beoordelen we eerst opnieuw of het product nog in de selectie "
+            "thuishoort."
+        ),
+        "sets_note": (
+            "Bij koekenpannensets kijken we daarnaast naar het werkelijke "
+            "aantal pannen, de combinatie en spreiding van formaten, eventuele "
+            "technische verschillen binnen de set en de setprijs in verhouding "
+            "tot de meegeleverde pannen."
+        ),
+        "testing_note": (
+            "De beoordeling is gebaseerd op de beschikbare informatie. "
+            "We vermelden het wanneer we een product zelf hebben getest; "
+            "zonder die vermelding is geen eigen langdurige praktijktest "
+            "uitgevoerd."
+        ),
+        "outro": (
+            "Ontbreekt essentiële informatie om een product betrouwbaar te "
+            "beoordelen, dan nemen we het niet op. Prijzen, voorraad en "
+            "productspecificaties kunnen veranderen."
+        ),
+    },
+    "awards": {
+        "title": "Wat betekenen onze badges?",
+        "intro": (
+            "Badges worden alleen toegekend wanneer binnen de actuele selectie "
+            "een duidelijke kandidaat aanwezig is. Een categorie hoeft daarom "
+            "niet altijd alle drie de badges te bevatten."
+        ),
+        "items": [
             (
-                "<strong>Duidelijke materiaalkeuze:</strong> de geselecteerde "
-                "coatings zijn door de fabrikant als PFAS-vrij beschreven."
+                "<strong>🏆 Beste keuze:</strong> de sterkste totale combinatie "
+                "van kwaliteit, constructie, gebruiksgemak, onderbouwing en "
+                "prijs-kwaliteit binnen de selectie."
             ),
             (
-                "<strong>Gebruiksgemak:</strong> een keramische "
-                "antiaanbaklaag kan geschikt zijn voor eieren, vis, "
-                "groenten en andere bereidingen waarbij weinig aanbakken "
-                "gewenst is."
+                "<strong>💰 Budget keuze:</strong> een relatief betaalbare pan "
+                "of set die voldoende kwaliteit en gebruiksmogelijkheden biedt "
+                "zonder belangrijke concessies die de lage prijs verklaren."
             ),
             (
-                "<strong>Verschillende constructies:</strong> de selectie bevat "
-                "onder meer aluminium pannen, modellen van gerecycled aluminium "
-                "en meerlaagse RVS-constructies met een aluminium kern. Sommige "
-                "hybride modellen combineren bovendien een keramische "
-                "antiaanbaklaag met een geëtst RVS-oppervlak."
-            ),
-            (
-                "<strong>Onderhoud:</strong> veel keramische pannen zijn "
-                "eenvoudig te reinigen, al blijft handwas doorgaans de "
-                "voorzichtigste keuze voor de coating."
-            ),
-            (
-                "<strong>Meerdere formaten in één keer:</strong> een "
-                "koekenpannenset combineert twee of drie diameters, zodat je "
-                "voor kleine en grotere porties een passende pan kunt kiezen. "
-                "Controleer wel of je alle meegeleverde formaten daadwerkelijk "
-                "zult gebruiken."
+                "<strong>💎 Premium keuze:</strong> een model waarvan de hogere "
+                "prijs gepaard gaat met aantoonbaar onderscheidende constructie, "
+                "afwerking of technische gebruiksmogelijkheden."
             ),
         ],
         "outro": (
-            "Een PFAS-vrije coating betekent alleen dat deze zonder PFAS is "
-            "geproduceerd. Dat zegt op zichzelf niets over de kwaliteit van de pan, "
-            "de levensduur van de coating of de geschiktheid voor verschillende "
-            "bereidingen."
+            "Een hoge prijs is op zichzelf geen reden voor een Premium "
+            "keuze-badge en de goedkoopste pan is niet automatisch onze "
+            "Budget keuze."
         ),
     },
-
     "size_guide": {
         "title": "Welk formaat koekenpan heb ik nodig?",
         "intro": (
@@ -85,315 +163,178 @@ CONTENT = {
             {
                 "h3": "Veelgebruikte formaten",
                 "items": [
-                    (
-                        "<b>Ø 20 cm</b> – Voor eieren, kleine porties, "
-                        "bijgerechten en gebruik door één persoon."
-                    ),
-                    (
-                        "<b>Ø 24 cm</b> – Geschikt voor één tot twee personen "
-                        "en kleinere dagelijkse bereidingen."
-                    ),
-                    (
-                        "<b>Ø 26 cm</b> – Een tussenmaat met meer bakruimte "
-                        "zonder direct een grote pan te gebruiken."
-                    ),
-                    (
-                        "<b>Ø 28 cm</b> – Een veelzijdig formaat voor stellen "
-                        "en kleinere gezinnen."
-                    ),
-                    (
-                        "<b>Ø 30–32 cm</b> – Voor grotere porties, mits de "
-                        "kookzone en opbergruimte groot genoeg zijn."
-                    ),
+                    "<b>Ø 20 cm</b> – Voor eieren, kleine porties, "
+                    "bijgerechten en gebruik door één persoon.",
+                    "<b>Ø 24 cm</b> – Geschikt voor één tot twee personen "
+                    "en kleinere dagelijkse bereidingen.",
+                    "<b>Ø 26 cm</b> – Een tussenmaat met meer bakruimte "
+                    "zonder direct een grote pan te gebruiken.",
+                    "<b>Ø 28 cm</b> – Een veelzijdig formaat voor stellen "
+                    "en kleinere gezinnen.",
+                    "<b>Ø 30–32 cm</b> – Voor grotere porties, mits de "
+                    "kookzone en opbergruimte groot genoeg zijn.",
                 ],
             },
             {
                 "h3": "Praktische combinaties",
                 "items": [
-                    "<b>Kleine huishoudens:</b> 20 cm en/of 24 cm",
-                    (
-                        "<b>20 + 28 cm:</b> een compacte pan voor één portie "
-                        "naast een ruime pan voor gezamenlijke maaltijden."
-                    ),
-                    (
-                        "<b>24 + 28 cm:</b> twee veelgebruikte formaten voor "
-                        "dagelijkse bereidingen voor één tot vier personen."
-                    ),
-                    (
-                        "<b>20 + 24 + 28 cm:</b> de meest complete combinatie "
-                        "voor wie regelmatig kleine, middelgrote en grotere "
-                        "porties bereidt."
-                    ),
-                    "<b>Gezinnen:</b> 26 of 28 cm + een grotere pan",
-                    "<b>Grote bereidingen:</b> 30 of 32 cm",
+                    "<b>20 + 28 cm:</b> een compacte pan voor één portie "
+                    "naast een ruime pan voor gezamenlijke maaltijden.",
+                    "<b>24 + 28 cm:</b> twee veelgebruikte formaten voor "
+                    "kleinere en grotere dagelijkse bereidingen.",
+                    "<b>20 + 24 + 28 cm:</b> drie duidelijk verschillende "
+                    "formaten voor wie regelmatig kleine, middelgrote en "
+                    "grotere porties bereidt.",
                 ],
             },
             {
                 "h3": "Wanneer is een koekenpannenset interessant?",
                 "items": [
-                    (
-                        "<b>Prijs per pan:</b> vergelijk de setprijs met de "
-                        "prijzen van de losse pannen. Een set is niet "
-                        "automatisch voordeliger."
-                    ),
-                    (
-                        "<b>Werkelijk aantal pannen:</b> tel alleen de "
-                        "koekenpannen mee. Deksels, grepen en beschermers kunnen "
-                        "door verkopers ook als afzonderlijk onderdeel worden "
-                        "meegeteld."
-                    ),
-                    (
-                        "<b>Gelijke uitvoering:</b> controleer of alle pannen "
-                        "dezelfde coating, bodemconstructie, handgreep en "
-                        "ovenlimiet hebben."
-                    ),
-                    (
-                        "<b>Opbergen:</b> drie pannen vragen meer kastruimte. "
-                        "Gebruik panbeschermers wanneer de pannen gestapeld "
-                        "worden bewaard."
-                    ),
+                    "<b>Gebruik van alle maten:</b> een set is vooral "
+                    "interessant wanneer je de meegeleverde formaten "
+                    "daadwerkelijk regelmatig gebruikt.",
+                    "<b>Prijs per pan:</b> vergelijk de reguliere setprijs "
+                    "met de gezamenlijke prijs van dezelfde losse pannen. "
+                    "Een set is niet automatisch voordeliger.",
+                    "<b>Werkelijk aantal pannen:</b> tel alleen de "
+                    "koekenpannen mee. Panbeschermers, deksels en andere "
+                    "accessoires kunnen als afzonderlijke onderdelen worden "
+                    "meegeteld.",
+                    "<b>Technische uitvoering:</b> controleer of alle pannen "
+                    "dezelfde coating, bodemconstructie, handgreep en "
+                    "ovenlimiet hebben.",
+                    "<b>Opbergen:</b> meerdere pannen vragen extra kastruimte. "
+                    "Gebruik indien nodig panbeschermers wanneer de pannen "
+                    "gestapeld worden bewaard.",
                 ],
             },
             {
-                "h3": "Waar moet je op letten?",
+                "h3": "Waar moet je bij het formaat op letten?",
                 "items": [
-                    (
-                        "<b>Kookzone:</b> controleer of de panbodem aansluit "
-                        "op de diameter van de kookzone."
-                    ),
-                    (
-                        "<b>Gewicht:</b> grotere pannen zijn doorgaans "
-                        "zwaarder en lastiger met één hand te verplaatsen."
-                    ),
-                    (
-                        "<b>Bereiding:</b> voor kleine porties werkt een "
-                        "compactere pan meestal praktischer."
-                    ),
-                    (
-                        "<b>Randhoogte:</b> kies voor gerechten met veel saus "
-                        "of volume eventueel een hapjespan."
-                    ),
+                    "<b>Kookzone:</b> controleer niet alleen de buitendiameter "
+                    "van de pan, maar ook of de panbodem aansluit op de "
+                    "diameter van je kookzone.",
+                    "<b>Gewicht:</b> grotere en zwaarder uitgevoerde pannen "
+                    "zijn doorgaans lastiger met één hand te verplaatsen.",
+                    "<b>Bereiding:</b> voor kleine porties werkt een compacte "
+                    "pan meestal praktischer dan een zeer ruime pan.",
+                    "<b>Randhoogte:</b> voor gerechten met veel saus of volume "
+                    "kan een hapjespan praktischer zijn dan een lage koekenpan.",
                 ],
             },
         ],
         "outro": (
-            "<b>Praktische vuistregel:</b> kies geen grotere pan of "
-            "uitgebreidere set dan je kookzones, opbergruimte en gebruikelijke "
-            "porties nodig maken."
+            "<b>Praktische vuistregel:</b> kies geen grotere pan of uitgebreidere "
+            "set dan je kookzones, opbergruimte en gebruikelijke porties nodig maken."
         ),
     },
-
-    "products_section": {
-        "h2": (
-            "De {product_count} beste PFAS-vrije keramische koekenpannen "
-            "van {selected_size} cm"
-        ),
-        "comparison_title": (
-            "Vergelijking: {product_count} PFAS-vrije keramische koekenpannen "
-            "van {selected_size} cm"
-        ),
-    },
-
-    "tips": {
-        "title": "Onderhoud van een keramische koekenpan",
+    "why_choose": {
+        "title": "Waarom kiezen voor een keramische koekenpan zonder PFAS?",
         "intro": (
-            "Keramische antiaanbaklagen kunnen gevoelig zijn voor hoge "
-            "temperaturen, krassen en agressieve reiniging. De instructies "
-            "van de fabrikant blijven altijd leidend."
+            "PFAS is een verzamelnaam voor een grote groep chemische stoffen. "
+            "Wie deze stoffen in een antiaanbaklaag wil vermijden, kan kiezen "
+            "voor een pan waarvan de fabrikant expliciet vermeldt dat de coating "
+            "zonder PFAS wordt geproduceerd. In deze vergelijking nemen we alleen "
+            "modellen op waarvan daarnaast voldoende is bevestigd dat het "
+            "daadwerkelijk om een keramische antiaanbaklaag gaat."
         ),
         "bullets": [
             (
-                "Verwarm een lege pan niet langdurig en gebruik meestal een "
-                "lage tot middelhoge stand."
+                "<strong>Bevestigde materiaalkeuze:</strong> de PFAS-vrije "
+                "claim moet gelden voor het exacte model en de keramische "
+                "antiaanbaklaag."
             ),
             (
-                "Laat de pan afkoelen voordat je hem met koud water reinigt."
+                "<strong>Geschikt voor kwetsbare bereidingen:</strong> een "
+                "keramisch antiaanbakoppervlak kan praktisch zijn voor "
+                "bijvoorbeeld eieren, vis en andere ingrediënten waarbij "
+                "weinig aanbakken gewenst is."
             ),
             (
-                "Kies bij voorkeur voor houten of siliconen kookgerei, tenzij de "
-                "fabrikant metalen gerei expliciet toestaat."
+                "<strong>Verschillende constructies:</strong> keramische "
+                "antiaanbaklagen worden gecombineerd met onder meer aluminium, "
+                "gesmeed aluminium en meerlaagse RVS-constructies met een "
+                "aluminium kern."
             ),
             (
-                "Reinig de pan met een zachte spons en een mild afwasmiddel."
+                "<strong>Verschillen in gebruik:</strong> modellen kunnen sterk "
+                "verschillen in gewicht, bodemconstructie, handgreep, "
+                "ovenbestendigheid en vaatwasserbestendigheid."
             ),
             (
-                "Afwassen met de hand is doorgaans beter voor de coating, ook "
-                "wanneer de pan als vaatwasserbestendig is aangeduid."
-            ),
-            (
-                "Stapel pannen met een beschermer ertussen om de vorming van krassen te "
-                "verminderen."
+                "<strong>Sets:</strong> een koekenpannenset kan aantrekkelijk "
+                "zijn wanneer je meerdere formaten nodig hebt, maar controleer "
+                "of de set daadwerkelijk voordeliger en praktisch bruikbaar is."
             ),
         ],
-        "outro": None,
-    },
-
-    "conclusies": {
-        20: {
-            "title": "Conclusie voor 20 cm",
-            "text": (
-                "Een koekenpan van <strong>20 cm</strong> is vooral geschikt "
-                "voor eieren, kleine porties en bijgerechten. De "
-                "<strong>GreenPan Barcelona Pro</strong> is onze beste "
-                "allround keuze door de stevige constructie, gelijkmatige "
-                "warmteverdeling en ovenbestendige greep. De "
-                "<strong>Kochstar Essenz</strong> is de voordeligste keuze, "
-                "terwijl de <strong>Demeyere Alu Pro 5 Ceraforce</strong> "
-                "zich onderscheidt als premiumoptie. De "
-                "<strong>HEMA Milano</strong> is een toegankelijke instappan "
-                "voor wie een eenvoudige compacte pan zoekt."
-            ),
-        },
-
-        24: {
-            "title": "Conclusie voor 24 cm",
-            "text": (
-                "Het formaat <strong>24 cm</strong> is geschikt voor één tot "
-                "twee personen en kleinere dagelijkse bereidingen. De "
-                "<strong>GreenPan Barcelona Pro</strong> biedt de meest "
-                "complete combinatie van constructie, warmteverdeling en "
-                "ovenmogelijkheden. De <strong>Demeyere Alu Pro 5 "
-                "Ceraforce</strong> is een sterke premiumoptie, terwijl de "
-                "<strong>GreenPan Apex Hybrid</strong> zich onderscheidt met "
-                "een 3-laagse RVS-constructie, aluminium kern en hybride "
-                "bakoppervlak met keramische antiaanbaklaag. De "
-                "<strong>Kochstar Essenz</strong> blijft onze budgetkeuze."
-            ),
-        },
-
-        26: {
-            "title": "Conclusie voor 26 cm",
-            "text": (
-                "Een koekenpan van <strong>26 cm</strong> biedt meer ruimte "
-                "dan een compacte pan, maar blijft beter hanteerbaar dan veel "
-                "modellen van 28 cm of groter. De "
-                "<strong>GreenPan Barcelona Pro</strong> is onze beste "
-                "allround keuze. De <strong>Demeyere Alu Pro 5 "
-                "Ceraforce</strong> is de premiumoptie, terwijl de "
-                "<strong>BK Easy Induction Ceramic</strong> en "
-                "<strong>GreenChef Vintage</strong> toegankelijkere "
-                "alternatieven vormen. De <strong>Fissler Essential</strong> "
-                "valt op door de gladde binnenzijde en inductiebodem, maar "
-                "gebruik op kookplaten met een hoog vermogen wordt afgeraden."
-            ),
-        },
-
-        28: {
-            "title": "Conclusie voor 28 cm",
-            "text": (
-                "Het formaat <strong>28 cm</strong> is breed inzetbaar voor "
-                "stellen en gezinnen. De <strong>GreenPan Barcelona "
-                "Pro</strong> is onze beste allround keuze en de "
-                "<strong>Demeyere Alu Pro 5 Ceraforce</strong> een sterke "
-                "premiumoptie. De <strong>GreenPan Apex Hybrid</strong> biedt "
-                "een duidelijk andere constructie met 3-laags RVS, een "
-                "aluminium kern en een hybride keramisch/RVS-bakoppervlak. "
-                "De <strong>Kochstar Essenz</strong> biedt een lage "
-                "instapprijs, terwijl de <strong>De Buyer Ceranoa</strong> "
-                "een interessant alternatief is voor wie veel waarde hecht "
-                "aan constructie en afwerking."
-            ),
-        },
-
-        30: {
-            "title": "Conclusie voor 30 cm",
-            "text": (
-                "Een koekenpan van <strong>30 cm</strong> biedt veel ruimte "
-                "voor grotere porties, maar vraagt ook om een passende "
-                "kookzone. De <strong>GreenPan Barcelona Pro</strong> is "
-                "onze beste allround keuze en de "
-                "<strong>Demeyere Alu Pro 5 Ceraforce</strong> onze "
-                "premiumkeuze. De <strong>Kochstar Stein</strong> is de "
-                "budgetoptie. Modellen zoals de "
-                "<strong>BK Easy Induction Ceramic</strong>, "
-                "<strong>GreenChef Diamond</strong> en "
-                "<strong>Tefal Renew ON</strong> bieden alternatieven in "
-                "het middensegment."
-            ),
-        },
-
-        32: {
-            "title": "Conclusie voor 32 cm",
-            "text": (
-                "Het formaat <strong>32 cm</strong> is bedoeld voor grote "
-                "porties en ruime kookzones. De "
-                "<strong>GreenPan Barcelona Pro</strong> is onze beste "
-                "allround keuze en de <strong>Demeyere Alu Pro 5 "
-                "Ceraforce</strong> onze premiumkeuze. De "
-                "<strong>IKEA HEMLAGAD</strong> is de voordeligste optie. "
-                "De <strong>Combekk Forest Easy</strong> biedt een "
-                "middenklassealternatief van gerecycled aluminium. De "
-                "<strong>Scanpan Nura</strong> is technisch veelzijdig, "
-                "maar nog niet algemeen verkrijgbaar en daardoor nog lastig "
-                "op prijs-kwaliteit te beoordelen."
-            ),
-        },
-
-        "20_28": {
-            "title": "Conclusie voor koekenpannensets van 20 + 28 cm",
-            "text": (
-                "Een set van <strong>20 + 28 cm</strong> combineert een "
-                "compacte pan voor eieren, bijgerechten en éénpersoonsporties "
-                "met een ruime pan voor gezamenlijke maaltijden. De "
-                "<strong>GreenPan Geneva</strong> is onze beste veelzijdige "
-                "keuze door de combinatie van inductiegeschiktheid en "
-                "ovengebruik tot 220 °C. De <strong>Jamie Oliver by Tefal "
-                "Easy Cook Ceramic</strong> onderscheidt zich met RVS "
-                "basismateriaal, een warmte-indicator en comfortabele siliconen "
-                "grepen. De <strong>COMBEKK Element Expert</strong> is de "
-                "budgetkeuze met een volledige inductiebodem. De "
-                "<strong>GreenChef Prime</strong> is vooral geschikt voor wie "
-                "koelblijvende handgrepen belangrijk vindt, maar heeft een "
-                "beperktere ovenbestendigheid van 160 °C."
-            ),
-        },
-
-        "24_28": {
-            "title": "Conclusie voor koekenpannensets van 24 + 28 cm",
-            "text": (
-                "De combinatie <strong>24 + 28 cm</strong> is voor veel "
-                "huishoudens de praktischste tweedelige set: 24 cm voor "
-                "kleinere dagelijkse bereidingen en 28 cm voor grotere "
-                "porties. De <strong>Demeyere Alu Industry 3 "
-                "Ceraforce</strong> is onze beste allroundkeuze. De "
-                "<strong>Beka Pro Induc</strong> is de budgetkeuze en de "
-                "<strong>Le Creuset Essential Non-Stick Ceramic</strong> de "
-                "premiumkeuze. De sets van <strong>DUCQ</strong>, "
-                "<strong>GreenPan Essence</strong>, <strong>Tefal Renew "
-                "ON</strong>, <strong>BK Brilliant</strong> en "
-                "<strong>Cook & Pan</strong> bieden aanvullende "
-                "keuzes met verschillen in constructie, handgrepen, "
-                "ovenbestendigheid en prijsniveau."
-            ),
-        },
-
-        "20_24_28": {
-            "title": "Conclusie voor koekenpannensets van 20 + 24 + 28 cm",
-            "text": (
-                "Een set van <strong>20 + 24 + 28 cm</strong> biedt drie "
-                "duidelijk verschillende formaten voor kleine, middelgrote "
-                "en grotere bereidingen. De <strong>GreenPan Valencia Pro "
-                "</strong> is onze beste allroundkeuze door de "
-                "Magneto-inductiebodem, ovenmogelijkheden en vlakke "
-                "bodemconstructie. De <strong>BK Sublime</strong> "
-                "is de luxe keuze en wordt geleverd met twee "
-                "panbeschermers. De <strong>COMBEKK Tundra Easy</strong> is "
-                "de budgetkeuze, maar voor deze specifieke set is geen "
-                "maximale oventemperatuur bevestigd. De "
-                "<strong>GreenPan Shades</strong>, "
-                "<strong>Cook & Pan</strong> en "
-                "<strong>BK Brilliant</strong> vormen alternatieven met "
-                "verschillende handgreepmaterialen en ovenlimieten."
-            ),
-        },
-    },
-
-    "faq": {
-        "title": (
-            "Veelgestelde vragen over PFAS-vrije koekenpannen en "
-            "koekenpannensets"
+        "outro": (
+            "Een PFAS-vrije keramische coating zegt op zichzelf niets over de "
+            "totale kwaliteit van de pan of de levensduur van de coating. "
+            "Daarom beoordelen we de volledige constructie en het gebruik van "
+            "ieder product."
         ),
+    },
+    "tips": {
+        "title": "Onderhoud van een keramische koekenpan",
+        "intro": (
+            "Keramische antiaanbaklagen zijn gebruikslagen en kunnen gevoelig "
+            "zijn voor langdurige oververhitting, krassen en agressieve "
+            "reiniging. De onderhoudsinstructies van de fabrikant blijven "
+            "altijd leidend."
+        ),
+        "bullets": [
+            "Verwarm een lege pan niet langdurig en gebruik voor veel "
+            "bereidingen een lage tot middelhoge warmtestand.",
+            "Laat een hete pan eerst afkoelen voordat je deze met koud "
+            "water reinigt.",
+            "Gebruik bij voorkeur houten of siliconen kookgerei, tenzij "
+            "de fabrikant metalen kookgerei expliciet toestaat.",
+            "Verwijder aangekoekte resten met een zachte spons en een "
+            "mild afwasmiddel.",
+            "Handwas is doorgaans de voorzichtigste keuze voor de coating, "
+            "ook wanneer een fabrikant vaatwassergebruik toestaat.",
+            "Gebruik een panbeschermer wanneer gecoate pannen op elkaar "
+            "worden gestapeld.",
+        ],
+        "outro": (
+            "Zorgvuldig gebruik kan slijtage beperken, maar iedere keramische "
+            "antiaanbaklaag blijft onderhevig aan gebruik en veroudering."
+        ),
+    },
+    "faq": {
+        "title": "Veelgestelde vragen over PFAS-vrije koekenpannen en koekenpannensets",
         "items": [
+            {
+                "q": "Hoe wordt de sterrenbeoordeling bepaald?",
+                "a": (
+                    "De beoordeling is een gewogen redactionele score. "
+                    "Bakresultaat en temperatuurregeling tellen voor 25% mee, "
+                    "constructie en verwachte duurzaamheid voor 25%, capaciteit, "
+                    "ontwerp en gebruiksgemak voor 20%, reiniging en onderhoud "
+                    "voor 15% en prijs-kwaliteit voor 15%. De score is geen "
+                    "gemiddelde van winkelreviews."
+                ),
+            },
+            {
+                "q": "Worden gebruikersreviews meegenomen in de beoordeling?",
+                "a": (
+                    "Ja, als aanvullende informatie. Een individuele positieve "
+                    "of negatieve review bepaalt de score niet. Terugkerende, "
+                    "productspecifieke ervaringen kunnen wel meewegen wanneer "
+                    "voldoende duidelijk is dat ze relevant zijn voor het "
+                    "exacte product."
+                ),
+            },
+            {
+                "q": "Waarom krijgt niet ieder formaat een Budget- of Premium keuze?",
+                "a": (
+                    "Een badge wordt alleen toegekend wanneer binnen de actuele "
+                    "selectie een duidelijke kandidaat aanwezig is. De "
+                    "goedkoopste pan is niet automatisch de Budget keuze en een "
+                    "hoge prijs is op zichzelf geen reden voor een Premium "
+                    "keuze-badge."
+                ),
+            },
             {
                 "q": "Wat betekent PFAS-vrij bij een koekenpan?",
                 "a": (
@@ -407,10 +348,9 @@ CONTENT = {
                 "q": "Is iedere keramische koekenpan automatisch PFAS-vrij?",
                 "a": (
                     "Nee. Een keramische of mineraal klinkende productnaam is "
-                    "op zichzelf onvoldoende bewijs. Wij nemen de claim alleen "
-                    "over wanneer de fabrikant of een betrouwbare "
-                    "productspecificatie expliciet vermeldt dat de coating "
-                    "zonder PFAS is geproduceerd."
+                    "op zichzelf onvoldoende bewijs. We nemen alleen modellen op "
+                    "waarvan voor het exacte model voldoende is bevestigd dat de "
+                    "antiaanbaklaag keramisch is en zonder PFAS wordt geproduceerd."
                 ),
             },
             {
@@ -464,8 +404,7 @@ CONTENT = {
                     "van 26–28 cm biedt meer ruimte voor dagelijkse "
                     "bereidingen. Modellen van 30–32 cm zijn vooral geschikt "
                     "voor grotere porties en ruime kookzones. Bekijk ook onze "
-                    "<a href=\"/blogs/welke-maat-koekenpan/\">uitgebreide "
-                    "maattabel</a>."
+                    '<a href="/blogs/welke-maat-koekenpan/">uitgebreide maattabel</a>.'
                 ),
             },
             {
@@ -482,7 +421,7 @@ CONTENT = {
             {
                 "q": "Is een koekenpannenset voordeliger dan losse pannen?",
                 "a": (
-                    "Niet altijd. Vergelijk de actuele setprijs met de "
+                    "Niet altijd. Vergelijk de reguliere setprijs met de "
                     "gezamenlijke prijs van exact dezelfde losse pannen. Let "
                     "daarbij ook op kleurvarianten, accessoires en verschillen "
                     "in handgrepen of coating."
@@ -502,14 +441,14 @@ CONTENT = {
                 "q": "Wat is het verschil tussen keramische en RVS pannen?",
                 "a": (
                     "Een keramische pan heeft een antiaanbaklaag en is daardoor vaak "
-                        "handig voor eieren, vis en andere kwetsbare ingrediënten. Bij een "
-                        "ongecoate RVS-pan moet je beter letten op de juiste temperatuur en "
-                        "voldoende olie of boter gebruiken om aanbakken te voorkomen. RVS is "
-                        "juist geschikt voor krachtig aanbraden en voor het maken van een saus "
-                        "op basis van de aanbakresten in de pan. Lees ook onze "
-                        "<a href=\"/blogs/keramische-vs-rvs-koekenpan/\">vergelijking van "
-                        "keramische en RVS-koekenpannen</a>."
-                    ),
+                    "handig voor eieren, vis en andere kwetsbare ingrediënten. Bij een "
+                    "ongecoate RVS-pan moet je beter letten op de juiste temperatuur en "
+                    "voldoende olie of boter gebruiken om aanbakken te voorkomen. RVS is "
+                    "juist geschikt voor krachtig aanbraden en voor het maken van een saus "
+                    "op basis van de aanbakresten in de pan. Lees ook onze "
+                    '<a href="/blogs/keramische-vs-rvs-koekenpan/">vergelijking van '
+                    "keramische en RVS-koekenpannen</a>."
+                ),
             },
             {
                 "q": "Wat is een hybride keramische koekenpan?",
@@ -535,10 +474,7 @@ CONTENT = {
                 ),
             },
             {
-                "q": (
-                    "Waarom kan een keramische coating zijn "
-                    "antiaanbakeffect verliezen?"
-                ),
+                "q": "Waarom kan een keramische coating zijn antiaanbakeffect verliezen?",
                 "a": (
                     "Mogelijke oorzaken zijn langdurige oververhitting, "
                     "ingebrande voedsel- of vetresten, krassen, agressieve "
@@ -548,60 +484,5 @@ CONTENT = {
                 ),
             },
         ],
-    },
-
-    "how_we_test": {
-        "title": "Hoe wij koekenpannen en koekenpannensets beoordelen",
-        "intro": (
-            "Onze beoordelingen zijn redactioneel. Tenzij bij een product "
-            "expliciet anders staat vermeld, voeren wij geen laboratorium- of "
-            "langdurige gebruikstest uit. We vergelijken controleerbare "
-            "productspecificaties en praktische eigenschappen."
-        ),
-        "bullets": [
-            (
-                "<strong>PFAS-status:</strong> is de claim voor het exacte "
-                "model bevestigd door de fabrikant of een betrouwbare "
-                "productspecificatie?"
-            ),
-            (
-                "<strong>Materiaal en constructie:</strong> we kijken naar het "
-                "materiaal van de pan, de opbouw van bodem en zijwanden "
-                "en het type antiaanbaklaag. Daarbij onderscheiden we onder meer "
-                "aluminium constructies en meerlaagse RVS-pannen met een "
-                "warmtegeleidende aluminium kern."
-            ),
-            (
-                "<strong>Gebruiksmogelijkheden:</strong> inductie, oven, "
-                "vaatwasser, handgreep en relevante temperatuurgrenzen."
-            ),
-            (
-                "<strong>Gebruiksgemak:</strong> formaat, gewicht, vorm, "
-                "onderhoud en hanteerbaarheid."
-            ),
-            (
-                "<strong>Samenstelling van de set:</strong> het werkelijke "
-                "aantal pannen, de meegeleverde diameters, de onderlinge "
-                "spreiding in formaat en eventuele deksels of accessoires."
-            ),
-            (
-                "<strong>Consistentie binnen de set:</strong> gelden de "
-                "PFAS-vrije claim, inductiegeschiktheid, ovenlimiet en "
-                "onderhoudsinstructies voor alle meegeleverde pannen?"
-            ),
-            (
-                "<strong>Prijs-kwaliteit:</strong> de eigenschappen en "
-                "beperkingen in verhouding tot het actuele prijsniveau. Bij "
-                "sets kijken we ook naar de prijs per daadwerkelijke pan."
-            ),
-            (
-                "<strong>Beschikbaarheid:</strong> is het exacte model "
-                "daadwerkelijk verkrijgbaar en verwijst de link naar de "
-                "juiste uitvoering?"
-            ),
-        ],
-        "outro": (
-            "Prijzen en beschikbaarheid kunnen tussentijds veranderen."
-        ),
     },
 }

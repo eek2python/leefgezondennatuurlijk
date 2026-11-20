@@ -16,7 +16,9 @@ from utils.product_helpers import (
     STORAGE_SIZE_THRESHOLDS,
 )
 from utils.usage_helpers import build_usage_display
-from utils.pricing import get_price_range, has_price_range_config
+from utils.pricing import (
+    get_price_guide, get_price_range, get_regular_price, has_price_range_config,
+)
 from .templatetags.product_formatting import format_size_label
 from utils.variant_helpers import (
     apply_resolved_link,
@@ -219,22 +221,27 @@ def _derive_price_levels(p, category):
     """
     variants = p.get("variants")
     is_swatch = bool(variants) and not p.get("shape_variants")
+    def price_level(source):
+        price = get_regular_price(source) if category == "koekenpannen" else source.get("price")
+        return get_price_range(price, category, product=p) or ""
+
     if has_price_range_config(category):
         p["price_range_is_derived"] = True
         if is_swatch:
             # Kleurswatches: strikt het niveau van de eigen variantprijs.
             for v in variants:
-                v["display_price_range"] = get_price_range(v.get("price"), category) or ""
+                v["display_price_range"] = price_level(v)
             p["display_price_range"] = variants[0]["display_price_range"]
         elif p.get("shape_variants"):
             # Knopvarianten: prepare_product_variants projecteerde de
             # commerciële velden van de displayvariant al strikt (set-or-clear).
-            p["display_price_range"] = get_price_range(p.get("price"), category) or ""
+            source = p.get("default_variant") if category == "koekenpannen" else p
+            p["display_price_range"] = price_level(source or p)
         else:
-            computed = get_price_range(p.get("price"), category)
+            computed = price_level(p)
             if computed:
                 p["display_price_range"] = computed
-            elif p.get("price") in (None, ""):
+            elif (get_regular_price(p) if category == "koekenpannen" else p.get("price")) in (None, ""):
                 # Zonder numerieke prijs blijft het handmatige niveau de
                 # enige (backward-compatible) bron.
                 p["display_price_range"] = p.get("price_range") or ""
@@ -578,7 +585,6 @@ def koekenpannen(request):
     product_count = len(products)
     selected_size_label = format_size_label(size)
 
-    conclusie = content["conclusies"].get(size, {})
     hero_h1 = content["hero"]["h1"].format(
         product_count=product_count,
         selected_size=selected_size_label,
@@ -606,8 +612,6 @@ def koekenpannen(request):
     breadcrumbs = pan_breadcrumbs("koekenpannen")
     return render(request, "koekenpannen.html", {
         "products": products,
-        "top_picks": _build_top_picks(products),
-        "in_het_kort": _build_in_het_kort(products, content),
         "available_sizes": available_sizes,
         "selected_size": size,
         "product_count": product_count,
@@ -615,7 +619,7 @@ def koekenpannen(request):
         "hero_h1": hero_h1,
         "products_h2": products_h2,
         "comparison_title": comparison_title,
-        "conclusie": conclusie,
+        "price_guide": get_price_guide(size),
         "json_ld": json_ld,
         "faq_ld": faq_ld,
         "breadcrumbs": breadcrumbs,

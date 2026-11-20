@@ -7,9 +7,9 @@
 - [Render migration discipline](render-migration-discipline.md) — catalogue rendering depends on migrated maintenance schema; verify/apply migrations as an explicit Render release step.
 - [Cold Python compilation on Render](render-cold-compile-memory.md) — warm imports can hide a 512 MB build failure from repeated large Python catalogue definitions.
 - [Airfryer prijsindeling](airfryer-price-policy.md) — vastgestelde grenzen per compact/XL/dual; audit volgt pagina-indeling, niet productnaam.
-- [Panprijzen voor audits](pan-audit-price-policy.md) — formaatgebonden vergelijking voor losse pannen en sets; openbare prijsweergave buiten scope.
+- [Panprijzen](pan-audit-price-policy.md) — keramisch deelt formaatgrenzen met publieke uitleg en audit, met inclusieve bovengrenzen; andere pannen behouden hun beleid.
 - [Structured data voor lijsten](comparison-structured-data.md) — categorieën claimen bewust geen Product-rich-results; nooit aanbiedingen of klantreviews verzinnen voor validatie.
-- [Leesvolgorde vergelijkingen](comparison-reading-order.md) — eerst het redactionele keuzeadvies, daarna verdieping over gebruik en onderhoud; geen SEO-belofte.
+- [Leesvolgorde vergelijkingen](comparison-reading-order.md) — keramisch: producten eerst, geen formaatconclusies; andere categorieën behouden keuzeadvies direct na de tabel.
 - [Mobiele doelgroep](mobile-audience.md) — merendeel bezoekt via telefoon; mobiele verbeteringen mogen tablet en desktop niet verslechteren.
 - [Pannen: één bron](pan-source-policy.md) — sets op meerdere overzichten, nooit dubbel onderhouden; navigatie mag bestaande URL’s niet cosmetisch wijzigen.
 - [Browsertests in Nix](browser-test-environment.md) — optionele testpakketten uit productie houden; greenlet kan de aanwezige GCC-runtime nodig hebben.

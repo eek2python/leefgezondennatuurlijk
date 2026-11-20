@@ -21,6 +21,7 @@ from utils.pricing import (
     PAN_AUDIT_PRICE_RANGES,
     get_audit_price_thresholds,
     get_price_range_from_thresholds,
+    get_regular_price,
 )
 from utils.variant_helpers import (
     apply_resolved_link,
@@ -259,7 +260,9 @@ def _audit_swatch_product(category, key, product):
 # ---------------------------------------------------------------------------
 def audit_price_levels(name, module_path):
     """Read-only prijsniveau-audit: vergelijkt handmatige
-    ``price_range``-velden met het uit ``price`` berekende niveau.
+    ``price_range``-velden met het uit de prijs berekende niveau.
+    Keramische koekenpannen gebruiken de eigen reguliere referentieprijs
+    indien ingevuld en inclusieve formaatgrenzen, net als de openbare pagina.
     Alleen categorieën met definitieve grenzen (utils/pricing.py) geven
     ``price_range_mismatch``-waarschuwingen; overige zijn report-only.
     Er worden nooit prijzen of productdata gewijzigd."""
@@ -276,7 +279,9 @@ def audit_price_levels(name, module_path):
     def check_price(key, variant_label, price, manual, pricing_key, product):
         thresholds = get_audit_price_thresholds(pricing_key, product)
         configured = thresholds is not None
-        computed = get_price_range_from_thresholds(price, thresholds)
+        computed = get_price_range_from_thresholds(
+            price, thresholds, inclusive=pricing_key == "koekenpannen",
+        )
         if pricing_key in PAN_AUDIT_PRICE_RANGES and not configured:
             warnings.append(
                 ("pan_pricing_format_unknown", name, key,
@@ -341,14 +346,17 @@ def audit_price_levels(name, module_path):
         swatch = bool(variants) and not all(_is_button_variant(v) for v in variants)
         if swatch:
             for v in variants:
-                check_price(key, v.get("name") or "?", v.get("price"),
+                price = get_regular_price(v) if pricing_key == "koekenpannen" else v.get("price")
+                check_price(key, v.get("name") or "?", price,
                             v.get("price_range"), pricing_key, {**product, **v})
         elif variants:
             for v in variants:
-                check_price(key, v.get("id") or "?", v.get("price"),
+                price = get_regular_price(v) if pricing_key == "koekenpannen" else v.get("price")
+                check_price(key, v.get("id") or "?", price,
                             v.get("price_range"), pricing_key, {**product, **v})
         else:
-            check_price(key, "", product.get("price"), product.get("price_range"),
+            price = get_regular_price(product) if pricing_key == "koekenpannen" else product.get("price")
+            check_price(key, "", price, product.get("price_range"),
                         pricing_key, product)
     return errors, warnings, price_rows
 
