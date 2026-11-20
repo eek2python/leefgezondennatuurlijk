@@ -3,21 +3,41 @@ PRODUCTS = {
     "demeyere_industry_5_24": {
         "slug": "demeyere-industry-5-24",
         "name": "Demeyere Industry 5 Koekenpan 24 cm",
-        "description": "Vijflaagse RVS-koekenpan met aluminium kern en "
-        "warmtegeleiding tot aan de rand.",
+        "description": (
+            "Ongecoate RVS-koekenpan met een volledige vijflaagse constructie "
+            "die doorloopt tot aan de rand. De pan heeft een gelaste RVS-greep "
+            "en een bodemdiameter van 18 cm."
+        ),
         "brand": "Demeyere",
         "diameter": 24,
-        "material": "Vijflaags materiaal met RVS buitenlagen en aluminium kern",
+        "material": (
+            "Volledige 5-ply constructie van 18/10 RVS met "
+            "warmtegeleidende tussenlagen"
+        ),
         "features": [
+            "Ongecoat 18/10 RVS bakoppervlak",
+            "Volledige 5-ply constructie tot aan de rand",
+            "Bodemdiameter 18 cm",
             "Geschikt voor inductie",
-            "Ovenbestendig",
-            "Vaatwasserbestendig",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Ovenbestendig tot 350 °C",
+            "Gelaste RVS handgreep",
+            "Vaatwasserbestendig; handwas aanbevolen",
+            "Gewicht circa 1,21 kg",
+            "30 jaar garantie bij huishoudelijk gebruik",
         ],
-        "rating": 4.7,
+        "comparison_features": [
+            "Volledige 5-ply constructie tot aan de rand",
+            "Bodemdiameter 18 cm",
+            "Ovenbestendig tot 350 °C",
+            "Gelaste RVS handgreep",
+        ],
+        "rating": 4.5,
         "rating_count": None,
-        "rating_source": "editorial",
-        "price": 119.00,
-        "price_last_checked": "2026-09-14",
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 155.00,
+        "reference_price": 155.00,
+        "price_last_checked": "2026-11-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdemeyere-industry-5-rvs-koekenpan-koekenpan-inductie-24-cm-ptfe-vrij%2F9200000011477842%2F&name=Demeyere%20Industry%205%20Koekenpan%2024%20cm%20-%20RVS%20-%20Geschikt%20voor%20alle%20kookplaten",
@@ -27,22 +47,24 @@ PRODUCTS = {
             "24-cm-ptfe-vrij/9200000011477842/"
         ),
         "official_url": "",
-        "availability_label": "",
+        "availability_label": "Op voorraad",
         "award": "🏆 Beste keuze",
-        "price_range": "€€€",
+        "price_range": "€€€€",
         "image": "demeyere-industry-5-24.webp",
         "image_path": "images/products/rvs-koekenpannen",
         "pros": [
-            "Meerlaagse constructie tot aan de rand",
-            "Gelijkmatige warmteverdeling",
-            "Breed inzetbaar op inductie en in de oven",
+            "Volledige vijflaagse constructie tot aan de rand",
+            "Gelaste greep laat de binnenzijde vrij van klinknagels",
+            "Ovenbestendig tot 350 °C",
         ],
         "cons": [
-            "Hoge aanschafprijs",
+            "Hoge reguliere aanschafprijs",
         ],
         "verdict": (
-            "Onze beste allround keuze door de volledige meerlaagse "
-            "constructie en brede inzetbaarheid."
+            "Een complete RVS-koekenpan voor wie regelmatig krachtig aanbakt "
+            "en de pan ook op hoge temperatuur in de oven gebruikt. De volledige "
+            "vijflaagse constructie en gelaste greep maken hem breed inzetbaar. "
+            "Dit is onze Beste keuze binnen het formaat 24 cm."
         ),
     },
     
@@ -51,24 +73,37 @@ PRODUCTS = {
         "slug": "bk-superior-tri-ply-24",
         "name": "BK Superior Tri-Ply Koekenpan 24 cm",
         "description": (
-            "Drielaagse koekenpan met een aluminium kern tussen twee "
-            "RVS-lagen voor warmteverdeling tot aan de rand."
+            "Ongecoate RVS-koekenpan met een volledige drielaagse constructie "
+            "van RVS met een aluminium kern. De meerlaagse opbouw loopt door "
+            "tot aan de rand van de pan."
         ),
         "brand": "BK",
         "diameter": 24,
-        "material": (
-            "Drielaags materiaal met RVS buitenlagen en aluminium kern"
-        ),
+        "material": "Volledige 3-ply RVS/aluminium-constructie",
         "features": [
+            "Ongecoat RVS bakoppervlak",
+            "Volledige 3-ply RVS/aluminium-constructie",
+            "Aluminium warmtegeleidende kern",
             "Geschikt voor inductie",
-            "Ovenbestendig",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Ovenbestendig tot 230 °C",
+            "RVS handgreep",
             "Vaatwasserbestendig",
+            "Gewicht circa 0,98 kg",
+            "25 jaar garantie",
+        ],
+        "comparison_features": [
+            "Volledige 3-ply RVS/aluminium-constructie",
+            "Ovenbestendig tot 230 °C",
+            "Gewicht circa 0,98 kg",
+            "25 jaar garantie",
         ],
         "rating": 4.5,
         "rating_count": None,
-        "rating_source": "editorial",
-        "price": 63.39,
-        "price_last_checked": "2026-09-14",
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 57.32,
+        "reference_price": 65.00,
+        "price_last_checked": "2026-11-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-superior-triply-koekenpan-o-24-cm-rvs-inductie%2F9300000022010208%2F&name=BK%20Superior%20Tri-Ply%20koekenpan%20-%2024%20cm%20-%20Geschikt%20voor%20alle%20warmtebronnen",
@@ -77,23 +112,24 @@ PRODUCTS = {
             "bk-superior-3-ply-koekenpan-24cm"
         ),
         "official_url": "",
-        "availability_label": "",
+        "availability_label": "Op voorraad",
         "award": "💰 Budget keuze",
         "price_range": "€€",
         "image": "bk-superior-tri-ply-24.webp",
         "image_path": "images/products/rvs-koekenpannen",
         "pros": [
-            "Volledig drielaagse constructie",
-            "Relatief gunstig geprijsd",
-            "Geschikt voor hoge baktemperaturen",
+            "Volledige drielaagse constructie tot aan de rand",
+            "Met circa 0,98 kg relatief goed hanteerbaar",
+            "25 jaar garantie",
         ],
         "cons": [
-            "Minder lagen dan de premium modellen",
-            "Afwerking is eenvoudiger dan bij de duurste alternatieven",
+            "Ovenbestendig tot maximaal 230 °C",
         ],
         "verdict": (
-            "Onze budgetkeuze voor wie voor een relatief beperkt bedrag "
-            "een volledig drielaagse RVS-pan zoekt."
+            "Een toegankelijke volledig drielaagse RVS-pan voor wie een "
+            "meerlaagse constructie tot aan de rand zoekt zonder direct naar "
+            "het hogere prijssegment te gaan. De pan is ovenbestendig tot "
+            "230 °C. Dit is onze Budget keuze binnen het formaat 24 cm."
         ),
     },
 
@@ -101,24 +137,37 @@ PRODUCTS = {
         "slug": "debuyer-affinity-24",
         "name": "De Buyer Affinity Koekenpan 24 cm",
         "description": (
-            "Vijflaagse RVS-koekenpan met snelle temperatuurrespons "
-            "en warmtegeleiding over de volledige pan."
+            "Ongecoate RVS-koekenpan met een volledige vijflaagse constructie "
+            "van RVS en aluminium over de bodem en zijwanden. De pan heeft een "
+            "geklonken gegoten RVS-handgreep en een uitlopende rand."
         ),
         "brand": "De Buyer",
         "diameter": 24,
-        "material": (
-            "Vijflaags materiaal met RVS buitenlagen en aluminium kern"
-        ),
+        "material": "Volledige 5-ply RVS/aluminium-constructie",
         "features": [
-            "Geschikt voor alle warmtebronnen",
-            "Ovenbestendig",
+            "Ongecoat RVS bakoppervlak",
+            "Volledige 5-ply RVS/aluminium-constructie",
+            "Aluminium warmtegeleidende tussenlagen",
+            "Bodemdiameter 17 cm",
+            "Geschikt voor inductie",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Geschikt voor de oven",
+            "Geklonken gegoten RVS-handgreep",
             "Vaatwasserbestendig",
+            "Gewicht circa 1,1 kg",
         ],
-        "rating": 4.6,
+        "comparison_features": [
+            "Volledige 5-ply RVS/aluminium-constructie",
+            "Bodemdiameter 17 cm",
+            "Gewicht circa 1,1 kg",
+            "Geklonken gegoten RVS-handgreep",
+        ],
+        "rating": 4.5,
         "rating_count": None,
-        "rating_source": "editorial",
-        "price": 125.32,
-        "price_last_checked": "2026-08-08",
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 111.00,
+        "reference_price": 170.00,
+        "price_last_checked": "2026-11-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdebuyer-affinity-koekenpan-o-24-cm%2F9200000015324056%2F&name=De%20Buyer%20Affinity%20Koekenpan%20-%2024%20cm%20-%20Geschikt%20voor%20alle%20warmtebronnen",
@@ -128,23 +177,25 @@ PRODUCTS = {
             "9200000015324056/"
         ),
         "official_url": "",
-        "availability_label": "",
+        "availability_label": "Op voorraad",
         "award": "",
-        "price_range": "€€€",
+        "price_range": "€€€€",
         "image": "debuyer-affinity-24.webp",
         "image_path": "images/products/rvs-koekenpannen",
         "pros": [
-            "Reageert snel op temperatuurveranderingen",
-            "Volledig meerlaagse constructie",
-            "Geschikt voor krachtig aanbakken",
+            "Volledige vijflaagse constructie over bodem en zijwanden",
+            "Met circa 1,1 kg goed hanteerbaar voor een volledig meerlaagse pan",
+            "Uitlopende rand vergemakkelijkt het uitschuiven en uitschenken",
         ],
         "cons": [
-            "Hoge aanschafprijs",
-            "Gepolijste buitenzijde vraagt meer onderhoud om glanzend te blijven",
+            "Hoge reguliere aanschafprijs",
+            "Hoogglans afwerking vraagt extra onderhoud om de glans te behouden",
         ],
         "verdict": (
-            "Een responsieve meerlaagse pan voor wie nauwkeurige "
-            "temperatuurregeling belangrijk vindt."
+            "Een volledig vijflaagse RVS-pan voor wie veel waarde hecht aan "
+            "temperatuurcontrole en een relatief goed hanteerbare constructie. "
+            "De gepolijste afwerking vraagt wel wat extra onderhoud wanneer je "
+            "de hoogglans uitstraling wilt behouden."
         ),
     },
 
@@ -152,24 +203,36 @@ PRODUCTS = {
         "slug": "wmf-profi-24",
         "name": "WMF Profi Koekenpan 24 cm",
         "description": (
-            "Ongecoate Cromargan RVS-koekenpan met TransTherm-bodem "
-            "voor warmteverdeling en warmtebehoud."
+            "Ongecoate koekenpan van Cromargan RVS met een samengestelde "
+            "TransTherm-bodem voor de warmtegeleiding. De pan heeft een "
+            "RVS-handgreep en is geschikt voor alle gangbare warmtebronnen."
         ),
         "brand": "WMF",
         "diameter": 24,
-        "material": (
-            "Cromargan 18/10 RVS met TransTherm sandwichbodem"
-        ),
+        "material": "Cromargan RVS met samengestelde TransTherm-bodem",
         "features": [
-            "Geschikt voor alle warmtebronnen",
-            "Ovenbestendig",
+            "Ongecoat Cromargan RVS bakoppervlak",
+            "Samengestelde TransTherm-bodem",
+            "Geschikt voor inductie",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Ovenbestendig tot 250 °C",
+            "RVS handgreep",
             "Vaatwasserbestendig",
+            "Gewicht circa 1,1 kg",
+            "2 jaar garantie",
         ],
-        "rating": 4.4,
+        "comparison_features": [
+            "Samengestelde warmtegeleidende bodem",
+            "Ovenbestendig tot 250 °C",
+            "Gewicht circa 1,1 kg",
+            "2 jaar garantie",
+        ],
+        "rating": 4.5,
         "rating_count": None,
-        "rating_source": "editorial",
-        "price": 54.18,
-        "price_last_checked": "2026-08-08",
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 44.99,
+        "reference_price": 51.73,
+        "price_last_checked": "2026-11-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fwmf-profi-koekenpan-o-24-cm%2F9200000077125803%2F&name=WMF%20Profi%20koekenpan%20-%20RVS%20-%2024%20cm%20-%20Geschikt%20voor%20alle%20warmtebronnen",
@@ -179,15 +242,15 @@ PRODUCTS = {
             "9200000077125803/"
         ),
         "official_url": "",
-        "availability_label": "",
+        "availability_label": "Op voorraad",
         "award": "",
         "price_range": "€€",
         "image": "wmf-profi-24.webp",
         "image_path": "images/products/rvs-koekenpannen",
         "pros": [
-            "Relatief gunstige prijs",
-            "Geschikt voor inductie en ovengebruik",
-            "Eenvoudig te reinigen",
+            "Ovenbestendig tot 250 °C",
+            "Met circa 1,1 kg goed hanteerbaar",
+            "Relatief laag regulier prijsniveau",
         ],
         "cons": [
             "Warmtegeleidende kern loopt niet tot aan de rand",
@@ -195,8 +258,10 @@ PRODUCTS = {
                 "dan volledig meerlaagse pannen"
         ],
         "verdict": (
-            "Een degelijk geprijsde RVS-pan voor dagelijks gebruik, "
-            "met een samengestelde bodem in plaats van volledige meerlagenbouw."
+            "Een betaalbare ongecoate RVS-pan voor dagelijks gebruik op de "
+            "kookplaat en in de oven. De warmtegeleidende constructie bevindt "
+            "zich hoofdzakelijk in de bodem, terwijl de ovenbestendigheid tot "
+            "250 °C de pan breed inzetbaar maakt."
         ),
     },
     
@@ -205,25 +270,40 @@ PRODUCTS = {
         "slug": "demeyere-silverline-7-nanotouch-24",
         "name": "Demeyere Silverline 7 NanoTouch Koekenpan 24 cm",
         "description": (
-            "Zevenlaagse RVS-koekenpan met een gestructureerd "
-            "NanoTouch-bakoppervlak en volledige meerlagenconstructie."
+            "Ongecoate RVS-koekenpan met zevenlaags materiaal tot aan de rand "
+            "en een microscopisch gestructureerd RVS-bakoppervlak. De pan heeft "
+            "een gelaste RVS-greep en een bodemdiameter van 18 cm."
         ),
         "brand": "Demeyere",
         "diameter": 24,
         "material": (
-            "Zevenlaags materiaal met RVS buitenlagen "
-            "en gestructureerd NanoTouch-oppervlak"
+            "Volledige 7-ply RVS-constructie met gestructureerd "
+            "NanoTouch RVS-bakoppervlak"
         ),
         "features": [
+            "Ongecoat gestructureerd RVS bakoppervlak",
+            "Volledige 7-ply constructie tot aan de rand",
+            "Bodemdiameter 18 cm",
             "Geschikt voor inductie",
-            "Ovenbestendig",
-            "Vaatwasserbestendig",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Ovenbestendig tot 350 °C",
+            "Gelaste RVS handgreep",
+            "Vaatwasserbestendig; handwas aanbevolen",
+            "Gewicht circa 1,31 kg",
+            "30 jaar garantie bij huishoudelijk gebruik",
         ],
-        "rating": 4.6,
+        "comparison_features": [
+            "Volledige 7-ply constructie tot aan de rand",
+            "Gestructureerd ongecoat RVS-bakoppervlak",
+            "Ovenbestendig tot 350 °C",
+            "Gewicht circa 1,31 kg",
+        ],
+        "rating": 4.5,
         "rating_count": None,
-        "rating_source": "editorial",
-        "price": 209.00,
-        "price_last_checked": "2026-07-30",
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 175.00,
+        "reference_price": 209.00,
+        "price_last_checked": "2026-11-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "",
@@ -233,24 +313,26 @@ PRODUCTS = {
             "?variant=54983851934072"
         ),
         "official_url": "",
-        "availability_label": "",
+        "availability_label": "Op voorraad",
         "award": "💎 Premium keuze",
         "price_range": "€€€€",
         "image": "demeyere-silverline-7-24.webp",
         "image_path": "images/products/rvs-koekenpannen",
         "pros": [
-            "Volledige zevenlaagse constructie",
-            "Gestructureerd RVS-bakoppervlak",
-            "Gelijkmatige warmteverdeling",
+            "Volledige zevenlaagse constructie tot aan de rand",
+            "Gestructureerd RVS-oppervlak zonder aangebrachte antiaanbaklaag",
+            "Gelaste greep laat de binnenzijde vrij van klinknagels",
+            "Ovenbestendig tot 350 °C",
         ],
         "cons": [
-            "Zeer hoge aanschafprijs",
-            "Meerwaarde ten opzichte van goedkopere meerlaagse pannen "
-                "is beperkt voor incidenteel gebruik"
+            "Zeer hoge reguliere aanschafprijs",
+            "Met circa 1,31 kg relatief zwaar voor een pan van 24 cm",
         ],
         "verdict": (
-            "Een specialistische premiumkeuze met meerlagenconstructie "
-            "en een afwijkend gestructureerd bakoppervlak."
+            "Onze Premium keuze voor wie een technisch uitgebreide RVS-pan "
+            "zoekt met zevenlaags materiaal, een gestructureerd ongecoat "
+            "bakoppervlak en hoge ovenbestendigheid. Met circa 1,31 kg is de "
+            "pan relatief zwaar en de reguliere aanschafprijs is hoog."
         ),
     },
     
@@ -258,23 +340,36 @@ PRODUCTS = {
         "slug": "bk-bright-24",
         "name": "BK Bright Koekenpan 24 cm",
         "description": (
-            "Eenvoudige ongecoate RVS-koekenpan met RVS handgreep "
-            "voor gebruik op alle gangbare warmtebronnen."
+            "Eenvoudige ongecoate RVS-koekenpan met gesatineerde binnenzijde "
+            "en gepolijste buitenzijde. De pan heeft een RVS-handgreep en is "
+            "geschikt voor alle gangbare warmtebronnen."
         ),
         "brand": "BK",
         "diameter": 24,
-        "material": "RVS met samengestelde inductiebodem",
+        "material": "Roestvrij staal",
         "features": [
-            "Ongecoat RVS-bakoppervlak",
+            "Ongecoat RVS bakoppervlak",
+            "Gesatineerde RVS binnenzijde",
             "Geschikt voor inductie",
-            "Ovenbestendig",
+            "Geschikt voor alle gangbare warmtebronnen",
+            "Ovenbestendig tot 230 °C",
+            "RVS handgreep",
             "Vaatwasserbestendig",
+            "Gewicht circa 0,82 kg",
+            "3 jaar garantie",
         ],
-        "rating": 4.1,
+        "comparison_features": [
+            "RVS-constructie; meerlaagse opbouw niet gespecificeerd",
+            "Ovenbestendig tot 230 °C",
+            "Gewicht circa 0,82 kg",
+            "3 jaar garantie",
+        ],
+        "rating": 4.0,
         "rating_count": None,
-        "rating_source": "editorial",
-        "price": 35.26,
-        "price_last_checked": "2026-08-08",
+        "rating_source": "Leef Natuurlijk & Gezond",
+        "price": 31.29,
+        "reference_price": 35.26,
+        "price_last_checked": "2026-11-20",
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-bright-koekenpan-24-cm-rvs%2F9300000111921944%2F&name=BK%20Bright%20koekenpan%20-%2024%20cm",
@@ -284,23 +379,25 @@ PRODUCTS = {
             "9300000111921944/"
         ),
         "official_url": "",
-        "availability_label": "",
+        "availability_label": "Op voorraad",
         "award": "",
         "price_range": "€",
         "image": "bk-bright-24.webp",
         "image_path": "images/products/rvs-koekenpannen",
         "pros": [
-            "Lage aanschafprijs",
-            "Geschikt voor inductie en ovengebruik",
-            "Eenvoudige ongecoate constructie",
+            "Met circa 0,82 kg relatief licht voor een RVS-pan van 24 cm",
+            "Ovenbestendig tot 230 °C",
+            "Lage reguliere aanschafprijs",
         ],
         "cons": [
-            "Geen volledige meerlaagse constructie",
-            "Minder gelijkmatige warmtegeleiding dan tri-ply modellen",
+            "Garantieperiode van 3 jaar",
+            "Materiaalopbouw van de bodem is beperkt gedocumenteerd",
         ],
         "verdict": (
-            "Een voordelige instapper voor wie kennis wil maken "
-            "met bakken in een ongecoate RVS-pan."
+            "Een lichte en betaalbare ongecoate RVS-pan voor wie een eenvoudige "
+            "pan zoekt voor dagelijks gebruik op kookplaat en in de oven. "
+            "De fabrikant specificeert geen volledige meerlaagse constructie, "
+            "maar de pan is met circa 0,82 kg gemakkelijk te hanteren."
         ),
     },
 
@@ -308,25 +405,35 @@ PRODUCTS = {
     "demeyere_industry_5_28": {
         "slug": "demeyere-industry-5-28",
         "name": "Demeyere Industry 5 Koekenpan 28 cm",
-        "description": (
-            "Vijflaagse RVS-koekenpan met aluminium kern en "
-            "warmtegeleiding tot aan de rand."
-        ),
+        'description': 'Volledig vijflaagse RVS-koekenpan met een aluminium '
+           'warmtegeleidende kern tot aan de rand. De roestvrijstalen '
+           'handgreep is gelast en de binnenzijde heeft geen klinknagels.',
         "brand": "Demeyere",
         "diameter": 28,
-        "material": (
-            "Vijflaags materiaal met RVS buitenlagen en aluminium kern"
-        ),
-        "features": [
-            "Geschikt voor inductie",
-            "Ovenbestendig",
-            "Vaatwasserbestendig",
-        ],
-        "rating": 4.7,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 161.16,
-        "price_last_checked": "2026-09-14",
+        'material': 'Ongecoat 18/10 RVS-bakoppervlak; volledig vijflaags '
+                    'RVS/aluminium-materiaal in bodem en zijwanden, met gelaste '
+                    'RVS-handgreep.',
+        'features': ['Ongecoat 18/10 RVS-bakoppervlak met elektrochemische '
+                     'Silvinox-oppervlaktebehandeling',
+                     'Volledig vijflaagse constructie tot aan de rand',
+                     'Warmtegeleidende aluminium kern',
+                     'Bodemdiameter 22 cm',
+                     'Geschikt voor inductie, gas, elektrisch, keramisch en halogeen',
+                     'Oven- en grillbestendig tot 350 °C',
+                     'Gelaste RVS-handgreep zonder klinknagels aan de binnenzijde',
+                     'Vaatwasserbestendig; handwas aanbevolen',
+                     'Gewicht circa 1,47 kg',
+                     '30 jaar garantie op productiefouten bij huishoudelijk gebruik'],
+        'comparison_features': ['Volledige 5-ply RVS/aluminium-constructie',
+                                'Bodemdiameter 22 cm',
+                                'Ovenbestendig tot 350 °C',
+                                'Gelaste handgreep; klinknagelloze binnenzijde'],
+        'rating': 4.5,
+        'rating_count': None,
+        'rating_source': 'Leef Natuurlijk & Gezond',
+        'price': 149.0,
+        'reference_price': 175.0,
+        'price_last_checked': '2026-11-20',
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdemeyere-industry-5-koekenpan-28-cm%2F9300000187019367%2F&name=DEMEYERE%20Industry%205%20Koekenpan%20-%20RVS%20-%2028%20cm%20-%20Voor%20alle%20warmtebronnen",
@@ -336,48 +443,64 @@ PRODUCTS = {
             "?variant=48993168261468"
         ),
         "official_url": "",
-        "availability_label": "",
+        'availability_label': 'Op voorraad',
         "award": "🏆 Beste keuze",
         "price_range": "€€€",
         "image": "demeyere-industry-5-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
         "pros": [
-            "Meerlaagse constructie tot aan de rand",
-            "Gelijkmatige warmteverdeling",
-            "Breed inzetbaar op inductie en in de oven",
+             'Klinknagelloze binnenzijde maakt reinigen eenvoudiger',
+             'Oven- en grillbestendig tot 350 °C',
+             'Volledig meerlaagse constructie met warmtegeleidende zijwanden'
         ],
-        "cons": [
-            "Hoge aanschafprijs",
-        ],
-        "verdict": (
-            "Onze beste allround keuze door de volledige meerlaagse "
-            "constructie en brede inzetbaarheid."
-        ),
+        "cons": ['Relatief hoge reguliere aanschafprijs'],
+        "verdict": 'Een breed inzetbare pan voor wie regelmatig bakt, gerechten in de '
+           'oven afmaakt en een makkelijk te reinigen binnenzijde belangrijk '
+           'vindt. De volledige vijflaagse constructie, gelaste greep en '
+           'ovenbestendigheid tot 350 °C ondersteunen de hogere prijs. Dit is '
+           'onze Beste keuze binnen 28 cm.'
     },
     
     "demeyere_silverline_7_nanotouch_28": {
         "slug": "demeyere-silverline-7-nanotouch-28",
         "name": "Demeyere Silverline 7 NanoTouch Koekenpan 28 cm",
-        "description": (
-            "Zevenlaagse RVS-koekenpan met een gestructureerd "
-            "NanoTouch-bakoppervlak en volledige meerlagenconstructie."
-        ),
+        "description": 'Volledig zevenlaagse RVS-koekenpan met een fijn '
+           'gestructureerd, ongecoat bakoppervlak. De '
+           'warmtegeleidende lagen lopen door tot de rand en de '
+           'RVS-handgreep is gelast.',
         "brand": "Demeyere",
         "diameter": 28,
-        "material": (
-            "Zevenlaags materiaal met RVS buitenlagen "
-            "en gestructureerd NanoTouch-oppervlak"
-        ),
-        "features": [
-            "Geschikt voor inductie",
-            "Ovenbestendig",
-            "Vaatwasserbestendig",
-        ],
-        "rating": 4.6,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 189.00,
-        "price_last_checked": "2026-07-30",
+        'material': 'Ongecoat 18/10 RVS-bakoppervlak met '
+                    'NanoTouch-microstructuur en '
+                    'Silvinox-oppervlaktebehandeling; volledige zevenlaagse '
+                    'RVS/aluminium-constructie in bodem en zijwanden, met '
+                    'gelaste RVS-handgreep.',
+        'features': ['Ongecoat, gestructureerd RVS-bakoppervlak (NanoTouch), '
+                     'zonder aangebrachte antiaanbaklaag',
+                     'Elektrochemische Silvinox-oppervlaktebehandeling',
+                     'Volledig zevenlaagse constructie tot aan de rand',
+                     'Warmtegeleidende aluminium kern',
+                     'Bodemdiameter 22 cm',
+                     'Geschikt voor inductie, gas, elektrisch, keramisch en '
+                     'halogeen',
+                     'Inductiegeschikte bodemconstructie (TriplInduc)',
+                     'Oven- en grillbestendig tot 350 °C',
+                     'Gelaste RVS-handgreep zonder klinknagels aan de '
+                     'binnenzijde',
+                     'Vaatwasserbestendig; handwas aanbevolen',
+                     'Gewicht circa 1,61 kg',
+                     '30 jaar garantie op productiefouten bij huishoudelijk '
+                     'gebruik'],
+        'comparison_features': ['Volledige 7-ply RVS/aluminium-constructie',
+                                'Gestructureerd ongecoat RVS-bakoppervlak',
+                                'Ovenbestendig tot 350 °C',
+                                'Gewicht circa 1,61 kg'],
+        'rating': 4.5,
+        'rating_count': None,
+        'rating_source': 'Leef Natuurlijk & Gezond',
+        'price': 189.0,
+        'reference_price': 229.0,
+        'price_last_checked': '2026-11-20',
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "",
@@ -385,49 +508,58 @@ PRODUCTS = {
             "https://www.pannenhuis.nl/products/demeyere-silverline-7-nano-touch-koekenpan?variant=54983851966840"
         ),
         "official_url": "",
-        "availability_label": "",
+        'availability_label': 'Op voorraad',
         "award": "💎 Premium keuze",
         "price_range": "€€€€",
         "image": "demeyere-silverline-7-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Volledige zevenlaagse constructie",
-            "Gestructureerd RVS-bakoppervlak",
-            "Gelijkmatige warmteverdeling",
-        ],
-        "cons": [
-            "Zeer hoge aanschafprijs",
-            "Meerwaarde is beperkt voor incidenteel gebruik",
-        ],
-        "verdict": (
-            "Een specialistische premiumkeuze met meerlagenconstructie "
-            "en een afwijkend gestructureerd bakoppervlak."
-        ),
+        'pros': ['Bijzonder gestructureerd ongecoat RVS-bakoppervlak',
+             'Klinknagelloze binnenzijde maakt reinigen eenvoudiger',
+             'Oven- en grillbestendig tot 350 °C'],
+        'cons': ['Hoge reguliere aanschafprijs',
+             'Met circa 1,61 kg relatief zwaar voor dit formaat'],
+        'verdict': 'Deze pan is interessant voor wie een gestructureerd '
+               'ongecoat RVS-bakoppervlak en een klinknagelloze '
+               'binnenzijde zoekt. De zevenlaagse constructie en '
+               'ovenbestendigheid tot 350 °C bieden een uitgebreide '
+               'technische uitvoering, maar de hoge aanschafprijs vraagt '
+               'om intensief gebruik. Dit is onze Premium keuze binnen '
+               '28 cm.',
     },
     
     
     "debuyer_affinity_28": {
         "slug": "debuyer-affinity-28",
         "name": "De Buyer Affinity Koekenpan 28 cm",
-        "description": (
-            "Vijflaagse RVS-koekenpan met snelle temperatuurrespons "
-            "en warmtegeleiding over de volledige pan."
-        ),
+        "description": 'Volledig vijflaagse RVS-koekenpan met drie aluminium tussenlagen en '
+        'een ongecoat bakoppervlak. De pan heeft een uitlopende schenkrand '
+        'en een geklonken, gegoten RVS-handgreep.',
         "brand": "De Buyer",
         "diameter": 28,
-        "material": (
-            "Vijflaags materiaal met RVS buitenlagen en drie aluminiumlagen"
-        ),
-        "features": [
-            "Geschikt voor alle warmtebronnen",
-            "Ovenbestendig",
-            "Vaatwasserbestendig",
-        ],
-        "rating": 4.6,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 141.00,
-        "price_last_checked": "2026-08-08",
+        'material': 'Ongecoat RVS-bakoppervlak van AISI 304 (18/10-kwaliteit); volledige '
+                     'vijflaagse constructie met RVS-binnen- en buitenlaag en drie aluminium '
+                     'tussenlagen in bodem en zijwanden; gegoten RVS-handgreep.',
+         'features': ['Ongecoat RVS-bakoppervlak van AISI 304 (18/10-kwaliteit)',
+                      'Volledig vijflaagse RVS/aluminium-constructie tot aan de rand',
+                      'Drie warmtegeleidende aluminium tussenlagen',
+                      'Bodemdiameter 22 cm volgens actuele fabrikantgegevens',
+                      'Geschikt voor inductie, gas, elektrisch, keramisch en halogeen',
+                      'Ovenbestendig; maximale temperatuur niet opgegeven door fabrikant',
+                      'Geklonken, gegoten RVS-handgreep',
+                      'Uitlopende schenkrand',
+                      'Vaatwasserbestendig; voor blijvende glans kan handmatig poetsen nodig '
+                      'zijn',
+                      'Gewicht circa 1,34 kg volgens actuele fabrikantgegevens'],
+         'comparison_features': ['Volledige 5-ply met drie aluminium tussenlagen',
+                                 'Bodemdiameter 22 cm volgens fabrikant',
+                                 'Gewicht circa 1,34 kg volgens fabrikant',
+                                 'Geklonken RVS-handgreep en schenkrand'],
+         'rating': 4.0,
+         'rating_count': None,
+         'rating_source': 'Leef Natuurlijk & Gezond',
+         'price': 199.99,
+         'reference_price': 209.95,
+         'price_last_checked': '2026-11-20',
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdebuyer-affinity-koekenpan-o-28-cm%2F9200000015324060%2F&name=DeBuyer%20Affinity%20Koekenpan%20-%20RVS-%2028%20cm%20-%20PFAS-vrij",
@@ -437,48 +569,50 @@ PRODUCTS = {
             "9200000015324060/"
         ),
         "official_url": "",
-        "availability_label": "",
+        'availability_label': 'Op voorraad',
         "award": "",
-        "price_range": "€€€",
+        "price_range": "€€€€",
         "image": "debuyer-affinity-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Reageert snel op temperatuurveranderingen",
-            "Volledig meerlaagse constructie",
-            "Geschikt voor krachtig aanbakken",
-        ],
-        "cons": [
-            "Hoge aanschafprijs",
-            "Gepolijste buitenzijde vraagt meer onderhoud om glanzend te blijven",
-        ],
-        "verdict": (
-            "Een responsieve meerlaagse pan voor wie nauwkeurige "
-            "temperatuurregeling belangrijk vindt."
-        ),
+        'pros': ['Met circa 1,34 kg relatief licht voor een volledig vijflaagse 28 cm-pan',
+              'Uitlopende schenkrand voor gecontroleerd afgieten',
+              'Volledig meerlaagse constructie met drie aluminium tussenlagen'],
+        'cons': ['Hoge reguliere aanschafprijs'],
+        'verdict': 'Een volledig vijflaagse RVS-koekenpan voor wie een relatief laag '
+                'gewicht en een handige schenkrand zoekt. De gegoten RVS-greep en '
+                'meerlaagse wanden bieden een uitgebreide uitvoering; de reguliere prijs '
+                'ligt in het hoogste segment.',
     },
     
     "wmf_profi_28": {
         "slug": "wmf-profi-28",
         "name": "WMF Profi Koekenpan 28 cm",
-        "description": (
-            "Ongecoate Cromargan RVS-koekenpan met TransTherm-bodem "
-            "voor warmteverdeling en warmtebehoud."
-        ),
+        "description": 'Ongecoate RVS-koekenpan met geborstelde binnenzijde, gepolijste '
+         'buitenzijde en een samengestelde inductiebodem. De pan heeft een vaste '
+         'metalen handgreep en een brede schenkrand.',
         "brand": "WMF",
         "diameter": 28,
-        "material": (
-            "Cromargan 18/10 RVS met TransTherm sandwichbodem"
-        ),
-        "features": [
-            "Geschikt voor alle warmtebronnen",
-            "Ovenbestendig tot 250 °C",
-            "Vaatwasserbestendig",
-        ],
-        "rating": 4.4,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 63.99,
-        "price_last_checked": "2026-08-08",
+        'material': 'Ongecoat Cromargan RVS 18/10-bakoppervlak en RVS-zijwanden; samengestelde '
+                      'TransTherm-sandwichbodem met een warmtegeleidende kern en vaste '
+                      'RVS-handgreep.',
+          'features': ['Ongecoat geborsteld RVS 18/10-bakoppervlak (Cromargan)',
+                       'RVS-zijwanden met samengestelde TransTherm-sandwichbodem',
+                       'Geschikt voor inductie, gas, elektrisch, keramisch en halogeen',
+                       'Ovenbestendig tot 250 °C',
+                       'Vaste holle RVS-handgreep',
+                       'Brede schenkrand',
+                       'Vaatwasserbestendig; handwas aanbevolen',
+                       'Gewicht circa 1,55 kg'],
+          'comparison_features': ['Samengestelde sandwichbodem',
+                                  'Ovenbestendig tot 250 °C',
+                                  'Gewicht circa 1,55 kg',
+                                  'Brede schenkrand'],
+          'rating': 4.0,
+          'rating_count': None,
+          'rating_source': 'Leef Natuurlijk & Gezond',
+          'price': 71.0,
+          'reference_price': 89.99,
+          'price_last_checked': '2026-11-20',
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fwmf-profi-koekenpan-o-28-cm%2F9200000055361082%2F&name=WMF%20Profi%20koekenpan%20-%20%C3%98%2028%20cm%20-%20Cromargan%20roestvrij%20staal%20-%20Inductie",
@@ -488,48 +622,48 @@ PRODUCTS = {
             "9200000055361082/"
         ),
         "official_url": "",
-        "availability_label": "",
+        'availability_label': 'Op voorraad',
         "award": "",
         "price_range": "€€",
         "image": "wmf-profi-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Relatief gunstige prijs",
-            "Geschikt voor inductie en ovengebruik",
-            "Eenvoudig te reinigen",
-        ],
-        "cons": [
-            "Warmtegeleidende kern loopt niet tot aan de rand",
-            "Reageert minder snel dan volledig meerlaagse pannen",
-        ],
-        "verdict": (
-            "Een degelijk geprijsde RVS-pan voor dagelijks gebruik, "
-            "met een samengestelde bodem in plaats van volledige meerlagenbouw."
-        ),
+        'pros': ['Brede schenkrand vergemakkelijkt afgieten', 'Ovenbestendig tot 250 °C'],
+          'cons': ['Warmtegeleidende meerlagenconstructie beperkt zich tot de bodem'],
+          'verdict': 'Een praktische ongecoate RVS-pan voor dagelijks bakken op de kookplaat en '
+                     'doorgaren in de oven. De schenkrand en ovenbestendigheid tot 250 °C zijn '
+                     'bruikbaar, terwijl de samengestelde bodem de constructie eenvoudiger houdt.',
     },
     
     "bk_superior_tri_ply_28": {
         "slug": "bk-superior-tri-ply-28",
         "name": "BK Superior Tri-Ply Koekenpan 28 cm",
-        "description": (
-            "Drielaagse koekenpan met een aluminium kern tussen twee "
-            "RVS-lagen voor warmteverdeling tot aan de rand."
-        ),
+        "description": 'Volledig drielaagse RVS-koekenpan met aluminium tussenlaag die '
+           'doorloopt tot in de zijwanden. De pan heeft een holle, geklonken '
+           'RVS-handgreep.',
         "brand": "BK",
         "diameter": 28,
-        "material": (
-            "Drielaags materiaal met RVS buitenlagen en aluminium kern"
-        ),
-        "features": [
-            "Geschikt voor inductie",
-            "Ovenbestendig",
-            "Vaatwasserbestendig",
-        ],
-        "rating": 4.5,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 66.10,
-        "price_last_checked": "2026-09-14",
+        'material': 'Ongecoat RVS-bakoppervlak; volledige 3-ply '
+                    'RVS/aluminium/RVS-constructie in bodem en zijwanden, met holle '
+                    'RVS-handgreep.',
+        'features': ['Ongecoat RVS-bakoppervlak zonder antiaanbaklaag',
+                     'Volledige drielaagse RVS/aluminium/RVS-constructie tot aan de rand',
+                     'Warmtegeleidende aluminium tussenlaag',
+                     'Geschikt voor inductie, gas, elektrisch, keramisch en halogeen',
+                     'Ovenbestendig tot 230 °C',
+                     'Holle, geklonken RVS-handgreep',
+                     'Vaatwasserbestendig',
+                     'Gewicht circa 1,26 kg',
+                     '25 jaar garantie op materiaal-, constructie- en afwerkingsfouten'],
+        'comparison_features': ['Volledige 3-ply RVS/aluminium-constructie',
+                                'Ovenbestendig tot 230 °C',
+                                'Gewicht circa 1,26 kg',
+                                '25 jaar garantie op fabricagefouten'],
+        'rating': 4.5,
+        'rating_count': None,
+        'rating_source': 'Leef Natuurlijk & Gezond',
+        'price': 85.99,
+        'reference_price': 89.9,
+        'price_last_checked': '2026-11-20',
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-superior-triply-koekenpan-o-28-cm-rvs-inductie%2F9300000022010168%2F&name=BK%20Superior%20Triply%20koekenpan%20-%2028%20cm%20-%20Geschikt%20voor%20alle%20warmtebronnen",
@@ -539,46 +673,51 @@ PRODUCTS = {
             "?variant=43657412280569"
         ),
         "official_url": "",
-        "availability_label": "",
+        'availability_label': 'Op voorraad',
         "award": "",
         "price_range": "€€",
         "image": "bk-superior-tri-ply-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Volledig drielaagse constructie",
-            "Relatief gunstig geprijsd",
-            "Geschikt voor hoge baktemperaturen",
-        ],
-        "cons": [
-            "Minder lagen dan de premium modellen",
-            "Afwerking is eenvoudiger dan bij de duurste alternatieven",
-        ],
-        "verdict": (
-            "Een aantrekkelijke middenklassekeuze voor wie een volledig "
-            "drielaagse RVS-pan zoekt."
-        ),
+        'pros': ['Volledig drielaagse constructie voor een relatief toegankelijke prijs',
+             'Met circa 1,26 kg goed hanteerbaar voor een 28 cm-pan',
+             '25 jaar garantie op materiaal- en constructiefouten'],
+        'cons': [],
+        'verdict': 'Een aantrekkelijke keuze voor wie een volledig meerlaagse '
+               'RVS-koekenpan zoekt zonder een hoge aanschafprijs. De '
+               '3-ply-constructie, het relatief lage gewicht en de ruime garantie '
+               'maken deze pan geschikt voor frequent dagelijks gebruik.',
     },
 
     "bk_bright_28": {
         "slug": "bk-bright-28",
         "name": "BK Bright Koekenpan 28 cm",
-        "description": (
-            "Eenvoudige ongecoate RVS-koekenpan met RVS handgreep "
-            "voor gebruik op alle gangbare warmtebronnen."
-        ),
+        "description": 'Eenvoudige ongecoate RVS-koekenpan met een geborstelde binnenzijde en een '
+         'gepolijste buitenzijde. De warmtegeleidende sandwichconstructie zit in de '
+         'bodem en de handgreep is van RVS.',
         "brand": "BK",
         "diameter": 28,
-        "material": "RVS met samengestelde inductiebodem",
-        "features": [
-            "Geschikt voor inductie",
-            "Ovenbestendig",
-            "Vaatwasserbestendig",
-        ],
-        "rating": 4.1,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 38.81,
-        "price_last_checked": "2026-08-08",
+        'material': 'Ongecoat RVS-bakoppervlak en RVS-zijwanden; sandwichbodem met aluminium '
+                      'warmtegeleidende kern volgens gespecialiseerde verkooppunten, met '
+                      'RVS-handgreep.',
+          'features': ['Ongecoat RVS-bakoppervlak zonder antiaanbaklaag',
+                       'RVS-zijwanden met sandwichbodem en aluminium kern',
+                       'Bodemdiameter circa 22 cm volgens gespecialiseerde verkoper',
+                       'Geschikt voor inductie, gas, elektrisch, keramisch en halogeen',
+                       'Ovenbestendig tot 230 °C volgens gespecialiseerde verkoper',
+                       'RVS-handgreep',
+                       'Vaatwasserbestendig',
+                       'Gewicht circa 1,10 kg',
+                       '3 jaar garantie op materiaal-, constructie- en afwerkingsfouten'],
+          'comparison_features': ['Sandwichbodem met aluminium kern',
+                                  'Bodemdiameter circa 22 cm',
+                                  'Ovenbestendig tot 230 °C',
+                                  'Gewicht circa 1,10 kg'],
+          'rating': 4.0,
+          'rating_count': None,
+          'rating_source': 'Leef Natuurlijk & Gezond',
+          'price': 33.68,
+          'reference_price': 44.9,
+          'price_last_checked': '2026-11-20',
         "currency": "EUR",
         "availability": "InStock",
         "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-bright-koekenpan-28-cm-rvs%2F9300000111596418%2F&name=BK%20Bright%20koekenpan%20-%2028%20cm",
@@ -593,19 +732,14 @@ PRODUCTS = {
         "price_range": "€",
         "image": "bk-bright-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Lage aanschafprijs",
-            "Geschikt voor inductie en ovengebruik",
-            "Eenvoudige ongecoate constructie",
-        ],
-        "cons": [
-            "Geen volledige meerlaagse constructie",
-            "Minder gelijkmatige warmtegeleiding dan tri-ply modellen",
-        ],
-        "verdict": (
-            "Een voordelige instapper voor wie kennis wil maken "
-            "met bakken in een ongecoate RVS-pan."
-        ),
+        'pros': ['Lage reguliere aanschafprijs',
+               'Met circa 1,10 kg licht voor een 28 cm-pan',
+               'Ongeveer 5 cm hoge binnenwand biedt ruimte voor omscheppen'],
+        'cons': ['Warmtegeleidende kern beperkt zich tot de bodem', 'Garantie beperkt tot 3 jaar'],
+        'verdict': 'Een voordelige ongecoate RVS-koekenpan voor wie vooral op de kookplaat bakt en '
+                 'een licht hanteerbaar model wil. De sandwichbodem houdt de constructie '
+                 'eenvoudig en de hogere rand biedt extra ruimte voor groenten of aardappelen. '
+                 'Dit is onze Budget keuze binnen 28 cm.',
     },
     
     # 20 cm RVS koekenpannen
