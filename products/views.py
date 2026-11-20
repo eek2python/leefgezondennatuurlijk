@@ -16,6 +16,7 @@ from utils.product_helpers import (
     STORAGE_SIZE_THRESHOLDS,
 )
 from utils.usage_helpers import build_usage_display
+from utils.quick_picks import build_quick_picks
 from utils.pricing import (
     get_price_guide, get_price_range, get_regular_price, has_price_range_config,
 )
@@ -217,20 +218,26 @@ def _derive_price_levels(p, category):
       handmatig niveau; ontbrekende prijs → leeg niveau.
     - Overige categorieën gebruiken de bestaande handmatige
       ``price_range``-velden ongewijzigd (report-only in de audit).
+    - Keramische koekenpannen gebruiken hun reguliere referentieprijs.
+      Kleuren zonder eigen referentie delen de productreferentieprijs;
+      actuele prijzen en links worden nooit van de familie overgenomen.
     Concrete prijzen worden hierdoor nooit zichtbaar gemaakt.
     """
     variants = p.get("variants")
     is_swatch = bool(variants) and not p.get("shape_variants")
-    def price_level(source):
-        price = get_regular_price(source) if category == "koekenpannen" else source.get("price")
+    def price_level(source, *, family=None):
+        price = (
+            get_regular_price(source, family=family)
+            if category == "koekenpannen" else source.get("price")
+        )
         return get_price_range(price, category, product=p) or ""
 
     if has_price_range_config(category):
         p["price_range_is_derived"] = True
         if is_swatch:
-            # Kleurswatches: strikt het niveau van de eigen variantprijs.
+            # Alleen de reguliere referentieprijs mag bij kleuren gedeeld zijn.
             for v in variants:
-                v["display_price_range"] = price_level(v)
+                v["display_price_range"] = price_level(v, family=p)
             p["display_price_range"] = variants[0]["display_price_range"]
         elif p.get("shape_variants"):
             # Knopvarianten: prepare_product_variants projecteerde de
@@ -612,6 +619,7 @@ def koekenpannen(request):
     breadcrumbs = pan_breadcrumbs("koekenpannen")
     return render(request, "koekenpannen.html", {
         "products": products,
+        "quick_picks": build_quick_picks(products),
         "available_sizes": available_sizes,
         "selected_size": size,
         "product_count": product_count,

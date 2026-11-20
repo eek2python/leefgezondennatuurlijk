@@ -1,4 +1,5 @@
 PRODUCTS = {
+    # 24 cm RVS koekenpannen
     "demeyere_industry_5_24": {
         "slug": "demeyere-industry-5-24",
         "name": "Demeyere Industry 5 Koekenpan 24 cm",

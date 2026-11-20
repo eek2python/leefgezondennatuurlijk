@@ -59,7 +59,7 @@ class CeramicPriceGuideTests(SimpleTestCase):
             self.assertEqual(get_price_guide(28)[0]["description"], "Tot en met €42")
             self.assertEqual(get_price_range(42, product={"diameter": 28}), "€")
 
-    def test_regular_price_and_variant_isolation(self):
+    def test_color_reference_prefers_own_then_shared_product_reference(self):
         from products.views import _derive_price_levels
         product = {
             "diameter": 28, "price": 20, "reference_price": 120,
@@ -72,10 +72,41 @@ class CeramicPriceGuideTests(SimpleTestCase):
         _derive_price_levels(product, "koekenpannen")
         self.assertEqual(product["display_price_range"], "€€")
         self.assertEqual(
-            [v["display_price_range"] for v in product["variants"]], ["€€", "€", ""],
+            [v["display_price_range"] for v in product["variants"]], ["€€", "€€€€", "€€€€"],
         )
+        self.assertEqual(product["variants"][1]["price"], 20)
+        self.assertNotIn("reference_price", product["variants"][1])
         self.assertEqual(get_regular_price({"price": 10, "reference_price": 50}), 50)
         self.assertEqual(get_regular_price({"price": 10}), 10)
+
+    def test_no_fallback_to_another_colors_reference_or_family_sale_price(self):
+        from products.views import _derive_price_levels
+        product = {
+            "diameter": 28, "price": 120,
+            "variants": [
+                {"price": 20, "reference_price": 70},
+                {"price": 20},
+                {},
+            ],
+        }
+        _derive_price_levels(product, "koekenpannen")
+        self.assertEqual(
+            [v["display_price_range"] for v in product["variants"]], ["€€", "€", ""],
+        )
+
+    def test_color_audit_and_public_page_share_product_reference_rule(self):
+        from audits.checks.variants import audit_price_levels
+        products = {"test": {
+            "diameter": 28, "reference_price": 120,
+            "variants": [
+                {"name": "A", "price": 10, "reference_price": 70, "price_range": "€€"},
+                {"name": "B", "price": 10, "price_range": "€€€€"},
+            ],
+        }}
+        with patch("audits.checks.variants._load_products", return_value=products):
+            errors, warnings, rows = audit_price_levels("koekenpannen", "unused")
+        self.assertEqual((errors, warnings), ([], []))
+        self.assertEqual([row[-1] for row in rows], ["€€", "€€€€"])
 
     def test_unknown_format_does_not_borrow_a_price_model(self):
         for selection in ("onbekend", 22, (), True):

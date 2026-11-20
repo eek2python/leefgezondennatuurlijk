@@ -77,6 +77,7 @@
 
 {% include "partials/category_intro.html" with hero_heading=hero_h1 paragraphs=content.hero.paragraphs hero_class="ceramic-category-hero" %}
 {% include "partials/format_selector.html" %}
+{% include "partials/ceramic_quick_picks.html" %}
 
 <section class="ceramic-products-section" aria-labelledby="productlijst">
 <h2 class="category-title" id="productlijst">{{ content.products_section.h2 }}</h2>
@@ -85,7 +86,7 @@
 
     {% for product in products %}
 
-        {% include "partials/product_block.html" with product=product %}
+        {% include "partials/product_block.html" with product=product product_card_anchor=True %}
 
     {% endfor %}
 </div>

@@ -21,3 +21,15 @@ koekenpannen gekozen voor het voorbeeld met inclusieve bovengrenzen.
 **How to apply:** houd berekening en zichtbare prijsintervallen gelijk.
 Onderhoud geen tweede prijsmodel in algemene content en verander andere
 categorieën niet mee.
+
+Voor kleurvarianten van keramische koekenpannen geldt voor het prijsniveau:
+eerst de eigen `reference_price`, anders de gedeelde productreferentieprijs,
+en pas zonder beide referenties de eigen actuele prijs. De gebruiker bevestigt
+dat de productreferentieprijs voor alle bijbehorende kleuren mag worden gebruikt.
+Leen nooit een actuele prijs of een referentieprijs van een andere kleur.
+
+**Why:** tijdelijke aanbiedingen mogen het prijsniveau niet bepalen en
+referentieprijzen zijn niet altijd afzonderlijk per kleur ingevoerd.
+
+**How to apply:** dit is alleen een uitzondering voor de afgeleide prijsindeling
+van kleuren, niet voor actuele prijzen, links of vorm-/inhoudsvarianten.

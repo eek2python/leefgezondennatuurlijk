@@ -1,5 +1,5 @@
 {% load static %}
-<div class="product-block"{% if product.shape_variants %} data-shape-card data-product-slug="{{ product.slug }}" data-product-name="{{ product.name }}"{% elif product.variants %} data-variant-card{% endif %}>
+<div class="product-block"{% if product_card_anchor %} id="product-{{ product.slug }}" tabindex="-1"{% endif %}{% if product.shape_variants %} data-shape-card data-product-slug="{{ product.slug }}" data-product-name="{{ product.name }}"{% elif product.variants %} data-variant-card{% endif %}>
 {% if product.image_unavailable %}
 <p class="product-photo-notice">Productfoto nog niet beschikbaar.</p>
 {% elif product.shape_variants %}

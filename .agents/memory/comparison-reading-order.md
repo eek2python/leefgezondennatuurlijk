@@ -20,12 +20,24 @@ conclusie. Behoud tips en veelgestelde vragen als verdieping.
 
 Uitzondering: de pagina voor PFAS-vrije keramische koekenpannen heeft geen
 handgeschreven conclusies per formaat meer. De gewenste volgorde is hero,
-formaatselector, productkaarten, vergelijking, prijsniveaus, beoordelingsmethode,
-badge-uitleg, maathulp, PFAS-uitleg, onderhoud en FAQ. Voeg daar ook geen
-losse aanbevelingskaarten vóór de producten toe.
+formaatselector, compacte ‘Snel kiezen’-navigatie, productkaarten, vergelijking,
+prijsniveaus, beoordelingsmethode, badge-uitleg, maathulp, PFAS-uitleg, onderhoud
+en FAQ. Gebruik vóór de producten geen grote dubbele aanbevelingskaarten.
 
 **Why:** de gebruiker wil productselecties, beoordelingen en badges alleen in
 de actuele productdata onderhouden; algemene formaataanbevelingen verouderen.
 
 **How to apply:** behoud dit products-first patroon voor de keramische pagina.
 Pas de conclusie-afspraak voor andere materialen en categorieën niet stilzwijgend aan.
+
+‘Snel kiezen’ is uitsluitend een compacte route naar de volledige productkaarten,
+geen tweede koopoverzicht. De gebruiker wil bestaande badges leidend houden,
+zonder een Budget- of Premium-keuze te forceren om een layout op te vullen.
+Een keuze-reden mag uit optionele eigen tekst of bestaande vergelijkingskenmerken
+komen, nooit uit automatisch verzonnen marketingclaims.
+
+**Why:** de gebruiker wil snelle navigatie naar actuele aanbevelingen zonder
+de productkaarten te herhalen of nieuwe onderhoudsgevoelige aanbevelingen toe te voegen.
+
+**How to apply:** houd dit onderdeel kort, vooral op telefoon. Kooplinks,
+prijsinformatie en uitgebreide onderbouwing blijven in de volledige productkaarten.

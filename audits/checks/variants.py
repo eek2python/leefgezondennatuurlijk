@@ -346,7 +346,10 @@ def audit_price_levels(name, module_path):
         swatch = bool(variants) and not all(_is_button_variant(v) for v in variants)
         if swatch:
             for v in variants:
-                price = get_regular_price(v) if pricing_key == "koekenpannen" else v.get("price")
+                price = (
+                    get_regular_price(v, family=product)
+                    if pricing_key == "koekenpannen" else v.get("price")
+                )
                 check_price(key, v.get("name") or "?", price,
                             v.get("price_range"), pricing_key, {**product, **v})
         elif variants:

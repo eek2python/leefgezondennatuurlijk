@@ -1,0 +1,28 @@
+{% if quick_picks %}
+<section id="snel-kiezen" class="ceramic-quick-picks" aria-labelledby="ceramic-quick-picks-title">
+    <header class="ceramic-quick-picks__header">
+        <h2 id="ceramic-quick-picks-title">Snel kiezen: onze aanbevelingen</h2>
+        <p>Onze belangrijkste aanbevelingen binnen deze selectie.</p>
+    </header>
+    <ul class="ceramic-quick-picks__list">
+        {% for item in quick_picks %}
+        <li class="ceramic-quick-pick">
+            <span class="product-badge {{ item.product.award_class }}">{{ item.product.award }}</span>
+            <div class="ceramic-quick-pick__title-row">
+                <h3 class="ceramic-quick-pick__name" title="{{ item.product.name }}">{{ item.product.name }}</h3>
+                {% if item.product.rating_display %}
+                <span class="ceramic-quick-pick__rating" aria-label="Onze beoordeling: {{ item.product.rating_display }} van 5">
+                    <span class="stars stars-{{ item.product.rating_class }}" aria-hidden="true"></span>
+                    <span class="rating-value">{{ item.product.rating_display }}/5</span>
+                </span>
+                {% endif %}
+            </div>
+            {% if item.reason %}
+            <p class="ceramic-quick-pick__reason">{{ item.reason }}</p>
+            {% endif %}
+            <a class="ceramic-quick-pick__link" href="#product-{{ item.product.slug }}">Bekijk beoordeling →</a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %}

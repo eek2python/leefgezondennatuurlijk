@@ -168,11 +168,20 @@ def get_price_range_from_thresholds(price, thresholds, *, inclusive=False):
     return None
 
 
-def get_regular_price(source):
-    """Gebruik een eigen reguliere prijs; leen nooit prijzen van een andere variant."""
+def get_regular_price(source, *, family=None):
+    """Eigen referentieprijs, optioneel de gedeelde kleurreferentie, dan eigen prijs.
+
+    ``family`` wordt alleen expliciet meegegeven voor kleurvarianten van
+    keramische koekenpannen. Een actuele familie- of andere variantprijs is
+    nooit een fallback; de brondata wordt niet aangepast.
+    """
     reference = source.get("reference_price")
     if reference not in (None, ""):
         return reference
+    if family is not None:
+        reference = family.get("reference_price")
+        if reference not in (None, ""):
+            return reference
     return source.get("price")
 
 
