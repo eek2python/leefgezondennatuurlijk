@@ -3,7 +3,6 @@ RANKINGS = {
         "demeyere_industry_5_20",
         "bk_superior_tri_ply_20",
         "sola_green_cooking_plus_20",
-        "wmf_profi_20",
         "debuyer_affinity_20",
         "demeyere_silverline_7_nanotouch_20",
     ],
@@ -29,7 +28,6 @@ RANKINGS = {
         "cristel_1826_30",
         "beka_chef_30",
         "mauviel_mcook_30",
-        "oz_home_bavary_30",
     ],
 
     32: [
