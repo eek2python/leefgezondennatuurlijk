@@ -1,74 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-Beste houten snijplanken van 2026 – kopshout en massief hout | Leef Natuurlijk & Gezond
-{% endblock %}
+{% block title %}{{ meta.title }}{% endblock %}
 
 {% block meta %}
-<meta
-    name="description"
-    content="Vergelijk de beste houten snijplanken van 2026 op houtsoort, constructie, formaat, onderhoud, prijs en gebruiksgemak."
->
-
-<!-- Open Graph -->
-<meta
-    property="og:title"
-    content="Beste houten snijplanken van 2026"
->
-
-<meta
-    property="og:description"
-    content="Vergelijk houten snijplanken op houtsoort, kopshout of langshout, formaat, onderhoud en prijs."
->
-
-<meta
-    property="og:image"
-    content="{{ SITE_URL }}/static/images/cutting_boards.jpg"
->
-
-<meta
-    property="og:url"
-    content="{{ SITE_URL }}/snijplanken/"
->
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="nl_NL">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-
-<meta
-    name="twitter:title"
-    content="Beste houten snijplanken van 2026"
->
-
-<meta
-    name="twitter:description"
-    content="Vergelijk houten snijplanken op materiaal, constructie, formaat, onderhoud en prijs."
->
-
-<meta
-    name="twitter:image"
-    content="{{ SITE_URL }}/static/images/cutting_boards.jpg"
->
-
-<link
-    rel="canonical"
-    href="{{ SITE_URL }}/snijplanken/"
->
-
-{% if json_ld %}
-<script type="application/ld+json">
-    {{ json_ld|safe }}
-</script>
-{% endif %}
-
-{% if faq_ld %}
-<script type="application/ld+json">
-    {{ faq_ld|safe }}
-</script>
-{% endif %}
+{% include "partials/category_metadata.html" with itemlist_ld=json_ld %}
 {% endblock %}
 
 {% block content %}
@@ -76,7 +12,7 @@ Beste houten snijplanken van 2026 – kopshout en massief hout | Leef Natuurlijk
 {% include "partials/breadcrumbs.html" %}
 {% include "partials/affiliate_disclosure.html" %}
 
-{% include "partials/category_intro.html" with hero_heading=content.hero.h1 paragraphs=content.hero.paragraphs %}
+{% include "partials/category_intro.html" with hero_heading=content.page_meta.h1 paragraphs=content.hero.paragraphs %}
 {% include "partials/top_picks.html" %}
 
 <section id="producten" class="products">
@@ -91,6 +27,7 @@ Beste houten snijplanken van 2026 – kopshout en massief hout | Leef Natuurlijk
 {% include "partials/product_block.html" %}
 {% endfor %}
     </section>
+        </div>
 
     <!-- Vergelijkingstabel -->
     <section>
@@ -143,25 +80,12 @@ Beste houten snijplanken van 2026 – kopshout en massief hout | Leef Natuurlijk
     </section>
     {% endif %}
 
-<details class="category-help" open>
-    <summary><h2>{{ content.why_choose.title }}</h2></summary>
-    <div class="category-help__content">
-    <p>{{ content.why_choose.intro|safe }}</p>
-    <ul>{% for bullet in content.why_choose.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
-    </div>
-</details>
-{% include "partials/how_we_select.html" %}
-
-    <section>
-    <header class="major">
-    <h2>{{ content.tips.title }}</h2>
-    </header>
-    <ul>
-    {% for bullet in content.tips.bullets %}
-    <li>{{ bullet|safe }}</li>
-    {% endfor %}
-    </ul>
-    </section>
+{% include "partials/category_information_section.html" with section=content.why_choose section_id="keuzehulp" only %}
+{% include "partials/category_information_section.html" with section=content.why_wood section_id="waarom-hout" only %}
+{% include "partials/category_information_section.html" with section=content.size_guide section_id="formaathulp" only %}
+{% include "partials/category_information_section.html" with section=content.price_guide section_id="prijsniveaus" only %}
+{% include "partials/category_information_section.html" with section=content.how_we_assess section_id="beoordeling" only %}
+{% include "partials/category_information_section.html" with section=content.tips section_id="onderhoud" only %}
 
     {% include "partials/faq_section.html" %}
 

@@ -539,12 +539,13 @@ def snijplanken(request):
     _enrich_products(products, category="snijplanken")
     product_count = len(products)
     content = _format_content(SNIJPLANKEN_CONTENT, product_count=product_count)
-    conclusie = content["conclusies"]["default"]
+    page_meta = content["page_meta"]
+    conclusie = content.get("conclusion") or content.get("conclusies", {}).get("default")
     faq_ld = _build_faq_ld(content["faq"]["items"])
     json_ld = _build_itemlist_ld(
         request,
-        f"Top {product_count} Houten Snijplanken zonder Plastic (PFAS-vrij)",
-        f"De {product_count} beste houten snijplanken van 2026 \u2013 duurzaam, voedselveilig en PFAS-vrij.",
+        page_meta["itemlist_name"],
+        page_meta["itemlist_description"],
         products,
     )
     breadcrumbs = [{"label": "Snijplanken", "url": "/snijplanken/"}]
@@ -554,6 +555,14 @@ def snijplanken(request):
         "in_het_kort": _build_in_het_kort(products, content),
         "product_count": product_count,
         "content": content,
+        "meta": {
+            "title": page_meta["meta_title"],
+            "description": page_meta["meta_description"],
+            "og_title": page_meta["og_title"],
+            "og_description": page_meta["og_description"],
+        },
+        "canonical_url": absolute_site_url(page_meta["canonical_path"]),
+        "social_image": absolute_site_url("/static/images/cutting_boards.jpg"),
         "conclusie": conclusie,
         "json_ld": json_ld,
         "faq_ld": faq_ld,

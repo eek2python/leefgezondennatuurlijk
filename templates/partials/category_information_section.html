@@ -1,0 +1,29 @@
+{% if section %}
+<details{% if section_id %} id="{{ section_id }}"{% endif %} class="category-help" open>
+    <summary><h2>{{ section.title }}</h2></summary>
+    <div class="category-help__content">
+        {% if section.intro %}<p>{{ section.intro|safe }}</p>{% endif %}
+        {% if section.bullets %}
+        <ul>{% for bullet in section.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
+        {% endif %}
+        {% for group in section.sections %}
+        <h3>{{ group.h3 }}</h3>
+        <ul>{% for item in group.items %}<li>{{ item|safe }}</li>{% endfor %}</ul>
+        {% endfor %}
+        {% if section.ranges %}
+        <ul>{% for range in section.ranges %}<li><strong>{{ range.label }}</strong>: {{ range.description }}</li>{% endfor %}</ul>
+        {% endif %}
+        {% if section.criteria_intro %}<p>{{ section.criteria_intro|safe }}</p>{% endif %}
+        {% if section.score_weights %}
+        <ul>{% for weight in section.score_weights %}<li>{{ weight.criterion }}: <strong>{{ weight.weight }}</strong></li>{% endfor %}</ul>
+        {% endif %}
+        {% if section.evidence %}<p>{{ section.evidence|safe }}</p>{% endif %}
+        {% if section.score_explanation %}<p>{{ section.score_explanation|safe }}</p>{% endif %}
+        {% if section.testing_note %}<p>{{ section.testing_note|safe }}</p>{% endif %}
+        {% if section.outro %}<p>{{ section.outro|safe }}</p>{% endif %}
+        {% if section.score_weights %}
+        <p class="how-we-link"><a href="{% url 'hoe_wij_beoordelen' %}">→ Lees meer over onze beoordelingsmethode</a></p>
+        {% endif %}
+    </div>
+</details>
+{% endif %}

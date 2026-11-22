@@ -2537,13 +2537,14 @@ class SnijplankenCountTests(TestCase):
     """Dynamisch {product_count} op de snijplankenpagina (view + meta)."""
 
     def test_all_counts_match_ranking_length(self):
+        from products.content_snijplanken import CONTENT
         from products.rankings_snijplanken import RANKINGS
         count = len(RANKINGS)
         html = self.client.get("/snijplanken/").content.decode()
         self.assertNotIn("{product_count}", html)
-        self.assertIn(f"<h1>De {count} beste houten snijplanken van 2026</h1>", html)
-        self.assertIn(f"Top {count} Houten Snijplanken", html)
+        self.assertIn(f'<h1>{CONTENT["page_meta"]["h1"]}</h1>', html)
+        self.assertIn(CONTENT["page_meta"]["itemlist_name"].format(product_count=count), html)
+        self.assertIn(f'"numberOfItems": {count}', html)
         self.assertIn("Onze selectie houten snijplanken", html)
         self.assertNotIn("10 beste houten snijplanken", html)
         self.assertNotIn("Top 10 Houten Snijplanken", html)
-        self.assertIn(f"Top {count} Houten Snijplanken zonder Plastic", html)
