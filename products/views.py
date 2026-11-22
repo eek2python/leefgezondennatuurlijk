@@ -551,7 +551,7 @@ def snijplanken(request):
     breadcrumbs = [{"label": "Snijplanken", "url": "/snijplanken/"}]
     return render(request, "snijplanken.html", {
         "products": products,
-        "top_picks": _build_top_picks(products),
+        "quick_picks": build_quick_picks(products),
         "in_het_kort": _build_in_het_kort(products, content),
         "product_count": product_count,
         "content": content,

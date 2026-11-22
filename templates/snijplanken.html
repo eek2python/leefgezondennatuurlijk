@@ -9,11 +9,12 @@
 
 {% block content %}
 
+<div class="compact-quick-picks-page">
 {% include "partials/breadcrumbs.html" %}
 {% include "partials/affiliate_disclosure.html" %}
 
 {% include "partials/category_intro.html" with hero_heading=content.page_meta.h1 paragraphs=content.hero.paragraphs %}
-{% include "partials/top_picks.html" %}
+{% include "partials/ceramic_quick_picks.html" %}
 
 <section id="producten" class="products">
         <header class="major">
@@ -24,7 +25,7 @@
 
     <section class="top10-section">
 {% for product in products %}
-{% include "partials/product_block.html" %}
+{% include "partials/product_block.html" with product_card_anchor=True %}
 {% endfor %}
     </section>
         </div>
@@ -92,4 +93,5 @@
 {% include "partials/handige_artikelen.html" %}
 {% include "partials/related_categories.html" with current_category='snijplanken' %}
 {% include "partials/author_byline.html" %}
+</div>
 {% endblock %}

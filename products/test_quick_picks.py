@@ -133,3 +133,49 @@ class QuickPickPageTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertNotContains(response, 'id="snel-kiezen"')
         self.assertNotContains(response, 'id="product-')
+
+
+class SnijplankenQuickPickTests(TestCase):
+    def test_existing_awards_share_the_compact_component_and_correct_anchors(self):
+        from products.products_snijplanken import PRODUCTS as BOARDS
+        before = copy.deepcopy(BOARDS)
+        response = self.client.get("/snijplanken/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "partials/ceramic_quick_picks.html")
+        self.assertTemplateNotUsed(response, "partials/top_picks.html")
+        products = response.context["products"]
+        picks = response.context["quick_picks"]
+        self.assertEqual(picks, build_quick_picks(products))
+        self.assertEqual(
+            [AWARD_ORDER[pick["product"]["award"]] for pick in picks],
+            sorted(AWARD_ORDER[pick["product"]["award"]] for pick in picks),
+        )
+        html = response.content.decode()
+        self.assertLess(html.index('id="snel-kiezen"'), html.index('id="productlijst"'))
+        self.assertNotIn("top-pick-card", html)
+        for pick in picks:
+            product = pick["product"]
+            self.assertTrue(any(product is full for full in products))
+            self.assertIn(f'href="#product-{product["slug"]}"', html)
+            self.assertEqual(html.count(f'id="product-{product["slug"]}"'), 1)
+            self.assertIn(f'id="product-{product["slug"]}" tabindex="-1"', html)
+        self.assertEqual(BOARDS, before)
+
+    def test_zero_one_two_and_three_awards_never_force_extra_recommendations(self):
+        from products.products_snijplanken import PRODUCTS as BOARDS
+        for count in range(4):
+            products = {str(i): copy.deepcopy(next(iter(BOARDS.values()))) for i in range(3)}
+            for index, product in enumerate(products.values()):
+                product["slug"] = f"test-board-{index}"
+                product["award"] = list(AWARD_ORDER)[index] if index < count else ""
+            with self.subTest(count=count), \
+                    patch("products.views.SNIJPLANKEN_PRODUCTS", products), \
+                    patch("products.views.SNIJPLANKEN_RANKINGS", list(products)):
+                response = self.client.get("/snijplanken/")
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(len(response.context["quick_picks"]), count)
+                self.assertContains(response, 'class="ceramic-quick-pick"', count=count)
+                self.assertContains(response, 'class="product-block"', count=3)
+                if not count:
+                    self.assertNotContains(response, 'id="snel-kiezen"')
+                    self.assertNotContains(response, "Snel kiezen: onze aanbevelingen")
