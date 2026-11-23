@@ -89,6 +89,23 @@ class SnijplankenContentTests(TestCase):
 
 
 class OptionalInformationSectionTests(SimpleTestCase):
+    def test_missing_items_never_renders_dictionary_method_results(self):
+        for section in (
+            {"title": "Testtitel", "intro": "Testintro", "bullets": ["Eerste punt"]},
+            {"title": "Testtitel", "intro": "Testintro"},
+        ):
+            html = render_to_string("partials/category_information_section.html", {"section": section})
+            self.assertNotIn("(&#x27;", html)
+            self.assertNotIn("('title'", html)
+            self.assertIn("<h2>Testtitel</h2>", html)
+            self.assertEqual(html.count("<li>"), len(section.get("bullets", [])))
+
+    def test_explicit_items_are_still_rendered(self):
+        section = {"title": "Badges", "items": ["<strong>Beste keuze</strong>", "Budget keuze"]}
+        html = render_to_string("partials/category_information_section.html", {"section": section})
+        self.assertEqual(html.count("<li>"), 2)
+        self.assertIn("<strong>Beste keuze</strong>", html)
+
     def test_missing_optional_sections_do_not_render_empty_headings(self):
         for section in (None, {}):
             html = render_to_string("partials/category_information_section.html", {"section": section})

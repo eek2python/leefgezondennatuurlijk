@@ -59,6 +59,63 @@ CONTENT = {
             "bijvoorbeeld een betere constructie, meer gebruiksmogelijkheden "
             "of andere relevante voordelen."
         ),
+        # De juiste prijstabel wordt gekozen op basis van het geselecteerde formaat.
+        "ranges_by_size": {
+            "20": [
+                {"label": "€", "description": "Tot en met €25"},
+                {"label": "€€", "description": "€25,01–€50"},
+                {"label": "€€€", "description": "€50,01–€90"},
+                {"label": "€€€€", "description": "Boven €90"},
+            ],
+            "24": [
+                {"label": "€", "description": "Tot en met €30"},
+                {"label": "€€", "description": "€30,01–€60"},
+                {"label": "€€€", "description": "€60,01–€100"},
+                {"label": "€€€€", "description": "Boven €100"},
+            ],
+            "26": [
+                {"label": "€", "description": "Tot en met €35"},
+                {"label": "€€", "description": "€35,01–€65"},
+                {"label": "€€€", "description": "€65,01–€105"},
+                {"label": "€€€€", "description": "Boven €105"},
+            ],
+            "28": [
+                {"label": "€", "description": "Tot en met €40"},
+                {"label": "€€", "description": "€40,01–€70"},
+                {"label": "€€€", "description": "€70,01–€110"},
+                {"label": "€€€€", "description": "Boven €110"},
+            ],
+            "30": [
+                {"label": "€", "description": "Tot en met €45"},
+                {"label": "€€", "description": "€45,01–€75"},
+                {"label": "€€€", "description": "€75,01–€120"},
+                {"label": "€€€€", "description": "Boven €120"},
+            ],
+            "32": [
+                {"label": "€", "description": "Tot en met €50"},
+                {"label": "€€", "description": "€50,01–€85"},
+                {"label": "€€€", "description": "€85,01–€130"},
+                {"label": "€€€€", "description": "Boven €130"},
+            ],
+            "20_28": [
+                {"label": "€", "description": "Tot en met €50"},
+                {"label": "€€", "description": "€50,01–€75"},
+                {"label": "€€€", "description": "€75,01–€110"},
+                {"label": "€€€€", "description": "Boven €110"},
+            ],
+            "24_28": [
+                {"label": "€", "description": "Tot en met €60"},
+                {"label": "€€", "description": "€60,01–€100"},
+                {"label": "€€€", "description": "€100,01–€175"},
+                {"label": "€€€€", "description": "Boven €175"},
+            ],
+            "20_24_28": [
+                {"label": "€", "description": "Tot en met €75"},
+                {"label": "€€", "description": "€75,01–€120"},
+                {"label": "€€€", "description": "€120,01–€175"},
+                {"label": "€€€€", "description": "Boven €175"},
+            ],
+        },
     },
     "how_we_assess": {
         "title": "Zo beoordelen we keramische koekenpannen",

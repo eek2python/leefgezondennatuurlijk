@@ -1,3 +1,4 @@
+{% load product_formatting %}
 {% if section %}
 <details{% if section_id %} id="{{ section_id }}"{% endif %} class="category-help" open>
     <summary><h2>{{ section.title }}</h2></summary>
@@ -6,12 +7,16 @@
         {% if section.bullets %}
         <ul>{% for bullet in section.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
         {% endif %}
-        {% if section.items %}
-        <ul>{% for item in section.items %}<li>{{ item|safe }}</li>{% endfor %}</ul>
+        {% with items=section|dict_value:"items" %}
+        {% if items %}
+        <ul>{% for item in items %}<li>{{ item|safe }}</li>{% endfor %}</ul>
         {% endif %}
+        {% endwith %}
         {% for group in section.sections %}
         <h3>{{ group.h3 }}</h3>
-        <ul>{% for item in group.items %}<li>{{ item|safe }}</li>{% endfor %}</ul>
+        {% with items=group|dict_value:"items" %}
+        {% if items %}<ul>{% for item in items %}<li>{{ item|safe }}</li>{% endfor %}</ul>{% endif %}
+        {% endwith %}
         {% endfor %}
         {% if section.ranges %}
         <ul>{% for range in section.ranges %}<li><strong>{{ range.label }}</strong>: {{ range.description }}</li>{% endfor %}</ul>

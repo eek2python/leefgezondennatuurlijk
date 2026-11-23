@@ -1064,6 +1064,9 @@ def rvs_koekenpannen(request):
     content = _format_content(
         content, product_count=product_count, selected_size=format_size_label(size),
     )
+    price_guide = content.get("price_guide", {})
+    if "ranges_by_size" in price_guide:
+        price_guide["ranges"] = price_guide["ranges_by_size"].get(str(size), [])
     conclusions = content.get("conclusies", {})
     conclusie = conclusions.get(
         size, {} if isinstance(size, str) else conclusions.get("default", {})

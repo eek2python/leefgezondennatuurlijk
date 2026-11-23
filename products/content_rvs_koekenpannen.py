@@ -85,6 +85,63 @@ CONTENT = {
             "Op de productkaarten en in de vergelijkingstabel tonen we "
             "prijsniveaus in plaats van exacte verkoopprijzen."
         ),
+        # De juiste prijstabel wordt gekozen op basis van het geselecteerde formaat.
+        "ranges_by_size": {
+            "20": [
+                {"label": "€", "description": "Tot en met €50"},
+                {"label": "€€", "description": "€50,01–€90"},
+                {"label": "€€€", "description": "€90,01–€140"},
+                {"label": "€€€€", "description": "Boven €140"},
+            ],
+            "24": [
+                {"label": "€", "description": "Tot en met €60"},
+                {"label": "€€", "description": "€60,01–€100"},
+                {"label": "€€€", "description": "€100,01–€150"},
+                {"label": "€€€€", "description": "Boven €150"},
+            ],
+            "26": [
+                {"label": "€", "description": "Tot en met €60"},
+                {"label": "€€", "description": "€60,01–€100"},
+                {"label": "€€€", "description": "€100,01–€150"},
+                {"label": "€€€€", "description": "Boven €150"},
+            ],
+            "28": [
+                {"label": "€", "description": "Tot en met €65"},
+                {"label": "€€", "description": "€65,01–€110"},
+                {"label": "€€€", "description": "€110,01–€175"},
+                {"label": "€€€€", "description": "Boven €175"},
+            ],
+            "30": [
+                {"label": "€", "description": "Tot en met €70"},
+                {"label": "€€", "description": "€70,01–€120"},
+                {"label": "€€€", "description": "€120,01–€180"},
+                {"label": "€€€€", "description": "Boven €180"},
+            ],
+            "32": [
+                {"label": "€", "description": "Tot en met €90"},
+                {"label": "€€", "description": "€90,01–€150"},
+                {"label": "€€€", "description": "€150,01–€220"},
+                {"label": "€€€€", "description": "Boven €220"},
+            ],
+            "20_28": [
+                {"label": "€", "description": "Tot en met €140"},
+                {"label": "€€", "description": "€140,01–€180"},
+                {"label": "€€€", "description": "€180,01–€240"},
+                {"label": "€€€€", "description": "Boven €240"},
+            ],
+            "24_28": [
+                {"label": "€", "description": "Tot en met €140"},
+                {"label": "€€", "description": "€140,01–€190"},
+                {"label": "€€€", "description": "€190,01–€260"},
+                {"label": "€€€€", "description": "Boven €260"},
+            ],
+            "20_24_28": [
+                {"label": "€", "description": "Tot en met €150"},
+                {"label": "€€", "description": "€150,01–€250"},
+                {"label": "€€€", "description": "€250,01–€350"},
+                {"label": "€€€€", "description": "Boven €350"},
+            ],
+        },
     },
 
     "how_we_assess": {

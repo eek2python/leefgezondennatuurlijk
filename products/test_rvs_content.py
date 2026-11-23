@@ -19,8 +19,9 @@ class RvsContentTests(TestCase):
 
         def check_strings(value, html):
             if isinstance(value, dict):
-                for child in value.values():
-                    check_strings(child, html)
+                for key, child in value.items():
+                    if key != "ranges_by_size":
+                        check_strings(child, html)
             elif isinstance(value, list):
                 for child in value:
                     check_strings(child, html)
@@ -64,6 +65,7 @@ class RvsContentTests(TestCase):
                 positions = [html.index(title) for title in titles]
                 self.assertEqual(positions, sorted(positions))
                 self.assertLess(html.index("</table>"), positions[0])
+                self.assertNotRegex(html, r"\(&#x27;(?:title|intro|bullets|outro)&#x27;,")
         self.assertEqual(PRODUCTS, products_before)
         self.assertEqual(CONTENT, content_before)
 
@@ -78,4 +80,34 @@ class RvsContentTests(TestCase):
                 self.assertEqual(bool(response.context["quick_picks"]), bool(count))
                 if not count:
                     self.assertNotContains(response, 'id="snel-kiezen"')
+
+    def test_price_guide_only_shows_the_four_ranges_for_the_selected_format(self):
+        for size in RANKINGS:
+            with self.subTest(size=size):
+                response = self.client.get("/rvs-koekenpannen/", {"size": str(size)})
+                expected = CONTENT["price_guide"]["ranges_by_size"][str(size)]
+                self.assertEqual(response.context["content"]["price_guide"]["ranges"], expected)
+                section = re.search(r'<details id="prijsniveaus".*?</details>',
+                                    response.content.decode(), re.S).group()
+                self.assertEqual(section.count("<li>"), 4)
+                for level in expected:
+                    self.assertIn(f'<strong>{level["label"]}</strong>: {level["description"]}', section)
+                for other_ranges in CONTENT["price_guide"]["ranges_by_size"].values():
+                    for level in other_ranges:
+                        if level["description"] not in [row["description"] for row in expected]:
+                            self.assertNotIn(level["description"], section)
+
+    def test_invalid_format_uses_default_price_ranges(self):
+        response = self.client.get("/rvs-koekenpannen/?size=invalid")
+        self.assertEqual(response.context["selected_size"], 28)
+        self.assertEqual(response.context["content"]["price_guide"]["ranges"],
+                         CONTENT["price_guide"]["ranges_by_size"]["28"])
+
+    def test_missing_price_configuration_does_not_borrow_another_format(self):
+        content = copy.deepcopy(CONTENT)
+        del content["price_guide"]["ranges_by_size"]["28"]
+        with patch("products.views.RVS_KOEKENPANNEN_CONTENT", content):
+            response = self.client.get("/rvs-koekenpannen/")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["content"]["price_guide"]["ranges"], [])
 
