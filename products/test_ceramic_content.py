@@ -175,7 +175,8 @@ class CeramicContentPageTests(TestCase):
                 self.assertNotIn("conclusie", context)
                 self.assertIn('id="productlijst"', html)
                 self.assertIn('id="vergelijking"', html)
-                self.assertEqual(context["price_guide"], get_price_guide(selection))
+                self.assertEqual(context["price_guide"],
+                                 CONTENT["price_guide"]["ranges_by_size"][str(selection)])
                 for row in context["price_guide"]:
                     self.assertIn(str(escape(row["description"])), html)
                 # Enrichment may add display fields, never change editorial data.
@@ -225,3 +226,48 @@ class CeramicContentPageTests(TestCase):
         self.assertIn("25%", html)
         self.assertIn("PFAS-status is een toelatingsvoorwaarde", html)
         self.assertIn("Winkelgemiddelden vormen niet onze sterrenbeoordeling", html)
+
+    def test_only_selected_content_price_ranges_are_rendered(self):
+        before = copy.deepcopy(CONTENT)
+        for selection in SELECTIONS:
+            with self.subTest(selection=selection):
+                response = self.client.get("/koekenpannen/", {"size": str(selection)})
+                section = re.search(r'<section class="ceramic-price-guide".*?</section>',
+                                    response.content.decode(), re.S).group()
+                expected = CONTENT["price_guide"]["ranges_by_size"][str(selection)]
+                self.assertEqual(section.count("<li>"), 4)
+                for level in expected:
+                    self.assertIn(str(escape(level["description"])), section)
+                for levels in CONTENT["price_guide"]["ranges_by_size"].values():
+                    for level in levels:
+                        if level["description"] not in [row["description"] for row in expected]:
+                            self.assertNotIn(str(escape(level["description"])), section)
+        self.assertEqual(CONTENT, before)
+
+    def test_editorial_price_text_is_used_verbatim_not_regenerated(self):
+        content = copy.deepcopy(CONTENT)
+        content["price_guide"]["ranges_by_size"]["24_28"][0]["description"] = "Eigen prijsuitleg voor deze set"
+        with patch("products.views.KOEKENPANNEN_CONTENT", content):
+            response = self.client.get("/koekenpannen/?size=24_28")
+        self.assertContains(response, "Eigen prijsuitleg voor deze set", count=1)
+        self.assertEqual(response.context["price_guide"],
+                         content["price_guide"]["ranges_by_size"]["24_28"])
+
+    def test_invalid_selection_uses_default_format_price_text(self):
+        response = self.client.get("/koekenpannen/?size=onbekend")
+        self.assertEqual(response.context["selected_size"], 28)
+        self.assertEqual(response.context["price_guide"],
+                         CONTENT["price_guide"]["ranges_by_size"]["28"])
+
+    def test_missing_ranges_do_not_borrow_a_different_format(self):
+        for missing_map in (False, True):
+            content = copy.deepcopy(CONTENT)
+            if missing_map:
+                del content["price_guide"]["ranges_by_size"]
+            else:
+                del content["price_guide"]["ranges_by_size"]["28"]
+            with self.subTest(missing_map=missing_map), patch("products.views.KOEKENPANNEN_CONTENT", content):
+                response = self.client.get("/koekenpannen/")
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(response.context["price_guide"], [])
+                self.assertNotContains(response, 'class="ceramic-price-levels"')

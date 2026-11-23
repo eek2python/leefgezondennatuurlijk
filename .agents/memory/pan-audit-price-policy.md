@@ -18,9 +18,20 @@ grensgedrag; hun formaatconfiguratie blijft audit-only.
 **Why:** de gebruiker heeft bij de contentactualisering voor keramische
 koekenpannen gekozen voor het voorbeeld met inclusieve bovengrenzen.
 
-**How to apply:** houd berekening en zichtbare prijsintervallen gelijk.
-Onderhoud geen tweede prijsmodel in algemene content en verander andere
-categorieën niet mee.
+**How to apply:** houd berekening en zichtbare prijsintervallen gelijk en
+verander andere categorieën niet mee.
+
+De gebruiker onderhoudt inmiddels de openbare prijsuitleg per formaat en
+pannenset in de content voor zowel RVS als keramische koekenpannen. Toon die
+teksten letterlijk voor de geselecteerde maatcombinatie; genereer geen
+vervangende prijsuitleg uit de rekenconfiguratie.
+
+**Why:** de gebruiker heeft voor beide categorieën zelf de prijsniveaus aan
+de content toegevoegd en vraagt om dezelfde formaatgebonden weergave.
+
+**How to apply:** deze keuze betreft de openbare uitleg. Wijzig daarmee niet
+stilzwijgend de productprijsniveaus of hun berekening. Eventuele afwijkingen
+tussen redactionele uitleg en berekening moeten apart worden beoordeeld.
 
 Voor kleurvarianten van keramische koekenpannen geldt voor het prijsniveau:
 eerst de eigen `reference_price`, anders de gedeelde productreferentieprijs,

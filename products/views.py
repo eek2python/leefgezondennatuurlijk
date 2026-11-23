@@ -18,7 +18,7 @@ from utils.product_helpers import (
 from utils.usage_helpers import build_usage_display
 from utils.quick_picks import build_quick_picks
 from utils.pricing import (
-    get_price_guide, get_price_range, get_regular_price, has_price_range_config,
+    get_price_range, get_regular_price, has_price_range_config,
 )
 from .templatetags.product_formatting import format_size_label
 from utils.variant_helpers import (
@@ -636,7 +636,7 @@ def koekenpannen(request):
         "hero_h1": hero_h1,
         "products_h2": products_h2,
         "comparison_title": comparison_title,
-        "price_guide": get_price_guide(size),
+        "price_guide": content.get("price_guide", {}).get("ranges_by_size", {}).get(str(size), []),
         "json_ld": json_ld,
         "faq_ld": faq_ld,
         "breadcrumbs": breadcrumbs,
