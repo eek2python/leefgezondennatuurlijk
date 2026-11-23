@@ -6,6 +6,9 @@
         {% if section.bullets %}
         <ul>{% for bullet in section.bullets %}<li>{{ bullet|safe }}</li>{% endfor %}</ul>
         {% endif %}
+        {% if section.items %}
+        <ul>{% for item in section.items %}<li>{{ item|safe }}</li>{% endfor %}</ul>
+        {% endif %}
         {% for group in section.sections %}
         <h3>{{ group.h3 }}</h3>
         <ul>{% for item in group.items %}<li>{{ item|safe }}</li>{% endfor %}</ul>
@@ -19,6 +22,8 @@
         {% endif %}
         {% if section.evidence %}<p>{{ section.evidence|safe }}</p>{% endif %}
         {% if section.score_explanation %}<p>{{ section.score_explanation|safe }}</p>{% endif %}
+        {% if section.review_note %}<p>{{ section.review_note|safe }}</p>{% endif %}
+        {% if section.sets_note %}<p>{{ section.sets_note|safe }}</p>{% endif %}
         {% if section.testing_note %}<p>{{ section.testing_note|safe }}</p>{% endif %}
         {% if section.outro %}<p>{{ section.outro|safe }}</p>{% endif %}
         {% if section.score_weights %}

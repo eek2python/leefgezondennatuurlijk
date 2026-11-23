@@ -30,6 +30,17 @@ de actuele productdata onderhouden; algemene formaataanbevelingen verouderen.
 **How to apply:** behoud dit products-first patroon voor de keramische pagina.
 Pas de conclusie-afspraak voor andere materialen en categorieën niet stilzwijgend aan.
 
+Ook voor RVS-koekenpannen geldt bij de vernieuwde algemene content het
+products-first patroon zonder zelf verzonnen conclusies per formaat of set.
+Gebruik dezelfde compacte snelkiezen-navigatie als bij keramische koekenpannen.
+
+**Why:** de gebruiker heeft de RVS-content in lijn met keramisch gebracht en
+expliciet om dezelfde snelkiezen-stijl gevraagd.
+
+**How to apply:** leid aanbevelingen af uit de actuele productbadges en houd
+de algemene uitleg na de vergelijking. Verzin geen vervangend keuzeadvies als
+de redactionele content geen conclusie bevat.
+
 ‘Snel kiezen’ is uitsluitend een compacte route naar de volledige productkaarten,
 geen tweede koopoverzicht. De gebruiker wil bestaande badges leidend houden,
 zonder een Budget- of Premium-keuze te forceren om een layout op te vullen.

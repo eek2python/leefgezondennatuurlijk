@@ -22,7 +22,7 @@ class RvsSetFormatTests(TestCase):
                     self.assertContains(response, f"{label} cm")
                     self.assertContains(response, "nog geen RVS-koekenpannen toegevoegd")
                     active_links = re.findall(
-                        rf'<a href="\?size={size}"[^>]*aria-current="page"',
+                        rf'<a href="\?size={size}#productlijst"[^>]*aria-current="page"',
                         response.content.decode(),
                     )
                     self.assertEqual(len(active_links), 2)

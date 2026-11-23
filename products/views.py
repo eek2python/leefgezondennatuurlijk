@@ -1061,8 +1061,12 @@ def rvs_koekenpannen(request):
     products = [copy.deepcopy(RVS_KOEKENPANNEN_PRODUCTS[k]) for k in keys if k in RVS_KOEKENPANNEN_PRODUCTS]
     _enrich_rvs_products(products)
     product_count = len(products)
-    conclusie = content["conclusies"].get(
-        size, {} if isinstance(size, str) else content["conclusies"]["default"]
+    content = _format_content(
+        content, product_count=product_count, selected_size=format_size_label(size),
+    )
+    conclusions = content.get("conclusies", {})
+    conclusie = conclusions.get(
+        size, {} if isinstance(size, str) else conclusions.get("default", {})
     )
     if isinstance(size, str) and not products:
         conclusie = {}
@@ -1075,7 +1079,7 @@ def rvs_koekenpannen(request):
     breadcrumbs = pan_breadcrumbs("rvs-koekenpannen")
     return render(request, "rvs-koekenpannen.html", {
         "products": products,
-        "top_picks": _build_top_picks(products),
+        "quick_picks": build_quick_picks(products),
         "in_het_kort": _build_in_het_kort(products, content),
         "available_sizes": available_sizes,
         "selected_size": size,

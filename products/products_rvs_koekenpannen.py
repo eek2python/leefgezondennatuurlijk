@@ -1995,37 +1995,42 @@ PRODUCTS = {
     "demeyere_essential_5_set_24_28": {
         "slug": "demeyere-essential-5-rvs-koekenpannenset-24-28-cm",
         "name": "Demeyere Essential 5 Koekenpannenset 24 + 28 cm",
-        "description": (
-            "De Demeyere Essential 5 koekenpannenset bestaat uit twee ongecoate "
-            "RVS-koekenpannen van 24 en 28 cm. Beide pannen zijn opgebouwd uit "
-            "vijflaags materiaal dat tot aan de rand doorloopt, waardoor de warmte "
-            "gelijkmatig over de bodem en zijwanden wordt verdeeld. De set is "
-            "geschikt voor alle warmtebronnen, inclusief inductie, en kan tot "
-            "350 °C in de oven worden gebruikt."
-        ),
-        "brand": "Demeyere",
-        "set_type": "Koekenpannenset",
-        "pan_count": 2,
-        "diameters": [24, 28],
-        "set_contents": [
-            "Koekenpan 24 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "5-ply RVS en aluminium",
-        "features": [
-            "Geschikt voor inductie",
-            "Ovenbestendig tot 350 °C",
-            "Vaatwasserbestendig",
-            "Geklonken RVS handgrepen",
-        ],
-        "rating": 4.8,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 219.00,
-        "price_last_checked": "2026-10-02",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'Tweedelige ongecoate RVS-koekenpannenset van 24 en 28 cm met '
+                       'vijflaagse RVS/aluminium-constructie door bodem en zijwanden. '
+                       'Beide pannen hebben RVS-grepen en zijn ovenbestendig tot 350 '
+                       '°C.',
+        'brand': 'Demeyere',
+        'set_type': 'Koekenpannenset',
+        'pan_count': 2,
+        'diameters': [24, 28],
+        'set_contents': ['Koekenpan 24 cm', 'Koekenpan 28 cm'],
+        'material': 'Ongecoat 18/10 RVS-bakoppervlak en volledig vijflaags '
+                    'RVS/aluminium-materiaal met aluminium kern door bodem en '
+                    'zijwanden; RVS-handgrepen. De bevestigingswijze verschilt tussen '
+                    'de bundelomschrijving en de losse 28cm-productpagina.',
+        'features': ['Ongecoat 18/10 RVS-bakoppervlak van beide pannen',
+                     'Volledige vijflaagse RVS/aluminium-constructie door bodem en '
+                     'zijwanden',
+                     'Aluminium warmtegeleidende kern',
+                     'Set: koekenpannen 24 en 28 cm, zonder deksels',
+                     'Bodemdiameters: 14 cm (24 cm) en 18 cm (28 cm), volgens '
+                     'fabrikant',
+                     'Geschikt voor inductie',
+                     'Geschikt voor gas, elektrisch en keramisch',
+                     'Ovenbestendig tot 350 °C',
+                     'RVS-handgrepen; fabrikantbronnen spreken elkaar tegen over '
+                     'bevestiging 28cm-pan',
+                     'Vaatwasserbestendig; handwas aanbevolen',
+                     'Gewicht: circa 1,21 kg (24 cm) en 1,37 kg (28 cm)',
+                     '30 jaar garantie op fabricagefouten bij huishoudelijk gebruik'],
+        'rating': 4.0,
+        'rating_count': None,
+        'rating_source': 'Leef Natuurlijk & Gezond',
+        'price': 219.0,
+        'price_last_checked': '2026-11-22',
+        'currency': 'EUR',
+        'availability': 'InStock',
+        'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://www.zwilling.com/nl/demeyere-essential-5-"
@@ -2035,60 +2040,63 @@ PRODUCTS = {
             "https://www.zwilling.com/nl/demeyere-essential-5-"
             "koekenpannenset-rvs-24-en-28-cm/00070-SET-BE.html"
         ),
-        "award": "🏆 Beste keuze",
-        "price_range": "€€€€",
+        "award": None,
+        "price_range": "€€€",
         "image": "demeyere-essential-5-set-24-28cm.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Volledige vijflaagse constructie tot aan de rand",
-            "Zeer gelijkmatige warmteverdeling",
-            "Ovenbestendig tot 350 °C",
-        ],
-        "cons": [
-            "Relatief hoge aanschafprijs",
-            "Geklonken grepen zorgen voor extra randen rond de bevestigingspunten bij het schoonmaken",
-        ],
-        "verdict": (
-            "Een technisch zeer complete tweedelige RVS-set met vijflaags materiaal "
-            "tot aan de rand. De combinatie van warmteverdeling, hoge "
-            "ovenbestendigheid en lange fabrieksgarantie maakt de Essential 5 onze beste "
-            "allround keuze in het formaat 24 + 28 cm."
-        ),
+        'pros': ['Ovenbestendig tot 350 °C voor bereidingen die in de oven doorgaan',
+             '30 jaar garantie op fabricagefouten bij huishoudelijk gebruik',
+             'Vijflaagse RVS/aluminium-opbouw loopt door in de zijwanden'],
+        'cons': ['Bodemdiameters van 14 en 18 cm beperken het vlakke bakoppervlak',],
+        'verdict': 'Een tweedelige set voor wie de pannen vaak van de kookplaat naar '
+               'een hete oven verplaatst en volledige meerlaagse zijwanden wenst. '
+               'De ovenbestendigheid tot 350 °C en de fabrieksgarantie zijn '
+               'sterke punten, maar de relatief kleine vlakke bakbodems verdienen '
+               'aandacht.',
+        'set_accessories': [],
+        'variants': [],
+        'comparison_features': ['Volledige 5-ply RVS/aluminium-constructie',
+                            'Bodemdiameters 14 en 18 cm',
+                            'Ovenbestendig tot 350 °C',
+                            '30 jaar fabrieksgarantie'],
+        'reference_price': 258.0,
     },
 
     "beka_savor_multiply_set_24_28": {
         "slug": "beka-savor-multiply-rvs-koekenpannenset-24-28-cm",
         "name": "Beka Savor Multiply Koekenpannenset 24 + 28 cm",
-        "description": (
-            "De Beka Savor Multiply set combineert twee ongecoate RVS-koekenpannen "
-            "van 24 en 28 cm. De volledige tri-plyconstructie bestaat uit RVS met "
-            "een warmtegeleidende aluminium kern en loopt door tot aan de rand. "
-            "Daardoor wordt de warmte ook via de zijwanden verdeeld. De pannen "
-            "zijn geschikt voor inductie en kunnen tot 200 °C in de oven."
-        ),
-        "brand": "Beka",
-        "set_type": "Koekenpannenset",
-        "pan_count": 2,
-        "diameters": [24, 28],
-        "set_contents": [
-            "Koekenpan 24 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "3-ply 18/10 RVS met aluminium kern",
-        "features": [
-            "Geschikt voor inductie",
-            "Ovenbestendig tot 200 °C",
-            "Vaatwasserbestendig",
-            "Geklonken RVS handgrepen",
-        ],
-        "rating": 4.7,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 190.40,
-        "price_last_checked": "2026-10-02",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'Set met twee ongecoate RVS-koekenpannen van 24 en 28 cm, '
+                          'uitgevoerd in volledig drielaags RVS/aluminium-materiaal. De '
+                          'beide Savor Multiply-pannen hebben geklonken RVS-grepen en '
+                          'zijn ovenbestendig tot 200 °C.',
+           'brand': 'Beka',
+           'set_type': 'Koekenpannenset',
+           'pan_count': 2,
+           'diameters': [24, 28],
+           'set_contents': ['Koekenpan 24 cm', 'Koekenpan 28 cm'],
+           'material': 'Ongecoat 18/10 RVS-bakoppervlak met doorlopende drielaagse '
+                       'RVS/aluminium-constructie (tri-ply) en aluminium kern in bodem en '
+                       'zijwanden; geklonken RVS-handgrepen.',
+           'features': ['Ongecoat 18/10 RVS-bakoppervlak van beide pannen',
+                        'Volledig drielaags RVS/aluminium-materiaal door bodem en '
+                        'zijwanden',
+                        'Aluminium warmtegeleidende kern',
+                        'Set: twee Savor Multiply-pannen van 24 en 28 cm; geen '
+                        'antikleefpan',
+                        'Geschikt voor inductie',
+                        'Geschikt voor gas, elektrisch en keramisch',
+                        'Ovenbestendig tot 200 °C',
+                        'Geklonken RVS-handgrepen',
+                        'Vaatwasserbestendig',
+                        '25 jaar fabrieksgarantie op fabricage- en materiaalfouten'],
+           'rating': 4.0,
+           'rating_count': None,
+           'rating_source': 'Leef Natuurlijk & Gezond',
+           'price': 166.6,
+           'price_last_checked': '2026-11-22',
+           'currency': 'EUR',
+           'availability': 'InStock',
+           'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://www.beka-cookware.com/products/savor-multiply-braadpan-7"
@@ -2096,60 +2104,63 @@ PRODUCTS = {
         "official_url": (
             "https://www.beka-cookware.com/products/savor-multiply-braadpan-7"
         ),
-        "award": "💰 Budget keuze",
+        "award": None,
         "price_range": "€€€",
         "image": "beka-savor-multiply-set-24-28cm.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Volledige tri-plyconstructie tot aan de rand",
-            "Goede warmteverdeling over bodem en zijwanden",
-            "Gunstige prijs voor twee volledig meerlaagse RVS-pannen",
-        ],
-        "cons": [
-            "Lagere ovenbestendigheid tot maximaal 200 °C",
-            "Geklonken grepen zijn minder eenvoudig schoon te maken dan een volledig gladde binnenzijde",
-        ],
-        "verdict": (
-            "Een sterke middenklassekeuze met een volledige tri-plyconstructie "
-            "en een lange fabrieksgarantieperiode. De Savor Multiply biedt veel van de "
-            "voordelen van duurdere volledig meerlaagse pannen tegen een lager "
-            "prijsniveau en is daarom onze beste prijs-kwaliteitkeuze."
-        ),
+        'pros': ['Volledig drielaagse constructie van beide koekenpannen',
+            '25 jaar garantie op fabricage- en materiaalfouten',
+            'Set bevat twee ongecoate Multiply-pannen, zonder gemengde '
+            'antikleefuitvoering'],
+        'cons': ['Ovenbestendig tot maximaal 200 °C',],
+        'verdict': 'Een set voor wie twee volledig drielaagse RVS-pannen met een lange '
+              'fabrieksgarantie zoekt. De maximale oventemperatuur van 200 °C '
+              'begrenst de inzetbaarheid bij ovenbereidingen.',
+        'set_accessories': [],
+        'variants': [],
+        'comparison_features': ['Volledige 3-ply RVS/aluminium-constructie',
+                           'Ovenbestendig tot 200 °C',
+                           'Geklonken RVS-grepen',
+                           '25 jaar fabrieksgarantie'],
+        'reference_price': 238.0,
     },
 
     "scanpan_fusion_5_set_24_28": {
         "slug": "scanpan-fusion-5-rvs-koekenpannenset-24-28-cm",
         "name": "Scanpan Fusion 5 Koekenpannenset 24 + 28 cm",
-        "description": (
-            "De Scanpan Fusion 5 set bestaat uit twee ongecoate RVS-koekenpannen "
-            "van 24 en 28 cm met een vijflaagse constructie van RVS en aluminium. "
-            "Drie aluminium lagen lopen door de bodem en zijwanden en zorgen voor "
-            "een snelle en gelijkmatige warmteverdeling. De pannen zijn geschikt "
-            "voor alle warmtebronnen en kunnen tot 250 °C in de oven."
-        ),
-        "brand": "Scanpan",
-        "set_type": "Koekenpannenset",
-        "pan_count": 2,
-        "diameters": [24, 28],
-        "set_contents": [
-            "Koekenpan 24 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "5-ply RVS en aluminium",
-        "features": [
-            "Meerlaagse constructie door bodem en zijwanden",
-            "Geschikt voor inductie",
-            "Ovenbestendig tot 250 °C",
-            "Vaatwasserbestendig",
-        ],
-        "rating": 4.6,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 224.00,
-        "price_last_checked": "2026-10-02",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'Ongecoate RVS-koekenpannenset met pannen van 24 en 28 cm en een '
+                       'volledige vijflaagse RVS/aluminium-constructie. Beide '
+                       'koekenpannen hebben lage, afgeronde zijwanden en zijn '
+                       'ovenbestendig tot 250 °C.',
+        'brand': 'Scanpan',
+        'set_type': 'Koekenpannenset',
+        'pan_count': 2,
+        'diameters': [24, 28],
+        'set_contents': ['Koekenpan 24 cm', 'Koekenpan 28 cm'],
+        'material': 'Ongecoat RVS-bakoppervlak (18/10 RVS volgens serie-informatie); '
+                    'volledig vijflaags materiaal met drie aluminium tussenlagen en '
+                    'magnetische RVS-buitenlaag, door bodem en zijwanden; RVS-handgrepen.',
+        'features': ['Ongecoat RVS-bakoppervlak van beide pannen',
+                     'Volledige 5-ply RVS/aluminium-constructie door bodem en zijwanden',
+                     'Drie aluminium warmtegeleidende tussenlagen',
+                     'Set: koekenpannen 24 en 28 cm',
+                     'Bodemdiameter van de 28cm-pan circa 22,5 cm '
+                     '(wederverkoperspecificatie)',
+                     'Geschikt voor inductie',
+                     'Geschikt voor gas, elektrisch en keramisch',
+                     'Ovenbestendig tot 250 °C',
+                     'RVS-handgrepen',
+                     'Lage, afgeronde zijwanden zonder scherpe binnenhoeken',
+                     'Druppelbeperkende schenkrand',
+                     'Vaatwasserbestendig'],
+        'rating': 4.5,
+        'rating_count': None,
+        'rating_source': 'Leef Natuurlijk & Gezond',
+        'price': 129.0,
+        'price_last_checked': '2026-11-22',
+        'currency': 'EUR',
+        'availability': 'InStock',
+        'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://scanpan.eu/nl-nl/products/fusion-5-24-28-cm-koekenpan"
@@ -2157,60 +2168,62 @@ PRODUCTS = {
         "official_url": (
             "https://scanpan.eu/nl-nl/products/fusion-5-24-28-cm-koekenpan"
         ),
-        "award": None,
-        "price_range": "€€€€",
+        'award': '🏆 Beste keuze',
+        "price_range": "€€€",
         "image": "scanpan-fusion-5-set-24-28cm.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Volledige vijflaagse constructie",
-            "Drie aluminium lagen voor snelle warmteverdeling",
-            "Ovenbestendig tot 250 °C",
-            "Vaatwasserbestendig",
-        ],
-        "cons": [
-            "Relatief hoge aanschafprijs",
-        ],
-        "verdict": (
-            "Een hoogwaardige vijflaagse set met goede warmteverdeling over de "
-            "volledige pan. De Fusion 5 is vooral interessant voor wie een "
-            "volledig meerlaagse constructie zoekt en de hogere prijs ten opzichte "
-            "van de tri-plyalternatieven acceptabel vindt."
-        ),
+        'pros': ['Afgeronde zijwanden geven goede toegang met een spatel en laten minder '
+             'scherpe binnenhoeken achter bij reinigen',
+             'Volledig vijflaagse RVS/aluminium-opbouw in beide pannen',
+             'Bodemdiameter van de 28cm-pan circa 22,5 cm'],
+        'cons': ['Maximale oventemperatuur 250 °C'],
+        'verdict': 'Deze twee volledig vijflaagse koekenpannen zijn geschikt voor wie een '
+               'ruim bakoppervlak en makkelijk bereikbare binnenhoeken belangrijk '
+               'vindt. De afgeronde zijwanden en ovenbestendigheid tot 250 °C maken '
+               'de Scanpan Fusion 5 onze Beste keuze in deze setcombinatie.',
+        'set_accessories': [],
+        'variants': [],
+        'comparison_features': ['Volledige 5-ply RVS/aluminium-constructie',
+                            'Bodem 28cm-pan circa 22,5 cm',
+                            'Ovenbestendig tot 250 °C',
+                            'Lage afgeronde zijwanden'],
+        'reference_price': 234.0,
     },
 
     "le_creuset_3ply_rvs_set_24_28": {
         "slug": "le-creuset-3-ply-rvs-koekenpannenset-24-28-cm",
         "name": "Le Creuset 3-Ply RVS Koekenpannenset 24 + 28 cm",
-        "description": (
-            "Deze Le Creuset-set bestaat uit ongecoate RVS-koekenpannen van "
-            "24 en 28 cm. De drielaagse constructie combineert roestvrij staal "
-            "met een aluminium kern die door de pan loopt voor een gelijkmatige "
-            "warmteverdeling. Beide pannen zijn geschikt voor alle warmtebronnen, "
-            "inclusief inductie, en kunnen tot 260 °C in de oven."
-        ),
-        "brand": "Le Creuset",
-        "set_type": "Koekenpannenset",
-        "pan_count": 2,
-        "diameters": [24, 28],
-        "set_contents": [
-            "Koekenpan 24 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "3-ply RVS met aluminium kern",
-        "features": [
-            "Geschikt voor inductie",
-            "Ovenbestendig tot 260 °C",
-            "Vaatwasserbestendig",
-            "Praktische schenkrand",
-        ],
-        "rating": 4.5,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 339.00,
-        "price_last_checked": "2026-10-02",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'Tweedelige ongecoate RVS-koekenpannenset van 24 en 28 cm met '
+                          'een volledige drielaagse RVS/aluminium-constructie. Beide '
+                          'pannen hebben een schenkrand en zijn ovenbestendig tot 260 °C.',
+           'brand': 'Le Creuset',
+           'set_type': 'Koekenpannenset',
+           'pan_count': 2,
+           'diameters': [24, 28],
+           'set_contents': ['Koekenpan 24 cm', 'Koekenpan 28 cm'],
+           'material': 'Ongecoat RVS-bakoppervlak met volledig drielaags materiaal: '
+                       'RVS-binnen- en buitenlaag en warmtegeleidende aluminiumkern, '
+                       'doorlopend in bodem en zijwanden; vaste metalen handgrepen.',
+           'features': ['Ongecoat RVS-bakoppervlak van beide pannen; geen antiaanbaklaag',
+                        'Volledige drielaagse RVS/aluminium-constructie in bodem en '
+                        'zijwanden',
+                        'Aluminium warmtegeleidende kern',
+                        'Set: koekenpannen 24 en 28 cm',
+                        'Geschikt voor inductie',
+                        'Geschikt voor gas, elektrisch en keramisch',
+                        'Ovenbestendig tot 260 °C',
+                        'Schenkrand aan beide pannen',
+                        'Vaatwasserbestendig',
+                        'Setgewicht volgens fabrikant circa 2,663 kg',
+                        'Levenslange fabrieksgarantie onder voorwaarden'],
+           'rating': 4.0,
+           'rating_count': None,
+           'rating_source': 'Leef Natuurlijk & Gezond',
+           'price': None,
+           'price_last_checked': '2026-11-22',
+           'currency': 'EUR',
+           'availability': 'InStock',
+           'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://www.lecreuset.nl/nl_NL/p/koekenpannenset-24%2F28cm-"
@@ -2224,59 +2237,60 @@ PRODUCTS = {
         "price_range": "€€€€",
         "image": "le-creuset-3ply-rvs-set-24-28cm.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Volledige drielaagse constructie",
-            "Gelijkmatige warmteverdeling over de pan",
-            "Ovenbestendig tot 260 °C",
-            "Praktische schenkrand",
-        ],
-        "cons": [
-            "Relatief hoge aanschafprijs voor drielaagse constructie",
-        ],
-        "verdict": (
-            "Een degelijk afgewerkte en veelzijdige 3-ply set met "
-            "goede ovenbestendigheid. De prijs ligt echter aanzienlijk "
-            "hoger dan bij verschillende technisch uitgebreidere alternatieven, "
-            "waardoor vooral de afwerking en merkvoorkeur de meerprijs moeten "
-            "rechtvaardigen."
-        ),
+        'pros': ['Schenkrand helpt bij gecontroleerd afgieten',
+            'Ovenbestendig tot 260 °C',
+            'Levenslange fabrieksgarantie volgens fabrikant'],
+        'cons': ['Relatief hoge reguliere setprijs voor volledige 3-plyconstructie'],
+        'verdict': 'Een tweedelige ongecoate RVS-set voor wie een schenkrand, '
+              'ovenbestendigheid tot 260 °C en uitgebreide fabrieksgarantie '
+              'waardeert. De reguliere prijs is hoog in verhouding tot de drie '
+              'lagen en de opgegeven extra functies.',
+        'set_accessories': [],
+        'variants': [],
+        'comparison_features': ['Volledige 3-ply RVS/aluminium-constructie',
+                           'Ovenbestendig tot 260 °C',
+                           'Schenkrand op beide pannen',
+                           'Setgewicht circa 2,66 kg'],
+        'reference_price': 339.0,
     },
 
     "demeyere_classico_3_set_24_28": {
         "slug": "demeyere-classico-3-rvs-koekenpannenset-24-28-cm",
         "name": "Demeyere Classico 3 Koekenpannenset 24 + 28 cm",
-        "description": (
-            "De Demeyere Classico 3 is een set met ongecoate "
-            "RVS-koekenpannen van 24 en 28 cm. In tegenstelling tot volledig "
-            "meerlaagse pannen bevindt de drielaagse constructie zich bij dit "
-            "model in de capsulebodem. Een aluminium kern tussen twee lagen RVS "
-            "zorgt daar voor een gelijkmatige warmteverdeling."
-        ),
-        "brand": "Demeyere",
-        "set_type": "Koekenpannenset",
-        "pan_count": 2,
-        "diameters": [24, 28],
-        "set_contents": [
-            "Koekenpan 24 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "18/10 RVS met 3-laagse capsulebodem",
-        "features": [
-            "Geschikt voor inductie",
-            "Geschikt voor de oven",
-            "Geschikt voor metalen keukengerei",
-            "Vaatwasserbestendig",
-            "Gelaste RVS handgrepen",
-
-        ],
-        "rating": 4.5,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 149.00,
-        "price_last_checked": "2026-10-02",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'Set van twee ongecoate 18/10 RVS-koekenpannen van 24 en 28 cm '
+                          'met een drielaagse capsulebodem en enkelvoudige RVS-zijwanden. '
+                          'De gelaste RVS-handgrepen laten de binnenzijde vrij van '
+                          'klinknagels.',
+           'brand': 'Demeyere',
+           'set_type': 'Koekenpannenset',
+           'pan_count': 2,
+           'diameters': [24, 28],
+           'set_contents': ['Koekenpan 24 cm', 'Koekenpan 28 cm'],
+           'material': 'Ongecoat 18/10 RVS-bakoppervlak en RVS-zijwanden, met drielaagse '
+                       'RVS/aluminium/RVS-capsulebodem; gelaste massieve 18/10 '
+                       'RVS-handgrepen.',
+           'features': ['Ongecoat 18/10 RVS-bakoppervlak van beide pannen',
+                        'Drie lagen in de capsulebodem; geen volledige meerlaagse '
+                        'zijwanden',
+                        'Aluminium warmtegeleidende schijf in de bodem',
+                        'Set: koekenpannen 24 en 28 cm',
+                        'Bodemdiameters: 18 cm (24 cm) en 22,5 cm (28 cm)',
+                        'Geschikt voor inductie',
+                        'Geschikt voor gas, elektrisch en keramisch',
+                        'Ovenbestendig; maximale oventemperatuur niet gespecificeerd',
+                        'Gelaste massieve 18/10 RVS-handgrepen; binnenzijde zonder '
+                        'klinknagels',
+                        'Vaatwasserbestendig; handwas aanbevolen',
+                        'Gewicht: circa 1,10 kg (24 cm) en 1,50 kg (28 cm)',
+                        '10 jaar garantie op fabricagefouten bij huishoudelijk gebruik'],
+           'rating': 4.0,
+           'rating_count': None,
+           'rating_source': 'Leef Natuurlijk & Gezond',
+           'price': 149.0,
+           'price_last_checked': '2026-11-22',
+           'currency': 'EUR',
+           'availability': 'InStock',
+           'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://www.zwilling.com/nl/demeyere-classico-3-"
@@ -2286,27 +2300,26 @@ PRODUCTS = {
             "https://www.zwilling.com/nl/demeyere-classico-3-"
             "koekenpannenset-rvs-24-en-28-cm/00062-SET-BE.html"
         ),
-        "award": "Budget keuze",
-        "price_range": "€€€",
+        'award': '💰 Budget keuze',
+        "price_range": "€€",
         "image": "demeyere-classico-3-set-24-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Relatief lage aanschafprijs",
-            "Ongecoat 18/10 RVS bakoppervlak",
-            "Gelaste handgrepen zorgen voor een gladde binnenzijde",
-            "Geschikt voor inductie en oven",
-        ],
-        "cons": [
-            "Meerlaagse constructie bevindt zich alleen in de bodem",
-            "Minder gelijkmatige warmteverdeling via de zijwanden dan bij full-clad pannen",
-        ],
-        "verdict": (
-            "Een set voor wie met ongecoat RVS wil bakken zonder "
-            "direct voor een volledig meerlaagse constructie te betalen. De "
-            "Classico 3 is technisch eenvoudiger dan de duurdere modellen, maar "
-            "biedt twee praktische formaten van een gerenommeerd merk tegen de "
-            "laagste prijs in deze selectie."
-        ),
+        'pros': ['Grote vlakke bodemdiameters van 18 en 22,5 cm voor de twee formaten',
+            'Gelaste handgrepen laten een gladde binnenzijde achter',
+            'Relatief lage reguliere setprijs'],
+        'cons': ['Warmtegeleidende aluminiumlaag beperkt zich tot de bodem'],
+        'verdict': 'Een toegankelijke RVS-set voor wie een ruime vlakke bakbodem en '
+              'gemakkelijk te reinigen klinknagelloze binnenzijde belangrijk '
+              'vindt. De drielaagse capsulebodem houdt de uitvoering eenvoudiger '
+              'en de reguliere prijs lager. Dit is onze Budget keuze voor 24 + 28 '
+              'cm.',
+        'set_accessories': [],
+        'variants': [],
+        'comparison_features': ['Drielaagse capsulebodem (geen full-clad)',
+                           'Bodemdiameters 18 en 22,5 cm',
+                           'Gelaste, klinknagelloze grepen',
+                           '10 jaar fabrieksgarantie'],
+        'reference_price': 178.0,
     },
 
     # RVS KOEKENPANNENSETS 20 + 28 CM
@@ -2314,37 +2327,49 @@ PRODUCTS = {
     "beka_savor_multiply_set_20_28": {
         "slug": "beka-savor-multiply-rvs-koekenpannenset-20-28-cm",
         "name": "Beka Savor Multiply Koekenpannenset 20 + 28 cm",
-        "description": (
-            "De Beka Savor Multiply set bestaat uit twee ongecoate "
-            "RVS-koekenpannen van 20 en 28 cm. Beide pannen hebben een "
-            "volledige tri-plyconstructie van 18/10 RVS met een aluminium "
-            "kern die doorloopt tot aan de rand. Hierdoor wordt de warmte "
-            "niet alleen via de bodem, maar ook via de zijwanden verdeeld. "
-            "De set is geschikt voor alle warmtebronnen, inclusief inductie."
-        ),
-        "brand": "Beka",
-        "set_type": "Koekenpannenset",
-        "pan_count": 2,
-        "diameters": [20, 28],
-        "set_contents": [
-            "Koekenpan 20 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "3-ply 18/10 RVS met aluminium kern",
-        "features": [
-            "Geschikt voor inductie",
-            "Ovenbestendig tot 200 °C",
-            "Vaatwasserbestendig",
-            "Geklonken RVS handgrepen",
-        ],
-        "rating": 4.7,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 174.40,
-        "price_last_checked": "2026-10-05",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'Tweedelige set ongecoate RVS-koekenpannen van 20 en '
+                          '28 cm met een volledig drielaagse '
+                          'RVS/aluminium-constructie. Beide pannen hebben '
+                          'geklonken RVS-handgrepen en zijn ovenbestendig tot '
+                          '200 °C.',
+           'brand': 'Beka',
+           'material': 'Ongecoat 18/10 RVS-bakoppervlak; volledige '
+                       'tri-plyconstructie met RVS-buitenlagen en een aluminium '
+                       'kern door bodem en zijwanden. Geklonken RVS-handgrepen.',
+           'features': ['Twee pannen met ongecoat 18/10 RVS-bakoppervlak',
+                        'Volledige drielaagse RVS/aluminium-constructie door '
+                        'bodem en zijwanden',
+                        'Aluminium warmtegeleidende kern',
+                        'Setinhoud: koekenpan 20 cm en koekenpan 28 cm, zonder '
+                        'deksels',
+                        'Inductieschijven circa 14,7 cm (20 cm) en 21,7 cm (28 '
+                        'cm)',
+                        'Geschikt voor inductie',
+                        'Geschikt voor gas, elektrisch en keramisch',
+                        'Ovenbestendig tot 200 °C',
+                        'Geklonken RVS-handgrepen',
+                        'Vaatwasserbestendig',
+                        'Gewicht afzonderlijke pannen circa 0,72 en 1,18 kg',
+                        '25 jaar fabrieksgarantie volgens voorwaarden '
+                        'fabrikant'],
+           'comparison_features': ['Volledige 3-ply RVS/aluminium-constructie',
+                                   'Inductieschijven circa 14,7 en 21,7 cm',
+                                   'Ovenbestendig tot 200 °C',
+                                   '25 jaar fabrieksgarantie'],
+           'set_type': 'Koekenpannenset',
+           'pan_count': 2,
+           'diameters': [20, 28],
+           'set_contents': ['Koekenpan 20 cm', 'Koekenpan 28 cm'],
+           'set_accessories': [],
+           'rating': 4.5,
+           'rating_count': None,
+           'rating_source': 'Leef Natuurlijk & Gezond',
+           'price': 174.4,
+           'reference_price': 218.0,
+           'price_last_checked': '2026-11-23',
+           'currency': 'EUR',
+           'availability': 'InStock',
+           'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://www.beka-cookware.com/products/"
@@ -2358,58 +2383,60 @@ PRODUCTS = {
         "price_range": "€€€",
         "image": "beka-savor-multiply-set-20-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Volledige tri-plyconstructie tot aan de rand",
-            "Goede warmteverdeling over bodem en zijwanden",
-        ],
-        "cons": [
-            "Lagere ovenbestendigheid tot maximaal 200 °C",
-            "Geklonken handgrepen geven extra randen bij het schoonmaken",
-        ],
-        "verdict": (
-            "De Savor Multiply is technisch de sterkste 20 + 28 cm-set "
-            "in deze selectie. De volledige tri-plyconstructie verdeelt de "
-            "warmte goed via de zijwanden. In combinatie met de lange fabrieksgarantie "
-            "maakt deze pannenset onze beste keuze."
-        ),
+        'variants': [],
+           'pros': ['Volledige drielaagse constructie loopt door tot in de '
+                    'zijwanden',
+                    '25 jaar fabrieksgarantie op fabricage- en materiaalfouten'],
+           'cons': ['Ovenbestendig tot maximaal 200 °C'],
+           'verdict': 'Een veelzijdige set voor wie twee ongecoate '
+                      'RVS-koekenpannen met volledig meerlaagse zijwanden '
+                      'zoekt. De tri-plyconstructie en 25 jaar fabrieksgarantie '
+                      'onderscheiden deze set, al is de ovenlimiet van 200 °C '
+                      'relatief laag. Dit is onze Beste keuze voor 20 + 28 cm.',
     },
 
     "scanpan_impact_set_20_28": {
         "slug": "scanpan-impact-rvs-koekenpannenset-20-28-cm",
         "name": "Scanpan Impact Koekenpannenset 20 + 28 cm",
-        "description": (
-            "De Scanpan Impact set combineert twee ongecoate "
-            "RVS-koekenpannen van 20 en 28 cm. In plaats van een volledige "
-            "meerlaagse constructie hebben de pannen een 6,4 mm dikke "
-            "sandwichbodem met een aluminium kern. Deze bodem zorgt voor "
-            "een snelle warmteverdeling, terwijl de zijwanden hoofdzakelijk "
-            "uit roestvrij staal bestaan."
-        ),
-        "brand": "Scanpan",
-        "set_type": "Koekenpannenset",
-        "pan_count": 2,
-        "diameters": [20, 28],
-        "set_contents": [
-            "Koekenpan 20 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "RVS met 6,4 mm sandwichbodem en aluminium kern",
-        "features": [
-            "Geschikt voor inductie",
-            "Geschikt voor alle gangbare warmtebronnen",
-            "Ovenbestendig tot 250 °C",
-            "Vaatwasserbestendig",
-            "Gegoten RVS handgrepen",
-            "Druppelarme schenkrand",
-        ],
-        "rating": 4.4,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 135.00,
-        "price_last_checked": "2026-10-05",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'Set met ongecoate RVS-koekenpannen van 20 en 28 cm en een '
+                         '6,4 mm dikke sandwichbodem met aluminium kern. De pannen '
+                         'hebben gegoten, geklonken RVS-handgrepen en een '
+                         'schenkrand.',
+          'brand': 'Scanpan',
+          'material': 'Ongecoat RVS-bakoppervlak en RVS-zijwanden; 6,4 mm dikke '
+                      'samengestelde sandwichbodem met aluminium warmtegeleidende '
+                      'kern. Gegoten RVS-handgrepen, met RVS-klinknagels bevestigd.',
+          'features': ['Twee pannen met ongecoat RVS-bakoppervlak',
+                       'RVS-pan met sandwichbodem; geen volledige meerlaagse '
+                       'zijwanden',
+                       '6,4 mm dikke sandwichbodem met aluminium kern',
+                       'Setinhoud: koekenpan 20 cm en koekenpan 28 cm, zonder '
+                       'deksels',
+                       'Geschikt voor inductie',
+                       'Geschikt voor gas, elektrisch en keramisch',
+                       'Ovenbestendig tot 250 °C',
+                       'Gegoten RVS-handgrepen met klinknagelbevestiging',
+                       'Vaatwasserbestendig',
+                       'Druppelarm uitgevoerde schenkrand',
+                       'Setgewicht circa 2,05 kg volgens fabrikant'],
+          'comparison_features': ['Sandwichbodem van 6,4 mm; geen full-clad',
+                                  'Ovenbestendig tot 250 °C',
+                                  'Druppelarme schenkrand',
+                                  'Setgewicht circa 2,05 kg'],
+          'set_type': 'Koekenpannenset',
+          'pan_count': 2,
+          'diameters': [20, 28],
+          'set_contents': ['Koekenpan 20 cm', 'Koekenpan 28 cm'],
+          'set_accessories': [],
+          'rating': 4.0,
+          'rating_count': None,
+          'rating_source': 'Leef Natuurlijk & Gezond',
+          'price': 135.0,
+          'reference_price': 135.0,
+          'price_last_checked': '2026-11-23',
+          'currency': 'EUR',
+          'availability': 'InStock',
+          'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://scanpan.eu/nl-nl/products/"
@@ -2420,64 +2447,65 @@ PRODUCTS = {
             "impact-koekenpan?variant=53846640689495"
         ),
         "award": "💰 Budget keuze",
-        "price_range": "€€",
+        "price_range": "€",
         "image": "scanpan-impact-set-20-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Relatief lagere prijs",
-            "Stevige 6,4 mm sandwichbodem met aluminium kern",
-            "Ovenbestendig tot 250 °C",
-            "Geschikt voor inductie",
-            "Praktische druppelarme schenkrand",
-        ],
-        "cons": [
-            "Warmtegeleidende aluminiumlaag bevindt zich alleen in de bodem",
-            "Minder gelijkmatige warmteverdeling via de zijwanden dan bij tri-ply",
-        ],
-        "verdict": (
-            "Een degelijke en relatief betaalbare set voor wie twee "
-            "ongecoate RVS-koekenpannen zoekt. De constructie is eenvoudiger "
-            ", maar de dikke sandwichbodem, "
-            "hoge ovenbestendigheid en lagere prijs maken de Impact onze "
-            "budgetkeuze."
-        ),
+        'variants': [],
+          'pros': ['Relatief laag regulier prijsniveau voor een tweedelige RVS-set',
+                   'Ovenbestendig tot 250 °C',
+                   'Schenkrand maakt gecontroleerd afgieten gemakkelijker'],
+          'cons': ['Warmtegeleidende aluminium kern beperkt zich tot de bodem'],
+          'verdict': 'Een toegankelijke set voor wie twee ongecoate RVS-pannen '
+                     'vooral op de kookplaat gebruikt en ook tot 250 °C in de oven '
+                     'wil kunnen werken. De 6,4 mm sandwichbodem houdt de '
+                     'constructie eenvoudig en de reguliere prijs relatief laag. '
+                     'Dit is onze Budget keuze voor 20 + 28 cm.',
     },
 
     "scanpan_sts_set_20_28": {
         "slug": "scanpan-sts-rvs-koekenpannenset-20-28-cm",
         "name": "Scanpan STS Koekenpannenset 20 + 28 cm",
-        "description": (
-            "De Scanpan STS set bestaat uit ongecoate RVS-koekenpannen "
-            "van 20 en 28 cm. De pannen hebben een sandwichbodem van "
-            "roestvrij staal met een aluminium kern voor de warmtegeleiding. "
-            "De STS onderscheidt zich door zijn gladde, "
-            "hoogglans afwerking, naadloze bodem en afgeronde vormgeving. "
-            "De set is geschikt voor inductie en kan tot 250 °C in de oven."
-        ),
-        "brand": "Scanpan",
-        "set_type": "Koekenpannenset",
-        "pan_count": 2,
-        "diameters": [20, 28],
-        "set_contents": [
-            "Koekenpan 20 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "RVS met sandwichbodem en aluminium kern",
-        "features": [
-            "Geschikt voor inductie",
-            "Geschikt voor alle gangbare warmtebronnen",
-            "Ovenbestendig tot 250 °C",
-            "Gegoten RVS handgrepen",
-            "Druppelarme rand",
-        ],
-        "rating": 4.4,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 155.00,
-        "price_last_checked": "2026-10-05",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'Tweedelige ongecoate RVS-koekenpannenset van 20 en 28 cm met '
+                          'een sandwichbodem met aluminium kern. De pannen hebben '
+                          'afgeronde, schuine zijwanden, een naadloos afgewerkte '
+                          'buitenbodem en gegoten RVS-handgrepen.',
+           'brand': 'Scanpan',
+           'material': 'Ongecoat RVS-bakoppervlak en RVS-zijwanden met een '
+                       'samengestelde bodem van RVS en een aluminium warmtegeleidende '
+                       'kern; gegoten RVS-handgrepen. Aantal lagen en materiaalopbouw '
+                       'van zijwanden niet nader gespecificeerd als full-clad.',
+           'features': ['Twee pannen met ongecoat RVS-bakoppervlak',
+                        'RVS-pan met sandwichbodem en aluminium kern',
+                        'Naadloos afgewerkte buitenbodem (geen bevestiging van '
+                        'klinknagelloze binnenzijde)',
+                        'Setinhoud: koekenpan 20 cm en koekenpan 28 cm, zonder deksels',
+                        'Geschikt voor inductie',
+                        'Geschikt voor gas, elektrisch en keramisch',
+                        'Ovenbestendig tot 250 °C',
+                        'Gegoten RVS-handgrepen',
+                        'Handwas aanbevolen; Britse Scanpan-productpagina raadt '
+                        'vaatwasser af',
+                        'Afgeronde, schuine zijwanden en druppelarme schenkrand',
+                        'Setgewicht circa 2,0 kg volgens fabrikant',
+                        '10 jaar garantie op fabricagefouten volgens Scanpan VK'],
+           'comparison_features': ['RVS-sandwichbodem met aluminium kern',
+                                   'Afgeronde zijwanden en druppelarme rand',
+                                   'Ovenbestendig tot 250 °C',
+                                   'Handwas aanbevolen'],
+           'set_type': 'Koekenpannenset',
+           'pan_count': 2,
+           'diameters': [20, 28],
+           'set_contents': ['Koekenpan 20 cm', 'Koekenpan 28 cm'],
+           'set_accessories': [],
+           'rating': 4.0,
+           'rating_count': None,
+           'rating_source': 'Leef Natuurlijk & Gezond',
+           'price': 155.0,
+           'reference_price': 155.0,
+           'price_last_checked': '2026-11-23',
+           'currency': 'EUR',
+           'availability': 'InStock',
+           'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://scanpan.eu/nl-nl/products/sts-koekenpan"
@@ -2486,24 +2514,20 @@ PRODUCTS = {
             "https://scanpan.eu/nl-nl/products/sts-koekenpan"
         ),
         "award": None,
-        "price_range": "€€€",
+        "price_range": "€€",
         "image": "scanpan-sts-set-20-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Aluminium kern voor betere warmteverdeling in de bodem",
-            "Naadloze en strak afgewerkte bodem",
-            "Ovenbestendig tot 250 °C",
-            "Praktische druppelarme rand",
-        ],
-        "cons": [
-            "Geen volledige meerlaagse constructie tot aan de rand",
-            "RVS handgrepen kunnen tijdens gebruik heet worden",
-        ],
-        "verdict": (
-            "Een fraai afgewerkte ongecoate RVS-set met een solide "
-            "sandwichbodem en hoge ovenbestendigheid. De STS onderscheidt "
-            "zich vooral door ontwerp en afwerking."
-        ),
+        'variants': [],
+           'pros': ['Afgeronde, schuine zijwanden geven ruimte om ingrediënten om te '
+                    'draaien',
+                    'Schenkrand is rondom ontworpen om druppelen te beperken',
+                    'Ovenbestendig tot 250 °C'],
+           'cons': ['Warmtegeleidende aluminium kern bevindt zich in de bodem',
+                    'Handwas aanbevolen'],
+           'verdict': 'Een ongecoate RVS-set voor wie veel waarde hecht aan een '
+                      'afgeronde panvorm en gecontroleerd afgieten. De STS heeft een '
+                      'aluminiumkern in de bodem en is ovenbestendig tot 250 °C; voor '
+                      'het onderhoud wordt handwas aanbevolen.',
     },
 
     # RVS KOEKENPANNENSETS 20 + 24 +28 CM
@@ -2511,40 +2535,47 @@ PRODUCTS = {
     "beka_maestro_5ply_set_20_24_28": {
         "slug": "beka-maestro-5-ply-rvs-koekenpannenset-20-24-28-cm",
         "name": "Beka Maestro 5-Ply Koekenpannenset 20 + 24 + 28 cm",
-        "description": (
-            "De Beka Maestro 5-Ply set bestaat uit drie ongecoate "
-            "RVS-koekenpannen van 20, 24 en 28 cm. De vijflaagse constructie "
-            "combineert twee lagen roestvrij staal met drie aluminium "
-            "tussenlagen voor een snelle en gelijkmatige warmteverdeling. "
-            "De rechte zijwanden zorgen bovendien voor relatief veel bruikbaar "
-            "bakoppervlak. De pannen zijn geschikt voor alle warmtebronnen, "
-            "inclusief inductie."
-        ),
-        "brand": "Beka",
-        "set_type": "Koekenpannenset",
-        "pan_count": 3,
-        "diameters": [20, 24, 28],
-        "set_contents": [
-            "Koekenpan 20 cm",
-            "Koekenpan 24 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "5-ply RVS en aluminium",
-        "features": [
-            "Geschikt voor inductie",
-            "Geschikt voor alle gangbare warmtebronnen",
-            "Ovenbestendig tot circa 200 °C",
-            "Vaatwasserbestendig",
-            "Rechte zijwanden voor extra bakoppervlak",
-        ],
-        "rating": 4.8,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 249.98,
-        "price_last_checked": "2026-10-05",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'De Beka Maestro 5-Ply set bestaat uit drie '
+                       'ongecoate RVS-koekenpannen van 20, 24 en 28 cm met '
+                       'een vijflaagse constructie van RVS en aluminium. De '
+                       'relatief rechte zijwanden vergroten het bruikbare '
+                       'bakoppervlak.',
+        'brand': 'Beka',
+        'set_type': 'Koekenpannenset',
+        'pan_count': 3,
+        'diameters': [20, 24, 28],
+        'set_contents': ['Koekenpan 20 cm',
+                         'Koekenpan 24 cm',
+                         'Koekenpan 28 cm'],
+        'set_accessories': [],
+        'material': 'Ongecoat RVS-bakoppervlak; vijflaagse '
+                    'RVS/aluminiumconstructie; RVS-handgrepen. Of de vijf '
+                    'lagen tot de rand doorlopen, is niet afzonderlijk '
+                    'bevestigd.',
+        'features': ['Drie ongecoate RVS-koekenpannen: 20, 24 en 28 cm',
+                     'Vijflaagse constructie van RVS en aluminium (5-ply)',
+                     'Relatief rechte zijwanden met ruim bruikbaar '
+                     'bakoppervlak',
+                     'Geschikt voor inductie en andere gangbare '
+                     'warmtebronnen',
+                     'Ovenbestendig tot circa 200 °C',
+                     'RVS-handgrepen; bij de grotere uitvoering een '
+                     'tegengreep',
+                     'Vaatwasserbestendig',
+                     '25 jaar garantie (volgens verkooppunt)'],
+        'comparison_features': ['Vijflaagse RVS/aluminiumconstructie',
+                                'Rechte zijwanden voor ruim bakoppervlak',
+                                'Ovenbestendig tot circa 200 °C',
+                                '25 jaar garantie'],
+        'rating': 4.5,
+        'rating_count': None,
+        'rating_source': 'Leef Natuurlijk & Gezond',
+        'price': 249.98,
+        'reference_price': 297.0,
+        'price_last_checked': '2026-11-23',
+        'currency': 'EUR',
+        'availability': 'InStock',
+        'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://www.cookinglife.nl/products/"
@@ -2555,59 +2586,62 @@ PRODUCTS = {
         "price_range": "€€€",
         "image": "beka-maestro-5ply-set-20-24-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Volledige vijflaagse constructie",
-            "Goede warmteverdeling over de hele pan",
-            "Relatief veel bakoppervlak door rechte zijwanden",
-        ],
-        "cons": [
-            "Relatief hoge aanschafprijs",
-            "Relatief lagere ovenbestendigheid dan alternatieve sets",
-        ],
-        "verdict": (
-            "Een bijzonder complete driedelige RVS-set met een volwaardige "
-            "vijflaagse constructie en drie praktische formaten. De combinatie "
-            "van materiaalopbouw, ruime fabrieksgarantie en prijs "
-            "maakt de Maestro 5-Ply onze beste allround keuze."
-        ),
+        'variants': [],
+        'pros': ['Rechte zijwanden bieden relatief veel bruikbaar '
+                 'bakoppervlak',
+                 'Vijflaagse RVS/aluminiumconstructie en 25 jaar garantie'],
+        'cons': ['Ovenbestendig tot circa 200 °C'],
+        'verdict': 'Een driedelige set voor wie vooral op de kookplaat bakt '
+                   'en veel bruikbaar bakoppervlak zoekt. De vijflaagse '
+                   'constructie, rechte zijwanden en lange garantie maken '
+                   'dit een aantrekkelijke allround set. Dit is onze Beste '
+                   'keuze voor deze setcombinatie.',
     },
 
     "demeyere_essential_5_set_20_24_28": {
         "slug": "demeyere-essential-5-rvs-koekenpannenset-20-24-28-cm",
         "name": "Demeyere Essential 5 Koekenpannenset 20 + 24 + 28 cm",
-        "description": (
-            "De Demeyere Essential 5 set bevat drie ongecoate "
-            "RVS-koekenpannen van 20, 24 en 28 cm. De pannen zijn opgebouwd "
-            "uit vijflaags materiaal dat doorloopt tot aan de rand. Hierdoor "
-            "wordt de warmte gelijkmatig over de bodem en zijwanden verdeeld. "
-            "De drie formaten maken de set geschikt voor zowel kleine porties "
-            "als grotere gezinsmaaltijden."
-        ),
-        "brand": "Demeyere",
-        "set_type": "Koekenpannenset",
-        "pan_count": 3,
-        "diameters": [20, 24, 28],
-        "set_contents": [
-            "Koekenpan 20 cm",
-            "Koekenpan 24 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "5-ply RVS en aluminium",
-        "features": [
-            "Geschikt voor inductie",
-            "Ovenbestendig tot 350 °C",
-            "Geschikt voor de ovengrill",
-            "Vaatwasserbestendig",
-            "Geklonken RVS handgrepen",
-        ],
-        "rating": 4.9,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 367.00,
-        "price_last_checked": "2026-10-05",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'De Demeyere Essential 5 set bestaat uit drie '
+                          'ongecoate RVS-koekenpannen van 20, 24 en 28 cm '
+                          'met een volledig vijflaagse opbouw tot aan de '
+                          'rand. De pannen hebben een aluminium kern en '
+                          'geklonken RVS-handgrepen.',
+           'brand': 'Demeyere',
+           'set_type': 'Koekenpannenset',
+           'pan_count': 3,
+           'diameters': [20, 24, 28],
+           'set_contents': ['Koekenpan 20 cm',
+                            'Koekenpan 24 cm',
+                            'Koekenpan 28 cm'],
+           'set_accessories': [],
+           'material': 'Ongecoat 18/10 RVS-bakoppervlak; volledig '
+                       'vijflaagse RVS/aluminiumconstructie tot aan de '
+                       'rand; aluminium kern; geklonken RVS-handgrepen.',
+           'features': ['Drie ongecoate RVS-koekenpannen: 20, 24 en 28 cm',
+                        'Volledige vijflaagse constructie tot aan de rand',
+                        'RVS-bakoppervlak (18/10) en aluminium kern',
+                        'Geschikt voor inductie en andere gangbare '
+                        'warmtebronnen',
+                        'Ovenbestendig tot 350 °C',
+                        'Geschikt voor gebruik onder de ovengrill',
+                        'Geklonken RVS-handgrepen',
+                        'Vaatwasserbestendig; handwas aanbevolen',
+                        '30 jaar garantie op productiefouten bij '
+                        'huishoudelijk gebruik'],
+           'comparison_features': ['Volledige 5-plyconstructie tot aan de '
+                                   'rand',
+                                   'Ovenbestendig tot 350 °C',
+                                   'Ook geschikt voor de ovengrill',
+                                   '30 jaar garantie'],
+           'rating': 4.5,
+           'rating_count': None,
+           'rating_source': 'Leef Natuurlijk & Gezond',
+           'price': 329.0,
+           'reference_price': 367.0,
+           'price_last_checked': '2026-11-23',
+           'currency': 'EUR',
+           'availability': 'InStock',
+           'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://www.zwilling.com/nl/demeyere-essential-5-"
@@ -2621,60 +2655,61 @@ PRODUCTS = {
         "price_range": "€€€€",
         "image": "demeyere-essential-5-set-20-24-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Volledige vijflaagse constructie tot aan de rand",
-            "Zeer gelijkmatige warmteverdeling",
-            "Ovenbestendig tot 350 °C",
-            "Geschikt voor de ovengrill",
-        ],
-        "cons": [
-            "Relatief hoge aanschafprijs",
-            "Geklonken handgrepen geven extra randen bij het schoonmaken",
-        ],
-        "verdict": (
-            "Een hoogwaardige driedelige set voor wie maximale veelzijdigheid "
-            "en een volledige vijflaagse constructie zoekt. De uitstekende "
-            "warmteverdeling en hoge ovenbestendigheid maken de Essential 5 "
-            "bijzonder veelzijdig, maar daar staat ook hogere prijs "
-            "tegenover. Daarom is dit onze premium keuze."
-        ),
+        'variants': [],
+           'pros': ['Volledige vijflaagse opbouw tot aan de rand',
+                    'Ovenbestendig tot 350 °C en geschikt voor de ovengrill',
+                    '30 jaar garantie op productiefouten bij huishoudelijk '
+                    'gebruik'],
+           'cons': ['Hoge reguliere prijs voor een driedelige set'],
+           'verdict': 'Een driedelige RVS-set voor wie veel gebruikmaakt '
+                      'van zowel de kookplaat als de oven. De volledige '
+                      'vijflaagse constructie, ovenbestendigheid tot 350 °C '
+                      'en 30 jaar garantie onderscheiden deze uitvoering. '
+                      'Dit is onze Premium keuze voor deze setcombinatie.',
     },
 
     "beka_savor_multiply_set_20_24_28": {
         "slug": "beka-savor-multiply-rvs-koekenpannenset-20-24-28-cm",
         "name": "Beka Savor Multiply Koekenpannenset 20 + 24 + 28 cm",
-        "description": (
-            "De Beka Savor Multiply set combineert drie ongecoate "
-            "RVS-koekenpannen van 20, 24 en 28 cm. De volledige "
-            "tri-plyconstructie bestaat uit hoogwaardig 18/10 RVS met een "
-            "aluminium kern die doorloopt tot aan de rand. Hierdoor wordt de "
-            "warmte niet alleen via de bodem, maar ook via de zijwanden "
-            "verdeeld."
-        ),
-        "brand": "Beka",
-        "set_type": "Koekenpannenset",
-        "pan_count": 3,
-        "diameters": [20, 24, 28],
-        "set_contents": [
-            "Koekenpan 20 cm",
-            "Koekenpan 24 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "3-ply 18/10 RVS met aluminium kern",
-        "features": [
-            "Geschikt voor inductie",
-            "Ovenbestendig tot 200 °C",
-            "Vaatwasserbestendig",
-            "Geklonken RVS handgrepen",
-        ],
-        "rating": 4.7,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 261.60,
-        "price_last_checked": "2026-10-05",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'De Beka Savor Multiply set bevat drie ongecoate '
+                         'RVS-koekenpannen van 20, 24 en 28 cm. De '
+                         'drielaagse RVS/aluminiumconstructie loopt door '
+                         'tot aan de rand en de RVS-handgrepen zijn met '
+                         'klinknagels bevestigd.',
+          'brand': 'Beka',
+          'set_type': 'Koekenpannenset',
+          'pan_count': 3,
+          'diameters': [20, 24, 28],
+          'set_contents': ['Koekenpan 20 cm',
+                           'Koekenpan 24 cm',
+                           'Koekenpan 28 cm'],
+          'set_accessories': [],
+          'material': 'Ongecoat 18/10 RVS-bakoppervlak; volledige '
+                      'drielaagse RVS/aluminiumconstructie tot aan de rand, '
+                      'met aluminium als warmtegeleidende tussenlaag; '
+                      'RVS-handgrepen.',
+          'features': ['Drie ongecoate RVS-koekenpannen: 20, 24 en 28 cm',
+                       'Volledige drielaagse RVS/aluminiumconstructie tot '
+                       'aan de rand',
+                       'RVS 18/10 met aluminium tussenlaag',
+                       'Geschikt voor inductie en andere gangbare '
+                       'warmtebronnen',
+                       'Ovenbestendig tot 200 °C',
+                       'RVS-handgrepen, bevestigd met klinknagels',
+                       'Vaatwasserbestendig'],
+          'comparison_features': ['Volledige 3-plyconstructie tot aan de '
+                                  'rand',
+                                  'Geklonken RVS-handgrepen',
+                                  'Ovenbestendig tot 200 °C'],
+          'rating': 4.0,
+          'rating_count': None,
+          'rating_source': 'Leef Natuurlijk & Gezond',
+          'price': 261.6,
+          'reference_price': 327.0,
+          'price_last_checked': '2026-11-23',
+          'currency': 'EUR',
+          'availability': 'InStock',
+          'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://www.beka-cookware.com/products/"
@@ -2688,54 +2723,65 @@ PRODUCTS = {
         "price_range": "€€€",
         "image": "beka-savor-multiply-set-20-24-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Volledige tri-plyconstructie tot aan de rand",
-            "Goede warmteverdeling over bodem en zijwanden",
-        ],
-        "cons": [
-            "Relatief lagere ovenbestendig tot maximaal 200 °C",
-        ],
-        "verdict": (
-            "Een hoogwaardige tri-plyset met een degelijke constructie en "
-            "lange fabrieksgarantie. De volledige meerlaagse opbouw zorgt voor "
-            "een goede warmteverdeling over bodem en zijwanden, terwijl de drie "
-            "formaten de set breed inzetbaar maken."
-        ),
+        'variants': [],
+          'pros': ['Volledige drielaagse RVS/aluminiumconstructie tot aan '
+                   'de rand'],
+          'cons': ['Relatief hoge reguliere prijs voor een 3-plyset met een '
+                   'ovenlimiet van 200 °C'],
+          'verdict': 'Een driedelige RVS-set voor wie een volledige '
+                     'drielaagse constructie zoekt en vooral op de '
+                     'kookplaat bakt. De aluminium tussenlaag loopt door in '
+                     'de zijwanden; voor gebruik in de oven geldt een '
+                     'maximum van 200 °C.',
     },
 
     "sola_green_cooking_plus_set_20_24_28": {
         "slug": "sola-green-cooking-plus-rvs-koekenpannenset-20-24-28-cm",
         "name": "Sola Green Cooking+ Koekenpannenset 20 + 24 + 28 cm",
-        "description": (
-            "De Sola Green Cooking+ set bestaat uit drie ongecoate "
-            "RVS-koekenpannen van 20, 24 en 28 cm. De tri-plyconstructie "
-            "combineert een binnen- en buitenlaag van RVS met een aluminium "
-            "kern voor een gelijkmatige warmteverdeling."
-        ),
-        "brand": "Sola",
-        "set_type": "Koekenpannenset",
-        "pan_count": 3,
-        "diameters": [20, 24, 28],
-        "set_contents": [
-            "Koekenpan 20 cm",
-            "Koekenpan 24 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "3-ply RVS met aluminium kern",
-        "features": [
-            "Geschikt voor inductie",
-            "Geschikt voor alle gangbare warmtebronnen",
-            "Ovenbestendig tot 200 °C",
-            "Vaatwasserbestendig",
-        ],
-        "rating": 4.6,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 149.99,
-        "price_last_checked": "2026-10-05",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'De Sola Green Cooking+ set bestaat uit drie '
+                         'ongecoate RVS-koekenpannen van 20, 24 en 28 '
+                         'cm. Het 2,5 mm dikke drielaagse '
+                         'RVS/aluminiummateriaal loopt door van de '
+                         'bodem tot aan de rand.',
+          'brand': 'Sola',
+          'set_type': 'Koekenpannenset',
+          'pan_count': 3,
+          'diameters': [20, 24, 28],
+          'set_contents': ['Koekenpan 20 cm',
+                           'Koekenpan 24 cm',
+                           'Koekenpan 28 cm'],
+          'set_accessories': [],
+          'material': 'Ongecoat RVS-bakoppervlak; volledig drielaagse '
+                      'RVS/aluminiumconstructie van 2,5 mm dik, '
+                      'doorlopend tot aan de rand; RVS-handgrepen.',
+          'features': ['Drie ongecoate RVS-koekenpannen: 20, 24 en 28 '
+                       'cm',
+                       'Volledige drielaagse RVS/aluminiumconstructie '
+                       'tot aan de rand',
+                       'Materiaaldikte van 2,5 mm (volgens fabrikant)',
+                       'Bodemdiameters: 13 cm (20 cm pan), 18 cm (24 cm '
+                       'pan), 20 cm (28 cm pan)',
+                       'Geschikt voor inductie en andere gangbare '
+                       'warmtebronnen',
+                       'Ovenbestendig tot 200 °C',
+                       'RVS-handgrepen',
+                       'Vaatwasserbestendig; droog opbergen',
+                       '10 jaar garantie op materiaal- en '
+                       'fabricagefouten'],
+          'comparison_features': ['Volledige 3-plyconstructie tot aan '
+                                  'de rand',
+                                  'Materiaaldikte 2,5 mm',
+                                  'Ovenbestendig tot 200 °C',
+                                  '10 jaar garantie'],
+          'rating': 4.5,
+          'rating_count': None,
+          'rating_source': 'Leef Natuurlijk & Gezond',
+          'price': 137.95,
+          'reference_price': 153.85,
+          'price_last_checked': '2026-11-23',
+          'currency': 'EUR',
+          'availability': 'InStock',
+          'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": "https://www.cookinglife.nl/products/sola-koekenpannenset-green-cooking-triply-3-delig",
         "official_url": "",
@@ -2743,57 +2789,64 @@ PRODUCTS = {
         "price_range": "€€",
         "image": "sola-green-cooking-plus-set-20-24-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Relatief lage aanschafprijs",
-            "Tri-plyconstructie met aluminium kern",
-        ],
-        "cons": [
-            "Ovenbestendig tot maximaal 200 °C",
-        ],
-        "verdict": (
-            "Een aantrekkelijke driedelige set voor wie ongecoat RVS wil "
-            "combineren met een relatief gunstig prijsniveau. De "
-            "tri-plyconstructie, drie praktische formaten en lange fabrieksgarantie "
-            "maken dit een toegankelijke keuze voor dagelijks gebruik."
-        ),
+        'variants': [],
+          'pros': ['Volledige 2,5 mm dikke tri-plyconstructie voor een '
+                   'relatief gunstige reguliere prijs',
+                   '10 jaar garantie op materiaal- en fabricagefouten'],
+          'cons': ['Ovenbestendig tot maximaal 200 °C'],
+          'verdict': 'Een voordelig geprijsde RVS-set voor wie drie '
+                     'praktische formaten en een volledige drielaagse '
+                     'constructie wil combineren. De 2,5 mm dikke '
+                     'opbouw en tien jaar garantie bieden concrete '
+                     'waarde in dit prijssegment. Dit is onze Budget '
+                     'keuze voor deze setcombinatie.',
     },
 
     "demeyere_classico_3_set_20_24_28": {
         "slug": "demeyere-classico-3-rvs-koekenpannenset-20-24-28-cm",
         "name": "Demeyere Classico 3 Koekenpannenset 20 + 24 + 28 cm",
-        "description": (
-            "De Demeyere Classico 3 set bestaat uit drie ongecoate "
-            "RVS-koekenpannen van 20, 24 en 28 cm. De warmtegeleidende "
-            "drielaagse constructie bevindt zich in de capsulebodem. "
-            "De zijwanden zijn daardoor eenvoudiger opgebouwd dan bij "
-            "volledig tri-ply- of 5-plypannen. De gelaste handgrepen zorgen "
-            "wel voor een gladde binnenzijde zonder klinknagels."
-        ),
-        "brand": "Demeyere",
-        "set_type": "Koekenpannenset",
-        "pan_count": 3,
-        "diameters": [20, 24, 28],
-        "set_contents": [
-            "Koekenpan 20 cm",
-            "Koekenpan 24 cm",
-            "Koekenpan 28 cm",
-        ],
-        "material": "18/10 RVS met 3-laagse capsulebodem",
-        "features": [
-            "Geschikt voor inductie",
-            "Geschikt voor de oven",
-            "Geschikt voor de ovengrill",
-            "Vaatwasserbestendig",
-            "Gelaste RVS handgrepen",
-        ],
-        "rating": 4.4,
-        "rating_count": None,
-        "rating_source": "Leef Natuurlijk & Gezond",
-        "price": 247.00,
-        "price_last_checked": "2026-10-05",
-        "currency": "EUR",
-        "availability": True,
-        "availability_label": "Op voorraad",
+        'description': 'De Demeyere Classico 3 set bestaat uit drie '
+                         'ongecoate RVS-koekenpannen van 20, 24 en 28 cm '
+                         'met een drielaagse capsulebodem waarin aluminium '
+                         'tussen RVS-lagen ligt. De gelaste RVS-handgrepen '
+                         'laten de binnenzijde vrij van klinknagels.',
+          'brand': 'Demeyere',
+          'set_type': 'Koekenpannenset',
+          'pan_count': 3,
+          'diameters': [20, 24, 28],
+          'set_contents': ['Koekenpan 20 cm',
+                           'Koekenpan 24 cm',
+                           'Koekenpan 28 cm'],
+          'set_accessories': [],
+          'material': 'Ongecoat 18/10 RVS-bakoppervlak en RVS-zijwanden; '
+                      'drielaagse capsulebodem met aluminium tussen '
+                      'RVS-lagen; gelaste RVS-handgrepen.',
+          'features': ['Drie ongecoate RVS-koekenpannen: 20, 24 en 28 cm',
+                       'Drielaagse capsulebodem met aluminium tussen '
+                       'RVS-lagen',
+                       'Geen volledige meerlaagse opbouw van de zijwanden',
+                       'Geschikt voor inductie en andere gangbare '
+                       'warmtebronnen',
+                       'Geschikt voor oven en ovengrill; maximale '
+                       'temperatuur niet vermeld',
+                       'Gelaste RVS-handgrepen zonder klinknagels aan de '
+                       'binnenzijde',
+                       'Vaatwasserbestendig; handwas aanbevolen',
+                       '10 jaar garantie op productiefouten bij '
+                       'huishoudelijk gebruik'],
+          'comparison_features': ['Drielaagse capsulebodem (geen full-clad)',
+                                  'Gelaste grepen; gladde binnenzijde',
+                                  'Geschikt voor oven en ovengrill',
+                                  '10 jaar garantie'],
+          'rating': 4.0,
+          'rating_count': None,
+          'rating_source': 'Leef Natuurlijk & Gezond',
+          'price': 247.0,
+          'reference_price': None,
+          'price_last_checked': '2026-11-23',
+          'currency': 'EUR',
+          'availability': 'InStock',
+          'availability_label': 'Op voorraad',
         "affiliate_url": "",
         "retailer_url": (
             "https://www.zwilling.com/nl/demeyere-classico-3-"
@@ -2804,22 +2857,19 @@ PRODUCTS = {
             "koekenpannenset-rvs-20-24-en-28-cm/00121-SET-BE.html"
         ),
         "award": None,
-        "price_range": "€€€",
+        "price_range": "€€",
         "image": "demeyere-classico-3-set-20-24-28.webp",
         "image_path": "images/products/rvs-koekenpannen",
-        "pros": [
-            "Gelaste handgrepen geven een gladde binnenzijde",
-            "Geschikt voor inductie, oven en ovengrill",
-        ],
-        "cons": [
-            "Meerlaagse constructie bevindt zich alleen in de bodem",
-            "Relatief hoog geprijsd tegenover verschillende full-clad alternatieven",
-        ],
-        "verdict": (
-            "Een degelijk uitgevoerde driedelige RVS-set met een gladde "
-            "binnenzijde en drie praktische formaten. De capsulebodem zorgt "
-            "voor een gelijkmatige warmteverdeling over de bodem, terwijl de "
-            "gelaste handgrepen het schoonmaken vereenvoudigen."
-        ),
+        'variants': [],
+          'pros': ['Gelaste grepen laten de binnenzijde vrij van '
+                   'klinknagels en vergemakkelijken het reinigen',
+                   'Geschikt voor gebruik in oven en onder de ovengrill'],
+          'cons': ['Relatief hoge reguliere prijs voor een set met '
+                   'uitsluitend een meerlaagse capsulebodem'],
+          'verdict': 'Een driedelige set voor wie een gladde binnenzijde en '
+                     'eenvoudige reiniging belangrijk vindt. De gelaste '
+                     'grepen en oven-/grillgeschiktheid zijn praktisch, '
+                     'terwijl de warmtegeleidende drielaagse opbouw beperkt '
+                     'blijft tot de capsulebodem.',
     },
 }

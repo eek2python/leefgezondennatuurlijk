@@ -1,574 +1,621 @@
+"""Algemene RVS-categoriecontent; productspecifieke aanbevelingen staan in de productdata.
+
+De structuur sluit aan op die van de keramische koekenpannen. De pagina-renderer
+moet {product_count} en {selected_size} invullen. De prijsniveautabel en
+snelkiesproducten worden uit de bestaande configuratie/productdata gehaald.
+"""
+
 CONTENT = {
     "meta": {
-        "title": (
-            "Beste RVS koekenpannen en pannensets van 2026 – ongecoat"
-        ),
+        "title": "Beste RVS-koekenpannen en pannensets 2026 – ongecoat RVS",
         "description": (
-            "Vergelijk ongecoate RVS-koekenpannen en pannensets. Bekijk "
-            "materiaalopbouw, formaten, inductiegeschiktheid, ovengebruik, "
-            "prijsniveau en praktische verschillen."
+            "Vergelijk ongecoate RVS-koekenpannen van 20 t/m 32 cm en pannensets. "
+            "Bekijk materiaalopbouw, ovenbestendigheid, gebruiksgemak, "
+            "beoordelingen en prijsniveaus."
         ),
-        "og_title": "Beste RVS koekenpannen en pannensets van 2026",
+        "og_title": "Beste ongecoate RVS-koekenpannen en pannensets van 2026",
         "og_description": (
-            "Onze redactionele vergelijking van ongecoate RVS-koekenpannen "
-            "en sets, van voordelige instapmodellen tot meerlaagse premium pannen."
+            "Onze redactionele vergelijking van RVS-koekenpannen "
+            "en sets: van capsulebodems tot volledig meerlaagse constructies."
         ),
         "canonical_path": "/rvs-koekenpannen/",
     },
 
     "hero": {
-        "h1": "De beste RVS koekenpannen van 2026",
+        "h1": (
+            "De {product_count} geselecteerde ongecoate RVS-koekenpannen "
+            "van {selected_size} cm (2026)"
+        ),
         "paragraphs": [
             (
-                "Een ongecoate RVS-koekenpan is geschikt voor wie zonder "
-                "antiaanbaklaag wil koken en graag vlees, aardappelen en "
-                "groenten krachtig aanbakt. RVS is ook bruikbaar voor "
-                "afblussen en het maken van sauzen op basis van aanbakresten."
+                "Op deze pagina vergelijken we {product_count} RVS-koekenpannen "
+                "of pannensets in de maat {selected_size} cm. Voor ieder exact "
+                "model moet voldoende zijn bevestigd dat het bakoppervlak "
+                "uit ongecoat roestvrij staal bestaat. We vergelijken onder "
+                "meer materiaalopbouw, warmtegeleidende constructie, "
+                "gebruiksgemak, oven- en inductiegeschiktheid, onderhoud en prijs."
             ),
             (
-                "Bakken in RVS vraagt meer aandacht voor temperatuur, gebruik "
-                "van olie of boter en timing dan bakken in een keramische pan. "
-                "Daar staat tegenover dat een ongecoat bakoppervlak niet "
-                "afhankelijk is van een antiaanbaklaag die tijdens het gebruik "
-                "kan slijten."
-            ),
-            (
-                "Naast losse koekenpannen vergelijken we ook RVS-koekenpannensets "
-                "in de combinaties 20 + 28 cm, 24 + 28 cm en 20 + 24 + 28 cm. "
-                "Daarbij kijken we niet alleen naar de prijs van de set, maar "
-                "ook naar de materiaalopbouw van de pannen en de praktische "
-                "bruikbaarheid van de verschillende formaten."
+                "Onze beoordelingen zijn redactioneel en gebaseerd op "
+                "controleerbare productspecificaties, fabrikantdocumentatie, "
+                "beschikbare onafhankelijke tests en relevante gebruikerservaringen. "
+                "Winkelbeoordelingen nemen we niet rechtstreeks over als onze "
+                "score. Bij koekenpannensets kijken we ook naar het werkelijke "
+                "aantal pannen, de maatcombinatie en eventuele accessoires."
             ),
         ],
-    },
-
-    "how_we_test": {
-        "title": "Hoe wij RVS-koekenpannen beoordelen",
-        "intro": (
-            "Onze beoordelingen zijn redactioneel. Tenzij bij een product "
-            "expliciet anders staat vermeld, voeren wij geen laboratorium- "
-            "of langdurige gebruikstest uit. We vergelijken de constructie, "
-            "productspecificaties en praktische mogelijkheden van ieder model."
-        ),
-        "bullets": [
-            (
-                "<strong>Materiaal en constructie:</strong> bestaat de pan "
-                "uit een samengestelde bodem, tri-ply of een volledige "
-                "vijf- of zevenlaagse constructie?"
-            ),
-            (
-                "<strong>Warmtegedrag:</strong> hoe is de warmtegeleidende "
-                "laag opgebouwd en loopt deze alleen door de bodem of ook "
-                "door de wanden?"
-            ),
-            (
-                "<strong>Gebruiksmogelijkheden:</strong> inductie, oven, "
-                "vaatwasser en relevante temperatuurgrenzen."
-            ),
-            (
-                "<strong>Gebruiksgemak:</strong> formaat, gewicht, "
-                "handgreep, onderhoud en de benodigde baktechniek."
-            ),
-            (
-                "<strong>Prijs-kwaliteit:</strong> staan materiaalopbouw en "
-                "mogelijkheden in verhouding tot het prijsniveau?"
-            ),
-            (
-                "<strong>Beschikbaarheid:</strong> verwijst de verkooplink "
-                "naar de juiste maat en uitvoering?"
-            ),
-            (
-                "<strong>Pannensets:</strong> bij sets beoordelen we of alle "
-                "meegeleverde koekenpannen een ongecoat RVS-bakoppervlak hebben, "
-                "welke materiaalconstructie wordt gebruikt en of de combinatie "
-                "van formaten praktisch en structureel verkrijgbaar is."
-            ),
-        ],
-        "outro": (
-            "De uiteindelijke bakervaring hangt ook af van de kookplaat, "
-            "de gebruikte temperatuur, het ingrediënt en de ervaring van "
-            "de gebruiker."
-        ),
-    },
-
-    "why_choose": {
-        "title": "Waarom kiezen voor een RVS-koekenpan?",
-        "intro": (
-            "Een ongecoate RVS-koekenpan is vooral interessant voor "
-            "bereidingen waarbij bruining, aanbakken en temperatuurcontrole "
-            "belangrijk zijn."
-        ),
-        "bullets": [
-            (
-                "<strong>Geen antiaanbaklaag:</strong> het bakoppervlak "
-                "bestaat uit ongecoat RVS."
-            ),
-            (
-                "<strong>Geschikt voor bruinen:</strong> RVS werkt goed voor "
-                "vlees, aardappelen en groenten die een duidelijke korst "
-                "mogen krijgen."
-            ),
-            (
-                "<strong>Geschikt voor afblussen:</strong> aanbakresten "
-                "kunnen worden losgemaakt met vocht en als basis voor een "
-                "saus worden gebruikt."
-            ),
-            (
-                "<strong>Breed inzetbaar:</strong> veel modellen zijn "
-                "geschikt voor inductie, oven en vaatwasser."
-            ),
-            (
-                "<strong>Geen slijtende coating:</strong> de werking van de "
-                "pan is niet afhankelijk van een aangebrachte "
-                "antiaanbaklaag."
-            ),
-        ],
-        "outro": (
-            "RVS is minder vergevingsgezind dan een pan met antiaanbaklaag. "
-            "De juiste temperatuur, voldoende olie of boter en geduld bij "
-            "het keren maken een duidelijk verschil."
-        ),
     },
 
     "products_section": {
-        "h2": "Onze selectie RVS-koekenpannen en pannensets",
-        "comparison_title": "Vergelijk RVS-koekenpannen en pannensets",
+        "h2": (
+            "De {product_count} geselecteerde ongecoate RVS-koekenpannen "
+            "van {selected_size} cm"
+        ),
+        "intro": (
+            "In de productkaarten zie je per pan of set de belangrijkste "
+            "eigenschappen, onze beoordeling, voor- en nadelen en eventuele "
+            "Beste keuze-, Budget keuze- of Premium keuze-badge."
+        ),
+        "comparison_title": (
+            "Vergelijking: {product_count} ongecoate RVS-koekenpannen "
+            "van {selected_size} cm"
+        ),
+        "comparison_intro": (
+            "Gebruik de vergelijkingstabel om verschillen in materiaalopbouw, "
+            "bodemconstructie, bruikbare bodemmaat, ovenbestendigheid, "
+            "handgrepen en andere onderscheidende kenmerken te bekijken. "
+            "Het aantal lagen alleen bepaalt niet welke pan beter is."
+        ),
     },
 
-    "tips": {
-        "title": "Tips voor bakken in RVS",
+    "price_guide": {
+        "title": "Prijsniveaus binnen deze vergelijking",
         "intro": (
-            "RVS werkt anders dan een pan met antiaanbaklaag. Begin rustig "
-            "en pas de temperatuur aan het ingrediënt aan."
+            "Het prijsniveau (€ tot en met €€€€) laat zien waar een pan of set "
+            "qua representatieve reguliere verkoopprijs binnen het gekozen "
+            "formaat valt. De prijsgrenzen verschillen per diameter en "
+            "setcombinatie. Een tijdelijke aanbieding verandert het "
+            "structurele prijsniveau niet automatisch."
         ),
-        "bullets": [
+        "outro": (
+            "Een hoger prijsniveau betekent niet automatisch een hogere "
+            "beoordeling. Een hogere reguliere prijs moet worden afgewogen "
+            "tegen concrete eigenschappen, zoals materiaalopbouw, "
+            "afwerking, ovenbestendigheid, bruikbare bodemmaat en garantie. "
+            "Op de productkaarten en in de vergelijkingstabel tonen we "
+            "prijsniveaus in plaats van exacte verkoopprijzen."
+        ),
+    },
+
+    "how_we_assess": {
+        "title": "Zo beoordelen we RVS-koekenpannen",
+        "intro": (
+            "We selecteren alleen modellen die normaal verkrijgbaar zijn "
+            "voor Nederlandse consumenten en waarvan voor het exacte model "
+            "betrouwbaar is vastgesteld dat het voedselcontactoppervlak uit "
+            "ongecoat RVS bestaat. Pannen met een aangebrachte keramische, "
+            "PTFE- of andere antiaanbaklaag op het bakoppervlak vallen buiten "
+            "deze selectie. De aanwezigheid van ongecoat RVS is een "
+            "toelatingsvoorwaarde en levert op zichzelf geen extra punten op."
+        ),
+        "criteria_intro": (
+            "We beoordelen iedere pan of set op vijf onderdelen. Elk "
+            "onderdeel telt voor het aangegeven percentage mee in "
+            "de gewogen eindscore:"
+        ),
+        "score_weights": [
+            {"criterion": "Bakresultaat en temperatuurgedrag", "weight": "25%"},
+            {"criterion": "Constructie en verwachte duurzaamheid", "weight": "25%"},
+            {"criterion": "Gebruiksgemak en veelzijdigheid", "weight": "20%"},
+            {"criterion": "Reiniging en onderhoud", "weight": "15%"},
+            {"criterion": "Prijs-kwaliteitverhouding", "weight": "15%"},
+        ],
+        "evidence": (
+            "We gebruiken productspecificaties, fabrikantdocumentatie, "
+            "beschikbare onafhankelijke tests en relevante gebruikerservaringen "
+            "als onderbouwing. Een volledige 5-ply- of 7-plyconstructie krijgt "
+            "niet automatisch een betere score dan een goed uitgevoerde "
+            "3-plypan of capsulebodem. Bakprestaties worden niet uitsluitend "
+            "uit het aantal lagen afgeleid. Een enkele gebruikersreview of "
+            "het gemiddelde cijfer van een winkel bepaalt onze score niet."
+        ),
+        "score_explanation": (
+            "We beoordelen elk onderdeel op een schaal van 1 tot 5 en "
+            "berekenen het gewogen gemiddelde. De uiteindelijke beoordeling "
+            "tonen we in stappen van een halve ster. Alleen producten "
+            "met een afgeronde score van minimaal 3,5 sterren nemen we op."
+        ),
+        "review_note": (
+            "Terugkerende, goed onderbouwde ervaringen over bijvoorbeeld "
+            "vervorming, warmtegedrag, bodemcontact of losrakende handgrepen "
+            "kunnen meewegen in de score. Een reviewsignaal hoeft niet "
+            "automatisch als zichtbaar nadeel te worden vermeld. Bij een "
+            "aannemelijk structureel kwaliteitsprobleem beoordelen we "
+            "opnieuw of de pan in de selectie thuishoort. Klachten die "
+            "vooral te maken hebben met normale RVS-baktechniek of "
+            "cosmetische verkleuring wegen we terughoudend."
+        ),
+        "sets_note": (
+            "Bij koekenpannensets kijken we daarnaast naar het aantal "
+            "daadwerkelijk meegeleverde koekenpannen, de spreiding van "
+            "formaten, mogelijke verschillen in constructie of ovenlimiet "
+            "tussen de pannen en de reguliere setprijs ten opzichte van "
+            "de losse pannen. Accessoires tellen niet mee als pan."
+        ),
+        "testing_note": (
+            "De beoordeling is gebaseerd op de beschikbare informatie. "
+            "We vermelden het expliciet wanneer een product zelf is getest; "
+            "zonder die vermelding is geen eigen langdurige praktijktest uitgevoerd."
+        ),
+        "outro": (
+            "Ontbreekt essentiële informatie over het bakoppervlak, "
+            "de materiaalopbouw of relevante gebruiksbeperkingen, dan "
+            "nemen we het model niet op. Prijzen, voorraad en "
+            "productspecificaties kunnen veranderen."
+        ),
+    },
+
+    "awards": {
+        "title": "Wat betekenen onze badges?",
+        "intro": (
+            "Badges worden alleen toegekend wanneer binnen de actuele "
+            "vergelijking een duidelijke kandidaat aanwezig is. Daarom "
+            "heeft niet ieder formaat of iedere setcombinatie automatisch "
+            "alle drie de badges."
+        ),
+        "items": [
             (
-                "Verwarm de pan geleidelijk voor op een lage tot middelhoge "
-                "stand."
+                "<strong>🏆 Beste keuze:</strong> de sterkste totale combinatie "
+                "van bakprestaties, constructie, gebruiksgemak, verwachte "
+                "duurzaamheid en prijs-kwaliteit."
             ),
             (
-                "Voeg olie of boter toe zodra de pan op temperatuur is en "
-                "laat het vet kort warm worden."
+                "<strong>💰 Budget keuze:</strong> een relatief betaalbare "
+                "pan of set die aan alle toelatingseisen voldoet, voldoende "
+                "kwaliteit biedt en geen belangrijke concessies kent die "
+                "de lagere prijs verklaren."
             ),
             (
-                "Gebruik voor kwetsbare ingrediënten meestal een lagere "
-                "temperatuur dan voor vlees of aardappelen."
-            ),
-            (
-                "Laat vlees eerst een korst vormen voordat je het probeert "
-                "te keren; het laat dan doorgaans makkelijker los."
-            ),
-            (
-                "Zet het vermogen lager zodra de gewenste temperatuur is "
-                "bereikt, zeker bij meerlaagse pannen."
-            ),
-            (
-                "Blus aanbakresten eventueel af met water, bouillon of een "
-                "andere geschikte vloeistof om een saus te maken."
+                "<strong>💎 Premium keuze:</strong> een model dat zich aantoonbaar "
+                "onderscheidt door constructie, afwerking, technische "
+                "mogelijkheden of andere relevante kwaliteitskenmerken."
             ),
         ],
         "outro": (
-            "Voor eieren, pannenkoeken en andere kwetsbare bereidingen is "
-            "een pan met antiaanbaklaag vaak eenvoudiger. Voor krachtig "
-            "aanbraden, bruinen en afblussen heeft RVS juist duidelijke "
-            "praktische voordelen."
+            "Een hoge prijs of een groot aantal lagen is op zichzelf "
+            "geen reden voor een Premium keuze-badge. De goedkoopste "
+            "pan is evenmin automatisch onze Budget keuze."
         ),
     },
 
-    "conclusies": {
-        "default": {
-            "title": "Conclusie – welke RVS-koekenpan past het best?",
-            "text": (
-                "De <strong>Demeyere Industry 5</strong> is onze beste "
-                "allround keuze door de volledige vijflaagse constructie "
-                "en brede inzetbaarheid. De "
-                "<strong>Demeyere Silverline 7 NanoTouch</strong> is onze "
-                "premiumkeuze en voegt een zevenlaagse constructie en "
-                "gestructureerd RVS-bakoppervlak toe. Wie een gunstiger "
-                "geprijsde volledig drielaagse pan zoekt, kan kijken naar "
-                "de <strong>BK Superior Tri-Ply</strong>."
-            ),
-        },
+    "size_guide": {
+        "title": "Welk formaat RVS-koekenpan heb ik nodig?",
+        "intro": (
+            "De juiste diameter hangt af van je porties, de beschikbare "
+            "kookzones en de manier waarop je bakt. Let bij RVS niet "
+            "alleen op de nominale bovenranddiameter: de werkelijke "
+            "bakruimte en de bodemdiameter kunnen per model verschillen."
+        ),
+        "sections": [
+            {
+                "h3": "Veelgebruikte formaten",
+                "items": [
+                    "<b>Ø 20 cm</b> – Voor eieren, kleine porties, bijgerechten en koken voor één persoon.",
+                    "<b>Ø 24 cm</b> – Voor kleinere dagelijkse bereidingen en ongeveer één tot twee personen.",
+                    "<b>Ø 26 cm</b> – Een tussenmaat met extra bakruimte zonder direct een grote pan te gebruiken.",
+                    "<b>Ø 28 cm</b> – Een veelzijdige maat voor dagelijkse maaltijden en grotere porties.",
+                    "<b>Ø 30 cm</b> – Voor grotere hoeveelheden vlees of groenten, mits de kookzone past.",
+                    "<b>Ø 32 cm</b> – Voor veel bakruimte en bereidingen waarbij ingrediënten voldoende afstand nodig hebben om te bruinen.",
+                ],
+            },
+            {
+                "h3": "Praktische combinaties",
+                "items": [
+                    (
+                        "<b>20 + 28 cm:</b> een compacte pan naast een ruime "
+                        "pan voor grotere gerechten; handig als een middenmaat "
+                        "niet nodig is."
+                    ),
+                    (
+                        "<b>24 + 28 cm:</b> twee veelgebruikte formaten voor "
+                        "kleinere en grotere dagelijkse bereidingen."
+                    ),
+                    (
+                        "<b>20 + 24 + 28 cm:</b> drie afzonderlijke maten "
+                        "voor wie regelmatig verschillende portiegroottes "
+                        "bereidt of meerdere oude pannen wil vervangen."
+                    ),
+                ],
+            },
+            {
+                "h3": "Wanneer is een RVS-koekenpannenset interessant?",
+                "items": [
+                    (
+                        "<b>Gebruik van alle maten:</b> een set is vooral "
+                        "zinvol wanneer je de meegeleverde pannen ook "
+                        "daadwerkelijk gebruikt."
+                    ),
+                    (
+                        "<b>Prijs per pan:</b> vergelijk de reguliere setprijs "
+                        "met de gezamenlijke reguliere prijs van precies "
+                        "dezelfde losse modellen."
+                    ),
+                    (
+                        "<b>Setinhoud:</b> controleer hoeveel koekenpannen je "
+                        "krijgt en welke accessoires eventueel zijn meegeleverd."
+                    ),
+                    (
+                        "<b>Technische uitvoering:</b> controleer of alle "
+                        "pannen dezelfde laagopbouw, handgreep, "
+                        "inductiegeschiktheid en ovenlimiet hebben."
+                    ),
+                    (
+                        "<b>Opbergen:</b> drie RVS-pannen nemen meer ruimte "
+                        "in dan een losse pan, zeker bij lange metalen grepen."
+                    ),
+                ],
+            },
+            {
+                        "h3": "Waar moet je bij het formaat op letten?",
+                        "items": [
+                            (
+                                "<b>Bodem en kookzone:</b> kies een pan waarvan de "
+                                "bodemdiameter aansluit op je inductiezone of brander."
+                            ),
+                            (
+                                "<b>Bruikbaar bakoppervlak:</b> een minder schuin "
+                                "lopende zijwand kan bij dezelfde bovenranddiameter "
+                                "meer vlak bakoppervlak opleveren."
+                            ),
+                            (
+                                "<b>Gewicht:</b> grote, meerlaagse pannen kunnen "
+                                "relatief zwaar zijn; let op hanteerbaarheid en "
+                                "eventuele hulpgrepen."
+                            ),
+                            (
+                                "<b>Constructie:</b> bij een capsule- of sandwichbodem "
+                                "zit de warmtegeleidende laag vooral in de bodem; "
+                                "bij volledig meerlaagse pannen loopt deze ook "
+                                "door de zijwanden."
+                            ),
+                            (
+                                "<b>Bereiding:</b> een ruime pan helpt wanneer "
+                                "ingrediënten niet te dicht op elkaar moeten liggen "
+                                "om goed te bruinen."
+                            ),
+                        ],
+                    },
+                ],
+                "outro": (
+                    "<b>Praktische vuistregel:</b> kies de pan of set die past "
+                    "bij je normale porties en kookzone, niet automatisch de "
+                    "grootste diameter of het hoogste aantal lagen."
+                ),
+            },
 
-        20: {
-            "title": (
-                "Conclusie – welke RVS-koekenpan van 20 cm past het best?"
+    "why_choose": {
+        "title": "Waarom kiezen voor een ongecoate RVS-koekenpan?",
+        "intro": (
+            "Een ongecoate RVS-koekenpan is een logische keuze voor wie "
+            "zonder aangebrachte antiaanbaklaag wil bakken en graag "
+            "controle houdt over aanbraden, bruinen en afblussen."
+        ),
+        "bullets": [
+            (
+                "<strong>Ongecoat bakoppervlak:</strong> het voedsel "
+                "komt in contact met roestvrij staal en niet met een "
+                "aangebrachte antiaanbaklaag."
             ),
-            "text": (
-                "Een RVS-koekenpan van <strong>20 cm</strong> is geschikt "
-                "voor kleine porties, bijgerechten en bereidingen voor één "
-                "persoon. De <strong>Demeyere Industry 5</strong> is onze "
-                "beste allround keuze door de volledige vijflaagse "
-                "constructie. De <strong>Sola Green Cooking+</strong> is "
-                "onze budgetkeuze en biedt voor een relatief lage prijs een "
-                "volledige tri-plyconstructie. De "
-                "<strong>Demeyere Silverline 7 NanoTouch</strong> is de "
-                "premiumoptie voor wie een zevenlaagse pan met gestructureerd "
-                "RVS-oppervlak zoekt."
+            (
+                "<strong>Geschikt voor aanbraden:</strong> RVS is bruikbaar "
+                "voor vlees, aardappelen en groenten die een bruine korst "
+                "mogen krijgen, mits de temperatuur goed wordt geregeld."
             ),
-        },
-
-        24: {
-            "title": (
-                "Conclusie – welke RVS-koekenpan van 24 cm past het best?"
+            (
+                "<strong>Afblussen en sauzen:</strong> aanbakresten kunnen "
+                "met vocht worden losgemaakt en de basis vormen voor "
+                "een saus."
             ),
-            "text": (
-                "Het formaat <strong>24 cm</strong> is geschikt voor kleine "
-                "tot middelgrote dagelijkse bereidingen. De "
-                "<strong>Demeyere Industry 5</strong> is onze beste "
-                "allround keuze. De <strong>BK Superior Tri-Ply</strong> is "
-                "de budgetaanbeveling door de volledige drielaagse "
-                "constructie en het lagere prijsniveau. De "
-                "<strong>Demeyere Silverline 7 NanoTouch</strong> is onze "
-                "premiumkeuze, terwijl de <strong>De Buyer Affinity</strong> "
-                "een responsief vijflaags alternatief vormt."
+            (
+                "<strong>Geen slijtende antiaanbaklaag:</strong> de "
+                "eigenschappen van het bakoppervlak zijn niet afhankelijk "
+                "van een aangebrachte coating die door gebruik kan slijten."
             ),
-        },
-
-        26: {
-            "title": (
-                "Conclusie – welke RVS-koekenpan van 26 cm past het best?"
+            (
+                "<strong>Keuze in constructies:</strong> er zijn pannen "
+                "met een sandwich- of capsulebodem en met volledig "
+                "meerlaagse RVS/aluminium-opbouw."
             ),
-            "text": (
-                "Een RVS-koekenpan van <strong>26 cm</strong> biedt iets meer "
-                "bakruimte dan een model van 24 cm, zonder direct het formaat en "
-                "gewicht van een grote 28 cm-pan te hebben. De "
-                "<strong>Fissler M5 Pro-Ply</strong> is onze beste allround keuze "
-                "door de volledige vijflaagse constructie, gelijkmatige "
-                "warmteverdeling en hoogwaardige afwerking. De "
-                "<strong>Scanpan Impact</strong> is de budgetkeuze voor wie een "
-                "betaalbare ongecoate RVS-pan zoekt. De "
-                "<strong>Habonne Queen</strong> biedt met zijn volledige "
-                "tri-plyconstructie een sterke verhouding tussen prijs en "
-                "materiaalopbouw. De <strong>Cristel Castel'Pro</strong> is een "
-                "hoogwaardig vijflaags alternatief met een hoge "
-                "ovenbestendigheid."
+            (
+                "<strong>Verschillen in gebruik:</strong> per model lopen "
+                "gewicht, ovenbestendigheid, bodemdiameter, handgreep "
+                "en onderhoudsmogelijkheden uiteen."
             ),
-        },
-
-        28: {
-            "title": (
-                "Conclusie – welke RVS-koekenpan van 28 cm past het best?"
-            ),
-            "text": (
-                "Een RVS-koekenpan van <strong>28 cm</strong> biedt ruimte "
-                "voor grotere porties en vraagt om een passende kookzone. "
-                "De <strong>Demeyere Industry 5</strong> is onze beste "
-                "allround keuze. De <strong>BK Bright</strong> is de "
-                "voordeligste instapoptie, terwijl de "
-                "<strong>BK Superior Tri-Ply</strong> een technisch "
-                "uitgebreidere middenklassekeuze is. De "
-                "<strong>Demeyere Silverline 7 NanoTouch</strong> is onze "
-                "premiumaanbeveling."
-            ),
-        },
-
-        30: {
-            "title": (
-                "Conclusie – welke RVS-koekenpan van 30 cm past het best?"
-            ),
-            "text": (
-                "Een RVS-koekenpan van <strong>30 cm</strong> biedt extra "
-                "bakruimte en is vooral geschikt voor grotere porties en "
-                "gezinnen. De <strong>BK Maestro RVS</strong> is onze beste "
-                "allround keuze dankzij de volledige 3-plyconstructie, het "
-                "ongecoate RVS-bakoppervlak en de goede verhouding tussen "
-                "constructie en prijs. De <strong>OZ Home Bavary</strong> is "
-                "de budgetkeuze voor wie vooral een betaalbare ongecoate "
-                "RVS-pan zoekt. De <strong>Mauviel M'Cook</strong> is onze "
-                "premiumaanbeveling met een hoogwaardige vijflaagse "
-                "constructie. De <strong>Le Creuset 3-Ply Classic</strong> "
-                "is een praktisch alternatief dankzij de volledige "
-                "drielaagse constructie en extra hulpgreep."
-            ),
-        },
-
-        32: {
-            "title": (
-                "Conclusie – welke RVS-koekenpan van 32 cm past het best?"
-            ),
-            "text": (
-                "Een RVS-koekenpan van <strong>32 cm</strong> biedt veel "
-                "bakruimte en is vooral geschikt voor grotere porties en "
-                "bereidingen waarbij ingrediënten voldoende ruimte nodig hebben "
-                "om goed te kunnen bruinen. De <strong>Demeyere Industry 5</strong> "
-                "is onze beste allround keuze dankzij de volledige vijflaagse "
-                "constructie, gelijkmatige warmteverdeling en brede inzetbaarheid. "
-                "De <strong>De Buyer Prim'Appety</strong> is de budgetkeuze voor "
-                "wie een grote ongecoate RVS-pan zoekt tegen een lager prijsniveau. "
-                "De <strong>Spring Brigade Premium</strong> biedt met zijn "
-                "volledige vijflaagse constructie een sterke verhouding tussen "
-                "prijs en materiaalopbouw. De "
-                "<strong>Demeyere Silverline 7 NanoTouch</strong> is onze "
-                "premiumaanbeveling met zevenlaags materiaal en een "
-                "gestructureerd RVS-bakoppervlak."
-            ),
-        },
-        "20_28": {
-            "title": (
-                "Conclusie – welke RVS-koekenpannenset van 20 + 28 cm "
-                "past het best?"
-            ),
-            "text": (
-                "Een set van <strong>20 + 28 cm</strong> combineert een compacte "
-                "pan voor kleine porties met een ruime pan voor grotere "
-                "bereidingen. De <strong>Beka Savor Multiply</strong> is onze "
-                "beste keuze dankzij de volledige tri-plyconstructie tot aan de "
-                "rand en de lange garantieperiode. De "
-                "<strong>Scanpan Impact</strong> is de budgetkeuze met een "
-                "warmtegeleidende sandwichbodem en hoge ovenbestendigheid. De "
-                "<strong>Scanpan STS</strong> biedt een vergelijkbare basisopbouw "
-                "met een andere afwerking en vormgeving."
-            ),
-        },
-
-        "24_28": {
-            "title": (
-                "Conclusie – welke RVS-koekenpannenset van 24 + 28 cm "
-                "past het best?"
-            ),
-            "text": (
-                "De combinatie <strong>24 + 28 cm</strong> is een veelzijdige "
-                "keuze voor dagelijks gebruik en biedt zowel een middelgrote als "
-                "een ruime koekenpan. De <strong>Demeyere Essential 5</strong> "
-                "is onze beste keuze dankzij het vijflaags materiaal tot aan de "
-                "rand en de brede inzetbaarheid. De "
-                "<strong>Beka Savor Multiply</strong> biedt met zijn volledige "
-                "tri-plyconstructie een sterke verhouding tussen prijs en "
-                "materiaalopbouw. De <strong>Demeyere Classico 3</strong> is "
-                "de budgetkeuze voor wie twee ongecoate RVS-pannen zoekt en een "
-                "eenvoudigere capsulebodem voldoende vindt."
-            ),
-        },
-
-        "20_24_28": {
-            "title": (
-                "Conclusie – welke RVS-koekenpannenset van 20 + 24 + 28 cm "
-                "past het best?"
-            ),
-            "text": (
-                "Een set van <strong>20 + 24 + 28 cm</strong> biedt drie duidelijk "
-                "verschillende formaten en is daardoor geschikt voor uiteenlopende "
-                "dagelijkse bereidingen. De <strong>Beka Maestro 5-Ply</strong> "
-                "is onze beste keuze door de volledige vijflaagse constructie, "
-                "goede warmteverdeling en drie praktische formaten. De "
-                "<strong>Sola Green Cooking+</strong> is onze budgetkeuze met een "
-                "tri-plyconstructie en relatief gunstig prijsniveau. De "
-                "<strong>Demeyere Essential 5</strong> is onze premiumkeuze en "
-                "combineert vijflaags materiaal tot aan de rand met een hoge "
-                "ovenbestendigheid. De <strong>Beka Savor Multiply</strong> vormt "
-                "een hoogwaardige tri-plyoptie met een lange garantieperiode."
-            ),
-        },
+        ],
+        "outro": (
+            "Ongecoat RVS biedt geen antiaanbakeffect zoals een keramische "
+            "coating. Bakken vraagt daarom enige aandacht voor voorverwarmen, "
+            "voldoende olie of boter en het juiste moment van keren. "
+            "Voor kwetsbare bereidingen kan een pan met antiaanbaklaag "
+            "praktischer zijn."
+        ),
     },
 
+    "tips": {
+        "title": "Bakken met en onderhoud van RVS-koekenpannen",
+        "intro": (
+            "De juiste baktechniek helpt aanbakken te beperken. Het onderhoud "
+            "van ongecoat RVS is doorgaans eenvoudig, maar volg altijd "
+            "de instructies voor de exacte pan en handgreep."
+        ),
+        "bullets": [
+            (
+                "Verwarm de pan geleidelijk voor. Een hoge stand of "
+                "inductieboost is niet voor ieder gerecht of iedere pan nodig."
+            ),
+            (
+                "Voeg olie of boter toe wanneer de pan voldoende warm "
+                "is en gebruik een temperatuur die past bij het ingrediënt."
+            ),
+            (
+                "Laat vlees eerst rustig bruinen voordat je het probeert "
+                "los te maken of te keren."
+            ),
+            (
+                "Gebruik de waterdruppeltest niet als vaste regel voor "
+                "alle gerechten: eieren en andere kwetsbare ingrediënten "
+                "vragen vaak een lagere temperatuur."
+            ),
+            (
+                "Blus bruine aanbakresten eventueel af met water of "
+                "bouillon om een saus te maken."
+            ),
+            (
+                "Laat een hete pan afkoelen voordat je deze onder koud "
+                "water houdt; plotselinge temperatuurwisselingen kunnen "
+                "vervorming bevorderen."
+            ),
+            (
+                "Verwijder aangekoekte resten met warm water, mild "
+                "afwasmiddel en een geschikte spons. Laat hardnekkige "
+                "resten eerst weken."
+            ),
+            (
+                "Normale regenboogverkleuring of watervlekken zijn "
+                "doorgaans cosmetisch. Een geschikt RVS-reinigingsmiddel "
+                "kan helpen wanneer je ze wilt verwijderen."
+            ),
+            (
+                "Controleer per model of de pan vaatwasserbestendig is; "
+                "handwas kan de uiterlijke afwerking langer mooi houden."
+            ),
+        ],
+        "outro": (
+            "Ongecoat RVS hoeft niet te worden ingebrand zoals gietijzer "
+            "of koolstofstaal. Reinig een nieuwe pan voor het eerste "
+            "gebruik volgens de aanwijzingen van de fabrikant."
+        ),
+    },
     "faq": {
-        "title": "Veelgestelde vragen over RVS-koekenpannen",
+        "title": "Veelgestelde vragen over RVS-koekenpannen en koekenpannensets",
         "items": [
+            {
+                "q": "Hoe wordt de sterrenbeoordeling bepaald?",
+                "a": (
+                    "Onze redactionele beoordeling is een gewogen score. "
+                    "Bakresultaat en temperatuurgedrag tellen voor 25% mee, "
+                    "constructie en verwachte duurzaamheid voor 25%, "
+                    "gebruiksgemak en veelzijdigheid voor 20%, reiniging "
+                    "en onderhoud voor 15% en prijs-kwaliteit voor 15%. "
+                    "Winkelbeoordelingen vormen niet onze sterrenbeoordeling."
+                ),
+            },
+            {
+                "q": "Worden gebruikersreviews meegenomen in de beoordeling?",
+                "a": (
+                    "Ja, als aanvullende bron. Een individuele review bepaalt "
+                    "de score niet. Terugkerende, productspecifieke ervaringen "
+                    "kunnen meewegen als duidelijk is dat ze over hetzelfde "
+                    "model of dezelfde technische uitvoering gaan."
+                ),
+            },
+            {
+                "q": "Waarom krijgt niet ieder formaat een Budget- of Premium keuze?",
+                "a": (
+                    "We kennen een badge alleen toe wanneer een duidelijke "
+                    "kandidaat aanwezig is. De laagste prijs levert niet "
+                    "automatisch de Budget keuze op en de duurste pan "
+                    "is niet vanzelf de Premium keuze."
+                ),
+            },
             {
                 "q": "Heeft iedere RVS-koekenpan een ongecoat bakoppervlak?",
                 "a": (
-                    "Nee. Sommige pannen combineren een RVS-buitenkant met "
-                    "een aangebrachte antiaanbaklaag. Voor deze vergelijking "
-                    "selecteren we modellen met een ongecoat RVS-bakoppervlak."
+                    "Nee. Een pan kan een RVS-buitenkant combineren met "
+                    "een aangebrachte antiaanbaklaag. In deze vergelijking "
+                    "nemen we uitsluitend pannen op waarvan voor het exacte "
+                    "model is bevestigd dat het bakoppervlak uit ongecoat "
+                    "roestvrij staal bestaat."
                 ),
             },
             {
-                "q": "Is RVS gezonder dan keramisch?",
+                "q": "Betekent ongecoat RVS automatisch dat de pan PFAS-vrij is?",
                 "a": (
-                    "Daar kan geen algemene conclusie over worden getrokken. "
-                    "RVS is vooral relevant voor wie zonder antiaanbaklaag "
-                    "wil koken. Een keramische pan is doorgaans eenvoudiger "
-                    "voor kwetsbare ingrediënten en bereidingen waarbij weinig "
-                    "aanbakken gewenst is."
+                    "Een daadwerkelijk ongecoat RVS-bakoppervlak bevat geen "
+                    "aangebrachte PFAS-antiaanbaklaag. Controle van het "
+                    "bakoppervlak is daarom belangrijker dan alleen een "
+                    "algemene PFAS-vrij- of PFOA-vrij-claim op de verpakking. "
+                    "Een claim over de hele pan vergt afzonderlijke onderbouwing."
                 ),
             },
             {
-                "q": "Zijn de geselecteerde RVS-pannen geschikt voor inductie?",
+                "q": "Wat betekent full-clad of volledig meerlaags RVS?",
                 "a": (
-                    "Ja. De modellen in deze selectie zijn geschikt voor "
-                    "inductie. Controleer wel of de diameter van de panbodem "
-                    "past bij de gebruikte kookzone."
+                    "Bij full-clad lopen de verbonden metaal­lagen door "
+                    "van de bodem tot in de zijwanden. Vaak combineert "
+                    "de constructie RVS met aluminium, soms met andere "
+                    "warmtegeleidende materialen. Dit verschilt van een "
+                    "pan waarbij de meerlaagse constructie vooral in "
+                    "de bodem zit."
                 ),
             },
             {
-                "q": "Voor welke bereidingen is RVS geschikt?",
+                "q": "Wat is het verschil tussen een capsulebodem en een volledig meerlaagse pan?",
                 "a": (
-                    "RVS is geschikt voor vlees, aardappelen, groenten en "
-                    "andere ingrediënten die mogen bruinen. Ook afblussen en "
-                    "het maken van sauzen op basis van aanbakresten gaat goed "
-                    "in een RVS-pan."
+                    "Bij een capsule- of sandwichbodem bevindt de "
+                    "warmtegeleidende meerlaagse constructie zich vooral "
+                    "in de bodem. Bij een volledig meerlaagse pan loopt "
+                    "deze opbouw door in de zijwanden. Beide constructies "
+                    "kunnen geschikt zijn; de totale uitvoering telt mee."
+                ),
+            },
+            {
+                "q": "Is een 5-ply- of 7-plypan beter dan een 3-plypan?",
+                "a": (
+                    "Niet automatisch. Naast het aantal lagen zijn onder "
+                    "meer de dikte, het kernmateriaal, de bodemmaat en "
+                    "de totale constructie bepalend. Zonder goede "
+                    "testgegevens trekken we geen stellige conclusies "
+                    "over de bakprestaties uitsluitend uit het aantal lagen."
+                ),
+            },
+            {
+                "q": "Zijn de geselecteerde RVS-koekenpannen geschikt voor inductie?",
+                "a": (
+                    "De huidige selectie bevat inductiegeschikte modellen. "
+                    "Controleer per pan de productspecificaties en stem "
+                    "de diameter van de bodem af op de kookzone. De "
+                    "bovenranddiameter is niet hetzelfde als de bodemdiameter."
                 ),
             },
             {
                 "q": "Hoe voorkom ik dat eten aanbakt in een RVS-pan?",
                 "a": (
-                    "Verwarm de pan geleidelijk voor, voeg daarna voldoende "
-                    "olie of boter toe en pas de temperatuur aan het "
-                    "ingrediënt aan. Laat vlees of groenten eerst rustig "
-                    "bakken voordat je ze probeert te keren."
+                    "Verwarm geleidelijk voor, gebruik voldoende olie "
+                    "of boter en pas de temperatuur aan het ingrediënt aan. "
+                    "Laat vlees eerst een korst vormen voordat je het "
+                    "keert. Voor eieren en vis werkt een lagere "
+                    "temperatuur vaak beter dan heel heet voorverwarmen."
                 ),
             },
             {
-                "q": "Is de waterdruppeltest nodig?",
+                "q": "Moet ik de waterdruppeltest gebruiken?",
                 "a": (
-                    "Nee. De test kan aangeven dat een RVS-pan heet is, maar "
-                    "de daarbij bereikte temperatuur is niet voor iedere bereiding "
-                    "geschikt. Voor eieren en andere kwetsbare ingrediënten is een "
-                    "lagere temperatuur meestal beter. Verwarm de pan daarom op basis "
-                    "van de bereiding en niet uitsluitend op basis van deze test."
+                    "Nee. De test laat zien dat de pan een bepaalde "
+                    "hoge temperatuur heeft bereikt, maar die is niet "
+                    "voor alle gerechten geschikt. Kies de temperatuur "
+                    "op basis van wat je bereidt."
+                ),
+            },
+            {
+                "q": "Moet een RVS-koekenpan worden ingebrand?",
+                "a": (
+                    "Nee. Een ongecoate RVS-pan hoeft niet te worden "
+                    "ingebrand zoals gietijzer of koolstofstaal. Was "
+                    "een nieuwe pan voor het eerste gebruik volgens "
+                    "de aanwijzingen van de fabrikant."
+                ),
+            },
+            {
+                "q": "Mag een RVS-koekenpan in de oven of onder de ovengrill?",
+                "a": (
+                    "Dat verschilt per model. De toegestane temperatuur "
+                    "hangt af van de panconstructie en de handgreep. "
+                    "Geschiktheid voor de oven betekent niet automatisch "
+                    "dat ook gebruik onder de ovengrill is toegestaan."
                 ),
             },
             {
                 "q": "Mag een RVS-koekenpan in de vaatwasser?",
                 "a": (
-                    "Dat verschilt per model. Veel RVS-pannen zijn "
-                    "vaatwasserbestendig, maar fabrikanten kunnen handwas "
-                    "aanbevelen om de glans en afwerking beter te behouden. "
-                    "Volg de productspecifieke instructies."
+                    "Veel modellen zijn vaatwasserbestendig, maar niet "
+                    "allemaal. Controleer de productspecificaties. "
+                    "Handwas kan bovendien helpen de afwerking "
+                    "en glans te behouden."
                 ),
             },
             {
-                "q": "Hoe verwijder ik aangekoekte resten?",
+                "q": "Hoe verwijder ik aangekoekte resten uit RVS?",
                 "a": (
-                    "Laat de pan weken in warm water of kook een kleine "
-                    "hoeveelheid water zachtjes los in de pan. Gebruik daarna "
-                    "een niet-schurende spons. Voor hardnekkige verkleuring "
-                    "kan een geschikt RVS-reinigingsmiddel worden gebruikt."
+                    "Laat de pan afkoelen en week aangekoekte resten "
+                    "in warm water. Een kleine hoeveelheid water zachtjes "
+                    "verwarmen kan resten losmaken. Reinig daarna met "
+                    "een geschikte spons en mild afwasmiddel."
                 ),
             },
             {
-                "q": "Hoe verwijder ik regenboogverkleuring uit RVS?",
+                "q": "Wat betekent regenboogverkleuring op RVS?",
                 "a": (
-                    "De gekleurde waas ontstaat meestal door verhitting en "
-                    "is doorgaans niet schadelijk voor de pan. Een kleine "
-                    "hoeveelheid verdunde azijn of een geschikt "
-                    "RVS-reinigingsmiddel kan de verkleuring verwijderen."
-                ),
-            },
-            {
-                "q": "Wat is het verschil tussen RVS en keramisch?",
-                "a": (
-                    "RVS heeft een ongecoat bakoppervlak en vraagt meer "
-                    "aandacht voor temperatuur, olie of boter, en timing. Een keramische "
-                    "pan heeft een antiaanbaklaag en is doorgaans eenvoudiger "
-                    "voor eieren, vis en andere kwetsbare ingrediënten. Lees "
-                    "ook onze <a href=\"/blogs/keramische-vs-rvs-koekenpan/\">"
-                    "vergelijking van keramische en RVS-koekenpannen</a>."
-                ),
-            },
-            {
-                "q": "Moet je een RVS-koekenpan inbranden?",
-                "a": (
-                    "Nee. Een RVS-pan hoeft niet te worden ingebrand zoals "
-                    "gietijzer of koolstofstaal. Reinig een nieuwe pan voor "
-                    "het eerste gebruik volgens de instructies van de "
-                    "fabrikant."
-                ),
-            },
-            {
-                "q": "Welke olie is geschikt voor bakken in RVS?",
-                "a": (
-                    "Kies een olie of vet dat past bij de gebruikte "
-                    "temperatuur. Voor krachtig aanbakken zijn hittebestendige, "
-                    "bij voorkeur geraffineerde oliën geschikt. Boter en "
-                    "extra vierge olijfolie passen beter bij lage tot "
-                    "middelhoge temperaturen."
+                    "Een gekleurde waas na verhitting is doorgaans "
+                    "een cosmetische verkleuring en geen aanwijzing dat "
+                    "de pan onbruikbaar is. Gebruik zo nodig een geschikt "
+                    "RVS-reinigingsmiddel volgens de instructies."
                 ),
             },
             {
                 "q": "Welke maat RVS-koekenpan heb ik nodig?",
                 "a": (
-                    "Een pan van 20 cm is geschikt voor kleine porties en "
-                    "bereidingen voor één persoon. Het formaat 24 cm is bruikbaar "
-                    "voor kleine tot middelgrote dagelijkse bereidingen. Een pan van "
-                    "26 cm vormt een tussenmaat met iets meer bakruimte, zonder direct "
-                    "zo groot te zijn als een model van 28 cm. Een pan van 28 cm is "
-                    "geschikt voor grotere porties en gezinnen. Met 30 cm krijg je "
-                    "nog meer bakoppervlak, terwijl een pan van 32 cm vooral geschikt "
-                    "is wanneer veel ruimte nodig is, bijvoorbeeld voor meerdere "
-                    "stukken vlees of een grote hoeveelheid groenten. Houd er bij "
-                    "grotere formaten rekening mee dat ook de diameter van de panbodem "
-                    "moet passen bij de gebruikte kookzone."
+                    "Een pan van 20–24 cm is vaak voldoende voor kleine "
+                    "porties. Een pan van 26–28 cm biedt meer ruimte "
+                    "voor dagelijks gebruik. De formaten 30–32 cm "
+                    "passen vooral bij grote porties en ruime kookzones. "
+                    "Bekijk ook onze "
+                    '<a href="/blogs/welke-maat-koekenpan/">uitgebreide maattabel</a>.'
                 ),
             },
             {
-                "q": "Waarom kiezen voor een RVS-koekenpan van 26 cm?",
+                "q": "Welke RVS-koekenpannenset past bij mijn huishouden?",
                 "a": (
-                    "Een koekenpan van 26 cm zit tussen de gangbare formaten 24 en "
-                    "28 cm in. Dit formaat biedt wat extra bakruimte ten opzichte van "
-                    "24 cm, maar is doorgaans compacter en lichter dan een pan van "
-                    "28 cm. Daardoor kan 26 cm een praktische middenmaat zijn voor "
-                    "dagelijkse bereidingen voor één tot twee personen."
-                ),
-            },
-            {
-                "q": "Is een RVS-koekenpan van 32 cm geschikt voor iedere kookplaat?",
-                "a": (
-                    "Niet altijd. Een pan van 32 cm heeft doorgaans een kleinere "
-                    "bodemdiameter dan de bovenrand, maar vraagt nog steeds om een "
-                    "relatief grote kookzone. Op een te kleine kookzone kan vooral "
-                    "bij pannen met een eenvoudige bodemconstructie een groter "
-                    "temperatuurverschil tussen het midden en de buitenzijde ontstaan. "
-                    "Controleer daarom niet alleen de opgegeven diameter van de pan, "
-                    "maar indien beschikbaar ook de diameter van de bodem."
-                ),
-            },
-            {
-                "q": "Welke RVS-koekenpannenset heb ik nodig?",
-                "a": (
-                    "Een set van 20 + 28 cm is geschikt voor wie vooral een kleine "
-                    "en een grote koekenpan gebruikt en het tussenformaat kan missen. "
-                    "De combinatie 24 + 28 cm is veelzijdig voor dagelijkse "
-                    "bereidingen en grotere porties. Een set van 20 + 24 + 28 cm "
-                    "biedt de meeste flexibiliteit en is vooral interessant wanneer "
-                    "je meerdere losse koekenpannen tegelijk wilt vervangen of een "
-                    "complete basisset zoekt."
+                    "De combinatie 20 + 28 cm is geschikt voor wie "
+                    "vooral een kleine en een ruime pan gebruikt. "
+                    "Met 24 + 28 cm heb je twee dagelijkse formaten. "
+                    "Een set van 20 + 24 + 28 cm biedt meer keuze, "
+                    "maar is vooral interessant als je alle drie "
+                    "de maten regelmatig gebruikt."
                 ),
             },
             {
                 "q": "Is een RVS-koekenpannenset voordeliger dan losse pannen?",
                 "a": (
-                    "Dat verschilt per merk en aanbieding. Een set kan voordeliger "
-                    "zijn dan dezelfde pannen afzonderlijk aanschaffen, maar de "
-                    "materiaalopbouw en bruikbaarheid van de formaten zijn minstens "
-                    "zo belangrijk. Een goedkope set is niet automatisch de beste "
-                    "keuze wanneer bijvoorbeeld alleen de bodem meerlaags is "
-                    "opgebouwd."
+                    "Niet altijd. Vergelijk de reguliere prijs van "
+                    "de exacte set met de totale reguliere prijs "
+                    "van dezelfde losse pannen. Let ook op eventuele "
+                    "accessoires en technische verschillen tussen uitvoeringen."
                 ),
             },
             {
-                "q": "Wat betekent full-clad bij een RVS-koekenpan?",
+                "q": "Wat is het verschil tussen een RVS-pan en een keramische koekenpan?",
                 "a": (
-                    "Bij een full-clad of volledig meerlaagse pan lopen de lagen "
-                    "RVS en warmtegeleidend materiaal, meestal aluminium, door van "
-                    "de bodem tot in de zijwanden. Bij een pan met een sandwich- of "
-                    "capsulebodem bevindt de warmtegeleidende meerlaagse constructie "
-                    "zich hoofdzakelijk in de bodem. Full-clad kan daardoor zorgen "
-                    "voor een gelijkmatigere warmteverdeling over de volledige pan."
+                    "Een RVS-pan heeft een ongecoat bakoppervlak en "
+                    "is geschikt voor krachtig bruinen en afblussen, "
+                    "maar vraagt meer aandacht voor baktechniek. "
+                    "Een keramische koekenpan heeft een antiaanbaklaag "
+                    "en is vaak praktischer voor kwetsbare ingrediënten. "
+                    'Lees onze <a href="/blogs/keramische-vs-rvs-koekenpan/">'
+                    "vergelijking van keramische en RVS-koekenpannen</a>."
                 ),
             },
-        ],
-    },
+            ],
+            },
 
-    "related_categories": {
-        "title": "Gerelateerde categorieën",
-        "items": [
+            "related_categories": {
+            "title": "Gerelateerde categorieën",
+            "items": [
             {
-                "label": "PFAS-vrije koekenpannen",
+                "label": "PFAS-vrije keramische koekenpannen",
                 "url": "/koekenpannen/",
-                "subtitle": "Keramische koekenpannen met antiaanbaklaag",
+                "subtitle": "Koekenpannen met een keramische antiaanbaklaag",
             },
             {
                 "label": "PFAS-vrije hapjespannen",
                 "url": "/hapjespannen/",
-                "subtitle": "Pannen met hogere rand en groter volume",
+                "subtitle": "Pannen met hogere rand en meer inhoud",
             },
             {
                 "label": "PFAS-vrije wokpannen",
                 "url": "/wokpannen/",
                 "subtitle": "Voor roerbakken en snelle bereidingen",
             },
-        ],
-    },
-}
+            ],
+            },
+            }

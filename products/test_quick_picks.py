@@ -129,7 +129,7 @@ class QuickPickPageTests(TestCase):
         self.assertContains(response, 'id="productlijst"')
 
     def test_other_categories_keep_their_existing_recommendation_component(self):
-        response = self.client.get("/rvs-koekenpannen/")
+        response = self.client.get("/hapjespannen/")
         self.assertEqual(response.status_code, 200)
         self.assertNotContains(response, 'id="snel-kiezen"')
         self.assertNotContains(response, 'id="product-')
