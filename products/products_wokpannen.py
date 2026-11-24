@@ -9,18 +9,28 @@ PRODUCTS = {
             "Aluminium met Thermolon keramische antiaanbaklaag"
         ),
         "features": [
-            "PFAS-vrij",
+            "PFAS-vrije keramische antiaanbaklaag",
+            "Aluminium constructie",
+            "Inhoud van circa 3,6 liter",
+            "Gewicht van circa 1,1 kg",
             "Geschikt voor inductie",
             "Ovenbestendig tot 180 °C",
             "Vaatwasserbestendig; handwas aanbevolen",
+        ],
+
+        "comparison_features": [
+            "Inhoud circa 3,6 liter",
+            "Gewicht circa 1,1 kg",
+            "Ovenbestendig tot 180 °C",
+            "Relatief groot vlak bakoppervlak",
         ],
         "description": (
             "Aluminium wokpan van 28 cm met keramische antiaanbaklaag, "
             "geschikt voor inductie en gebruik in de oven tot 180 °C."
         ),
-        "rating": 4.6,
+        "rating": 4.5,
+        "rating_source": "Leef Natuurlijk & Gezond",
         "rating_count": None,
-        "rating_source": "editorial",
         "price": 46.88,
         "price_last_checked": "2026-08-08",
         "currency": "EUR",
@@ -37,14 +47,11 @@ PRODUCTS = {
         "image": "wokpan-greenpan-torino-28cm.webp",
         "image_path": "images/products/wokpannen",
         "pros": [
-            "Relatief licht en gemakkelijk te hanteren",
+            "Met circa 1,1 kg relatief goed hanteerbaar",
+            "Relatief groot vlak bakoppervlak voor een wok van 28 cm",
             "Ovenbestendig tot 180 °C",
-            "Geschikt voor inductie en vaatwasser",
         ],
-        "cons": [
-            "Niet bedoeld voor langdurig gebruik op maximale hitte",
-            "Handwas aanbevolen voor langer behoud van de coating",
-        ],
+        "cons": [],
         "verdict": (
             "Onze beste allround keuze door het lage gewicht, "
             "de brede inzetbaarheid en de relatief gunstige prijs."
@@ -58,12 +65,22 @@ PRODUCTS = {
         "brand": "HEMA",
         "diameter": 28,
         "material": (
-            "RVS met keramische antiaanbaklaag en siliconen handgreep"
+            "RVS body met aluminium plaat in de bodem, "
+            "keramische antiaanbaklaag en siliconen greepsleeve"
         ),
         "features": [
-            "PFAS-vrij",
+            "PFAS-vrije keramische antiaanbaklaag",
+            "RVS body met aluminium plaat in de bodem",
+            "Gewicht van circa 0,92 kg",
             "Geschikt voor inductie",
+            "Niet ovenbestendig",
             "Vaatwasserbestendig; handwas aanbevolen",
+        ],
+
+        "comparison_features": [
+            "RVS body met aluminium bodemplaat",
+            "Gewicht circa 0,92 kg",
+            "Niet ovenbestendig",
         ],
         "description": (
             "RVS wokpan van 28 cm met keramische antiaanbaklaag en "
@@ -71,7 +88,7 @@ PRODUCTS = {
         ),
         "rating": 4.0,
         "rating_count": None,
-        "rating_source": "editorial",
+        "rating_source": "Leef Natuurlijk & Gezond",
         "price": 37.99,
         "price_last_checked": "2026-07-31",
         "currency": "EUR",
@@ -98,134 +115,41 @@ PRODUCTS = {
             "Onze budgetkeuze voor wie een betaalbare keramische "
             "wokpan voor gebruik op de kookplaat zoekt."
         ),
-        "award": "💰 Budget keuze",
+        "award": None,
     },
     
-    "wmf_durado_wok_28": {
-        "slug": "wmf-durado-wok-28",
-        "name": "WMF Durado Keramische Wokpan 28 cm",
-        "brand": "WMF",
-        "diameter": 28,
-        "material": (
-            "Cromargan RVS met keramische antiaanbaklaag "
-            "en TransTherm-bodem"
-        ),
-        "features": [
-            "PFAS-vrije keramische antiaanbaklaag",
-            "Geschikt voor inductie",
-            "Ovenbestendig tot 250 °C",
-            "Brede schenkrand",
-        ],
-        "description": (
-            "RVS wokpan van 28 cm met keramische antiaanbaklaag, "
-            "TransTherm-bodem en ovenbestendigheid tot 250 °C."
-        ),
-        "rating": 4.7,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 61.11,
-        "price_last_checked": "2026-09-06",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fwmf-durado-wokpan-28-cm%2F9300000116793911%2F&name=WMF%20Durado%20Wokpan%20-%20Inductie%2C%20PFAS-vrij%2C%20anti-aanbaklaag%20-%20%C3%98%2028%20cm",
-        "retailer_url": "https://www.bol.com/nl/nl/p/wmf-durado-wokpan-28-cm/9300000116793911/",
-        "official_url": (
-            "https://www.wmf.com/nl/nl/"
-            "durado-748486021-keramische-wokpan-28-cm-7115006064.html"
-        ),
-        "availability_label": "",
-        "price_range": "€€",
-        "image": "wokpan-wmf-durado-28cm.webp",
-        "image_path": "images/products/wokpannen",
-        "pros": [
-            "Ovenbestendig tot 250 °C",
-            "Stabiele RVS constructie",
-            "Geschikt voor alle gangbare warmtebronnen",
-        ],
-        "cons": [
-            "Niet vaatwasserbestendig",
-            "Zwaarder en minder wendbaar dan aluminium wokpannen",
-        ],
-        "verdict": (
-            "Onze premiumkeuze voor wie een stabiele RVS wokpan met "
-            "een hoge maximale oventemperatuur zoekt."
-        ),
-        "award": "💎 Premium keuze",
-    },
     
-   "greenchef_diamond_wok_28": {
-       "slug": "greenchef-diamond-wok-28",
-       "name": "GreenChef Diamond Induction Wokpan",
-       "brand": "GreenChef",
-       "diameter": 28,
-    "material": (
-        "Aluminium met keramische antiaanbaklaag met diamantdeeltjes"
-    ),
-    "features": [
-        "PFAS-vrij",
-        "Keramische antiaanbaklaag met diamantdeeltjes",
-        "Geschikt voor inductie",
-        "Ovenbestendig tot 160 °C",
-        "Vaatwasserbestendig",
-        "Inhoud van 3,7 liter",
-        "Stay-cool handgreep",
-    ],
-    "description": (
-        "Aluminium wokpan van 28 cm en 3,7 liter met keramische "
-        "antiaanbaklaag met diamantdeeltjes."
-    ),
-    "rating": 4.3,
-    "rating_count": None,
-    "rating_source": "editorial",
-    "price": 39.90,
-    "price_last_checked": "2026-07-31",
-    "currency": "EUR",
-    "availability": "InStock",
-    "affiliate_url": "",
-    "retailer_url": (
-        "https://greenpan.nl/products/"
-        "greenchef-diamond-wok-28cm-3-7l"
-    ),
-    "official_url": "",
-    "availability_label": "",
-    "price_range": "€€",
-    "image": "wokpan-greenchef-diamond-28cm.webp",
-    "image_path": "images/products/wokpannen",
-    "pros": [
-        "Ruime inhoud van 3,7 liter",
-        "Ovenbestendig tot 160 °C",
-        "Geschikt voor inductie en vaatwasser",
-    ],
-    "cons": [
-        "Beperkte maximale oventemperatuur",
-    ],
-    "verdict": (
-        "Een complete middenklasseoptie met een ruime inhoud, "
-        "stay-cool handgreep en brede warmtebroncompatibiliteit."
-    ),
-    "award": None,
-    },
-    
+   
     "primecook_wok_28": {
         "slug": "primecook-wok-28",
         "name": "Primecook Ecoshield Wokpan 28 cm",
         "brand": "Primecook",
         "diameter": 28,
         "material": (
-            "Koudgesmeed aluminium met Ecoshield antiaanbaklaag"
+            "Koudgeperst aluminium met keramische antiaanbaklaag"
         ),
         "features": [
-            "PFAS-vrij",
+            "PFAS-vrije keramische antiaanbaklaag",
+            "Koudgeperste aluminium constructie",
+            "Inhoud van circa 3,5 liter",
+            "Gewicht van circa 1,1 kg",
             "Geschikt voor inductie",
             "Geschikt voor gebruik in de oven",
             "Vaatwasserbestendig; handwas aanbevolen",
             "Geklonken handgreep",
-            "Gewicht van circa 1,1 kg",
         ],
+
+        "comparison_features": [
+            "Koudgeperst aluminium",
+            "Inhoud circa 3,5 liter",
+            "Gewicht circa 1,1 kg",
+            "Geschikt voor oven; maximum niet vermeld",
+        ],
+
         "description": (
-            "Koudgesmeed aluminium wokpan met Ecoshield antiaanbaklaag en een gewicht van circa 1,1 kg."
+            "Koudgesmeed aluminium wokpan met keramische antiaanbaklaag en een gewicht van circa 1,1 kg."
         ),
-        "rating": 4.5,
+        "rating": 4.0,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 69.60,
@@ -253,7 +177,7 @@ PRODUCTS = {
         ],
         "cons": [
             "Hoger geprijsd dan meerdere aluminium alternatieven",
-            "Exacte maximale oventemperatuur niet bekent",
+            "Exacte maximale oventemperatuur niet bekend",
         ],
         "verdict": (
             "Een stevig uitgevoerde aluminium wokpan voor frequente "
@@ -278,11 +202,17 @@ PRODUCTS = {
             "Inhoud van 3,69 liter",
             "Kunststof handgreep",
         ],
+        "comparison_features": [
+            "Inhoud 3,7 liter",
+            "Gewicht circa 1,11 kg",
+            "Ovenbestendig tot 160 °C",
+            "Koudblijvende kunststof handgreep",
+        ],
         "description": (
             "Aluminium wokpan van 28 cm en 3,69 liter met keramische "
             "antiaanbaklaag en kunststof handgreep."
         ),
-        "rating": 4.2,
+        "rating": 4.0,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 49.99,
@@ -301,12 +231,12 @@ PRODUCTS = {
         "image": "wokpan-bk-granite-28cm.webp",
         "image_path": "images/products/wokpannen",
         "pros": [
-            "Ruime inhoud van 3,69 liter",
-            "Ovenbestendig tot 160 °C",
-            "Geschikt voor inductie en vaatwasser",
+            "Ruime inhoud van 3,7 liter",
+            "Met circa 1,11 kg goed hanteerbaar voor het formaat",
         ],
+
         "cons": [
-            "Kunststof handgreep beperkt de maximale oventemperatuur",
+            "Ovenbestendigheid beperkt tot 160 °C",
         ],
         "verdict": (
             "Een ruime middenklassewok voor gebruik op de kookplaat "
@@ -330,11 +260,17 @@ PRODUCTS = {
             "Bakelieten handgreep met duimsteun",
             "Gewicht van circa 0,8 kg",
         ],
+        "comparison_features": [
+            "Gesmeed gerecycled aluminium",
+            "Gewicht circa 0,8 kg",
+            "Bakelieten handgreep met duimsteun",
+            "Geen ovenbestendigheid bevestigd",
+        ],
         "description": (
             "Lichte wokpan van gesmeed gerecycled aluminium met "
             "keramische antiaanbaklaag en een handgreep met duimsteun."
         ),
-        "rating": 4.2,
+        "rating": 4.0,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 40.00,
@@ -358,19 +294,19 @@ PRODUCTS = {
         "image": "wokpan-brabantia-indu-28cm.webp",
         "image_path": "images/products/wokpannen",
         "pros": [
-            "Relatief licht en gemakkelijk te hanteren",
-            "Geschikt voor inductie en vaatwasser",
+            "Met circa 0,8 kg opvallend licht voor een wokpan van 28 cm",
             "Handgreep met duimsteun biedt extra houvast",
+            "Drie jaar fabrieksgarantie",
         ],
+
         "cons": [
-            "Geen bevestigde ovenbestendigheid",
-            "Handwas aanbevolen voor langer behoud van de coating",
+            "Geen ovenbestendigheid bevestigd",
         ],
         "verdict": (
             "Een lichte wokpan voor dagelijks roerbakken, met een "
             "praktische handgreep en een relatief toegankelijke prijs."
         ),
-        "award": None,
+        "award": "💰 Budget keuze",
     },
     
     "greenpan_cambridge_wok_28": {
@@ -389,11 +325,17 @@ PRODUCTS = {
             "Vaatwasserbestendig; handwas aanbevolen",
             "Inhoud van 3,7 liter",
         ],
+        "comparison_features": [
+            "Inhoud circa 3,7 liter",
+            "Gewicht circa 1,08 kg",
+            "Ovenbestendig tot 180 °C",
+            "Diamantversterkte keramische coating",
+        ],
         "description": (
             "Gesmede aluminium wokpan van 28 cm en 3,7 liter met "
             "Thermolon Infinity Pro keramische antiaanbaklaag."
         ),
-        "rating": 4.5,
+        "rating": 4.0,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 49.82,
@@ -414,13 +356,12 @@ PRODUCTS = {
         "image": "wokpan-greenpan-cambridge-28cm.webp",
         "image_path": "images/products/wokpannen",
         "pros": [
-            "Ruime inhoud van 3,7 liter",
+            "Ruime inhoud van circa 3,7 liter",
+            "Met circa 1,08 kg relatief goed hanteerbaar",
             "Ovenbestendig tot 180 °C",
-            "Geschikt voor inductie en vaatwasser",
         ],
-        "cons": [
-            "Handwas aanbevolen voor langer behoud van de coating",
-        ],
+
+        "cons": [],
         "verdict": (
             "Een ruime wokpan met 3,7 liter inhoud, ovenbestendigheid tot "
             "180 °C en een verzorgde uitvoering voor veelvuldig dagelijks gebruik."
@@ -437,17 +378,24 @@ PRODUCTS = {
             "Aluminium met keramische antiaanbaklaag"
         ),
         "features": [
-            "PFAS-vrij",
+            "PFAS-vrije keramische antiaanbaklaag",
+            "Aluminium constructie",
+            "Inhoud van 4,2 liter",
             "Geschikt voor inductie",
             "Ovenbestendig tot 160 °C",
-            "Vaatwasserbestendig",
-            "Kunststof handgreep",
+            "Vaatwasserbestendig; handwas aanbevolen",
+        ],
+
+        "comparison_features": [
+            "Inhoud 4,2 liter",
+            "Ovenbestendig tot 160 °C",
+            "Kunststof koudgreep",
         ],
         "description": (
             "Aluminium wokpan van 28 cm met keramische antiaanbaklaag "
             "en kunststof handgreep voor dagelijks gebruik."
         ),
-        "rating": 4.1,
+        "rating": 4.0,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 49.90,
@@ -466,12 +414,11 @@ PRODUCTS = {
         "image": "wokpan-bk-easy-basic-ceramic-28cm.webp",
         "image_path": "images/products/wokpannen",
         "pros": [
-            "Geschikt voor alle gangbare warmtebronnen",
-            "Ovenbestendig tot 160 °C",
-            "Vaatwasserbestendig",
+            "Ruime inhoud van 4,2 liter",
         ],
+
         "cons": [
-            "Beperkte maximale oventemperatuur",
+            "Enkele gebruikers melden relatief trage opwarming op inductie",
         ],
         "verdict": (
             "Een praktische middenklassewok met inductie-, oven- "
@@ -480,60 +427,7 @@ PRODUCTS = {
         "award": None,
     },
     
-    "berghoff_leo_phantom_wok_28": {
-        "slug": "berghoff-leo-phantom-wok-28",
-        "name": "BergHOFF LEO Phantom Wokpan 28 cm",
-        "brand": "BergHOFF",
-        "diameter": 28,
-        "material": (
-            "Gerecycled gegoten aluminium met CeraGreen "
-            "keramische antiaanbaklaag"
-        ),
-        "features": [
-            "PFAS-vrij",
-            "Geschikt voor inductie",
-            "Full-diskbodem",
-            "Handwas aanbevolen",
-        ],
-        "description": (
-            "Wokpan van gerecycled gegoten aluminium met CeraGreen "
-            "keramische antiaanbaklaag en een inductiegeschikte full-diskbodem."
-        ),
-        "rating": 4.4,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 59.95,
-        "price_last_checked": "2026-08-08",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fphantom-wokpan-28-cm%2F9300000160900449%2F&name=LEO%20Wok%20antikleef%20Phantom%20-%20%C3%98%2028cm%20-%20Zwart%20-%20PFAS-vrij",
-        "retailer_url": (
-            "https://www.bol.com/nl/nl/p/"
-            "phantom-wokpan-28-cm/9300000160900449/"
-        ),
-        "official_url": (
-            "https://berghoffworldwide.com/en/"
-            "wok-non-stick-phantom-28cm"
-        ),
-        "availability_label": "",
-        "price_range": "€€€",
-        "image": "wokpan-berghoff-leo-phantom-28cm.webp",
-        "image_path": "images/products/wokpannen",
-        "pros": [
-            "Geschikt voor alle gangbare warmtebronnen",
-            "Full-diskbodem voor contact met de volledige kookzone",
-            "Aluminium constructie houdt het gewicht relatief beperkt",
-        ],
-        "cons": [
-            "Hoger geprijsd dan meerdere middenklassemodellen",
-            "Handwas aanbevolen",
-        ],
-        "verdict": (
-            "Een verzorgde aluminium wokpan met full-diskbodem voor wie "
-            "inductiegeschiktheid en een relatief lichte constructie belangrijk vindt."
-        ),
-        "award": None,
-    },
+    
 
 
 # 30CM WOKPANNEN
