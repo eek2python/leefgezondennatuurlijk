@@ -710,13 +710,16 @@ def wokpannen(request):
     _enrich_products(products, category="wokpannen")
     product_count = len(products)
 
-    conclusie = content["conclusies"].get(size, {})
+    conclusie = content.get("conclusies", {}).get(size, {})
     hero_h1 = content["hero"]["h1"].format(product_count=product_count, selected_size=size)
     products_h2 = content["products_section"]["h2"].format(product_count=product_count, selected_size=size)
     comparison_title = content["products_section"]["comparison_title"].format(
         product_count=product_count, selected_size=size
     )
     content = _format_content(content, product_count=product_count, selected_size=size)
+    price_guide = content.get("price_guide", {})
+    if "ranges_by_size" in price_guide:
+        price_guide["ranges"] = price_guide["ranges_by_size"].get(str(size), [])
     faq_ld = _build_faq_ld(content["faq"]["items"])
     json_ld = _build_itemlist_ld(
         request,
@@ -727,7 +730,7 @@ def wokpannen(request):
     breadcrumbs = pan_breadcrumbs("wokpannen")
     return render(request, "wokpannen.html", {
         "products": products,
-        "top_picks": _build_top_picks(products),
+        "quick_picks": build_quick_picks(products),
         "in_het_kort": _build_in_het_kort(products, content),
         "available_sizes": available_sizes,
         "selected_size": size,

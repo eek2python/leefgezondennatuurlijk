@@ -432,60 +432,6 @@ PRODUCTS = {
 
 # 30CM WOKPANNEN
 
-"bk_easy_induction_wok_30": {
-        "slug": "bk-easy-induction-wok-30",
-        "name": "BK Easy Induction Ceramic Wokpan 30 cm",
-        "description": (
-            "Aluminium wokpan van 30 cm met keramische antiaanbaklaag, "
-            "geschikt voor inductie, oven en vaatwasser."
-        ),
-        "brand": "BK",
-        "diameter": 30,
-        "material": "Aluminium met keramische antiaanbaklaag",
-        "features": [
-            "PFAS-vrij",
-            "Geschikt voor inductie",
-            "Ovenbestendig tot 160 °C",
-            "Vaatwasserbestendig",
-            "Gewicht van circa 1,49 kg",
-        ],
-        "rating": 4.1,
-        "rating_count": None,
-        "rating_source": "editorial",
-        "price": 66.17,
-        "price_last_checked": "2026-07-31",
-        "currency": "EUR",
-        "availability": "InStock",
-        "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1454330&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbk-easy-induction-ceramic-wok-o-30-cm-inductie-pfas-vrij%2F9300000032891769%2F&name=BK%20Easy%20Induction%20Ceramic%20Wokpan%20-%20%C3%9830cm%20-%204.2L%20-%20PFAS-vrij%20-%20Ovenbestendig",
-        "retailer_url": (
-            "https://www.bol.com/nl/nl/p/"
-            "bk-easy-induction-ceramic-wok-o-30-cm-"
-            "inductie-pfas-vrij/9300000032891769/"
-        ),
-        "official_url": (
-            "https://bk.nl/products/"
-            "easy-induction-ceramic-wok-30-cm"
-        ),
-        "availability_label": "",
-        "price_range": "€€€",
-        "image": "wokpan-bk-easy-induction-30cm.webp",
-        "image_path": "images/products/wokpannen",
-        "pros": [
-            "Relatief lage aanschafprijs",
-            "Ovenbestendig tot 160 °C",
-            "Geschikt voor inductie en vaatwasser",
-        ],
-        "cons": [
-            "Beperkte maximale oventemperatuur",
-            "Relatief zwaar",
-        ],
-        "verdict": (
-            "Onze budgetkeuze voor wie een ruime keramische wokpan "
-            "zoekt met inductie-, oven- en vaatwassergeschiktheid."
-        ),
-        "award": "💰 Budget keuze",
-    },
-
     "bk_superior_ceramic_wok_30": {
         "slug": "bk-superior-ceramic-wok-30",
         "name": "BK Superior Ceramic Wokpan 30 cm",
@@ -499,14 +445,22 @@ PRODUCTS = {
             "Geanodiseerd aluminium met keramische antiaanbaklaag"
         ),
         "features": [
-            "PFAS-vrij",
+            "PFAS-vrije keramische antiaanbaklaag",
+            "Geanodiseerde aluminium constructie",
+            "Inhoud van 5 liter",
+            "Bodemdiameter van circa 16 cm",
             "Geschikt voor inductie",
             "Ovenbestendig tot 230 °C",
+            "RVS-handgreep",
             "Vaatwasserbestendig",
-            "RVS handgreep",
-            "Inhoud van 5 liter",
         ],
-        "rating": 4.5,
+        "comparison_features": [
+            "Geanodiseerd aluminium",
+            "Inhoud 5 liter",
+            "Bodemdiameter circa 16 cm",
+            "Ovenbestendig tot 230 °C",
+        ],
+        "rating": 4.0,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 92.90,
@@ -524,16 +478,21 @@ PRODUCTS = {
         "image": "wokpan-bk-superior-ceramic-30cm.webp",
         "image_path": "images/products/wokpannen",
         "pros": [
+            "Slijtvaster aluminiumoppervlak dankzij anodisering",
             "Ruime inhoud van 5 liter",
             "Ovenbestendig tot 230 °C",
-            "Geschikt voor inductie en vaatwasser",
         ],
-        "cons": [
-            "",
 
+        "cons": [
+            "Relatief kleine bodemdiameter van circa 16 cm",
         ],
+
         "verdict": (
-            "Onze allround favoriet door de combinatie van een ruime 5-literinhoud, stevige geanodiseerde aluminium constructie, hoge ovenbestendigheid en een gunstigere prijs dan de premium RVS-modellen."
+            "Een veelzijdige keramische wokpan voor wie regelmatig grotere "
+            "porties bereidt en de pan ook in de oven gebruikt. De geanodiseerde "
+            "aluminium constructie, ruime inhoud en hoge ovenbestendigheid "
+            "vormen een evenwichtig totaalpakket. Dit is onze Beste keuze "
+            "binnen deze maat."
         ),
         "award": "🏆 Beste keuze",
     },
@@ -542,8 +501,8 @@ PRODUCTS = {
         "slug": "greenpan-copenhagen-wok-30",
         "name": "GreenPan Copenhagen Keramische Wokpan 30 cm",
         "description": (
-            "Wokpan van gehard aluminium met Thermolon Infinity Pro "
-            "keramische antiaanbaklaag, extra handvat en RVS steel."
+            "Wokpan van gehard aluminium met keramische antiaanbaklaag, "
+            "een inhoud van 4,8 liter en een RVS-handgreep met hulpgreep."
         ),
         "brand": "GreenPan",
         "diameter": 30,
@@ -552,15 +511,23 @@ PRODUCTS = {
             "keramische antiaanbaklaag"
         ),
         "features": [
-            "PFAS-vrij",
+            "PFAS-vrije diamantversterkte keramische antiaanbaklaag",
+            "Geharde aluminium constructie",
+            "Inhoud van 4,8 liter",
+            "Bodemdiameter van circa 19,3 cm",
             "Geschikt voor inductie",
             "Ovenbestendig tot 220 °C",
+            "RVS-handgreep met extra hulpgreep",
             "Vaatwasserbestendig; handwas aanbevolen",
-            "RVS handgreep",
-            "Extra handvat",
-            "Inhoud van 4,8 liter",
+            "Gewicht van circa 1,43 kg",
         ],
-        "rating": 4.4,
+        "comparison_features": [
+            "Gehard aluminium",
+            "Inhoud 4,8 liter",
+            "Bodemdiameter circa 19,3 cm",
+            "Ovenbestendig tot 220 °C",
+        ],
+        "rating": 4.0,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 71.00,
@@ -581,17 +548,17 @@ PRODUCTS = {
         "image": "wokpan-greenpan-copenhagen-30cm.webp",
         "image_path": "images/products/wokpannen",
         "pros": [
+            "Relatief groot vlak bakoppervlak",
+            "Ruime inhoud van 4,8 liter",
+            "Hulpgreep maakt een gevulde wok gemakkelijker te hanteren",
             "Ovenbestendig tot 220 °C",
-            "Extra handvat helpt bij het optillen van een gevulde pan",
-            "Geschikt voor inductie en vaatwasser",
         ],
-        "cons": [
-            "Met circa 1,43 kg niet bijzonder licht",
-            "Handwas aanbevolen voor langer behoud van de coating",
-        ],
+        "cons": [],
         "verdict": (
-            "Een breed inzetbare wokpan met 4,8 liter inhoud, extra "
-            "handvat en ovenbestendigheid tot 220 °C."
+            "Een veelzijdige keramische wokpan voor regelmatig roerbakken "
+            "en het bereiden van grotere porties. Het ruime vlakke "
+            "bakoppervlak, de extra hulpgreep en de ovenbestendigheid "
+            "maken de pan breed inzetbaar."
         ),
         "award": None,
     },
@@ -600,23 +567,33 @@ PRODUCTS = {
         "slug": "greenpan-premiere-wok-30",
         "name": "GreenPan Première Wokpan 30 cm",
         "description": (
-            "Premium 3-laags RVS wokpan van 30 cm met PFAS-vrije keramische "
-            "antiaanbaklaag, extra handvat en een inhoud van 4,7 liter."
+            "Keramisch gecoate wokpan met een volledige drielaagse "
+            "RVS-constructie, een inhoud van 4,7 liter en een extra handgreep."
         ),
         "brand": "GreenPan",
         "diameter": 30,
-        "material": "3-laags RVS met keramische antiaanbaklaag",
+        "material": (
+            "Drielaagse RVS-constructie met aluminium kern "
+            "en keramische antiaanbaklaag"
+        ),
         "features": [
-            "PFAS-vrije Thermolon Infinity Pro antiaanbaklaag",
-            "3-laags RVS constructie",
+            "PFAS-vrije Thermolon Infinity Pro keramische antiaanbaklaag",
+            "Volledige drielaagse RVS/aluminium-constructie",
+            "Inhoud van 4,7 liter",
+            "Bodemdiameter van circa 15,3 cm",
             "Geschikt voor inductie",
             "Ovenbestendig tot 220 °C",
-            "Vaatwasserbestendig",
-            "Inhoud van 4,7 liter",
-            "Extra handvat voor gemakkelijker tillen",
-            "Evershine-technologie voor het RVS",
+            "RVS-handgreep met extra hulpgreep",
+            "Evershine-oppervlaktebehandeling van het RVS",
+            "Vaatwasserbestendig; handwas aanbevolen",
         ],
-        "rating": 4.4,
+        "comparison_features": [
+            "Drielaagse RVS/aluminium-constructie",
+            "Inhoud 4,7 liter",
+            "Bodemdiameter circa 15,3 cm",
+            "Ovenbestendig tot 220 °C",
+        ],
+        "rating": 4.0,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 130.00,
@@ -640,19 +617,21 @@ PRODUCTS = {
         "image": "wokpan-greenpan-premiere-30cm.webp",
         "image_path": "images/products/wokpannen",
         "pros": [
-            "Stevige 3-laags RVS constructie",
-            "Ruime inhoud van 4,7 liter",
+            "Drielaagse constructie bevordert warmteverdeling over bodem en zijwanden",
             "Ovenbestendig tot 220 °C",
-            "Extra handvat maakt de volle wok makkelijker hanteerbaar",
+            "Hulpgreep maakt een gevulde wok gemakkelijker te hanteren",
         ],
+
         "cons": [
-            "Relatief hoge aanschafprijs",
-            "Handwas wordt aanbevolen ondanks vaatwassergeschiktheid",
+            "Relatief kleine bodemdiameter van circa 15,3 cm",
+            "Hoge aanschafprijs",
         ],
         "verdict": (
-            "Onze premiumkeuze voor wie een hoogwaardige keramische wokpan zoekt "
-            "met een duurzame 3-laags RVS constructie, ruime inhoud en hoge "
-            "ovenbestendigheid."
+            "Een keramische wokpan voor wie waarde hecht aan een "
+            "volledig meerlaagse RVS-constructie en regelmatig grotere "
+            "porties bereidt. De materiaalopbouw, extra hulpgreep en "
+            "hoge ovenbestendigheid rechtvaardigen de hogere positionering. "
+            "Dit is onze Premium keuze binnen deze maat."
         ),
         "award": "💎 Premium keuze",
     },
@@ -661,23 +640,29 @@ PRODUCTS = {
         "slug": "isenvi-alice-wok-30",
         "name": "ISENVI Alice Wokpan met Deksel 30 cm",
         "description": (
-            "Ruime aluminium wokpan van 30 cm met PFAS-vrije keramische "
-            "antiaanbaklaag, koudgreep en glazen deksel."
+            "Aluminium wokpan van 30 cm met keramische antiaanbaklaag, "
+            "een bakelieten koudgreep en een meegeleverd glazen deksel."
         ),
         "brand": "ISENVI",
         "diameter": 30,
         "material": "Aluminium met keramische antiaanbaklaag",
         "features": [
-            "PFAS-, PTFE- en PFOA-vrij",
-            "ISENVI Ceramica Generation Six antiaanbaklaag",
+            "PFAS-vrije keramische antiaanbaklaag",
+            "Aluminium constructie",
+            "Randhoogte van circa 9 cm",
             "Geschikt voor inductie",
+            "Niet ovenbestendig",
+            "Bakelieten koudgreep met houtlook",
             "Inclusief glazen deksel",
-            "Koudblijvende bakelieten handgreep met houtlook",
             "Vaatwasserbestendig",
-            "Hoge rand van circa 9 cm",
-            "Gewicht van circa 1,93 kg",
         ],
-        "rating": 4.1,
+        "comparison_features": [
+            "Randhoogte circa 9 cm",
+            "Inclusief glazen deksel",
+            "Bakelieten koudgreep",
+            "Niet ovenbestendig",
+        ],
+        "rating": 4.0,
         "rating_count": None,
         "rating_source": "editorial",
         "price": 39.95,
@@ -702,20 +687,25 @@ PRODUCTS = {
         "image": "wokpan-isenvi-alice-30cm.webp",
         "image_path": "images/products/wokpannen",
         "pros": [
-            "Relatief lage aanschafprijs",
-            "Inclusief glazen deksel",
-            "Koudblijvende handgreep",
-            "Geschikt voor inductie en vaatwasser",
+            "Relatief lage aanschafprijs inclusief glazen deksel",
+            "Hoge rand biedt ruimte voor grotere hoeveelheden",
+            "Koudblijvende bakelieten handgreep",
         ],
         "cons": [
             "Niet geschikt voor gebruik in de oven",
             "Nog weinig langdurige gebruikservaringen beschikbaar",
         ],
+        "cons": [
+            "Niet geschikt voor gebruik in de oven",
+        ],
+
         "verdict": (
-            "Interessante betaalbare keuze voor wie een ruime PFAS-vrije "
-            "keramische wok zoekt met deksel en koudblijvende handgreep, "
-            "maar geen ovenbestendigheid nodig heeft."
+            "Een betaalbare keramische wokpan voor dagelijks roerbakken "
+            "en het bereiden van gerechten onder een deksel. De hoge rand "
+            "en het meegeleverde glazen deksel maken de pan praktisch "
+            "voor gebruik op de kookplaat. Dit is onze Budget keuze "
+            "binnen deze maat."
         ),
-        "award": "",
+        "award": "💰 Budget keuze",
     },
 }
