@@ -44,7 +44,7 @@ class WokContentTests(TestCase):
                 section_keys = ("price_guide", "how_we_assess", "awards",
                                 "size_guide", "why_choose", "tips", "faq")
                 positions = [
-                    re.search(r"<h2[^>]*>" + re.escape(str(escape(context["content"][key]["title"]))) + r"</h2>", html).start()
+                    re.search(r"<h2[^>]*>\s*" + re.escape(str(escape(context["content"][key]["title"]))) + r"\s*</h2>", html).start()
                     for key in section_keys
                 ]
                 self.assertEqual(positions, sorted(positions))

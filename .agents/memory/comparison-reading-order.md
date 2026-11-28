@@ -30,12 +30,12 @@ de actuele productdata onderhouden; algemene formaataanbevelingen verouderen.
 **How to apply:** behoud dit products-first patroon voor de keramische pagina.
 Pas de conclusie-afspraak voor andere materialen en categorieën niet stilzwijgend aan.
 
-Ook voor RVS-koekenpannen geldt bij de vernieuwde algemene content het
+Ook voor RVS-koekenpannen en keramische wokpannen geldt bij de vernieuwde algemene content het
 products-first patroon zonder zelf verzonnen conclusies per formaat of set.
 Gebruik dezelfde compacte snelkiezen-navigatie als bij keramische koekenpannen.
 
-**Why:** de gebruiker heeft de RVS-content in lijn met keramisch gebracht en
-expliciet om dezelfde snelkiezen-stijl gevraagd.
+**Why:** de gebruiker heeft de RVS- en wokpannen-content in lijn met keramische
+koekenpannen gebracht en gevraagd deze opzet te laten functioneren.
 
 **How to apply:** leid aanbevelingen af uit de actuele productbadges en houd
 de algemene uitleg na de vergelijking. Verzin geen vervangend keuzeadvies als
